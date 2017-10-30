@@ -1,0 +1,115 @@
+#!/usr/bin/env bash
+#########1#########2#########3#########4#########5#########6#########7#########8
+# 
+# $Header: /home/kbreslin/cvs/bohem/lib/filtered_diff,v 1.6 2007-11-29 15:32:33 ccroke Exp $
+#
+# This is a special bohem differ for GOLD files. It has the ability to filter
+# out certain items out of captured output, and then compare that against
+# expected output.
+#
+#########1#########2#########3#########4#########5#########6#########7#########8
+
+
+set -u	# for picking up strays
+_self=`basename $0`	# used to generate information
+# Figure out if tracing is on.
+if [ $(( $_trace_level & $_trace_filter )) -eq $_trace_filter ]
+then
+	TRACE="ON"
+else
+	TRACE="OFF"
+fi
+
+
+# Sanity test.
+if [ $# -lt 1 ]
+then
+	if [ $TRACE = "ON" ]
+	then
+		printf "${_self}: no GOLD files to process.\n" >> "${_trace_log}"
+	fi
+
+	exit 0
+fi
+
+
+# Find the necessary files.
+_GOLD_ORIG="$1"
+_GOLD_WORK="/tmp/${_GOLD_ORIG}.$$"
+cp -f "$_GOLD_ORIG" "$_GOLD_WORK"	# the ORIG must not be touched
+_CAPT_ORIG="${1%.GOLD}"
+_CAPT_WORK="/tmp/${_CAPT_ORIG}.$$"
+cp -f "$_CAPT_ORIG" "$_CAPT_WORK"	# the ORIG must not be touched
+_DIFF="${1%.GOLD}.DIFF"
+# If the need ever arises, this block (above) could also include "OS-specific" GOLD files.
+# Something along the lines of give priority to '*.GOLD.$("remote" uname -s)', but default
+# to the old plain '*.GOLD'. This would require modifications to the calling script as
+# well; instead of looping through *.GOLD, it would have to loop through *.GOLD* - note:
+# NO dot before the second *!
+if [ $TRACE = "ON" ]
+then
+	printf "${_self}: _GOLD_ORIG is $_GOLD_ORIG\n" >> "${_trace_log}"
+	printf "${_self}: _CAPT_ORIG is $_CAPT_ORIG\n" >> "${_trace_log}"
+fi
+
+# Test them.
+if [ ! -e "$_GOLD_ORIG" ]
+then
+	printf "bohem $_bohem_version Warning:\n"
+	printf "\t$_self could not locate GOLD file $_GOLD_ORIG.\n"
+	rm -f "$_GOLD_WORK" "$_CAPT_WORK"
+	exit 1
+fi
+if [ ! -e "$_CAPT_ORIG" ]
+then
+	printf "bohem $_bohem_version Warning:\n"
+	printf "\t$_self could not locate capture file $_CAPT_ORIG to match GOLD file $_GOLD_ORIG.\n"
+	rm -f "$_GOLD_WORK" "$_CAPT_WORK"
+	exit 1
+fi
+
+
+# Filter the files.
+#sed -f "${_bohem_dir}/etc/test_filter_global" "$_GOLD_WORK" > "${_GOLD_WORK}.wrk"
+#mv -f "${_GOLD_WORK}.wrk" "$_GOLD_WORK"
+#sed -f "${_bohem_dir}/etc/test_filter_global" "$_CAPT_WORK" > "${_CAPT_WORK}.wrk"
+#mv -f "${_CAPT_WORK}.wrk" "$_CAPT_WORK"
+# Custom filters: will work only for Stream 2 test cases.
+if [ -e test_filter ]
+then
+	# For now allow only sed filters. In the future, again if need be, this could be
+	# tested for execute permissions, to allow user to write a filter in any language they
+	# feel like.
+
+	if [ $TRACE = "ON" ]
+	then
+		printf "${_self}: Found local test_filter:\n" >> "${_trace_log}"
+		cat test_filter >> "${_trace_log}"
+	fi
+	echo "abc1"
+	sed -f "test_filter" "$_GOLD_WORK" > "${_GOLD_WORK}.wrk"
+	echo "abc2"
+	mv -f "${_GOLD_WORK}.wrk" "$_GOLD_WORK"
+	echo "abc3"
+	sed -f "test_filter" "$_CAPT_WORK" > "${_CAPT_WORK}.wrk"
+	echo "abc4"
+	mv -f "${_CAPT_WORK}.wrk" "$_CAPT_WORK"
+fi
+
+
+# Perform the diff.
+diff $GOLD_DIFF_OPTS "$_GOLD_WORK" "$_CAPT_WORK" > "$_DIFF"
+
+
+# Cleanup
+rm -f "$_GOLD_WORK" "$_CAPT_WORK"
+
+
+# The DIFF file must be zero-size in order to pass.
+if [ -s "$_DIFF" ]
+then
+	exit 1
+else
+	exit 0
+fi
+

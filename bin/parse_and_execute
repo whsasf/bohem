@@ -1,0 +1,508 @@
+#!/bin/bash -u
+#########1#########2#########3#########4#########5#########6#########7#########8
+# 
+# $Header: /home/kbreslin/cvs/bohem/bin/parse_and_execute,v 1.65 2010-11-09 15:05:13 tcomerfo Exp $
+# 
+# This file will parse and execute the user-supplied <test-list>. This script is
+# intended to be called by a script which will do sanity checking up-front,
+# therefore it does not do any. If you see any "unbound variable" errors, that is
+# because you are calling this as a standalone, and it is not ment to run that
+# way.
+# This script works together with the parse_test_list script. The two call each
+# other (recursively) until they run out of arguments. See the description of that
+# script as well as reading further on here.
+#
+# A <test-list> may contain any number of any of the following, one per line. Each
+# one is described in detail within its own if statement below.
+# 1. A directory.
+# 2. An executable file.
+# 3. A test-list.
+# 4. A "keyword" test-list.
+# 
+#########1#########2#########3#########4#########5#########6#########7#########8
+
+
+# VERIFY_SERVICES test.
+if [ ! -z ${VERIFY_SERVICES:-""} ]
+then
+	verify_services ${VERIFY_SERVICES}
+	if [ $? -ne 0 ]
+	then
+		exit 200
+	fi
+fi
+
+if [ -f $WORK_DIR/quit ]; then
+	echo "# Quit requested - skipping $1" >> $LOGFILE
+	exit 0
+fi
+
+test_number=""
+if [ -t 1 ]; then
+	if [ $# -eq 2 ]; then
+		test_number=" $2"
+	fi
+	green="\033[32;1m"
+	red="\033[31;1m"
+	white="\033[31;0m"
+	yellow="\033[33;1m"
+else
+	green=
+	red=
+	white=
+	yellow=
+fi
+
+# Everything is relative.
+# WORK_DIR in bohem is analogous to CVSROOT in cvs. It is the starting point for
+# any and all test cases! Everything in the test-list must be relative to this, or
+# global.
+cd "$WORK_DIR"
+
+# Update, based on the value of TC_CVS_UPDATE.
+# The update is redirected to a /tmp file, which has to be defined not before
+# this point due to the ability of parallelization. The reason for this is
+# twofold: 1) I want to delay the loging of this information until after the
+# "Starting test case" banner is printed (accomplished with a 'cat' below), and
+# 2) checkout of non-existent modules (like a test-list) is completely hidden
+# from the user.
+_tmp_cvslog=/tmp/${_bohem_self}.cvslog.$$
+> $_tmp_cvslog	# empty the log file
+case $TC_CVS_UPDATE in
+	none)
+		;;
+	checkout)
+		if [ "$ADJUST_DIR" != "." ]
+		then
+			cvs checkout $TC_CVS_TAGS "$ADJUST_DIR" >> "$_tmp_cvslog" 2>&1
+			echo >> "$_tmp_cvslog"	# format the log
+		else
+			cvs checkout $TC_CVS_TAGS "$1" >> "$_tmp_cvslog" 2>&1
+			echo >> "$_tmp_cvslog"	# format the log
+		fi
+		;;
+	overwrite)
+		if [ "$ADJUST_DIR" != "." ]
+		then
+			cvs update -dC $TC_CVS_TAGS "$ADJUST_DIR" >> "$_tmp_cvslog" 2>&1
+			echo >> "$_tmp_cvslog"	# format the log
+		else
+			cvs update -dC $TC_CVS_TAGS "$1" >> "$_tmp_cvslog" 2>&1
+			echo >> "$_tmp_cvslog"	# format the log
+		fi
+		;;
+	*)
+		printf "bohem $_bohem_version Warning:\n" >> "$LOGFILE"
+		printf "\tReceived unknown value of $TC_CVS_UPDATE for TC_CVS_UPDATE - ignoring.\n" >> "$LOGFILE"
+		;;
+esac
+
+# ADJUST_DIR is a feature documented in parse_test_list.
+cd "$ADJUST_DIR" >> "$LOGFILE" 2>&1
+
+TC_NAME=${ADJUST_DIR}/${1}	# set the name of the test case
+TC_NAME=${TC_NAME##*${WORK_DIR}/}	# sanitize for standalone test cases
+TC_NAME=${TC_NAME#./}	# sanitize for test lists
+
+_exit_stat=0    # I need this to be able to flag nonesense passed in the test-list 
+
+
+if [ -d "$1" ]
+then
+	# Case 1: directory
+	# This is THE preferred way of writing test cases. The in-line comments below
+	# have a better description of what is going on.
+	# The directory passed must be relative to WORK_DIR; ideally, it will be
+	# exactly the way it is stored in CVS. This is due to the fact, that at a
+	# future date the test harness could have the ability to update tests right
+	# out of CVS, without the user checking them out upfront.
+
+	## Source user.vars before each test in case it was updated by a test.
+	if [ -f user.vars ]
+	then
+		x=$TC_TIMEOUT
+		source user.vars
+		export TC_TIMEOUT=$x
+	fi
+
+	cd "$1"	# everything should be contained entirely within this directory
+	DATE_TIME=`date +%Y%m%d-%H%M%S`
+	START_TIME=$DATE_TIME
+	TEST_LOG=test_run.${DATE_TIME}.log
+	rm -f latest-test.log
+	ln -s $TEST_LOG latest-test.log
+	printf "\t**********  Starting $1  **********\n" > "$TEST_LOG"
+	# note the single redirect: this will overwrite existing TEST_LOG, if any
+	cat "$_tmp_cvslog" >> "$TEST_LOG"
+	rm "$_tmp_cvslog"
+	printf "Test started: %s\n" "$(date)" >> "$TEST_LOG"
+	# We can wait with this until here, once TEST_LOG actually exists, but it
+	# must be done before the test is run just in case the test is executing
+	# assorted cd's.
+	eval `globalize TEST_LOG`
+
+# START OF TEST
+	_test_stat=0    # exit status of all "components"
+ 
+	# The file test_source is used to setup test-case specific variables. As the
+	# name suggests, the file is sourced, so that the information will be
+	# propagated from this level downwards. The test writer could use this to
+	# override "global" variables, or create his own.
+	# This file is optional.
+	# The file is only tested for exit status.
+	if [ -f test_source ]
+	then
+		source test_source >> "$TEST_LOG" 2>&1
+		let _test_stat+=$?  # increment the final exit stat by the current exit stat
+	fi
+ 
+	# The file test_setup can be used for pre-test setup stuff. For example:
+	# creating dynamic data files, moving files from other servers, etc.
+	# This file is optional.
+	# The file is only tested for exit status.
+	if [ -x test_setup ]
+	then
+		test_setup >> "$TEST_LOG" 2>&1
+		let _test_stat+=$?  # increment the final exit stat by the current exit stat
+	fi
+ 
+	# The file test_run holds the actual test script, which can hold multiple
+	# tests. The statistics for this are generated using the functions 'log_*',
+	# called from within the test_run itself.
+	# This file is required.
+	# The file is only tested for exit status today, but the hope is that at some
+	# point in the future, there will be a call from here to a debugger, which
+	# will be able to test every single line of the script.
+	grep -e "^${_bohem_log_prefix}BROKEN:" -e "^${_bohem_log_prefix}SKIPPED:" -e "^${_bohem_log_prefix}FAILED:" "$TEST_LOG" 2>&1
+	if [ $? -eq 0 ]; then
+		# The setup script has either failed, or wants to skip this test, so
+		# we don't want to bother running the test_run script
+		test ## Just run this command as a no-op for this branch of the if
+	elif [ -f test_run ]
+	then
+		if [ ! -x test_run ]
+		then
+			chmod +x test_run
+		fi
+		_command='test_run >> $TEST_LOG 2>&1'
+		tc_monitor "$_command" $TC_TIMEOUT
+		let _test_stat+=$?  # increment the final exit stat by the current exit stat
+	elif [ -f test_run.java ]
+	then
+		# First we will build all the java files in the lib/ dir. I'm told that
+		# this will only rebuild them if they have been built previously, which
+		# is why I do it here rather than before all the tests. This way it is
+		# never done if no java tests are run.
+		find $_bohem_dir -name \*.java -exec $JAVA_HOME/bin/javac {} \; >> "$TEST_LOG" 2>&1
+		export CLASSPATH="$_bohem_dir/lib/java/:${CLASSPATH:-}"
+		printf "CLASSPATH=$CLASSPATH" >> "$TEST_LOG"
+		$JAVA_HOME/bin/javac test_run.java >> "$TEST_LOG" 2>&1
+		if [ $? -ne 0 ]; then
+			printf "Failed to compile JAVA test $1\n" >> "$TEST_LOG"
+			let _test_stat+=1
+		else
+			$JAVA_HOME/bin/java test_run >> "$TEST_LOG" 2>&1
+			let _test_stat+=$?  # increment the final exit stat by the current exit stat
+		fi
+	elif [ -f test_run.py ]
+	then
+                git config --global http.lowSpeedLimit 1000
+                git config --global http.lowSpeedTime 600
+		export PYTHONPATH="$PYTHONPATH:$_bohem_dir/lib/python/"
+		python $_bohem_dir/bin/python/test_timeout.py $TC_TIMEOUT python test_run.py >> $TEST_LOG 2>&1
+		let _test_stat+=$?
+	else
+		log_fail "FAILED to locate test_run script in $1.\n" >> "$TEST_LOG"
+		let _test_stat+=1
+	fi
+ 
+	# The original thought behind test_cleanup was to cleanup whatever setup
+	# created. However, this can be used for anything that the test case has
+	# changed. For example, revert any server settings back to defaults.
+	# This file is optional.
+	# The file is only tested for exit status.
+	if [ -x test_cleanup ]
+	then
+		test_cleanup >> "$TEST_LOG" 2>&1
+		let _test_stat+=$?  # increment the final exit stat by the current exit stat
+	fi
+
+	grep -e "^${_bohem_log_prefix}BROKEN:" -e "^${_bohem_log_prefix}SKIPPED:" -e "^${_bohem_log_prefix}FAILED:" "$TEST_LOG" 2>&1
+	if [ $? -eq 0 ]; then
+		# Bypass Gold file stuff - test has already reported a non-pass
+		test
+	else
+		# Special-diff GOLD files.
+		shopt -s nullglob
+		for GOLD_FILES in *.GOLD
+		do
+			filtered_diff "$GOLD_FILES" >> "$TEST_LOG" 2>&1
+			diff_exit=$?
+			if [ $diff_exit -ne 0 ]
+			then
+				log_fail "diff failed for $GOLD_FILES" >> "$TEST_LOG" 2>&1
+				let _test_stat+=$diff_exit
+			else
+				log_pass "diff passed for $GOLD_FILES" >> "$TEST_LOG" 2>&1
+			fi
+		done
+		shopt -u nullglob	# gotta keep it tidy
+	fi
+# END OF TEST
+
+	# If a test reports neither a PASS or a FAIL, then it's a crap test, which
+	# shall be considered a FAIL. - Most likely it's a bug in the script which
+	# needs to be addresses.
+	grep "^${_bohem_log_prefix}PASSED:" $TEST_LOG >/dev/null 2>&1
+	_any_passes=$?
+	grep "^${_bohem_log_prefix}FAILED:" $TEST_LOG >/dev/null 2>&1
+	_any_fails=$?
+	grep "^${_bohem_log_prefix}SKIPPED:" $TEST_LOG >/dev/null 2>&1
+	_any_skips=$?
+	grep "^${_bohem_log_prefix}BROKEN:" $TEST_LOG >/dev/null 2>&1
+	_any_broken=$?
+	if [ $_any_fails -ne 0 ] && [ $_any_passes -ne 0 ] && [ $_any_skips -ne 0 ] && [ $_any_broken -ne 0 ];
+	then
+		log_fail "Test didn't report success or failure or skipped" >> $TEST_LOG
+		_test_stat=1
+	fi
+	grep "^${_bohem_log_prefix}WARNING:" $TEST_LOG >/dev/null 2>&1
+	if [ $? -eq 0 ]; then
+		grep "^${_bohem_log_prefix}WARNING:" $TEST_LOG | sed "s/^${_bohem_log_prefix}//" | tee -a $TEST_LOG
+	fi
+	# Note that, unlike in the case of executable test-script (case 2 below),
+	# here the P/F messages go only to the stdout and not the TEST_LOG. These are
+	# intended to be used as an indicator of where to start looking for
+	# failiures. The TEST_LOG will contain messages generated by the two
+	# functions 'log_*' called from inside of the test case. This allows for one
+	# script to hold many tests.
+	if [ $_single_result_per_script -eq 1 ]; then
+		if [ $_any_fails -eq 0 ]; then
+			msg="FAILED: $TC_NAME [$START_TIME] ($SECONDS sec.)$test_number"
+			echo -e "$red$msg$white"
+			printf "$msg\n" >> $TEST_LOG
+			_test_stat=1
+		elif [ $_any_passes -eq 0 ]; then
+			msg="PASSED: $TC_NAME [$START_TIME] ($SECONDS sec.)$test_number"
+			echo -e "$green$msg$white"
+			printf "$msg\n" >> $TEST_LOG
+        elif [ $_any_broken -eq 0 ]; then
+			msg="BROKEN: $TC_NAME [$START_TIME] ($SECONDS sec.)$test_number"
+			echo -e "$yellow$msg$white"
+			printf "$msg\n" >> $TEST_LOG
+		elif [ $_any_skips -ne 0 ]; then
+			msg="FAILED: $TC_NAME [$START_TIME] ($SECONDS sec.)$test_number"
+			echo -e "$red$msg$white"
+			printf "$msg\n" >> $TEST_LOG
+			_test_stat=1
+		fi
+	fi
+	printf "Test ended: %s\n\n" "$(date)" >> "$TEST_LOG"
+
+	# duplicate the test-case logfile in the master logfile
+	cat "$TEST_LOG" >> "$LOGFILE"
+
+	# Cleanup, based on the value of TC_CVS_CLEANUP.
+	case $TC_CVS_CLEANUP in
+		none)
+			;;
+		logs)
+			rm -f "$TEST_LOG"
+			;;
+		all_on_pass)
+			if [ $_test_stat -eq 0 ]
+			then
+				cd "$WORK_DIR"
+				rm -rf "$1" >> "$LOGFILE" 2>&1
+			fi
+			;;
+		all_always)
+			cd "$WORK_DIR"
+			rm -rf "$1" >> "$LOGFILE" 2>&1
+			;;
+		*)
+			printf "bohem $_bohem_version Warning:\n" >> "$LOGFILE"
+			printf "\tReceived unknown value of $TC_CVS_CLEANUP for TC_CVS_CLEANUP - ignoring.\n" >> "$LOGFILE"
+			;;
+	esac
+
+	exit $_test_stat
+
+
+elif [ -x "$1" ]
+then
+	# Case 2: executable file
+	# This breaks all the rules, and is kept _strictly_ for downwards
+	# compatibility (downwards with test-suites written before bohem). This case
+	# will probably get more mangeled in the future as additional "existing"
+	# test-suites are incorporated into bohem, however, downwards compatibility
+	# (that is, this functionality of this case) must be maintained.
+
+	DATE_TIME=`date +%Y%m%d-%H%M%S`
+	START_TIME=$DATE_TIME
+	TEST_LOG="$1.${DATE_TIME}.log"
+	printf "\t**********  Starting $1  **********\n" > "$TEST_LOG"
+	# note the single redirect: this will overwrite existing TEST_LOG, if any
+	cat "$_tmp_cvslog" >> "$TEST_LOG"
+	rm "$_tmp_cvslog"
+	printf "Test started: %s\n" "$(date)" >> "$TEST_LOG"
+	printf "Current directory: %s\n" "$PWD" >> "$TEST_LOG"
+	# We can wait with this until here, once TEST_LOG actually exists, but it
+	# must be done before the test is run just in case the test is executing
+	# assorted cd's.
+	eval `globalize TEST_LOG`
+
+	# run the actual test
+	_command='"$1" >> "$TEST_LOG" 2>&1'
+	eval tc_monitor "$_command" $TC_TIMEOUT	# eval needed to unpack the $1
+	_test_stat=$?
+
+	grep -c "^${_bohem_log_prefix}PASSED:" "$TEST_LOG" > /dev/null 2>&1
+	_any_passes=$?
+	grep -c "^${_bohem_log_prefix}FAILED:" "$TEST_LOG" > /dev/null 2>&1
+	_any_fails=$?
+	grep -c "^${_bohem_log_prefix}SKIPPED:" "$TEST_LOG" > /dev/null 2>&1
+	_any_skips=$?
+	grep -c "^${_bohem_log_prefix}BROKEN:" $TEST_LOG >/dev/null 2>&1
+	_any_broken=$?
+
+	if [ $_single_result_per_script -eq 1 ]; then
+		if [ $_any_fails -eq 0 ]
+		then
+			msg="FAILED: $TC_NAME [$START_TIME] ($SECONDS sec.)$test_number"
+			echo -e "$red$msg$white"
+			printf "$msg\n" >> $TEST_LOG
+			_test_stat=1
+		elif [ $_any_passes -eq 0 ]
+		then
+			msg="PASSED: $TC_NAME [$START_TIME] ($SECONDS sec.)$test_number"
+			echo -e "$green$msg$white"
+			printf "$msg\n" >> $TEST_LOG
+		elif [ $_any_skips -eq 0 ]
+		then
+			printf "SKIPPED: $TC_NAME [$START_TIME] ($SECONDS sec.)$test_number\n" | tee -a "$TEST_LOG"
+		elif [ $_any_broken -eq 0 ]
+		then
+			printf "BROKEN: $TC_NAME [$START_TIME] ($SECONDS sec.)$test_number\n" | tee -a "$TEST_LOG"
+		elif [ $_test_stat -eq 0 ]
+		then
+			msg="PASSED: $TC_NAME [$START_TIME] ($SECONDS sec.)$test_number"
+			echo -e "$green$msg$white"
+			printf "$msg\n" >> $TEST_LOG
+		else
+			msg="FAILED: $TC_NAME [$START_TIME] ($SECONDS sec.)$test_number"
+			echo -e "$red$msg$white"
+			printf "$msg\n" >> $TEST_LOG
+		fi
+	else
+		if [ $_any_passes -ne 0 ] && [ $_any_fails -ne 0 ] && [ $_any_skips -ne 0 ] && [ $_any_broken -ne 0 ]; then
+			## Script reported no results, so use it's exit status
+			if [ $_test_stat -eq 0 ]
+			then
+				msg="PASSED: $TC_NAME [$START_TIME] ($SECONDS sec.)$test_number"
+				echo -e "$green$msg$white"
+				printf "$msg\n" >> $TEST_LOG
+			else
+				msg="FAILED: $TC_NAME [$START_TIME] ($SECONDS sec.)$test_number"
+				echo -e "$red$msg$white"
+				printf "$msg\n" >> $TEST_LOG
+			fi
+		fi
+	fi
+	printf "Test ended: %s\n\n" "$(date)" >> "$TEST_LOG"
+
+	# duplicate the test-case logfile in the master logfile
+	cat "$TEST_LOG" >> "$LOGFILE"
+
+	# Cleanup, based on the value of TC_CVS_CLEANUP.
+	case $TC_CVS_CLEANUP in
+		none)
+			;;
+		logs)
+			rm -f "$TEST_LOG"
+			;;
+		all_on_pass)
+			if [ $_test_stat -eq 0 ]
+			then
+				cd "$WORK_DIR"
+				rm -rf "${ADJUST_DIR}/${1}" >> "$LOGFILE" 2>&1
+				rm -f "$TEST_LOG"
+			fi
+			;;
+		all_always)
+			cd "$WORK_DIR"
+			rm -rf "${ADJUST_DIR}/${1}" >> "$LOGFILE" 2>&1
+			rm -f "$TEST_LOG"
+			;;
+		*)
+			printf "bohem $_bohem_version Warning:\n" >> "$LOGFILE"
+			printf "\tReceived unknown value of $TC_CVS_CLEANUP for TC_CVS_CLEANUP - ignoring.\n" >> "$LOGFILE"
+			;;
+	esac
+
+	exit $_test_stat
+
+
+elif [ -f "$1" ]
+then
+	# Case 3: plain file
+	# The argument (a plain file) will get sliced up (by parse_test_list script)
+	# and fed back to this script line-by-line. This way, a test-list can contain
+	# any of the four items described in this script, including another test-list.
+	# Please notice, that as far as bohem is concerned, the only difference
+	# between case 2 and 3, is that 2 (which is checked for first) is executable.
+	parse_test_list "$1" 2> /dev/null
+	exit_test_list=$?
+	if [ $exit_test_list -eq 4 ]
+	then
+		printf "bohem $_bohem_version Info:\n" | tee -a "$LOGFILE"
+		printf "\tTest case flagged as CRITICAL failed, causing the rest of test list $1 to be skipped.\n"\ | tee -a "$LOGFILE"
+	elif [ $exit_test_list -eq 126 ]
+	then
+		printf "bohem $_bohem_version Fatal ERROR:\n" | tee -a "$LOGFILE" "$ERRFILE"
+		printf "\tCould not find required gawk interpreter.\n\n" | tee -a "$LOGFILE" "$ERRFILE"
+		exit 3
+	fi
+
+
+elif [ -f "${_bohem_dir}/share/$1.test.list" ]
+then
+	# Case 4: keyword test-list
+	# This is intended as a shortcut for "canned" test lists which live in
+	# share/*.test.list. The supplied keyword will get expanded to
+	# ${_bohem_dir}/share/$1.test.list and, if it exists, will get sliced same
+	# as case 3 above.
+	parse_test_list "${_bohem_dir}/share/$1.test.list" 2> /dev/null
+	exit_test_list=$?
+	if [ $exit_test_list -eq 4 ]
+	then
+		printf "bohem $_bohem_version Info:\n" | tee -a "$LOGFILE"
+		printf "\tTest case flagged as CRITICAL failed, causing the rest of test list $1 to be skipped.\n"\ | tee -a "$LOGFILE"
+	elif [ $exit_test_list -eq 126 ]
+	then
+		printf "bohem $_bohem_version Fatal ERROR:\n" | tee -a "$LOGFILE" "$ERRFILE"
+		printf "\tCould not find required gawk interpreter.\n\n" | tee -a "$LOGFILE" "$ERRFILE"
+		exit 3
+	fi
+
+
+else
+	# Case default: don't know what that is
+	printf "bohem $_bohem_version ERROR:\n" | tee -a "$LOGFILE" "$ERRFILE"
+	log_fail "FAILED to parse command \"$1\" in test-list ${_test_list}."\
+		| tee -a "$LOGFILE" "$ERRFILE"
+	# The word "FAILED" above, specifically in the first column, will be counted
+	# by the harness as a failing test case!
+	DATE_TIME=`date +%Y%m%d-%H%M%S`
+	START_TIME=$DATE_TIME
+	printf "FAILED: $TC_NAME [$START_TIME] ($SECONDS sec.)\n" >> $LOGFILE
+
+	_exit_stat=1
+
+
+fi
+
+
+rm -f "$_tmp_cvslog"	# properly cleanup all droppings
+exit $_exit_stat
+

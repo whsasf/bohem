@@ -1,0 +1,104 @@
+#!/bin/bash
+
+#shared user1's folder to multiple users
+
+set -x
+
+if [ "$MXOS1_HOST_IP" = "" ] || [ "$MXOS1_HOST_IP" = "nohost.invalid" ]; then
+        log_skip "MXOS not installed"
+        exit 0
+fi
+
+if [ "$MX1_HOST_IP" = "" ] || [ "$MX1_HOST_IP" = "nohost.invalid" ]; then
+        log_skip "MX not installed"
+        exit 0
+fi
+
+cleanup()
+{
+        mos_delete_user.sh $MXOS1_HOST_IP $MXOS1_PORT user1@$domain
+        mos_delete_user.sh $MXOS1_HOST_IP $MXOS1_PORT user2@$domain
+        mos_delete_user.sh $MXOS1_HOST_IP $MXOS1_PORT user3@$domain
+        mos_delete_domain.sh $MXOS1_HOST_IP $MXOS1_PORT $domain
+}
+
+
+domain="$(words.sh)$$.dom"
+domaincp="$(words.sh)$$.dom"
+tag="$(words.sh)"
+
+#create domain
+curl -X PUT -v -d type=local http://$MXOS1_HOST_IP:$MXOS1_PORT/mxos/domain/v2/$domain
+
+
+## Create User
+curl -X PUT -v -d email=user1@$domain -d password=p -d cosId=default http://$MXOS1_HOST_IP:$MXOS1_PORT/mxos/mailbox/v2/user1@$domain
+curl -X PUT -v -d email=user2@$domain -d password=p -d cosId=default http://$MXOS1_HOST_IP:$MXOS1_PORT/mxos/mailbox/v2/user2@$domain
+curl -X PUT -v -d email=user3@$domain -d password=p -d cosId=default http://$MXOS1_HOST_IP:$MXOS1_PORT/mxos/mailbox/v2/user3@$domain
+
+#SharedFolder to user2
+curl -X PUT -v -H "Content-Type: application/x-www-form-urlencoded" http://$MXOS1_HOST_IP:$MXOS1_PORT/mxos/mailbox/v2/user1@$domain/folders/INBOX/share/user2@$domain > put.log 2>&1
+
+grep -i "HTTP/1.1 200 OK" put.log
+if (( $? == 0 ));then
+    log_pass "Shard folder successfully"
+else
+    log_fail "Cannot shared folder"
+fi
+
+curl -X GET -v http://$MXOS1_HOST_IP:$MXOS1_PORT/mxos/mailbox/v2/user2@$domain > get.log 2>&1
+grep -i "sharedFolders" get.log
+if (( $? == 0 ));then
+    log_pass "Get the shared folder"
+else
+    log_fail "Cannot get the shared folder"
+fi
+
+#sharedfolder to user3
+curl -X PUT -v -H "Content-Type: application/x-www-form-urlencoded" http://$MXOS1_HOST_IP:$MXOS1_PORT/mxos/mailbox/v2/user1@$domain/folders/INBOX/share/user3@$domain > put1.log 2>&1
+
+grep -i "HTTP/1.1 200 OK" put1.log
+if (( $? == 0 ));then
+    log_pass "Shard folder successfully"
+else
+    log_fail "Cannot shared folder"
+fi
+
+curl -X GET -v http://$MXOS1_HOST_IP:$MXOS1_PORT/mxos/mailbox/v2/user2@$domain > get1.log 2>&1
+grep -i "sharedFolders" get1.log
+if (( $? == 0 ));then
+    log_pass "Get the shared folder"
+else
+    log_fail "Cannot get the shared folder"
+fi
+
+#UnSharedFolder
+curl -X DELETE -v -H "Content-Type: application/x-www-form-urlencoded" http://$MXOS1_HOST_IP:$MXOS1_PORT/mxos/mailbox/v2/user1@$domain/folders/INBOX/share/user2@$domain > del.log 2>&1
+
+grep -i "HTTP/1.1 200 OK" del.log
+if (( $? == 0 ));then
+    log_pass "Shared folder successfully"
+else
+    log_fail "Shared folder failed"
+fi
+
+#UnSharedFolder
+curl -X DELETE -v -H "Content-Type: application/x-www-form-urlencoded" http://$MXOS1_HOST_IP:$MXOS1_PORT/mxos/mailbox/v2/user1@$domain/folders/INBOX/share/user3@$domain > del1.log 2>&1
+
+grep -i "HTTP/1.1 200 OK" del1.log
+if (( $? == 0 ));then
+    log_pass "Unshared folder successfully"
+else
+    log_fail "Unshared folder failed"
+fi
+
+#clean up
+rm -rf put.log
+rm -rf get.log
+rm -rf del.log
+rm -rf put1.log
+rm -rf get1.log
+rm -rf del1.log
+
+cleanup
+

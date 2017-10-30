@@ -1,0 +1,49 @@
+###
+### This is a bash implementation of the nplexlib hash function hashi
+###
+### Mostly in the C code you would just use the first line hash=XX
+###  in the case of countersd failover, the subsequent lines are used.
+###
+###  ./hash <string> <N>
+###
+
+do_hash()
+{
+	local string="$1"
+
+	hash=0
+	i=0
+	while [ "${string:$i:1}" != "" ]; do
+		c=$(echo ${string:$i:1} | tr -d "\n" | od -An -t uC)
+		hash=$(echo "$hash * 33 + $c" | bc)
+		hash=$(echo "$hash % 4294967296" | bc)
+		i=$((i+1))
+	done
+	mod=$(echo "$hash % $N" | bc)
+	x=0
+	for server in `seq 0 25`
+	do
+		var="server_$server"
+		if [ "${!var}" != "" ]; then
+			continue
+		fi
+		if [ "$x" = "$mod" ]; then
+			echo "$string mod=$mod N=$N hash=$server"
+			eval $var=used
+			break
+		fi
+		x=$((x+1))
+	done
+}
+
+string="$1"
+N=$2
+
+string=$(echo $string | tr '[A-Z]' '[a-z]')
+
+for backup in "" `seq 1 $((N-1))`
+do
+	do_hash "${backup}$string"
+	N=$((N-1))
+done
+

@@ -1,0 +1,435 @@
+#!/usr/bin/gawk -f
+#########1#########2#########3#########4#########5#########6#########7#########8
+# 
+# $Header: /home/kbreslin/cvs/bohem/bin/parse_test_list,v 1.34 2007-11-28 17:32:24 ccroke Exp $
+#
+# This script will parse individual test-lists. Execution of individual tests, is
+# handeled by the parse_and_execute brother script.
+# A test-list can have specific syntax commands, each of which is discussed in its
+# own section below.
+#
+#########1#########2#########3#########4#########5#########6#########7#########8
+
+
+function tokenize( this_field,	i ) {
+	# Function is used to split appart a detected field into token (global
+	# variable), and then purged from the record.
+
+	# Find which field in the record caused the match.
+	i=1
+	while( $i !~ this_field )
+		i++
+	# Separate the field from the value; this creates the token global array.
+	split( $i, token, "=" )
+	$i=""	# get rid of the field
+	$0=$0	# rebuild the record as well as the NF
+}
+
+
+BEGIN {
+	# One nasty "feature" of (g)awk is that it cannot modify environment
+	# variables that are passed to children scripts. One workaround is to
+	# implement a "source" file, which will be sourced at the begining of every
+	# system call.
+	# Initialize the source file to all defaults.
+	source_file= "/tmp/" ENVIRON["_bohem_self"] ".source." PROCINFO["pid"]
+	print ":" > source_file	# a single colon is "no-opt" in bash-speak
+	
+	# Figure out if tracing is on.
+	if ( and( ENVIRON["_trace_level"], ENVIRON["_trace_testlist"] ) == ENVIRON["_trace_testlist"] )
+		TRACE="ON"
+	else
+		TRACE="OFF"
+	
+	REPEAT_COUNT=1	# initialize the count
+}
+
+
+NF == 0 {
+	# blank line -> ignore
+	next
+}
+
+
+/^[[:blank:]]*#/ {
+	# comment line -> ignore
+	next
+}
+
+
+/USER_[[:print:]]+=[[:print:]]+/ {
+	# This command is used to turn test cases on/off. You could prepend a test
+	# case in the test list with a variable like USER_FOO=BAR. If this same
+	# variable exists in the environment, ie 'export USER_FOO=BAR', then the test
+	# case will be run. Otherwise, the test case will be silently skipped.
+
+	if( TRACE == "ON" ) {
+		print FILENAME " " FNR ": USER command found." >> ENVIRON["_trace_log"]
+		print $0 >> ENVIRON["_trace_log"]
+	}
+
+	tokenize( "USER_" )
+
+	if( TRACE == "ON" ) {
+		print FILENAME " " FNR ": Environment has " token[1] "=" ENVIRON[token[1]] >> ENVIRON["_trace_log"]
+	}
+
+	if( ENVIRON[token[1]] != token[2] ) {
+		if( TRACE == "ON" ) {
+			print FILENAME " " FNR ": Skipping." >> ENVIRON["_trace_log"]
+		}
+		next	# line from test-list
+	}
+}
+
+
+/[[:print:]]+_MIN_VERSION=[[:digit:]]+\.[[:digit:]]+/ {
+	# This command ensures that a minimum product version is running for a given
+	# test. If the supplied version is below this minimum, the test will be
+	# silently(!) skipped.
+	# A product version number must have the following pattern:
+	# <major1>.<major2>.<minor>[.<patch>]. Currently the version comparison is
+	# done only up to minor; the patch level is ignored. If the test-list has a
+	# XX_MIN_VERSION=<value> entry, there must be a corresponding
+	# XX_VERSION=<value> set in the user.vars. The two are then split and
+	# compared piece by piece.
+
+	# The regex that captures this case, does all the sanity checking! :)
+	if( TRACE == "ON" ) {
+		print FILENAME " " FNR ": MIN_VERSION suspect" >> ENVIRON["_trace_log"]
+		print $0 >> ENVIRON["_trace_log"]
+	}
+
+	tokenize( "_MIN_VERSION" )
+
+	# break the field into pieces -> to get the "xx" part into field[1]
+	split( token[1], field, "_" )
+	# Note to future generations: This will blow up, if the underscore character
+	# "_" is a valid part of your naming convention. The answer is in some
+	# combination of index and substr functions. But today is a Monday, so I am
+	# passing this off for when it actually does blow up.
+
+	# split the version supplied in environment
+	split( ENVIRON[ field[1] "_VERSION" ], value, "." )
+
+	# dev. are doing some "amazing" things with versioning. The supplied
+	# MIN_VERSION, in token[2], can now be a comma separated list. :-\
+	count_versions=split( token[2], multi_min_value, "," )
+	if( TRACE == "ON" ) {
+		print FILENAME " " FNR ": Number of versions found: " count_versions >> ENVIRON["_trace_log"]
+		for( i in multi_min_value )
+			print FILENAME " " FNR ": Test " i ": " multi_min_value[i] >> ENVIRON["_trace_log"]
+	}
+
+	test_ok="FALSE"
+	one_too_high="FALSE"
+	one_too_low="FALSE"
+	for( i=1; i<=count_versions; i++ ) {
+		toohigh=""
+		toolow=""
+		count_field=split(multi_min_value[i], min_value, "." )
+		for (j=1; j<count_field; j++) {
+			if (min_value[j] < value[j]) {
+				## Definitely no good
+				toohigh="TRUE"
+				break
+			} else if (min_value[j] > value[j]) {
+				toolow="TRUE"
+				break
+			}
+		}
+		if (toolow == "TRUE") {
+			if (TRACE == "ON") {
+				print FILENAME " " FNR ": " ENVIRON[ field[1] "_VERSION" ] " onelower " multi_min_value[i] >> ENVIRON["_trace_log"]
+			}
+			one_too_low="TRUE"
+			continue
+		}
+		if (toohigh == "TRUE") {
+			if (TRACE == "ON") {
+				print FILENAME " " FNR ": " ENVIRON[ field[1] "_VERSION" ] " onehigher " multi_min_value[i] >> ENVIRON["_trace_log"]
+			}
+			one_too_high="TRUE"
+			continue
+		}
+		if (min_value[count_field] <= value[count_field]) {
+			if (TRACE == "ON") {
+				print FILENAME " " FNR ": " ENVIRON[ field[1] "_VERSION" ] " ok " multi_min_value[i] >> ENVIRON["_trace_log"]
+			}
+			test_ok="TRUE"
+			break
+		} else {
+			if (TRACE == "ON") {
+				print FILENAME " " FNR ": " ENVIRON[ field[1] "_VERSION" ] " last onelower " multi_min_value[i] >> ENVIRON["_trace_log"]
+			}
+			one_too_low="TRUE"
+			continue
+		}
+	}
+	if (test_ok == "FALSE" && one_too_high == "TRUE" && one_too_low == "FALSE") {
+		# Our version is higher than all listed
+		if (TRACE == "ON") {
+			print FILENAME " " FNR ": " ENVIRON[ field[1] "_VERSION" ] " is higher " token[2] >> ENVIRON["_trace_log"]
+		}
+		test_ok="TRUE"
+	}
+
+	if( test_ok != "TRUE" ) {
+		next	# line from test list
+	}
+
+	if( TRACE == "ON" ) {
+		print FILENAME " " FNR ": MIN_VERSION test done" >> ENVIRON["_trace_log"]
+		print $0 >> ENVIRON["_trace_log"]
+	}
+}
+
+/[[:print:]]+_MAX_VERSION=[[:digit:]]+\.[[:digit:]]+\.[[:digit:]]+/ {
+	# This command ensures that a maximum product version is running for a given
+	# test. If the supplied version is below this maximum, the test will be
+	# silently(!) skipped.
+	# A product version number must have the following pattern:
+	# <major1>.<major2>.<minor>[.<patch>]. Currently the version comparison is
+	# done only up to minor; the patch level is ignored. If the test-list has a
+	# XX_MAX_VERSION=<value> entry, there must be a corresponding
+	# XX_VERSION=<value> set in the user.vars. The two are then split and
+	# compared piece by piece.
+
+	# The regex that captures this case, does all the sanity checking! :)
+	if( TRACE == "ON" ) {
+		print FILENAME " " FNR ": MAX_VERSION suspect" >> ENVIRON["_trace_log"]
+		print $0 >> ENVIRON["_trace_log"]
+	}
+
+	tokenize( "_MAX_VERSION" )
+
+	# break the field into pieces -> to get the "xx" part into field[1]
+	split( token[1], field, "_" )
+	# Note to future generations: This will blow up, if the underscore character
+	# "_" is a valid part of your naming convention. The answer is in some
+	# combination of index and substr functions. But today is a Monday, so I am
+	# passing this off for when it actually does blow up.
+
+	# split the version supplied in environment
+	count_field=split( ENVIRON[ field[1] "_VERSION" ], value, "." )
+
+	# dev. are doing some "amazing" things with versioning. The supplied
+	# MAX_VERSION, in token[2], can now be a comma separated list. :-\
+	count_versions=split( token[2], multi_max_value, "," )
+	if( TRACE == "ON" ) {
+		print FILENAME " " FNR ": Number of versions found: " count_versions >> ENVIRON["_trace_log"]
+		for( i in multi_max_value )
+			print FILENAME " " FNR ": Test " i ": " multi_max_value[i] >> ENVIRON["_trace_log"]
+	}
+
+	test_ok="FALSE"
+	one_too_high="FALSE"
+	one_too_low="FALSE"
+	for( i=1; i<=count_versions; i++ ) {
+		toohigh=""
+		toolow=""
+		split(multi_max_value[i], max_value, "." )
+		if (TRACE == "ON") {
+			print FILENAME " " FNR ": " ENVIRON[ field[1] "_VERSION" ] " MAX: " multi_max_value[i] >> ENVIRON["_trace_log"]
+		}
+		for (j=1; j<count_field; j++) {
+			if (value[j] < max_value[j]) {
+				## Definitely no good
+				toolow="TRUE"
+				break
+			} else if (value[j] > max_value[j]) {
+				toohigh="TRUE"
+				break
+			}
+		}
+		if (toolow == "TRUE") {
+			if (TRACE == "ON") {
+				print FILENAME " " FNR ": " ENVIRON[ field[1] "_VERSION" ] " onelower " multi_max_value[i] >> ENVIRON["_trace_log"]
+			}
+			one_too_low="TRUE"
+			continue
+		}
+		if (toohigh == "TRUE") {
+			if (TRACE == "ON") {
+				print FILENAME " " FNR ": " ENVIRON[ field[1] "_VERSION" ] " onehigher " multi_max_value[i] >> ENVIRON["_trace_log"]
+			}
+			one_too_high="TRUE"
+			continue
+		}
+		if (value[count_field] <= max_value[count_field]) {
+			if (TRACE == "ON") {
+				print FILENAME " " FNR ": " ENVIRON[ field[1] "_VERSION" ] " ok " multi_max_value[i] >> ENVIRON["_trace_log"]
+			}
+			test_ok="TRUE"
+			break
+		} else {
+			if (TRACE == "ON") {
+				print FILENAME " " FNR ": " ENVIRON[ field[1] "_VERSION" ] " last onelower " multi_max_value[i] >> ENVIRON["_trace_log"]
+			}
+			one_too_high="TRUE"
+			continue
+		}
+	}
+	if (test_ok == "FALSE" && one_too_high == "FALSE" && one_too_low == "TRUE") {
+		# Our version is higher than all listed
+		if (TRACE == "ON") {
+			print FILENAME " " FNR ": " ENVIRON[ field[1] "_VERSION" ] " is higher " token[2] >> ENVIRON["_trace_log"]
+		}
+		test_ok="TRUE"
+	}
+
+	if( test_ok != "TRUE" ) {
+		next	# line from test list
+	}
+
+	if( TRACE == "ON" ) {
+		print FILENAME " " FNR ": MAX_VERSION test done" >> ENVIRON["_trace_log"]
+		print $0 >> ENVIRON["_trace_log"]
+	}
+}
+
+
+/ADJUST_DIR=[[:print:]]+/ {
+	# This command is intended, at conception, for old-style test cases which did
+	# not have WORK_DIR as one common point of storage. WORK_DIR will effectively
+	# get adjusted by ADJUST_DIR, which should be relative to WORK_DIR.
+	# One way of looking at this: Before each test case is executed, the harness
+	# performs a cd $WORK_DIR. When running two old-style test-suites
+	# back-to-back (take cpms.wrapper.kb and cal.wrapper suites for example),
+	# this will not work. Having each test case preceeded with a ADJUST_DIR is
+	# meant to compensate this.
+	# Another way of looking at this: If one were to take the path
+	# $ADJUST_DIR/<test_case_entry_from_test-list>, one should arrive at the
+	# _complete_ location the given test case is stored under in CVS.
+
+	if( TRACE == "ON" ) {
+		print FILENAME " " FNR ": ADJUST_DIR suspect" >> ENVIRON["_trace_log"]
+		print $0 >> ENVIRON["_trace_log"]
+	}
+
+	tokenize( "ADJUST_DIR" )
+
+	# ADJUST_DIR is passed through the source file.
+	print "ADJUST_DIR=" token[2] >> source_file
+	print "export ADJUST_DIR" >> source_file
+
+	if( TRACE == "ON" ) {
+		print FILENAME " " FNR ": ADJUST_DIR processing done" >> ENVIRON["_trace_log"]
+		print $0 >> ENVIRON["_trace_log"]
+	}
+}
+
+
+/TC_TIMEOUT=[[:digit:]]+/ {
+	# This controls the test case monitor (see bin/tc_monitor). It is the only
+	# way of setting the timeout for an individual Stream 1 test case.
+
+	if( TRACE == "ON" ) {
+		print FILENAME " " FNR ": TC_TIMEOUT found" >> ENVIRON["_trace_log"]
+		print $0 >> ENVIRON["_trace_log"]
+	}
+
+	tokenize( "TC_TIMEOUT" )
+
+	# TC_TIMEOUT is passed through the source file.
+	print "TC_TIMEOUT=" token[2] >> source_file
+	print "export TC_TIMEOUT" >> source_file
+
+	if( TRACE == "ON" ) {
+		print FILENAME " " FNR ": TC_TIMEOUT processing done" >> ENVIRON["_trace_log"]
+		print $0 >> ENVIRON["_trace_log"]
+	}
+}
+
+
+/CRITICAL/ {
+	# A test case "flagged" as CRITICAL must pass. If it fails, the remainder of
+	# the test list will be skipped.
+
+	if( TRACE == "ON" ) {
+		print FILENAME " " FNR ": CRITICAL test flagged." >> ENVIRON["_trace_log"]
+		print $0 >> ENVIRON["_trace_log"]
+	}
+
+	tokenize( "CRITICAL" )
+	critical="YES"
+}
+
+
+/TC_CVS_UPDATE=[[:print:]]+/ {
+	# This command controls updating of the test case before it is run.
+
+	if( TRACE == "ON" ) {
+		print FILENAME " " FNR ": TC_CVS_UPDATE found" >> ENVIRON["_trace_log"]
+		print $0 >> ENVIRON["_trace_log"]
+	}
+
+	tokenize( "TC_CVS_UPDATE" )
+
+	# TC_CVS_UPDATE is passed through the source file.
+	print "TC_CVS_UPDATE=" token[2] >> source_file
+	print "export TC_CVS_UPDATE" >> source_file
+}
+
+
+/TC_CVS_CLEANUP=[[:print:]]+/ {
+	# This command controls cleanup of the test case after it is run.
+
+	if( TRACE == "ON" ) {
+		print FILENAME " " FNR ": TC_CVS_CLEANUP found" >> ENVIRON["_trace_log"]
+		print $0 >> ENVIRON["_trace_log"]
+	}
+
+	tokenize( "TC_CVS_CLEANUP" )
+
+	# TC_CVS_CLEANUP is passed through the source file.
+	print "TC_CVS_CLEANUP=" token[2] >> source_file
+	print "export TC_CVS_CLEANUP" >> source_file
+}
+
+
+/REPEAT=[[:digit:]]+/ {
+	# This wil simply repeat the test case given numberof times.
+
+	if( TRACE == "ON" ) {
+		print FILENAME " " FNR ": REPEAT command found" >> ENVIRON["_trace_log"]
+		print $0 >> ENVIRON["_trace_log"]
+	}
+
+	tokenize( "REPEAT" )
+
+	REPEAT_COUNT=token[2]
+}
+
+
+	{
+	# assume we found something that parse_and_execute can handle
+
+	if( TRACE == "ON" ) {
+		print FILENAME " " FNR ": passed to parse_and_execute" >> ENVIRON["_trace_log"]
+		print ". " source_file "; parse_and_execute " $0 >> ENVIRON["_trace_log"]
+		system( "cat " source_file " >> $_trace_log" )
+	}
+
+	for ( ; REPEAT_COUNT>0; REPEAT_COUNT-- ) {
+		exit_stat=system( ". " source_file "; parse_and_execute " $0 " " NR)
+		if( critical == "YES"  &&  exit_stat != 0 )
+			exit 4	# terminates the current test list
+		if( exit_stat == 200 )
+			exit 0	# this is for VERIFY_SERVICE
+	}
+
+	# Reset everything back to defaults.
+	critical="NO"
+	REPEAT_COUNT=1
+	close( source_file )
+	print ":" > source_file
+}
+
+
+END {
+	# Cleanup.
+	close( source_file )
+	system( "rm " source_file )
+}
+

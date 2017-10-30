@@ -1,0 +1,12 @@
+#!/bin/bash
+
+listname=$1
+
+$WORK_DIR/../razorgate-razorlist/razorlist.py -host $RG_SMTP1_HOST LIST $listname \* | tee tmp.txt
+
+for ip in $(cat tmp.txt | grep "^\* 0,$listname,.*,perm-ip," | cut -f 3 -d ',')
+do
+    echo "Entry to delete: $ip"
+    $WORK_DIR/../razorgate-razorlist/razorlist.py -host $RG_SMTP1_HOST DELETE $listname $ip 
+done
+

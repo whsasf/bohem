@@ -1,0 +1,19 @@
+**************************************************
+		README.bohem
+**************************************************
+
+The (very) Quick-start guide:
+
+1. bohem is stored at ssh://git@bitbucket.org/openwave/bohem (previously at $CVSROOT:qa/tools/bohem).
+2. bohem is not embedded together with a test suite. You need to check out a test suite
+separately.
+3. You need to create a variables file (either in current directory user.vars, or
+etc/user.vars), specifying all parametrized items in the test suite, as well
+some items that bohem needs. The file will be very similar to etc/global.vars.
+The most important variable to bohem is $WORK_DIR, which points to the root of where you
+checked out the test suite in #2.
+4. You need to create a test list pointing bohem to all the test cases that you want it to
+run. There are several test lists in share/.
+5. To run bohem, execute 'bin/run_tests <test-list>'.
+6. bohem source is fairly well commented. Good luck.
+

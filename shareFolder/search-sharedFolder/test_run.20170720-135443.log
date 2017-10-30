@@ -1,0 +1,167 @@
+	**********  Starting /opt/builds/shareFolder/search-sharedFolder/  **********
+Test started: Thu Jul 20 13:54:43 CST 2017
+* About to connect() to 172.26.203.94 port 8081 (#0)
+*   Trying 172.26.203.94...
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0* Connected to 172.26.203.94 (172.26.203.94) port 8081 (#0)
+> PUT /mxos/domain/v2/dom23195.dom HTTP/1.1
+> User-Agent: curl/7.29.0
+> Host: 172.26.203.94:8081
+> Accept: */*
+> Content-Length: 10
+> Content-Type: application/x-www-form-urlencoded
+> 
+} [data not shown]
+* upload completely sent off: 10 out of 10 bytes
+< HTTP/1.1 200 OK
+< Server: Apache-Coyote/1.1
+< Content-Type: application/json
+< Content-Length: 0
+< Date: Thu, 20 Jul 2017 05:54:43 GMT
+< 
+100    10    0     0  100    10      0    372 --:--:-- --:--:-- --:--:--   384
+* Connection #0 to host 172.26.203.94 left intact
+* About to connect() to 172.26.203.94 port 8081 (#0)
+*   Trying 172.26.203.94...
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0* Connected to 172.26.203.94 (172.26.203.94) port 8081 (#0)
+> PUT /mxos/mailbox/v2/user1@dom23195.dom HTTP/1.1
+> User-Agent: curl/7.29.0
+> Host: 172.26.203.94:8081
+> Accept: */*
+> Content-Length: 49
+> Content-Type: application/x-www-form-urlencoded
+> 
+} [data not shown]
+* upload completely sent off: 49 out of 49 bytes
+< HTTP/1.1 200 OK
+< Server: Apache-Coyote/1.1
+< Content-Type: application/json
+< Transfer-Encoding: chunked
+< Date: Thu, 20 Jul 2017 05:54:43 GMT
+< 
+{ [data not shown]
+100    68    0    19  100    49    298    769 --:--:-- --:--:-- --:--:--   777
+* Connection #0 to host 172.26.203.94 left intact
+7038715741852577303* About to connect() to 172.26.203.94 port 8081 (#0)
+*   Trying 172.26.203.94...
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0* Connected to 172.26.203.94 (172.26.203.94) port 8081 (#0)
+> PUT /mxos/mailbox/v2/user2@dom23195.dom HTTP/1.1
+> User-Agent: curl/7.29.0
+> Host: 172.26.203.94:8081
+> Accept: */*
+> Content-Length: 49
+> Content-Type: application/x-www-form-urlencoded
+> 
+} [data not shown]
+* upload completely sent off: 49 out of 49 bytes
+< HTTP/1.1 200 OK
+< Server: Apache-Coyote/1.1
+< Content-Type: application/json
+< Transfer-Encoding: chunked
+< Date: Thu, 20 Jul 2017 05:54:43 GMT
+< 
+{ [data not shown]
+100    68    0    19  100    49    355    916 --:--:-- --:--:-- --:--:--   924
+* Connection #0 to host 172.26.203.94 left intact
+5488026314555616908imaplist: host[platform-lynn-3] port[10143] user[user1@dom23195.dom] pass[p] cmd[create aaaa]
+TESTPASSED: /opt/builds/shareFolder/search-sharedFolder/: create aaaa OK (0 sec.)
+xx OK CREATE completed
+TESTPASSED: /opt/builds/shareFolder/search-sharedFolder/: create aaaa OK (0 sec.)
+< HTTP/1.1 200 OK
+TESTPASSED: /opt/builds/shareFolder/search-sharedFolder/: Shared folder successfully (2 sec.)
+Received: 220 platform-lynn-3.openwave.com ESMTP server (InterMail vM.9.05.00.00 201-2473-137-117) ready Thu, 20 Jul 2017 13:54:45 +0800
+Sending command (to platform-lynn-3:10025): EHLO dom23195.dom
+Received: 250-platform-lynn-3.openwave.com
+Received: 250-HELP
+Received: 250-VRFY
+Received: 250-XREMOTEQUEUE
+Received: 250-ETRN
+Received: 250-PIPELINING
+Received: 250-DSN
+Received: 250-8BITMIME
+Received: 250 SIZE 30996480
+Sending command (to platform-lynn-3:10025): MAIL FROM:<user1@dom23195.dom>
+Received: 250 Sender <user1@dom23195.dom> Ok
+Sending command (to platform-lynn-3:10025): RCPT TO:<user2@dom23195.dom>
+Received: 250 Recipient <user2@dom23195.dom> Ok
+Sending command (to platform-lynn-3:10025): DATA
+Received: 354 Ok Send data ending with <CRLF>.<CRLF>
+Sending data (to platform-lynn-3:10025): Subject: test23195
+Sending data (to platform-lynn-3:10025): 
+Sending data (to platform-lynn-3:10025): This is a test mail.
+Sending data (to platform-lynn-3:10025): 
+Sending command (to platform-lynn-3:10025): .
+Received: 250 Message received: 20170720055445.AAQ29146.platform-lynn-3.openwave.com@dom23195.dom
+Sending command (to platform-lynn-3:10025): quit
+Received: 221 platform-lynn-3.openwave.com ESMTP server closing connection
+imaplist: host[platform-lynn-3] port[10143] user[user2@dom23195.dom] pass[p] cmd[SELECT INBOX]
+TESTPASSED: /opt/builds/shareFolder/search-sharedFolder/: SELECT INBOX OK (2 sec.)
+* 2 EXISTS
+TESTPASSED: /opt/builds/shareFolder/search-sharedFolder/: SELECT INBOX OK (2 sec.)
+spawn telnet platform-lynn-3 10143
+Trying 172.26.201.237...
+Connected to platform-lynn-3.
+Escape character is '^]'.
+* OK IMAP4 server (InterMail vM.9.05.00.00 201-2473-137-117) ready Thu, 20 Jul 2017 13:54:45 +0800 (CST)
+a login user2@dom23195.dom p
+a OK LOGIN completed
+a select INBOX
+* 2 EXISTS
+* OK [UNSEEN 1] First unseen message
+* OK [UIDVALIDITY 1500530083] UIDs valid
+* OK [UIDNEXT 1002] Predicted next UID
+* FLAGS (\Answered \Flagged \Deleted \Draft \Seen)
+* OK [PERMANENTFLAGS (\* \Answered \Flagged \Deleted \Draft \Seen)] Permanent flags
+* 0 RECENT
+a OK [READ-WRITE] SELECT completed
+a move 2 user1@dom23195.dom-aaaa
+* 2 EXPUNGE
+* 1 EXISTS
+a OK [COPYUID 1500530083 1001 1000] MOVE completed
+a select user1@dom23195.dom-aaaa
+* 1 EXISTS
+* OK [UNSEEN 1] First unseen message
+* OK [UIDVALIDITY 1500530083] UIDs valid
+* OK [UIDNEXT 1001] Predicted next UID
+* FLAGS (\Answered \Flagged \Deleted \Draft \Seen)
+* OK [PERMANENTFLAGS (\* \Answered \Flagged \Deleted \Draft \Seen)] Permanent flags
+* 1 RECENT
+a OK [READ-WRITE] SELECT completed
+a SEARCH subject test23195a logout
+a BAD Invalid criteria list in SEARCH
+< HTTP/1.1 200 OK
+TESTPASSED: /opt/builds/shareFolder/search-sharedFolder/: unshared folder successfully (22 sec.)
++ mos_host=172.26.203.94
++ mos_port=8081
++ email=user1@dom23195.dom
++ shift 3
++ curl -X DELETE http://172.26.203.94:8081/mxos/mailbox/v2/user1@dom23195.dom
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0
++ echo 'TIME User delete: 1'
+TIME User delete: 1
++ exit 0
++ mos_host=172.26.203.94
++ mos_port=8081
++ email=user2@dom23195.dom
++ shift 3
++ curl -X DELETE http://172.26.203.94:8081/mxos/mailbox/v2/user2@dom23195.dom
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0
++ echo 'TIME User delete: 0'
+TIME User delete: 0
++ exit 0
+1
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0
+PASSED: /opt/builds/shareFolder/search-sharedFolder/ [20170720-135443] (24 sec.)
+Test ended: Thu Jul 20 13:55:07 CST 2017
+

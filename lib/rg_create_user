@@ -1,0 +1,66 @@
+#!/bin/bash
+user=$1
+domain=$2
+password=$3
+
+shift 3
+
+set -x
+
+if [ "$user" = "" ]; then
+        exit 1
+fi
+
+if [ "$domain" = "" ]; then
+        exit 1
+fi
+
+if [ "$password" = "" ]; then
+        exit 1
+fi
+
+
+aliasaddresses=""
+
+while [ $# -gt 0 ]; do
+        if [ "$1" = "--aliases" ]; then
+                aliasaddresses=$2
+        else
+                echo "Don't understand option $1"
+                exit 1
+        fi
+        shift 2
+done
+
+if [ "$RG_CONSOLE1_HOST" = "" ] || [ "$RG_CONSOLE1_HOST" = "nohost.invalid" ]; then
+	optstr=""
+	if [ "$aliasaddresses" != "" ] ; then
+		optstr="$optstr --alternate-address $aliasaddresses"
+	fi
+
+	#Using MXOS
+        if [ "$MXOS1_HOST_IP" != "" ] && [ "$MXOS1_HOST_IP"  != "nohost.invalid" ]; then
+                mos_create_user.sh $MXOS1_HOST_IP $MXOS1_PORT "$user@$domain" $password $optstr
+
+                exit 0
+        fi
+
+        #Using MXLdap?
+        if [ "$MX1_HOST_IP" != "" ] && [ "$MX1_HOST_IP"  != "nohost.invalid" ]; then
+                mx_create_user.sh $MX1_USER $MX1_HOST_IP:$MX1_SSH_PORT $MX1_INSTALL $MX1_LDAP_PORT $domain $user $password $optstr
+
+                exit 0
+        fi
+
+        echo "Neither MXOS1 or MX1 is set, at least one of them needs to be set."
+        exit 2
+else
+	manager.pl $CPMS1_HOST $CPMS1_SMTP_MGMT_PORT $CPMS1_PASSWORD "USER $domain ADD $user CPASS=$password MAILBOX=$CPMS1_MAILBOX_PATH/$domain/$user"
+	
+	if [ "$aliasaddresses" != "" ] ; then
+		for addr in $(echo "$aliasaddresses" | tr ',' ' ')
+        	do
+                	manager.pl $CPMS1_HOST $CPMS1_SMTP_MGMT_PORT $CPMS1_PASSWORD "USER $domain ADD $addr ALIAS=$user@$domain"
+        	done
+	fi
+fi

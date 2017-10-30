@@ -1,0 +1,436 @@
+#!/usr/bin/python
+
+from cp_selenium import cp_selenium
+import sys,time,os
+
+tasklist=str(sys.argv[1]);
+sel=None;
+
+def manager(host, port, password, command):
+
+  mgmt_host=host;
+  mgmt_port=port;
+  mgmt_pwd=password;
+  print "manager.pl "+mgmt_host+" "+mgmt_port+" \"\"  \""+command+"\" "+mgmt_pwd
+
+  if (mgmt_port == 6212):
+      out = os.popen("manager.pl "+mgmt_host+" "+mgmt_port+" \"\"  \""+command+"\" "+mgmt_pwd)
+      lines = out.readlines() # read output
+  else:
+      out = os.popen("manager.pl "+mgmt_host+" "+mgmt_port+" "+mgmt_pwd+"  \""+command+"\"")
+      lines = out.readlines() # read output
+
+  for line in lines:
+      print line,
+
+  if (out.close() != None):
+      tcname=str(os.environ.get("TC_NAME"));
+      raise Exception("FAILED: " + tcname + ": manager.pl failed command: "+command) 
+
+  for i in range(0,len(lines)):
+      if (lines[i].find("ERROR") != -1 ):
+          tcname=str(os.environ.get("TC_NAME"));
+          raise Exception("FAILED: " + tcname + ": manager.pl failed command: "+command)
+
+
+def reconfigure_ims_domain(command):
+
+  mshost=str(os.environ.get("CPMS1_HOST"));
+  msport=str(os.environ.get("CPMS1_IMS_MGMT_PORT"));
+  mspwd=str(os.environ.get("CPMS1_PASSWORD"));
+  print "manager.pl "+mshost+" "+msport+" "+mspwd+"  \"RECONFIGURE DOMAIN\""
+
+  out = os.popen("manager.pl "+mshost+" "+msport+" "+mspwd+"  \"RECONFIGURE DOMAIN\"")
+  lines = out.readlines() # read output
+  out.close()
+
+  for line in lines:
+      print line,
+
+  for i in range(0,len(lines)):
+      if (lines[i].find("ERROR") != -1 ):
+          print "Reconfigure failed - sleeping"
+          time.sleep(30)
+
+
+# Create an instance of cp_selenium
+try:
+    sel = cp_selenium()
+except Exception, e:
+    tcname=str(os.environ.get("TC_NAME"));
+    print "TESTFAILED: " + tcname + ": failed to init cp_selenium: "+str(e) + " (0 sec.)"
+    sys.exit(1)
+
+try:
+        DO_LOOP=False
+        LOOP_START=0
+        LOOP_END=0
+        loop_list=[]
+
+        print "Beginning file parse..."
+        for line in open(tasklist,"r"):
+
+            if line == "end_loop\n":
+                DO_LOOP = False
+            else:
+                loop_list.append(line)
+
+            if DO_LOOP == True:
+                continue
+
+            if len(loop_list) > 1:
+                save_list = []
+
+                print "Performing loop "+str(LOOP_END-LOOP_START)+" times with following commands:"
+                print loop_list
+                while True:
+                    for command in loop_list:
+                        save_list.append(command.replace("$COUNTER",str(LOOP_START)))
+                    LOOP_START = LOOP_START + 1
+                    if (LOOP_END-LOOP_START) < 0:
+                        break
+
+                loop_list = save_list[:];
+                loop_list.reverse()
+
+
+            while loop_list:
+                line = loop_list.pop()
+                if (line[0] != "#") and (line != "") and not line.isspace():
+                        tokens = line.split(" \"")
+
+                        for i in range(0,len(tokens)):
+                           tokens[i] = tokens[i].strip()
+                           tokens[i] = tokens[i].strip("\"")
+                           out = os.popen("env echo -ne \""+tokens[i]+"\"")
+                           tokens[i] = out.readline()
+                           out.close()
+
+                        print "Timestamp: " + time.asctime()
+                        print "Reading line:",
+                        for i in range(0,len(tokens)):
+                           if i==0:
+                                   print " action = "+tokens[i],
+                           else:
+                                   print " parameter"+str(i)+" = "+tokens[i],
+                        print ""
+
+                        if tokens[0] == "manager":
+                                if len(tokens) == 2:
+                                    fshost=str(os.environ.get("FS1_HOST"));
+                                    fsport=str(os.environ.get("FS1_MGMT_PORT"));
+                                    fspwd=str(os.environ.get("FS1_WRITE_PASSWORD"));
+                                    manager(fshost, fsport, fspwd, tokens[1])
+                                elif len(tokens) == 5:
+                                    manager(tokens[1], tokens[2], tokens[3], tokens[4])
+
+                        elif tokens[0] == "do_loop":
+                                if len(tokens) == 3:
+                                        DO_LOOP = True;
+                                        LOOP_START = int(tokens[1]);
+                                        LOOP_END = int(tokens[2]);
+                                        if (LOOP_END - LOOP_START) < 0:
+                                            raise Exception("Loop start needs to be smaller than loop end")
+                                else:
+                                        raise Exception("do_loop takes 1 argument <no of times to loop>")
+
+                        elif tokens[0] == "open":
+                                if len(tokens) == 2:
+                                        print "Opening "+tokens[1]
+                                        sel.open(tokens[1])
+                                else:
+                                        raise Exception("Open takes 1 argument <open>")
+
+                        elif tokens[0] == "login":
+                                if len(tokens) == 4:
+                                        sel.login(tokens[1], tokens[2], tokens[3])
+                                else:
+                                        raise Exception("Login takes 2 arguments <user> <password>")
+
+                        elif tokens[0] == "attempt_login":
+                                if len(tokens) == 4:
+                                        sel.attempt_login(tokens[1], tokens[2], tokens[3])
+                                else:
+                                        raise Exception("Login takes 2 arguments <user> <password>")
+
+                        elif tokens[0] == "logout":
+                                if len(tokens) == 1:
+                                        sel.logout()
+                                else:
+                                        raise Exception("logout doesn't take any arguments")
+
+                        elif tokens[0] == "logout_reset":
+                                if len(tokens) == 1:
+                                        sel.logout()
+                                else:
+                                        raise Exception("logout_reset doesn't take any arguments")
+
+                        elif tokens[0] == "check_location_for_text":
+                                if len(tokens) == 3:
+                                        sel.check_location_for_text(tokens[1], tokens[2])
+                                else:
+                                        raise Exception("check_location_for_text takes location and text as params");
+
+                        elif tokens[0] == "move_mail_new_folder":
+                                if len(tokens) == 2:
+                                        sel.move_mail_new_folder(tokens[1])
+                                else:
+                                   raise Exception("move_mail_new_folder takes one option, mail number")
+
+                        elif tokens[0] == "add_mail_folder":
+                                if len(tokens) == 2:
+                                        sel.add_mail_folder(tokens[1])
+                                else:
+                                        raise Exception("Add new mail folder takes one argument")
+
+                        elif tokens[0] == "sendmail_ui":
+                                if len(tokens) == 4:
+                                        sel.sendmail_ui(tokens[1], tokens[2], tokens[3])
+                                else:
+                                        raise Exception("sendmail_ui takes 3 arguments: recipient, subject, body")
+
+                        elif tokens[0] == "selectWindow":
+                                if len(tokens) == 2:
+                                        sel.select_window(tokens[1])
+                                else:
+                                        raise Exception("selectWindow takes one parameter <window>")
+
+                        elif tokens[0] == "get_all_window_names":
+                                if len(tokens) == 1:
+                                        print "Printing window names..."
+                                        print sel.get_all_window_names()
+                                else:
+                                        raise Exception("takes 0 arguments")
+
+                        elif tokens[0] == "window_maximize":
+                                if len(tokens) == 1:
+                                        print "Maximizing the browser window..."
+                                        print sel.window_maximize()
+                                else:
+                                        raise Exception("takes 0 arguments")
+
+                        elif tokens[0] == "sendmail_smtp":
+                                if len(tokens) == 4:
+                                        sel.sendmail_smtp(tokens[1], tokens[2], tokens[3])
+                                else:
+                                        raise Exception("sendmail_smtp takes 3 arguments: recipient, subject, filename for body")
+
+                        elif tokens[0] == "type":
+                                if len(tokens) == 3:
+                                        sel.wait_for_element(tokens[1], 30)
+                                        print "Typing text "+tokens[2]+" in input box "+tokens[1]
+                                        sel.type(tokens[1], tokens[2])
+                                else:
+                                        raise Exception("type takes 2 arguments <location_of_text_field> , <text_to_type>")
+
+                        elif tokens[0] == "sleep":
+                                if len(tokens) == 2:
+                                        print "Sleep "+str(tokens[1])+" secs"
+                                        time.sleep(float(tokens[1]))
+                                else:
+                                        raise Exception("sleep takes 1 argument <no_of_milliseconds>")
+
+                        elif tokens[0] == "click":
+                                if len(tokens) == 2:
+                                        sel.wait_for_element(tokens[1], 30)
+                                        print "Clicking "+tokens[1]
+                                        sel.click(tokens[1])
+                                else:
+                                        raise Exception("Click takes 1 argument <link to click>")
+
+                        elif tokens[0] == "dblclick":
+                                if len(tokens) == 2:
+                                        sel.wait_for_element(tokens[1], 30)
+                                        print "Double Clicking "+tokens[1]
+                                        sel.double_click(tokens[1])
+                                else:
+                                        raise Exception("dblclick takes 1 argument <link to double click>")
+
+                        elif tokens[0] == "shell":
+                                if len(tokens) == 2:
+                                        print "Running shell with command: "+tokens[1]
+                                        sel.run_shell(tokens[1])
+                                else:
+                                        raise Exception("Shell takes 1 argument <command to run>");
+
+                        elif tokens[0] == "select":
+                                if len(tokens) == 3:
+                                        sel.wait_for_element(tokens[1], 30)
+                                        print "Selecting value "+tokens[2]+" from "+tokens[1]
+                                        sel.select(tokens[1], tokens[2])
+                                else:
+                                        raise Exception("Select takes 2 arguments <select element> <value to select>")
+
+                        elif tokens[0] == "selectFrame":
+                                if len(tokens) == 2:
+                                        print "Select Frame  "+tokens[1]
+                                        sel.select_frame(tokens[1])
+                                else:
+                                        raise Exception("Select Frame takes 1 argument <frame>")
+
+                        elif tokens[0] == "verify_text":
+                                if len(tokens) == 2:
+                                        print "Verify text "+tokens[1]
+                                        sel.wait_for_text(tokens[1], 30)
+                                else:
+                                        raise Exception("verify_text takes 1 argument <text_to_verify>")
+
+                        elif tokens[0] == "verify_no_text":
+                                if len(tokens) == 2:
+                                        print "Verify text "+tokens[1]+" is not shown on page"
+                                        sel.verify_no_text(tokens[1])
+                                else:
+                                        raise Exception("verify_no_text takes 1 argument <text_to_verify>")
+
+			elif tokens[0] == "verify_element_present":
+				if len(tokens) == 2:
+					sel.wait_for_element(tokens[1], 30)
+					print "Verify element "+tokens[1]+" is present on the page"
+					sel.verify_element_present(tokens[1])
+				else:
+					raise Exception("verify_element_present takes 1 argument <locator>")
+
+                        elif tokens[0] == "verify_element_not_present":
+                                if len(tokens) == 2:
+                                        print "Verify element "+tokens[1]+" is not shown on page"
+                                        sel.verify_element_not_present(tokens[1])
+                                else:
+                                        raise Exception("verify_element_not_present takes 1 argument <locator>")
+
+                        elif tokens[0] == "verify_text_loc":
+                                if len(tokens) == 3:
+                                        print "Verify text "+tokens[2]+" at location "+tokens[1]
+                                        sel.wait_for_element(tokens[1], 30)
+                                        sel.assertEqual(tokens[2],sel.get_text(tokens[1]))
+                                else:
+                                        raise Exception("verify_text_loc takes 2 arguments <test_loc> <text_to_verify>")
+
+                        elif tokens[0] == "verify_value_loc":
+                                if len(tokens) == 3:
+                                        print "Verify text "+tokens[2]+" at location "+tokens[1]
+                                        sel.wait_for_element(tokens[1], 30)
+                                        sel.assertEqual(tokens[2],sel.get_value(tokens[1]))
+                                else:
+                                        raise Exception("verify_vale_loc takes 2 arguments <test_loc> <text_to_verify>")
+
+                        elif tokens[0] == "verify_not_visible":
+                                if len(tokens) == 2:
+                                        print "Verify element "+tokens[1]+" is not visible"
+                                        if (sel.is_visible(tokens[1])):
+                                                raise Exception("Element "+tokens[1]+" is visible, when it shouldn't be")
+                                else:
+                                        raise Exception("takes 1 argument <location>")
+
+                        elif tokens[0] == "get_all_links":
+                                if len(tokens) == 1:
+                                        print "Printing all links on page"
+                                        print sel.get_all_links()
+                                else:
+                                        raise Exception("takes 0 arguments")
+
+                        elif tokens[0] == "verify_visible":
+                                if len(tokens) == 2:
+                                        print "Verify element "+tokens[1]+" is visible"
+                                        sel.wait_for_element(tokens[1], 30)
+                                        if not sel.is_visible(tokens[1]):
+                                                raise Exception("Element "+tokens[1]+" is not visible, when it should be")
+                                else:
+                                        raise Exception("takes 1 argument <location>")
+                        elif tokens[0] == "verify_image_visible":
+                                if len(tokens) == 3:
+                                        myimage=sel.get_attribute(tokens[1]+"@src")
+                                        if tokens[2] == myimage:
+                                                print "Element "+tokens[1]+" is showing "+tokens[2]
+                                        else:
+                                                raise Exception("Element "+tokens[1]+" is not showing, when it should be")
+                                else:
+                                        raise Exception("takes 2 argument <location>")
+
+                        elif tokens[0] == "assert_no_alert":
+                                if len(tokens) == 1:
+                                        sel.assert_no_alert();
+                                else:
+                                        raise Exception("takes 0 arguments")
+
+                        elif tokens[0] == "search_for_confirmation":
+                                if len(tokens) == 2:
+                                        sel.search_for_confirmation(tokens[1], 30)
+                                else:
+                                        raise Exception("takes 1 argument <popup string>")
+
+                        elif tokens[0] == "get_html_source":
+                                if len(tokens) == 1:
+                                        sel.get_html_source()
+                                else:
+                                        raise Exception("takes 0 arguments")
+
+                        elif tokens[0] == "assertAlert":
+                                if len(tokens) == 2:
+                                        sel.search_for_alert(tokens[1], 30)
+                                else:
+                                        raise Exception("takes 1 argument <alert string>")
+
+                        elif tokens[0] == "verify_address_book_found":
+                                if len(tokens) == 3:
+                                        sel.verify_address_book_found(tokens[1],tokens[2])
+                                else:
+                                        raise Exception("takes 2 argument <abook name> <status>")
+
+                        elif tokens[0] == "click_found_address_book":
+                                if len(tokens) == 2:
+                                        sel.click_found_address_book(tokens[1])
+                                else:
+                                        raise Exception("takes 1 argument <abook name>")
+
+                        elif tokens[0] == "context_menu":
+                                if len(tokens) == 2:
+                                        sel.wait_for_element(tokens[1], 30)
+                                        sel.context_menu(tokens[1])
+                                else:
+                                        raise Exception("takes 1 argument <locator>")
+
+                        elif tokens[0] == "verify_element_position_top":
+                                if len(tokens) == 3:
+                                        sel.verify_element_position_top(tokens[1],tokens[2])
+                                else:
+                                        raise Exception("takes 2 argument <element> <value>")
+
+                        elif tokens[0] == "waitForPopUp":
+                                if len(tokens) == 3:
+                                        sel.wait_for_pop_up(tokens[1],tokens[2])
+                                else:
+                                        raise Exception("takes 2 argument <windowID> <timeout>")
+
+                        elif tokens[0] == "waitForElement":
+                                if len(tokens) == 2:
+                                        sel.wait_for_element(tokens[1],30)
+                                else:
+                                        raise Exception("takes 1 argument <locator>")
+
+                        elif tokens[0] == "waitForText":
+                                if len(tokens) == 2:
+                                        sel.wait_for_text(tokens[1],30)
+                                else:
+                                        raise Exception("takes 1 argument <text>")
+
+                        elif tokens[0] == "mousedown":
+                                if len(tokens) == 2:
+                                        sel.wait_for_element(tokens[1], 30)
+                                        print "mousedown "+tokens[1]
+                                        sel.mouse_down(tokens[1])
+                                else:
+                                        raise Exception("mousedown takes 1 argument <link to mouse down>")
+                        elif tokens[0] == "reconfigure_ims_domain":
+                                if len(tokens) != 1:
+                                        raise Exception("takes no arguments")
+
+                        else:
+                                raise Exception(tokens[0]+" is an unrecognised action")
+
+        raise Exception("PASSED")
+
+except Exception, e:
+        if str(e) == "PASSED":
+            sel.log_pass(str(e))
+        else:
+            sel.log_fail(str(e))

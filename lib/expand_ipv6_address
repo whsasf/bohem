@@ -1,0 +1,52 @@
+#!/bin/bash
+
+
+old_ifs=$IFS
+IFS=":"
+skip=0
+
+i=1
+for f in $1
+do
+	if [ "$f" = "" ]; then
+		## Blank at the start or end can be ignored (sort of)
+		if [ $i -gt 1 ] || [ $i -lt 8 ]; then
+			skip=$i
+		fi
+	fi
+
+	i=$((i + 1))
+done
+count=$((10 - i))
+if [ $count -gt 1 ] && [ $skip -eq 0 ]; then
+	echo "invalid"
+	return
+fi
+
+
+full=""
+i=1
+for f in $1
+do
+	if [ $i -eq $skip ]; then
+		for (( j=0 ; j<$count ; j++ ))
+		do
+			full="${full}:0000"
+			#echo -ne ":"
+		done
+	else
+		if [ $i -gt 1 ]; then
+			full="${full}:"
+		fi
+		f=`echo $f | tr [:upper:] [:lower:]`
+		f="0000$f"
+		four=-4
+		full="${full}${f:$four}"
+		#echo -ne ":$f"
+	fi
+	i=$((i + 1))
+done
+echo "$full"
+
+IFS=$old_ifs
+

@@ -1,0 +1,45 @@
+#!/bin/bash
+
+set -x
+
+rulename="$1"
+node="$2"
+namespace="$3"
+
+
+get_node_host()
+{
+    local node=$1
+    for i in $(seq 1 10)
+    do
+        node_var="RG_SMTP${i}_NODE"
+        if [ "${!node_var}" = "$node" ]; then
+            var="RG_SMTP${i}_HOST" ; imail_hostname=${!var}
+            var="RG_SMTP${i}_IMAIL_USER" ; imail_username=${!var}
+            var="RG_SMTP${i}_INSTALL" ; policy_path="${!var}/mira/usr/store/policyrules/"
+            return
+        fi
+    done
+}
+
+tmpfile=newrule.$$.${RANDOM}
+
+if [ "$RG_CONSOLE1_HOST" = "" ] || [ "$RG_CONSOLE1_HOST" = "nohost.invalid" ]; then
+    ### Config DB mode
+    if [ "$namespace" = "" ]; then
+        echo "must use namespace in config.db mode"
+        exit 1
+    fi
+
+    ## Need to remove escaping added for Cluster Management (any line which is exactly "..")
+    cat | sed 's/^\.\.$/\./' > $tmpfile
+
+    get_node_host $node
+    ssh -o BatchMode=yes -o StrictHostKeyChecking=no $imail_username@$imail_hostname "mkdir -p $policy_path/$namespace"
+    scp -o BatchMode=yes -o StrictHostKeyChecking=no $tmpfile "$imail_username@$imail_hostname:$policy_path/$namespace/$rulename.rule"
+else
+    if [ "$namespace" != "" ]; then
+        namespace="NAMESPACE=$namespace"
+    fi
+    manager.pl $RG_CONSOLE1_HOST $RG_CONSOLE1_PORT $RG_CONSOLE1_PASSWORD "RGT RULEBUILDER SET $rulename $namespace"
+fi

@@ -1,0 +1,10 @@
+#!/bin/bash
+
+rulename="$1"
+
+if [ "$RG_CONSOLE1_HOST" = "" ] || [ "$RG_CONSOLE1_HOST" = "nohost.invalid" ]; then
+	### Config DB mode
+	echo "TODO"
+else
+	manager.pl $RG_CONSOLE1_HOST $RG_CONSOLE1_PORT $RG_CONSOLE1_PASSWORD "RGT RULEBUILDER DELETE ${rulename}"
+fi

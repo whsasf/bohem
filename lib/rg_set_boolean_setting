@@ -1,0 +1,61 @@
+#!/bin/bash
+
+set -x
+
+section="$1"
+setting="$2"
+value="$3"
+node="$4"
+
+service="$5"
+if [ "$service" = "" ]
+then
+	service="smtp"
+fi
+
+
+get_node_host()
+{
+        local node=$1
+        for i in $(seq 1 10)
+        do
+                node_var="RG_SMTP${i}_NODE"
+                if [ "${!node_var}" = "$node" ]; then
+                        var="RG_SMTP${i}_HOST" ; imail_hostname=${!var}
+                        var="RG_SMTP${i}_IMAIL_USER" ; imail_username=${!var}
+                        var="RG_SMTP${i}_OWM_COMMON_INSTALL" ; imail_path=${!var}
+                        var="RG_SMTP${i}_CONFSERV_HOST" ; short_host=${!var}
+                        return
+                fi
+        done
+}
+
+
+if [ "$RG_CONSOLE1_HOST" = "" ] || [ "$RG_CONSOLE1_HOST" = "nohost.invalid" ]
+then
+	##
+	## Config DB mode
+	##
+
+	get_node_host $node
+	key="/$short_host/$service/$setting"
+
+	echo "$value" | grep -q -i "\<true\>" && value=1
+	echo "$value" | grep -q -i "\<false\>" && value=0
+
+	if [ ! -f $WORK_DIR/owm-configdb-lock ]; then
+		ssh -o BatchMode=yes -o StrictHostKeyChecking=no $imail_username@$imail_hostname "$imail_path/bin/imconfcontrol -lockServer"
+		echo $TC_NAME > $WORK_DIR/owm-configdb-lock
+	fi
+
+	ssh -o BatchMode=yes -o StrictHostKeyChecking=no $imail_username@$imail_hostname "$imail_path/bin/imconfcontrol -install -nobroadcast -noRestarts -key $key=$value"
+else
+	##
+	## Cluster Management mode
+	##
+
+	manager.pl $RG_CONSOLE1_HOST $RG_CONSOLE1_PORT $RG_CONSOLE1_PASSWORD "RGT $section SET $setting=$value NODE=$node"
+	manager.pl $RG_CONSOLE1_HOST $RG_CONSOLE1_PORT $RG_CONSOLE1_PASSWORD "RGT $section GET $setting NODE=$node"
+
+
+fi

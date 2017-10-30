@@ -1,0 +1,77 @@
+#!/usr/bin/env parse_selenium
+
+### 
+### This script adds a device to the UI and verifies that it has been added correctly.
+### This script is good for 8.0, 8.5, 8.5.1 (the latest version at the time of writing)
+###
+### Before running this test, you need to set the following five variables in your environment:
+### 
+### DEVICE_NAME           -- Name as it appears in the UI on the add-device page
+### DEVICE_MANUFACTURER   -- Manufacturer name as it appears in the UI after device is added
+### DEVICE_MODEL          -- Model number as it appears in the UI after device is added
+### DEVICE_XML            -- Model number as it appears in the server mappings file
+### domain                -- A domain name to use for the test case
+###
+
+manager "DOMAIN ADD ${domain} SERVICES=PS,SML,PAB PSHTTPPORT=$PS1_PORT"
+manager "USER ADD user ${domain} SERVICES=PS,SML,PAB PASSWORD=p PABPATH=${PAB1_USERDB_DIR}/${domain}/user SMLPATH=${SYNC1_USERDB_DIR}/${domain}/user"
+
+sleep "1"
+
+login "${domain}" "user" "p"
+sleep "3"
+
+click "metaNavTabLinkSync"
+
+click "newDevice"
+sleep "3"
+
+type "deviceNameId" "myphone"
+click "//img[@title='Configure Mobile Phone to sync with this account']"
+sleep "3"
+select "country" "label=Ireland"
+sleep "3"
+select "serviceProvider" "label=Vodafone"
+sleep "3"
+select "model" "label=$DEVICE_NAME"
+sleep "3"
+
+type "phoneNumber" "879238144"
+type "confirmPhoneNumber" "879238144"
+
+click "Continue"
+
+verify_text_loc "//p[4]" "When you are ready to synchronize your data, initiate the sync from your mobile phone."
+
+click "Continue"
+
+assertAlert "The device has been added."
+
+sleep "1"
+
+
+###
+### Check that details are correct in UI
+###
+verify_text_loc "//td/table/tbody/tr[1]/td[2]/table/tbody/tr[1]/td[3]" "$DEVICE_MANUFACTURER"
+verify_text_loc "//td/table/tbody/tr[1]/td[2]/table/tbody/tr[2]/td[2]" "$DEVICE_MODEL"
+verify_text_loc "//td/table/tbody/tr[1]/td[2]/table/tbody/tr[3]/td[2]" "Vodafone"
+verify_text_loc "//td/table/tbody/tr[1]/td[2]/table/tbody/tr[4]/td[2]" "879238144"
+
+click "saveSyncSettingsButton"
+
+sleep "1"
+
+### Ugly hack, as page doesn't load properly
+login "${domain}" "user" "p"
+sleep "3"
+
+click "metaNavTabLinkSync"
+
+###
+### Verify phone is listed.
+###
+
+verify_text_loc "//html/body/table/tbody/tr[2]/td/table/tbody/tr[1]/td[2]" "myphone"
+
+manager "DOMAIN DELETE ${domain} REMOVECONTENTS=TRUE"

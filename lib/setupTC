@@ -1,0 +1,89 @@
+#!/bin/bash
+
+####################################################################################
+##                                                                                ##
+## setupTC --host <host> [ --DEL ] [  --delay <number1>,<number2>,<number3> ]     ##
+##                       [ --corrupt <number4> ] [ --loss <number5> ]             ##
+##                                                                                ##   
+## This script can be used to setup TC settings on the given host.                ##     
+##                                                                                ##
+## Options: --DEL	 	: This will delete existing TC settings on the host.      ##
+##          --delay	 	: This will delay the network by                          ##       
+##							[number1-number2, number1+number2] ms                 ##       
+##						  with delay variance number3%                            ##    
+##          --corrupt	: number4% of data will be corrupted.                     ##
+##          --loss		: number5% of data will be lost                           ## 
+##                                                                                ##  
+####################################################################################
+
+cmd="add"
+while [ $# -ne 0 ]
+do
+	if [ "$1" = "--host" ]; then
+		if [ "$2" = "" ]; then
+			echo "no host"
+			exit 1
+		fi
+		host="$2"
+		shift
+	elif [ "$1" = "--delay" ]; then
+		if [ "$2" = "" ]; then
+			echo "no delay"
+			exit 1
+		fi
+		delays="$2,,"
+		shift
+	elif [ "$1" = "--corrupt" ]; then
+		if [ "$2" = "" ]; then
+			echo "no corrupt"
+			exit 1
+		fi
+		corrupt="$2"
+		shift
+	elif [ "$1" = "--loss" ]; then
+		if [ "$2" = "" ]; then
+			echo "no loss"
+			exit 1
+		fi
+		loss="$2"
+		shift
+	elif [ "$1" = "--del" ]; then
+		cmd="del"
+		shift
+	else
+		echo "ERROR... $1"
+		exit 1
+	fi
+	shift
+done
+
+if [ "$host" = "" ]; then 
+	echo "ERROR no host"
+	exit 1
+fi
+
+echo "Run... rsh -lroot $host tc qdisc del dev eth0 root"
+rsh -lroot $host tc qdisc del dev eth0 root
+
+if [ "$cmd" = "add" ]; then
+	
+	if [ "$delays" != "" ]; then
+		d1=`echo $delays | cut -f 1 -d ,`
+		d2=`echo $delays | cut -f 2 -d ,`
+		d3=`echo $delays | cut -f 3 -d ,`
+		params=" delay ${d1}ms ${d2}ms ${d3}%"
+	fi
+	
+	if [ "$corrupt" != "" ]; then
+		params="$params corrupt ${corrupt}%"
+	fi
+	
+	if [ "$loss" != "" ]; then
+		params="$params loss ${loss}%"
+	fi
+
+	if [ "$params" != "" ]; then
+		echo "Run... rsh -lroot $host tc qdisc add dev eth0 root netem$params"
+		rsh -lroot $host tc qdisc add dev eth0 root netem$params
+	fi
+fi	

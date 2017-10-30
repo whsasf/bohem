@@ -1,0 +1,19 @@
+#!/bin/bash
+
+rg_ip=$1
+ms_ip=$2
+rg_port=${3:-22}
+ms_port=${4:-22}
+
+rg_host=$(ssh -o BatchMode=yes -p $rg_port root@$rg_ip hostname)
+ms_host=$(ssh -o BatchMode=yes -p $ms_port root@$ms_ip hostname)
+
+if [ "$rg_host" = "$ms_host" ]; then
+	rev=$(ssh -o BatchMode=yes -p $rg_port root@$rg_ip uname -r | cut -f 1 -d '.')
+	if [ "$rev" = "2" ]; then
+		echo $ms_ip
+		exit 0
+	fi
+fi
+
+dig $rg_host +short

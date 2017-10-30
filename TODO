@@ -1,0 +1,87 @@
+This is a list of planned / requested features for bohem.
+
+Please do not make new requests by editing this file in CVS, instead contact the current
+maintainer of bohem: <services.qa@cp.net>.
+
+
+==> Immediate:
+
+- 'exec bash' user function
+  Currently this is just a "Technique" (hint: grep "DEBUG" run_tests), rewrite it to be an
+actual user accessible function.
+  I am going write a bash-debugger, which will be 1) better solution to handle this, 2)
+extensible for future requests along similar lines, and 3) much more elegant way of
+handling this.
+  The debuger was going to be based on chapter 9: "Debugging Shell Programs" of the book
+"Learning the bash Shell", see <http://www.oreilly.com/catalog/bash>. There are,
+fortunatelly, plenty of other open-source bash debuggers on the Internet. In my mind, this
+debugger would accept ONLY a stream 2 test as argument, and would be a completely separate
+executable: something like debug_test.
+
+
+==> Short-term:
+
+
+==> Long-term:
+
+- test for broken environments
+  Replace bin/env_test with $CVSROOT:utilities/environment/test-dev-env.sh
+  Actually I am still undecided if this is a good idea, but env_test does need updating.
+
+- log_abort
+  User function which if called will log_fail and CRITICAL the current test.
+  May be not needed, depending on how VERIFY_SERVICES turns out. Latest wibe is that it
+could still be useful to have this functionality.
+
+- manager.exp
+  Replacement for the /clumsy/ manager.pl.
+  Also, gotta check into mgr supplied with CPMS? <- not an option, as this is a AUT not a
+utility, from the point of view of bohem!
+
+- parallelization of TCs
+  Will better utilize available resources and give testers better control over running
+tests. This will also lead to better monitoring of test case run time. This is enough of a
+change, that it will probably lead to bohem3.
+  A possibility is to parallelize supplied arguments on command line.
+  A better handling of test-list.vars needs to be brought into this. The bohem
+documentation describes an issue with test-list.vars, this issue will need to be fixed as
+part of this change!
+
+- message logging and internal communication
+  I am not happy with the current implementation of logging information from bohem. I will
+need to give this more thought however, as I have not been able to come up with anything
+better either. A thought is to create log_info, log_warn, and log_err modules, and call
+those everywhere that bohem logs something. A nice feature could be that each of these
+functions could echo the user-supplied message to stdout if it is say <125 bytes,
+otherwise just print something like "see bohem.log for more details."
+  Along with this I will need to create a mechanism for internal communication, before
+everything collapses under it's own weight. A thought is to define and use specific exit
+codes everywhere. See notes in CVSROOT:qa/creature/bin/taskman for first practical
+attempt at this. Of course, there may very well be a different / better solution!
+
+- A fail file
+  A suggestion from feedback on the Automation Style Guide (by Aidan F.):
+  This could be useful at the start of a project where a lot of test-cases might fail in a
+test-suite as the functionality might not be there in the product. The test runner or
+ideally bohem itself could check this file and flag them as known fails.
+
+- DS building blocks
+  Library of basic functions in bohem, which will be utilized by _all_ tests. For example:
+generic provision a domain, generic provision a user, delete domain, delete user, etc.
+This is sometimes requested as the number two MUST HAVE feature; however, as the test
+suites mature (grow), this will become much less of a priority.
+  The current thought is that this will be implemented using the ldapmodify
+<http://www.openldap.org/> family of commands. There is also a Tcl-based interface
+<http://www.openldap.org/lists/openldap-devel/199902/msg00015.html> which accomplishes the
+same - this has to be investigated!
+
+- complete Messaging install suite
+  This is sometimes talked about as the number one MUST HAVE feature.
+  Done: clean uninstall, Directory Server, Calendar Server; see
+  CVSROOT:qa/Messaging/*/install
+  To do: separate cofigure DSA from install DSA, Presentation Server, Messaging Server,
+distributed Messaging Server, Personal Address Book Server, Notification Server, SyncML
+Server, Internet File Server, Agropop Server, Search Engine
+  This will become a much bigger priority if the work on creature (see
+CVSROOT:qa/creature) continues.
+

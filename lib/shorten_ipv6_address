@@ -1,0 +1,60 @@
+#!/bin/bash
+
+do_words()
+{
+    for ((i=$1; $i < $2 ; i++))
+    do
+        x=`echo $in | cut -f $i -d :`
+        if [ "${x:0:3}" = "000" ]; then
+            x=${x:3}
+        elif [ "${x:0:2}" = "00" ]; then
+            x=${x:2}
+        elif [ "${x:0:1}" = "0" ]; then
+            x=${x:1}
+        fi
+        if [ $i -gt 1 ]; then
+            res="${res}:"
+        fi
+        res="${res}${x}"
+    done
+}
+
+
+### Needs a "FULL" representation
+in=`expand_ipv6_address $1`
+
+bestlen=0
+beststart=0
+
+for ((i=1 ; $i < 9 ; i++))
+do
+	x=`echo $in | cut -f $i -d :`
+	if [ "$x" = "0000" ]; then
+		thislen=1
+		thisstart=$i
+		for ((j=$((i + 1)); $j < 9; j++))
+		do
+			x=`echo $in | cut -f $j -d :`
+			if [ "$x" = "0000" ]; then
+				thislen=$((thislen + 1))
+			else
+				break
+			fi
+		done
+
+		if [ $thislen -gt $bestlen ]; then
+			bestlen=$thislen
+			beststart=$thisstart
+		fi
+	fi
+done
+
+if [ $bestlen -gt 0 ]; then
+	do_words 1 $beststart
+	res="${res}:"
+	do_words $((beststart + bestlen)) 9
+else
+	do_words 1 9
+fi
+echo "$res"
+

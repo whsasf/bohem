@@ -1,0 +1,14 @@
+#########1#########2#########3#########4#########5#########6#########7#########8
+# 
+# $Header: /home/kbreslin/cvs/bohem/etc/test_filter_global,v 1.3 2007-10-25 12:47:10 mlehky Exp $
+#
+# Global filter, used by the filtered_diff utility.
+#
+# In case you don't recognize it, it's a sed script!
+# 
+#########1#########2#########3#########4#########5#########6#########7#########8
+
+
+s/[a-zA-Z01-9.]*.cpth.ie/bohem.replaced/g	# all? machine names in the cpth.ie domain
+s/[a-zA-Z01-9.]*.cp.net/bohem.replaced/g	# all? machine names in the cp.net domain
+

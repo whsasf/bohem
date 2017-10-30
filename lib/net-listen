@@ -1,0 +1,22 @@
+#!/bin/bash
+
+if [ $# -ne 3 ]; then
+	echo "Usage: $0 <local-addr> <local-port> <output-file>"
+	exit 1
+fi
+
+host=$1
+port=$2
+out=$3
+
+###
+### Listen on host/port
+###
+
+ncat 2> /dev/null
+if [ $? -ne 127 ]; then
+	exec ncat -l $host $port > $out
+else
+	exec nc -l -s $host -p $port > $out
+fi
+

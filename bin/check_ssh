@@ -1,0 +1,24 @@
+#!/usr/bin/env bash
+#########1#########2#########3#########4#########5#########6#########7#########8
+# 
+# $Header: /home/kbreslin/cvs/bohem/bin/check_ssh,v 1.2 2007-06-01 08:27:09 mlehky Exp $
+#
+# Script contains a simple call to verify if a remote system is reachanble
+# without the need for a password. It was decided to implement this admitedly
+# simplistic call in this form, for the following reasons:
+# 1) If everything that needs this, uses this, then it is very simple to change
+# only this one script rather than everything.
+# 2) It is not going to used _that_ often, and so it does not need to reside in
+# memory (as a bohem module).
+#
+# Usage:
+#  check_ssh "<user>@<server>"
+#  This takes only one variable: the username and server name in the same format
+#  as what is normally passed to ssh.
+# 
+#########1#########2#########3#########4#########5#########6#########7#########8
+
+
+set -u
+ssh -o BatchMode=yes $* uname &> /dev/null
+

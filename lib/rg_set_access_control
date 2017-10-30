@@ -1,0 +1,31 @@
+#!/bin/bash
+
+set -x
+
+module=$1
+acl=$2
+networks=$3
+node=$4
+
+if [ "$RG_CONSOLE1_HOST" = "" ] || [ "$RG_CONSOLE1_HOST" = "nohost.invalid" ]
+then
+	value=$(echo $networks | tr ',' '\n')
+ 
+	rg_set_normal_setting "-" "$acl" "$value" "$node" "$module"
+else
+	manager.pl $RG_CONSOLE1_HOST $RG_CONSOLE1_PORT $RG_CONSOLE1_PASSWORD "RGT ACCESS RELAY LIST NODE=$node" | tr -d '\r' | while read star type network netmask
+	do
+		if [ "$type" = "ALLOW" ] || [ "$type" = "DENY" ]; then
+			manager.pl $RG_CONSOLE1_HOST $RG_CONSOLE1_PORT $RG_CONSOLE1_PASSWORD "RGT ACCESS RELAY REMOVE $type $network $netmask NODE=$node"
+		fi
+	done
+
+	for net in $(echo $networks | tr ',' ' ')
+	do
+		network=$(echo $net | cut -f 1 -d '-')
+		netmask=$(echo $net | cut -f 2 -d '-')
+		manager.pl $RG_CONSOLE1_HOST $RG_CONSOLE1_PORT $RG_CONSOLE1_PASSWORD "RGT ACCESS RELAY ALLOW $network $netmask NODE=$node"
+	done
+	manager.pl $RG_CONSOLE1_HOST $RG_CONSOLE1_PORT $RG_CONSOLE1_PASSWORD "RGT ACCESS RELAY LIST NODE=$node"
+    manager.pl $RG_CONSOLE1_HOST $RG_CONSOLE1_PORT $RG_CONSOLE1_PASSWORD "RGT RECONFIGURE NODE=$node"
+fi

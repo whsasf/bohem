@@ -1,0 +1,16 @@
+#!/bin/bash
+
+set -x
+remote_ip=$1
+port=${2:-22}
+
+lhost=$(hostname)
+rhost=$(ssh -o StrictHostKeyChecking=no -o BatchMode=yes -p $port root@$remote_ip hostname)
+
+if [ "$lhost" = "$rhost" ]; then
+	echo $remote_ip
+elif [ "$(echo $(uname -r) | cut -b 1-1)" = "3" ]; then
+	ifconfig  | grep "inet6" | grep global | awk '{ print $2 }' | sort -V | tail -1
+else
+	ifconfig  eth0 | grep inet6\ addr | grep Global | awk '{ print $3 }'| cut -f 1 -d / | sort -V | tail -1
+fi

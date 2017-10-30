@@ -1,0 +1,16 @@
+#!/bin/bash
+
+port=$1
+node=$2
+counter=$3
+
+###
+### XXX - Password should be figured out by mgr itself TODO.
+###
+PASSWORD="-w password"
+
+if [ "$RG_CONSOLE1_HOST" != "" ] && [ "$RG_CONSOLE1_HOST" != "nohost.invalid" ]; then
+	manager.pl $RG_CONSOLE1_HOST $RG_CONSOLE1_PORT $RG_CONSOLE1_PASSWORD "RGT PERFORMANCE GET $counter NODE=$node"
+elif [ "$RG_SMTP1_HOST" != "" ] && [ "$RG_SMTP1_HOST" != "nohost.invalid" ]; then
+	ssh root@$RG_SMTP1_HOST ". $RG_SMTP1_INSTALL/mira/usr/store/configuration/config_db/config_db.conf ; MIRA_ROOT=$RG_SMTP1_INSTALL/mira  OWENABLED=true $RG_SMTP1_INSTALL/mira/usr/bin/mgr.sh -p $port -s $RG_SMTP1_HOST_IP PERF GET $counter" | grep '^OK\|^\*' | sed 's/NAME=//' | sed 's/ TIME=.* VALUE=/=/'
+fi

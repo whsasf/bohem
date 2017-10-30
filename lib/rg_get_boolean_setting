@@ -1,0 +1,62 @@
+#!/bin/bash
+
+set -x
+
+section="$1"
+setting="$2"
+node="$3"
+
+service="$4"
+if [ "$service" = "" ]
+then
+	service="smtp"
+fi
+
+get_node_host()
+{
+        local node=$1
+        for i in $(seq 1 10)
+        do
+                node_var="RG_SMTP${i}_NODE"
+                if [ "${!node_var}" = "$node" ]; then
+                        var="RG_SMTP${i}_HOST" ; imail_hostname=${!var}
+                        var="RG_SMTP${i}_IMAIL_USER" ; imail_username=${!var}
+                        var="RG_SMTP${i}_OWM_COMMON_INSTALL" ; imail_path=${!var}
+                        var="RG_SMTP${i}_CONFSERV_HOST" ; short_host=${!var}
+                        return
+                fi
+        done
+}
+
+
+if [ "$RG_CONSOLE1_HOST" = "" ] || [ "$RG_CONSOLE1_HOST" = "nohost.invalid" ]
+then
+	##
+	## Config DB mode
+	##
+
+	get_node_host $node
+
+	val=$(ssh -o BatchMode=yes -o StrictHostKeyChecking=no $imail_username@$imail_hostname imconfget -h $short_host -m $service $setting)
+
+	echo "$val" | grep -q "NOT FOUND"
+	if [ $? -eq 0 ]; then
+		return
+	fi
+	if [ "$val" = "1" ]; then
+		echo "true"
+	elif [ "$val" = "0" ]; then
+		echo "false"
+	else
+		echo "$val"
+	fi
+
+else
+	##
+	## Cluster Management mode
+	##
+
+	manager.pl $RG_CONSOLE1_HOST $RG_CONSOLE1_PORT $RG_CONSOLE1_PASSWORD "RGT $section GET $setting NODE=$node"
+
+
+fi

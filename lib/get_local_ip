@@ -1,0 +1,22 @@
+#!/bin/bash
+
+remote_ip=$1
+port=${2:-22}
+
+lhost=$(hostname)
+rhost=$(ssh -o BatchMode=yes -p $port root@$remote_ip hostname)
+
+if [ "$lhost" = "$rhost" ]; then
+	if [ $(uname -r | cut -f 1 -d '.') -ge "3" ]; then
+		dig $(hostname) +short
+	else
+		echo $remote_ip
+	fi
+else
+	##
+	##dig $lhost +short
+	##
+	## Need to use this command to get the correct interface for RWC Cloud machines
+	##
+	ip route get $remote_ip | head -1 | awk '{ print $5 }'
+fi

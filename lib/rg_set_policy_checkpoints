@@ -1,0 +1,44 @@
+#!/bin/bash
+
+set -x
+
+policyname="$1"
+checkpoint="$2"
+rulenames="$3"
+node="$4"
+namespace="$5"
+
+get_node_host()
+{
+    local node=$1
+    for i in $(seq 1 10)
+    do  
+        node_var="RG_SMTP${i}_NODE"
+        if [ "${!node_var}" = "$node" ]; then
+            var="RG_SMTP${i}_HOST" ; imail_hostname=${!var}
+            var="RG_SMTP${i}_IMAIL_USER" ; imail_username=${!var}
+            var="RG_SMTP${i}_INSTALL" ; policy_path="${!var}/mira/usr/store/policyrules/"
+            return
+        fi
+    done
+}
+
+if [ "$RG_CONSOLE1_HOST" = "" ] || [ "$RG_CONSOLE1_HOST" = "nohost.invalid" ]
+then
+    ### Config DB mode
+    if [ "$namespace" = "" ]; then
+        echo "must use namespace in config.db mode"
+        return
+    fi
+
+    get_node_host $node
+
+    ssh -o BatchMode=yes -o StrictHostKeyChecking=no $imail_username@$imail_hostname "mkdir -p $policy_path/$namespace"
+    ssh -o BatchMode=yes -o StrictHostKeyChecking=no $imail_username@$imail_hostname "cat $policy_path/$namespace/$policyname.policy | grep -iv ^$checkpoint > $policy_path/$namespace/$policyname.policy.tmp ; mv $policy_path/$namespace/$policyname.policy.tmp $policy_path/$namespace/$policyname.policy ; echo \"$checkpoint $rulenames\" >> $policy_path/$namespace/$policyname.policy"
+
+else
+    if [ "$namespace" != "" ]; then
+        namespace="NAMESPACE=$namespace"
+    fi
+    manager.pl $RG_CONSOLE1_HOST $RG_CONSOLE1_PORT $RG_CONSOLE1_PASSWORD "RGT POLICYBUILDER SET $policyname CHECKPOINT=$checkpoint RULES=$rulenames $namespace"
+fi

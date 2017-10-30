@@ -1,0 +1,15 @@
+#!/bin/bash
+
+rg_ip=$1
+ms_ip=$2
+rg_port=${3:-22}
+ms_port=${4:-22}
+
+rg_host=$(ssh -o BatchMode=yes -p $rg_port root@$rg_ip ifconfig  eth0 | grep inet6\ addr | grep Global | awk '{ print $3 }'| cut -f 1 -d / | sort -V | tail -1 )
+ms_host=$(ssh -o BatchMode=yes -p $ms_port root@$ms_ip ifconfig  eth0 | grep inet6\ addr | grep Global | awk '{ print $3 }'| cut -f 1 -d / | sort -V | tail -1 )
+
+if [ "$rg_host" = "$ms_host" ]; then
+	echo $ms_ip
+else
+	echo $rg_host
+fi

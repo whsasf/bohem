@@ -1,0 +1,98 @@
+#!/usr/bin/env bash
+#########1#########2#########3#########4#########5#########6#########7#########8
+#
+# $Header: /home/kbreslin/cvs/bohem/bin/env_test,v 1.9 2009-04-17 13:40:59 ayoung Exp $
+#
+# This will perform some basic tests, to see if the minimum requirements
+# (interpreters) are available on your system.
+#
+#########1#########2#########3#########4#########5#########6#########7#########8
+
+
+printf "Info: You are running this script from $BASH version $BASH_VERSION.\n\n"
+
+##########  GNU-AWK  ##########
+printf "Info: Searching for required gawk ...\n"
+if [ -x /usr/bin/gawk ]
+then
+	# START of gawk code!
+	/usr/bin/gawk 'BEGIN {
+		if (ARGC == 0) {
+			print "ERROR: /usr/bin/gawk is old-gawk, which is not supported."
+			print "ERROR: You will need to install the latest gnu-gawk."
+			exit 1
+		}
+		if (1 !~ /[[:digit:]]/) {
+			print "ERROR: /usr/bin/gawk is outdated."
+			print "ERROR: You will need to install the latest gnu-gawk."
+			exit 1
+		}
+	}' $0
+	# END of gawk code!
+	if [ $? -eq 0 ]
+	then
+		printf "Info: /usr/bin/gawk reports: %s\n" "`/usr/bin/gawk --version | head -1`"
+		printf "Info: Minimum required is gnu-gawk version 3.0.\n"
+		printf "Info: bohem is tested with gnu-gawk version 3.1.5.\n"
+	fi
+else
+	printf "ERROR: Cannot locate /usr/bin/gawk.\n"
+	printf "ERROR: You will need to install the latest gnu-gawk.\n"
+fi
+echo	# print blank line
+
+##########  PERL  ##########
+printf "Info: Searching for optional perl ...\n"
+type perl &> /dev/null
+if [ $? -eq 0 ]
+then
+	printf "Info: perl reports: %s\n" "`perl -V:version`"
+	printf "Info: Minimum required is version 5.8.\n"
+	printf "Info: manager.pl and other parts are tested with version 5.8.\n"
+else
+	printf "ERROR: Cannot locate perl on this system.\n"
+	printf "ERROR: You will need to install the latest perl.\n"
+fi
+echo	# print blank line
+
+##########  EXPECT  ##########
+#printf "Info: Searching for optional expect ...\n"
+#type expect &> /dev/null
+#if [ $? -eq 0 ]
+#then
+#	printf "Info: expect reports: %s\n" "`expect -version`"
+#	printf "Info: Minimum required is version 5.30.\n"
+#	printf "Info: parts of bohem are tested with version 5.32.1.\n"
+#else
+#	printf "ERROR: Cannot locate expect on this system.\n"
+#	printf "ERROR: You will need to install the latest expect.\n"
+#fi
+#echo	# print blank line
+
+##########  COREUTILS  ##########
+printf "Info: Searching for optional coreutils ...\n"
+type readlink &> /dev/null
+if [ $? -eq 0 ]
+then
+	printf "Info: coreutil readlink reports: %s\n" "`readlink --version | head -1`"
+	printf "Info: Minimum required is version 5.0.\n"
+	printf "Info: bohem is tested with version 6.3.\n"
+else
+	printf "ERROR: Cannot find readlink.\n"
+	printf "ERROR: You will need to install the latest coreutils.\n"
+fi
+echo	# print blank line
+
+##########  TESTSH  ##########
+printf "Info: Searching for optional testsh ...\n"
+if [ -x /usr/local/bin/testsh ]
+then
+	printf "Info: /usr/local/bin/testsh reports: %s\n" \
+		"`strings /usr/local/bin/testsh | egrep '^[[:digit:]]+\.[[:digit:]]+\.[[:digit:]]+'`"
+	printf "Info: Various versions of teshsh are untested.\n"
+else
+	printf "ERROR: Cannot locate /usr/local/bin/testsh.\n"
+	printf "ERROR: Inidividual tests requiring this will fail.\n"
+fi
+echo	# print blank line
+

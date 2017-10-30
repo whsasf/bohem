@@ -1,0 +1,35 @@
+#!/bin/bash
+
+set -x
+
+user=$1
+domain=$2
+
+if [ "$user" = "" ]; then
+        exit 1
+fi
+
+if [ "$domain" = "" ]; then
+        exit 1
+fi
+
+if [ "$RG_CONSOLE1_HOST" = "" ] || [ "$RG_CONSOLE1_HOST" = "nohost.invalid" ]; then
+	#Using MXOS
+        if [ "$MXOS1_HOST_IP" != "" ] && [ "$MXOS1_HOST_IP"  != "nohost.invalid" ]; then
+                mos_delete_user.sh $MXOS1_HOST_IP $MXOS1_PORT "$user@$domain"
+
+                exit 0
+        fi
+
+        #Using MXLdap?
+        if [ "$MX1_HOST_IP" != "" ] && [ "$MX1_HOST_IP"  != "nohost.invalid" ]; then
+                mx_delete_user.sh $MX1_USER $MX1_HOST_IP:$MX1_SSH_PORT $MX1_INSTALL $MX1_LDAP_PORT $domain $user
+
+                exit 0
+        fi
+
+        echo "Neither MXOS1 or MX1 is set, at least one of them needs to be set."
+        exit 2
+else
+	manager.pl $CPMS1_HOST $CPMS1_SMTP_MGMT_PORT $CPMS1_PASSWORD "USER $domain DELETE $user"
+fi

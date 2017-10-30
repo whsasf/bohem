@@ -1,0 +1,51 @@
+#!/bin/bash
+
+set -x
+###
+### Arg 1 is comma separated list of nodes to check
+###
+
+if [ "$RG_CONSOLE1_HOST" = "" ] || [ "$RG_CONSOLE1_HOST" = "nohost.invalid" ]; then
+    ## Not required in Config.db mode
+    exit 0
+fi
+
+nodes=$1
+
+get_node_host()
+{
+    local node=$1
+    for i in $(seq 1 10)
+    do
+        node_var="RG_SMTP${i}_NODE"
+        if [ "${!node_var}" = "$node" ]; then
+            var="RG_SMTP${i}_HOST" ; imail_hostname=${!var}
+            var="RG_SMTP${i}_IMAIL_USER" ; imail_username=${!var}
+            var="RG_SMTP${i}_OWM_COMMON_INSTALL" ; imail_path=${!var}
+            var="RG_SMTP${i}_CONFSERV_HOST" ; short_host=${!var}
+            var="RG_SMTP${i}_INSTALL" ; install=${!var}
+            return
+        fi
+    done
+}
+
+reconfigure_failed=0
+for node in $(echo $nodes | tr ',' ' ')
+do
+    if [ "$RG_CONSOLE1_HOST" = "" ] || [ "$RG_CONSOLE1_HOST" = "nohost.invalid" ]; then
+
+        get_node_host $node
+
+	ssh root@$imail_hostname "MIRA_ROOT=$install/mira $install/mira/usr/bin/mgr.sh -s $imail_hostname -p 4200 RECONFIGURE REGISTRY"
+	ssh root@$imail_hostname "MIRA_ROOT=$install/mira $install/mira/usr/bin/mgr.sh -s $imail_hostname -p 4200 PLUGIN BMAPI MUX RECONFIGURE"
+    else
+        manager.pl $RG_CONSOLE1_HOST $RG_CONSOLE1_PORT $RG_CONSOLE1_PASSWORD "RGT RECONFIGURE DISPATCHER NODE=${node}" || reconfigure_failed=1
+    fi
+done
+
+if [ "$reconfigure_failed" = "1" ]; then
+	sleep 10
+fi
+
+exit 0
+

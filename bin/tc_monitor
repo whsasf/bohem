@@ -1,0 +1,125 @@
+#!/usr/bin/env bash
+#########1#########2#########3#########4#########5#########6#########7#########8
+# 
+# $Header: /home/kbreslin/cvs/bohem/bin/tc_monitor,v 1.7 2007-06-01 08:27:09 mlehky Exp $
+#
+# Timed command monitor. Will monitor the runtime of a command, and terminate it
+# if it runs too long.
+#
+# Usage:
+#  tc_monitor "<command> [arguments]" <time-to-live> [poll-frequency]
+#
+# Arguments:
+#  $1 = command to run (must be quoted if multiple words)
+#  $2 = seconds to let $1 live, if 0 will let the command live "forever"
+#  $3 = poll frequency, optional, defaults to 2 seconds
+#
+# Exit status:
+#  1 - if incorrect number of arguments is supplied
+#  same as <command> - if <command> completes before $2
+#  15 - if <command> must be terminated
+#  3 - if <command> must be quit
+#  9 - if <command> must be killed
+#
+#########1#########2#########3#########4#########5#########6#########7#########8
+
+
+set -u
+# Simple sanity test first.
+if [ $# -lt 2 ]
+then
+	exit 1
+fi
+
+
+_self=`basename $0`	# name of this executable
+# Figure out if tracing is on.
+if [ $(( $_trace_level & $_trace_tc_monitor )) -eq $_trace_tc_monitor ]
+then
+	TRACE="ON"
+else
+	TRACE="OFF"
+fi
+
+
+if [ $TRACE = "ON" ]
+then
+	printf "${_self}: $*\n" >> ${_trace_log}
+	printf "${_self}: Starting %s\n" "$(date)" >> ${_trace_log}
+fi
+
+
+# If time to live is zero, then "become" the command and let it end naturally.
+if [ $2 -eq 0 ]
+then
+	eval exec "$1"
+fi
+
+
+# Run the command, remember to preserve its exit status ... if it gets that far.
+(eval "$1"; printf $? > /tmp/${_self}.$$) &
+while [ -d "/proc/$!"  -a  $SECONDS -lt $2 ]
+# The above says: while the background command lives (the -d thing) and (the -a)
+# time counter is less than time to live argument passed (the -lt thing) ...
+do
+	sleep ${3:-1} 
+done
+
+if [ $TRACE = "ON" ]
+then
+	printf "${_self}: Ending %s\n" "$(date)" >> ${_trace_log}
+fi
+
+# If the command comleted, then generate the same exist staus as it did.
+if [ ! -d "/proc/$!" ]
+then
+	rc=$(cat /tmp/${_self}.$$)
+	rm /tmp/${_self}.$$
+	exit $rc
+fi
+
+
+# TERMinate the command, if it is still running.
+if [ -d "/proc/$!" ]
+then
+	if [ $TRACE = "ON" ]
+	then
+		printf "${_self}: TERM %s\n" "$(date)" >> ${_trace_log}
+	fi
+	kill -TERM $!
+	# we need to know if this worked
+	if [ $? -eq 0 ]
+	then
+		exit $(kill -l TERM)
+	fi
+fi
+
+# QUIT the command, if it is still running.
+# This normaly causes the running command to dump a core file!
+if [ -d "/proc/$!" ]
+then
+	if [ $TRACE = "ON" ]
+	then
+		printf "${_self}: QUIT %s\n" "$(date)" >> ${_trace_log}
+	fi
+	kill -QUIT $!
+	if [ $? -eq 0 ]
+	then
+		exit $(kill -l QUIT)
+	fi
+fi
+
+# KILL the command, if is is still running.
+if [ -d "/proc/$!" ]
+then
+	if [ $TRACE = "ON" ]
+	then
+		printf "${_self}: KILL %s\n" "$(date)" >> ${_trace_log}
+	fi
+	kill -KILL $!
+	if [ $? -eq 0 ]
+	then
+		exit $(kill -l KILL)
+	fi
+fi
+

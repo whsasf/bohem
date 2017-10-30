@@ -1,0 +1,66 @@
+#!/bin/bash
+
+run_http_server()
+{
+    local port=$1
+    local options="$2"
+
+    nmap $LOCAL_HOST_IP -p $port | grep "^${port}/tcp" | awk '{ print $2 }' | grep "open" && return 1
+
+    mkfifo $fifo
+    cat $fifo | HttpApp -server -base-dir `pwd` -capture-dir `pwd` -listen-port $port $options > HttpApp.out 2>&1 &
+
+    for i in `seq 30`
+    do
+        echo "i=$i"
+        sleep 1
+        netstat -lntp | awk '{ print $4 }' | grep -e "\<0.0.0.0:$port\>" -e "\<$LOCAL_HOST_IP:$port\>" && return 0
+        ## Nmap seems to screw with SSL
+        #nmap $LOCAL_HOST_IP -p $port | grep "\<${port}/tcp\>" | awk '{ print $2 }' | grep "open" && return
+    done
+	return 2
+}
+
+launch_http_server()
+{
+	local var=$1
+	local options="$2"
+	eval $var=""
+
+	export NPLEX_CONFIG=`pwd`/cpath
+	rm -rf $NPLEX_CONFIG
+	mkdir $NPLEX_CONFIG
+	mkdir -p $NPLEX_CONFIG/shared/tls/
+	touch $NPLEX_CONFIG/shared/tls/.data
+
+	for f in `seq 1 20`
+	do
+		p=$(((RANDOM % 10000) + 19877))
+		run_http_server "$p" "$options"
+		if [ $? -eq 0 ]; then
+			eval $var=$p
+			return
+		elif [ $? -eq 2 ]; then
+			return
+		fi
+	done
+}
+
+kill_child_process()
+{
+    comm=$1
+    ppid=$2
+    pid=`ps -eo pid,ppid,comm | grep "\<$comm\>" | grep "\<$ppid\>" | awk '{ print $1 }'`
+    if [ "$pid" != "" ]; then
+        ps -ef | grep "\<$pid\>"
+        kill $pid
+    fi
+}
+
+kill_http_server()
+{
+    local pid=$1
+    kill_child_process cat $pid
+    kill_child_process HttpApp $pid
+}
+

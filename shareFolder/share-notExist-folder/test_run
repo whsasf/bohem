@@ -1,0 +1,55 @@
+#!/bin/bash
+
+#Testing: shared Folder not exist
+set -x
+
+if [ "$MXOS1_HOST_IP" = "" ] || [ "$MXOS1_HOST_IP" = "nohost.invalid" ]; then
+        log_skip "MXOS not installed"
+        exit 0
+fi
+
+if [ "$MX1_HOST_IP" = "" ] || [ "$MX1_HOST_IP" = "nohost.invalid" ]; then
+        log_skip "MX not installed"
+        exit 0
+fi
+
+cleanup()
+{
+        mos_delete_user.sh $MXOS1_HOST_IP $MXOS1_PORT user1@$domain
+        mos_delete_user.sh $MXOS1_HOST_IP $MXOS1_PORT user2@$domain
+        mos_delete_domain.sh $MXOS1_HOST_IP $MXOS1_PORT $domain
+}
+
+failure()
+{
+    log_fail $?
+    cleanup
+    exit 0
+}
+
+
+domain="$(words.sh)$$.dom"
+domaincp="$(words.sh)$$.dom"
+tag="$(words.sh)"
+
+#create domain
+curl -X PUT -v -d type=local http://$MXOS1_HOST_IP:$MXOS1_PORT/mxos/domain/v2/$domain
+
+
+## Create User
+curl -X PUT -v -d email=user1@$domain -d password=p -d cosId=default http://$MXOS1_HOST_IP:$MXOS1_PORT/mxos/mailbox/v2/user1@$domain
+curl -X PUT -v -d email=user2@$domain -d password=p -d cosId=default http://$MXOS1_HOST_IP:$MXOS1_PORT/mxos/mailbox/v2/user2@$domain
+
+#SharedFolder aaa not exist
+curl -X PUT -v -H "Content-Type: application/x-www-form-urlencoded" http://$MXOS1_HOST_IP:$MXOS1_PORT/mxos/mailbox/v2/user1@$domain/folders/aaa/share/user2@$domain > put.log 2>&1
+
+grep -i "HTTP/1.1 404 Not Found" put.log
+if (( $? == 0 ));then
+    log_pass "Cannot share not exist folder,that's correct"
+fi
+
+
+rm -rf put.log
+
+cleanup
+

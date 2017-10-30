@@ -1,0 +1,67 @@
+#!/bin/bash
+
+set -x
+
+node="$1"
+
+if [ "$node" = "" ]
+then
+	log_fail "Must pass node argument to rg_settings_flush. Trying with $RG_SMTP1_NODE."
+	node="$RG_SMTP1_NODE"
+fi
+
+get_node_host()
+{
+	local node=$1
+	for i in $(seq 1 10)
+	do
+		node_var="RG_SMTP${i}_NODE"
+		if [ "${!node_var}" = "$node" ]; then
+			var="RG_SMTP${i}_HOST" ; host=${!var}
+			var="RG_SMTP${i}_IMAIL_USER" ; imail_username=${!var}
+			var="RG_SMTP${i}_OWM_COMMON_INSTALL" ; imail_path=${!var}
+			var="RG_SMTP${i}_CONFSERV_HOST" ; short_host=${!var}
+			var="RG${i}_OWNER" ; rg_owner=${!var}
+			var="RG_SMTP${i}_INSTALL" ; dir=${!var}
+			return
+		fi
+	done
+}
+
+
+get_node_host $node
+	
+if [ -f $WORK_DIR/owm-configdb-lock ]
+then
+	cat $WORK_DIR/owm-configdb-lock
+	rm $WORK_DIR/owm-configdb-lock
+
+	sleep 1
+	echo "Unlock start: $(date)"
+	ssh -o BatchMode=yes -o StrictHostKeyChecking=no $imail_username@$host "$imail_path/bin/imconfcontrol -unlockServer"
+	echo "Unlock end: $(date)"
+
+	## Need to wait until settings are flushed
+	master=$(ssh -o BatchMode=yes -o StrictHostKeyChecking=no $OWM_CONFSERV1_USER@$OWM_CONFSERV1_HOST md5sum $OWM_CONFSERV1_MASTER_CONFIG_DB | awk '{ print $1 }')
+	n=0
+	slave=$(ssh -o BatchMode=yes -o StrictHostKeyChecking=no $RG_SMTP1_IMAIL_USER@$RG_SMTP1_HOST md5sum $RG_SMTP1_OWM_COMMON_INSTALL/config/config.db | awk '{ print $1}')
+	while [ $slave != $master ]
+	do
+		sleep 1
+		n=$((n+1))
+		if [ $n -gt 30 ]; then
+			break
+		fi
+		slave=$(ssh -o BatchMode=yes -o StrictHostKeyChecking=no $RG_SMTP1_IMAIL_USER@$RG_SMTP1_HOST md5sum $RG_SMTP1_OWM_COMMON_INSTALL/config/config.db | awk '{ print $1 }')
+	done
+
+	echo "Reconfigure: $(date)"
+
+	sleep 1
+fi
+ssh -o BatchMode=yes -o StrictHostKeyChecking=no $rg_owner@$host "MIRA_ROOT=$dir/mira $dir/mira/usr/bin/mgr.sh -s $host -p 4200 RECONFIGURE REGISTRY"
+ssh -o BatchMode=yes -o StrictHostKeyChecking=no $rg_owner@$host "MIRA_ROOT=$dir/mira $dir/mira/usr/bin/mgr.sh -s $host -p 4235 RECONFIGURE REGISTRY"
+ssh -o BatchMode=yes -o StrictHostKeyChecking=no $rg_owner@$host "MIRA_ROOT=$dir/mira $dir/mira/usr/bin/mgr.sh -s $host -p 4237 RECONFIGURE REGISTRY"
+ssh -o BatchMode=yes -o StrictHostKeyChecking=no $rg_owner@$host "MIRA_ROOT=$dir/mira $dir/mira/usr/bin/mgr.sh -s $host -p 4241 RECONFIGURE REGISTRY"
+
+echo "SECONDS=$SECONDS"

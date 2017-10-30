@@ -1,0 +1,340 @@
+#!/bin/bash -u
+#########1#########2#########3#########4#########5#########6#########7#########8
+# 
+# $Header: /home/kbreslin/cvs/bohem/bin/run_tests,v 1.51 2010-09-06 10:36:00 kbreslin Exp $
+#
+# Main script for running the "bohem" test harness!
+# This is bohem2, a version that is much closer to my vision of "how the world
+# should be". At this point, this script is responsible for first setting up the
+# entire environment, next some sanity checking, turning things over to the
+# "parse* duo", and finally collecting all statistics.
+#
+#########1#########2#########3#########4#########5#########6#########7#########8
+
+
+function globalize
+{
+	# Function will attempt to print through stdout a global path of whatever is
+	# stored in variable name passed to the function. The stored path must be
+	# relative to the _current_ position. The returned information is tested for
+	# nonsense. If unsucesul, then unmodified value is returned back. Note that
+	# the function needs access to the variable name, and not the variable value
+	# -> you need to pass the quoted name, without the $ in front!
+	# The idea is that the fuction is going to be called as
+	# 'eval `globalize something`', where "something" is a variable used by the
+	# rest of the program.
+
+	if [ -a "$PWD/$(eval echo \${$1})" ]
+	then
+		# convert local path to global preserving spaces
+		echo $1=\"$PWD/$(eval echo \${$1%/})\"  #delete the last "/" 
+	fi
+
+	# Variable already contains a global path, so do nothing.
+}
+
+if [ "$(id -u)" = "0" ]
+then
+	printf "bohem will not run as the root user\n\n"
+	exit 4
+fi
+##############################
+#	ENVIRONMENT SETUP
+##############################
+
+# Save the current user directory for later.
+_current_user_dir=$PWD
+
+# Find myself :) using the least possible number of external (to bash) functions.
+# Assume the user could be doing all sorts of funky things.
+_bohem_dir=${0%bin/*}	# discard everything after and including "bin/" in $0
+_bohem_self=${0##*bin/}	# discard everything upto and including "bin/" in $0
+if [ "${_bohem_dir}" = "${_bohem_self}" ]
+then
+	# user is executing this from within the bin directory
+	cd ..
+	_bohem_dir=$PWD
+	_bohem_self=${0##*/}
+elif [ "${_bohem_dir}" = "" ]
+then
+	# user is currently in the actual _bohem_dir
+	_bohem_dir=$PWD
+fi
+cd "$_current_user_dir"
+eval `globalize _bohem_dir`
+
+# Check installation. This sanity test must be at this point, as this path is
+# where the next things are read from.
+if [ ! -f "${_bohem_dir}/etc/bohem.conf" ]
+then
+	# this could come up if the user has _bohem_self linked from somewhere
+	printf "bohem $_bohem_version Fatal ERROR:\n"
+	printf "\tCould not find ${_bohem_dir}/etc/bohem.conf. Check the installation.\n\n"
+	exit 3
+fi
+
+mkdir ${_current_user_dir}/.bohem_pid 2>/dev/null
+if [ $? -ne 0 ]
+then
+	pid=$(cat ${_current_user_dir}/.bohem_pid/pid)
+	kill -0 $pid
+	if [ $? -ne 0 ]; then
+		printf "bohem: stale pid file found in ${_current_user_dir}/.bohem_pid\n"
+		printf "  clean up after aborted Bohem\n\n"
+		exit 6
+	fi
+	printf "bohem is already running - pid $pid - wait for it to complete\n\n"
+	exit 5
+fi
+echo "$$" > ${_current_user_dir}/.bohem_pid/pid
+
+env > /tmp/${_bohem_self}.env.$$	# this will be used if _env_dump=0
+
+# Read in the bohem configuration file.
+source "${_bohem_dir}/etc/bohem.conf"
+# Figure out if tracing is on.
+if [ $(( $_trace_level & $_trace_run_tests )) -eq $_trace_run_tests ]
+then
+	TRACE="ON"
+else
+	TRACE="OFF"
+fi
+
+# Read in the test global variables.
+source "${_bohem_dir}/etc/global.vars"
+
+export PYTHONPATH=${_bohem_dir}/lib/python:${PYTHONPATH:-}
+
+# Read in test-list variables.
+# This is a requested feature that I do not particularly like -> too much coding
+# for something that will be hardly used, if ever.
+for _test_list in "$@"
+do
+	# The variables file we are looking for can be in one of two locations,
+	# having one of several filename permutations.
+	_test_list=`basename ${_test_list}`	# just in case user supplied complete path
+	for _variables_file in "${_bohem_dir}/etc/${_test_list}.vars" \
+		"${_bohem_dir}/etc/${_test_list%.test.list}.vars" \
+		"${_current_user_dir}/${_test_list}.vars" \
+		"${_current_user_dir}/${_test_list%.test.list}.vars"
+	do
+		if [ -f "$_variables_file" ]
+		then
+			if [ $TRACE = "ON" ]
+			then
+				printf "bohem $_bohem_version Info:\n" >> "${_trace_log}"
+				printf "\tReading ${_variables_file}\n\n" >> "${_trace_log}"
+			fi
+			source "$_variables_file"
+			break	# looking only for the first occurence
+		fi
+	done
+done
+unset _test_list _variables_file	# 'cause I like things nice and tidy
+
+# Read in the test-suite user variables.
+if [ -f "${_current_user_dir}/user.vars" ]
+then
+	if [ $TRACE = "ON" ]
+	then
+		printf "bohem $_bohem_version Info:\n" >> "${_trace_log}"
+		printf "\tReading ${_current_user_dir}/user.vars\n\n" >> "${_trace_log}"
+	fi
+	source "${_current_user_dir}/user.vars"
+elif [ -f "${_bohem_dir}/etc/user.vars" ]
+then
+	if [ $TRACE = "ON" ]
+	then
+		printf "bohem $_bohem_version Info:\n" >> "${_trace_log}"
+		printf "\tReading ${_bohem_dir}/etc/user.vars\n\n" >> "${_trace_log}"
+	fi
+	source "${_bohem_dir}/etc/user.vars"
+else
+	if [ $TRACE = "ON" ]
+	then
+		printf "bohem $_bohem_version Info:\n" >> "${_trace_log}"
+		printf "\tNo user variables file found.\n\n" >> "${_trace_log}"
+	fi
+fi
+
+if [ ${_env_dump} -eq 1 ]
+then
+	env > /tmp/${_bohem_self}.env.$$
+fi
+
+# Read in all the modules.
+declare -xf globalize	# declaration had to be moved to here due to introduction of _env_dump
+for _module in "${_bohem_dir}"/modules/*.mod
+do
+	if [ $TRACE = "ON" ]
+	then
+		printf "bohem $_bohem_version Info:\n" >> "${_trace_log}"
+		printf "\tReading ${_module}\n\n" >> "${_trace_log}"
+	fi
+	source "$_module"
+	if [ $? -ne 0  -a  $TRACE = "ON" ]
+	then
+		printf "bohem $_bohem_version ERROR:\n" >> "${_trace_log}"
+		printf "\tReading ${_module} ended with non-zero exit.\n\n" >> "${_trace_log}"
+	fi
+done
+unset _module	# just proper cleanup
+
+if [ ${_env_dump} -eq 2 ]
+then
+	env > /tmp/${_bohem_self}.env.$$
+fi
+
+cd "$_current_user_dir"
+#exec bash --noprofile --norc	# This is used strictly for DEBUGing the test harness.
+
+
+##############################
+#	SANITY TESTS
+##############################
+
+# Check command-line arguments.
+if [ $# -lt 1 ]
+then
+	printf "bohem $_bohem_version ERROR:\n"
+	printf "\tMissing command-line arguments. You need to run:\n"
+	printf "\t$_bohem_self <test-list>\n\n"
+	${PAGER:-cat} "${_bohem_dir}/docs/README.bohem"	# display some sort of help
+	exit 1
+fi
+
+eval `globalize WORK_DIR`	# who knows what the user is thinking
+# Check if the user is supplying things that actually exist.
+if [ ! -d "$WORK_DIR" ]
+then
+	printf "bohem $_bohem_version ERROR:\n"
+	printf "\tCannot locate test-suite in $WORK_DIR.\n"
+	printf "\tYou must set the variable WORK_DIR in the user variables file first!\n\n"
+	${PAGER:-cat} "${_bohem_dir}/docs/README.bohem"	# display some sort of help
+	exit 1
+fi
+
+rm -f "$WORK_DIR/quit"
+
+##############################
+#	START LOGGING
+##############################
+
+date=`date +%Y%m%d-%H%M%S`
+ln -sf bohem-$date.log $LOGFILE
+
+> "$LOGFILE"	# empty and/or create $LOGFILE
+if [ $? -ne 0 ]
+then
+	printf "bohem $_bohem_version ERROR:\n"
+	printf "\tCannot open LOGFILE $LOGFILE.\n\n"
+	exit 1
+fi
+if [ ! -f "$LOGFILE" ]
+then
+	printf "bohem $_bohem_version Warning:\n"
+	printf "\tLOGFILE redirected to non-file: $LOGFILE. All statistics will be invalid!\n\n"
+fi
+
+eval `globalize LOGFILE`	# this needs to be after the touch, as the file must exist first
+
+# Anything below, that ends with '| tee -a "$LOGFILE"' goes to both stdout and the
+# LOGFILE. Anything that ends with '>> "$LOGFILE"' goes only to the LOGFILE.
+printf "\t**********  Starting $LOGFILE  **********\n" | tee -a "$LOGFILE"
+printf "Test-suite started: %s\n" "$(date)" | tee -a "$LOGFILE"
+printf "\n" >> "$LOGFILE"	# blank line
+printf "\t********** START of ENVironment dump **********\n" >> "$LOGFILE"
+printf "Command line: $0 $*\n" >> "$LOGFILE"
+cat /tmp/${_bohem_self}.env.$$ >> "$LOGFILE"
+rm /tmp/${_bohem_self}.env.$$	# it's not needed anymore, clean it up
+printf "\t********** END of ENVironment dump **********\n" >> "$LOGFILE"
+printf "\n" >> "$LOGFILE"	# blank line
+
+# Check access to the CVS server, based on TC_CVS_UPDATE.
+if [ $TC_CVS_UPDATE != "none" ]
+then
+	check_ssh ${CVSROOT%%:*}
+	if [ $? -ne 0 ]
+	then
+		printf "bohem $_bohem_version Warning:\n" >> "$LOGFILE"
+		printf "\tTC_CVS_UPDATE is set to $TC_CVS_UPDATE. Accessing ${CVSROOT%%:*} failed.\n" >> "$LOGFILE"
+		printf "\tReducing TC_CVS_UPDATE=none and continuing.\n\n" >> "$LOGFILE"
+
+		export TC_CVS_UPDATE=none
+	fi
+fi
+
+> "$ERRFILE"	# empty and/or create $ERRFILE
+if [ $? -ne 0 ]
+then
+	printf "bohem $_bohem_version Warning:\n" >> "$LOGFILE"
+	printf "\tCannot open ERRFILE $ERRFILE. Defaulting to /tmp/bohem.err.$$ \n\n" >> "$LOGFILE"
+	export ERRFILE=/tmp/bohem.err.$$
+	> "$ERRFILE"
+fi
+
+
+##############################
+#	RUN THE TESTS
+##############################
+
+for _test_list in "$@"
+do
+	# Test for lazy people.
+	if [ -x "${_test_list}" -a ! -d "${_test_list}" ]
+	then
+		printf "bohem $_bohem_version Info:\n" | tee -a "$LOGFILE"
+		printf "\tFile ${_test_list} has execute permissions. If things fail try correcting this.\n\n" | tee -a "$LOGFILE"
+	fi
+
+	eval `globalize _test_list`	# 'cause the first thing p_and_e does is cd someplace
+	export _test_list	# needs to be propagated beyond the first child
+	parse_and_execute "${_test_list}"
+	if [ $? -ne 0 -a ! -d "${_test_list}" -a $? -ne 200 ]
+	then
+		printf "bohem $_bohem_version ERROR:\n" | tee -a "$LOGFILE" "$ERRFILE"
+		printf "FAILED to parse ${_test_list}.\n" | tee -a "$LOGFILE" "$ERRFILE"
+		# The word "FAILED", above, specifically in the first column will be
+		# counted by the harness as a failing test case!
+		env_test >> "$LOGFILE"
+	fi
+done
+
+
+test -f $WORK_DIR/quit && rm $WORK_DIR/quit
+##############################
+#	COLLECT FINAL STATISTICS
+##############################
+
+# Please note that the statistics are generated by counting the words "FAILED" and
+# "PASSED" in LOGFILE, which were generated by the parse* duo based on the test
+# case exit status. However, it is possible that individual tests could sneak this
+# in as well, in which case the statistics would get slightly skewed.
+printf "\n" >> "$LOGFILE"	# blank line
+printf "Test-suite ended: %s\n" "$(date)" | tee -a "$LOGFILE"
+printf "\n" >> "$LOGFILE"	# blank line
+_passed=`grep -c '^PASSED:' "$LOGFILE"`
+_failed=`grep -c '^FAILED:' "$LOGFILE"`
+_broken=`grep -c '^BROKEN:' "$LOGFILE"`
+
+printf "bohem $_bohem_version Info:\n" | tee -a "$LOGFILE"
+printf "\tEntire test-suite took $(( $SECONDS / 60 )) minutes.\n"\
+	| tee -a "$LOGFILE"
+printf "\tTotal number of tests passed:\t${_passed}\n" | tee -a "$LOGFILE"
+printf "\tTotal number of tests failed:\t${_failed}\n" | tee -a "$LOGFILE"
+printf "\tTotal number of tests ran:\t$(( $_passed + $_failed ))\n" | tee -a "$LOGFILE"
+printf "\tTotal number of tests broken:\t${_broken}\n\n" | tee -a "$LOGFILE"
+
+# Generate final message and exit.
+if [ $_failed -ne 0 ]
+then
+	printf "bohem $_bohem_version Info:\n"
+	printf "\tSOME TESTS FAILED. ($_failed)\n"
+	rm -rf ${_current_user_dir}/.bohem_pid/
+	exit 0
+fi
+printf "bohem $_bohem_version Info:\n"
+printf "\tALL TESTS PASSED. ($_passed)\n"
+rm -rf ${_current_user_dir}/.bohem_pid/
+exit 0 
+

@@ -1,0 +1,111 @@
+#!/usr/bin/env bash
+#########1#########2#########3#########4#########5#########6#########7#########8
+# 
+# $Header: /home/kbreslin/cvs/bohem/bin/overlay,v 1.6 2007-09-18 09:50:43 mlehky Exp $
+#
+#  This script will create a "link-forrest" of one directory to another. A link
+# forrest is an exact duplicate of the directory structure, but each file is
+# replaced with a link pointing to the source. This allows you to work with files
+# in a location without "poluting" the original with log files or other temporary
+# files.
+#  Another, more interesting use, is to create two (or more) link-forrests from
+# the same source, and then work on those trees, without having the created
+# temporary files (that the work may depend on) stomp over each other - they will
+# each have a location of their own.
+#
+# Usage:
+#  overlay <source> <target>
+#   <source> - source location
+#   <target> - target location; will get overwritten with NO prompt!
+#
+# Notes:
+#  The function will be able to handle all the following (in this order!):
+#   - links are replicated, that is, linked to the local location
+#   - directories are unchanged if they exist, and created if they do not
+#   - everything else (files, and ??) are linked to the remote location
+#   - dot-files are NOT ignored
+#
+#########1#########2#########3#########4#########5#########6#########7#########8
+
+
+set -eu	# bail at the first sign of trouble
+
+
+function make_links
+{
+# Function does all the relevant work: actually creates the link-forrest. The
+# function is recursive, and forks itself into the background.
+
+	echo Processing $1
+
+	shopt -s dotglob	# reveal dotfiles
+	shopt -s nullglob	# skip empty directories
+	for each_item in "$1"/*; do
+		each_item=`basename "$each_item"`	# extract just the filename
+
+		if [ "$each_item" = "CVS" ]
+		then
+			continue	# skip CVS
+		fi
+
+		if [ -L "$1/$each_item" ]; then
+		# link
+			link_name=`readlink "$1/$each_item"`
+			rm -f "$each_item"	# mercilessly overwrite existing stuff
+			ln -s "$link_name" "$each_item"
+		elif [ -d "$1/$each_item" ]; then
+		# directory
+			mkdir -p "$each_item"
+			cd "$each_item"
+			make_links "$1/$each_item" &
+			cd ..
+		else
+		# file
+			rm -f "$each_item"	# mercilessly overwrite existing stuff
+			ln -s "$1/$each_item" "$each_item"
+		fi
+
+	done
+
+	return 0
+}
+
+
+_self=`basename $0`
+
+# Sanity checks.
+if [ $# -ne 2 ]; then
+   echo "$_self ERROR: wrong number of arguments."
+   exit 1
+fi
+if [ ! -d "$1" ]; then
+   echo "$_self ERROR: source $1 must be an existing directory."
+   exit 1
+fi
+
+# Find the supplied arguments.
+pushd "$1" > /dev/null
+_source=$PWD
+popd > /dev/null
+mkdir -p "$2"
+pushd "$2" > /dev/null
+_target=$PWD
+popd > /dev/null
+
+# Verify the sanity of the supplied arguments, before filling up the entire disk
+# drive with links.  :o
+if `echo $_target | grep -q "$_source"`; then
+   echo "$_self ERROR: target is inside of source; this is a problem!"
+   echo "$_self info: source: $_source"
+   echo "$_self info: target: $_target"
+   exit 1
+fi
+
+# Call it the first time.
+pushd "$_target" > /dev/null
+make_links "$_source"
+wait	# for (most) background processes
+popd > /dev/null
+
+exit 0
+

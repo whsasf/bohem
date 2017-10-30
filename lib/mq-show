@@ -1,0 +1,34 @@
+#!/bin/bash
+
+if [ $# -ne 7 ]; then
+	echo "$0 <host> <port> <password> <node/cluster-spec> <expected-count> <timeout> <outfile>"
+	exit 3
+fi
+
+set -x
+
+host=$1
+port=$2
+password=$3
+node=$4
+expected_count=$5
+timeout=$6
+outfile=$7
+
+tmpfile=mqtmp$$.txt
+
+while [ $SECONDS -lt $timeout ]
+do
+	manager.pl $host $port $password "RGT MQ SHOW $node" > $tmpfile
+	cat $tmpfile
+	grep "^* ID" $tmpfile > $outfile
+	count=$(cat $outfile | wc -l)
+	if [ "$expected_count" = "" ] || [ $count -eq $expected_count ]; then
+		echo "Found $count messages time=$SECONDS"
+		exit 0
+	fi
+	sleep 1
+done
+
+echo "Timeout after $SECONDS"
+exit 1

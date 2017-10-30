@@ -1,0 +1,22 @@
+#!/bin/bash
+
+###
+### This script will sleep a number of seconds if MX2 is configured
+### Syntax:
+### ldap_sleep <n>
+###
+
+## Temporary hack until we get this implemented correctly.
+set -x
+sleep 6 ; exit 0
+
+if [ "$MX2_HOST" = "" ]; then
+   sleep 6
+else
+   if [ "$1" = "" ]; then
+       time=300
+   else
+       time=$1
+   fi
+   sleep $time
+fi

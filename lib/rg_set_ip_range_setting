@@ -1,0 +1,50 @@
+#!/bin/bash
+
+set -x
+
+ipaddr="$1"
+netmask="$2"
+setting="$3"
+value="$4"
+node="$5"
+
+get_node_host()
+{
+        local node=$1
+        for i in $(seq 1 10)
+        do
+                node_var="RG_SMTP${i}_NODE"
+                if [ "${!node_var}" = "$node" ]; then
+                        var="RG_SMTP${i}_HOST" ; imail_hostname=${!var}
+                        var="RG_SMTP${i}_IMAIL_USER" ; imail_username=${!var}
+                        var="RG_SMTP${i}_OWM_COMMON_INSTALL" ; imail_path=${!var}
+                        var="RG_SMTP${i}_CONFSERV_HOST" ; short_host=${!var}
+                        return
+                fi
+        done
+}
+
+
+if [ "$RG_CONSOLE1_HOST" = "" ] || [ "$RG_CONSOLE1_HOST" = "nohost.invalid" ]
+then
+        ##
+        ## Config DB mode
+        ##
+
+        get_node_host $node
+
+        key="/$short_host/smtp/IPRanges"
+        value="$ipaddr-$netmask $setting $value"
+
+        rg_append_multi_value "smtp" "$key" "$value" "$node"
+
+else
+        ##
+        ## Cluster Management mode
+        ##
+
+        manager.pl $RG_CONSOLE1_HOST $RG_CONSOLE1_PORT $RG_CONSOLE1_PASSWORD "RGT TRAFFIC SET $ipaddr $netmask $setting=$value NODE=$node"
+        manager.pl $RG_CONSOLE1_HOST $RG_CONSOLE1_PORT $RG_CONSOLE1_PASSWORD "RGT TRAFFIC GET $ipaddr $netmask $setting NODE=$node"
+
+
+fi

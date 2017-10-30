@@ -1,0 +1,67 @@
+#!/bin/bash
+
+set -x
+
+policyname="$1"
+node=$2
+namespace="$3"
+
+get_node_host()
+{
+    local node=$1
+    for i in $(seq 1 10)
+    do
+        node_var="RG_SMTP${i}_NODE"
+        if [ "${!node_var}" = "$node" ]; then
+            var="RG_SMTP${i}_HOST" ; imail_hostname=${!var}
+            var="RG_SMTP${i}_IMAIL_USER" ; imail_username=${!var}
+            var="RG_SMTP${i}_INSTALL" ; policy_path="${!var}/mira/usr/store/policyrules/"
+            var="RG_SMTP${i}_INSTALL" ; install_path="${!var}"
+            return
+        fi
+    done
+}
+
+
+if [ "$RG_CONSOLE1_HOST" = "" ] || [ "$RG_CONSOLE1_HOST" = "nohost.invalid" ]
+then
+    ### Config DB mode
+    if [ "$namespace" = "" ]; then
+        echo "must use namespace in config.db mode"
+        return
+    fi
+
+    get_node_host $node
+
+    ###
+    ### You can call this script with a blank policy name - in this case it will clear the policy
+    ###
+    if [ "$policyname" = "" ]; then
+        ssh -o BatchMode=yes -o StrictHostKeyChecking=no $imail_username@$imail_hostname "rm -rf $policy_path/$namespace"
+    fi
+    ssh -o BatchMode=yes -o StrictHostKeyChecking=no $imail_username@$imail_hostname "mkdir -p $policy_path/$namespace"
+    if [ "$policyname" != "" ]; then
+        if [ "$policyname" = "(null)" ]; then
+            ## Special case for testing - create an empty default file.
+            ssh -o BatchMode=yes -o StrictHostKeyChecking=no $imail_username@$imail_hostname "rm -f $policy_path/$namespace/default ; touch $policy_path/$namespace/default"
+        else
+            ssh -o BatchMode=yes -o StrictHostKeyChecking=no $imail_username@$imail_hostname "echo \"$policyname\" > $policy_path/$namespace/default"
+        fi
+    else
+        ssh -o BatchMode=yes -o StrictHostKeyChecking=no $imail_username@$imail_hostname "rm -f $policy_path/$namespace/default"
+    fi
+    ssh -o BatchMode=yes -o StrictHostKeyChecking=no $imail_username@$imail_hostname "MIRA_ROOT=$install_path/mira $install_path/mira/usr/bin/mgr.sh -s $imail_hostname -p 4200 PLUGIN BMAPI MUX POLICY INSTALL $policy_path/$namespace" | perl -pe 'END { exit $status } $status=1 if /^ERROR/;'
+    exit $?
+else
+
+    if [ "$namespace" != "" ]; then
+        namespace="NAMESPACE=$namespace"
+    fi
+    if [ "$policyname" = "" ]; then
+        manager.pl $RG_CONSOLE1_HOST $RG_CONSOLE1_PORT $RG_CONSOLE1_PASSWORD "RGT DISPATCHER SET DefaultPolicy= NODE=$node"
+        manager.pl $RG_CONSOLE1_HOST $RG_CONSOLE1_PORT $RG_CONSOLE1_PASSWORD "RGT DISPATCHER GET DefaultPolicy NODE=$node"
+        exit 0
+    fi
+    manager.pl $RG_CONSOLE1_HOST $RG_CONSOLE1_PORT $RG_CONSOLE1_PASSWORD "RGT POLICY LOAD DefaultPolicy=$policyname NODE=$node $namespace"
+fi
+

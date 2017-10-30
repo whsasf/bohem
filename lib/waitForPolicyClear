@@ -1,0 +1,21 @@
+#!/bin/bash
+set -x
+
+###
+### Arg 1 is comma separated list of nodes to check
+###
+
+if [ "$RG_CONSOLE1_HOST" = "" ] || [ "$RG_CONSOLE1_HOST" = "nohost.invalid" ]; then
+	#TODO
+	exit 0
+fi
+
+nodes=$1
+
+reconfigure_failed=0
+for node in $(echo $nodes | tr ',' ' ')
+do
+    manager.pl $RG_CONSOLE1_HOST $RG_CONSOLE1_PORT $RG_CONSOLE1_PASSWORD "RGT RECONFIGURE DISPATCHER NODE=${node}" || log_fail
+done
+
+exit 0

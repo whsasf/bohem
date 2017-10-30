@@ -1,0 +1,40 @@
+#!/bin/bash
+
+set -x
+
+get_node_host()
+{
+        local node=$1
+        for i in $(seq 1 10)
+        do
+                node_var="RG_SMTP${i}_NODE"
+                if [ "${!node_var}" = "$node" ]; then
+                        var="RG_SMTP${i}_HOST" ; imail_hostname=${!var}
+                        var="RG_SMTP${i}_IMAIL_USER" ; imail_username=${!var}
+                        var="RG_SMTP${i}_OWM_COMMON_INSTALL" ; imail_path=${!var}
+                        var="RG_SMTP${i}_CONFSERV_HOST" ; short_host=${!var}
+                        var="RG_SMTP${i}_INSTALL" ; mira_root=${!var}/mira
+                        var="RG${i}_OWNER" ; owner=${!var}
+                        return
+                fi
+        done
+}
+
+listname="$1"
+listfile="$2"
+node="$3"
+
+if [ "$RG_CONSOLE1_HOST" = "" ] || [ "$RG_CONSOLE1_HOST" = "nohost.invalid" ]; then
+        ##
+        ## Config DB mode
+        ##
+        get_node_host $node
+        ssh root@$imail_hostname "MIRA_ROOT=$mira_root $mira_root/usr/bin/mgr.sh -s $imail_hostname -p 4200 SIEVE LIST SET $listname" < $listfile
+        ssh root@$imail_hostname "MIRA_ROOT=$mira_root $mira_root/usr/bin/mgr.sh -s $imail_hostname -p 4200 SIEVE LIST LIST"
+else
+        manager.pl $RG_CONSOLE1_HOST $RG_CONSOLE1_PORT $RG_CONSOLE1_PASSWORD "RGT LIST ADD $listname NODE=$node" < $listfile || failure
+        manager.pl $RG_CONSOLE1_HOST $RG_CONSOLE1_PORT $RG_CONSOLE1_PASSWORD "RGT LIST LIST NODE=$node"
+fi
+
+exit 0
+

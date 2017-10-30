@@ -1,0 +1,131 @@
+#!/bin/bash
+
+## Terribly inefficient code to add a number of days to a given date
+##
+## Args are:
+##	Base date - in the form CCYYMMDDThhmmssZ
+##  Offset - ie. 5 (can be negative)
+##  units - units for the offset - one of seconds, minutes, hours, days
+##
+##  Note that adding 1 month to 31st/March
+##
+
+INPUT=$1
+COUNT=$2
+UNITS=$3
+
+T=`echo $INPUT | cut -b 9-9`
+Z=`echo $INPUT | cut -b 16-16`
+
+if [ "$T" != "T" ] || [ "$Z" != "Z" ]; then
+	echo "Invalid input date"
+	exit 1
+fi
+
+units=`echo $UNITS | tr '[A-Z]' '[a-z]'`
+
+if [ "$units" = "" ]; then
+	units="seconds"
+elif [ "$units" != "hours" ] && [ "$units" != "minutes" ] && [ "$units" != "days" ] && [ "$units" != "seconds" ]; then
+	echo "Invalid units"
+	exit 1
+fi
+
+YEAR=`echo $INPUT | cut -b 1-4`
+MONTH=`echo $INPUT | cut -b 5-6`
+if [ "${MONTH:0:1}" = "0" ]; then
+	MONTH=${MONTH:1:1}
+fi
+DAY=`echo $INPUT | cut -b 7-8`
+if [ "${DAY:0:1}" = "0" ]; then
+	DAY=${DAY:1:1}
+fi
+
+HOUR=`echo $INPUT | cut -b 10-11`
+if [ "${HOUR:0:1}" = "0" ]; then
+	HOUR=${HOUR:1:1}
+fi
+MINUTE=`echo $INPUT | cut -b 12-13`
+if [ "${MINUTE:0:1}" = "0" ]; then
+	MINUTE=${MINUTE:1:1}
+fi
+SECOND=`echo $INPUT | cut -b 14-15`
+if [ "${SECOND:0:1}" = "0" ]; then
+	SECOND=${SECOND:1:1}
+fi
+
+date -d "$MONTH/$DAY/$YEAR $HOUR:$MINUTE:$SECOND" > /dev/null 2>&1
+if [ $? -ne 0 ]; then
+	echo "Invalid input date"
+	exit 1
+fi
+
+if [ "$units" = "minutes" ]; then
+	if [ $COUNT -gt 0 ]; then
+		MINUTE=$(($MINUTE + $COUNT))
+		if [ $MINUTE -gt 59 ]; then
+			EXTRA_HOURS=$(($MINUTE / 60))
+			EXTRA_MINUTE=$(($EXTRA_HOURS * 60))
+			MINUTE=$(($MINUTE - $EXTRA_MINUTE))
+
+			## We'll add these extra hours on later
+			COUNT=$EXTRA_HOURS
+			units="hours"
+		fi
+	fi
+fi
+
+if [ "$units" = "hours" ]; then
+	if [ $COUNT -gt 0 ]; then
+		HOUR=$(($HOUR + $COUNT))
+		if [ $HOUR -gt 23 ]; then
+			EXTRA_DAYS=$(($HOUR / 24))
+			EXTRA_HOUR=$(($EXTRA_DAYS * 24))
+			HOUR=$(($HOUR - $EXTRA_HOUR))
+
+			## We'll add these extra days on later
+			COUNT=$EXTRA_DAYS
+			units="days"
+		fi
+	fi
+fi
+
+## This is painful...
+if [ "$units" = "days" ]; then
+	while [ $COUNT -ne 0 ]; do
+		if [ $COUNT -gt 0 ]; then
+			DAY=$(($DAY + 1))
+			COUNT=$(($COUNT - 1))
+			date -d "$MONTH/$DAY/$YEAR $HOUR:$MINUTE:$SECOND" > /dev/null 2>&1
+			if [ $? -ne 0 ]; then
+				DAY=1
+				MONTH=$(($MONTH + 1))
+				if [ $MONTH -eq 13 ]; then
+					MONTH=1
+					YEAR=$(($YEAR + 1))
+				fi
+			fi
+		fi
+	done
+fi
+
+if [ $MONTH -lt 10 ]; then
+	MONTH="0${MONTH}"
+fi
+if [ $DAY -lt 10 ]; then
+	DAY="0${DAY}"
+fi
+if [ $HOUR -lt 10 ]; then
+	HOUR="0${HOUR}"
+fi
+if [ $MINUTE -lt 10 ]; then
+	MINUTE="0${MINUTE}"
+fi
+if [ $SECOND -lt 10 ]; then
+	SECOND="0${SECOND}"
+fi
+
+
+echo "${YEAR}${MONTH}${DAY}T${HOUR}${MINUTE}${SECOND}Z"
+
+exit 0

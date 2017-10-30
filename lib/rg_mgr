@@ -1,0 +1,21 @@
+#!/bin/bash
+
+set -x
+
+port=$1
+node=$2
+shift
+shift
+
+
+for i in `seq 1 10`
+do
+	var="RG_SMTP${i}_NODE" ; nn=${!var}
+	if [ "$nn" = "$node" ]; then
+		var="RG_SMTP${i}_HOST" ; host=${!var}
+		var="RG_SMTP${i}_INSTALL" ; install=${!var}
+		ssh root@$host "MIRA_ROOT=$install/mira $install/mira/usr/bin/mgr.sh -p $port -s $host $*"
+		exit 0
+	fi
+done
+

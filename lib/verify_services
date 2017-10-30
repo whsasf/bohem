@@ -1,0 +1,63 @@
+#!/usr/bin/env bash
+#########1#########2#########3#########4#########5#########6#########7#########8
+# 
+# $Header: /home/kbreslin/cvs/bohem/lib/verify_services,v 1.4 2007-10-18 10:39:59 mlehky Exp $
+#
+# This utility is basically a bohem-specific wrapper for nmap. It is used to test if
+# services (defined by their port number) are running on the target system.
+#
+# Usage:
+#  verify_services $VERIFY_SERVICES
+# 
+# Arguments:
+#  Pattern is "<host1>:<port1>[;<host2>:<port2>]" (no spaces!), where:
+#   <host> looks like nmap Target Specification, without all the options.
+#   <port> looks like nmap -p Port Specification, without all the options.
+#
+#########1#########2#########3#########4#########5#########6#########7#########8
+
+
+# This first test may be removed, once IT manage to install all engineering machines properly.
+nmap --version &> /dev/null
+if [ $? -ne 0 ]
+then
+	printf "bohem $_bohem_version Warning:\n" >> "$LOGFILE"
+	printf "\tService scan cannot be performed, because nmap is not installed on this system.\n\n" >> "$LOGFILE"
+	exit 0
+fi
+
+_scan_log="/tmp/${_bohem_self}.scan.$$.log"
+_scan_xml="/tmp/${_bohem_self}.scan.$$.xml"
+_exit_stat=0
+
+IFS=';'	# separate the fields
+shopt -s nullglob	# empty variables get expanded to NULL
+for servers in $*
+do
+	nmap -P0 -oX "$_scan_xml" -p ${servers##*:} ${servers%%:*} &> "$_scan_log"
+	if [ $? -ne 0 ]
+	then
+		printf "bohem $_bohem_version ERROR:\n" | tee -a "$LOGFILE" "$ERRFILE"
+		cat "$_scan_log" | tee -a "$LOGFILE" "$ERRFILE"
+		let $(( _exit_stat ++ ))
+	fi
+
+	# Preserve the scan_log in the trace_log.
+	if [ $(( $_trace_level & $_trace_services )) -eq $_trace_services ]
+	then
+		cat "$_scan_log" >> "$_trace_log"
+	fi
+
+	grep 'port ' "$_scan_xml" | grep -q -v 'open'
+	if [ $? -ne 1 ]
+	then
+		printf "bohem $_bohem_version ERROR:\n" | tee -a "$LOGFILE" "$ERRFILE"
+		cat "$_scan_log" | tee -a "$LOGFILE" "$ERRFILE"
+		let $(( _exit_stat ++ ))
+	fi
+done
+
+# Final cleanup and exit.
+rm -f "$_scan_log" "$_scan_xml"
+exit $_exit_stat
+
