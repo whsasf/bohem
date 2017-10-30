@@ -27,13 +27,13 @@ function globalize
 	if [ -a "$PWD/$(eval echo \${$1})" ]
 	then
 		# convert local path to global preserving spaces
-		echo $1=\"$PWD/$(eval echo \${$1%/})\"  #delete the last "/" 
+		echo $1=\"$PWD/$(eval echo \${$1%/})\"  #from end ,delete the last "/" 
 	fi
 
 	# Variable already contains a global path, so do nothing.
 }
 
-if [ "$(id -u)" = "0" ]
+if [ "$(id -u)" = "0" ]   #root "id -u"=0
 then
 	printf "bohem will not run as the root user\n\n"
 	exit 4
