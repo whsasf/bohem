@@ -1,4 +1,10 @@
 #!/bin/bash -u
+
+#-u means:
+#Treat unset variables and parameters other than the special parameters @ or *
+#as an error when performing parameter expansion. An error message will be written
+#to the standard error, and a non-interactive shell will exit.
+
 #########1#########2#########3#########4#########5#########6#########7#########8
 # 
 # $Header: /home/kbreslin/cvs/bohem/bin/run_tests,v 1.51 2010-09-06 10:36:00 kbreslin Exp $
@@ -74,7 +80,7 @@ then
 fi
 
 mkdir ${_current_user_dir}/.bohem_pid 2>/dev/null
-if [ $? -ne 0 ]
+if [ $? -ne 0 ] #check if this pid process exists ,return 0 if exists,otherwise return 1
 then
 	pid=$(cat ${_current_user_dir}/.bohem_pid/pid)
 	kill -0 $pid
@@ -86,9 +92,10 @@ then
 	printf "bohem is already running - pid $pid - wait for it to complete\n\n"
 	exit 5
 fi
-echo "$$" > ${_current_user_dir}/.bohem_pid/pid
+echo "$$" > ${_current_user_dir}/.bohem_pid/pid  #$$ ,pid of current process 
 
-env > /tmp/${_bohem_self}.env.$$	# this will be used if _env_dump=0
+env > /tmp/${_bohem_self}.env.$$	# this will be used if _env_dump=0 ,env used to show the existed environment varibles in this system
+
 
 # Read in the bohem configuration file.
 source "${_bohem_dir}/etc/bohem.conf"
@@ -163,7 +170,7 @@ then
 fi
 
 # Read in all the modules.
-declare -xf globalize	# declaration had to be moved to here due to introduction of _env_dump
+declare -xf globalize	# declaration had to be moved to here due to introduction of _env_dump ,global function "globalize"
 for _module in "${_bohem_dir}"/modules/*.mod
 do
 	if [ $TRACE = "ON" ]
@@ -210,7 +217,7 @@ then
 	printf "bohem $_bohem_version ERROR:\n"
 	printf "\tCannot locate test-suite in $WORK_DIR.\n"
 	printf "\tYou must set the variable WORK_DIR in the user variables file first!\n\n"
-	${PAGER:-cat} "${_bohem_dir}/docs/README.bohem"	# display some sort of help
+	${PAGER:-cat} "${_bohem_dir}/docs/README.bohem"	# display some sort of help # if $PAGER exist, run $PAGER *.bohem,otherwise run cat *.bohem
 	exit 1
 fi
 
@@ -221,7 +228,7 @@ rm -f "$WORK_DIR/quit"
 ##############################
 
 date=`date +%Y%m%d-%H%M%S`
-ln -sf bohem-$date.log $LOGFILE
+ln -sf bohem-$date.log $LOGFILE  #f means force  #export LOGFILE=bohem.log in global.vars
 
 > "$LOGFILE"	# empty and/or create $LOGFILE
 if [ $? -ne 0 ]
@@ -244,14 +251,14 @@ printf "\t**********  Starting $LOGFILE  **********\n" | tee -a "$LOGFILE"
 printf "Test-suite started: %s\n" "$(date)" | tee -a "$LOGFILE"
 printf "\n" >> "$LOGFILE"	# blank line
 printf "\t********** START of ENVironment dump **********\n" >> "$LOGFILE"
-printf "Command line: $0 $*\n" >> "$LOGFILE"
+printf "Command line: $0 $*\n" >> "$LOGFILE"  #$* all parameters
 cat /tmp/${_bohem_self}.env.$$ >> "$LOGFILE"
 rm /tmp/${_bohem_self}.env.$$	# it's not needed anymore, clean it up
 printf "\t********** END of ENVironment dump **********\n" >> "$LOGFILE"
 printf "\n" >> "$LOGFILE"	# blank line
 
 # Check access to the CVS server, based on TC_CVS_UPDATE.
-if [ $TC_CVS_UPDATE != "none" ]
+if [ $TC_CVS_UPDATE != "none" ] #export TC_CVS_UPDATE=none  ,in global.vars
 then
 	check_ssh ${CVSROOT%%:*}
 	if [ $? -ne 0 ]
@@ -264,7 +271,7 @@ then
 	fi
 fi
 
-> "$ERRFILE"	# empty and/or create $ERRFILE
+> "$ERRFILE"	# empty and/or create $ERRFILE  #export ERRFILE=bohem.err  in global.vars
 if [ $? -ne 0 ]
 then
 	printf "bohem $_bohem_version Warning:\n" >> "$LOGFILE"
