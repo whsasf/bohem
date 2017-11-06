@@ -56,18 +56,18 @@ fi
 echo	# print blank line
 
 ##########  EXPECT  ##########
-#printf "Info: Searching for optional expect ...\n"
-#type expect &> /dev/null
-#if [ $? -eq 0 ]
-#then
-#	printf "Info: expect reports: %s\n" "`expect -version`"
-#	printf "Info: Minimum required is version 5.30.\n"
-#	printf "Info: parts of bohem are tested with version 5.32.1.\n"
-#else
-#	printf "ERROR: Cannot locate expect on this system.\n"
-#	printf "ERROR: You will need to install the latest expect.\n"
-#fi
-#echo	# print blank line
+printf "Info: Searching for optional expect ...\n"
+type expect &> /dev/null
+if [ $? -eq 0 ]
+then
+	printf "Info: expect reports: %s\n" "`expect -version`"
+	printf "Info: Minimum required is version 5.30.\n"
+	printf "Info: parts of bohem are tested with version 5.32.1.\n"
+else
+	printf "ERROR: Cannot locate expect on this system.\n"
+	printf "ERROR: You will need to install the latest expect.\n"
+fi
+echo	# print blank line
 
 ##########  COREUTILS  ##########
 printf "Info: Searching for optional coreutils ...\n"

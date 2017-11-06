@@ -50,7 +50,7 @@ fi
 
 # Save the current user directory for later.
 _current_user_dir=$PWD
-
+echo "_current_user_dir=${_current_user_dir}"   #delete later
 # Find myself :) using the least possible number of external (to bash) functions.
 # Assume the user could be doing all sorts of funky things.
 _bohem_dir=${0%bin/*}	# discard everything after and including "bin/" in $0
@@ -66,6 +66,9 @@ then
 	# user is currently in the actual _bohem_dir
 	_bohem_dir=$PWD
 fi
+echo "_bohem_dir=${_bohem_dir}" #delete later
+echo "_bohem_self=${_bohem_self}" #delete later
+
 cd "$_current_user_dir"
 eval `globalize _bohem_dir`
 
@@ -80,10 +83,10 @@ then
 fi
 
 mkdir ${_current_user_dir}/.bohem_pid 2>/dev/null
-if [ $? -ne 0 ] #check if this pid process exists ,return 0 if exists,otherwise return 1
+if [ $? -ne 0 ] 
 then
 	pid=$(cat ${_current_user_dir}/.bohem_pid/pid)
-	kill -0 $pid
+	kill -0 $pid #check if this pid process exists ,return 0 if exists,otherwise return 1
 	if [ $? -ne 0 ]; then
 		printf "bohem: stale pid file found in ${_current_user_dir}/.bohem_pid\n"
 		printf "  clean up after aborted Bohem\n\n"
@@ -107,6 +110,8 @@ else
 	TRACE="OFF"
 fi
 
+echo "TRACE=$TRACE" #delete later
+
 # Read in the test global variables.
 source "${_bohem_dir}/etc/global.vars"
 
@@ -117,6 +122,7 @@ export PYTHONPATH=${_bohem_dir}/lib/python:${PYTHONPATH:-}
 # for something that will be hardly used, if ever.
 for _test_list in "$@"
 do
+  
 	# The variables file we are looking for can be in one of two locations,
 	# having one of several filename permutations.
 	_test_list=`basename ${_test_list}`	# just in case user supplied complete path
@@ -164,7 +170,7 @@ else
 	fi
 fi
 
-if [ ${_env_dump} -eq 1 ]
+if [ ${_env_dump} -eq 1 ]  #default=1
 then
 	env > /tmp/${_bohem_self}.env.$$
 fi
@@ -201,7 +207,7 @@ cd "$_current_user_dir"
 ##############################
 
 # Check command-line arguments.
-if [ $# -lt 1 ]
+if [ $# -lt 1 ] # <1
 then
 	printf "bohem $_bohem_version ERROR:\n"
 	printf "\tMissing command-line arguments. You need to run:\n"
@@ -210,7 +216,7 @@ then
 	exit 1
 fi
 
-eval `globalize WORK_DIR`	# who knows what the user is thinking
+eval `globalize WORK_DIR`	# who knows what the user is thinking  #WORK_DIR=$_current_user_dir
 # Check if the user is supplying things that actually exist.
 if [ ! -d "$WORK_DIR" ]
 then
@@ -260,7 +266,7 @@ printf "\n" >> "$LOGFILE"	# blank line
 # Check access to the CVS server, based on TC_CVS_UPDATE.
 if [ $TC_CVS_UPDATE != "none" ] #export TC_CVS_UPDATE=none  ,in global.vars
 then
-	check_ssh ${CVSROOT%%:*}
+	check_ssh ${CVSROOT%%:*}  #ssh -o BatchMode=yes $* uname &> /dev/null
 	if [ $? -ne 0 ]
 	then
 		printf "bohem $_bohem_version Warning:\n" >> "$LOGFILE"
