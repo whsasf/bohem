@@ -30,10 +30,10 @@ function globalize
 	# 'eval `globalize something`', where "something" is a variable used by the
 	# rest of the program.
 
-	if [ -a "$PWD/$(eval echo \${$1})" ]
+	if [ -a "$PWD/$(eval echo \${$1})" ]  #check if path exists
 	then
 		# convert local path to global preserving spaces
-		echo $1=\"$PWD/$(eval echo \${$1%/})\"  #from end ,delete the last "/" 
+		echo $1=\"$PWD/$(eval echo \${$1%/})\"  #from end ,delete the last "/" .with eval,this is a very high level usage,directly change input parameter
 	fi
 
 	# Variable already contains a global path, so do nothing.
@@ -50,34 +50,32 @@ fi
 
 # Save the current user directory for later.
 _current_user_dir=$PWD
-echo "_current_user_dir=${_current_user_dir}"   #delete later
+
 # Find myself :) using the least possible number of external (to bash) functions.
 # Assume the user could be doing all sorts of funky things.
 _bohem_dir=${0%bin/*}	# discard everything after and including "bin/" in $0
 _bohem_self=${0##*bin/}	# discard everything upto and including "bin/" in $0
-if [ "${_bohem_dir}" = "${_bohem_self}" ]
+if [ "${_bohem_dir}" = "${_bohem_self}" ]    # ./run_tests
 then
-	# user is executing this from within the bin directory
+	# user is executing this from within the bin directory,yes
 	cd ..
-	_bohem_dir=$PWD
-	_bohem_self=${0##*/}
-elif [ "${_bohem_dir}" = "" ]
+	_bohem_dir=$PWD # example: /home/whsasf/workspace/bohem
+	_bohem_self=${0##*/}  #run_tests
+elif [ "${_bohem_dir}" = "" ]     #./bin/run_tests
 then
 	# user is currently in the actual _bohem_dir
-	_bohem_dir=$PWD
+	_bohem_dir=$PWD  # example: /home/whsasf/workspace/bohem
 fi
-echo "_bohem_dir=${_bohem_dir}" #delete later
-echo "_bohem_self=${_bohem_self}" #delete later
-
 cd "$_current_user_dir"
-eval `globalize _bohem_dir`
+eval `globalize _bohem_dir`  #change _bohem_dir after this function working with eval
+
 
 # Check installation. This sanity test must be at this point, as this path is
 # where the next things are read from.
 if [ ! -f "${_bohem_dir}/etc/bohem.conf" ]
 then
 	# this could come up if the user has _bohem_self linked from somewhere
-	printf "bohem $_bohem_version Fatal ERROR:\n"
+	printf "bohem $_bohem_version Fatal ERROR:\n"  #{_bohem_version} can not pase here, but doesn't impact others,is acceptable
 	printf "\tCould not find ${_bohem_dir}/etc/bohem.conf. Check the installation.\n\n"
 	exit 3
 fi
@@ -110,8 +108,6 @@ else
 	TRACE="OFF"
 fi
 
-echo "TRACE=$TRACE" #delete later
-
 # Read in the test global variables.
 source "${_bohem_dir}/etc/global.vars"
 
@@ -122,7 +118,6 @@ export PYTHONPATH=${_bohem_dir}/lib/python:${PYTHONPATH:-}
 # for something that will be hardly used, if ever.
 for _test_list in "$@"
 do
-  
 	# The variables file we are looking for can be in one of two locations,
 	# having one of several filename permutations.
 	_test_list=`basename ${_test_list}`	# just in case user supplied complete path
@@ -170,7 +165,7 @@ else
 	fi
 fi
 
-if [ ${_env_dump} -eq 1 ]  #default=1
+if [ ${_env_dump} -eq 1 ]
 then
 	env > /tmp/${_bohem_self}.env.$$
 fi
@@ -207,7 +202,7 @@ cd "$_current_user_dir"
 ##############################
 
 # Check command-line arguments.
-if [ $# -lt 1 ] # <1
+if [ $# -lt 1 ]
 then
 	printf "bohem $_bohem_version ERROR:\n"
 	printf "\tMissing command-line arguments. You need to run:\n"
@@ -216,7 +211,7 @@ then
 	exit 1
 fi
 
-eval `globalize WORK_DIR`	# who knows what the user is thinking  #WORK_DIR=$_current_user_dir
+eval `globalize WORK_DIR`	# who knows what the user is thinking
 # Check if the user is supplying things that actually exist.
 if [ ! -d "$WORK_DIR" ]
 then
@@ -266,7 +261,7 @@ printf "\n" >> "$LOGFILE"	# blank line
 # Check access to the CVS server, based on TC_CVS_UPDATE.
 if [ $TC_CVS_UPDATE != "none" ] #export TC_CVS_UPDATE=none  ,in global.vars
 then
-	check_ssh ${CVSROOT%%:*}  #ssh -o BatchMode=yes $* uname &> /dev/null
+	check_ssh ${CVSROOT%%:*}
 	if [ $? -ne 0 ]
 	then
 		printf "bohem $_bohem_version Warning:\n" >> "$LOGFILE"

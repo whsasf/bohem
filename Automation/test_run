@@ -17,8 +17,11 @@ echo "########## 1 Clear mta.log using expect tool ..."
 	exit
 	EOF
 
-#clear other tmp files 
-rm *.log
+#clear other temp log files
+rm expect*.log 
+rm imapfetch.log
+rm send.log
+
 	
 #2 create accounts ar1@openwave.com and ar2@openwave.com
 echo "########## 2 Accounts provision ..."
@@ -106,7 +109,8 @@ echo "########## 5 check autoreplied message in inbox of user1 ..."
 imapmail.pl   $MX1_HOST_IP1 $MX1_IMAP_PORT $user1 p inbox 2 >imapfetch.log
 cat imapfetch.log
 count=$(grep "This is an autoreply message for internal senders!" imapfetch.log|wc -l)
-if [[ "$count" -eq	 "1" ]];then
+count1=$(grep "This ia a wonderful world!!" imapfetch.log|wc -l)
+if [[ "$count" -eq	 "1" && "$count1" -eq "1" ]];then
 		echo -e "\033[32m##########6 Check autoreplied messaege successfully!!\033[0m"
 		log_pass "xxxxx OK"
 else
@@ -129,3 +133,6 @@ else
 	echo -e "\033[31m########## 7 Accont deleted failed,PLease check manually,Exiting now ...\033[0m"
 	exit 6
 fi
+
+#clear other tmp files 
+#rm test_run*.log
