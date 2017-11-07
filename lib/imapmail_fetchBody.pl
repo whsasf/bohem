@@ -6,8 +6,9 @@
 # Fetch the specified message (or the OLDEST <---- Which is a bug)
 #
 
-require "$ENV{'_bohem_dir'}/lib/imap.pm";
 
+require "$ENV{'_bohem_dir'}/lib/imap.pm";
+#require "imap.pm";
 $HOST=$ARGV[0];
 $PORT=$ARGV[1];
 $USER=$ARGV[2];
