@@ -1,0 +1,12 @@
+spawn ssh imail2@10.49.58.118
+Password: 
+spawn ssh imail2@10.49.58.118
+Password: 
+Last login: Wed Nov  8 02:54:27 2017 from bigchina
+[?1034hmx-10-49-58-118:imail2:Mx9.5:~$ imboxstats xx2@openwave.com
+ERROR: Unable to get mailbox information
+Error Code: MBX_NOT_FOUND
+Short Message: The given Mailbox does not exist.
+mx-10-49-58-118:imail2:Mx9.5:~$ echo 5555
+5555
+mx-10-49-58-118:imail2:Mx9.5:~$ 

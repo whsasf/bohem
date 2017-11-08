@@ -322,6 +322,7 @@ printf "\n" >> "$LOGFILE"	# blank line
 printf "Test-suite ended: %s\n" "$(date)" | tee -a "$LOGFILE"
 printf "\n" >> "$LOGFILE"	# blank line
 _passed=`grep -c '^PASSED:' "$LOGFILE"`
+#_passed=`grep -c '^TESTPASSED:' "$LOGFILE"`
 _failed=`grep -c '^FAILED:' "$LOGFILE"`
 _broken=`grep -c '^BROKEN:' "$LOGFILE"`
 

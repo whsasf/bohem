@@ -1,0 +1,349 @@
+#!/bin/bash
+# this test script is applicable to MX-10015
+
+#define variables
+user1=ar1
+user2=ar2
+
+function clean_accounts ()
+{
+	echo "##########  doing some clear job ..."
+	#delete accounts
+	curl -s -X DELETE http://${MXOS1_HOST_IP}:$MXOS1__PORT/mxos/mailbox/v2/$user1@openwave.com |jq . >/dev/null
+	tmp1=$(curl -s -X GET http://${MXOS1_HOST_IP}:$MXOS1__PORT/mxos/mailbox/v2/$user1@openwave.com |jq .|grep "Mailbox does not exist"|wc -l)
+	curl -s -X DELETE http://${MXOS1_HOST_IP}:$MXOS1__PORT/mxos/mailbox/v2/$user2@openwave.com |jq . >/dev/null
+	tmp2=$(curl -s -X GET http://${MXOS1_HOST_IP}:$MXOS1__PORT/mxos/mailbox/v2/$user2@openwave.com |jq .|grep "Mailbox does not exist"|wc -l)
+	if [[ "$tmp1" -eq "1"  && "$tmp2" -eq "1" ]]
+	then
+	  echo -e "\033[32m##########  Accont deleted successfully\033[0m"
+	else
+		echo -e "\033[31m##########  Accont deleted failed,PLease check manually,Exiting now ...\033[0m"
+		exit 6
+	fi
+}
+
+
+
+
+#1 clear mta.log and other tep files
+echo "########## 1 Clear mta.log using expect tool ..."
+	/usr/bin/expect <<-EOF 
+	set timeout 50
+	set MX1_HOST_IP1 "10.49.58.118"
+	spawn ssh imail2@\${MX1_HOST_IP1}
+	expect  "*Password" { send "imail\r" }
+	expect  "*~" { send "> /opt/imail2/log/mta.log\r" }
+	expect  "*~"
+	exit
+	EOF
+
+#clear other temp log files
+rm expect*.log 
+rm imapfetch*.log
+rm send*.log
+
+	
+#2 create accounts ar1@openwave.com and ar2@openwave.com
+echo "########## 2 Accounts provision ..."
+curl -s -X PUT -d "cosId=default&password=p" http://${MXOS1_HOST_IP}:$MXOS1__PORT/mxos/mailbox/v2/$user1@openwave.com |jq . >/dev/null
+tmp1=$(curl -s -X GET http://${MXOS1_HOST_IP}:$MXOS1__PORT/mxos/mailbox/v2/$user1@openwave.com |jq .|grep "mailboxId"|wc -l)
+curl -s -X PUT -d "cosId=default&password=p" http://${MXOS1_HOST_IP}:$MXOS1__PORT/mxos/mailbox/v2/$user2@openwave.com |jq . >/dev/null
+tmp2=$(curl -s -X GET http://${MXOS1_HOST_IP}:$MXOS1__PORT/mxos/mailbox/v2/$user2@openwave.com |jq .|grep "mailboxId"|wc -l)
+if [[ "$tmp1" -eq "1"  && "$tmp2" -eq "1" ]]
+then
+  echo -e "\033[32m########## 2 Accont provision successfully, we can continue now\033[0m"
+else
+	echo -e "\033[31m########## 2 Accont provision failed,PLease check manually,Exiting now ...\033[0m"
+	clean_accounts
+	exit 1
+fi
+
+#3 configure ar2 to autoreply mode
+
+echo "########## 3 Configure user2 to echo autoreply mode using expect tool ..."
+	/usr/bin/expect <<-EOF 
+	set timeout 50
+	set MX1_HOST_IP1 "10.49.58.118"
+	set user ar2
+	log_file expect1.log 
+	spawn ssh imail2@\${MX1_HOST_IP1}
+	expect  "*Password" { send "imail\r" }
+	expect  "*~"  { send "echo 'internal:' >data.txt\r" }
+	expect  "*~"  { send "echo 'Echo,This is an autoreply message for internal senders!' >>data.txt\r" }
+	expect  "*~"  { send "echo 'external:' >>data.txt\r" }
+	expect  "*~"  { send "echo 'Echo,This is an external autoreply message for external senders!' >>data.txt\r" }
+	expect  "*~"  { send "autoreplyctrl \${user}@openwave.com echo data.txt none none\r" }
+	expect "*~"
+	exit
+	EOF
+	
+	count=$(grep  -i "AutoReply data updated Successfully"  expect1.log|wc -l)
+	if [[ "$count" -eq "1" ]];then
+		echo -e "\033[32m##########3 Congifuration successfully\033[0m"
+	else
+		echo -e "\033[31m##########3 Configuration failed,please check maunually!Exiting now ...\033[0m"
+		clean_accounts
+		exit 2
+	fi
+ 
+# 4 deliever 1 message from user1 to user2, we expect that will have a autoreplied message (with origin message attached)in inbox of user1
+echo "##########4 delieber 1 message from user1 to user2 ..."
+#create message body
+echo "Subject: test message about autoreply feature" >send.data
+echo "To:$user2" >>send.data
+echo >>send.data
+echo "Echo,This ia a wonderful world!!" >>send.data
+
+sendmail.pl  $MX1_HOST_IP1 $MX1_SMTP_PORT $user1 $user2  <send.data >send.log 
+count=$(grep "250 Message received" send.log|wc -l)
+if [[ "$count" -eq "1" ]]
+then
+  echo -e "\033[32m########## 4 Message Deliver successfully, we can continue now\033[0m"
+else
+	echo -e "\033[31m########## 4 Message Deliver failed,please check manually,Exiting now ...\033[0m"
+	clean_accounts
+	exit 3
+fi
+
+#5 check mta.log, make sure autoreply flag "autoreplied" exist:
+echo "########## 5 Check mta.log using expect tool ..."
+	/usr/bin/expect <<-EOF 
+	set timeout 50
+	set MX1_HOST_IP1 "10.49.58.118"
+	log_file expect2.log 
+	spawn ssh imail2@\${MX1_HOST_IP1}
+	expect  "*Password" { send "imail\r" }
+	expect  "*~" { send "cat /opt/imail2/log/mta.log\r" }
+	expect "*~"
+	exit
+	EOF
+	
+	count=$(grep  -i "autoreplied"  expect2.log|wc -l)	
+	count1=$(grep -i "delivered" expect2.log |wc -l)
+	if [[ "$count" -eq "1" && "$count1" -eq "2" ]];then
+		echo -e "\033[32m##########5 Autoreply messaeg delievered successfully!!\033[0m"
+	else
+		echo -e "\033[31m##########5 Autoreply messaeg delievered failed!Please check manually,Exiting now ...\033[0m"
+		clean_accounts
+		exit 4
+	fi 
+ 
+# 6 check autoreplied message in inbox of user1
+echo "########## 5 check autoreplied message in inbox of user1 ..."
+imapmail.pl   $MX1_HOST_IP1 $MX1_IMAP_PORT $user1 p inbox 2 >imapfetch.log
+cat imapfetch.log
+count=$(grep "Echo,This is an autoreply message for internal senders!" imapfetch.log|wc -l)
+count1=$(grep "Echo,This ia a wonderful world!!" imapfetch.log|wc -l)
+if [[ "$count" -eq	 "1" && "$count1" -eq "1" ]];then
+		echo -e "\033[32m##########6 Check autoreplied messaege successfully!!\033[0m"
+		log_pass "AutoReply in echo mode without start/stop date for internal sender test success!"
+else
+		echo -e "\033[31m##########6 Check autoreplied messaege failed!Please checl manually,Exiting now ...\033[0m"
+		log_fail "AutoReply in echo mode without start/stop date for internal sender test failed!"
+		clean_accounts
+		exit 5
+fi
+ 
+
+#8  change autoreply mode to vacation and test it
+
+echo "########## 8 Configure user2 to vacation autoreply mode using expect tool ..."
+	/usr/bin/expect <<-EOF 
+	set timeout 50
+	set MX1_HOST_IP1 "10.49.58.118"
+	set user ar2
+	log_file expect3.log 
+	spawn ssh imail2@\${MX1_HOST_IP1}
+	expect  "*Password" { send "imail\r" }
+	expect  "*~"  { send "echo 'internal:' >data.txt\r" }
+	expect  "*~"  { send "echo 'Vacation,This is an autoreply message for internal senders!' >>data.txt\r" }
+	expect  "*~"  { send "echo 'external:' >>data.txt\r" }
+	expect  "*~"  { send "echo 'Vacation,This is an external autoreply message for external senders!' >>data.txt\r" }
+	expect  "*~"  { send "autoreplyctrl \${user}@openwave.com vacation data.txt none none\r" }
+	expect "*~"
+	exit
+	EOF
+	
+	count=$(grep  -i "AutoReply data updated Successfully"  expect3.log|wc -l)
+	if [[ "$count" -eq "1" ]];then
+		echo -e "\033[32m##########8 Congifuration successfully\033[0m"
+	else
+		echo -e "\033[31m##########8 Configuration failed,please check maunually!Exiting now ...\033[0m"
+		clean_accounts
+		exit 6
+	fi
+
+#9 clear mta.log again
+echo "########## 9 Clear mta.log using expect tool ..."
+	/usr/bin/expect <<-EOF 
+	set timeout 50
+	set MX1_HOST_IP1 "10.49.58.118"
+	spawn ssh imail2@\${MX1_HOST_IP1}
+	expect  "*Password" { send "imail\r" }
+	expect  "*~" { send "> /opt/imail2/log/mta.log\r" }
+	expect  "*~"
+	exit
+	EOF
+	
+# 10 deliever 1 message from user1 to user2 again, we expect that will have a autoreplied message(without attach original message) in inbox of user1
+echo "##########10 delieber 1 message from user1 to user2 again ..."
+#create message body
+echo "Subject: test message about autoreply feature" >send.data
+echo "To:$user2" >>send.data
+echo >>send.data
+echo "Vacation,This ia a wonderful world!!" >>send.data
+sendmail.pl  $MX1_HOST_IP1 $MX1_SMTP_PORT $user1 $user2  <send.data >send2.log 
+count=$(grep "250 Message received" send2.log|wc -l)
+if [[ "$count" -eq "1" ]]
+then
+  echo -e "\033[32m########## 10 Message Deliver successfully, we can continue now\033[0m"
+else
+	echo -e "\033[31m########## 10 Message Deliver failed,please check manually,Exiting now ...\033[0m"
+	clean_accounts
+	exit 7
+fi
+
+#11 check mta.log, make sure autoreply flag "autoreplied" exist:
+echo "########## 11 Check mta.log using expect tool ..."
+	/usr/bin/expect <<-EOF 
+	set timeout 50
+	set MX1_HOST_IP1 "10.49.58.118"
+	log_file expect4.log 
+	spawn ssh imail2@\${MX1_HOST_IP1}
+	expect  "*Password" { send "imail\r" }
+	expect  "*~" { send "cat /opt/imail2/log/mta.log\r" }
+	expect "*~"
+	exit
+	EOF
+	
+	count=$(grep  -i "autoreplied"  expect4.log|wc -l)	
+	count1=$(grep -i "delivered" expect4.log |wc -l)
+	if [[ "$count" -eq "1" && "$count1" -eq "2" ]];then
+		echo -e "\033[32m##########11 Autoreply messaeg delievered successfully!!\033[0m"
+	else
+		echo -e "\033[31m##########11 Autoreply messaeg delievered failed!Please check manually,Exiting now ...\033[0m"
+		clean_accounts
+		exit 8
+	fi 
+ 
+# 12 check autoreplied message in inbox of user1
+echo "########## 12 check autoreplied message in inbox of user1 ..."
+imapmail.pl   $MX1_HOST_IP1 $MX1_IMAP_PORT $user1 p inbox 3 >imapfetch2.log
+cat imapfetch2.log
+count=$(grep "Vacation,This is an autoreply message for internal senders!" imapfetch2.log|wc -l)
+count1=$(grep "Vacation,This ia a wonderful world!!" imapfetch2.log|wc -l)
+if [[ "$count" -eq	 "1" && "$count1" -eq "0" ]];then
+		echo -e "\033[32m##########12 Check autoreplied messaege successfully!!\033[0m"
+		log_pass "AutoReply in echo vacation without start/stop date for internal sender test success!"
+else
+		echo -e "\033[31m##########12 Check autoreplied messaege failed!Please checl manually,Exiting now ...\033[0m"
+		log_fail "AutoReply in vacation mode without start/stop date for internal sender test faild!"
+		clean_accounts
+		exit 9
+fi
+
+
+#13  change autoreply mode to reply and test it
+
+echo "########## 13 Configure user2 to reply autoreply mode using expect tool ..."
+	/usr/bin/expect <<-EOF 
+	set timeout 50
+	set MX1_HOST_IP1 "10.49.58.118"
+	set user ar2
+	log_file expect5.log 
+	spawn ssh imail2@\${MX1_HOST_IP1}
+	expect  "*Password" { send "imail\r" }
+	expect  "*~"  { send "echo 'internal:' >data.txt\r" }
+	expect  "*~"  { send "echo 'Reply,This is an autoreply message for internal senders!' >>data.txt\r" }
+	expect  "*~"  { send "echo 'external:' >>data.txt\r" }
+	expect  "*~"  { send "echo 'Reply,This is an external autoreply message for external senders!' >>data.txt\r" }
+	expect  "*~"  { send "autoreplyctrl \${user}@openwave.com reply data.txt none none\r" }
+	expect "*~"
+	exit
+	EOF
+	
+	count=$(grep  -i "AutoReply data updated Successfully"  expect5.log|wc -l)
+	if [[ "$count" -eq "1" ]];then
+		echo -e "\033[32m##########13 Congifuration successfully\033[0m"
+	else
+		echo -e "\033[31m##########13 Configuration failed,please check maunually!Exiting now ...\033[0m"
+		clean_accounts
+		exit 6
+	fi
+
+#14 clear mta.log again
+echo "########## 14 Clear mta.log using expect tool ..."
+	/usr/bin/expect <<-EOF 
+	set timeout 50
+	set MX1_HOST_IP1 "10.49.58.118"
+	spawn ssh imail2@\${MX1_HOST_IP1}
+	expect  "*Password" { send "imail\r" }
+	expect  "*~" { send "> /opt/imail2/log/mta.log\r" }
+	expect  "*~"
+	exit
+	EOF
+	
+# 15 deliever 1 message from user1 to user2 again, we expect that will have a autoreplied message(without attach original message) in inbox of user1
+echo "##########15 delieber 1 message from user1 to user2 again ..."
+#create message body
+echo "Subject: test message about autoreply feature" >send.data
+echo "To:$user2" >>send.data
+echo >>send.data
+echo "Reply,This ia a wonderful world!!" >>send.data
+sendmail.pl  $MX1_HOST_IP1 $MX1_SMTP_PORT $user1 $user2  <send.data >send5.log 
+count=$(grep "250 Message received" send5.log|wc -l)
+if [[ "$count" -eq "1" ]]
+then
+  echo -e "\033[32m########## 15 Message Deliver successfully, we can continue now\033[0m"
+else
+	echo -e "\033[31m########## 15 Message Deliver failed,please check manually,Exiting now ...\033[0m"
+	clean_accounts
+	exit 7
+fi
+
+#16 check mta.log, make sure autoreply flag "autoreplied" exist:
+echo "########## 16 Check mta.log using expect tool ..."
+	/usr/bin/expect <<-EOF 
+	set timeout 50
+	set MX1_HOST_IP1 "10.49.58.118"
+	log_file expect6.log 
+	spawn ssh imail2@\${MX1_HOST_IP1}
+	expect  "*Password" { send "imail\r" }
+	expect  "*~" { send "cat /opt/imail2/log/mta.log\r" }
+	expect "*~"
+	exit
+	EOF
+	
+	count=$(grep  -i "autoreplied"  expect6.log|wc -l)	
+	count1=$(grep -i "delivered" expect6.log |wc -l)
+	if [[ "$count" -eq "1" && "$count1" -eq "2" ]];then
+		echo -e "\033[32m##########16 Autoreply messaeg delievered successfully!!\033[0m"
+	else
+		echo -e "\033[31m##########16 Autoreply messaeg delievered failed!Please check manually,Exiting now ...\033[0m"
+		clean_accounts
+		exit 8
+	fi 
+ 
+# 17 check autoreplied message in inbox of user1
+echo "########## 17 check autoreplied message in inbox of user1 ..."
+imapmail.pl   $MX1_HOST_IP1 $MX1_IMAP_PORT $user1 p inbox 4 >imapfetch3.log
+cat imapfetch3.log
+count=$(grep "Reply,This is an autoreply message for internal senders!" imapfetch3.log|wc -l)
+count1=$(grep "Reply,This ia a wonderful world!!" imapfetch3.log|wc -l)
+echo $count >xx
+echo $count1 >>xx
+if [[ "$count" -eq	 "1" && "$count1" -eq "0" ]];then
+		echo -e "\033[32m##########17 Check autoreplied messaege successfully!!\033[0m"
+		log_pass "AutoReply in echo reply without start/stop date for internal sender test success!"
+else
+		echo -e "\033[31m##########17 Check autoreplied messaege failed!Please checl manually,Exiting now ...\033[0m"
+		log_fail "AutoReply in reply mode without start/stop date for internal sender test faild!"
+		clean_accounts
+		exit 9
+fi
+
+
+
+
+#clear other tmp files 
+#rm test_run*.log
