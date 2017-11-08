@@ -1,0 +1,8 @@
+	**********  Starting /home/whsasf/workspace/bohem/Automation/xx/  **********
+Test started: Wed Nov  8 22:20:50 CST 2017
+./test_run: line 3: unexpected EOF while looking for matching `"'
+./test_run: line 4: syntax error: unexpected end of file
+TESTFAILED: /home/whsasf/workspace/bohem/Automation/xx/: Test didn't report success or failure or skipped (1 sec.)
+FAILED: /home/whsasf/workspace/bohem/Automation/xx/ [20171108-222050] (1 sec.)
+Test ended: Wed Nov  8 22:20:51 CST 2017
+
