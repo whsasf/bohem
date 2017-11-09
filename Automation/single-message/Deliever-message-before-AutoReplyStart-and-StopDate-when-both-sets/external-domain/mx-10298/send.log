@@ -1,0 +1,20 @@
+Received: 220 mx-10-49-58-118.openwave.com ESMTP server (InterMail vM.9.05.01.00 201-2473-137-123) ready Thu, 9 Nov 2017 03:06:11 -0500
+Sending command (to 10.49.58.118:20025): EHLO whsasf.com
+Received: 250-mx-10-49-58-118.openwave.com
+Received: 250-HELP
+Received: 250-VRFY
+Received: 250-XREMOTEQUEUE
+Received: 250-ETRN
+Received: 250-PIPELINING
+Received: 250-DSN
+Received: 250-8BITMIME
+Received: 250 SIZE 30996480
+Sending command (to 10.49.58.118:20025): MAIL FROM:<ar20820@whsasf.com>
+Received: 250 Sender <ar20820@whsasf.com> Ok
+Sending command (to 10.49.58.118:20025): RCPT TO:<ar22754@openwave.com>
+Received: 550 you are not allowed to send mail to <ar22754@openwave.com>
+Got an ERROR response
+Sending command (to 10.49.58.118:20025): DATA
+Received: 503 No recipients specified
+Got an ERROR response
+Not Connected...

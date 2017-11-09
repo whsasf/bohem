@@ -1,0 +1,52 @@
+imapmail: host[10.49.58.118] port[20143] user[ar24257] pass[p] folder[inbox] message[2]
+xx OK LOGIN completed
+* 2 EXISTS
+* OK [UNSEEN 1] First unseen message
+* OK [UIDVALIDITY 1510214606] UIDs valid
+* OK [UIDNEXT 1002] Predicted next UID
+* FLAGS (\Answered \Flagged \Deleted \Draft \Seen)
+* OK [PERMANENTFLAGS (\* \Answered \Flagged \Deleted \Draft \Seen)] Permanent flags
+* 1 RECENT
+xx OK [READ-WRITE] SELECT completed
+* 2 FETCH (BODY[] {1377}
+Return-Path: <>
+Subject: Re: test message about autoreply feature
+To: ar24257@openwave.com
+From: "Auto-reply from ar32528@openwave.com" <ar32528@openwave.com>
+In-Reply-To: <20171109080400.AAV4894.mx-10-49-58-118.openwave.com@ar24257>
+Precedence: bulk
+Date: Thu, 9 Nov 2017 03:04:03 -0500
+Message-ID: <20171109080403.AAW4894.mx-10-49-58-118.openwave.com@mx-10-49-58-118>
+MIME-Version: 1.0
+Content-Type: multipart/mixed;
+		Boundary="===========================_ _= 3504993(4894)1510214643"
+
+
+--===========================_ _= 3504993(4894)1510214643
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+
+Echo,This is an autoreply message for internal senders!
+
+--===========================_ _= 3504993(4894)1510214643
+Content-Type: message/rfc822
+
+Received: from ar24257 ([10.37.2.214]) by mx-10-49-58-118.openwave.com
+          (InterMail vM.9.05.01.00 201-2473-137-123) with ESMTP
+          id <20171109080400.AAV4894.mx-10-49-58-118.openwave.com@ar24257>
+          for <ar32528@openwave.com>; Thu, 9 Nov 2017 03:04:00 -0500
+Subject: test message about autoreply feature
+To: ar32528
+Date: Thu, 9 Nov 2017 03:04:01 -0500
+Message-Id: <20171109080400.AAV4894.mx-10-49-58-118.openwave.com@ar24257>
+From: <ar24257@openwave.com>
+
+Echo,This ia a wonderful world!!
+
+--===========================_ _= 3504993(4894)1510214643--
+
+ FLAGS (\Recent \Seen))
+xx OK FETCH completed
+* BYE IMAP4 server terminating connection
+xx OK LOGOUT completed

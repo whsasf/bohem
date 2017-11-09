@@ -142,75 +142,27 @@ EOF
 count=$(grep  -i "autoreplied"  expect3.log|wc -l)
 count1=$(grep -i "delivered" expect3.log |wc -l)
 if [[ "$count" -eq "0" && "$count1" -eq "1" ]];then
-	echo -e "\033[32m##########6 Autoreply messaeg delievered successfully!!\033[0m"
+	echo -e "\033[32m##########6 Autoreply messaeg undelievered successfully!!\033[0m"
 else
-	echo -e "\033[31m##########6 Autoreply messaeg delievered failed!Please check manually,Exiting now ...\033[0m"
+	echo -e "\033[31m##########6 Autoreply messaeg undelievered failed!Please check manually,Exiting now ...\033[0m"
 	clean_accounts
 	exit 4
 fi 
 
-#7 check autoreplied message in inbox of user1
+#7 check autoreplied message in inbox of user1 should not exist
 echo "########## 7 check autoreplied message in inbox of user1 ..."
 imapmail.pl   $MX1_HOST_IP1 $MX1_IMAP_PORT $user1 p inbox 2 >imapfetch.log
 cat imapfetch.log
-count=$(grep "Vacation,This is an autoreply message for internal senders!" imapfetch.log|wc -l)
-count1=$(grep "Vacation,This ia a wonderful world!!" imapfetch.log|wc -l)
-if [[ "$count" -eq	 "0" && "$count1" -eq "0" ]];then
-		echo -e "\033[32m##########7 Check autoreplied messaege successfully!!\033[0m"
+count=$(grep "NO FETCH failed" imapfetch.log|wc -l)
+if [[ "$count" -eq	 "1" ]];then
+		echo -e "\033[32m##########7 Check autoreplied messaege not exist undelievered successfully!!\033[0m"
+		log_pass "AutoReply in $autoreplymode mode with message undelievered before start/stop date for internal sender test success!"
 else
-		echo -e "\033[31m##########7 Check autoreplied messaege failed!Please checl manually,Exiting now ...\033[0m"
+		echo -e "\033[31m##########7 Check autoreplied messaege not exist undelievered failed!Please checl manually,Exiting now ...\033[0m"
+		log_fail "AutoReply in $autoreplymode mode with message undelievered before start/stop date for internal sender test failed!"
 		clean_accounts
 		exit 5
 fi
-
-#8 clear mta.log 
-echo "########## 8 Clear mta.log  ..."
-expect <<-EOF 
-set timeout $expect_timeout	
-spawn ssh imail2@${MX1_HOST_IP1}
-expect  "*Password" { send "imail\r" }
-expect  "*~" { send "> ~/log/mta.log\r" }
-expect  "*~"
-exit
-EOF
-
-#9 deliever another 1 message from user1 to user2, we expect that will not have a autoreplied message 
-echo "##########9 delieber 1 message from user1 to user2 ..."
-
-sendmail.pl  $MX1_HOST_IP1 $MX1_SMTP_PORT $user1 $user2  <send.data >send2.log 
-count=$(grep "250 Message received" send2.log|wc -l)
-if [[ "$count" -eq "1" ]]
-then
-  echo -e "\033[32m########## 9 Message Deliver successfully, we can continue now\033[0m"
-else
-	echo -e "\033[31m########## 9 Message Deliver failed,please check manually,Exiting now ...\033[0m"
-	cat send2.log
-	clean_accounts
-	exit 3
-fi
-
-#10 check mta.log, make sure autoreply flag "autoreplied" exist:
-echo "########## 10 Check mta.log using expect tool ..."
-expect <<-EOF 
-set timeout $expect_timeout	
-log_file expect4.log 
-spawn ssh imail2@${MX1_HOST_IP1}
-expect  "*Password" { send "imail\r" }
-expect  "*~" { send "cat log/mta.log\r" }
-expect  "*~"
-exit
-EOF
-
-count=$(grep  -i "autoreplied"  expect4.log|wc -l)
-if [[ "$count" -eq "1" ]];then
-	echo -e "\033[32m##########10 Autoreply messaeg undelievered successfully!!\033[0m"
-	log_pass "AutoReply in $autoreplymode mode with message delievered between start/stop date for internal sender test success!"
-else
-	echo -e "\033[31m##########10 Autoreply messaeg undelievered failed!Please check manually,Exiting now ...\033[0m"
-	log_fail "AutoReply in $autoreplymode mode with message delievered between start/stop date for internal sender test failed!"
-	clean_accounts
-	exit 4
-fi 
 
 #delete all accounts if all works fine.
 clean_accounts
