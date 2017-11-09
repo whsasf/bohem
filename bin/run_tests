@@ -17,6 +17,7 @@
 #
 #########1#########2#########3#########4#########5#########6#########7#########8
 
+#source ../modules/log_result.mod
 
 function globalize
 {
@@ -172,6 +173,7 @@ fi
 
 # Read in all the modules.
 declare -xf globalize	# declaration had to be moved to here due to introduction of _env_dump ,global function "globalize"
+
 for _module in "${_bohem_dir}"/modules/*.mod
 do
 	if [ $TRACE = "ON" ]

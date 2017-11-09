@@ -1,0 +1,51 @@
+	**********  Starting /home/ram/workspace/bohem/Automation/single-message/Deliever-message-between-AutoReplyStart-and-StopDate-when-both-sets/internal-domain/mx-10019  **********
+Test started: Thu Nov  9 10:55:43 CST 2017
+########## 1 Clear mta.log using expect tool ...
+spawn ssh imail2@10.49.58.118
+Password: 
+Last login: Wed Nov  8 21:51:23 2017 from bigchina
+[?1034hmx-10-49-58-118:imail2:Mx9.5:~$ > ~/log/mta.log
+########## 2 Accounts provision ...
+[32m########## 2 Accont provision successfully, we can continue now[0m
+spawn ssh root@10.49.58.118
+Password: 
+Last login: Wed Nov  8 21:50:40 2017 from bigchina
+]0;root@mx-10-49-58-118:~[?1034h[root@mx-10-49-58-118 ~]# date +%s
+1510196046
+]0;root@mx-10-49-58-118:~[root@mx-10-49-58-118 ~]# 
+]0;root@mx-10-49-58-118:~[root@mx-10-49-58-118 ~]# ########## 3 Configure user2 to vacation autoreply mode using expect tool ...
+spawn ssh imail2@10.49.58.118
+Password: 
+Last login: Wed Nov  8 21:54:00 2017 from bigchina
+[?1034hmx-10-49-58-118:imail2:Mx9.5:~$ echo 'internal:' >data.txt
+mx-10-49-58-118:imail2:Mx9.5:~$ echo 'Vacation,This is an autoreply message for internal senders!' >>data.txt
+mx-10-49-58-118:imail2:Mx9.5:~$ echo 'external:' >>data.txt
+mx-10-49-58-118:imail2:Mx9.5:~$ echo 'Vacation,This is an external autoreply message for external senders!' >>data.txt
+mx-10-49-58-118:imail2:Mx9.5:~$ autoreplyctrl ar19007@openwave.com vacation data.txt 1510196051 1510197846
+AutoReply data updated Successfully.
+mx-10-49-58-118:imail2:Mx9.5:~$ [32m##########3 Congifuration successfully[0m
+##########4 delieber 1 message from user1 to user2 ...
+[31m########## 4 Message Deliver failed,please check manually,Exiting now ...[0m
+Received: 220 mx-10-49-58-118.openwave.com ESMTP server (InterMail vM.9.05.01.00 201-2473-137-123) ready Wed, 8 Nov 2017 21:54:19 -0500
+Sending command (to 10.49.58.118:20025): EHLO ar24920
+Received: 250-mx-10-49-58-118.openwave.com
+Received: 250-HELP
+Received: 250-VRFY
+Received: 250-XREMOTEQUEUE
+Received: 250-ETRN
+Received: 250-PIPELINING
+Received: 250-DSN
+Received: 250-8BITMIME
+Received: 250 SIZE 30996480
+Sending command (to 10.49.58.118:20025): MAIL FROM:<ar24920>
+Received: 250 Sender <ar24920> Ok
+Sending command (to 10.49.58.118:20025): RCPT TO:<ar19007>
+Received: 550 you are not allowed to send mail to <ar19007>
+Got an ERROR response
+Sending command (to 10.49.58.118:20025): DATA
+Received: 503 No recipients specified
+Got an ERROR response
+Not Connected...
+##########  doing some clear job ...
+##########  doing some clear job ...
+[31m##########  Accont deleted failed,PLease check manually,Exiting now ...[0m

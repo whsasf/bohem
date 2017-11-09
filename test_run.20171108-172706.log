@@ -1,7 +1,0 @@
-	**********  Starting /home/ram/workspace/bohem/  **********
-Test started: Wed Nov  8 17:27:06 CST 2017
-TESTFAILED: /home/ram/workspace/bohem/: FAILED to locate test_run script in /home/ram/workspace/bohem/.
- (0 sec.)
-FAILED: /home/ram/workspace/bohem/ [20171108-172706] (0 sec.)
-Test ended: Wed Nov  8 17:27:06 CST 2017
-
