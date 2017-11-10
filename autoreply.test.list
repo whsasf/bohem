@@ -1,4 +1,4 @@
-#========= AutoReply feature testing,total number 24
+#================================= AutoReply feature testing,total number 48
 #=======   single message
 
 #=====     1 Deliever message when autoReplyStartDate and autoReplyStopDate unset
@@ -59,3 +59,60 @@
 #external sender mx-10300 -reply
 ~/workspace/bohem/Automation/single-message/Deliever-message-after-AutoReplyStart-and-StopDate-when-both-sets/external-domain/mx-10300/
   
+#======    5 Deliever message before AutoReplyStartDate when only autoreplystardate set
+#internal sender mx-10016 -vacation
+~/workspace/bohem/Automation/single-message/Deliever-message-before-AutoReplyStart-when-only-it-set/internal-domain/mx-10016/
+#internal sender mx-10246 -echo
+~/workspace/bohem/Automation/single-message/Deliever-message-before-AutoReplyStart-when-only-it-set/internal-domain/mx-10246/
+#internal sender mx-10278 -reply
+~/workspace/bohem/Automation/single-message/Deliever-message-before-AutoReplyStart-when-only-it-set/internal-domain/mx-10278/
+#external sender mx-10230 -vacation
+~/workspace/bohem/Automation/single-message/Deliever-message-before-AutoReplyStart-when-only-it-set/external-domain/mx-10230/
+#external sender mx-10262 -echo
+~/workspace/bohem/Automation/single-message/Deliever-message-before-AutoReplyStart-when-only-it-set/external-domain/mx-10262/
+#external sender mx-10294 -reply
+~/workspace/bohem/Automation/single-message/Deliever-message-before-AutoReplyStart-when-only-it-set/external-domain/mx-10294/
+
+#======    6 Deliever message after AutoReplyStopDate when only autoreplystopdate set
+#internal sender mx-10220 -vacation
+~/workspace/bohem/Automation/single-message/Deliever-message-after-AutoreplyStopDate-when-only-it-set/internal-domain/mx-10220/
+#internal sender mx-10249 -echo
+~/workspace/bohem/Automation/single-message/Deliever-message-after-AutoreplyStopDate-when-only-it-set/internal-domain/mx-10249/
+#internal sender mx-10281 -reply
+~/workspace/bohem/Automation/single-message/Deliever-message-after-AutoreplyStopDate-when-only-it-set/internal-domain/mx-10281/
+#external sender mx-10233 -vacation
+~/workspace/bohem/Automation/single-message/Deliever-message-after-AutoreplyStopDate-when-only-it-set/external-domain/mx-10233/
+#external sender mx-10265 -echo
+~/workspace/bohem/Automation/single-message/Deliever-message-after-AutoreplyStopDate-when-only-it-set/external-domain/mx-10265/
+#external sender mx-10297 -reply
+~/workspace/bohem/Automation/single-message/Deliever-message-after-AutoreplyStopDate-when-only-it-set/external-domain/mx-10297/
+
+
+#======    7 Deliever message after AutoReplyStartDate when only autoreplystardate set
+#internal sender mx-10218 -vacation
+~/workspace/bohem/Automation/single-message/Deliever-message-after-AutoReplyStart-when-only-it-set/internal-domain/mx-10218/
+#internal sender mx-10247 -echo
+~/workspace/bohem/Automation/single-message/Deliever-message-after-AutoReplyStart-when-only-it-set/internal-domain/mx-10247/
+#internal sender mx-10279 -reply
+~/workspace/bohem/Automation/single-message/Deliever-message-after-AutoReplyStart-when-only-it-set/internal-domain/mx-10279/
+#external sender mx-10231 -vacation
+~/workspace/bohem/Automation/single-message/Deliever-message-after-AutoReplyStart-when-only-it-set/external-domain/mx-10231/
+#external sender mx-10263 -echo
+~/workspace/bohem/Automation/single-message/Deliever-message-after-AutoReplyStart-when-only-it-set/external-domain/mx-10263/
+#external sender mx-10295 -reply
+~/workspace/bohem/Automation/single-message/Deliever-message-after-AutoReplyStart-when-only-it-set/external-domain/mx-10295/
+
+#======    8 :Deliever message before AutoReplyStopDate when only autoreplystopdate set
+#internal sender mx-10219 -vacation
+~/workspace/bohem/Automation/single-message/Deliever-message-before-AutoReplyStopDate-when-only-it-set/internal-domain/mx-10219/
+#internal sender mx-10248 -echo
+~/workspace/bohem/Automation/single-message/Deliever-message-before-AutoReplyStopDate-when-only-it-set/internal-domain/mx-10248/
+#internal sender mx-10280 -reply
+~/workspace/bohem/Automation/single-message/Deliever-message-before-AutoReplyStopDate-when-only-it-set/internal-domain/mx-10280/
+#external sender mx-10232 -vacation
+~/workspace/bohem/Automation/single-message/Deliever-message-before-AutoReplyStopDate-when-only-it-set/external-domain/mx-10232/
+#external sender mx-10264 -echo
+~/workspace/bohem/Automation/single-message/Deliever-message-before-AutoReplyStopDate-when-only-it-set/external-domain/mx-10264/
+#external sender mx-10296 -reply
+~/workspace/bohem/Automation/single-message/Deliever-message-before-AutoReplyStopDate-when-only-it-set/external-domain/mx-10296/
+

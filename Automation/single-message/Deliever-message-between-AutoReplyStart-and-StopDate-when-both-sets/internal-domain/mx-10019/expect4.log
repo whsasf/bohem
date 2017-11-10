@@ -1,0 +1,11 @@
+spawn ssh imail2@10.49.58.118
+Password: 
+Last login: Fri Nov 10 03:26:08 2017 from bigchina
+[?1034hmx-10-49-58-118:imail2:Mx9.5:~$ cat log/mta.log
+20171110 032609262-0500 mx-10-49-58-118 mta 4006 4721 140004884276992 Note;SmtpConnectionReceived(70/1) [10.37.2.214]:fromhost=10.37.2.214:fromport=35716:localAddr=10.49.58.118:sid=E84CED97-2F5153D5-00000014.0
+20171110 032611005-0500 mx-10-49-58-118 mta 4006 4727 140004867442432 Note;MsgTrace(65/26) docid will be used for message-id:user=ar24524@openwave.com:from=<ar4011@openwave.com>:msgid=<20171110082610.AAQ4006.mx-10-49-58-118.openwave.com@ar4011>:size=524:fromhost=10.37.2.214:fromport=35716:localAddr=[10.49.58.118]:sid=E84CED97-2F5153D5-00000014.1
+20171110 032611006-0500 mx-10-49-58-118 mta 4006 4721 140004884276992 Note;MsgTrace(65/26) received from internet:from=<ar4011>:msgid=<20171110082610.AAQ4006.mx-10-49-58-118.openwave.com@ar4011>:fromhost=[10.37.2.214]:fromport=35716:localAddr=10.49.58.118:sid=E84CED97-2F5153D5-00000014.1:msgsize=421:time=2:sender=<ar4011>:rcpts=<ar24524@openwave.com>:protocol=ESMTP:encoding=plaintext:auth=
+20171110 032611056-0500 mx-10-49-58-118 mta 4006 4732 140004866643712 Note;MsgTrace(65/26) delivered:user=ar24524@openwave.com:mbox=8666630834917837719:mss=mx-10-49-58-118:from=<ar4011@openwave.com>:msgid=<20171110082610.AAQ4006.mx-10-49-58-118.openwave.com@ar4011>:size=560:port=55014:fromhost=10.37.2.214:fromport=35716:localAddr=[10.49.58.118]:sid=E84CED97-2F5153D5-00000014.1:docid=cec6e472-c5f0-11e7-964e-d5cf0ce8863b:node=mx-10-49-58-118:nodePort=55014
+20171110 032611062-0500 mx-10-49-58-118 mta 4006 4732 140004866643712 Note;MtaAutoReplySuppressedAlreadySent(79/60) user=ar24524@openwave.com:mbox=8666630834917837719:mss=mx-10-49-58-118:from=<ar4011@openwave.com>:msgid=<20171110082610.AAQ4006.mx-10-49-58-118.openwave.com@ar4011>:size=524:port=55014:fromhost=10.37.2.214:fromport=35716:localAddr=[10.49.58.118]:sid=E84CED97-2F5153D5-00000014.1:node=mx-10-49-58-118:nodePort=55014
+20171110 032611284-0500 mx-10-49-58-118 mta 4006 4721 140004884276992 Note;SmtpConnectionClosed(70/2) [10.37.2.214]:2:1:156:fromhost=[10.37.2.214]:fromport=35716:localAddr=10.49.58.118:sid=E84CED97-2F5153D5-00000014.1
+mx-10-49-58-118:imail2:Mx9.5:~$ 

@@ -51,6 +51,10 @@ rm send*.log
 	
 #2 create accounts user1@openwave.com and user2@openwave.com
 echo "########## 2 Accounts provision ..."
+
+#create domain
+curl -s -X PUT -d "type=local" http://${MXOS1_HOST_IP}:$MXOS1__PORT/mxos/domain/v2/whsasf.com >/dev/null
+
 tmp1=$(curl -s -X PUT -d "cosId=default&password=p" http://${MXOS1_HOST_IP}:$MXOS1__PORT/mxos/mailbox/v2/$user1@whsasf.com)
 expr $tmp1 + 0 &>/dev/null
 tmp11=$(echo $?)
@@ -58,6 +62,8 @@ tmp2=$(curl -s -X PUT -d "cosId=default&password=p" http://${MXOS1_HOST_IP}:$MXO
 expr $tmp2 + 0 &>/dev/null
 tmp22=$(echo $?)
 let tmpv=tmp11+tmp22
+echo $tmp1
+echo $tmp2
 if [[ "$tmpv" -eq "0" ]]
 then
   echo -e "\033[32m########## 2 Accont provision successfully, we can continue now\033[0m"

@@ -55,6 +55,8 @@ tmp2=$(curl -s -X PUT -d "cosId=default&password=p" http://${MXOS1_HOST_IP}:$MXO
 expr $tmp2 + 0 &>/dev/null
 tmp22=$(echo $?)
 let tmpv=tmp11+tmp22
+echo $tmp1
+echo $tmp2
 if [[ "$tmpv" -eq "0" ]]
 then
   echo -e "\033[32m########## 2 Accont provision successfully, we can continue now\033[0m"

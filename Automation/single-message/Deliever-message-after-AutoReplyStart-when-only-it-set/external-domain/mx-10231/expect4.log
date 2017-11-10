@@ -1,0 +1,11 @@
+spawn ssh imail2@10.49.58.118
+Password: 
+Last login: Fri Nov 10 02:55:57 2017 from bigchina
+[?1034hmx-10-49-58-118:imail2:Mx9.5:~$ cat log/mta.log
+20171110 025558365-0500 mx-10-49-58-118 mta 30268 30753 140261822772992 Note;SmtpConnectionReceived(70/1) [10.37.2.214]:fromhost=10.37.2.214:fromport=34634:localAddr=10.49.58.118:sid=4CEE0E6C-4428EB24-00000008.0
+20171110 025600142-0500 mx-10-49-58-118 mta 30268 30760 140261805938432 Note;MsgTrace(65/26) docid will be used for message-id:user=ar6848@openwave.com:from=<ar15010@whsasf.com>:msgid=<20171110075559.AAG30268.mx-10-49-58-118.openwave.com@whsasf.com>:size=548:fromhost=10.37.2.214:fromport=34634:localAddr=[10.49.58.118]:sid=4CEE0E6C-4428EB24-00000008.1
+20171110 025600142-0500 mx-10-49-58-118 mta 30268 30753 140261822772992 Note;MsgTrace(65/26) received from internet:from=<ar15010@whsasf.com>:msgid=<20171110075559.AAG30268.mx-10-49-58-118.openwave.com@whsasf.com>:fromhost=[10.37.2.214]:fromport=34634:localAddr=10.49.58.118:sid=4CEE0E6C-4428EB24-00000008.1:msgsize=441:time=2:sender=<ar15010@whsasf.com>:rcpts=<ar6848@openwave.com>:protocol=ESMTP:encoding=plaintext:auth=
+20171110 025600200-0500 mx-10-49-58-118 mta 30268 30961 140261804607232 Note;MsgTrace(65/26) delivered:user=ar6848@openwave.com:mbox=5854220274839643476:mss=mx-10-49-58-119:from=<ar15010@whsasf.com>:msgid=<20171110075559.AAG30268.mx-10-49-58-118.openwave.com@whsasf.com>:size=583:port=55014:fromhost=10.37.2.214:fromport=34634:localAddr=[10.49.58.118]:sid=4CEE0E6C-4428EB24-00000008.1:docid=976b0656-c5ec-11e7-b7a7-e8a450ff1afb:node=mx-10-49-58-119:nodePort=55014
+20171110 025600209-0500 mx-10-49-58-118 mta 30268 30961 140261804607232 Note;MtaAutoReplySuppressedAlreadySent(79/60) user=ar6848@openwave.com:mbox=5854220274839643476:mss=mx-10-49-58-119:from=<ar15010@whsasf.com>:msgid=<20171110075559.AAG30268.mx-10-49-58-118.openwave.com@whsasf.com>:size=548:port=55014:fromhost=10.37.2.214:fromport=34634:localAddr=[10.49.58.118]:sid=4CEE0E6C-4428EB24-00000008.1:node=mx-10-49-58-119:nodePort=55014
+20171110 025600419-0500 mx-10-49-58-118 mta 30268 30753 140261822772992 Note;SmtpConnectionClosed(70/2) [10.37.2.214]:2:1:196:fromhost=[10.37.2.214]:fromport=34634:localAddr=10.49.58.118:sid=4CEE0E6C-4428EB24-00000008.1
+mx-10-49-58-118:imail2:Mx9.5:~$ 

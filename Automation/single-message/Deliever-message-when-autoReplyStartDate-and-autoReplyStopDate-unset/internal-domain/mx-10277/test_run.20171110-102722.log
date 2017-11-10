@@ -1,0 +1,74 @@
+	**********  Starting /home/ram/workspace/bohem/Automation/single-message/Deliever-message-when-autoReplyStartDate-and-autoReplyStopDate-unset/internal-domain/mx-10277/  **********
+Test started: Fri Nov 10 10:27:22 CST 2017
+########## 1 Clear mta.log using expect tool ...
+spawn ssh imail2@10.49.58.118
+Password: 
+Last login: Thu Nov  9 21:24:58 2017 from bigchina
+[?1034hmx-10-49-58-118:imail2:Mx9.5:~$ > ~/log/mta.log
+mx-10-49-58-118:imail2:Mx9.5:~$ ########## 2 Accounts provision ...
+[32m########## 2 Accont provision successfully, we can continue now[0m
+########## 3 Configure user2 to reply autoreply mode using expect tool ...
+spawn ssh imail2@10.49.58.118
+Password: 
+Last login: Thu Nov  9 21:25:08 2017 from bigchina
+[?1034hmx-10-49-58-118:imail2:Mx9.5:~$ echo 'internal:' >data.txt
+mx-10-49-58-118:imail2:Mx9.5:~$ echo 'Reply,This is an autoreply message for internal senders!' >>data.txt
+mx-10-49-58-118:imail2:Mx9.5:~$ echo 'external:' >>data.txt
+mx-10-49-58-118:imail2:Mx9.5:~$ echo 'Reply,This is an external autoreply message for external senders!' >>data.txt
+mx-10-49-58-118:imail2:Mx9.5:~$ autoreplyctrl ar30147@openwave.com reply data.txt none none
+AutoReply data updated Successfully.
+mx-10-49-58-118:imail2:Mx9.5:~$ [32m##########3 Congifuration successfully[0m
+##########4 delieber 1 message from user1 to user2 ...
+[32m########## 4 Message Deliver successfully, we can continue now[0m
+########## 5 Check mta.log using expect tool ...
+spawn ssh imail2@10.49.58.118
+Password: 
+Last login: Thu Nov  9 21:25:15 2017 from bigchina
+[?1034hmx-10-49-58-118:imail2:Mx9.5:~$ cat /opt/imail2/log/mta.log
+20171109 212519693-0500 mx-10-49-58-118 mta 25952 26437 140341848921856 Note;SmtpConnectionReceived(70/1) [10.37.2.214]:fromhost=10.37.2.214:fromport=52890:localAddr=10.49.58.118:sid=400C521D-4921914A-00000008.0
+20171109 212521451-0500 mx-10-49-58-118 mta 25952 26437 140341848921856 Note;MsgTrace(65/26) received from internet:from=<ar2501>:msgid=<20171110022520.AAF25952.mx-10-49-58-118.openwave.com@ar2501>:fromhost=[10.37.2.214]:fromport=52890:localAddr=10.49.58.118:sid=400C521D-4921914A-00000008.1:msgsize=417:time=1:sender=<ar2501>:rcpts=<ar30147@openwave.com>:protocol=ESMTP:encoding=plaintext:auth=
+20171109 212521451-0500 mx-10-49-58-118 mta 25952 26443 140341832087296 Note;MsgTrace(65/26) docid will be used for message-id:user=ar30147@openwave.com:from=<ar2501@openwave.com>:msgid=<20171110022520.AAF25952.mx-10-49-58-118.openwave.com@ar2501>:size=521:fromhost=10.37.2.214:fromport=52890:localAddr=[10.49.58.118]:sid=400C521D-4921914A-00000008.1
+20171109 212521487-0500 mx-10-49-58-118 mta 25952 26447 140341831554816 Note;MsgTrace(65/26) delivered:user=ar30147@openwave.com:mbox=7855845393411457078:mss=mx-10-49-58-118:from=<ar2501@openwave.com>:msgid=<20171110022520.AAF25952.mx-10-49-58-118.openwave.com@ar2501>:size=557:port=55014:fromhost=10.37.2.214:fromport=52890:localAddr=[10.49.58.118]:sid=400C521D-4921914A-00000008.1:docid=66a2e968-c5be-11e7-9d28-b6b4dccda46b:node=mx-10-49-58-118:nodePort=55014
+20171109 212521492-0500 mx-10-49-58-118 mta 25952 26447 140341831554816 Note;MsgTrace(65/26) autoreplied:user=ar30147@openwave.com:mbox=7855845393411457078:mss=mx-10-49-58-118:from=<ar2501@openwave.com>:msgid=<20171110022520.AAF25952.mx-10-49-58-118.openwave.com@ar2501>:size=521:port=55014:fromhost=10.37.2.214:fromport=52890:localAddr=[10.49.58.118]:sid=400C521D-4921914A-00000008.1:node=mx-10-49-58-118:nodePort=55014
+20171109 212521510-0500 mx-10-49-58-118 mta 25952 26443 140341832087296 Note;MsgTrace(65/26) docid will be used for message-id:user=ar2501@openwave.com:from=<>:msgid=<20171110022521.AAG25952.mx-10-49-58-118.openwave.com@mx-10-49-58-118>:size=458:sid=400C521D-4921914A-00000008.1
+20171109 212521537-0500 mx-10-49-58-118 mta 25952 26448 140341831288576 Note;MsgTrace(65/26) delivered:user=ar2501@openwave.com:mbox=8066827691938671928:mss=mx-10-49-58-118:from=<>:msgid=<20171110022521.AAG25952.mx-10-49-58-118.openwave.com@mx-10-49-58-118>:size=536:port=55014:sid=400C521D-4921914A-00000008.1:docid=66a8f48e-c5be-11e7-9f25-abc0db5500ec:node=mx-10-49-58-118:nodePort=55014
+20171109 212521728-0500 mx-10-49-58-118 mta 25952 26437 140341848921856 Note;SmtpConnectionClosed(70/2) [10.37.2.214]:2:1:153:fromhost=[10.37.2.214]:fromport=52890:localAddr=10.49.58.118:sid=400C521D-4921914A-00000008.1
+mx-10-49-58-118:imail2:Mx9.5:~$ [32m##########5 Autoreply messaeg delievered successfully!![0m
+########## 5 check autoreplied message in inbox of user1 ...
+imapmail: host[10.49.58.118] port[20143] user[ar2501] pass[p] folder[inbox] message[2]
+xx OK LOGIN completed
+* 2 EXISTS
+* OK [UNSEEN 1] First unseen message
+* OK [UIDVALIDITY 1510280709] UIDs valid
+* OK [UIDNEXT 1002] Predicted next UID
+* FLAGS (\Answered \Flagged \Deleted \Draft \Seen)
+* OK [PERMANENTFLAGS (\* \Answered \Flagged \Deleted \Draft \Seen)] Permanent flags
+* 1 RECENT
+xx OK [READ-WRITE] SELECT completed
+* 2 FETCH (BODY[] {536}
+Return-Path: <>
+Subject: Re: test message about autoreply feature
+To: ar2501@openwave.com
+From: "Auto-reply from ar30147@openwave.com" <ar30147@openwave.com>
+In-Reply-To: <20171110022520.AAF25952.mx-10-49-58-118.openwave.com@ar2501>
+Precedence: bulk
+Date: Thu, 9 Nov 2017 21:25:21 -0500
+Message-ID: <20171110022521.AAG25952.mx-10-49-58-118.openwave.com@mx-10-49-58-118>
+MIME-Version: 1.0
+Content-Type: text/plain;
+		charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+
+Reply,This is an autoreply message for internal senders!
+ FLAGS (\Recent \Seen))
+xx OK FETCH completed
+* BYE IMAP4 server terminating connection
+xx OK LOGOUT completed
+[32m##########6 Check autoreplied messaege successfully!![0m
+TESTPASSED: /home/ram/workspace/bohem/Automation/single-message/Deliever-message-when-autoReplyStartDate-and-autoReplyStopDate-unset/internal-domain/mx-10277/: AutoReply in reply mode without start/stop date for internal sender test success! (22 sec.)
+##########  doing some clear job ...
+[32m##########  Accont deleted successfully[0m
+PASSED: /home/ram/workspace/bohem/Automation/single-message/Deliever-message-when-autoReplyStartDate-and-autoReplyStopDate-unset/internal-domain/mx-10277/ [20171110-102722] (25 sec.) 10
+Test ended: Fri Nov 10 10:27:47 CST 2017
+

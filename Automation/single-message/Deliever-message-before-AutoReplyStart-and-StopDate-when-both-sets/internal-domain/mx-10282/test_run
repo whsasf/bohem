@@ -49,9 +49,11 @@ rm send*.log
 #2 create accounts user1@openwave.com and user2@openwave.com
 echo "########## 2 Accounts provision ..."
 tmp1=$(curl -s -X PUT -d "cosId=default&password=p" http://${MXOS1_HOST_IP}:$MXOS1__PORT/mxos/mailbox/v2/$user1@openwave.com)
+echo $tmp1
 expr $tmp1 + 0 &>/dev/null
 tmp11=$(echo $?)
 tmp2=$(curl -s -X PUT -d "cosId=default&password=p" http://${MXOS1_HOST_IP}:$MXOS1__PORT/mxos/mailbox/v2/$user2@openwave.com)
+echo $tmp1
 expr $tmp2 + 0 &>/dev/null
 tmp22=$(echo $?)
 let tmpv=tmp11+tmp22
