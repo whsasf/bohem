@@ -1,0 +1,12 @@
+	**********  Starting /home/ram/workspace/bohem/Automation/single-message/Deliever-message-after-AutoReplyStart-when-only-it-set/external-domain/mx-10295/  **********
+Test started: Fri Nov 10 17:10:16 CST 2017
+########## 1 Clear mta.log using expect tool ...
+spawn ssh imail2@10.49.58.118
+Password: 
+Last login: Fri Nov 10 04:06:23 2017 from bigchina
+[?1034hmx-10-49-58-118:imail2:Mx9.5:~$ > ~/log/mta.log
+mx-10-49-58-118:imail2:Mx9.5:~$ ########## 2 Accounts provision ...
+TESTFAILED: /home/ram/workspace/bohem/Automation/single-message/Deliever-message-after-AutoReplyStart-when-only-it-set/external-domain/mx-10295/: Test didn't report success or failure or skipped (101 sec.)
+FAILED: /home/ram/workspace/bohem/Automation/single-message/Deliever-message-after-AutoReplyStart-when-only-it-set/external-domain/mx-10295/ [20171110-171016] (101 sec.) 103
+Test ended: Fri Nov 10 17:11:57 CST 2017
+
