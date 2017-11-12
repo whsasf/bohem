@@ -1,0 +1,214 @@
+#!/bin/bash
+# this test script is applicable to 
+# 
+#define accounts variables
+
+id1=`echo $RANDOM`
+user1=ar$id1
+id2=`echo $RANDOM`
+user2=ar$id2
+id3=`echo $RANDOM`
+user3=ar$id3
+id4=`echo $RANDOM`
+user4=ar$id4
+id5=`echo $RANDOM`
+user5=ar$id5
+
+autoreplymode=reply
+
+function clean_accounts ()
+{
+		echo "##########  doing some clear job ..."
+		tmpp=0
+				
+		#delete accounts
+		curl -s -X DELETE http://${MXOS1_HOST_IP}:$MXOS1__PORT/mxos/mailbox/v2/$user1@openwave.com  >/dev/null
+		tmp1=$(curl -s -X GET http://${MXOS1_HOST_IP}:$MXOS1__PORT/mxos/mailbox/v2/$user1@openwave.com |grep "Mailbox does not exist"|wc -l)
+		curl -s -X DELETE http://${MXOS1_HOST_IP}:$MXOS1__PORT/mxos/mailbox/v2/$user2@openwave.com  >/dev/null
+		tmp2=$(curl -s -X GET http://${MXOS1_HOST_IP}:$MXOS1__PORT/mxos/mailbox/v2/$user2@openwave.com |grep "Mailbox does not exist"|wc -l)
+		curl -s -X DELETE http://${MXOS1_HOST_IP}:$MXOS1__PORT/mxos/mailbox/v2/$user3@openwave.com  >/dev/null
+		tmp3=$(curl -s -X GET http://${MXOS1_HOST_IP}:$MXOS1__PORT/mxos/mailbox/v2/$user3@openwave.com |grep "Mailbox does not exist"|wc -l)
+		curl -s -X DELETE http://${MXOS1_HOST_IP}:$MXOS1__PORT/mxos/mailbox/v2/$user4@whsasf.com  >/dev/null
+		tmp4=$(curl -s -X GET http://${MXOS1_HOST_IP}:$MXOS1__PORT/mxos/mailbox/v2/$user4@whsasf.com |grep "Mailbox does not exist"|wc -l)
+		curl -s -X DELETE http://${MXOS1_HOST_IP}:$MXOS1__PORT/mxos/mailbox/v2/$user5@whsasf.com  >/dev/null
+		tmp5=$(curl -s -X GET http://${MXOS1_HOST_IP}:$MXOS1__PORT/mxos/mailbox/v2/$user5@whsasf.com |grep "Mailbox does not exist"|wc -l)
+		
+		#delete domain
+		curl -s -X DELETE http://${MXOS1_HOST_IP}:$MXOS1__PORT/mxos/domain/v2/whsasf.com >/dev/null
+		let tmpp=tmp1+tmp2+tmp3+tmp4+tmp5
+		if [[ "$tmpp" -eq "5" ]]
+		then
+		  echo -e "\033[32m##########  Accont deleted successfully\033[0m"
+		  exit 100
+		else
+			echo -e "\033[31m##########  Accont deleted failed,PLease check manually,Exiting now ...\033[0m"
+			exit 100
+		fi
+}
+
+trap clean_accounts SIGHUP SIGINT SIGTERM
+
+#1 clear mta.log and other tmp files
+echo "########## 1 Clear mta.log using expect tool ..."
+expect <<-EOF 
+set timeout $expect_timeout	
+spawn ssh imail2@${MX1_HOST_IP1}
+expect  "*Password" { send "imail\r" }
+expect  "*~" { send "> ~/log/mta.log\r" }
+expect  "*~"
+exit
+EOF
+
+#clear other tmp log files
+rm expect*.log 
+rm imapfetch*.log
+rm send*.log
+	
+#2 create accounts user1@openwave.com and user2@openwave.com,user3@openwave.com,user4@whsasf.com,user5@whsasf.com
+echo "########## 2 Accounts provision ..."
+
+tmpv=1
+
+#create domain
+curl -s -X PUT -d "type=local" http://${MXOS1_HOST_IP}:$MXOS1__PORT/mxos/domain/v2/whsasf.com >/dev/null
+
+tmp1=$(curl -s -X PUT -d "cosId=default&password=p" http://${MXOS1_HOST_IP}:$MXOS1__PORT/mxos/mailbox/v2/$user1@openwave.com)
+echo $tmp1
+expr $tmp1 + 0 &>/dev/null
+tmp11=$(echo $?)
+
+tmp2=$(curl -s -X PUT -d "cosId=default&password=p" http://${MXOS1_HOST_IP}:$MXOS1__PORT/mxos/mailbox/v2/$user2@openwave.com)
+echo $tmp2
+expr $tmp2 + 0 &>/dev/null
+tmp22=$(echo $?)
+
+tmp3=$(curl -s -X PUT -d "cosId=default&password=p" http://${MXOS1_HOST_IP}:$MXOS1__PORT/mxos/mailbox/v2/$user3@openwave.com)
+echo $tmp3
+expr $tmp3 + 0 &>/dev/null
+tmp33=$(echo $?)
+
+tmp4=$(curl -s -X PUT -d "cosId=default&password=p" http://${MXOS1_HOST_IP}:$MXOS1__PORT/mxos/mailbox/v2/$user4@whsasf.com)
+echo $tmp4
+expr $tmp4 + 0 &>/dev/null
+tmp44=$(echo $?)
+
+tmp5=$(curl -s -X PUT -d "cosId=default&password=p" http://${MXOS1_HOST_IP}:$MXOS1__PORT/mxos/mailbox/v2/$user5@whsasf.com)
+echo $tmp5
+expr $tmp5 + 0 &>/dev/null
+tmp55=$(echo $?)
+
+let tmpv=tmp11+tmp22+tmp33+tmp44+tmp55
+
+if [[ "$tmpv" -eq "0" ]]
+then
+  echo -e "\033[32m########## 2 Accont provision successfully, we can continue now\033[0m"
+else
+	echo -e "\033[31m########## 2 Accont provision failed,PLease check manually,Exiting now ...\033[0m"
+	clean_accounts
+	exit 1
+fi
+
+
+#3 get currect epoch date ,and calaute the autoreplystartdate
+expect <<-EOF 
+set timeout $expect_timeout	
+log_file expect1.log 
+spawn ssh root@${MX1_HOST_IP1}
+expect  "*Password" { send "letmein\r" }
+expect  "*~"  { send "date +%s\r\n" }
+expect "*~"
+exit
+EOF
+
+#cet:curent epoc time
+cet=$(grep -A  1 date expect1.log |grep -v "date")
+cet=$(echo ${cet:0:10})
+#set autoreplystartdate 5s later, and autoreplystopdate 30 minutes later.
+let autoreplystartdate=cet+5
+let autoreplystopdate=cet+10
+
+#4 configure user2 to proper autoreply mode
+echo "########## 4 Configure user2 to vacation autoreply mode using expect tool ..."
+expect <<-EOF 
+set timeout $expect_timeout	
+log_file expect2.log 
+spawn ssh imail2@${MX1_HOST_IP1}
+expect  "*Password" { send "imail\r" }
+expect  "*~"  { send "echo 'internal:' >data.txt\r" }
+expect  "*~"  { send "echo 'Reply,This is an autoreply message for internal senders!' >>data.txt\r" }
+expect  "*~"  { send "echo 'external:' >>data.txt\r" }
+expect  "*~"  { send "echo 'Reply,This is an external autoreply message for external senders!' >>data.txt\r" }
+expect  "*~"  { send "autoreplyctrl ${user1}@openwave.com $autoreplymode data.txt $autoreplystartdate $autoreplystopdate\r" }
+expect "*~"
+exit
+EOF
+
+count=$(grep  -i "AutoReply data updated Successfully"  expect2.log|wc -l)
+if [[ "$count" -eq "1" ]];then
+	echo -e "\033[32m##########4 Congifuration successfully\033[0m"
+else
+	echo -e "\033[31m##########4 Configuration failed,please check maunually!Exiting now ...\033[0m"
+	clean_accounts
+	exit 2
+fi
+
+sleep 10
+
+# 5 deliever 1 message from user2,user3,user4,user5 to user1
+echo "##########5 delieber 1 message from user1 to user2 ..."
+#create message body
+echo "Subject: test message about autoreply feature" >send.data
+echo "To:$user1@openwave.com" >>send.data
+echo >>send.data
+echo "Reply,This ia a wonderful world!!" >>send.data
+
+sendmail.pl  $MX1_HOST_IP1 $MX1_SMTP_PORT $user2@openwave.com $user1@openwave.com  <send.data >send.log  &
+sendmail.pl  $MX1_HOST_IP1 $MX1_SMTP_PORT $user3@openwave.com $user1@openwave.com  <send.data >>send.log  &
+sendmail.pl  $MX1_HOST_IP1 $MX1_SMTP_PORT $user4@whsasf.com $user1@openwave.com  <send.data >>send.log  &
+sendmail.pl  $MX1_HOST_IP1 $MX1_SMTP_PORT $user5@whsasf.com $user1@openwave.com  <send.data >>send.log  
+
+ls -al  ~ >/dev/null
+
+#6 check mta.log, make sure autoreply flag "autoreplied" not exist:
+echo "########## 6 Check mta.log using expect tool ..."
+expect <<-EOF 
+set timeout $expect_timeout	
+log_file expect3.log 
+spawn ssh imail2@${MX1_HOST_IP1}
+expect  "*Password" { send "imail\r" }
+expect  "*~" { send "cat log/mta.log\r" }
+expect  "*~"
+exit
+EOF
+
+count=$(grep  -i "autoreplied"  expect3.log|wc -l)
+count1=$(grep -i "delivered" expect3.log |wc -l)
+if [[ "$count" -eq "0" && "$count1" -eq "4" ]];then
+	echo -e "\033[32m##########6 Autoreply messaeg undelievered successfully!!\033[0m"
+else
+	echo -e "\033[31m##########6 Autoreply messaeg undelievered failed!Please check manually,Exiting now ...\033[0m"
+	clean_accounts
+	exit 4
+fi 
+
+#7 check autoreplied message in inbox of user2,user3,user4,user5
+echo "########## 7 check autoreplied message in inbox of user2,user3,user4,user5 ..."
+imapmail.pl   $MX1_HOST_IP1 $MX1_IMAP_PORT $user2 p inbox 2 >imapfetch.log
+imapmail.pl   $MX1_HOST_IP1 $MX1_IMAP_PORT $user3 p inbox 2 >>imapfetch.log
+imapmail.pl   $MX1_HOST_IP1 $MX1_IMAP_PORT $user4 p inbox 2 >>imapfetch.log
+imapmail.pl   $MX1_HOST_IP1 $MX1_IMAP_PORT $user5 p inbox 2 >>imapfetch.log
+
+cat imapfetch.log
+count=$(grep "NO FETCH failed" imapfetch.log|wc -l)
+if [[ "$count" -eq	 "4" ]];then
+		echo -e "\033[32m##########7 Check autoreplied messaege not exist successfully!!\033[0m"
+		log_pass "AutoReply in $autoreplymode mode with message undelievered after start/stop date for hybrid sender test success!"
+else
+		echo -e "\033[31m##########7 Check autoreplied messaege not exist failed!Please checl manually,Exiting now ...\033[0m"
+		log_fail "AutoReply in $autoreplymode mode with message undelievered after start/stop date for hybrid sender test failed!"
+		clean_accounts
+		exit 5
+fi
+
+#delete all accounts if all works fine.
+clean_accounts

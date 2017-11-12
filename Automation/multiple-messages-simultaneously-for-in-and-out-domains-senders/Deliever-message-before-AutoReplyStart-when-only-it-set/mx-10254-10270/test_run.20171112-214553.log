@@ -1,0 +1,43 @@
+	**********  Starting /home/whsasf/workspace/bohem/Automation/multiple-messages-simultaneously-for-in-and-out-domains-senders/Deliever-message-before-AutoReplyStart-when-only-it-set/mx-10254-10270  **********
+Test started: Sun Nov 12 21:45:53 CST 2017
+########## 1 Clear mta.log using expect tool ...
+spawn ssh imail2@10.49.58.118
+Password: 
+Last login: Sun Nov 12 08:39:29 2017 from 10.6.105.35
+[?1034hmx-10-49-58-118:imail2:Mx9.5:~$ > ~/log/mta.log
+mx-10-49-58-118:imail2:Mx9.5:~$ rm: cannot remove 'expect*.log': No such file or directory
+rm: cannot remove 'imapfetch*.log': No such file or directory
+rm: cannot remove 'send*.log': No such file or directory
+########## 2 Accounts provision ...
+7998874638271763586
+6060573460973308300
+7735834456321604151
+9001109398678664149
+5185826807863952287
+[32m########## 2 Accont provision successfully, we can continue now[0m
+spawn ssh root@10.49.58.118
+Password: 
+Last login: Sun Nov 12 08:44:02 2017 from 10.6.105.35
+]0;root@mx-10-49-58-118:~[?1034h[root@mx-10-49-58-118 ~]# date +%s
+1510494245
+]0;root@mx-10-49-58-118:~[root@mx-10-49-58-118 ~]# 
+]0;root@mx-10-49-58-118:~[root@mx-10-49-58-118 ~]# ########## 4 Configure user1 to vacation autoreply mode using expect tool ...
+spawn ssh imail2@10.49.58.118
+Password: 
+Last login: Sun Nov 12 08:43:51 2017 from 10.6.105.35
+[?1034hmx-10-49-58-118:imail2:Mx9.5:~$ echo 'internal:' >data.txt
+mx-10-49-58-118:imail2:Mx9.5:~$ echo 'Echo,This is an autoreply message for internal senders!' >>data.txt
+mx-10-49-58-118:imail2:Mx9.5:~$ echo 'external:' >>data.txt
+mx-10-49-58-118:imail2:Mx9.5:~$ echo 'Echo,This is an external autoreply message for external senders!' >>data.txt
+mx-10-49-58-118:imail2:Mx9.5:~$ autoreplyctrl ar14995@openwave.com echo data.txt 1510494543 none
+ERROR: Unable to set the autoreply
+	Error code is    MBX_INVALID_AUTO_REPLY_MESSAGE
+	Short message is Invalid auto reply message.
+	Long message is  [%autoReplyMessage% may not exceed 255 characters long]
+mx-10-49-58-118:imail2:Mx9.5:~$ [31m##########4 Configuration failed,please check maunually!Exiting now ...[0m
+##########  doing some clear job ...
+[32m##########  Accont deleted successfully[0m
+TESTFAILED: /home/whsasf/workspace/bohem/Automation/multiple-messages-simultaneously-for-in-and-out-domains-senders/Deliever-message-before-AutoReplyStart-when-only-it-set/mx-10254-10270: Test didn't report success or failure or skipped (61 sec.)
+FAILED: /home/whsasf/workspace/bohem/Automation/multiple-messages-simultaneously-for-in-and-out-domains-senders/Deliever-message-before-AutoReplyStart-when-only-it-set/mx-10254-10270 [20171112-214553] (61 sec.)
+Test ended: Sun Nov 12 21:46:54 CST 2017
+

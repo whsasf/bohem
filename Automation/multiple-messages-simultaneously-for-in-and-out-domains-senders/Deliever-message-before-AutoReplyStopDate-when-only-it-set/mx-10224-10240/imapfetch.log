@@ -1,0 +1,120 @@
+imapmail: host[10.49.58.118] port[20143] user[ar4951] pass[p] folder[inbox] message[2]
+xx OK LOGIN completed
+* 2 EXISTS
+* OK [UNSEEN 1] First unseen message
+* OK [UIDVALIDITY 1510500192] UIDs valid
+* OK [UIDNEXT 1002] Predicted next UID
+* FLAGS (\Answered \Flagged \Deleted \Draft \Seen)
+* OK [PERMANENTFLAGS (\* \Answered \Flagged \Deleted \Draft \Seen)] Permanent flags
+* 1 RECENT
+xx OK [READ-WRITE] SELECT completed
+* 2 FETCH (BODY[] {544}
+Return-Path: <>
+Subject: Re: test message about autoreply feature
+To: ar4951@openwave.com
+From: "Auto-reply from ar5012@openwave.com" <ar5012@openwave.com>
+In-Reply-To: <20171112152347.ACF18839.mx-10-49-58-118.openwave.com@openwave.com>
+Precedence: bulk
+Date: Sun, 12 Nov 2017 10:23:48 -0500
+Message-ID: <20171112152348.ACK18839.mx-10-49-58-118.openwave.com@mx-10-49-58-118>
+MIME-Version: 1.0
+Content-Type: text/plain;
+		charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+
+Vacation,This is an autoreply message for internal senders!
+ FLAGS (\Recent \Seen))
+xx OK FETCH completed
+* BYE IMAP4 server terminating connection
+xx OK LOGOUT completed
+imapmail: host[10.49.58.118] port[20143] user[ar30108] pass[p] folder[inbox] message[2]
+xx OK LOGIN completed
+* 2 EXISTS
+* OK [UNSEEN 1] First unseen message
+* OK [UIDVALIDITY 1510500051] UIDs valid
+* OK [UIDNEXT 1002] Predicted next UID
+* FLAGS (\Answered \Flagged \Deleted \Draft \Seen)
+* OK [PERMANENTFLAGS (\* \Answered \Flagged \Deleted \Draft \Seen)] Permanent flags
+* 1 RECENT
+xx OK [READ-WRITE] SELECT completed
+* 2 FETCH (BODY[] {545}
+Return-Path: <>
+Subject: Re: test message about autoreply feature
+To: ar30108@openwave.com
+From: "Auto-reply from ar5012@openwave.com" <ar5012@openwave.com>
+In-Reply-To: <20171112152347.ACE18839.mx-10-49-58-118.openwave.com@openwave.com>
+Precedence: bulk
+Date: Sun, 12 Nov 2017 10:23:47 -0500
+Message-ID: <20171112152347.ACI18839.mx-10-49-58-118.openwave.com@mx-10-49-58-118>
+MIME-Version: 1.0
+Content-Type: text/plain;
+		charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+
+Vacation,This is an autoreply message for internal senders!
+ FLAGS (\Recent \Seen))
+xx OK FETCH completed
+* BYE IMAP4 server terminating connection
+xx OK LOGOUT completed
+imapmail: host[10.49.58.118] port[20143] user[ar22662] pass[p] folder[inbox] message[2]
+xx OK LOGIN completed
+* 2 EXISTS
+* OK [UNSEEN 1] First unseen message
+* OK [UIDVALIDITY 1510500052] UIDs valid
+* OK [UIDNEXT 1002] Predicted next UID
+* FLAGS (\Answered \Flagged \Deleted \Draft \Seen)
+* OK [PERMANENTFLAGS (\* \Answered \Flagged \Deleted \Draft \Seen)] Permanent flags
+* 1 RECENT
+xx OK [READ-WRITE] SELECT completed
+* 2 FETCH (BODY[] {550}
+Return-Path: <>
+Subject: Re: test message about autoreply feature
+To: ar22662@whsasf.com
+From: "Auto-reply from ar5012@openwave.com" <ar5012@openwave.com>
+In-Reply-To: <20171112152347.ACH18839.mx-10-49-58-118.openwave.com@whsasf.com>
+Precedence: bulk
+Date: Sun, 12 Nov 2017 10:23:48 -0500
+Message-ID: <20171112152348.ACJ18839.mx-10-49-58-118.openwave.com@mx-10-49-58-118>
+MIME-Version: 1.0
+Content-Type: text/plain;
+		charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+
+Vacation,This is an external autoreply message for external senders!
+ FLAGS (\Recent \Seen))
+xx OK FETCH completed
+* BYE IMAP4 server terminating connection
+xx OK LOGOUT completed
+imapmail: host[10.49.58.118] port[20143] user[ar32758] pass[p] folder[inbox] message[2]
+xx OK LOGIN completed
+* 2 EXISTS
+* OK [UNSEEN 1] First unseen message
+* OK [UIDVALIDITY 1510500195] UIDs valid
+* OK [UIDNEXT 1002] Predicted next UID
+* FLAGS (\Answered \Flagged \Deleted \Draft \Seen)
+* OK [PERMANENTFLAGS (\* \Answered \Flagged \Deleted \Draft \Seen)] Permanent flags
+* 1 RECENT
+xx OK [READ-WRITE] SELECT completed
+* 2 FETCH (BODY[] {550}
+Return-Path: <>
+Subject: Re: test message about autoreply feature
+To: ar32758@whsasf.com
+From: "Auto-reply from ar5012@openwave.com" <ar5012@openwave.com>
+In-Reply-To: <20171112152347.ACG18839.mx-10-49-58-118.openwave.com@whsasf.com>
+Precedence: bulk
+Date: Sun, 12 Nov 2017 10:23:48 -0500
+Message-ID: <20171112152348.ACL18839.mx-10-49-58-118.openwave.com@mx-10-49-58-118>
+MIME-Version: 1.0
+Content-Type: text/plain;
+		charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+
+Vacation,This is an external autoreply message for external senders!
+ FLAGS (\Recent \Seen))
+xx OK FETCH completed
+* BYE IMAP4 server terminating connection
+xx OK LOGOUT completed

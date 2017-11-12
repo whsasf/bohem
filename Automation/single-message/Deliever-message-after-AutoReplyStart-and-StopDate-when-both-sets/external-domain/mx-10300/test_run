@@ -127,7 +127,7 @@ echo "To:$user2@openwave.com" >>send.data
 echo >>send.data
 echo "Reply,This ia a wonderful world!!" >>send.data
 
-sendmail.pl  $MX1_HOST_IP1 $MX1_SMTP_PORT $user1@whsasf.com $user2@openwave.com  <send.data >send.log 
+sendmails.pl 1 $MX1_HOST_IP1 $MX1_SMTP_PORT $user1@whsasf.com send.data  $user2@openwave.com  >send.log  
 count=$(grep "250 Message received" send.log|wc -l)
 if [[ "$count" -eq "1" ]]
 then

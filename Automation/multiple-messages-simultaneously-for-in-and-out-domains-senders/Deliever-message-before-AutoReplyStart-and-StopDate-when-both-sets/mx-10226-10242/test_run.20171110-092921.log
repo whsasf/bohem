@@ -1,0 +1,18 @@
+	**********  Starting /home/ram/workspace/bohem/Automation/single-message/Deliever-message-before-AutoReplyStart-and-StopDate-when-both-sets/external-domain/mx-10234/  **********
+Test started: Fri Nov 10 09:29:21 CST 2017
+########## 1 Clear mta.log using expect tool ...
+spawn ssh imail2@10.49.58.118
+Password: 
+Last login: Thu Nov  9 20:27:00 2017 from bigchina
+[?1034hmx-10-49-58-118:imail2:Mx9.5:~$ > ~/log/mta.log
+mx-10-49-58-118:imail2:Mx9.5:~$ rm: cannot remove 'expect*.log': No such file or directory
+rm: cannot remove 'imapfetch*.log': No such file or directory
+rm: cannot remove 'send*.log': No such file or directory
+########## 2 Accounts provision ...
+[31m########## 2 Accont provision failed,PLease check manually,Exiting now ...[0m
+##########  doing some clear job ...
+[32m##########  Accont deleted successfully[0m
+TESTFAILED: /home/ram/workspace/bohem/Automation/single-message/Deliever-message-before-AutoReplyStart-and-StopDate-when-both-sets/external-domain/mx-10234/: Test didn't report success or failure or skipped (10 sec.)
+FAILED: /home/ram/workspace/bohem/Automation/single-message/Deliever-message-before-AutoReplyStart-and-StopDate-when-both-sets/external-domain/mx-10234/ [20171110-092921] (10 sec.) 41
+Test ended: Fri Nov 10 09:29:31 CST 2017
+

@@ -1,0 +1,33 @@
+	**********  Starting /home/whsasf/workspace/bohem/Automation/multiple-messages-simultaneously-for-in-and-out-domains-senders/Deliever-message-when-autoReplyStartDate-and-autoReplyStopDate-unset/mx-10221-10237  **********
+Test started: Sun Nov 12 17:56:35 CST 2017
+########## 1 Clear mta.log using expect tool ...
+spawn ssh imail2@10.49.58.118
+Password: 
+Last login: Sun Nov 12 04:51:02 2017 from 10.6.105.32
+[?1034hmx-10-49-58-118:imail2:Mx9.5:~$ > ~/log/mta.log
+mx-10-49-58-118:imail2:Mx9.5:~$ ########## 2 Accounts provision ...
+5109633105191099240
+6746064882176401222
+5789356130224635745
+5206848222850888008
+6191395455102178419
+[32m########## 2 Accont provision successfully, we can continue now[0m
+########## 3 Configure user1 to vacation autoreply mode using expect tool ...
+spawn ssh imail2@10.49.58.118
+Password: 
+Last login: Sun Nov 12 04:54:20 2017 from 10.6.105.32
+[?1034hmx-10-49-58-118:imail2:Mx9.5:~$ echo 'internal:' >data.txt
+mx-10-49-58-118:imail2:Mx9.5:~$ echo 'Vacation,This is an autoreply message for internal senders!' >>data.txt
+mx-10-49-58-118:imail2:Mx9.5:~$ echo 'external:' >>data.txt
+mx-10-49-58-118:imail2:Mx9.5:~$ echo 'Vacation,This is an external autoreply message for external senders!' >>data.txt
+mx-10-49-58-118:imail2:Mx9.5:~$ autoreplyctrl ar5102@openwave.com vacation data.txt none none
+AutoReply data updated Successfully.
+mx-10-49-58-118:imail2:Mx9.5:~$ [32m##########3 Congifuration successfully[0m
+##########4 delieber 1 message from user1 to user2 ...
+[31m########## 4 Messages Deliver failed,please check manually,Exiting now ...[0m
+##########  doing some clear job ...
+[32m##########  Accont deleted successfully[0m
+TESTFAILED: /home/whsasf/workspace/bohem/Automation/multiple-messages-simultaneously-for-in-and-out-domains-senders/Deliever-message-when-autoReplyStartDate-and-autoReplyStopDate-unset/mx-10221-10237: Test didn't report success or failure or skipped (37 sec.)
+FAILED: /home/whsasf/workspace/bohem/Automation/multiple-messages-simultaneously-for-in-and-out-domains-senders/Deliever-message-when-autoReplyStartDate-and-autoReplyStopDate-unset/mx-10221-10237 [20171112-175635] (37 sec.)
+Test ended: Sun Nov 12 17:57:12 CST 2017
+

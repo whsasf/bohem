@@ -1,0 +1,41 @@
+	**********  Starting /home/whsasf/workspace/bohem/Automation/multiple-messages-simultaneously-for-in-and-out-domains-senders/Deliever-message-after-AutoReplyStart-and-StopDate-when-both-sets/mx-10292-10308  **********
+Test started: Sun Nov 12 21:31:40 CST 2017
+########## 1 Clear mta.log using expect tool ...
+spawn ssh imail2@10.49.58.118
+Password: 
+Last login: Sun Nov 12 08:28:17 2017 from 10.6.105.35
+[?1034hmx-10-49-58-118:imail2:Mx9.5:~$ > ~/log/mta.log
+mx-10-49-58-118:imail2:Mx9.5:~$ ########## 2 Accounts provision ...
+5743483607442336420
+5341345932758942674
+6739512026828803399
+6241769946288132198
+5211226962062669930
+[32m########## 2 Accont provision successfully, we can continue now[0m
+spawn ssh root@10.49.58.118
+Password: 
+Last login: Sun Nov 12 08:27:44 2017 from 10.6.105.35
+]0;root@mx-10-49-58-118:~[?1034h[root@mx-10-49-58-118 ~]# date +%s
+1510493388
+]0;root@mx-10-49-58-118:~[root@mx-10-49-58-118 ~]# 
+]0;root@mx-10-49-58-118:~[root@mx-10-49-58-118 ~]# ########## 4 Configure user2 to vacation autoreply mode using expect tool ...
+spawn ssh imail2@10.49.58.118
+Password: 
+Last login: Sun Nov 12 08:29:38 2017 from 10.6.105.35
+[?1034hmx-10-49-58-118:imail2:Mx9.5:~$ echo 'internal:' >data.txt
+mx-10-49-58-118:imail2:Mx9.5:~$ echo 'Reply,This is an autoreply message for internal senders!' >>data.txt
+mx-10-49-58-118:imail2:Mx9.5:~$ echo 'external:' >>data.txt
+mx-10-49-58-118:imail2:Mx9.5:~$ echo 'Reply,This is an external autoreply message for external senders!' >>data.txt
+mx-10-49-58-118:imail2:Mx9.5:~$ autoreplyctrl ar6612@openwave.com reply data.txt 1510493393 1510493398
+AutoReply data updated Successfully.
+mx-10-49-58-118:imail2:Mx9.5:~$ [32m##########4 Congifuration successfully[0m
+##########5 delieber 1 message from user1 to user2 ...
+########## 6 Check mta.log using expect tool ...
+spawn ssh imail2@10.49.58.118
+TESTFAILED: /home/whsasf/workspace/bohem/Automation/multiple-messages-simultaneously-for-in-and-out-domains-senders/Deliever-message-after-AutoReplyStart-and-StopDate-when-both-sets/mx-10292-10308: Test didn't report success or failure or skipped (100 sec.)
+FAILED: /home/whsasf/workspace/bohem/Automation/multiple-messages-simultaneously-for-in-and-out-domains-senders/Deliever-message-after-AutoReplyStart-and-StopDate-when-both-sets/mx-10292-10308 [20171112-213140] (100 sec.)
+Test ended: Sun Nov 12 21:33:20 CST 2017
+
+Password: [31m##########6 Autoreply messaeg undelievered failed!Please check manually,Exiting now ...[0m
+##########  doing some clear job ...
+[32m##########  Accont deleted successfully[0m

@@ -1,0 +1,32 @@
+	**********  Starting /home/whsasf/workspace/bohem/Automation/multiple-messages-simultaneously-for-in-and-out-domains-senders/Deliever-message-when-autoReplyStartDate-and-autoReplyStopDate-unset/mx-10235-10269  **********
+Test started: Sun Nov 12 19:30:37 CST 2017
+########## 1 Clear mta.log using expect tool ...
+spawn ssh imail2@10.49.58.118
+Password: 
+Last login: Sun Nov 12 06:15:23 2017 from 10.6.105.32
+[?1034hmx-10-49-58-118:imail2:Mx9.5:~$ > ~/log/mta.log
+########## 2 Accounts provision ...
+4812943593359102319
+9132824264415823264
+4848425198023541318
+5722149310900833131
+4973139103120177556
+[32m########## 2 Accont provision successfully, we can continue now[0m
+########## 3 Configure user1 to echo autoreply mode using expect tool ...
+spawn ssh imail2@10.49.58.118
+Password: 
+Last login: Sun Nov 12 06:28:45 2017 from 10.6.105.32
+[?1034hmx-10-49-58-118:imail2:Mx9.5:~$ echo 'internal:' >data.txt
+mx-10-49-58-118:imail2:Mx9.5:~$ echo 'Echo,This is an autoreply message for internal senders!' >>data.txt
+mx-10-49-58-118:imail2:Mx9.5:~$ echo 'external:' >>data.txt
+mx-10-49-58-118:imail2:Mx9.5:~$ echo 'Echo,This is an external autoreply message for external senders!' >>data.txt
+mx-10-49-58-118:imail2:Mx9.5:~$ autoreplyctrl ar23349@openwave.com  data.txt none none
+ERROR: Unable to set the autoreply
+	 Unable to read from message File none
+mx-10-49-58-118:imail2:Mx9.5:~$ [31m##########3 Configuration failed,please check maunually!Exiting now ...[0m
+##########  doing some clear job ...
+[32m##########  Accont deleted successfully[0m
+TESTFAILED: /home/whsasf/workspace/bohem/Automation/multiple-messages-simultaneously-for-in-and-out-domains-senders/Deliever-message-when-autoReplyStartDate-and-autoReplyStopDate-unset/mx-10235-10269: Test didn't report success or failure or skipped (50 sec.)
+FAILED: /home/whsasf/workspace/bohem/Automation/multiple-messages-simultaneously-for-in-and-out-domains-senders/Deliever-message-when-autoReplyStartDate-and-autoReplyStopDate-unset/mx-10235-10269 [20171112-193037] (50 sec.)
+Test ended: Sun Nov 12 19:31:27 CST 2017
+

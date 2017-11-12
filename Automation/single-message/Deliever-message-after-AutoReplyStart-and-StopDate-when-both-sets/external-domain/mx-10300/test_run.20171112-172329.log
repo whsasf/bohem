@@ -1,0 +1,87 @@
+	**********  Starting /home/whsasf/workspace/bohem/Automation/single-message/Deliever-message-after-AutoReplyStart-and-StopDate-when-both-sets/external-domain/mx-10300  **********
+Test started: Sun Nov 12 17:23:29 CST 2017
+########## 1 Clear mta.log using expect tool ...
+spawn ssh imail2@10.49.58.118
+Password: 
+Last login: Sun Nov 12 04:20:53 2017 from 10.6.105.32
+[?1034hmx-10-49-58-118:imail2:Mx9.5:~$ > ~/log/mta.log
+mx-10-49-58-118:imail2:Mx9.5:~$ rm: cannot remove 'imapfetch*.log': No such file or directory
+########## 2 Accounts provision ...
+5926855842563927967
+5283707696367056138
+[32m########## 2 Accont provision successfully, we can continue now[0m
+spawn ssh root@10.49.58.118
+Password: 
+Last login: Sun Nov 12 04:20:22 2017 from 10.6.105.32
+]0;root@mx-10-49-58-118:~[?1034h[root@mx-10-49-58-118 ~]# date +%s
+1510478483
+]0;root@mx-10-49-58-118:~[root@mx-10-49-58-118 ~]# 
+]0;root@mx-10-49-58-118:~[root@mx-10-49-58-118 ~]# ########## 4 Configure user2 to vacation autoreply mode using expect tool ...
+spawn ssh imail2@10.49.58.118
+Password: 
+Last login: Sun Nov 12 04:21:13 2017 from 10.6.105.32
+[?1034hmx-10-49-58-118:imail2:Mx9.5:~$ echo 'internal:' >data.txt
+mx-10-49-58-118:imail2:Mx9.5:~$ echo 'Reply,This is an autoreply message for internal senders!' >>data.txt
+mx-10-49-58-118:imail2:Mx9.5:~$ echo 'external:' >>data.txt
+mx-10-49-58-118:imail2:Mx9.5:~$ echo 'Reply,This is an external autoreply message for external senders!' >>data.txt
+mx-10-49-58-118:imail2:Mx9.5:~$ autoreplyctrl ar11719@openwave.com reply data.txt 1510478488 1510478493
+AutoReply data updated Successfully.
+mx-10-49-58-118:imail2:Mx9.5:~$ [32m##########4 Congifuration successfully[0m
+##########5 delieber 1 message from user1 to user2 ...
+[31m########## 5 Message Deliver failed,please check manually,Exiting now ...[0m
+Received: 220 mx-10-49-58-118.openwave.com ESMTP server (InterMail vM.9.05.01.00 201-2473-137-123) ready Sun, 12 Nov 2017 04:22:00 -0500
+Sending command (to 10.49.58.118:20025): EHLO freaker.dom
+Received: 250-mx-10-49-58-118.openwave.com
+Received: 250-HELP
+Received: 250-VRFY
+Received: 250-XREMOTEQUEUE
+Received: 250-ETRN
+Received: 250-PIPELINING
+Received: 250-DSN
+Received: 250-8BITMIME
+Received: 250 SIZE 30996480
+Sending command (to 10.49.58.118:20025): MAIL FROM:<ar5473@whsasf.com>
+Received: 250 Sender <ar5473@whsasf.com> Ok
+Sending command (to 10.49.58.118:20025): RCPT TO:<ar11719@openwave.com>
+Received: 250 Recipient <ar11719@openwave.com> Ok
+Sending command (to 10.49.58.118:20025): DATA
+Received: 354 Ok Send data ending with <CRLF>.<CRLF>
+Sending data (to 10.49.58.118:20025): Subject: test message about autoreply feature
+Sending data (to 10.49.58.118:20025): To:ar11719@openwave.com
+Sending data (to 10.49.58.118:20025): 
+Sending data (to 10.49.58.118:20025): Reply,This ia a wonderful world!!
+Sending command (to 10.49.58.118:20025): .
+Received: 250 Message received: 20171112092201.AAE23549.mx-10-49-58-118.openwave.com@freaker.dom
+Sending command (to 10.49.58.118:20025): quit
+Received: 221 mx-10-49-58-118.openwave.com ESMTP server closing connection
+Received: 220 mx-10-49-58-118.openwave.com ESMTP server (InterMail vM.9.05.01.00 201-2473-137-123) ready Sun, 12 Nov 2017 04:22:00 -0500
+Sending command (to 10.49.58.118:20025): EHLO freaker.dom
+Received: 250-mx-10-49-58-118.openwave.com
+Received: 250-HELP
+Received: 250-VRFY
+Received: 250-XREMOTEQUEUE
+Received: 250-ETRN
+Received: 250-PIPELINING
+Received: 250-DSN
+Received: 250-8BITMIME
+Received: 250 SIZE 30996480
+Sending command (to 10.49.58.118:20025): MAIL FROM:<ar5473@whsasf.com>
+Received: 250 Sender <ar5473@whsasf.com> Ok
+Sending command (to 10.49.58.118:20025): RCPT TO:<ar11719@openwave.com>
+Received: 250 Recipient <ar11719@openwave.com> Ok
+Sending command (to 10.49.58.118:20025): DATA
+Received: 354 Ok Send data ending with <CRLF>.<CRLF>
+Sending data (to 10.49.58.118:20025): Subject: test message about autoreply feature
+Sending data (to 10.49.58.118:20025): To:ar11719@openwave.com
+Sending data (to 10.49.58.118:20025): 
+Sending data (to 10.49.58.118:20025): Reply,This ia a wonderful world!!
+Sending command (to 10.49.58.118:20025): .
+Received: 250 Message received: 20171112092201.AAF23549.mx-10-49-58-118.openwave.com@freaker.dom
+Sending command (to 10.49.58.118:20025): quit
+Received: 221 mx-10-49-58-118.openwave.com ESMTP server closing connection
+##########  doing some clear job ...
+[32m##########  Accont deleted successfully[0m
+TESTFAILED: /home/whsasf/workspace/bohem/Automation/single-message/Deliever-message-after-AutoReplyStart-and-StopDate-when-both-sets/external-domain/mx-10300: Test didn't report success or failure or skipped (57 sec.)
+FAILED: /home/whsasf/workspace/bohem/Automation/single-message/Deliever-message-after-AutoReplyStart-and-StopDate-when-both-sets/external-domain/mx-10300 [20171112-172329] (57 sec.)
+Test ended: Sun Nov 12 17:24:26 CST 2017
+
