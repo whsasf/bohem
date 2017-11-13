@@ -1,0 +1,70 @@
+
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!user mx95user1!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+
+-(1)-The IMAP process of mx95user1 is:
+
+
+* OK IMAP4 server (InterMail vM.9.05.01.00 201-2473-137-123) ready Mon, 13 Nov 2017 17:10:10 +0000 (GMT)
+a NO Invalid user name or password
+a OK LOGIN completed
+a NO The specified mailbox does not exist
+* 0 EXISTS
+* OK [UNSEEN 0] First unseen message
+* OK [UIDVALIDITY 1510590583] UIDs valid
+* OK [UIDNEXT 1003] Predicted next UID
+* FLAGS (\Answered \Flagged \Deleted \Draft \Seen)
+* OK [PERMANENTFLAGS (\* \Answered \Flagged \Deleted \Draft \Seen)] Permanent flags
+* 0 RECENT
+a OK [READ-WRITE] SELECT completed
++ Ready for argument
+* 1 EXISTS
+* 1 RECENT
+a OK [APPENDUID 1510590583 1003] APPEND completed
+* 1 EXISTS
+* OK [UNSEEN 1] First unseen message
+* OK [UIDVALIDITY 1510590583] UIDs valid
+* OK [UIDNEXT 1004] Predicted next UID
+* FLAGS (\Answered \Flagged \Deleted \Draft \Seen)
+* OK [PERMANENTFLAGS (\* \Answered \Flagged \Deleted \Draft \Seen)] Permanent flags
+* 1 RECENT
+a OK [READ-WRITE] SELECT completed
+a NO FETCH failed
+* 1 FETCH (RFC822 {138}
+we are ################Chinese,we are ####################great!!
+Message-ID: <8-2017-1113-171017-22084@mx-10-49-58-127.openwave.com>
+
+ FLAGS (\Recent \Seen))
+a OK FETCH completed
+* BYE IMAP4 server terminating connection
+a OK LOGOUT completed
+
+
+-(2)-###############The TCP connection status for mx95user1 from client are and from IMAP server are:###########
+
+from client-->
+tcp      621     53 10.37.2.214:58056       10.49.58.127:10143      ESTABLISHED
+from server-->
+tcp        0      0 10.49.58.127:10143      10.37.2.214:58056       ESTABLISHED
+
+
+-(3)-The IMAPlogs for account mx95user1 is:
+
+20171113 171010987+0000 mx-10-49-58-127 imapserv 22084 22158 140690807404288 Note;UserDataException(504/1) MBX_AUTHENTICATION_FAILED:{password=[XXXXX], protocolType=[imap], userName=[mx95user1]}:AuthenticateAndGetMailboxService\3aPOST:Authenticating Failed.::user=mx95user1:cmd=a login mx95user1 <password>:fromhost=10.37.2.214:fromport=58056:sid=81b33eae-c895-11e7-96bd-878ba0a25377
+20171113 171010989+0000 mx-10-49-58-127 imapserv 22084 22158 140690807404288 Note;AcctBadPswd(50/6) user=mx95user1:cmd=a login mx95user1 <password>:fromhost=10.37.2.214:fromport=58056:sid=81b33eae-c895-11e7-96bd-878ba0a25377:respcode=NO:resptime=10
+20171113 171016010+0000 mx-10-49-58-127 imapserv 22084 22125 140690816190208 Note;ImapConnMade(56/16) user=mx95user1:mbox=8740666909404708551:mss=95xmc:cmd=a login mx95user1 <password>:port=55014:fromhost=10.37.2.214:fromport=58056:sid=81b33eae-c895-11e7-96bd-878ba0a25377:respcode=OK:resptime=24:node=mx-10-49-58-127:nodePort=55014
+20171113 171016289+0000 mx-10-49-58-127 imapserv 22084 22136 140690813261568 Note;MsgTrace(65/26) select:user=mx95user1:mbox=8740666909404708551:mss=95xmc:cmd=a select inboxme:port=55014:fromhost=10.37.2.214:fromport=58056:sid=81b33eae-c895-11e7-96bd-878ba0a25377:respcode=OK:resptime=1:node=mx-10-49-58-127:nodePort=55014
+20171113 171016289+0000 mx-10-49-58-127 imapserv 22084 22136 140690813261568 Warn;ImapCommandFailedReason(56/21) The specified mailbox does not exist:user=mx95user1:mbox=8740666909404708551:mss=95xmc:cmd=a select inboxme:port=55014:fromhost=10.37.2.214:fromport=58056:sid=81b33eae-c895-11e7-96bd-878ba0a25377:respcode=NO:resptime=1:node=mx-10-49-58-127:nodePort=55014
+20171113 171016297+0000 mx-10-49-58-127 imapserv 22084 22136 140690813261568 Note;ImapNotificationInfo(56/45) folder INBOX is subscribed for notification:user=mx95user1:mbox=8740666909404708551:mss=95xmc:fldr=inbox:cmd=a select inbox:port=55014:fromhost=10.37.2.214:fromport=58056:sid=81b33eae-c895-11e7-96bd-878ba0a25377:node=mx-10-49-58-127:nodePort=55014
+20171113 171016303+0000 mx-10-49-58-127 imapserv 22084 22136 140690813261568 Note;MsgTrace(65/26) select:user=mx95user1:mbox=8740666909404708551:mss=95xmc:fldr=inbox:cmd=a select inbox:port=55014:fromhost=10.37.2.214:fromport=58056:sid=81b33eae-c895-11e7-96bd-878ba0a25377:respcode=OK:resptime=13:node=mx-10-49-58-127:nodePort=55014
+20171113 171017041+0000 mx-10-49-58-127 imapserv 22084 22136 140690813261568 Note;MsgTrace(65/26) append, message-id changed from <8-2017-1113-171017-22084@mx-10-49-58-127.openwave.com>,messageUID=1003:user=mx95user1:mbox=8740666909404708551:mss=95xmc:fldr=inbox:msgid=854a8c8e-c895-11e7-be90-45f0541eea98:cmd=a append inbox {65}:port=55014:fromhost=10.37.2.214:fromport=58056:sid=81b33eae-c895-11e7-96bd-878ba0a25377:respcode=OK:resptime=738:node=mx-10-49-58-127:nodePort=55014
+20171113 171018032+0000 mx-10-49-58-127 imapserv 22084 22158 140690807404288 Note;ImapNotificationInfo(56/45) folder INBOX is unsubscribed for notification:user=mx95user1:mbox=8740666909404708551:mss=95xmc:fldr=inbox:cmd=a select inbox:port=55014:fromhost=10.37.2.214:fromport=58056:sid=81b33eae-c895-11e7-96bd-878ba0a25377:node=mx-10-49-58-127:nodePort=55014
+20171113 171018038+0000 mx-10-49-58-127 imapserv 22084 22158 140690807404288 Note;ImapNotificationInfo(56/45) folder INBOX is subscribed for notification:user=mx95user1:mbox=8740666909404708551:mss=95xmc:cmd=a select inbox:port=55014:fromhost=10.37.2.214:fromport=58056:sid=81b33eae-c895-11e7-96bd-878ba0a25377:node=mx-10-49-58-127:nodePort=55014
+20171113 171018050+0000 mx-10-49-58-127 imapserv 22084 22158 140690807404288 Note;MsgTrace(65/26) select:user=mx95user1:mbox=8740666909404708551:mss=95xmc:cmd=a select inbox:port=55014:fromhost=10.37.2.214:fromport=58056:sid=81b33eae-c895-11e7-96bd-878ba0a25377:respcode=OK:resptime=29:node=mx-10-49-58-127:nodePort=55014
+20171113 171018297+0000 mx-10-49-58-127 imapserv 22084 22125 140690816190208 Warn;ImapCommandFailed(56/20) user=mx95user1:mbox=8740666909404708551:mss=95xmc:cmd=a fetch 10 rfc822:port=55014:fromhost=10.37.2.214:fromport=58056:sid=81b33eae-c895-11e7-96bd-878ba0a25377:respcode=NO:resptime=0:node=mx-10-49-58-127:nodePort=55014
+20171113 171018309+0000 mx-10-49-58-127 imapserv 22084 22125 140690816190208 Note;MsgTrace(65/26) retr:user=mx95user1:mbox=8740666909404708551:mss=95xmc:msgid=854a8c8e-c895-11e7-be90-45f0541eea98:size=138:cmd=a fetch 1 rfc822:port=55014:fromhost=10.37.2.214:fromport=58056:sid=81b33eae-c895-11e7-96bd-878ba0a25377:node=mx-10-49-58-127:nodePort=55014
+20171113 171018331+0000 mx-10-49-58-127 imapserv 22084 22125 140690816190208 Note;ImapFetchComplete(56/39) user=mx95user1:mbox=8740666909404708551:mss=95xmc:msgid=854a8c8e-c895-11e7-be90-45f0541eea98:size=138:cmd=a fetch 1 rfc822:port=55014:fromhost=10.37.2.214:fromport=58056:sid=81b33eae-c895-11e7-96bd-878ba0a25377:respcode=OK:resptime=34:node=mx-10-49-58-127:nodePort=55014
+20171113 171021301+0000 mx-10-49-58-127 imapserv 22084 22147 140690810332928 Note;ImapNotificationInfo(56/45) folder INBOX is unsubscribed for notification:user=mx95user1:mbox=8740666909404708551:mss=95xmc:cmd=a logout:port=55014:fromhost=10.37.2.214:fromport=58056:sid=81b33eae-c895-11e7-96bd-878ba0a25377:node=mx-10-49-58-127:nodePort=55014
+20171113 171021310+0000 mx-10-49-58-127 imapserv 22084 22147 140690810332928 Note;ImapLogout(56/43) user=mx95user1:mbox=8740666909404708551:mss=95xmc:cmd=a logout:port=55014:fromhost=10.37.2.214:fromport=58056:sid=81b33eae-c895-11e7-96bd-878ba0a25377:respcode=OK:resptime=17:node=mx-10-49-58-127:nodePort=55014
+20171113 171021310+0000 mx-10-49-58-127 imapserv 22084 22147 140690810332928 Note;ImapDisconnected(56/17) user=mx95user1:mbox=8740666909404708551:mss=95xmc:cmd=a logout:port=55014:fromhost=10.37.2.214:fromport=58056:sid=81b33eae-c895-11e7-96bd-878ba0a25377:respcode=OK:resptime=5300:node=mx-10-49-58-127:nodePort=55014

@@ -33,7 +33,7 @@ done
 #begin IMAP operations
 echo -e "-1-IMAP operations:login,select inbox;append one message,select inbox,fetch 1 message,logout;\n"
 #j is the output redirections symbols
-for ((i=1;i<=1;i++ ))
+for ((i=1;i<=$count;i++ ))
 do
   #clear old log data
  # ssh root@$IMAPHost  'for j in `find /opt/imail2/log/ -name "*.[A-Za-z]*"` ; do  >$j; done'
@@ -41,8 +41,8 @@ do
 	echo -e "\n\n!!!!!!!!!!!!!!!!!!!!!!!!!!!!user mx95user$i!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
 	echo -e "\n\n!!!!!!!!!!!!!!!!!!!!!!!!!!!!user mx95user$i!!!!!!!!!!!!!!!!!!!!!!!!!!!!">>imap-operations.log
 	exec 3<>/dev/tcp/$IMAPHost/$IMAPPort
-#	echo -en "a login mx95user$i m\r\n" >&3   #login failed
-	#sleep 3
+  echo -en "a login mx95user$i m\r\n" >&3   #login failed
+	sleep 5
 	echo -en "a login mx95user$i $userpasswd\r\n" >&3   #login success
 	echo -en "a select inboxme\r\n" >&3                 #select a noexist folder
 	echo -en "a select inbox\r\n" >&3                   #select 
