@@ -1,0 +1,39 @@
+	**********  Starting /home/ram/workspace/bohem/Automation/Autoreply-Suppress-after-enabling-autoreply/bounce-message-should-not-cause-autoreply  **********
+Test started: Mon Nov 13 10:19:46 CST 2017
+########## 1 Clear mta.log using expect tool ...
+spawn ssh imail2@10.49.58.118
+Password: 
+Last login: Sun Nov 12 21:07:27 2017 from bigchina
+[?1034hmx-10-49-58-118:imail2:Mx9.5:~$ > ~/log/mta.log
+mx-10-49-58-118:imail2:Mx9.5:~$ rm: cannot remove 'expect*.log': No such file or directory
+rm: cannot remove 'imapfetch*.log': No such file or directory
+rm: cannot remove 'send*.log': No such file or directory
+########## 2 Accounts provision ...
+8398349486474369263
+5742427794568431607
+[32m########## 2 Accont provision successfully, we can continue now[0m
+spawn ssh root@10.49.58.118
+Password: 
+Last login: Sun Nov 12 21:06:54 2017 from bigchina
+]0;root@mx-10-49-58-118:~[?1034h[root@mx-10-49-58-118 ~]# date +%s
+1510539474
+]0;root@mx-10-49-58-118:~[root@mx-10-49-58-118 ~]# 
+]0;root@mx-10-49-58-118:~[root@mx-10-49-58-118 ~]# ########## 4 Configure user2 and user1 to vacation autoreply mode using expect tool ...
+spawn ssh imail2@10.49.58.118
+Password: 
+Last login: Sun Nov 12 21:17:46 2017 from bigchina
+[?1034hmx-10-49-58-118:imail2:Mx9.5:~$ echo 'internal:' >data.txt
+mx-10-49-58-118:imail2:Mx9.5:~$ echo 'Reply,This is an autoreply message for internal senders!' >>data.txt
+mx-10-49-58-118:imail2:Mx9.5:~$ echo 'external:' >>data.txt
+mx-10-49-58-118:imail2:Mx9.5:~$ echo 'Reply,This is an external autoreply message for external senders!' >>data.txt
+mx-10-49-58-118:imail2:Mx9.5:~$ autoreplyctrl ar10664@openwave.com reply data.txt 1510539479 1510541274
+AutoReply data updated Successfully.
+mx-10-49-58-118:imail2:Mx9.5:~$ autoreplyctrl ar8404@openwave.com reply data.txt 1510539479 1510541274
+AutoReply data updated Successfully.
+mx-10-49-58-118:imail2:Mx9.5:~$ [31m##########4 Configuration failed,please check maunually!Exiting now ...[0m
+##########  doing some clear job ...
+[32m##########  Accont deleted successfully[0m
+TESTFAILED: /home/ram/workspace/bohem/Automation/Autoreply-Suppress-after-enabling-autoreply/bounce-message-should-not-cause-autoreply: Test didn't report success or failure or skipped (50 sec.)
+FAILED: /home/ram/workspace/bohem/Automation/Autoreply-Suppress-after-enabling-autoreply/bounce-message-should-not-cause-autoreply [20171113-101946] (50 sec.)
+Test ended: Mon Nov 13 10:20:36 CST 2017
+

@@ -1,0 +1,29 @@
+The pop operations logs telneting to MX9.5-1:
+
+
++OK InterMail POP3 server ready.
++OK please send PASS command
+-ERR a password MUST be entered
+-ERR Invalid command; valid commands: USER, QUIT
+-ERR Invalid command; valid commands: USER, QUIT
+-ERR Invalid command; valid commands: USER, QUIT
++OK procu1 InterMail POP3 server signing off.
+
+
+
+
+
+POPserv.log from MX9.5-1:
+
+20170329 035203978-0700 host-172-26-202-233 popserv 1241 1643 139998174623488 Note;PopProtocolErr(66/1) pass:user=procu1:cmd=pass <pswd>:fromhost=10.37.2.214:fromport=50504
+20170329 035204163-0700 host-172-26-202-233 popserv 1241 1643 139998174623488 Warn;PopProtocolErr(66/1) list:user=procu1:cmd=list:fromhost=10.37.2.214:fromport=50504
+20170329 035204163-0700 host-172-26-202-233 popserv 1241 1643 139998174623488 Warn;PopProtocolErr(66/1) retr 2:user=procu1:cmd=retr 2:fromhost=10.37.2.214:fromport=50504
+20170329 035204163-0700 host-172-26-202-233 popserv 1241 1643 139998174623488 Warn;PopProtocolErr(66/1) retr 3:user=procu1:cmd=retr 3:fromhost=10.37.2.214:fromport=50504
+20170329 035204163-0700 host-172-26-202-233 popserv 1241 1643 139998174623488 Note;PopConnQuit(66/13) user=procu1:cmd=quit:fromhost=10.37.2.214:fromport=50504:time=2
+
+
+POPserv.log from MX9.5-2:
+
+
+[31m#####Logging enhancement for pop proxy not ok!!##### [0m
+

@@ -1,50 +1,50 @@
-imapmail: host[10.49.58.118] port[20143] user[ar11889] pass[p] folder[inbox] message[2]
+imapmail: host[10.49.58.118] port[20143] user[ar16885] pass[p] folder[inbox] message[2]
 xx OK LOGIN completed
 * 2 EXISTS
 * OK [UNSEEN 1] First unseen message
-* OK [UIDVALIDITY 1510302027] UIDs valid
+* OK [UIDVALIDITY 1510544015] UIDs valid
 * OK [UIDNEXT 1002] Predicted next UID
 * FLAGS (\Answered \Flagged \Deleted \Draft \Seen)
 * OK [PERMANENTFLAGS (\* \Answered \Flagged \Deleted \Draft \Seen)] Permanent flags
 * 1 RECENT
 xx OK [READ-WRITE] SELECT completed
-* 2 FETCH (BODY[] {1406}
+* 2 FETCH (BODY[] {1418}
 Return-Path: <>
 Subject: Re: test message about autoreply feature
-To: ar11889@whsasf.com
-From: "Auto-reply from ar21291@openwave.com" <ar21291@openwave.com>
-In-Reply-To: <20171110082304.AAH4006.mx-10-49-58-118.openwave.com@whsasf.com>
+To: ar16885@whsasf.com
+From: "Auto-reply from ar21289@openwave.com" <ar21289@openwave.com>
+In-Reply-To: <20171113033620.ABW26417.mx-10-49-58-118.openwave.com@whsasf.com>
 Precedence: bulk
-Date: Fri, 10 Nov 2017 03:23:04 -0500
-Message-ID: <20171110082304.AAI4006.mx-10-49-58-118.openwave.com@mx-10-49-58-118>
+Date: Sun, 12 Nov 2017 22:36:21 -0500
+Message-ID: <20171113033621.ABX26417.mx-10-49-58-118.openwave.com@mx-10-49-58-118>
 MIME-Version: 1.0
 Content-Type: multipart/mixed;
-		Boundary="===========================_ _= 922553(4006)1510302184"
+		Boundary="===========================_ _= 7548986(26417)1510544181"
 
 
---===========================_ _= 922553(4006)1510302184
+--===========================_ _= 7548986(26417)1510544181
 Content-Type: text/plain; charset=UTF-8
 Content-Transfer-Encoding: 7bit
 
 
 Echo,This is an external autoreply message for external senders!
 
---===========================_ _= 922553(4006)1510302184
+--===========================_ _= 7548986(26417)1510544181
 Content-Type: message/rfc822
 
 Received: from whsasf.com ([10.37.2.214]) by mx-10-49-58-118.openwave.com
           (InterMail vM.9.05.01.00 201-2473-137-123) with ESMTP
-          id <20171110082304.AAH4006.mx-10-49-58-118.openwave.com@whsasf.com>
-          for <ar21291@openwave.com>; Fri, 10 Nov 2017 03:23:04 -0500
+          id <20171113033620.ABW26417.mx-10-49-58-118.openwave.com@whsasf.com>
+          for <ar21289@openwave.com>; Sun, 12 Nov 2017 22:36:20 -0500
 Subject: test message about autoreply feature
-To: ar21291@openwave.com
-Date: Fri, 10 Nov 2017 03:23:04 -0500
-Message-Id: <20171110082304.AAH4006.mx-10-49-58-118.openwave.com@whsasf.com>
-From: <ar11889@whsasf.com>
+To: ar21289@openwave.com
+Date: Sun, 12 Nov 2017 22:36:21 -0500
+Message-Id: <20171113033620.ABW26417.mx-10-49-58-118.openwave.com@whsasf.com>
+From: <ar16885@whsasf.com>
 
 Echo,This ia a wonderful world!!
 
---===========================_ _= 922553(4006)1510302184--
+--===========================_ _= 7548986(26417)1510544181--
 
  FLAGS (\Recent \Seen))
 xx OK FETCH completed

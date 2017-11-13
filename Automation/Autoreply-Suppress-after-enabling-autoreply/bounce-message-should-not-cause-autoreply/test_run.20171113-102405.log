@@ -1,0 +1,159 @@
+	**********  Starting /home/ram/workspace/bohem/Automation/Autoreply-Suppress-after-enabling-autoreply/bounce-message-should-not-cause-autoreply  **********
+Test started: Mon Nov 13 10:24:05 CST 2017
+########## 1 Clear mta.log using expect tool ...
+spawn ssh imail2@10.49.58.118
+Password: 
+Last login: Sun Nov 12 21:19:21 2017 from bigchina
+[?1034hmx-10-49-58-118:imail2:Mx9.5:~$ > ~/log/mta.log
+mx-10-49-58-118:imail2:Mx9.5:~$ ########## 2 Accounts provision ...
+4968426971254994697
+7072109340385569897
+[32m########## 2 Accont provision successfully, we can continue now[0m
+spawn ssh root@10.49.58.118
+Password: 
+Last login: Sun Nov 12 21:18:54 2017 from bigchina
+]0;root@mx-10-49-58-118:~[?1034h[root@mx-10-49-58-118 ~]# date +%s
+1510539718
+]0;root@mx-10-49-58-118:~[root@mx-10-49-58-118 ~]# 
+]0;root@mx-10-49-58-118:~[root@mx-10-49-58-118 ~]# ########## 4 Configure user2 and user1 to vacation autoreply mode using expect tool ...
+spawn ssh imail2@10.49.58.118
+Password: 
+Last login: Sun Nov 12 21:21:52 2017 from bigchina
+[?1034hmx-10-49-58-118:imail2:Mx9.5:~$ echo 'internal:' >data.txt
+mx-10-49-58-118:imail2:Mx9.5:~$ echo 'Reply,This is an autoreply message for internal senders!' >>data.txt
+mx-10-49-58-118:imail2:Mx9.5:~$ echo 'external:' >>data.txt
+mx-10-49-58-118:imail2:Mx9.5:~$ echo 'Reply,This is an external autoreply message for external senders!' >>data.txt
+mx-10-49-58-118:imail2:Mx9.5:~$ autoreplyctrl ar28642@openwave.com reply data.txt 1510539723 1510541518
+AutoReply data updated Successfully.
+mx-10-49-58-118:imail2:Mx9.5:~$ autoreplyctrl ar5794@openwave.com reply data.txt 1510539723 1510541518
+AutoReply data updated Successfully.
+mx-10-49-58-118:imail2:Mx9.5:~$ [32m##########4 Congifuration successfully[0m
+##########5 delieber 1 message from user1 to user2 ...
+[32m########## 5 Message Deliver successfully, we can continue now[0m
+########## 6 Check mta.log using expect tool ...
+spawn ssh imail2@10.49.58.118
+Password: 
+Last login: Sun Nov 12 21:22:19 2017 from bigchina
+[?1034hmx-10-49-58-118:imail2:Mx9.5:~$ cat log/mta.log
+20171112 212226150-0500 mx-10-49-58-118 mta 26417 27466 139676413593344 Note;SmtpConnectionReceived(70/1) [10.37.2.214]:fromhost=10.37.2.214:fromport=33814:localAddr=10.49.58.118:sid=57FAE7E5-8E748501-00000036.0
+20171112 212226150-0500 mx-10-49-58-118 mta 26417 27466 139676413593344 Warn;SmtpAddressFixed(70/13) [10.37.2.214]:mail from\3aar5794:<ar5794>:fromhost=10.37.2.214:fromport=33814:localAddr=10.49.58.118:sid=57FAE7E5-8E748501-00000036.1
+20171112 212226190-0500 mx-10-49-58-118 mta 26417 27466 139676413593344 Warn;SmtpAddressFixed(70/13) [10.37.2.214]:rcpt to\3aar28642:<ar28642>:from=<ar5794>:fromhost=10.37.2.214:fromport=33814:localAddr=10.49.58.118:sid=57FAE7E5-8E748501-00000036.1
+20171112 212229001-0500 mx-10-49-58-118 mta 26417 27466 139676413593344 Note;MsgTrace(65/26) received from internet:from=<ar5794>:msgid=<20171113022226.ABJ26417.mx-10-49-58-118.openwave.com@[10.37.2.214]>:fromhost=[10.37.2.214]:fromport=33814:localAddr=10.49.58.118:sid=57FAE7E5-8E748501-00000036.1:msgsize=1128817:time=3:sender=<ar5794>:rcpts=<ar28642@openwave.com>:protocol=SMTP:encoding=plaintext:auth=
+20171112 212229001-0500 mx-10-49-58-118 mta 26417 27466 139676413593344 Note;SmtpConnectionClosed(70/2) [10.37.2.214]:3:1:1118549:fromhost=[10.37.2.214]:fromport=33814:localAddr=10.49.58.118:sid=57FAE7E5-8E748501-00000036.1
+20171112 212229001-0500 mx-10-49-58-118 mta 26417 27474 139676411463424 Note;MsgTrace(65/26) docid will be used for message-id:user=ar28642@openwave.com:from=<ar5794@openwave.com>:msgid=<20171113022226.ABJ26417.mx-10-49-58-118.openwave.com@[10.37.2.214]>:size=1128928:fromhost=10.37.2.214:fromport=33814:localAddr=[10.49.58.118]:sid=57FAE7E5-8E748501-00000036.1
+20171112 212229101-0500 mx-10-49-58-118 mta 26417 27482 139676409865984 Note;MsgTrace(65/26) bounced:user=ar28642@openwave.com:mbox=7072109340385569897:mss=95xmc:from=<ar5794@openwave.com>:msgid=<20171113022226.ABJ26417.mx-10-49-58-118.openwave.com@[10.37.2.214]>:size=1128964:port=55014:fromhost=10.37.2.214:fromport=33814:localAddr=[10.49.58.118]:sid=57FAE7E5-8E748501-00000036.1:docid=7f167610-c819-11e7-97e4-200c1bd5b665:node=mx-10-49-58-119:nodePort=55014
+20171112 212229101-0500 mx-10-49-58-118 mta 26417 27838 139676408801024 Note;MsgTrace(65/26) handled by Error-Handler:mss=mx-10-49-58-119:from=<ar5794@openwave.com>:msgid=<20171113022226.ABJ26417.mx-10-49-58-118.openwave.com@[10.37.2.214]>:size=1128928:port=55014:fromhost=10.37.2.214:fromport=33814:localAddr=[10.49.58.118]:sid=57FAE7E5-8E748501-00000036.1:msgfile=/opt/imail2/spool/control/125/20171113022226.ABJ26417.mx-10-49-58-118.openwave.com@[10.37.2.214]-Control:msgid=<20171113022226.ABJ26417.mx-10-49-58-118.openwave.com@[10.37.2.214]>
+20171112 212229101-0500 mx-10-49-58-118 mta 26417 27838 139676408801024 Warn;MsLimitMsgSize(74/16) 1128964:7072109340385569897:user=ar28642@openwave.com:mbox=7072109340385569897:mss=95xmc:from=<ar5794@openwave.com>:msgid=<20171113022226.ABJ26417.mx-10-49-58-118.openwave.com@[10.37.2.214]>:size=1128964:rme=MSS_SL_CREATEMESSAGEREPLY:port=55014:fromhost=10.37.2.214:fromport=33814:localAddr=[10.49.58.118]:sid=57FAE7E5-8E748501-00000036.1:docid=7f167610-c819-11e7-97e4-200c1bd5b665:node=mx-10-49-58-119:nodePort=55014
+20171112 212229107-0500 mx-10-49-58-118 mta 26417 27838 139676408801024 Note;MsgTrace(65/26) MsLimitMsgSize (created by Error-Handler):mss=mx-10-49-58-119:from=<ar5794@openwave.com>:msgid=20171113022229.ABK26417.mx-10-49-58-118.openwave.com@mx-10-49-58-118:size=1128928:port=55014:fromhost=10.37.2.214:fromport=33814:localAddr=[10.49.58.118]:sid=57FAE7E5-8E748501-00000036.1:oldid=<20171113022226.ABJ26417.mx-10-49-58-118.openwave.com@[10.37.2.214]>:oldfrom=<ar5794@openwave.com>:oldrcpts=<ar28642@openwave.com>
+20171112 212229118-0500 mx-10-49-58-118 mta 26417 27838 139676408801024 Note;MsgTrace(65/26) docid will be used for message-id:user=ar5794@openwave.com:from=<>:msgid=<20171113022229.ABK26417.mx-10-49-58-118.openwave.com@mx-10-49-58-118>:size=452:sid=57FAE7E5-8E748501-00000036.1
+20171112 212229180-0500 mx-10-49-58-118 mta 26417 27841 139676408268544 Note;MsgTrace(65/26) bounced:user=ar5794@openwave.com:mbox=4968426971254994697:mss=95xmc:from=<>:msgid=<20171113022229.ABK26417.mx-10-49-58-118.openwave.com@mx-10-49-58-118>:size=1130193:port=55014:sid=57FAE7E5-8E748501-00000036.1:docid=7f261a70-c819-11e7-9798-cdbef8f0e3ee:node=mx-10-49-58-119:nodePort=55014
+20171112 212229181-0500 mx-10-49-58-118 mta 26417 27474 139676411463424 Note;MsgTrace(65/26) handled by Error-Handler:mss=mx-10-49-58-119:from=<>:msgid=<20171113022229.ABK26417.mx-10-49-58-118.openwave.com@mx-10-49-58-118>:size=452:port=55014:sid=57FAE7E5-8E748501-00000036.1:msgfile=/opt/imail2/spool/control/74/20171113022229.ABK26417.mx-10-49-58-118.openwave.com@mx-10-49-58-118-Control:msgid=<20171113022229.ABK26417.mx-10-49-58-118.openwave.com@mx-10-49-58-118>
+20171112 212229181-0500 mx-10-49-58-118 mta 26417 27474 139676411463424 Warn;MsLimitMsgSize(74/16) 1130193:4968426971254994697:user=ar5794@openwave.com:mbox=4968426971254994697:mss=95xmc:from=<>:msgid=<20171113022229.ABK26417.mx-10-49-58-118.openwave.com@mx-10-49-58-118>:size=1130193:rme=MSS_SL_CREATEMESSAGEREPLY:port=55014:sid=57FAE7E5-8E748501-00000036.1:docid=7f261a70-c819-11e7-9798-cdbef8f0e3ee:node=mx-10-49-58-119:nodePort=55014
+20171112 212229181-0500 mx-10-49-58-118 mta 26417 27474 139676411463424 Note;MsgTrace(65/26) moved to queue/errors directory:mss=mx-10-49-58-119:from=<>:msgid=<20171113022229.ABK26417.mx-10-49-58-118.openwave.com@mx-10-49-58-118>:size=452:port=55014:sid=57FAE7E5-8E748501-00000036.1:msgfile=20171113022229.ABL26417.mx-10-49-58-118.openwave.com@mx-10-49-58-118-Control:msgid=<20171113022229.ABK26417.mx-10-49-58-118.openwave.com@mx-10-49-58-118>:queuehost=mx-10-49-58-118
+mx-10-49-58-118:imail2:Mx9.5:~$ [32m##########6 Autoreply messaeg undelievered successfully!![0m
+########## 7 check autoreplied message in inbox of user1 ...
+imapmail: host[10.49.58.118] port[20143] user[ar5794] pass[p] folder[inbox] message[2]
+xx OK LOGIN completed
+* 2 EXISTS
+* OK [UNSEEN 1] First unseen message
+* OK [UIDVALIDITY 1510539570] UIDs valid
+* OK [UIDNEXT 1002] Predicted next UID
+* FLAGS (\Answered \Flagged \Deleted \Draft \Seen)
+* OK [PERMANENTFLAGS (\* \Answered \Flagged \Deleted \Draft \Seen)] Permanent flags
+* 0 RECENT
+xx OK [READ-WRITE] SELECT completed
+* 2 FETCH (BODY[] {1144}
+Return-Path: <>
+From: admin
+Subject: ATTENTION: Bounced Message Notification, bytes in the message!!
+Date: Sun, 12 Nov 2017 21:20:05 -0500
+Message-ID: 29ba619a-c819-11e7-a6b2-20e4430468e1
+
+A message was sent to you that was returned to the sender(bounced)
+because it would have caused your mailbox quota to be exceeded.
+
+The following is the reason that the message was over quota:
+
+       Quota Type: bytes in the message
+  Quota Available: 100.0KB
+      Total Quota: 100.0KB
+
+The following is the information on the message that was bounced:
+
+      Sender: Mail Administrator <Postmaster@openwave.com>
+     Subject:  Mail System Error - Returned Mail with Subject: 
+        Size: 1130193
+  Message ID: 7f261a70-c819-11e7-9798-cdbef8f0e3ee
+        Date: Sun Nov 12 21:22:29 2017
+
+    Reply-To:  <Postmaster@openwave.com>
+
+The message was bounced from the following folder:
+
+    INBOX
+
+To fix this problem, delete some messages from your mailbox, and contact
+the sender to resend the message.
+
+If the size of the message is too big, contact the sender to reduce the
+size of the message and resend the message.
+ FLAGS (\Seen))
+xx OK FETCH completed
+* BYE IMAP4 server terminating connection
+xx OK LOGOUT completed
+imapmail: host[10.49.58.118] port[20143] user[ar28642] pass[p] folder[inbox] message[2]
+xx OK LOGIN completed
+* 2 EXISTS
+* OK [UNSEEN 1] First unseen message
+* OK [UIDVALIDITY 1510539570] UIDs valid
+* OK [UIDNEXT 1002] Predicted next UID
+* FLAGS (\Answered \Flagged \Deleted \Draft \Seen)
+* OK [PERMANENTFLAGS (\* \Answered \Flagged \Deleted \Draft \Seen)] Permanent flags
+* 0 RECENT
+xx OK [READ-WRITE] SELECT completed
+* 2 FETCH (BODY[] {1071}
+Return-Path: <>
+From: admin
+Subject: ATTENTION: Bounced Message Notification, bytes in the message!!
+Date: Sun, 12 Nov 2017 21:20:05 -0500
+Message-ID: 29a9b926-c819-11e7-be70-f9b74b78a92b
+
+A message was sent to you that was returned to the sender(bounced)
+because it would have caused your mailbox quota to be exceeded.
+
+The following is the reason that the message was over quota:
+
+       Quota Type: bytes in the message
+  Quota Available: 100.0KB
+      Total Quota: 100.0KB
+
+The following is the information on the message that was bounced:
+
+      Sender: <ar5794@openwave.com>
+     Subject: [No Subject]
+        Size: 1128964
+  Message ID: 7f167610-c819-11e7-97e4-200c1bd5b665
+        Date: Sun Nov 12 21:22:29 2017
+
+    Reply-To: [No Reply-To]
+
+The message was bounced from the following folder:
+
+    INBOX
+
+To fix this problem, delete some messages from your mailbox, and contact
+the sender to resend the message.
+
+If the size of the message is too big, contact the sender to reduce the
+size of the message and resend the message.
+ FLAGS (\Seen))
+xx OK FETCH completed
+* BYE IMAP4 server terminating connection
+xx OK LOGOUT completed
+[31m##########7 Check autoreplied messaege failed!Please checl manually,Exiting now ...[0m
+TESTFAILED: /home/ram/workspace/bohem/Automation/Autoreply-Suppress-after-enabling-autoreply/bounce-message-should-not-cause-autoreply: AutoReply in reply mode with message undelievered between start/stop date for internal sender test failed! (53 sec.)
+##########  doing some clear job ...
+[32m##########  Accont deleted successfully[0m
+FAILED: /home/ram/workspace/bohem/Automation/Autoreply-Suppress-after-enabling-autoreply/bounce-message-should-not-cause-autoreply [20171113-102405] (56 sec.)
+Test ended: Mon Nov 13 10:25:01 CST 2017
+

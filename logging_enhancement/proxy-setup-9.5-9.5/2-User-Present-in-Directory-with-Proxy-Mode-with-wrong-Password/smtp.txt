@@ -1,0 +1,68 @@
+(1)Telnet to MX9.2 with SMTP commands:
+
+ram@ubuntu:~$ telnet 172.26.202.233 10025
+Trying 172.26.202.233...
+Connected to 172.26.202.233.
+Escape character is '^]'.
+220 host-172-26-202-233.openwave.com ESMTP server (InterMail vM.9.02.01.00 201-2473-137-107-100) ready Thu, 23 Feb 2017 18:24:39 -0800
+shlo
+500 Command unknown: 'SHLO'
+ehlo
+250-host-172-26-202-233.openwave.com
+250-HELP
+250-VRFY
+250-XREMOTEQUEUE
+250-ETRN
+250-AUTH=LOGIN PLAIN
+250-AUTH LOGIN PLAIN
+250-PIPELINING
+250-DSN
+250-8BITMIME
+250 SIZE 30996480
+auth login
+334 VXNlcm5hbWU6
+dXNlcjFAb3BlbndhdmUuY29t
+334 UGFzc3dvcmQ6
+cA==
+235 Authentication successful
+mail from:user1
+250 Sender <user1> Ok
+rcpt to:user2
+250 Recipient <user2> Ok
+data
+354 Ok Send data ending with <CRLF>.<CRLF>
+hi user2,this ussr1.hahahahahah
+.
+250 Message received: 20170224022600.AAC5265.host-172-26-202-233.openwave.com@[10.37.2.214]
+quit
+221 host-172-26-202-233.openwave.com ESMTP server closing connection
+Connection closed by foreign host.
+
+(2)mta.log from MX9.2:
+
+20170223 182544351-0800 host-172-26-202-233 mta 5265 7814 140169472263936 Note;SmtpAuthentication(70/68) [10.37.2.214]:user1@openwave.com:LOGIN:fromhost=10.37.2.214:localAddr=172.26.202.233:sid=1685A74E-98E909EC-00000008.0
+20170223 182553392-0800 host-172-26-202-233 mta 5265 7814 140169472263936 Warn;SmtpAddressFixed(70/13) [10.37.2.214]:mail from\3auser1:<user1>:fromhost=10.37.2.214:localAddr=172.26.202.233:sid=1685A74E-98E909EC-00000008.1
+20170223 182557192-0800 host-172-26-202-233 mta 5265 7814 140169472263936 Warn;SmtpAddressFixed(70/13) [10.37.2.214]:rcpt to\3auser2:<user2>:from=<user1>:fromhost=10.37.2.214:localAddr=172.26.202.233:sid=1685A74E-98E909EC-00000008.1
+20170223 182607416-0800 host-172-26-202-233 mta 5265 7814 140169472263936 Note;MsgTrace(65/26) received from internet:from=<user1>:msgid=<20170224022600.AAC5265.host-172-26-202-233.openwave.com@[10.37.2.214]>:fromhost=[10.37.2.214]:localAddr=172.26.202.233:sid=1685A74E-98E909EC-00000008.1:msgsize=364:time=14:sender=<user1>:rcpts=<user2@openwave.com>:protocol=ESMTP:encoding=plaintext:auth=
+20170223 182607416-0800 host-172-26-202-233 mta 5265 8082 140169471997696 Note;MsgTrace(65/26) docid will be used for message-id:user=user2@openwave.com:from=<user1@openwave.com>:msgid=<20170224022600.AAC5265.host-172-26-202-233.openwave.com@[10.37.2.214]>:size=477:fromhost=10.37.2.214:localAddr=[172.26.202.233]:sid=1685A74E-98E909EC-00000008.1
+20170223 182607418-0800 host-172-26-202-233 mta 5265 8083 140169471731456 Note;MsgTrace(65/26) deferred:user=<user2@openwave.com>:mbox=6028876298924503378:from=<user1@openwave.com>:msgid=<20170224022600.AAC5265.host-172-26-202-233.openwave.com@[10.37.2.214]>:size=477:desthost=172.26.202.87:fromhost=10.37.2.214:localAddr=[172.26.202.233]:sid=1685A74E-98E909EC-00000008.1:docid=990b84c0-fa38-11e6-ad2b-56c868ff80d9:queuehost=host-172-26-202-233:Reason=MtaMessageDeferredDefault(79/39)\3afrom=<user1@openwave.com>\3amsgid=<20170224022600.AAC5265.host-172-26-202-233.openwave.com@[10.37.2.214]>\3asize=477\3adesthost=172.26.202.87\3afromhost=10.37.2.214\3alocalAddr=[172.26.202.233]\3asid=1685A74E-98E909EC-00000008.1
+20170223 182608896-0800 host-172-26-202-233 mta 5265 7814 140169472263936 Note;SmtpConnectionClosed(70/2) [10.37.2.214]:89:1:136:fromhost=[10.37.2.214]:localAddr=172.26.202.233:sid=1685A74E-98E909EC-00000008.1
+(3)mta.log from MX9.5:
+
+empty.This is a problem. Lynn has opened a bug for this.so this case is blcoked.
+
+(4)XCLP:
+/*/common/allowXCLP: [true]
+/*/mta/allowXCLP: [true]
+/*/mta/enableOutboundXCLP: [false]
+/*/mta/outboundXCLPExpectsReply: [TRUE]
+/*/mta/XclpAllowedIPs:
+    [127.0.0.1]
+    [::1]
+    [10.37.2.214]
+/inbound-standardmta-direct/mta/allowXCLP: [true]
+/inbound-standardmta-direct/mta/enableOutboundXCLP: [FALSE]
+/92SITE2-inbound-standardmta-direct/mta/XclpAllowedIPs:
+    [127.0.0.1]
+    [::1]
+    [10.37.2.214]

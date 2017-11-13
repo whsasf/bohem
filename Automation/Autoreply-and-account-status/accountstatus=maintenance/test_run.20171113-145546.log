@@ -1,0 +1,6 @@
+	**********  Starting /home/ram/workspace/bohem/Automation/Autoreply-and-account-status/accountstatus=maintenance  **********
+Test started: Mon Nov 13 14:55:46 CST 2017
+########## 1 Clear mta.log using expect tool ...
+spawn ssh imail2@10.49.58.118
+##########  doing some clear job ...
+[32m##########  Accont deleted successfully[0m

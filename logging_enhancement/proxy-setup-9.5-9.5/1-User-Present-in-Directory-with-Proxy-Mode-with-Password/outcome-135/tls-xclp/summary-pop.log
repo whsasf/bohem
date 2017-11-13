@@ -1,0 +1,38 @@
+The pop operations logs telneting to MX9.5-1:
+
+
++OK InterMail POP3 server ready.
++OK please send PASS command
++OK procu1 is welcome here
++OK 2 messages
+1 405
+2 83
+.
++OK 83 octets
+2-11111111
+Message-ID: <0-2017-0608-015906-1351@mx-172-26-202-87.openwave.com>
+
+.
+-ERR no such message.
++OK procu1 InterMail SPOP3 server signing off.
+
+
+
+
+
+POPserv.log from MX9.5-1:
+
+20170608 020017542-0700 host-172-26-202-233 popserv 22240 22756 140292417464064 Warn;RmeInvalidCOSAttribute(68/25) mailpopproxyhost:user=procu1:mbox=6879794137007605155:cmd=pass <pswd>:fromhost=10.37.2.214:fromport=49928
+20170608 020017641-0700 host-172-26-202-233 popserv 22240 22756 140292417464064 Note;PopProxyConnMade(66/16) 172.26.202.87:20995:user=procu1:mbox=6879794137007605155:cmd=pass <pswd>:fromhost=10.37.2.214:fromport=49928
+
+
+POPserv.log from MX9.5-2:
+
+20170608 020017567-0700 mx-172-26-202-87 popserv 1305 1797 140306192221952 Note;SslHandshakeSucceeded(64/3):fromhost=172.26.202.233:fromport=53273
+20170608 020017642-0700 mx-172-26-202-87 popserv 1305 1797 140306192221952 Note;PopConnMade(66/9) user=procu1:mbox=6431528537649455688:mss=92xmc:cmd=PASS <pswd>:port=55014:fromhost=10.37.2.214:fromport=53273:node=mx-172-26-202-87:nodePort=55014
+20170608 020018083-0700 mx-172-26-202-87 popserv 1305 1797 140306192221952 Note;MsgTrace(65/26) retr:user=procu1:mbox=6431528537649455688:mss=92xmc:msgid=ba7deaa2-4c28-11e7-8148-ea07657adfa6:size=83:cmd=retr 2:port=55014:fromhost=10.37.2.214:fromport=53273:node=mx-172-26-202-87:nodePort=55014
+20170608 020018083-0700 mx-172-26-202-87 popserv 1305 1797 140306192221952 Warn;PopProtocolErr(66/1) retr 3:user=procu1:mbox=6431528537649455688:mss=92xmc:cmd=retr 3:port=55014:fromhost=10.37.2.214:fromport=53273:node=mx-172-26-202-87:nodePort=55014
+20170608 020018083-0700 mx-172-26-202-87 popserv 1305 1797 140306192221952 Note;PopConnQuit(66/13) user=procu1:mbox=6431528537649455688:mss=92xmc:cmd=quit:port=55014:fromhost=10.37.2.214:fromport=53273:node=mx-172-26-202-87:nodePort=55014:time=1
+
+[32m#####Logging enhancement for POP proxy is ok!!##### [0m
+

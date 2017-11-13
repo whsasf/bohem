@@ -1,0 +1,117 @@
+	**********  Starting /home/ram/workspace/bohem/Automation/Autoreply-and-account-status/accountstatus=maintenance  **********
+Test started: Mon Nov 13 14:56:34 CST 2017
+########## 1 Clear mta.log using expect tool ...
+spawn ssh imail2@10.49.58.118
+Password: 
+Last login: Mon Nov 13 01:53:29 2017 from bigchina
+[?1034hmx-10-49-58-118:imail2:Mx9.5:~$ > ~/log/mta.log
+mx-10-49-58-118:imail2:Mx9.5:~$ ########## 2 Accounts provision ...
+6843044764843708030
+6971540317299716533
+[32m########## 2 Accont provision successfully, we can continue now[0m
+spawn ssh root@10.49.58.118
+Password: 
+Last login: Mon Nov 13 01:51:10 2017 from bigchina
+]0;root@mx-10-49-58-118:~[?1034h[root@mx-10-49-58-118 ~]# date +%s
+1510556071
+]0;root@mx-10-49-58-118:~[root@mx-10-49-58-118 ~]# 
+]0;root@mx-10-49-58-118:~[root@mx-10-49-58-118 ~]# ########## 4 Configure user2 to vacation autoreply mode using expect tool ...
+spawn ssh imail2@10.49.58.118
+Password: 
+Last login: Mon Nov 13 01:54:25 2017 from bigchina
+[?1034hmx-10-49-58-118:imail2:Mx9.5:~$ echo 'internal:' >data.txt
+mx-10-49-58-118:imail2:Mx9.5:~$ echo 'Reply,This is an autoreply message for internal senders!' >>data.txt
+mx-10-49-58-118:imail2:Mx9.5:~$ echo 'external:' >>data.txt
+mx-10-49-58-118:imail2:Mx9.5:~$ echo 'Reply,This is an external autoreply message for external senders!' >>data.txt
+mx-10-49-58-118:imail2:Mx9.5:~$ autoreplyctrl ar10841@openwave.com reply data.txt 1510556076 1510557871
+AutoReply data updated Successfully.
+mx-10-49-58-118:imail2:Mx9.5:~$ [32m##########4 Congifuration successfully[0m
+spawn ssh imail2@10.49.58.118
+Password: 
+Last login: Mon Nov 13 01:55:15 2017 from bigchina
+[?1034hmx-10-49-58-118:imail2:Mx9.5:~$ imdbcontrol sas ar10841 openwave.com M
+mx-10-49-58-118:imail2:Mx9.5:~$ imdbcontrol gaf ar10841 openwave.com |grep Status
+                          [01;31m[KStatus[m[K:	M
+mx-10-49-58-118:imail2:Mx9.5:~$ ##########5 delieber 1 message from user1 to user2 ...
+########## 6 Check mta.log using expect tool ...
+spawn ssh imail2@10.49.58.118
+Password: 
+Last login: Mon Nov 13 01:55:22 2017 from bigchina
+[?1034hmx-10-49-58-118:imail2:Mx9.5:~$ cat log/mta.log
+20171113 015526433-0500 mx-10-49-58-118 mta 26417 27467 139676411729664 Note;SmtpConnectionReceived(70/1) [10.37.2.214]:fromhost=10.37.2.214:fromport=39818:localAddr=10.49.58.118:sid=57FAE7E5-8E748501-00000090.0
+20171113 015528173-0500 mx-10-49-58-118 mta 26417 27467 139676411729664 Note;MsgTrace(65/26) received from internet:from=<ar25406>:msgid=<20171113065527.AEC26417.mx-10-49-58-118.openwave.com@ar25406>:fromhost=[10.37.2.214]:fromport=39818:localAddr=10.49.58.118:sid=57FAE7E5-8E748501-00000090.1:msgsize=421:time=1:sender=<ar25406>:rcpts=<ar10841@openwave.com>:protocol=ESMTP:encoding=plaintext:auth=
+20171113 015528173-0500 mx-10-49-58-118 mta 26417 27837 139676409067264 Note;AcctMaintenance(50/7) 6971540317299716533:95xmc:user=ar10841@openwave.com:from=<ar25406@openwave.com>:msgid=<20171113065527.AEC26417.mx-10-49-58-118.openwave.com@ar25406>:size=527:fromhost=10.37.2.214:fromport=39818:localAddr=[10.49.58.118]:sid=57FAE7E5-8E748501-00000090.1
+20171113 015528174-0500 mx-10-49-58-118 mta 26417 27837 139676409067264 Note;MsgTrace(65/26) deferred:user=ar10841@openwave.com:mbox=6971540317299716533:from=<ar25406@openwave.com>:msgid=<20171113065527.AEC26417.mx-10-49-58-118.openwave.com@ar25406>:size=527:fromhost=10.37.2.214:fromport=39818:localAddr=[10.49.58.118]:sid=57FAE7E5-8E748501-00000090.1:docid=a1d5ef52-c83f-11e7-8dc9-9279d91aab71:queuehost=mx-10-49-58-118:Reason=AcctMaintenance(50/7) 6971540317299716533\3a95xmc\3auser=ar10841@openwave.com\3afrom=<ar25406@openwave.com>\3amsgid=<20171113065527.AEC26417.mx-10-49-58-118.openwave.com@ar25406>\3asize=527\3afromhost=10.37.2.214\3afromport=39818\3alocalAddr=[10.49.58.118]\3asid=57FAE7E5-8E748501-00000090.1
+20171113 015528449-0500 mx-10-49-58-118 mta 26417 27467 139676411729664 Note;SmtpConnectionClosed(70/2) [10.37.2.214]:2:1:155:fromhost=[10.37.2.214]:fromport=39818:localAddr=10.49.58.118:sid=57FAE7E5-8E748501-00000090.1
+mx-10-49-58-118:imail2:Mx9.5:~$ count=2
+count1=1
+[32m##########6 Autoreply messaeg undelievered successfully!![0m
+########## 7 check autoreplied message in inbox of user1 ...
+imapmail: host[10.49.58.118] port[20143] user[ar25406] pass[p] folder[inbox] message[2]
+xx OK LOGIN completed
+* 1 EXISTS
+* OK [UNSEEN 1] First unseen message
+* OK [UIDVALIDITY 1510555922] UIDs valid
+* OK [UIDNEXT 1001] Predicted next UID
+* FLAGS (\Answered \Flagged \Deleted \Draft \Seen)
+* OK [PERMANENTFLAGS (\* \Answered \Flagged \Deleted \Draft \Seen)] Permanent flags
+* 0 RECENT
+xx OK [READ-WRITE] SELECT completed
+xx NO FETCH failed
+Didn't get OK for FETCH
+Not Connected...
+[32m##########7 Check autoreplied messaege successfully!![0m
+spawn ssh imail2@10.49.58.118
+Password: 
+Last login: Mon Nov 13 01:55:32 2017 from bigchina
+[?1034hmx-10-49-58-118:imail2:Mx9.5:~$ imdbcontrol sas ar10841 openwave.com S
+mx-10-49-58-118:imail2:Mx9.5:~$ imdbcontrol gaf ar10841 openwave.com |grep Status
+                          [01;31m[KStatus[m[K:	S
+mx-10-49-58-118:imail2:Mx9.5:~$ ########## 6 Check mta.log using expect tool ...
+spawn ssh imail2@10.49.58.118
+Password: 
+Last login: Mon Nov 13 01:55:55 2017 from bigchina
+[?1034hmx-10-49-58-118:imail2:Mx9.5:~$ cat log/mta.log
+20171113 015526433-0500 mx-10-49-58-118 mta 26417 27467 139676411729664 Note;SmtpConnectionReceived(70/1) [10.37.2.214]:fromhost=10.37.2.214:fromport=39818:localAddr=10.49.58.118:sid=57FAE7E5-8E748501-00000090.0
+20171113 015528173-0500 mx-10-49-58-118 mta 26417 27467 139676411729664 Note;MsgTrace(65/26) received from internet:from=<ar25406>:msgid=<20171113065527.AEC26417.mx-10-49-58-118.openwave.com@ar25406>:fromhost=[10.37.2.214]:fromport=39818:localAddr=10.49.58.118:sid=57FAE7E5-8E748501-00000090.1:msgsize=421:time=1:sender=<ar25406>:rcpts=<ar10841@openwave.com>:protocol=ESMTP:encoding=plaintext:auth=
+20171113 015528173-0500 mx-10-49-58-118 mta 26417 27837 139676409067264 Note;AcctMaintenance(50/7) 6971540317299716533:95xmc:user=ar10841@openwave.com:from=<ar25406@openwave.com>:msgid=<20171113065527.AEC26417.mx-10-49-58-118.openwave.com@ar25406>:size=527:fromhost=10.37.2.214:fromport=39818:localAddr=[10.49.58.118]:sid=57FAE7E5-8E748501-00000090.1
+20171113 015528174-0500 mx-10-49-58-118 mta 26417 27837 139676409067264 Note;MsgTrace(65/26) deferred:user=ar10841@openwave.com:mbox=6971540317299716533:from=<ar25406@openwave.com>:msgid=<20171113065527.AEC26417.mx-10-49-58-118.openwave.com@ar25406>:size=527:fromhost=10.37.2.214:fromport=39818:localAddr=[10.49.58.118]:sid=57FAE7E5-8E748501-00000090.1:docid=a1d5ef52-c83f-11e7-8dc9-9279d91aab71:queuehost=mx-10-49-58-118:Reason=AcctMaintenance(50/7) 6971540317299716533\3a95xmc\3auser=ar10841@openwave.com\3afrom=<ar25406@openwave.com>\3amsgid=<20171113065527.AEC26417.mx-10-49-58-118.openwave.com@ar25406>\3asize=527\3afromhost=10.37.2.214\3afromport=39818\3alocalAddr=[10.49.58.118]\3asid=57FAE7E5-8E748501-00000090.1
+20171113 015528449-0500 mx-10-49-58-118 mta 26417 27467 139676411729664 Note;SmtpConnectionClosed(70/2) [10.37.2.214]:2:1:155:fromhost=[10.37.2.214]:fromport=39818:localAddr=10.49.58.118:sid=57FAE7E5-8E748501-00000090.1
+20171113 015659555-0500 mx-10-49-58-118 mta 26417 26505 139676413327104 Note;MtaQueueDirRemoved(79/54) /opt/imail2/spool/deferred/MTA
+20171113 015700058-0500 mx-10-49-58-118 mta 26417 2744 139676407736064 Warn;UserDataException(504/1) MBX_NOT_FOUND:{uid=[ar6504@openwave.com], adminControl=[true], senderBlocking=[true], sharedMailbox=[true], email=[ar6504@openwave.com]}:MailboxService\3aGET:The given Mailbox does not exist.:Mailbox ar6504@openwave.com does not exist in SUR backend:from=<ar32435@openwave.com>:msgid=<20171113064936.ADY26417.mx-10-49-58-118.openwave.com@ar32435>:size=525:fromhost=10.37.2.214:fromport=39718:localAddr=[10.49.58.118]:sid=57FAE7E5-8E748501-0000008C.1
+20171113 015700064-0500 mx-10-49-58-118 mta 26417 27838 139676408801024 Warn;UserDataException(504/1) MBX_NOT_FOUND:{uid=[ar20849@openwave.com], adminControl=[true], senderBlocking=[true], sharedMailbox=[true], email=[ar20849@openwave.com]}:MailboxService\3aGET:The given Mailbox does not exist.:Mailbox ar20849@openwave.com does not exist in SUR backend:from=<ar10106@openwave.com>:msgid=<20171113065134.AEA26417.mx-10-49-58-118.openwave.com@ar10106>:size=527:fromhost=10.37.2.214:fromport=39746:localAddr=[10.49.58.118]:sid=57FAE7E5-8E748501-0000008E.1
+20171113 015700064-0500 mx-10-49-58-118 mta 26417 27838 139676408801024 Note;AcctInvalidUser(50/35) ar20849@openwave.com:user=ar20849@openwave.com:from=<ar10106@openwave.com>:msgid=<20171113065134.AEA26417.mx-10-49-58-118.openwave.com@ar10106>:size=527:fromhost=10.37.2.214:fromport=39746:localAddr=[10.49.58.118]:sid=57FAE7E5-8E748501-0000008E.1
+20171113 015700064-0500 mx-10-49-58-118 mta 26417 27838 139676408801024 Note;MsgTrace(65/26) bounced:user=ar20849@openwave.com:from=<ar10106@openwave.com>:msgid=<20171113065134.AEA26417.mx-10-49-58-118.openwave.com@ar10106>:size=527:fromhost=10.37.2.214:fromport=39746:localAddr=[10.49.58.118]:sid=57FAE7E5-8E748501-0000008E.1:docid=171c9e06-c83f-11e7-8962-55a10a87ac8b
+20171113 015700064-0500 mx-10-49-58-118 mta 26417 27838 139676408801024 Note;MsgTrace(65/26) handled by Error-Handler:from=<ar10106@openwave.com>:msgid=<20171113065134.AEA26417.mx-10-49-58-118.openwave.com@ar10106>:size=527:fromhost=10.37.2.214:fromport=39746:localAddr=[10.49.58.118]:sid=57FAE7E5-8E748501-0000008E.1:msgfile=/opt/imail2/spool/control/483/20171113065135.AEB26417.mx-10-49-58-118.openwave.com@ar10106-Control:msgid=<20171113065134.AEA26417.mx-10-49-58-118.openwave.com@ar10106>
+20171113 015700064-0500 mx-10-49-58-118 mta 26417 27838 139676408801024 Note;AcctInvalidUser(50/35) ar20849@openwave.com:user=ar20849@openwave.com:from=<ar10106@openwave.com>:msgid=<20171113065134.AEA26417.mx-10-49-58-118.openwave.com@ar10106>:size=527:fromhost=10.37.2.214:fromport=39746:localAddr=[10.49.58.118]:sid=57FAE7E5-8E748501-0000008E.1
+20171113 015700067-0500 mx-10-49-58-118 mta 26417 27838 139676408801024 Note;MsgTrace(65/26) AcctInvalidUser (created by Error-Handler):from=<ar10106@openwave.com>:msgid=20171113065700.AEE26417.mx-10-49-58-118.openwave.com@mx-10-49-58-118:size=527:fromhost=10.37.2.214:fromport=39746:localAddr=[10.49.58.118]:sid=57FAE7E5-8E748501-0000008E.1:oldid=<20171113065134.AEA26417.mx-10-49-58-118.openwave.com@ar10106>:oldfrom=<ar10106@openwave.com>:oldrcpts=<ar20849@openwave.com>
+20171113 015700071-0500 mx-10-49-58-118 mta 26417 2748 139676407469824 Note;MsgTrace(65/26) bounced:user=ar10841@openwave.com:mbox=6971540317299716533:from=<ar25406@openwave.com>:msgid=<20171113065527.AEC26417.mx-10-49-58-118.openwave.com@ar25406>:size=527:fromhost=10.37.2.214:fromport=39818:localAddr=[10.49.58.118]:sid=57FAE7E5-8E748501-00000090.1:docid=a1d5ef52-c83f-11e7-8dc9-9279d91aab71
+20171113 015700071-0500 mx-10-49-58-118 mta 26417 2748 139676407469824 Note;MsgTrace(65/26) handled by Error-Handler:from=<ar25406@openwave.com>:msgid=<20171113065527.AEC26417.mx-10-49-58-118.openwave.com@ar25406>:size=527:fromhost=10.37.2.214:fromport=39818:localAddr=[10.49.58.118]:sid=57FAE7E5-8E748501-00000090.1:msgfile=/opt/imail2/spool/control/391/20171113065528.AED26417.mx-10-49-58-118.openwave.com@ar25406-Control:msgid=<20171113065527.AEC26417.mx-10-49-58-118.openwave.com@ar25406>
+20171113 015700071-0500 mx-10-49-58-118 mta 26417 2748 139676407469824 Note;AcctInactive(50/5) user=ar10841@openwave.com:from=<ar25406@openwave.com>:msgid=<20171113065527.AEC26417.mx-10-49-58-118.openwave.com@ar25406>:size=527:fromhost=10.37.2.214:fromport=39818:localAddr=[10.49.58.118]:sid=57FAE7E5-8E748501-00000090.1
+20171113 015700071-0500 mx-10-49-58-118 mta 26417 2744 139676407736064 Note;AcctInvalidUser(50/35) ar6504@openwave.com:user=ar6504@openwave.com:from=<ar32435@openwave.com>:msgid=<20171113064936.ADY26417.mx-10-49-58-118.openwave.com@ar32435>:size=525:fromhost=10.37.2.214:fromport=39718:localAddr=[10.49.58.118]:sid=57FAE7E5-8E748501-0000008C.1
+20171113 015700071-0500 mx-10-49-58-118 mta 26417 2744 139676407736064 Note;MsgTrace(65/26) bounced:user=ar6504@openwave.com:from=<ar32435@openwave.com>:msgid=<20171113064936.ADY26417.mx-10-49-58-118.openwave.com@ar32435>:size=525:fromhost=10.37.2.214:fromport=39718:localAddr=[10.49.58.118]:sid=57FAE7E5-8E748501-0000008C.1:docid=d086fb8a-c83e-11e7-bd02-2a014b2c3d93
+20171113 015700071-0500 mx-10-49-58-118 mta 26417 2744 139676407736064 Note;MsgTrace(65/26) handled by Error-Handler:from=<ar32435@openwave.com>:msgid=<20171113064936.ADY26417.mx-10-49-58-118.openwave.com@ar32435>:size=525:fromhost=10.37.2.214:fromport=39718:localAddr=[10.49.58.118]:sid=57FAE7E5-8E748501-0000008C.1:msgfile=/opt/imail2/spool/control/123/20171113064937.ADZ26417.mx-10-49-58-118.openwave.com@ar32435-Control:msgid=<20171113064936.ADY26417.mx-10-49-58-118.openwave.com@ar32435>
+20171113 015700071-0500 mx-10-49-58-118 mta 26417 2744 139676407736064 Note;AcctInvalidUser(50/35) ar6504@openwave.com:user=ar6504@openwave.com:from=<ar32435@openwave.com>:msgid=<20171113064936.ADY26417.mx-10-49-58-118.openwave.com@ar32435>:size=525:fromhost=10.37.2.214:fromport=39718:localAddr=[10.49.58.118]:sid=57FAE7E5-8E748501-0000008C.1
+20171113 015700072-0500 mx-10-49-58-118 mta 26417 2748 139676407469824 Note;MsgTrace(65/26) AcctInactive (created by Error-Handler):from=<ar25406@openwave.com>:msgid=20171113065700.AEF26417.mx-10-49-58-118.openwave.com@mx-10-49-58-118:size=527:fromhost=10.37.2.214:fromport=39818:localAddr=[10.49.58.118]:sid=57FAE7E5-8E748501-00000090.1:oldid=<20171113065527.AEC26417.mx-10-49-58-118.openwave.com@ar25406>:oldfrom=<ar25406@openwave.com>:oldrcpts=<ar10841@openwave.com>
+20171113 015700073-0500 mx-10-49-58-118 mta 26417 2744 139676407736064 Note;MsgTrace(65/26) AcctInvalidUser (created by Error-Handler):from=<ar32435@openwave.com>:msgid=20171113065700.AEG26417.mx-10-49-58-118.openwave.com@mx-10-49-58-118:size=525:fromhost=10.37.2.214:fromport=39718:localAddr=[10.49.58.118]:sid=57FAE7E5-8E748501-0000008C.1:oldid=<20171113064936.ADY26417.mx-10-49-58-118.openwave.com@ar32435>:oldfrom=<ar32435@openwave.com>:oldrcpts=<ar6504@openwave.com>
+20171113 015700083-0500 mx-10-49-58-118 mta 26417 27837 139676409067264 Warn;UserDataException(504/1) MBX_NOT_FOUND:{uid=[ar10106@openwave.com], adminControl=[true], senderBlocking=[true], sharedMailbox=[true], email=[ar10106@openwave.com]}:MailboxService\3aGET:The given Mailbox does not exist.:Mailbox ar10106@openwave.com does not exist in SUR backend:user=<ar10106@openwave.com>:from=<>:msgid=<20171113065700.AEE26417.mx-10-49-58-118.openwave.com@mx-10-49-58-118>:size=489:sid=57FAE7E5-8E748501-0000008E.1
+20171113 015700083-0500 mx-10-49-58-118 mta 26417 27837 139676409067264 Note;AcctInvalidUser(50/35) ar10106@openwave.com:user=ar10106@openwave.com:from=<>:msgid=<20171113065700.AEE26417.mx-10-49-58-118.openwave.com@mx-10-49-58-118>:size=489:sid=57FAE7E5-8E748501-0000008E.1
+20171113 015700083-0500 mx-10-49-58-118 mta 26417 27837 139676409067264 Note;MsgTrace(65/26) bounced:user=ar10106@openwave.com:from=<>:msgid=<20171113065700.AEE26417.mx-10-49-58-118.openwave.com@mx-10-49-58-118>:size=489:sid=57FAE7E5-8E748501-0000008E.1:docid=d89b8bf0-c83f-11e7-a191-946599d8b6dc
+20171113 015700083-0500 mx-10-49-58-118 mta 26417 27837 139676409067264 Note;MsgTrace(65/26) handled by Error-Handler:from=<>:msgid=<20171113065700.AEE26417.mx-10-49-58-118.openwave.com@mx-10-49-58-118>:size=489:sid=57FAE7E5-8E748501-0000008E.1:msgfile=/opt/imail2/spool/control/384/20171113065700.AEE26417.mx-10-49-58-118.openwave.com@mx-10-49-58-118-Control:msgid=<20171113065700.AEE26417.mx-10-49-58-118.openwave.com@mx-10-49-58-118>
+20171113 015700083-0500 mx-10-49-58-118 mta 26417 27837 139676409067264 Note;AcctInvalidUser(50/35) ar10106@openwave.com:user=ar10106@openwave.com:from=<>:msgid=<20171113065700.AEE26417.mx-10-49-58-118.openwave.com@mx-10-49-58-118>:size=489:sid=57FAE7E5-8E748501-0000008E.1
+20171113 015700084-0500 mx-10-49-58-118 mta 26417 27837 139676409067264 Note;MsgTrace(65/26) moved to queue/errors directory:from=<>:msgid=<20171113065700.AEE26417.mx-10-49-58-118.openwave.com@mx-10-49-58-118>:size=489:sid=57FAE7E5-8E748501-0000008E.1:msgfile=20171113065700.AEH26417.mx-10-49-58-118.openwave.com@mx-10-49-58-118-Control:msgid=<20171113065700.AEE26417.mx-10-49-58-118.openwave.com@mx-10-49-58-118>:queuehost=mx-10-49-58-118
+20171113 015700089-0500 mx-10-49-58-118 mta 26417 2744 139676407736064 Warn;UserDataException(504/1) MBX_NOT_FOUND:{uid=[ar32435@openwave.com], adminControl=[true], senderBlocking=[true], sharedMailbox=[true], email=[ar32435@openwave.com]}:MailboxService\3aGET:The given Mailbox does not exist.:Mailbox ar32435@openwave.com does not exist in SUR backend:user=<ar32435@openwave.com>:from=<>:msgid=<20171113065700.AEG26417.mx-10-49-58-118.openwave.com@mx-10-49-58-118>:size=488:sid=57FAE7E5-8E748501-0000008C.1
+20171113 015700089-0500 mx-10-49-58-118 mta 26417 2744 139676407736064 Note;AcctInvalidUser(50/35) ar32435@openwave.com:user=ar32435@openwave.com:from=<>:msgid=<20171113065700.AEG26417.mx-10-49-58-118.openwave.com@mx-10-49-58-118>:size=488:sid=57FAE7E5-8E748501-0000008C.1
+20171113 015700089-0500 mx-10-49-58-118 mta 26417 2744 139676407736064 Note;MsgTrace(65/26) bounced:user=ar32435@openwave.com:from=<>:msgid=<20171113065700.AEG26417.mx-10-49-58-118.openwave.com@mx-10-49-58-118>:size=488:sid=57FAE7E5-8E748501-0000008C.1:docid=d89c9efa-c83f-11e7-bb1d-047f0902cccd
+20171113 015700089-0500 mx-10-49-58-118 mta 26417 2744 139676407736064 Note;MsgTrace(65/26) handled by Error-Handler:from=<>:msgid=<20171113065700.AEG26417.mx-10-49-58-118.openwave.com@mx-10-49-58-118>:size=488:sid=57FAE7E5-8E748501-0000008C.1:msgfile=/opt/imail2/spool/control/15/20171113065700.AEG26417.mx-10-49-58-118.openwave.com@mx-10-49-58-118-Control:msgid=<20171113065700.AEG26417.mx-10-49-58-118.openwave.com@mx-10-49-58-118>
+20171113 015700089-0500 mx-10-49-58-118 mta 26417 2744 139676407736064 Note;AcctInvalidUser(50/35) ar32435@openwave.com:user=ar32435@openwave.com:from=<>:msgid=<20171113065700.AEG26417.mx-10-49-58-118.openwave.com@mx-10-49-58-118>:size=488:sid=57FAE7E5-8E748501-0000008C.1
+20171113 015700091-0500 mx-10-49-58-118 mta 26417 2744 139676407736064 Note;MsgTrace(65/26) moved to queue/errors directory:from=<>:msgid=<20171113065700.AEG26417.mx-10-49-58-118.openwave.com@mx-10-49-58-118>:size=488:sid=57FAE7E5-8E748501-0000008C.1:msgfile=20171113065700.AEI26417.mx-10-49-58-118.openwave.com@mx-10-49-58-118-Control:msgid=<20171113065700.AEG26417.mx-10-49-58-118.openwave.com@mx-10-49-58-118>:queuehost=mx-10-49-58-118
+20171113 015700097-0500 mx-10-49-58-118 mta 26417 27838 139676408801024 Note;MsgTrace(65/26) docid will be used for message-id:user=ar25406@openwave.com:from=<>:msgid=<20171113065700.AEF26417.mx-10-49-58-118.openwave.com@mx-10-49-58-118>:size=489:sid=57FAE7E5-8E748501-00000090.1
+20171113 015700150-0500 mx-10-49-58-118 mta 26417 28037 139676408002304 Note;MsgTrace(65/26) delivered:user=ar25406@openwave.com:mbox=6843044764843708030:mss=mx-10-49-58-119:from=<>:msgid=<20171113065700.AEF26417.mx-10-49-58-118.openwave.com@mx-10-49-58-118>:size=1823:port=55014:sid=57FAE7E5-8E748501-00000090.1:docid=d89c945a-c83f-11e7-b086-3a72aeaeb159:node=mx-10-49-58-119:nodePort=55014
+mx-10-49-58-118:imail2:Mx9.5:~$ [31m##########6 Autoreply messaeg delievered failed!Please check manually,Exiting now ...[0m
+##########  doing some clear job ...
+[32m##########  Accont deleted successfully[0m
+TESTFAILED: /home/ram/workspace/bohem/Automation/Autoreply-and-account-status/accountstatus=maintenance: Test didn't report success or failure or skipped (180 sec.)
+FAILED: /home/ram/workspace/bohem/Automation/Autoreply-and-account-status/accountstatus=maintenance [20171113-145634] (180 sec.)
+Test ended: Mon Nov 13 14:59:34 CST 2017
+

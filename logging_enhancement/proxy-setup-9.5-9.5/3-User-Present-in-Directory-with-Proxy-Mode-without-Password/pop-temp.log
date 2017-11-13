@@ -1,0 +1,7 @@
++OK InterMail POP3 server ready.
++OK please send PASS command
+-ERR a password MUST be entered
+-ERR Invalid command; valid commands: USER, QUIT
+-ERR Invalid command; valid commands: USER, QUIT
+-ERR Invalid command; valid commands: USER, QUIT
++OK procu1 InterMail POP3 server signing off.

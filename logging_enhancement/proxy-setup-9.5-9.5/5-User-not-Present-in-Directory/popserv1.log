@@ -1,0 +1,2 @@
+20170612 014333732-0700 host-172-26-202-233 popserv 14970 15358 140624339400448 Note;UserDataException(504/1) MBX_NOT_FOUND:{password=[XXXXX], protocolType=[pop], userName=[procu1]}:AuthenticateAndGetMailboxService\3aPOST:The given Mailbox does not exist.::user=procu1:cmd=pass <pswd>:fromhost=10.37.2.214:fromport=53946
+20170612 014333847-0700 host-172-26-202-233 popserv 14970 15358 140624339400448 Note;PopProxyConnMade(66/16) 172.26.202.87:20995:user=procu1:cmd=pass <pswd>:fromhost=10.37.2.214:fromport=53946

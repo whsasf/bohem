@@ -1,0 +1,63 @@
+	**********  Starting /home/ram/workspace/bohem/Automation/Autoreply-and-account-status/accountstatus=locked  **********
+Test started: Mon Nov 13 13:02:32 CST 2017
+########## 1 Clear mta.log using expect tool ...
+spawn ssh imail2@10.49.58.118
+Password: 
+Last login: Sun Nov 12 23:58:18 2017 from bigchina
+[?1034hmx-10-49-58-118:imail2:Mx9.5:~$ > ~/log/mta.log
+mx-10-49-58-118:imail2:Mx9.5:~$ rm: cannot remove 'imapfetch*.log': No such file or directory
+########## 2 Accounts provision ...
+8011356715211547063
+8895070988318853762
+[32m########## 2 Accont provision successfully, we can continue now[0m
+spawn ssh root@10.49.58.118
+Password: 
+Last login: Sun Nov 12 23:58:02 2017 from bigchina
+]0;root@mx-10-49-58-118:~[?1034h[root@mx-10-49-58-118 ~]# date +%s
+1510549220
+]0;root@mx-10-49-58-118:~[root@mx-10-49-58-118 ~]# 
+]0;root@mx-10-49-58-118:~[root@mx-10-49-58-118 ~]# ########## 4 Configure user2 to vacation autoreply mode using expect tool ...
+spawn ssh imail2@10.49.58.118
+Password: 
+Last login: Mon Nov 13 00:00:14 2017 from bigchina
+[?1034hmx-10-49-58-118:imail2:Mx9.5:~$ echo 'internal:' >data.txt
+mx-10-49-58-118:imail2:Mx9.5:~$ echo 'Reply,This is an autoreply message for internal senders!' >>data.txt
+mx-10-49-58-118:imail2:Mx9.5:~$ echo 'external:' >>data.txt
+mx-10-49-58-118:imail2:Mx9.5:~$ echo 'Reply,This is an external autoreply message for external senders!' >>data.txt
+mx-10-49-58-118:imail2:Mx9.5:~$ autoreplyctrl ar17222@openwave.com reply data.txt 1510549225 1510551020
+AutoReply data updated Successfully.
+mx-10-49-58-118:imail2:Mx9.5:~$ [32m##########4 Congifuration successfully[0m
+spawn ssh imail2@10.49.58.118
+Password: 
+Last login: Mon Nov 13 00:00:35 2017 from bigchina
+[?1034hmx-10-49-58-118:imail2:Mx9.5:~$ imdbcontrol sas ar17222 openwave.com L
+mx-10-49-58-118:imail2:Mx9.5:~$ imdbcontrol gaf ar17222 openwave.com |grep Status
+                          [01;31m[KStatus[m[K:	L
+mx-10-49-58-118:imail2:Mx9.5:~$ ##########5 delieber 1 message from user1 to user2 ...
+[31m########## 5 Message Deliver failed,please check manually,Exiting now ...[0m
+Received: 220 mx-10-49-58-118.openwave.com ESMTP server (InterMail vM.9.05.01.00 201-2473-137-123) ready Mon, 13 Nov 2017 00:00:47 -0500
+Sending command (to 10.49.58.118:20025): EHLO ar9363
+Received: 250-mx-10-49-58-118.openwave.com
+Received: 250-HELP
+Received: 250-VRFY
+Received: 250-XREMOTEQUEUE
+Received: 250-ETRN
+Received: 250-PIPELINING
+Received: 250-DSN
+Received: 250-8BITMIME
+Received: 250 SIZE 30996480
+Sending command (to 10.49.58.118:20025): MAIL FROM:<ar9363>
+Received: 250 Sender <ar9363> Ok
+Sending command (to 10.49.58.118:20025): RCPT TO:<ar17222>
+Received: 550 Invalid recipient: <ar17222>
+Got an ERROR response
+Sending command (to 10.49.58.118:20025): DATA
+Received: 503 No recipients specified
+Got an ERROR response
+Not Connected...
+##########  doing some clear job ...
+[32m##########  Accont deleted successfully[0m
+TESTFAILED: /home/ram/workspace/bohem/Automation/Autoreply-and-account-status/accountstatus=locked: Test didn't report success or failure or skipped (44 sec.)
+FAILED: /home/ram/workspace/bohem/Automation/Autoreply-and-account-status/accountstatus=locked [20171113-130232] (44 sec.)
+Test ended: Mon Nov 13 13:03:16 CST 2017
+

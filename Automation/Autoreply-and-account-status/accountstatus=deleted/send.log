@@ -1,0 +1,20 @@
+Received: 220 mx-10-49-58-118.openwave.com ESMTP server (InterMail vM.9.05.01.00 201-2473-137-123) ready Mon, 13 Nov 2017 00:28:13 -0500
+Sending command (to 10.49.58.118:20025): EHLO ar30745
+Received: 250-mx-10-49-58-118.openwave.com
+Received: 250-HELP
+Received: 250-VRFY
+Received: 250-XREMOTEQUEUE
+Received: 250-ETRN
+Received: 250-PIPELINING
+Received: 250-DSN
+Received: 250-8BITMIME
+Received: 250 SIZE 30996480
+Sending command (to 10.49.58.118:20025): MAIL FROM:<ar30745>
+Received: 250 Sender <ar30745> Ok
+Sending command (to 10.49.58.118:20025): RCPT TO:<ar17240>
+Received: 550 Invalid recipient: <ar17240>
+Got an ERROR response
+Sending command (to 10.49.58.118:20025): DATA
+Received: 503 No recipients specified
+Got an ERROR response
+Not Connected...

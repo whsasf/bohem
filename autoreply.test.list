@@ -1,5 +1,5 @@
-#================================= AutoReply feature testing,total number 72
-#=======   single message
+#================================= AutoReply feature testing,total number 85
+#=======   AutoReply feature testing-single message
 
 #=====     1 Deliever message when autoReplyStartDate and autoReplyStopDate unset
   #internal sender mx-10015 -vacation
@@ -119,7 +119,7 @@
 
 
 
-#=======   multiple message simultaneously form internal and external domain senders 
+#=======   AutoReply feature testing-multiple message simultaneously form internal and external domain senders 
 
 #=====     1 Deliever message when autoReplyStartDate and autoReplyStopDate unset
  # mx-10221-10237 -vacation
@@ -186,3 +186,38 @@
 ~/workspace/bohem/Automation/multiple-messages-simultaneously-for-in-and-out-domains-senders/Deliever-message-before-AutoReplyStopDate-when-only-it-set/mx-10256-10272
  # mx-10288-10304 -reply
 ~/workspace/bohem/Automation/multiple-messages-simultaneously-for-in-and-out-domains-senders/Deliever-message-before-AutoReplyStopDate-when-only-it-set/mx-10288-10304
+
+
+#=======   Autoreply Suppress after enabling autoreply
+
+#=====     1 Target account is not in the To header::Expect no autoreply
+~/workspace/bohem/Automation/Autoreply-Suppress-after-enabling-autoreply/Target-account-is-not-in-the-To-header
+#=====     2 From address is in the autoReplySuppressList configuration key::Expect no autoreply
+~/workspace/bohem/Automation/Autoreply-Suppress-after-enabling-autoreply/From-address-is-in-the-autoReplySuppressList-configuration-key
+#=====     3 From matches the regular expression "-request$"::Expect no autoreply
+~/workspace/bohem/Automation/Autoreply-Suppress-after-enabling-autoreply/From-matches-the-regular-expression-request
+#=====     4 From matches the regular expression "^owner-"::Expect no autoreply
+~/workspace/bohem/Automation/Autoreply-Suppress-after-enabling-autoreply/From-matches-the-regular-expression-owner
+#=====     5 Message contains "Auto-Forwarded" header::Expect no autoreply
+~/workspace/bohem/Automation/Autoreply-Suppress-after-enabling-autoreply/Message-contains-Auto-Forwarded-header
+#=====     6 Reply-To address is in the autoReplySuppressList configuration key::Expect no autoreply
+~/workspace/bohem/Automation/Autoreply-Suppress-after-enabling-autoreply/Reply-To-address-is-in-the-autoReplySuppressList-configuration-key
+#=====     7 Precedence header contains the regular expression "/bulk/i"::Expect no autoreply
+~/workspace/bohem/Automation/Autoreply-Suppress-after-enabling-autoreply/Precedence-header-contains-the-regular-expression-bulk
+#=====     8 Precedence header contains the regular expression "/junk/i"::Expect no autoreply
+~/workspace/bohem/Automation/Autoreply-Suppress-after-enabling-autoreply/Precedence-header-contains-the-regular-expression-junk
+#=====     9 bounce message should not cause autoreply::Expect no autoreply
+~/workspace/bohem/Automation/Autoreply-Suppress-after-enabling-autoreply/bounce-message-should-not-cause-autoreply
+#=====     10 Deferred message should not cause autoreply::Expect no autoreply
+#
+
+
+#=======   Autoreply and account status
+#=====     1 accountstatus=locked
+~/workspace/bohem/Automation/Autoreply-and-account-status/accountstatus=locked
+#=====     2 accountstatus=maintenance
+~/workspace/bohem/Automation/Autoreply-and-account-status/accountstatus=maintenance
+#=====     3 accountstatus=suspended
+~/workspace/bohem/Automation/Autoreply-and-account-status/accountstatus=suspended
+#=====     4 accountstatus=deleted
+~/workspace/bohem/Automation/Autoreply-and-account-status/accountstatus=deleted

@@ -1,0 +1,410 @@
+
+
+-(1)-The POP process of mx95user1 is:
+
+
++OK InterMail POP3 server ready.
++OK please send PASS command
+-ERR invalid user name or password.
++OK please send PASS command
++OK mx95user1 is welcome here
+-ERR no such message.
++OK 589 octets
+Return-Path: <mx95user0@openwave.com>
+Received: from [10.37.2.214] by mx-172-26-202-87.openwave.com
+          (InterMail vM.9.05.00.00 201-2473-137-117) with SMTP
+          id <20170629020821.AAK12143.mx-172-26-202-87.openwave.com@[10.37.2.214]>
+          for <mx95user1@openwave.com>; Wed, 28 Jun 2017 19:08:21 -0700
+Subject: Test Email
+Date: Wed, 28 Jun 2017 19:08:21 -0700
+Message-Id: <20170629020821.AAK12143.mx-172-26-202-87.openwave.com@[10.37.2.214]>
+From: <mx95user0@openwave.com>
+
+Hi mauser0, this is mx95user11, i'm seend you a test Email.xxxxxxxxbbbbbbbcccccccc!!!!!
+.
++OK mx95user1 InterMail POP3 server signing off.
+
+
+-(2)-###############The TCP connection status for mx95user1 from client are and from POP server are:###########
+
+from client--> tcp        0     64 10.37.2.214:41860       172.26.202.87:20110     ESTABLISHED
+from server--> tcp        0      0 172.26.202.87:20110     10.37.2.214:41860       ESTABLISHED
+
+
+-(3)-The POPlogs for account mx95user1 is:
+
+20170628 190822840-0700 mx-172-26-202-87 popserv 12235 16955 140690674824960 Note;UserDataException(504/1) MBX_AUTHENTICATION_FAILED:{password=[XXXXX], protocolType=[pop], userName=[mx95user1]}:AuthenticateAndGetMailboxService\3aPOST:Authenticating Failed.::user=mx95user1:cmd=pass <pswd>:fromhost=10.37.2.214:fromport=41860
+20170628 190822841-0700 mx-172-26-202-87 popserv 12235 16955 140690674824960 Note;AcctBadPswd(50/6) user=mx95user1:cmd=pass <pswd>:fromhost=10.37.2.214:fromport=41860
+20170628 190822864-0700 mx-172-26-202-87 popserv 12235 16955 140690674824960 Note;PopConnMade(66/9) user=mx95user1:mbox=5286644974875883580:mss=92xmc:cmd=pass <pswd>:port=55014:fromhost=10.37.2.214:fromport=41860:node=mx-172-26-202-87:nodePort=55014
+20170628 190822867-0700 mx-172-26-202-87 popserv 12235 16955 140690674824960 Warn;PopProtocolErr(66/1) retr 5:user=mx95user1:mbox=5286644974875883580:mss=92xmc:cmd=retr 5:port=55014:fromhost=10.37.2.214:fromport=41860:node=mx-172-26-202-87:nodePort=55014
+20170628 190822869-0700 mx-172-26-202-87 popserv 12235 16955 140690674824960 Note;MsgTrace(65/26) retr:user=mx95user1:mbox=5286644974875883580:mss=92xmc:msgid=d3928000-5c6f-11e7-95a0-f2a51ac8b22b:size=589:cmd=retr 2:port=55014:fromhost=10.37.2.214:fromport=41860:node=mx-172-26-202-87:nodePort=55014
+20170628 190824985-0700 mx-172-26-202-87 popserv 12235 16955 140690674824960 Note;PopConnQuit(66/13) user=mx95user1:mbox=5286644974875883580:mss=92xmc:cmd=quit:port=55014:fromhost=10.37.2.214:fromport=41860:node=mx-172-26-202-87:nodePort=55014:time=2
+
+
+-(1)-The POP process of mx95user2 is:
+
+
++OK InterMail POP3 server ready.
++OK please send PASS command
+-ERR invalid user name or password.
++OK please send PASS command
++OK mx95user2 is welcome here
+-ERR no such message.
++OK 589 octets
+Return-Path: <mx95user0@openwave.com>
+Received: from [10.37.2.214] by mx-172-26-202-87.openwave.com
+          (InterMail vM.9.05.00.00 201-2473-137-117) with SMTP
+          id <20170629020831.AAL12143.mx-172-26-202-87.openwave.com@[10.37.2.214]>
+          for <mx95user2@openwave.com>; Wed, 28 Jun 2017 19:08:31 -0700
+Subject: Test Email
+Date: Wed, 28 Jun 2017 19:08:31 -0700
+Message-Id: <20170629020831.AAL12143.mx-172-26-202-87.openwave.com@[10.37.2.214]>
+From: <mx95user0@openwave.com>
+
+Hi mauser0, this is mx95user11, i'm seend you a test Email.xxxxxxxxbbbbbbbcccccccc!!!!!
+.
++OK mx95user2 InterMail POP3 server signing off.
+
+
+-(2)-###############The TCP connection status for mx95user2 from client are and from POP server are:###########
+
+from client--> tcp        0     64 10.37.2.214:41870       172.26.202.87:20110     ESTABLISHED
+from server--> tcp        0      0 172.26.202.87:20110     10.37.2.214:41870       ESTABLISHED
+
+
+-(3)-The POPlogs for account mx95user2 is:
+
+20170628 190832827-0700 mx-172-26-202-87 popserv 12235 17130 140690674824960 Note;UserDataException(504/1) MBX_AUTHENTICATION_FAILED:{password=[XXXXX], protocolType=[pop], userName=[mx95user2]}:AuthenticateAndGetMailboxService\3aPOST:Authenticating Failed.::user=mx95user2:cmd=pass <pswd>:fromhost=10.37.2.214:fromport=41870
+20170628 190832827-0700 mx-172-26-202-87 popserv 12235 17130 140690674824960 Note;AcctBadPswd(50/6) user=mx95user2:cmd=pass <pswd>:fromhost=10.37.2.214:fromport=41870
+20170628 190832843-0700 mx-172-26-202-87 popserv 12235 17130 140690674824960 Note;PopConnMade(66/9) user=mx95user2:mbox=7406911598417168657:mss=92xmc:cmd=pass <pswd>:port=55014:fromhost=10.37.2.214:fromport=41870:node=mx-172-26-202-87:nodePort=55014
+20170628 190832853-0700 mx-172-26-202-87 popserv 12235 17130 140690674824960 Warn;PopProtocolErr(66/1) retr 5:user=mx95user2:mbox=7406911598417168657:mss=92xmc:cmd=retr 5:port=55014:fromhost=10.37.2.214:fromport=41870:node=mx-172-26-202-87:nodePort=55014
+20170628 190832855-0700 mx-172-26-202-87 popserv 12235 17130 140690674824960 Note;MsgTrace(65/26) retr:user=mx95user2:mbox=7406911598417168657:mss=92xmc:msgid=d98a7e90-5c6f-11e7-a84d-fd47aa20fb02:size=589:cmd=retr 2:port=55014:fromhost=10.37.2.214:fromport=41870:node=mx-172-26-202-87:nodePort=55014
+20170628 190835428-0700 mx-172-26-202-87 popserv 12235 17130 140690674824960 Note;PopConnQuit(66/13) user=mx95user2:mbox=7406911598417168657:mss=92xmc:cmd=quit:port=55014:fromhost=10.37.2.214:fromport=41870:node=mx-172-26-202-87:nodePort=55014:time=3
+
+
+-(1)-The POP process of mx95user3 is:
+
+
++OK InterMail POP3 server ready.
++OK please send PASS command
+-ERR invalid user name or password.
++OK please send PASS command
++OK mx95user3 is welcome here
+-ERR no such message.
++OK 589 octets
+Return-Path: <mx95user0@openwave.com>
+Received: from [10.37.2.214] by mx-172-26-202-87.openwave.com
+          (InterMail vM.9.05.00.00 201-2473-137-117) with SMTP
+          id <20170629020842.AAM12143.mx-172-26-202-87.openwave.com@[10.37.2.214]>
+          for <mx95user3@openwave.com>; Wed, 28 Jun 2017 19:08:42 -0700
+Subject: Test Email
+Date: Wed, 28 Jun 2017 19:08:42 -0700
+Message-Id: <20170629020842.AAM12143.mx-172-26-202-87.openwave.com@[10.37.2.214]>
+From: <mx95user0@openwave.com>
+
+Hi mauser0, this is mx95user11, i'm seend you a test Email.xxxxxxxxbbbbbbbcccccccc!!!!!
+.
++OK mx95user3 InterMail POP3 server signing off.
+
+
+-(2)-###############The TCP connection status for mx95user3 from client are and from POP server are:###########
+
+from client--> tcp        0     64 10.37.2.214:41884       172.26.202.87:20110     ESTABLISHED
+from server--> tcp        0      0 172.26.202.87:20110     10.37.2.214:41884       ESTABLISHED
+
+
+-(3)-The POPlogs for account mx95user3 is:
+
+20170628 190842780-0700 mx-172-26-202-87 popserv 12235 17300 140690674824960 Note;UserDataException(504/1) MBX_AUTHENTICATION_FAILED:{password=[XXXXX], protocolType=[pop], userName=[mx95user3]}:AuthenticateAndGetMailboxService\3aPOST:Authenticating Failed.::user=mx95user3:cmd=pass <pswd>:fromhost=10.37.2.214:fromport=41884
+20170628 190842780-0700 mx-172-26-202-87 popserv 12235 17300 140690674824960 Note;AcctBadPswd(50/6) user=mx95user3:cmd=pass <pswd>:fromhost=10.37.2.214:fromport=41884
+20170628 190842797-0700 mx-172-26-202-87 popserv 12235 17300 140690674824960 Note;PopConnMade(66/9) user=mx95user3:mbox=5475529389659698824:mss=92xmc:cmd=pass <pswd>:port=55014:fromhost=10.37.2.214:fromport=41884:node=mx-172-26-203-121:nodePort=55014
+20170628 190842801-0700 mx-172-26-202-87 popserv 12235 17300 140690674824960 Warn;PopProtocolErr(66/1) retr 5:user=mx95user3:mbox=5475529389659698824:mss=92xmc:cmd=retr 5:port=55014:fromhost=10.37.2.214:fromport=41884:node=mx-172-26-203-121:nodePort=55014
+20170628 190842804-0700 mx-172-26-202-87 popserv 12235 17300 140690674824960 Note;MsgTrace(65/26) retr:user=mx95user3:mbox=5475529389659698824:mss=92xmc:msgid=dfadb774-5c6f-11e7-8515-3c06574a4d81:size=589:cmd=retr 2:port=55014:fromhost=10.37.2.214:fromport=41884:node=mx-172-26-203-121:nodePort=55014
+20170628 190848136-0700 mx-172-26-202-87 popserv 12235 17300 140690674824960 Note;PopConnQuit(66/13) user=mx95user3:mbox=5475529389659698824:mss=92xmc:cmd=quit:port=55014:fromhost=10.37.2.214:fromport=41884:node=mx-172-26-203-121:nodePort=55014:time=6
+
+
+-(1)-The POP process of mx95user4 is:
+
+
++OK InterMail POP3 server ready.
++OK please send PASS command
+-ERR invalid user name or password.
++OK please send PASS command
++OK mx95user4 is welcome here
+-ERR no such message.
++OK 589 octets
+Return-Path: <mx95user0@openwave.com>
+Received: from [10.37.2.214] by mx-172-26-202-87.openwave.com
+          (InterMail vM.9.05.00.00 201-2473-137-117) with SMTP
+          id <20170629020854.AAN12143.mx-172-26-202-87.openwave.com@[10.37.2.214]>
+          for <mx95user4@openwave.com>; Wed, 28 Jun 2017 19:08:54 -0700
+Subject: Test Email
+Date: Wed, 28 Jun 2017 19:08:54 -0700
+Message-Id: <20170629020854.AAN12143.mx-172-26-202-87.openwave.com@[10.37.2.214]>
+From: <mx95user0@openwave.com>
+
+Hi mauser0, this is mx95user11, i'm seend you a test Email.xxxxxxxxbbbbbbbcccccccc!!!!!
+.
++OK mx95user4 InterMail POP3 server signing off.
+
+
+-(2)-###############The TCP connection status for mx95user4 from client are and from POP server are:###########
+
+from client--> tcp        0     64 10.37.2.214:41900       172.26.202.87:20110     ESTABLISHED
+from server--> tcp        0      0 172.26.202.87:20110     10.37.2.214:41900       ESTABLISHED
+
+
+-(3)-The POPlogs for account mx95user4 is:
+
+20170628 190855249-0700 mx-172-26-202-87 popserv 12235 17478 140690674824960 Note;UserDataException(504/1) MBX_AUTHENTICATION_FAILED:{password=[XXXXX], protocolType=[pop], userName=[mx95user4]}:AuthenticateAndGetMailboxService\3aPOST:Authenticating Failed.::user=mx95user4:cmd=pass <pswd>:fromhost=10.37.2.214:fromport=41900
+20170628 190855249-0700 mx-172-26-202-87 popserv 12235 17478 140690674824960 Note;AcctBadPswd(50/6) user=mx95user4:cmd=pass <pswd>:fromhost=10.37.2.214:fromport=41900
+20170628 190855267-0700 mx-172-26-202-87 popserv 12235 17478 140690674824960 Note;PopConnMade(66/9) user=mx95user4:mbox=8363872498290614877:mss=92xmc:cmd=pass <pswd>:port=55014:fromhost=10.37.2.214:fromport=41900:node=mx-172-26-203-121:nodePort=55014
+20170628 190855270-0700 mx-172-26-202-87 popserv 12235 17478 140690674824960 Warn;PopProtocolErr(66/1) retr 5:user=mx95user4:mbox=8363872498290614877:mss=92xmc:cmd=retr 5:port=55014:fromhost=10.37.2.214:fromport=41900:node=mx-172-26-203-121:nodePort=55014
+20170628 190855273-0700 mx-172-26-202-87 popserv 12235 17478 140690674824960 Note;MsgTrace(65/26) retr:user=mx95user4:mbox=8363872498290614877:mss=92xmc:msgid=e7170f56-5c6f-11e7-b5a1-06d3187abe72:size=589:cmd=retr 2:port=55014:fromhost=10.37.2.214:fromport=41900:node=mx-172-26-203-121:nodePort=55014
+20170628 190857641-0700 mx-172-26-202-87 popserv 12235 17478 140690674824960 Note;PopConnQuit(66/13) user=mx95user4:mbox=8363872498290614877:mss=92xmc:cmd=quit:port=55014:fromhost=10.37.2.214:fromport=41900:node=mx-172-26-203-121:nodePort=55014:time=2
+
+
+-(1)-The POP process of mx95user5 is:
+
+
++OK InterMail POP3 server ready.
++OK please send PASS command
+-ERR invalid user name or password.
++OK please send PASS command
++OK mx95user5 is welcome here
+-ERR no such message.
++OK 589 octets
+Return-Path: <mx95user0@openwave.com>
+Received: from [10.37.2.214] by mx-172-26-202-87.openwave.com
+          (InterMail vM.9.05.00.00 201-2473-137-117) with SMTP
+          id <20170629020903.AAO12143.mx-172-26-202-87.openwave.com@[10.37.2.214]>
+          for <mx95user5@openwave.com>; Wed, 28 Jun 2017 19:09:03 -0700
+Subject: Test Email
+Date: Wed, 28 Jun 2017 19:09:03 -0700
+Message-Id: <20170629020903.AAO12143.mx-172-26-202-87.openwave.com@[10.37.2.214]>
+From: <mx95user0@openwave.com>
+
+Hi mauser0, this is mx95user11, i'm seend you a test Email.xxxxxxxxbbbbbbbcccccccc!!!!!
+.
++OK mx95user5 InterMail POP3 server signing off.
+
+
+-(2)-###############The TCP connection status for mx95user5 from client are and from POP server are:###########
+
+from client--> tcp        0     64 10.37.2.214:41910       172.26.202.87:20110     ESTABLISHED
+from server--> tcp        0      0 172.26.202.87:20110     10.37.2.214:41910       ESTABLISHED
+
+
+-(3)-The POPlogs for account mx95user5 is:
+
+20170628 190904399-0700 mx-172-26-202-87 popserv 12235 17653 140690674824960 Note;UserDataException(504/1) MBX_AUTHENTICATION_FAILED:{password=[XXXXX], protocolType=[pop], userName=[mx95user5]}:AuthenticateAndGetMailboxService\3aPOST:Authenticating Failed.::user=mx95user5:cmd=pass <pswd>:fromhost=10.37.2.214:fromport=41910
+20170628 190904400-0700 mx-172-26-202-87 popserv 12235 17653 140690674824960 Note;AcctBadPswd(50/6) user=mx95user5:cmd=pass <pswd>:fromhost=10.37.2.214:fromport=41910
+20170628 190904420-0700 mx-172-26-202-87 popserv 12235 17653 140690674824960 Note;PopConnMade(66/9) user=mx95user5:mbox=6026063203220996112:mss=92xmc:cmd=pass <pswd>:port=55014:fromhost=10.37.2.214:fromport=41910:node=mx-172-26-203-121:nodePort=55014
+20170628 190904423-0700 mx-172-26-202-87 popserv 12235 17653 140690674824960 Warn;PopProtocolErr(66/1) retr 5:user=mx95user5:mbox=6026063203220996112:mss=92xmc:cmd=retr 5:port=55014:fromhost=10.37.2.214:fromport=41910:node=mx-172-26-203-121:nodePort=55014
+20170628 190904425-0700 mx-172-26-202-87 popserv 12235 17653 140690674824960 Note;MsgTrace(65/26) retr:user=mx95user5:mbox=6026063203220996112:mss=92xmc:msgid=ec8e2b86-5c6f-11e7-b5ad-001c84f6ccaf:size=589:cmd=retr 2:port=55014:fromhost=10.37.2.214:fromport=41910:node=mx-172-26-203-121:nodePort=55014
+20170628 190907490-0700 mx-172-26-202-87 popserv 12235 17653 140690674824960 Note;PopConnQuit(66/13) user=mx95user5:mbox=6026063203220996112:mss=92xmc:cmd=quit:port=55014:fromhost=10.37.2.214:fromport=41910:node=mx-172-26-203-121:nodePort=55014:time=3
+
+
+-(1)-The POP process of mx95user6 is:
+
+
++OK InterMail POP3 server ready.
++OK please send PASS command
+-ERR invalid user name or password.
++OK please send PASS command
++OK mx95user6 is welcome here
+-ERR no such message.
++OK 589 octets
+Return-Path: <mx95user0@openwave.com>
+Received: from [10.37.2.214] by mx-172-26-202-87.openwave.com
+          (InterMail vM.9.05.00.00 201-2473-137-117) with SMTP
+          id <20170629020914.AAP12143.mx-172-26-202-87.openwave.com@[10.37.2.214]>
+          for <mx95user6@openwave.com>; Wed, 28 Jun 2017 19:09:14 -0700
+Subject: Test Email
+Date: Wed, 28 Jun 2017 19:09:14 -0700
+Message-Id: <20170629020914.AAP12143.mx-172-26-202-87.openwave.com@[10.37.2.214]>
+From: <mx95user0@openwave.com>
+
+Hi mauser0, this is mx95user11, i'm seend you a test Email.xxxxxxxxbbbbbbbcccccccc!!!!!
+.
++OK mx95user6 InterMail POP3 server signing off.
+
+
+-(2)-###############The TCP connection status for mx95user6 from client are and from POP server are:###########
+
+from client--> tcp        0     64 10.37.2.214:41924       172.26.202.87:20110     ESTABLISHED
+from server--> tcp        0      0 172.26.202.87:20110     10.37.2.214:41924       ESTABLISHED
+
+
+-(3)-The POPlogs for account mx95user6 is:
+
+20170628 190915220-0700 mx-172-26-202-87 popserv 12235 17828 140690674824960 Note;UserDataException(504/1) MBX_AUTHENTICATION_FAILED:{password=[XXXXX], protocolType=[pop], userName=[mx95user6]}:AuthenticateAndGetMailboxService\3aPOST:Authenticating Failed.::user=mx95user6:cmd=pass <pswd>:fromhost=10.37.2.214:fromport=41924
+20170628 190915220-0700 mx-172-26-202-87 popserv 12235 17828 140690674824960 Note;AcctBadPswd(50/6) user=mx95user6:cmd=pass <pswd>:fromhost=10.37.2.214:fromport=41924
+20170628 190915235-0700 mx-172-26-202-87 popserv 12235 17828 140690674824960 Note;PopConnMade(66/9) user=mx95user6:mbox=7136009853277247753:mss=92xmc:cmd=pass <pswd>:port=55014:fromhost=10.37.2.214:fromport=41924:node=mx-172-26-203-121:nodePort=55014
+20170628 190915239-0700 mx-172-26-202-87 popserv 12235 17828 140690674824960 Warn;PopProtocolErr(66/1) retr 5:user=mx95user6:mbox=7136009853277247753:mss=92xmc:cmd=retr 5:port=55014:fromhost=10.37.2.214:fromport=41924:node=mx-172-26-203-121:nodePort=55014
+20170628 190915242-0700 mx-172-26-202-87 popserv 12235 17828 140690674824960 Note;MsgTrace(65/26) retr:user=mx95user6:mbox=7136009853277247753:mss=92xmc:msgid=f2fe3196-5c6f-11e7-ae75-fb6d60806e4c:size=589:cmd=retr 2:port=55014:fromhost=10.37.2.214:fromport=41924:node=mx-172-26-203-121:nodePort=55014
+20170628 190918180-0700 mx-172-26-202-87 popserv 12235 17828 140690674824960 Note;PopConnQuit(66/13) user=mx95user6:mbox=7136009853277247753:mss=92xmc:cmd=quit:port=55014:fromhost=10.37.2.214:fromport=41924:node=mx-172-26-203-121:nodePort=55014:time=4
+
+
+-(1)-The POP process of mx95user7 is:
+
+
++OK InterMail POP3 server ready.
++OK please send PASS command
+-ERR invalid user name or password.
++OK please send PASS command
++OK mx95user7 is welcome here
+-ERR no such message.
++OK 589 octets
+Return-Path: <mx95user0@openwave.com>
+Received: from [10.37.2.214] by mx-172-26-202-87.openwave.com
+          (InterMail vM.9.05.00.00 201-2473-137-117) with SMTP
+          id <20170629020925.AAQ12143.mx-172-26-202-87.openwave.com@[10.37.2.214]>
+          for <mx95user7@openwave.com>; Wed, 28 Jun 2017 19:09:25 -0700
+Subject: Test Email
+Date: Wed, 28 Jun 2017 19:09:25 -0700
+Message-Id: <20170629020925.AAQ12143.mx-172-26-202-87.openwave.com@[10.37.2.214]>
+From: <mx95user0@openwave.com>
+
+Hi mauser0, this is mx95user11, i'm seend you a test Email.xxxxxxxxbbbbbbbcccccccc!!!!!
+.
++OK mx95user7 InterMail POP3 server signing off.
+
+
+-(2)-###############The TCP connection status for mx95user7 from client are and from POP server are:###########
+
+from client--> tcp        0     64 10.37.2.214:41936       172.26.202.87:20110     ESTABLISHED
+from server--> tcp        0      0 172.26.202.87:20110     10.37.2.214:41936       ESTABLISHED
+
+
+-(3)-The POPlogs for account mx95user7 is:
+
+20170628 190925648-0700 mx-172-26-202-87 popserv 12235 18000 140690674824960 Note;UserDataException(504/1) MBX_AUTHENTICATION_FAILED:{password=[XXXXX], protocolType=[pop], userName=[mx95user7]}:AuthenticateAndGetMailboxService\3aPOST:Authenticating Failed.::user=mx95user7:cmd=pass <pswd>:fromhost=10.37.2.214:fromport=41936
+20170628 190925648-0700 mx-172-26-202-87 popserv 12235 18000 140690674824960 Note;AcctBadPswd(50/6) user=mx95user7:cmd=pass <pswd>:fromhost=10.37.2.214:fromport=41936
+20170628 190925663-0700 mx-172-26-202-87 popserv 12235 18000 140690674824960 Note;PopConnMade(66/9) user=mx95user7:mbox=7981145270733121177:mss=92xmc:cmd=pass <pswd>:port=55014:fromhost=10.37.2.214:fromport=41936:node=mx-172-26-203-121:nodePort=55014
+20170628 190925666-0700 mx-172-26-202-87 popserv 12235 18000 140690674824960 Warn;PopProtocolErr(66/1) retr 5:user=mx95user7:mbox=7981145270733121177:mss=92xmc:cmd=retr 5:port=55014:fromhost=10.37.2.214:fromport=41936:node=mx-172-26-203-121:nodePort=55014
+20170628 190925669-0700 mx-172-26-202-87 popserv 12235 18000 140690674824960 Note;MsgTrace(65/26) retr:user=mx95user7:mbox=7981145270733121177:mss=92xmc:msgid=f93ab0f2-5c6f-11e7-940b-29609d4522f3:size=589:cmd=retr 2:port=55014:fromhost=10.37.2.214:fromport=41936:node=mx-172-26-203-121:nodePort=55014
+20170628 190928186-0700 mx-172-26-202-87 popserv 12235 18000 140690674824960 Note;PopConnQuit(66/13) user=mx95user7:mbox=7981145270733121177:mss=92xmc:cmd=quit:port=55014:fromhost=10.37.2.214:fromport=41936:node=mx-172-26-203-121:nodePort=55014:time=3
+
+
+-(1)-The POP process of mx95user8 is:
+
+
++OK InterMail POP3 server ready.
++OK please send PASS command
+-ERR invalid user name or password.
++OK please send PASS command
++OK mx95user8 is welcome here
+-ERR no such message.
++OK 589 octets
+Return-Path: <mx95user0@openwave.com>
+Received: from [10.37.2.214] by mx-172-26-202-87.openwave.com
+          (InterMail vM.9.05.00.00 201-2473-137-117) with SMTP
+          id <20170629020934.AAR12143.mx-172-26-202-87.openwave.com@[10.37.2.214]>
+          for <mx95user8@openwave.com>; Wed, 28 Jun 2017 19:09:34 -0700
+Subject: Test Email
+Date: Wed, 28 Jun 2017 19:09:34 -0700
+Message-Id: <20170629020934.AAR12143.mx-172-26-202-87.openwave.com@[10.37.2.214]>
+From: <mx95user0@openwave.com>
+
+Hi mauser0, this is mx95user11, i'm seend you a test Email.xxxxxxxxbbbbbbbcccccccc!!!!!
+.
++OK mx95user8 InterMail POP3 server signing off.
+
+
+-(2)-###############The TCP connection status for mx95user8 from client are and from POP server are:###########
+
+from client--> tcp        0     64 10.37.2.214:41950       172.26.202.87:20110     ESTABLISHED
+from server--> tcp        0      0 172.26.202.87:20110     10.37.2.214:41950       ESTABLISHED
+
+
+-(3)-The POPlogs for account mx95user8 is:
+
+20170628 190935721-0700 mx-172-26-202-87 popserv 12235 18172 140690674824960 Note;UserDataException(504/1) MBX_AUTHENTICATION_FAILED:{password=[XXXXX], protocolType=[pop], userName=[mx95user8]}:AuthenticateAndGetMailboxService\3aPOST:Authenticating Failed.::user=mx95user8:cmd=pass <pswd>:fromhost=10.37.2.214:fromport=41950
+20170628 190935721-0700 mx-172-26-202-87 popserv 12235 18172 140690674824960 Note;AcctBadPswd(50/6) user=mx95user8:cmd=pass <pswd>:fromhost=10.37.2.214:fromport=41950
+20170628 190935740-0700 mx-172-26-202-87 popserv 12235 18172 140690674824960 Note;PopConnMade(66/9) user=mx95user8:mbox=7884769833588699460:mss=92xmc:cmd=pass <pswd>:port=55014:fromhost=10.37.2.214:fromport=41950:node=mx-172-26-203-121:nodePort=55014
+20170628 190935744-0700 mx-172-26-202-87 popserv 12235 18172 140690674824960 Warn;PopProtocolErr(66/1) retr 5:user=mx95user8:mbox=7884769833588699460:mss=92xmc:cmd=retr 5:port=55014:fromhost=10.37.2.214:fromport=41950:node=mx-172-26-203-121:nodePort=55014
+20170628 190935746-0700 mx-172-26-202-87 popserv 12235 18172 140690674824960 Note;MsgTrace(65/26) retr:user=mx95user8:mbox=7884769833588699460:mss=92xmc:msgid=ff1d57e0-5c6f-11e7-97f0-50cb3a592870:size=589:cmd=retr 2:port=55014:fromhost=10.37.2.214:fromport=41950:node=mx-172-26-203-121:nodePort=55014
+20170628 190938037-0700 mx-172-26-202-87 popserv 12235 18172 140690674824960 Note;PopConnQuit(66/13) user=mx95user8:mbox=7884769833588699460:mss=92xmc:cmd=quit:port=55014:fromhost=10.37.2.214:fromport=41950:node=mx-172-26-203-121:nodePort=55014:time=3
+
+
+-(1)-The POP process of mx95user9 is:
+
+
++OK InterMail POP3 server ready.
++OK please send PASS command
+-ERR invalid user name or password.
++OK please send PASS command
++OK mx95user9 is welcome here
+-ERR no such message.
++OK 589 octets
+Return-Path: <mx95user0@openwave.com>
+Received: from [10.37.2.214] by mx-172-26-202-87.openwave.com
+          (InterMail vM.9.05.00.00 201-2473-137-117) with SMTP
+          id <20170629020945.AAS12143.mx-172-26-202-87.openwave.com@[10.37.2.214]>
+          for <mx95user9@openwave.com>; Wed, 28 Jun 2017 19:09:45 -0700
+Subject: Test Email
+Date: Wed, 28 Jun 2017 19:09:45 -0700
+Message-Id: <20170629020945.AAS12143.mx-172-26-202-87.openwave.com@[10.37.2.214]>
+From: <mx95user0@openwave.com>
+
+Hi mauser0, this is mx95user11, i'm seend you a test Email.xxxxxxxxbbbbbbbcccccccc!!!!!
+.
++OK mx95user9 InterMail POP3 server signing off.
+
+
+-(2)-###############The TCP connection status for mx95user9 from client are and from POP server are:###########
+
+from client--> tcp        0     64 10.37.2.214:41960       172.26.202.87:20110     ESTABLISHED
+from server--> tcp        0      0 172.26.202.87:20110     10.37.2.214:41960       ESTABLISHED
+
+
+-(3)-The POPlogs for account mx95user9 is:
+
+20170628 190946453-0700 mx-172-26-202-87 popserv 12235 18345 140690674824960 Note;UserDataException(504/1) MBX_AUTHENTICATION_FAILED:{password=[XXXXX], protocolType=[pop], userName=[mx95user9]}:AuthenticateAndGetMailboxService\3aPOST:Authenticating Failed.::user=mx95user9:cmd=pass <pswd>:fromhost=10.37.2.214:fromport=41960
+20170628 190946453-0700 mx-172-26-202-87 popserv 12235 18345 140690674824960 Note;AcctBadPswd(50/6) user=mx95user9:cmd=pass <pswd>:fromhost=10.37.2.214:fromport=41960
+20170628 190946469-0700 mx-172-26-202-87 popserv 12235 18345 140690674824960 Note;PopConnMade(66/9) user=mx95user9:mbox=5760052010995771957:mss=92xmc:cmd=pass <pswd>:port=55014:fromhost=10.37.2.214:fromport=41960:node=mx-172-26-202-87:nodePort=55014
+20170628 190946471-0700 mx-172-26-202-87 popserv 12235 18345 140690674824960 Warn;PopProtocolErr(66/1) retr 5:user=mx95user9:mbox=5760052010995771957:mss=92xmc:cmd=retr 5:port=55014:fromhost=10.37.2.214:fromport=41960:node=mx-172-26-202-87:nodePort=55014
+20170628 190946473-0700 mx-172-26-202-87 popserv 12235 18345 140690674824960 Note;MsgTrace(65/26) retr:user=mx95user9:mbox=5760052010995771957:mss=92xmc:msgid=059706de-5c70-11e7-aa38-2d2a1fe17810:size=589:cmd=retr 2:port=55014:fromhost=10.37.2.214:fromport=41960:node=mx-172-26-202-87:nodePort=55014
+20170628 190949315-0700 mx-172-26-202-87 popserv 12235 18345 140690674824960 Note;PopConnQuit(66/13) user=mx95user9:mbox=5760052010995771957:mss=92xmc:cmd=quit:port=55014:fromhost=10.37.2.214:fromport=41960:node=mx-172-26-202-87:nodePort=55014:time=3
+
+
+-(1)-The POP process of mx95user10 is:
+
+
++OK InterMail POP3 server ready.
++OK please send PASS command
+-ERR invalid user name or password.
++OK please send PASS command
++OK mx95user10 is welcome here
+-ERR no such message.
++OK 590 octets
+Return-Path: <mx95user0@openwave.com>
+Received: from [10.37.2.214] by mx-172-26-202-87.openwave.com
+          (InterMail vM.9.05.00.00 201-2473-137-117) with SMTP
+          id <20170629020956.AAT12143.mx-172-26-202-87.openwave.com@[10.37.2.214]>
+          for <mx95user10@openwave.com>; Wed, 28 Jun 2017 19:09:56 -0700
+Subject: Test Email
+Date: Wed, 28 Jun 2017 19:09:56 -0700
+Message-Id: <20170629020956.AAT12143.mx-172-26-202-87.openwave.com@[10.37.2.214]>
+From: <mx95user0@openwave.com>
+
+Hi mauser0, this is mx95user11, i'm seend you a test Email.xxxxxxxxbbbbbbbcccccccc!!!!!
+.
++OK mx95user10 InterMail POP3 server signing off.
+
+
+-(2)-###############The TCP connection status for mx95user10 from client are and from POP server are:###########
+
+from client--> tcp        0     66 10.37.2.214:41972       172.26.202.87:20110     ESTABLISHED
+from server--> tcp        0      0 172.26.202.87:20110     10.37.2.214:41972       ESTABLISHED
+
+
+-(3)-The POPlogs for account mx95user10 is:
+
+20170628 190957436-0700 mx-172-26-202-87 popserv 12235 18518 140690674824960 Note;UserDataException(504/1) MBX_AUTHENTICATION_FAILED:{password=[XXXXX], protocolType=[pop], userName=[mx95user10]}:AuthenticateAndGetMailboxService\3aPOST:Authenticating Failed.::user=mx95user10:cmd=pass <pswd>:fromhost=10.37.2.214:fromport=41972
+20170628 190957436-0700 mx-172-26-202-87 popserv 12235 18518 140690674824960 Note;AcctBadPswd(50/6) user=mx95user10:cmd=pass <pswd>:fromhost=10.37.2.214:fromport=41972
+20170628 190957456-0700 mx-172-26-202-87 popserv 12235 18518 140690674824960 Note;PopConnMade(66/9) user=mx95user10:mbox=5996690329553206694:mss=92xmc:cmd=pass <pswd>:port=55014:fromhost=10.37.2.214:fromport=41972:node=mx-172-26-203-121:nodePort=55014
+20170628 190957461-0700 mx-172-26-202-87 popserv 12235 18518 140690674824960 Warn;PopProtocolErr(66/1) retr 5:user=mx95user10:mbox=5996690329553206694:mss=92xmc:cmd=retr 5:port=55014:fromhost=10.37.2.214:fromport=41972:node=mx-172-26-203-121:nodePort=55014
+20170628 190957464-0700 mx-172-26-202-87 popserv 12235 18518 140690674824960 Note;MsgTrace(65/26) retr:user=mx95user10:mbox=5996690329553206694:mss=92xmc:msgid=0c29324c-5c70-11e7-9f3a-9b5f2387c4e9:size=590:cmd=retr 2:port=55014:fromhost=10.37.2.214:fromport=41972:node=mx-172-26-203-121:nodePort=55014
+20170628 191001283-0700 mx-172-26-202-87 popserv 12235 18518 140690674824960 Note;PopConnQuit(66/13) user=mx95user10:mbox=5996690329553206694:mss=92xmc:cmd=quit:port=55014:fromhost=10.37.2.214:fromport=41972:node=mx-172-26-203-121:nodePort=55014:time=4

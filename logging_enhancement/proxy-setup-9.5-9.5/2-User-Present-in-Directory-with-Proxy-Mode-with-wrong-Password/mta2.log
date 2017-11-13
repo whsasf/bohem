@@ -1,0 +1,4 @@
+20170612 002101868-0700 mx-172-26-202-87 mta 18960 19107 140416464525056 Note;SslHandshakeSucceeded(64/3):fromhost=172.26.202.233:fromport=33428
+20170612 002101868-0700 mx-172-26-202-87 mta 18960 19107 140416464525056 Note;SmtpConnectionReceived(70/1) [172.26.202.233]:fromhost=172.26.202.233:fromport=33428:localAddr=172.26.202.87:sid=39B2C17F-C2FFBF21-00000002.0
+20170612 002101930-0700 mx-172-26-202-87 mta 18960 19107 140416464525056 Note;UserDataException(504/1) MBX_AUTHENTICATION_FAILED:{password=[XXXXX], protocolType=[smtp], email=[procu1@openwave.com]}:AuthenticateAndGetMailboxService\3aPOST:Authenticating Failed.::user=procu1@openwave.com:fromhost=[10.37.2.215]:fromport=33428:localAddr=172.26.202.87:sid=39B2C17F-C2FFBF21-00000002.0
+20170612 002101930-0700 mx-172-26-202-87 mta 18960 19107 140416464525056 Note;MtaAuthFailBadPswd(79/49) user=procu1@openwave.com:fromhost=[10.37.2.215]:fromport=33428:localAddr=172.26.202.87:sid=39B2C17F-C2FFBF21-00000002.0

@@ -1,0 +1,121 @@
+Precondition:
+
+(1)Two independent environment,first one: Mx9.5-1(172.26.202.233 imapport:10143, popport:10110 smtpport:10025), proxy server.
+    the other one is                      Mx9.5-2(172.26.202.87  imapport:20143, popport:20110 smtpport:20025), 
+
+Here we will configure Mx9.5-1 as the proxy host.
+(2)Mx9.5-1 IMAP/POP setting:
+/*/imapserv/ImapProxyAuthenticate: [false]  
+/*/imapserv/imapProxyHost: [imap://172.26.202.87:20143]
+/*/imapserv/imapProxyPort: [20143]
+/*/popserv/popProxyHost: [pop://172.26.202.87:20110]
+/*/popserv/popProxyPort: [20110]
+
+
+into command:
+///////////////////////////////////////////////////////////////////////////
+
+imconfcontrol -install -key "/*/imapserv/ImapProxyAuthenticate=false"
+imconfcontrol -install -key "/*/imapserv/imapProxyHost=imap://172.26.202.87:20143"
+imconfcontrol -install -key "/*/imapserv/imapProxyPort=20143"
+imconfcontrol -install -key "/*/popserv/popProxyHost=pop://172.26.202.87:20110"
+imconfcontrol -install -key "/*/popserv/popProxyPort=20110"
+
+(3)9.5-1 MTA setting:
+/*/mta/requireAuthentication: [true]
+/*/mta/mtaProxyAuthentication: [true]
+/*/mta/mtaProxyUnknownAccount: [true]
+/*/mta/mtaProxyUnknownTarget: [smtp://172.26.202.87:20025]
+/inbound-standardmta-direct/mta/requireAuthentication: [true]
+/*/mta/relaySourcePolicy: [allowAll]
+/inbound-standardmta-direct/mta/relaySourcePolicy: [allowAll]
+
+#/*/mta/relayHost: [172.26.202.87]
+#/92SITE2-inbound-standardmta-direct/mta/relayHost: [172.26.202.87]
+
+into command:
+///////////////////////////////////////
+imconfcontrol -install -key "/*/mta/mtaProxyAuthentication=true"
+imconfcontrol -install -key "/*/mta/requireAuthentication=true"
+imconfcontrol -install -key "/*/mta/mtaProxyAuthentication=true"
+imconfcontrol -install -key "/*/mta/mtaProxyUnknownTarget=smtp://172.26.202.87:20025"
+imconfcontrol -install -key "/inbound-standardmta-direct/mta/requireAuthentication=true"
+imconfcontrol -install -key "/*/mta/relaySourcePolicy=allowAll"
+imconfcontrol -install -key "/inbound-standardmta-direct/mta/relaySourcePolicy=allowAll"
+
+#imconfcontrol -install -key "/*/mta/relayHost=172.26.202.87"
+#imconfcontrol -install -key "/92SITE2-inbound-standardmta-direct/mta/relayHost=172.26.202.87"
+
+(4)9.5-2 MTA setting:
+/*/mta/requireAuthentication: [true]
+/inbound-standardmta-direct/mta/requireAuthentication: [true]
+/*/mta/relaySourcePolicy: [allowAll]
+/inbound-standardmta-direct/mta/relaySourcePolicy: [allowAll]
+
+into command:
+///////////////////////////////////////
+imconfcontrol -install -key "/*/mta/requireAuthentication=true"
+imconfcontrol -install -key "/inbound-standardmta-direct/mta/requireAuthentication=true"
+imconfcontrol -install -key "/*/mta/relaySourcePolicy=allowAll"
+imconfcontrol -install -key "/inbound-standardmta-direct/mta/relaySourcePolicy=allowAll"
+
+
+(5)Create same user on Mx9.5-2 but not  Mx9.5-1,  
+#MX9.5-1:
+#curl -s -X PUT -d "cosId=default&password=p&status=proxy&smtpAuthenticationEnabled=yes" "http://172.26.202.245:8081/mxos/mailbox/v2/procu1@openwave.com/"
+#curl -s -X PUT -d "cosId=default&password=p&status=proxy&smtpAuthenticationEnabled=yes" "http://172.26.202.245:8081/mxos/mailbox/v2/procu2@openwave.com/"
+
+#MX9.5-2: 
+curl -s -X PUT -d "cosId=default&password=p&smtpAuthenticationEnabled=yes" "http://172.26.203.123:8081/mxos/mailbox/v2/procu1@openwave.com/"
+curl -s -X PUT -d "cosId=default&password=p&smtpAuthenticationEnabled=yes" "http://172.26.203.123:8081/mxos/mailbox/v2/procu2@openwave.com/"
+
+
+ 
+ 
+ 
+(6)enable XCLP : not filly working for now. on bother FEP  server.
+
+/*/common/allowXCLP: [true]
+/*/improxy/sendClientIp: [true]
+/*/imapserv/allowXCLP: [true]
+/*/imapserv/enableOutboundXCLP: [true]
+/*/imapserv/outboundXCLPExpectsReply: [TRUE]
+/*/imapserv/XclpAllowedIPs: [10.37.2.214]
+/92SITE2-inbound-standardmta-direct/imapserv/XclpAllowedIPs: [10.37.2.214]
+/inbound-standardmta-direct/imapserv/allowXCLP: [true]
+/inbound-standardmta-direct/imapserv/enableOutboundXCLP: [true]
+/*/mta/allowXCLP: [true]
+/*/mta/enableOutboundXCLP: [true]
+/*/mta/outboundXCLPExpectsReply: [TRUE]
+/*/mta/XclpAllowedIPs: [10.37.2.214]
+/92SITE2-inbound-standardmta-direct/mta/XclpAllowedIPs: [10.37.2.214]
+/inbound-standardmta-direct/mta/allowXCLP: [true]
+/inbound-standardmta-direct/mta/enableOutboundXCLP: [true]
+/*/popserv/allowXCLP: [true]
+/*/popserv/enableOutboundXCLP: [true]
+/*/popserv/outboundXCLPExpectsReply: [TRUE]
+/*/popserv/XclpAllowedIPs: [10.37.2.214]
+/92SITE2-inbound-standardmta-direct/popserv/XclpAllowedIPs: [10.37.2.214]
+/inbound-standardmta-direct/popserv/allowXCLP: [true]
+/inbound-standardmta-direct/popserv/enableOutboundXCLP: [true]
+
+
+(8)enable TLS:
+
+
+
+/*/imapserv/outboundEnableStarttls: [true]
+/*/imapserv/imapProxyHost:[imaps://172.26.202.87:20993]
+/*/popserv/outboundEnableStarttls: [true]
+/*/popserv/popProxyHost:[pops://172.26.202.87:20995]
+/*/mta/outboundEnableStarttls: [true]
+/*/mta/mtaProxyUnknownTarget:[smtps://172.26.202.87:20465]
+
+---------------------------------------------------------------
+imconfcontrol -install -key "/*/mta/outboundEnableStarttls=true"
+imconfcontrol -install -key "/*/popserv/outboundEnableStarttls=true"
+imconfcontrol -install -key "/*/imapserv/outboundEnableStarttls=true"
+imconfcontrol -install -key "/*/imapserv/imapProxyHost=imaps://172.26.202.87:20993"
+imconfcontrol -install -key "/*/popserv/popProxyHost=pops://172.26.202.87:20995"
+imconfcontrol -install -key "/*/mta/mtaProxyUnknownTarget=smtps://172.26.202.87:20465"
+---------------------------------------------------------------

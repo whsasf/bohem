@@ -1,0 +1,24 @@
+The imap operations logs telneting to MX9.5-1:
+
+
+* OK IMAP4 server (InterMail vM.9.05.00.00 201-2473-137-115) ready Thu, 8 Jun 2017 23:22:42 -0700 (PDT)
+* BYE Authentication services unavailable
+
+
+
+
+
+IMAPserv.log from MX9.5-1:
+
+20170608 232242330-0700 host-172-26-202-233 imapserv 407 470 140463245014784 Note;UserDataException(504/1) MBX_NOT_FOUND:{password=[XXXXX], protocolType=[imap], userName=[procu1]}:AuthenticateAndGetMailboxService\3aPOST:The given Mailbox does not exist.::user=procu1:cmd=a login procu1 <password>:fromhost=10.37.2.214:fromport=51450:sid=0b3c73a6-4cdc-11e7-a4d6-d8a28e9746ae
+20170608 232242330-0700 host-172-26-202-233 imapserv 407 470 140463245014784 Note;ConfNonStandardPort(51/56) imap4Port:imapserv:host-172-26-202-233:143:10143:user=procu1:cmd=a login procu1 <password>:fromhost=10.37.2.214:fromport=51450:sid=0b3c73a6-4cdc-11e7-a4d6-d8a28e9746ae
+20170608 232243352-0700 host-172-26-202-233 imapserv 407 470 140463245014784 Warn;ImapCommandFailedReason(56/21) a NO Invalid user name or password:user=procu1:cmd=a login procu1 <password>:fromhost=10.37.2.214:fromport=51450:sid=0b3c73a6-4cdc-11e7-a4d6-d8a28e9746ae:respcode=NO:resptime=1039
+
+
+IMAPserv.log from MX9.5-2:
+
+20170608 232242350-0700 mx-172-26-202-87 imapserv 21838 21903 140286667167488 Note;UserDataException(504/1) MBX_AUTHENTICATION_FAILED:{password=[XXXXX], protocolType=[imap], userName=[procu1]}:AuthenticateAndGetMailboxService\3aPOST:Authenticating Failed.::user=procu1:cmd=a login "procu1" <password>:fromhost=172.26.202.233:fromport=40855:sid=0b3faf8a-4cdc-11e7-acb6-3ac2af93fbb1
+20170608 232242350-0700 mx-172-26-202-87 imapserv 21838 21903 140286667167488 Note;AcctBadPswd(50/6) user=procu1:cmd=a login "procu1" <password>:fromhost=172.26.202.233:fromport=40855:sid=0b3faf8a-4cdc-11e7-acb6-3ac2af93fbb1
+
+[32m#####Logging enhancement for IMAP proxy is ok!!##### [0m
+

@@ -1,0 +1,46 @@
+The smtp operations logs telneting to MX9.5-1:
+
+
+220 host-172-26-202-233.openwave.com ESMTP server (InterMail vM.9.05.00.00 201-2473-137-115) ready Thu, 8 Jun 2017 23:20:17 -0700
+334 VXNlcm5hbWU6
+334 UGFzc3dvcmQ6
+535 Authentication failed
+553 Authentication is required to send mail as <xx2>
+553 Authentication is required to send mail as <procu1>
+503 Bad sequence of commands (specify MAIL first)
+503 No sender specified
+500 Command unknown: 'HI,PROCU2,THIS'
+500 Command unknown: '.'
+221 host-172-26-202-233.openwave.com ESMTP server closing connection
+
+
+
+
+
+SMTPserv.log from MX9.5-1:
+
+20170608 232017910-0700 host-172-26-202-233 mta 904 1286 139893438445312 Note;SmtpConnectionReceived(70/1) [10.37.2.214]:fromhost=10.37.2.214:fromport=37134:localAddr=172.26.202.233:sid=C4694624-328EC78D-00000002.0
+20170608 232018471-0700 host-172-26-202-233 mta 904 1286 139893438445312 Note;UserDataException(504/1) MBX_NOT_FOUND:{password=[XXXXX], protocolType=[smtp], userName=[procu1]}:AuthenticateAndGetMailboxService\3aPOST:The given Mailbox does not exist.::user=procu1:fromhost=10.37.2.214:fromport=37134:localAddr=172.26.202.233:sid=C4694624-328EC78D-00000002.0
+20170608 232018486-0700 host-172-26-202-233 mta 904 1286 139893438445312 Note;UserDataException(504/1) MBX_NOT_FOUND:{password=[XXXXX], protocolType=[smtp], userName=[procu1]}:AuthenticateAndGetMailboxService\3aPOST:The given Mailbox does not exist.::user=procu1:fromhost=10.37.2.214:fromport=37134:localAddr=172.26.202.233:sid=C4694624-328EC78D-00000002.0
+20170608 232018500-0700 host-172-26-202-233 mta 904 1286 139893438445312 Note;UserDataException(504/1) MBX_NOT_FOUND:{password=[XXXXX], protocolType=[smtp], userName=[procu1]}:AuthenticateAndGetMailboxService\3aPOST:The given Mailbox does not exist.::user=procu1:fromhost=10.37.2.214:fromport=37134:localAddr=172.26.202.233:sid=C4694624-328EC78D-00000002.0
+20170608 232018593-0700 host-172-26-202-233 mta 904 1286 139893438445312 Note;MtaAuthFailBadPswd(79/49) user=procu1:fromhost=10.37.2.214:fromport=37134:localAddr=172.26.202.233:sid=C4694624-328EC78D-00000002.0
+20170608 232018594-0700 host-172-26-202-233 mta 904 1286 139893438445312 Warn;SmtpAddressFixed(70/13) [10.37.2.214]:mail from\3axx2:<xx2>:user=procu1:fromhost=10.37.2.214:fromport=37134:localAddr=172.26.202.233:sid=C4694624-328EC78D-00000002.1
+20170608 232018614-0700 host-172-26-202-233 mta 904 1286 139893438445312 Warn;UserDataException(504/1) MBX_NOT_FOUND:{uid=[xx2@openwave.com], adminControl=[true], senderBlocking=[true], sharedMailbox=[true], email=[xx2@openwave.com]}:MailboxService\3aGET:The given Mailbox does not exist.:Mailbox xx2@openwave.com does not exist in SUR backend:user=xx2@openwave.com:fromhost=10.37.2.214:fromport=37134:localAddr=172.26.202.233:sid=C4694624-328EC78D-00000002.1
+20170608 232018614-0700 host-172-26-202-233 mta 904 1286 139893438445312 Warn;AcctUnknownUser(50/9) user=xx2@openwave.com:fromhost=10.37.2.214:fromport=37134:localAddr=172.26.202.233:sid=C4694624-328EC78D-00000002.1
+20170608 232018614-0700 host-172-26-202-233 mta 904 1286 139893438445312 Note;MtaMessageSenderNotAuth(79/53) user=<xx2>:fromhost=10.37.2.214:fromport=37134:localAddr=172.26.202.233:sid=C4694624-328EC78D-00000002.1
+20170608 232018614-0700 host-172-26-202-233 mta 904 1286 139893438445312 Warn;SmtpAddressFixed(70/13) [10.37.2.214]:mail from\3aprocu1:<procu1>:user=<xx2>:fromhost=10.37.2.214:fromport=37134:localAddr=172.26.202.233:sid=C4694624-328EC78D-00000002.2
+20170608 232018630-0700 host-172-26-202-233 mta 904 1286 139893438445312 Note;MtaMessageSenderNotAuth(79/53) user=<procu1>:fromhost=10.37.2.214:fromport=37134:localAddr=172.26.202.233:sid=C4694624-328EC78D-00000002.2
+20170608 232018630-0700 host-172-26-202-233 mta 904 1286 139893438445312 Warn;SmtpServerCommandUnknown(70/6) [10.37.2.214]:HI,PROCU2,THIS:user=<procu1>:fromhost=10.37.2.214:fromport=37134:localAddr=172.26.202.233:sid=C4694624-328EC78D-00000002.2
+20170608 232018630-0700 host-172-26-202-233 mta 904 1286 139893438445312 Warn;SmtpServerCommandUnknown(70/6) [10.37.2.214]:.:user=<procu1>:fromhost=10.37.2.214:fromport=37134:localAddr=172.26.202.233:sid=C4694624-328EC78D-00000002.2
+20170608 232018630-0700 host-172-26-202-233 mta 904 1286 139893438445312 Note;SmtpConnectionClosed(70/2) [10.37.2.214]:1:0:146:user=<procu1>:fromhost=10.37.2.214:fromport=37134:localAddr=172.26.202.233:sid=C4694624-328EC78D-00000002.2
+
+
+SMTPserv.log from MX9.5-2:
+
+20170608 232018535-0700 mx-172-26-202-87 mta 22156 22513 140694798341888 Note;SslHandshakeSucceeded(64/3):fromhost=172.26.202.233:fromport=38522
+20170608 232018535-0700 mx-172-26-202-87 mta 22156 22513 140694798341888 Note;SmtpConnectionReceived(70/1) [172.26.202.233]:fromhost=172.26.202.233:fromport=38522:localAddr=172.26.202.87:sid=268CE7D2-99D47795-00000002.0
+20170608 232018593-0700 mx-172-26-202-87 mta 22156 22513 140694798341888 Note;UserDataException(504/1) MBX_AUTHENTICATION_FAILED:{password=[XXXXX], protocolType=[smtp], userName=[procu1]}:AuthenticateAndGetMailboxService\3aPOST:Authenticating Failed.::user=procu1:fromhost=172.26.202.233:fromport=38522:localAddr=172.26.202.87:sid=268CE7D2-99D47795-00000002.0
+20170608 232018593-0700 mx-172-26-202-87 mta 22156 22513 140694798341888 Note;MtaAuthFailBadPswd(79/49) user=procu1:fromhost=172.26.202.233:fromport=38522:localAddr=172.26.202.87:sid=268CE7D2-99D47795-00000002.0
+
+[32m#####Logging enhancement for SMTP Relay is ok!!##### [0m
+

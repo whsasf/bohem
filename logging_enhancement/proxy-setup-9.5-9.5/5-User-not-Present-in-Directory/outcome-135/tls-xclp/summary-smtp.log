@@ -1,0 +1,46 @@
+The smtp operations logs telneting to MX9.5-1:
+
+
+220 host-172-26-202-233.openwave.com ESMTP server (InterMail vM.9.05.00.00 201-2473-137-115) ready Fri, 9 Jun 2017 03:07:26 -0700
+334 VXNlcm5hbWU6
+334 UGFzc3dvcmQ6
+235 Authentication successful
+250 Ok
+553 You are not authorized to send mail as <xx2>
+250 Sender <procu1> Ok
+250 Recipient <procu2> Ok
+354 Ok Send data ending with <CRLF>.<CRLF>
+250 Message received: 20170609100727.AAA20433.mx-172-26-202-87.openwave.com@[172.26.202.233]
+500 Command unknown: ''
+221 host-172-26-202-233.openwave.com ESMTP server closing connection
+
+
+
+
+
+SMTPserv.log from MX9.5-1:
+
+20170609 030726667-0700 host-172-26-202-233 mta 2405 2975 140201533679360 Note;SmtpConnectionReceived(70/1) [10.37.2.214]:fromhost=10.37.2.214:fromport=43368:localAddr=172.26.202.233:sid=A491112D-1968D221-00000002.0
+20170609 030727189-0700 host-172-26-202-233 mta 2405 2975 140201533679360 Note;UserDataException(504/1) MBX_NOT_FOUND:{password=[XXXXX], protocolType=[smtp], email=[procu1@openwave.com]}:AuthenticateAndGetMailboxService\3aPOST:The given Mailbox does not exist.::user=procu1@openwave.com:fromhost=10.37.2.214:fromport=43368:localAddr=172.26.202.233:sid=A491112D-1968D221-00000002.0
+20170609 030727201-0700 host-172-26-202-233 mta 2405 2975 140201533679360 Note;UserDataException(504/1) MBX_NOT_FOUND:{password=[XXXXX], protocolType=[smtp], email=[procu1@openwave.com]}:AuthenticateAndGetMailboxService\3aPOST:The given Mailbox does not exist.::user=procu1@openwave.com:fromhost=10.37.2.214:fromport=43368:localAddr=172.26.202.233:sid=A491112D-1968D221-00000002.0
+20170609 030727311-0700 host-172-26-202-233 mta 2405 2975 140201533679360 Note;SmtpAuthentication(70/68) [10.37.2.214]:procu1@openwave.com:LOGIN:fromhost=10.37.2.214:fromport=43368:localAddr=172.26.202.233:sid=A491112D-1968D221-00000002.0
+20170609 030727410-0700 host-172-26-202-233 mta 2405 2975 140201533679360 Note;SmtpConnectionClosed(70/2) [10.37.2.214]:1:0:127:fromhost=10.37.2.214:fromport=43368:localAddr=172.26.202.233:sid=A491112D-1968D221-00000002.0
+
+
+SMTPserv.log from MX9.5-2:
+
+20170609 030727235-0700 mx-172-26-202-87 mta 20433 20930 139705896642304 Note;SslHandshakeSucceeded(64/3):fromhost=172.26.202.233:fromport=34420
+20170609 030727236-0700 mx-172-26-202-87 mta 20433 20930 139705896642304 Note;SmtpConnectionReceived(70/1) [172.26.202.233]:fromhost=172.26.202.233:fromport=34420:localAddr=172.26.202.87:sid=D1DE3FCF-B833A36E-00000002.0
+20170609 030727311-0700 mx-172-26-202-87 mta 20433 20930 139705896642304 Note;SmtpAuthentication(70/68) [172.26.202.233]:procu1@openwave.com:PLAIN:fromhost=172.26.202.233:fromport=34420:localAddr=172.26.202.87:sid=D1DE3FCF-B833A36E-00000002.0
+20170609 030727314-0700 mx-172-26-202-87 mta 20433 20930 139705896642304 Warn;SmtpAddressFixed(70/13) [10.37.2.214]:mail from\3axx2:<xx2>:fromhost=[10.37.2.214]:fromport=34420:localAddr=172.26.202.87:sid=D1DE3FCF-B833A36E-00000002.1
+20170609 030727332-0700 mx-172-26-202-87 mta 20433 20930 139705896642304 Note;MtaMessageSenderNotAuth(79/53) user=<xx2>:fromhost=[10.37.2.214]:fromport=34420:localAddr=172.26.202.87:sid=D1DE3FCF-B833A36E-00000002.1
+20170609 030727333-0700 mx-172-26-202-87 mta 20433 20930 139705896642304 Warn;SmtpAddressFixed(70/13) [10.37.2.214]:mail from\3aprocu1:<procu1>:user=<xx2>:fromhost=[10.37.2.214]:fromport=34420:localAddr=172.26.202.87:sid=D1DE3FCF-B833A36E-00000002.2
+20170609 030727350-0700 mx-172-26-202-87 mta 20433 20930 139705896642304 Warn;SmtpAddressFixed(70/13) [10.37.2.214]:rcpt to\3aprocu2:<procu2>:from=<procu1>:fromhost=[10.37.2.214]:fromport=34420:localAddr=172.26.202.87:sid=D1DE3FCF-B833A36E-00000002.2
+20170609 030727409-0700 mx-172-26-202-87 mta 20433 20930 139705896642304 Note;MsgTrace(65/26) received from internet:from=<procu1>:msgid=<20170609100727.AAA20433.mx-172-26-202-87.openwave.com@[172.26.202.233]>:fromhost=[10.37.2.214]:fromport=34420:localAddr=172.26.202.87:sid=D1DE3FCF-B833A36E-00000002.2:msgsize=417:time=0:sender=<procu1>:rcpts=<procu2@openwave.com>:protocol=ESMTP:encoding=SSL:auth=
+20170609 030727410-0700 mx-172-26-202-87 mta 20433 20932 139705892914944 Note;MsgTrace(65/26) docid will be used for message-id:user=procu2@openwave.com:from=<procu1@openwave.com>:msgid=<20170609100727.AAA20433.mx-172-26-202-87.openwave.com@[172.26.202.233]>:size=532:fromhost=10.37.2.214:fromport=34420:localAddr=[172.26.202.87]:sid=D1DE3FCF-B833A36E-00000002.2
+20170609 030727410-0700 mx-172-26-202-87 mta 20433 20930 139705896642304 Warn;SmtpServerCommandUnknown(70/6) [10.37.2.214]::fromhost=[10.37.2.214]:fromport=34420:localAddr=172.26.202.87:sid=D1DE3FCF-B833A36E-00000002.2
+20170609 030727410-0700 mx-172-26-202-87 mta 20433 20930 139705896642304 Note;SmtpConnectionClosed(70/2) [10.37.2.214]:0:1:218:fromhost=[10.37.2.214]:fromport=34420:localAddr=172.26.202.87:sid=D1DE3FCF-B833A36E-00000002.2
+20170609 030727475-0700 mx-172-26-202-87 mta 20433 20933 139705894512384 Note;MsgTrace(65/26) delivered:user=procu2@openwave.com:mbox=8810788359572803802:mss=mx-172-26-203-121:from=<procu1@openwave.com>:msgid=<20170609100727.AAA20433.mx-172-26-202-87.openwave.com@[172.26.202.233]>:size=568:port=55014:fromhost=10.37.2.214:fromport=34420:localAddr=[172.26.202.87]:sid=D1DE3FCF-B833A36E-00000002.2:docid=70faffa4-4cfb-11e7-8595-409b8f5ef7b1:node=mx-172-26-203-121:nodePort=55014
+
+[32m#####Logging enhancement for SMTP Relay is ok!!##### [0m
+

@@ -1,0 +1,12 @@
+220 host-172-26-202-233.openwave.com ESMTP server (InterMail vM.9.05.00.00 201-2473-137-116) ready Mon, 12 Jun 2017 00:21:01 -0700
+250 Ok
+334 VXNlcm5hbWU6
+334 UGFzc3dvcmQ6
+535 Authentication failed
+553 Authentication is required to send mail as <xx2>
+553 Authentication is required to send mail as <procu1>
+503 Bad sequence of commands (specify MAIL first)
+503 No sender specified
+500 Command unknown: 'HI,PROCU2,THIS'
+500 Command unknown: '.'
+221 host-172-26-202-233.openwave.com ESMTP server closing connection

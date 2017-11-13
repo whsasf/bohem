@@ -1,0 +1,37 @@
+The pop operations logs telneting to MX9.5-1:
+
+
++OK InterMail POP3 server ready.
++OK please send PASS command
++OK procu1 is welcome here
++OK 2 messages
+1 405
+2 83
+.
++OK 83 octets
+2-11111111
+Message-ID: <1-2017-0609-023500-2729@mx-172-26-202-87.openwave.com>
+
+.
+-ERR no such message.
++OK procu1 InterMail POP3 server signing off.
+
+
+
+
+
+POPserv.log from MX9.5-1:
+
+20170609 023546982-0700 host-172-26-202-233 popserv 16487 18176 140568999683840 Note;UserDataException(504/1) MBX_NOT_FOUND:{password=[XXXXX], protocolType=[pop], userName=[procu1]}:AuthenticateAndGetMailboxService\3aPOST:The given Mailbox does not exist.::user=procu1:cmd=pass <pswd>:fromhost=10.37.2.214:fromport=55856
+20170609 023547022-0700 host-172-26-202-233 popserv 16487 18176 140568999683840 Note;PopProxyConnMade(66/16) 172.26.202.87:20110:user=procu1:cmd=pass <pswd>:fromhost=10.37.2.214:fromport=55856
+
+
+POPserv.log from MX9.5-2:
+
+20170609 023547022-0700 mx-172-26-202-87 popserv 2683 4128 140148680574720 Note;PopConnMade(66/9) user=procu1:mbox=6407114725322053820:mss=92xmc:cmd=PASS <pswd>:port=55014:fromhost=172.26.202.233:fromport=41339:dirdelay=1:node=mx-172-26-203-121:nodePort=55014
+20170609 023547522-0700 mx-172-26-202-87 popserv 2683 4128 140148680574720 Note;MsgTrace(65/26) retr:user=procu1:mbox=6407114725322053820:mss=92xmc:msgid=e851c1c8-4cf6-11e7-bf94-e26c95132802:size=83:cmd=retr 2:port=55014:fromhost=172.26.202.233:fromport=41339:node=mx-172-26-203-121:nodePort=55014
+20170609 023547522-0700 mx-172-26-202-87 popserv 2683 4128 140148680574720 Warn;PopProtocolErr(66/1) retr 3:user=procu1:mbox=6407114725322053820:mss=92xmc:cmd=retr 3:port=55014:fromhost=172.26.202.233:fromport=41339:node=mx-172-26-203-121:nodePort=55014
+20170609 023547522-0700 mx-172-26-202-87 popserv 2683 4128 140148680574720 Note;PopConnQuit(66/13) user=procu1:mbox=6407114725322053820:mss=92xmc:cmd=quit:port=55014:fromhost=172.26.202.233:fromport=41339:node=mx-172-26-203-121:nodePort=55014:time=1
+
+[32m#####Logging enhancement for POP proxy is ok!!##### [0m
+

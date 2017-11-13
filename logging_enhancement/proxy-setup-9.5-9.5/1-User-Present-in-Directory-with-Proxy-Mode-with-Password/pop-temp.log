@@ -1,0 +1,14 @@
++OK InterMail POP3 server ready.
++OK please send PASS command
++OK procu1 is welcome here
++OK 2 messages
+1 405
+2 85
+.
++OK 85 octets
+2-11111111
+Message-ID: <21-2017-0628-202722-12282@mx-172-26-202-87.openwave.com>
+
+.
+-ERR no such message.
++OK procu1 InterMail SPOP3 server signing off.

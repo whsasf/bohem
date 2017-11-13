@@ -1,0 +1,51 @@
+	**********  Starting /home/ram/workspace/bohem/Automation/Autoreply-Suppress-after-enabling-autoreply/From-matches-the-regular-expression-request  **********
+Test started: Mon Nov 13 09:33:56 CST 2017
+########## 1 Clear mta.log using expect tool ...
+spawn ssh imail2@10.49.58.118
+Password: 
+Last login: Sun Nov 12 20:22:29 2017 from bigchina
+[?1034hmx-10-49-58-118:imail2:Mx9.5:~$ > ~/log/mta.log
+mx-10-49-58-118:imail2:Mx9.5:~$ rm: cannot remove 'imapfetch*.log': No such file or directory
+########## 2 Accounts provision ...
+7547993941003620736
+7943989785561546743
+[32m########## 2 Accont provision successfully, we can continue now[0m
+spawn ssh root@10.49.58.118
+Password: 
+Last login: Sun Nov 12 20:22:20 2017 from bigchina
+]0;root@mx-10-49-58-118:~[?1034h[root@mx-10-49-58-118 ~]# date +%s
+1510536747
+]0;root@mx-10-49-58-118:~[root@mx-10-49-58-118 ~]# 
+]0;root@mx-10-49-58-118:~[root@mx-10-49-58-118 ~]# ########## 4 Configure user2 to vacation autoreply mode using expect tool ...
+spawn ssh imail2@10.49.58.118
+Password: 
+Last login: Sun Nov 12 20:32:21 2017 from bigchina
+[?1034hmx-10-49-58-118:imail2:Mx9.5:~$ echo 'internal:' >data.txt
+mx-10-49-58-118:imail2:Mx9.5:~$ echo 'Reply,This is an autoreply message for internal senders!' >>data.txt
+mx-10-49-58-118:imail2:Mx9.5:~$ echo 'external:' >>data.txt
+mx-10-49-58-118:imail2:Mx9.5:~$ echo 'Reply,This is an external autoreply message for external senders!' >>data.txt
+mx-10-49-58-118:imail2:Mx9.5:~$ autoreplyctrl ar26724@openwave.com reply data.txt 1510536752 1510538547
+AutoReply data updated Successfully.
+mx-10-49-58-118:imail2:Mx9.5:~$ [32m##########4 Congifuration successfully[0m
+##########5 delieber 1 message from user1 to user2 ...
+[32m########## 5 Message Deliver successfully, we can continue now[0m
+########## 6 Check mta.log using expect tool ...
+spawn ssh imail2@10.49.58.118
+Password: 
+Last login: Sun Nov 12 20:32:35 2017 from bigchina
+[?1034hmx-10-49-58-118:imail2:Mx9.5:~$ cat log/mta.log
+20171112 203239496-0500 mx-10-49-58-118 mta 26417 27465 139676411995904 Note;SmtpConnectionReceived(70/1) [10.37.2.214]:fromhost=10.37.2.214:fromport=33030:localAddr=10.49.58.118:sid=57FAE7E5-8E748501-00000024.0
+20171112 203239496-0500 mx-10-49-58-118 mta 26417 27465 139676411995904 Warn;SmtpAddressFixed(70/13) [10.37.2.214]:mail from\3ax-request:<x-request>:fromhost=10.37.2.214:fromport=33030:localAddr=10.49.58.118:sid=57FAE7E5-8E748501-00000024.1
+20171112 203239771-0500 mx-10-49-58-118 mta 26417 27465 139676411995904 Warn;SmtpAddressFixed(70/13) [10.37.2.214]:rcpt to\3aar26724:<ar26724>:from=<x-request>:fromhost=10.37.2.214:fromport=33030:localAddr=10.49.58.118:sid=57FAE7E5-8E748501-00000024.1
+20171112 203239791-0500 mx-10-49-58-118 mta 26417 27465 139676411995904 Note;MsgTrace(65/26) received from internet:from=<x-request>:msgid=<20171113013239.AAY26417.mx-10-49-58-118.openwave.com@[10.37.2.214]>:fromhost=[10.37.2.214]:fromport=33030:localAddr=10.49.58.118:sid=57FAE7E5-8E748501-00000024.1:msgsize=365:time=0:sender=<x-request>:rcpts=<ar26724@openwave.com>:protocol=SMTP:encoding=plaintext:auth=
+20171112 203239792-0500 mx-10-49-58-118 mta 26417 27465 139676411995904 Note;SmtpConnectionClosed(70/2) [10.37.2.214]:0:1:104:fromhost=[10.37.2.214]:fromport=33030:localAddr=10.49.58.118:sid=57FAE7E5-8E748501-00000024.1
+20171112 203239792-0500 mx-10-49-58-118 mta 26417 27474 139676411463424 Note;MsgTrace(65/26) docid will be used for message-id:user=ar26724@openwave.com:from=<x-request@openwave.com>:msgid=<20171113013239.AAY26417.mx-10-49-58-118.openwave.com@[10.37.2.214]>:size=479:fromhost=10.37.2.214:fromport=33030:localAddr=[10.49.58.118]:sid=57FAE7E5-8E748501-00000024.1
+20171112 203239839-0500 mx-10-49-58-118 mta 26417 27484 139676409599744 Note;MsgTrace(65/26) delivered:user=ar26724@openwave.com:mbox=7943989785561546743:mss=mx-10-49-58-118:from=<x-request@openwave.com>:msgid=<20171113013239.AAY26417.mx-10-49-58-118.openwave.com@[10.37.2.214]>:size=518:port=55014:fromhost=10.37.2.214:fromport=33030:localAddr=[10.49.58.118]:sid=57FAE7E5-8E748501-00000024.1:docid=89615a88-c812-11e7-b179-40bcf4644f22:node=mx-10-49-58-118:nodePort=55014
+20171112 203239839-0500 mx-10-49-58-118 mta 26417 27484 139676409599744 Note;MtaAutoReplySuppressedSender(79/58) user=ar26724@openwave.com:mbox=7943989785561546743:mss=mx-10-49-58-118:from=<x-request@openwave.com>:msgid=<20171113013239.AAY26417.mx-10-49-58-118.openwave.com@[10.37.2.214]>:size=479:port=55014:fromhost=10.37.2.214:fromport=33030:localAddr=[10.49.58.118]:sid=57FAE7E5-8E748501-00000024.1:node=mx-10-49-58-118:nodePort=55014
+mx-10-49-58-118:imail2:Mx9.5:~$ [31m##########6 Autoreply messaeg undelievered failed!Please check manually,Exiting now ...[0m
+TESTFAILED: /home/ram/workspace/bohem/Automation/Autoreply-Suppress-after-enabling-autoreply/From-matches-the-regular-expression-request: AutoReply in reply mode with message undelievered between start/stop date for internal sender test failed! (69 sec.)
+##########  doing some clear job ...
+[32m##########  Accont deleted successfully[0m
+FAILED: /home/ram/workspace/bohem/Automation/Autoreply-Suppress-after-enabling-autoreply/From-matches-the-regular-expression-request [20171113-093356] (72 sec.)
+Test ended: Mon Nov 13 09:35:08 CST 2017
+

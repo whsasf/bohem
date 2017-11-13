@@ -1,0 +1,98 @@
+	**********  Starting /home/ram/workspace/bohem/Automation/single-message/Deliever-message-when-autoReplyStartDate-and-autoReplyStopDate-unset/external-domain/mx-10261/  **********
+Test started: Mon Nov 13 11:38:12 CST 2017
+########## 1 Clear mta.log using expect tool ...
+spawn ssh imail2@10.49.58.118
+Password: 
+Last login: Sun Nov 12 22:35:45 2017 from bigchina
+[?1034hmx-10-49-58-118:imail2:Mx9.5:~$ > ~/log/mta.log
+mx-10-49-58-118:imail2:Mx9.5:~$ ########## 2 Accounts provision ...
+5669126123792230140
+5001950157805802331
+[32m########## 2 Accont provision successfully, we can continue now[0m
+########## 3 Configure user2 to echo autoreply mode using expect tool ...
+spawn ssh imail2@10.49.58.118
+Password: 
+Last login: Sun Nov 12 22:35:54 2017 from bigchina
+[?1034hmx-10-49-58-118:imail2:Mx9.5:~$ echo 'internal:' >data.txt
+mx-10-49-58-118:imail2:Mx9.5:~$ echo 'Echo,This is an autoreply message for internal senders!' >>data.txt
+mx-10-49-58-118:imail2:Mx9.5:~$ echo 'external:' >>data.txt
+mx-10-49-58-118:imail2:Mx9.5:~$ echo 'Echo,This is an external autoreply message for external senders!' >>data.txt
+mx-10-49-58-118:imail2:Mx9.5:~$ autoreplyctrl ar21289@openwave.com echo data.txt none none
+AutoReply data updated Successfully.
+mx-10-49-58-118:imail2:Mx9.5:~$ [32m##########3 Congifuration successfully[0m
+##########4 delieber 1 message from user1 to user2 ...
+[32m########## 4 Message Deliver successfully, we can continue now[0m
+########## 5 Check mta.log using expect tool ...
+spawn ssh imail2@10.49.58.118
+Password: 
+Last login: Sun Nov 12 22:36:15 2017 from bigchina
+[?1034hmx-10-49-58-118:imail2:Mx9.5:~$ cat /opt/imail2/log/mta.log
+20171112 223619774-0500 mx-10-49-58-118 mta 26417 27464 139676428830464 Note;SmtpConnectionReceived(70/1) [10.37.2.214]:fromhost=10.37.2.214:fromport=35004:localAddr=10.49.58.118:sid=57FAE7E5-8E748501-00000042.0
+20171112 223621517-0500 mx-10-49-58-118 mta 26417 27474 139676411463424 Note;MsgTrace(65/26) docid will be used for message-id:user=ar21289@openwave.com:from=<ar16885@whsasf.com>:msgid=<20171113033620.ABW26417.mx-10-49-58-118.openwave.com@whsasf.com>:size=546:fromhost=10.37.2.214:fromport=35004:localAddr=[10.49.58.118]:sid=57FAE7E5-8E748501-00000042.1
+20171112 223621518-0500 mx-10-49-58-118 mta 26417 27464 139676428830464 Note;MsgTrace(65/26) received from internet:from=<ar16885@whsasf.com>:msgid=<20171113033620.ABW26417.mx-10-49-58-118.openwave.com@whsasf.com>:fromhost=[10.37.2.214]:fromport=35004:localAddr=10.49.58.118:sid=57FAE7E5-8E748501-00000042.1:msgsize=439:time=1:sender=<ar16885@whsasf.com>:rcpts=<ar21289@openwave.com>:protocol=ESMTP:encoding=plaintext:auth=
+20171112 223621576-0500 mx-10-49-58-118 mta 26417 27482 139676409865984 Note;MsgTrace(65/26) delivered:user=ar21289@openwave.com:mbox=5001950157805802331:mss=mx-10-49-58-119:from=<ar16885@whsasf.com>:msgid=<20171113033620.ABW26417.mx-10-49-58-118.openwave.com@whsasf.com>:size=581:port=55014:fromhost=10.37.2.214:fromport=35004:localAddr=[10.49.58.118]:sid=57FAE7E5-8E748501-00000042.1:docid=d112aef2-c823-11e7-acaf-50829b0a42c7:node=mx-10-49-58-119:nodePort=55014
+20171112 223621583-0500 mx-10-49-58-118 mta 26417 27482 139676409865984 Note;MsgTrace(65/26) autoreplied:user=ar21289@openwave.com:mbox=5001950157805802331:mss=mx-10-49-58-119:from=<ar16885@whsasf.com>:msgid=<20171113033620.ABW26417.mx-10-49-58-118.openwave.com@whsasf.com>:size=546:port=55014:fromhost=10.37.2.214:fromport=35004:localAddr=[10.49.58.118]:sid=57FAE7E5-8E748501-00000042.1:node=mx-10-49-58-119:nodePort=55014
+20171112 223621598-0500 mx-10-49-58-118 mta 26417 27837 139676409067264 Note;MsgTrace(65/26) docid will be used for message-id:user=ar16885@whsasf.com:from=<>:msgid=<20171113033621.ABX26417.mx-10-49-58-118.openwave.com@mx-10-49-58-118>:size=488:sid=57FAE7E5-8E748501-00000042.1
+20171112 223621644-0500 mx-10-49-58-118 mta 26417 28037 139676408002304 Note;MsgTrace(65/26) delivered:user=ar16885@whsasf.com:mbox=5669126123792230140:mss=mx-10-49-58-119:from=<>:msgid=<20171113033621.ABX26417.mx-10-49-58-118.openwave.com@mx-10-49-58-118>:size=1418:port=55014:sid=57FAE7E5-8E748501-00000042.1:docid=d11cd972-c823-11e7-887e-2f60082eb159:node=mx-10-49-58-119:nodePort=55014
+20171112 223621794-0500 mx-10-49-58-118 mta 26417 27464 139676428830464 Note;SmtpConnectionClosed(70/2) [10.37.2.214]:2:1:194:fromhost=[10.37.2.214]:fromport=35004:localAddr=10.49.58.118:sid=57FAE7E5-8E748501-00000042.1
+mx-10-49-58-118:imail2:Mx9.5:~$ [32m##########5 Autoreply messaeg delievered successfully!![0m
+########## 5 check autoreplied message in inbox of user1 ...
+imapmail: host[10.49.58.118] port[20143] user[ar16885] pass[p] folder[inbox] message[2]
+xx OK LOGIN completed
+* 2 EXISTS
+* OK [UNSEEN 1] First unseen message
+* OK [UIDVALIDITY 1510544015] UIDs valid
+* OK [UIDNEXT 1002] Predicted next UID
+* FLAGS (\Answered \Flagged \Deleted \Draft \Seen)
+* OK [PERMANENTFLAGS (\* \Answered \Flagged \Deleted \Draft \Seen)] Permanent flags
+* 1 RECENT
+xx OK [READ-WRITE] SELECT completed
+* 2 FETCH (BODY[] {1418}
+Return-Path: <>
+Subject: Re: test message about autoreply feature
+To: ar16885@whsasf.com
+From: "Auto-reply from ar21289@openwave.com" <ar21289@openwave.com>
+In-Reply-To: <20171113033620.ABW26417.mx-10-49-58-118.openwave.com@whsasf.com>
+Precedence: bulk
+Date: Sun, 12 Nov 2017 22:36:21 -0500
+Message-ID: <20171113033621.ABX26417.mx-10-49-58-118.openwave.com@mx-10-49-58-118>
+MIME-Version: 1.0
+Content-Type: multipart/mixed;
+		Boundary="===========================_ _= 7548986(26417)1510544181"
+
+
+--===========================_ _= 7548986(26417)1510544181
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+
+Echo,This is an external autoreply message for external senders!
+
+--===========================_ _= 7548986(26417)1510544181
+Content-Type: message/rfc822
+
+Received: from whsasf.com ([10.37.2.214]) by mx-10-49-58-118.openwave.com
+          (InterMail vM.9.05.01.00 201-2473-137-123) with ESMTP
+          id <20171113033620.ABW26417.mx-10-49-58-118.openwave.com@whsasf.com>
+          for <ar21289@openwave.com>; Sun, 12 Nov 2017 22:36:20 -0500
+Subject: test message about autoreply feature
+To: ar21289@openwave.com
+Date: Sun, 12 Nov 2017 22:36:21 -0500
+Message-Id: <20171113033620.ABW26417.mx-10-49-58-118.openwave.com@whsasf.com>
+From: <ar16885@whsasf.com>
+
+Echo,This ia a wonderful world!!
+
+--===========================_ _= 7548986(26417)1510544181--
+
+ FLAGS (\Recent \Seen))
+xx OK FETCH completed
+* BYE IMAP4 server terminating connection
+xx OK LOGOUT completed
+[32m##########6 Check autoreplied messaege successfully!![0m
+TESTPASSED: /home/ram/workspace/bohem/Automation/single-message/Deliever-message-when-autoReplyStartDate-and-autoReplyStopDate-unset/external-domain/mx-10261/: AutoReply in echo mode without start/stop date for external sender test success! (37 sec.)
+##########  doing some clear job ...
+[32m##########  Accont deleted successfully[0m
+PASSED: /home/ram/workspace/bohem/Automation/single-message/Deliever-message-when-autoReplyStartDate-and-autoReplyStopDate-unset/external-domain/mx-10261/ [20171113-113812] (41 sec.) 12
+Test ended: Mon Nov 13 11:38:53 CST 2017
+

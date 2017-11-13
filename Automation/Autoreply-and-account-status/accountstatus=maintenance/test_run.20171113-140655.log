@@ -1,0 +1,55 @@
+	**********  Starting /home/ram/workspace/bohem/Automation/Autoreply-and-account-status/accountstatus=maintenance  **********
+Test started: Mon Nov 13 14:06:55 CST 2017
+########## 1 Clear mta.log using expect tool ...
+spawn ssh imail2@10.49.58.118
+Password: 
+Last login: Mon Nov 13 01:03:18 2017 from 10.6.105.67
+[?1034hmx-10-49-58-118:imail2:Mx9.5:~$ > ~/log/mta.log
+mx-10-49-58-118:imail2:Mx9.5:~$ rm: cannot remove 'imapfetch*.log': No such file or directory
+########## 2 Accounts provision ...
+6152622818154341540
+7985776490512293778
+[32m########## 2 Accont provision successfully, we can continue now[0m
+spawn ssh root@10.49.58.118
+Password: 
+Last login: Mon Nov 13 01:02:03 2017 from 10.6.105.67
+]0;root@mx-10-49-58-118:~[?1034h[root@mx-10-49-58-118 ~]# date +%s
+1510553104
+]0;root@mx-10-49-58-118:~[root@mx-10-49-58-118 ~]# 
+]0;root@mx-10-49-58-118:~[root@mx-10-49-58-118 ~]# ########## 4 Configure user2 to vacation autoreply mode using expect tool ...
+spawn ssh imail2@10.49.58.118
+Password: 
+Last login: Mon Nov 13 01:04:52 2017 from 10.6.105.67
+[?1034hmx-10-49-58-118:imail2:Mx9.5:~$ echo 'internal:' >data.txt
+mx-10-49-58-118:imail2:Mx9.5:~$ echo 'Reply,This is an autoreply message for internal senders!' >>data.txt
+mx-10-49-58-118:imail2:Mx9.5:~$ echo 'external:' >>data.txt
+mx-10-49-58-118:imail2:Mx9.5:~$ echo 'Reply,This is an external autoreply message for external senders!' >>data.txt
+mx-10-49-58-118:imail2:Mx9.5:~$ autoreplyctrl ar2551@openwave.com reply data.txt 1510553109 1510554904
+AutoReply data updated Successfully.
+mx-10-49-58-118:imail2:Mx9.5:~$ [32m##########4 Congifuration successfully[0m
+spawn ssh imail2@10.49.58.118
+Password: 
+Last login: Mon Nov 13 01:05:33 2017 from 10.6.105.67
+[?1034hmx-10-49-58-118:imail2:Mx9.5:~$ imdbcontrol sas ar2551 openwave.com M
+mx-10-49-58-118:imail2:Mx9.5:~$ imdbcontrol gaf ar2551 openwave.com |grep Status
+                          [01;31m[KStatus[m[K:	M
+mx-10-49-58-118:imail2:Mx9.5:~$ ##########5 delieber 1 message from user1 to user2 ...
+########## 6 Check mta.log using expect tool ...
+spawn ssh imail2@10.49.58.118
+Password: 
+Last login: Mon Nov 13 01:05:57 2017 from 10.6.105.67
+[?1034hmx-10-49-58-118:imail2:Mx9.5:~$ cat log/mta.log
+20171113 010602296-0500 mx-10-49-58-118 mta 26417 27466 139676413593344 Note;SmtpConnectionReceived(70/1) [10.6.105.67]:fromhost=10.6.105.67:fromport=43432:localAddr=10.49.58.118:sid=57FAE7E5-8E748501-00000086.0
+20171113 010605112-0500 mx-10-49-58-118 mta 26417 27466 139676413593344 Note;MsgTrace(65/26) received from internet:from=<ar6847>:msgid=<20171113060604.ADH26417.mx-10-49-58-118.openwave.com@ar6847>:fromhost=[10.6.105.67]:fromport=43432:localAddr=10.49.58.118:sid=57FAE7E5-8E748501-00000086.1:msgsize=417:time=2:sender=<ar6847>:rcpts=<ar2551@openwave.com>:protocol=ESMTP:encoding=plaintext:auth=
+20171113 010605112-0500 mx-10-49-58-118 mta 26417 27474 139676411463424 Note;AcctMaintenance(50/7) 7985776490512293778:95xmc:user=ar2551@openwave.com:from=<ar6847@openwave.com>:msgid=<20171113060604.ADH26417.mx-10-49-58-118.openwave.com@ar6847>:size=521:fromhost=10.6.105.67:fromport=43432:localAddr=[10.49.58.118]:sid=57FAE7E5-8E748501-00000086.1
+20171113 010605113-0500 mx-10-49-58-118 mta 26417 27474 139676411463424 Note;MsgTrace(65/26) deferred:user=ar2551@openwave.com:mbox=7985776490512293778:from=<ar6847@openwave.com>:msgid=<20171113060604.ADH26417.mx-10-49-58-118.openwave.com@ar6847>:size=521:fromhost=10.6.105.67:fromport=43432:localAddr=[10.49.58.118]:sid=57FAE7E5-8E748501-00000086.1:docid=bbb6ba52-c838-11e7-bb9f-0ff45e2a4cf6:queuehost=mx-10-49-58-118:Reason=AcctMaintenance(50/7) 7985776490512293778\3a95xmc\3auser=ar2551@openwave.com\3afrom=<ar6847@openwave.com>\3amsgid=<20171113060604.ADH26417.mx-10-49-58-118.openwave.com@ar6847>\3asize=521\3afromhost=10.6.105.67\3afromport=43432\3alocalAddr=[10.49.58.118]\3asid=57FAE7E5-8E748501-00000086.1
+20171113 010605571-0500 mx-10-49-58-118 mta 26417 27466 139676413593344 Note;SmtpConnectionClosed(70/2) [10.6.105.67]:3:1:151:fromhost=[10.6.105.67]:fromport=43432:localAddr=10.49.58.118:sid=57FAE7E5-8E748501-00000086.1
+mx-10-49-58-118:imail2:Mx9.5:~$ count=2
+count1=1
+[31m##########6 Autoreply messaeg undelievered failed!Please check manually,Exiting now ...[0m
+##########  doing some clear job ...
+TESTFAILED: /home/ram/workspace/bohem/Automation/Autoreply-and-account-status/accountstatus=maintenance: Test didn't report success or failure or skipped (101 sec.)
+FAILED: /home/ram/workspace/bohem/Automation/Autoreply-and-account-status/accountstatus=maintenance [20171113-140655] (101 sec.)
+Test ended: Mon Nov 13 14:08:36 CST 2017
+
+[32m##########  Accont deleted successfully[0m

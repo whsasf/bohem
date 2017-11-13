@@ -1,0 +1,50 @@
+The imap operations logs telneting to MX9.5-1:
+
+
+* OK IMAP4 server (InterMail vM.9.05.00.00 201-2473-137-108) ready Thu, 9 Mar 2017 01:28:51 -0800 (PST)
+a OK LOGIN completed
+a NO The specified mailbox does not exist
+* 2 EXISTS
+* OK [UNSEEN 1] First unseen message
+* OK [UIDVALIDITY 1489051726] UIDs valid
+* OK [UIDNEXT 1002] Predicted next UID
+* FLAGS (\Answered \Flagged \Deleted \Draft \Seen)
+* OK [PERMANENTFLAGS (\* \Answered \Flagged \Deleted \Draft \Seen)] Permanent flags
+* 1 RECENT
+a OK [READ-WRITE] SELECT completed
+* 2 FETCH (RFC822 {84}
+2-11111111
+Message-ID: <5-2017-0309-012846-17640@mx-172-26-202-87.openwave.com>
+
+ FLAGS (\Recent \Seen))
+a OK FETCH completed
+a NO FETCH failed
+* BYE IMAP4 server terminating connection
+a OK LOGOUT completed
+
+
+
+
+
+ IMAPserv.log from MX9.5-1:
+
+20170309 012851583-0800 host-172-26-202-233 imapserv 8737 8803 140648405874432 Warn;RmeInvalidCOSAttribute(68/25) imapproxyauthenticate:user=procu1:cmd=a login procu1 <password>:fromhost=10.37.2.214:fromport=45006:sid=cea00ff8-04aa-11e7-9346-2bb8f49ed5a2
+20170309 012851584-0800 host-172-26-202-233 imapserv 8737 8803 140648405874432 Warn;RmeInvalidCOSAttribute(68/25) mailimapproxyhost:user=procu1:mbox=5025086068132629814:cmd=a login procu1 <password>:fromhost=10.37.2.214:fromport=45006:sid=cea00ff8-04aa-11e7-9346-2bb8f49ed5a2
+20170309 012851584-0800 host-172-26-202-233 imapserv 8737 8803 140648405874432 Note;ConfNonStandardPort(51/56) imap4Port:imapserv:host-172-26-202-233:143:10143:user=procu1:mbox=5025086068132629814:cmd=a login procu1 <password>:fromhost=10.37.2.214:fromport=45006:sid=cea00ff8-04aa-11e7-9346-2bb8f49ed5a2
+20170309 012851609-0800 host-172-26-202-233 imapserv 8737 8803 140648405874432 Note;ImapProxyConnMade(56/34) imap\3a//172.26.202.87\3a20143:20143:user=procu1:mbox=5025086068132629814:cmd=a login procu1 <password>:fromhost=10.37.2.214:fromport=45006:sid=cea00ff8-04aa-11e7-9346-2bb8f49ed5a2
+
+
+ IMAPserv.log from MX9.5-2:
+
+20170309 012851609-0800 mx-172-26-202-87 imapserv 17640 17716 140062364370688 Warn;RmeInvalidCOSAttribute(68/25) imapproxyauthenticate:user=procu1:cmd=a login "procu1" <password>:fromhost=172.26.202.233:fromport=52186:sid=cea430ce-04aa-11e7-87a8-209c8f68429a
+20170309 012851614-0800 mx-172-26-202-87 imapserv 17640 17716 140062364370688 Note;ImapConnMade(56/16) user=procu1:mbox=8156279346536003371:mss=mx-172-26-203-123:cmd=a login "procu1" <password>:port=55014:fromhost=172.26.202.233:fromport=52186:sid=cea430ce-04aa-11e7-87a8-209c8f68429a:respcode=OK:resptime=23:node=mx-172-26-203-121:nodePort=55014
+20170309 012851756-0800 mx-172-26-202-87 imapserv 17640 17682 140062373156608 Note;MsgTrace(65/26) select:user=procu1:mbox=8156279346536003371:mss=mx-172-26-203-123:cmd=a select xxx:port=55014:fromhost=172.26.202.233:fromport=52186:sid=cea430ce-04aa-11e7-87a8-209c8f68429a:respcode=OK:resptime=2:node=mx-172-26-203-121:nodePort=55014
+20170309 012851756-0800 mx-172-26-202-87 imapserv 17640 17682 140062373156608 Warn;ImapCommandFailedReason(56/21) The specified mailbox does not exist:user=procu1:mbox=8156279346536003371:mss=mx-172-26-203-123:cmd=a select xxx:port=55014:fromhost=172.26.202.233:fromport=52186:sid=cea430ce-04aa-11e7-87a8-209c8f68429a:respcode=OK:resptime=2:node=mx-172-26-203-121:nodePort=55014
+20170309 012851805-0800 mx-172-26-202-87 imapserv 17640 17682 140062373156608 Note;ImapNotificationInfo(56/45) folder INBOX is subscribed for notification:user=procu1:mbox=8156279346536003371:mss=mx-172-26-203-123:fldr=inbox:cmd=a select inbox:port=55014:fromhost=172.26.202.233:fromport=52186:sid=cea430ce-04aa-11e7-87a8-209c8f68429a:node=mx-172-26-203-121:nodePort=55014
+20170309 012851821-0800 mx-172-26-202-87 imapserv 17640 17682 140062373156608 Note;MsgTrace(65/26) select:user=procu1:mbox=8156279346536003371:mss=mx-172-26-203-123:fldr=inbox:cmd=a select inbox:port=55014:fromhost=172.26.202.233:fromport=52186:sid=cea430ce-04aa-11e7-87a8-209c8f68429a:respcode=OK:resptime=64:node=mx-172-26-203-121:nodePort=55014
+20170309 012851833-0800 mx-172-26-202-87 imapserv 17640 17682 140062373156608 Note;MsgTrace(65/26) retr:user=procu1:mbox=8156279346536003371:mss=mx-172-26-203-123:fldr=inbox:msgid=cbb8ad18-04aa-11e7-8d95-1a60621a641c:size=84:cmd=a fetch 2 rfc822:port=55014:fromhost=172.26.202.233:fromport=52186:sid=cea430ce-04aa-11e7-87a8-209c8f68429a:node=mx-172-26-203-121:nodePort=55014
+20170309 012851857-0800 mx-172-26-202-87 imapserv 17640 17682 140062373156608 Note;ImapFetchComplete(56/39) user=procu1:mbox=8156279346536003371:mss=mx-172-26-203-123:fldr=inbox:msgid=cbb8ad18-04aa-11e7-8d95-1a60621a641c:size=84:cmd=a fetch 2 rfc822:port=55014:fromhost=172.26.202.233:fromport=52186:sid=cea430ce-04aa-11e7-87a8-209c8f68429a:respcode=OK:resptime=35:node=mx-172-26-203-121:nodePort=55014
+20170309 012851857-0800 mx-172-26-202-87 imapserv 17640 17682 140062373156608 Warn;ImapCommandFailed(56/20) user=procu1:mbox=8156279346536003371:mss=mx-172-26-203-123:fldr=inbox:cmd=a fetch 5 rfc822:port=55014:fromhost=172.26.202.233:fromport=52186:sid=cea430ce-04aa-11e7-87a8-209c8f68429a:respcode=NO:resptime=0:node=mx-172-26-203-121:nodePort=55014
+20170309 012851863-0800 mx-172-26-202-87 imapserv 17640 17682 140062373156608 Note;ImapNotificationInfo(56/45) folder INBOX is unsubscribed for notification:user=procu1:mbox=8156279346536003371:mss=mx-172-26-203-123:fldr=inbox:cmd=a logout:port=55014:fromhost=172.26.202.233:fromport=52186:sid=cea430ce-04aa-11e7-87a8-209c8f68429a:node=mx-172-26-203-121:nodePort=55014
+20170309 012851863-0800 mx-172-26-202-87 imapserv 17640 17682 140062373156608 Note;ImapLogout(56/43) user=procu1:mbox=8156279346536003371:mss=mx-172-26-203-123:cmd=a logout:port=55014:fromhost=172.26.202.233:fromport=52186:sid=cea430ce-04aa-11e7-87a8-209c8f68429a:respcode=OK:resptime=6:node=mx-172-26-203-121:nodePort=55014
+20170309 012851863-0800 mx-172-26-202-87 imapserv 17640 17682 140062373156608 Note;ImapDisconnected(56/17) user=procu1:mbox=8156279346536003371:mss=mx-172-26-203-123:cmd=a logout:port=55014:fromhost=172.26.202.233:fromport=52186:sid=cea430ce-04aa-11e7-87a8-209c8f68429a:respcode=OK:resptime=248:node=mx-172-26-203-121:nodePort=55014

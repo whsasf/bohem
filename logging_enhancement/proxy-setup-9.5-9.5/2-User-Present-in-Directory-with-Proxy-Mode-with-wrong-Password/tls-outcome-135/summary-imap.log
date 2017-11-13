@@ -1,0 +1,25 @@
+The imap operations logs telneting to MX9.5-1:
+
+
+* OK IMAP4 server (InterMail vM.9.05.00.00 201-2473-137-115) ready Thu, 8 Jun 2017 23:19:13 -0700 (PDT)
+* BYE Authentication services unavailable
+
+
+
+
+
+IMAPserv.log from MX9.5-1:
+
+20170608 231913515-0700 host-172-26-202-233 imapserv 407 492 140463239157504 Note;UserDataException(504/1) MBX_NOT_FOUND:{password=[XXXXX], protocolType=[imap], userName=[procu1]}:AuthenticateAndGetMailboxService\3aPOST:The given Mailbox does not exist.::user=procu1:cmd=a login procu1 <password>:fromhost=10.37.2.214:fromport=51344:sid=8ec60544-4cdb-11e7-817f-a48352dce9b8
+20170608 231913515-0700 host-172-26-202-233 imapserv 407 492 140463239157504 Note;ConfNonStandardPort(51/56) imap4Port:imapserv:host-172-26-202-233:143:10143:user=procu1:cmd=a login procu1 <password>:fromhost=10.37.2.214:fromport=51344:sid=8ec60544-4cdb-11e7-817f-a48352dce9b8
+20170608 231913562-0700 host-172-26-202-233 imapserv 407 492 140463239157504 Warn;ImapCommandFailedReason(56/21) a NO Invalid user name or password:user=procu1:cmd=a login procu1 <password>:fromhost=10.37.2.214:fromport=51344:sid=8ec60544-4cdb-11e7-817f-a48352dce9b8:respcode=NO:resptime=63
+
+
+IMAPserv.log from MX9.5-2:
+
+20170608 231913540-0700 mx-172-26-202-87 imapserv 21838 21925 140286661310208 Note;SslHandshakeSucceeded(64/3):fromhost=172.26.202.233:fromport=39069
+20170608 231913562-0700 mx-172-26-202-87 imapserv 21838 21936 140286658381568 Note;UserDataException(504/1) MBX_AUTHENTICATION_FAILED:{password=[XXXXX], protocolType=[imap], userName=[procu1]}:AuthenticateAndGetMailboxService\3aPOST:Authenticating Failed.::user=procu1:cmd=a login "procu1" <password>:fromhost=172.26.202.233:fromport=39069:sid=8ec92c2e-4cdb-11e7-af2f-7489636668d4
+20170608 231913562-0700 mx-172-26-202-87 imapserv 21838 21936 140286658381568 Note;AcctBadPswd(50/6) user=procu1:cmd=a login "procu1" <password>:fromhost=172.26.202.233:fromport=39069:sid=8ec92c2e-4cdb-11e7-af2f-7489636668d4
+
+[32m#####Logging enhancement for IMAP proxy is ok!!##### [0m
+

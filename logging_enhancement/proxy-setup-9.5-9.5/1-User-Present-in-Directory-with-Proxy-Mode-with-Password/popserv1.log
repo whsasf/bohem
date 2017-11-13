@@ -1,0 +1,2 @@
+20170628 202751601-0700 host-172-26-202-233 popserv 28377 9882 140635996493568 Warn;RmeInvalidCOSAttribute(68/25) mailpopproxyhost:user=procu1:mbox=6219174765629195555:cmd=pass <pswd>:fromhost=10.37.2.214:fromport=34958
+20170628 202751656-0700 host-172-26-202-233 popserv 28377 9882 140635996493568 Note;PopProxyConnMade(66/16) 172.26.202.87:20995:user=procu1:mbox=6219174765629195555:cmd=pass <pswd>:fromhost=10.37.2.214:fromport=34958

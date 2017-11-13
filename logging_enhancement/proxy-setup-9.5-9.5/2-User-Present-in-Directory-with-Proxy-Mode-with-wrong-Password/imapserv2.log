@@ -1,0 +1,3 @@
+20170612 001924806-0700 mx-172-26-202-87 imapserv 18231 18312 140015511922432 Note;SslHandshakeSucceeded(64/3):fromhost=172.26.202.233:fromport=46334
+20170612 001924859-0700 mx-172-26-202-87 imapserv 18231 18290 140015517779712 Note;UserDataException(504/1) MBX_AUTHENTICATION_FAILED:{password=[XXXXX], protocolType=[imap], userName=[procu1]}:AuthenticateAndGetMailboxService\3aPOST:Authenticating Failed.::user=procu1:cmd=a login "procu1" <password>:fromhost=10.37.2.214:fromport=46334:sid=76827b8c-4f3f-11e7-9457-7d84f21a28ee
+20170612 001924859-0700 mx-172-26-202-87 imapserv 18231 18290 140015517779712 Note;AcctBadPswd(50/6) user=procu1:cmd=a login "procu1" <password>:fromhost=10.37.2.214:fromport=46334:sid=76827b8c-4f3f-11e7-9457-7d84f21a28ee

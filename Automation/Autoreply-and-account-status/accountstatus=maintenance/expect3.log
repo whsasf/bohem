@@ -1,0 +1,10 @@
+spawn ssh imail2@10.49.58.118
+Password: 
+Last login: Mon Nov 13 02:04:40 2017 from bigchina
+[?1034hmx-10-49-58-118:imail2:Mx9.5:~$ cat log/mta.log
+20171113 020448390-0500 mx-10-49-58-118 mta 26417 27465 139676411995904 Note;SmtpConnectionReceived(70/1) [10.37.2.214]:fromhost=10.37.2.214:fromport=39934:localAddr=10.49.58.118:sid=57FAE7E5-8E748501-00000094.0
+20171113 020454934-0500 mx-10-49-58-118 mta 26417 27837 139676409067264 Note;AcctMaintenance(50/7) 6315746063375468135:95xmc:user=ar20461@openwave.com:from=<ar20600@openwave.com>:msgid=<20171113070449.AEL26417.mx-10-49-58-118.openwave.com@ar20600>:size=527:fromhost=10.37.2.214:fromport=39934:localAddr=[10.49.58.118]:sid=57FAE7E5-8E748501-00000094.1
+20171113 020454935-0500 mx-10-49-58-118 mta 26417 27466 139676413593344 Note;MsgTrace(65/26) received from internet:from=<ar20600>:msgid=<20171113070449.AEL26417.mx-10-49-58-118.openwave.com@ar20600>:fromhost=[10.37.2.214]:fromport=39934:localAddr=10.49.58.118:sid=57FAE7E5-8E748501-00000094.1:msgsize=421:time=5:sender=<ar20600>:rcpts=<ar20461@openwave.com>:protocol=ESMTP:encoding=plaintext:auth=
+20171113 020454936-0500 mx-10-49-58-118 mta 26417 27837 139676409067264 Note;MsgTrace(65/26) deferred:user=ar20461@openwave.com:mbox=6315746063375468135:from=<ar20600@openwave.com>:msgid=<20171113070449.AEL26417.mx-10-49-58-118.openwave.com@ar20600>:size=527:fromhost=10.37.2.214:fromport=39934:localAddr=[10.49.58.118]:sid=57FAE7E5-8E748501-00000094.1:docid=f3a6d890-c840-11e7-8d19-4e11158f4387:queuehost=mx-10-49-58-118:Reason=AcctMaintenance(50/7) 6315746063375468135\3a95xmc\3auser=ar20461@openwave.com\3afrom=<ar20600@openwave.com>\3amsgid=<20171113070449.AEL26417.mx-10-49-58-118.openwave.com@ar20600>\3asize=527\3afromhost=10.37.2.214\3afromport=39934\3alocalAddr=[10.49.58.118]\3asid=57FAE7E5-8E748501-00000094.1
+20171113 020455287-0500 mx-10-49-58-118 mta 26417 27466 139676413593344 Note;SmtpConnectionClosed(70/2) [10.37.2.214]:7:1:155:fromhost=[10.37.2.214]:fromport=39934:localAddr=10.49.58.118:sid=57FAE7E5-8E748501-00000094.1
+mx-10-49-58-118:imail2:Mx9.5:~$ 

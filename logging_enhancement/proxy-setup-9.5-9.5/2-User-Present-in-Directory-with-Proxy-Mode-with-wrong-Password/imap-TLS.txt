@@ -1,0 +1,70 @@
+(0)
+/*/imapserv/outboundEnableStarttls: [true]
+/*/imapserv/imapProxyHost:[imaps://172.26.202.87:20993]
+
+
+(1)TELNET IMAP reuqests to mx9.2: login,select;fetch ;logout
+ram@ubuntu:~$ telnet 172.26.202.233 10143
+Trying 172.26.202.233...
+Connected to 172.26.202.233.
+Escape character is '^]'.
+* OK IMAP4 server (InterMail vM.9.02.01.00 201-2473-137-107-100) ready Thu, 23 Feb 2017 19:14:45 -0800 (PST)
+a login user1 p
+a OK LOGIN completed
+a select inbox
+* 1 EXISTS
+* OK [UNSEEN 0] First unseen message
+* OK [UIDVALIDITY 1487900342] UIDs valid
+* OK [UIDNEXT 1001] Predicted next UID
+* FLAGS (\Answered \Flagged \Deleted \Draft \Seen)
+* OK [PERMANENTFLAGS (\* \Answered \Flagged \Deleted \Draft \Seen)] Permanent flags
+* 0 RECENT
+a OK [READ-WRITE] SELECT completed
+a fetch 1 rfc822
+* 1 FETCH (RFC822 {405}
+Return-Path: <>
+From: <info@owmessaging.com>
+Subject: Welcome to Synchronoss Email
+Message-ID: <Welcome>
+
+============================================================================
+
+Welcome to Synchronoss Email by Synchronoss Technologies, Inc.
+This is your first electronic mail message.
+May you have many more.
+
+============================================================================
+)
+a OK FETCH completed
+a logout
+* BYE IMAP4 server terminating connection
+a OK LOGOUT completed
+Connection closed by foreign host.
+
+
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+(2) Check imapserv.log from MX9.2(172.26.202.233):
+=========================================================================================================
+20170223 191450631-0800 host-172-26-202-233 imapserv 5388 5534 139916063024896 Warn;RmeInvalidCOSAttribute(68/25) imapproxyauthenticate:user=user1:cmd=a login user1 <password>:fromhost=10.37.2.214:sid=646281cc-fa3f-11e6-8e31-45658b02db95
+20170223 191450631-0800 host-172-26-202-233 imapserv 5388 5534 139916063024896 Warn;RmeInvalidCOSAttribute(68/25) mailimapproxyhost:user=user1:mbox=9199130414838974522:cmd=a login user1 <password>:fromhost=10.37.2.214:sid=646281cc-fa3f-11e6-8e31-45658b02db95
+20170223 191450631-0800 host-172-26-202-233 imapserv 5388 5534 139916063024896 Note;ConfNonStandardPort(51/56) imap4Port:imapserv:host-172-26-202-233:143:10143:user=user1:mbox=9199130414838974522:cmd=a login user1 <password>:fromhost=10.37.2.214:sid=646281cc-fa3f-11e6-8e31-45658b02db95
+20170223 191450741-0800 host-172-26-202-233 imapserv 5388 5534 139916063024896 Note;ImapProxyConnMade(56/34) imaps\3a//172.26.202.87\3a20993:20993:user=user1:mbox=9199130414838974522:cmd=a login user1 <password>:fromhost=10.37.2.214:sid=646281cc-fa3f-11e6-8e31-45658b02db95
+========================================================================================================
+(3)Check imapserv.log from MX9.5(172.26.202.87):
+=============================================================================================================
+20170223 191450719-0800 mx-172-26-202-87 imapserv 8575 8651 140081838192384 Note;SslHandshakeSucceeded(64/3):fromhost=172.26.202.233:fromport=52095
+20170223 191450741-0800 mx-172-26-202-87 imapserv 8575 8782 140081836594944 Warn;RmeInvalidCOSAttribute(68/25) imapproxyauthenticate:user=user1:cmd=a login "user1" <password>:fromhost=172.26.202.233:fromport=52095:sid=676cff6e-fa3f-11e6-a97e-8062135e8fcf
+20170223 191450754-0800 mx-172-26-202-87 imapserv 8575 8782 140081836594944 Note;ImapConnMade(56/16) user=user1:mbox=6293251697334603085:mss=mx-172-26-203-123:cmd=a login "user1" <password>:port=55014:fromhost=172.26.202.233:fromport=52095:sid=676cff6e-fa3f-11e6-a97e-8062135e8fcf:respcode=OK:resptime=34:node=mx-172-26-203-121:nodePort=55014
+20170223 191453751-0800 mx-172-26-202-87 imapserv 8575 8792 140081836328704 Note;ImapNotificationInfo(56/45) folder INBOX is subscribed for notification:user=user1:mbox=6293251697334603085:mss=mx-172-26-203-123:fldr=inbox:cmd=a select inbox:port=55014:fromhost=172.26.202.233:fromport=52095:sid=676cff6e-fa3f-11e6-a97e-8062135e8fcf:node=mx-172-26-203-121:nodePort=55014
+20170223 191453764-0800 mx-172-26-202-87 imapserv 8575 8792 140081836328704 Note;MsgTrace(65/26) select:user=user1:mbox=6293251697334603085:mss=mx-172-26-203-123:fldr=inbox:cmd=a select inbox:port=55014:fromhost=172.26.202.233:fromport=52095:sid=676cff6e-fa3f-11e6-a97e-8062135e8fcf:respcode=OK:resptime=23:node=mx-172-26-203-121:nodePort=55014
+20170223 191458345-0800 mx-172-26-202-87 imapserv 8575 8640 140081841121024 Note;MsgTrace(65/26) retr:user=user1:mbox=6293251697334603085:mss=mx-172-26-203-123:fldr=inbox:msgid=05557638-fa32-11e6-9b80-7dba63a733d2:size=405:cmd=a fetch 1 rfc822:port=55014:fromhost=172.26.202.233:fromport=52095:sid=676cff6e-fa3f-11e6-a97e-8062135e8fcf:node=mx-172-26-203-121:nodePort=55014
+20170223 191458345-0800 mx-172-26-202-87 imapserv 8575 8640 140081841121024 Note;ImapFetchComplete(56/39) user=user1:mbox=6293251697334603085:mss=mx-172-26-203-123:fldr=inbox:msgid=05557638-fa32-11e6-9b80-7dba63a733d2:size=405:cmd=a fetch 1 rfc822:port=55014:fromhost=172.26.202.233:fromport=52095:sid=676cff6e-fa3f-11e6-a97e-8062135e8fcf:respcode=OK:resptime=44:node=mx-172-26-203-121:nodePort=55014
+20170223 191500320-0800 mx-172-26-202-87 imapserv 8575 8651 140081838192384 Note;ImapNotificationInfo(56/45) folder INBOX is unsubscribed for notification:user=user1:mbox=6293251697334603085:mss=mx-172-26-203-123:fldr=inbox:cmd=a logout:port=55014:fromhost=172.26.202.233:fromport=52095:sid=676cff6e-fa3f-11e6-a97e-8062135e8fcf:node=mx-172-26-203-121:nodePort=55014
+20170223 191500320-0800 mx-172-26-202-87 imapserv 8575 8651 140081838192384 Note;ImapLogout(56/43) user=user1:mbox=6293251697334603085:mss=mx-172-26-203-123:cmd=a logout:port=55014:fromhost=172.26.202.233:fromport=52095:sid=676cff6e-fa3f-11e6-a97e-8062135e8fcf:respcode=OK:resptime=10:node=mx-172-26-203-121:nodePort=55014
+20170223 191500320-0800 mx-172-26-202-87 imapserv 8575 8651 140081838192384 Note;ImapDisconnected(56/17) user=user1:mbox=6293251697334603085:mss=mx-172-26-203-123:cmd=a logout:port=55014:fromhost=172.26.202.233:fromport=52095:sid=676cff6e-fa3f-11e6-a97e-8062135e8fcf:respcode=OK:resptime=9566:node=mx-172-26-203-121:nodePort=55014
+==============================================================================================================
+summary: all imapser.log in MX9.5 server, has "fromhost=172.26.202.233:fromport=52095" and SslHandshakeSucceeded .passed.
+
+
+
+Notice:  XCLP has issue when working in imap and POP (not sure working or not from MIke ) mwill pending this test. 

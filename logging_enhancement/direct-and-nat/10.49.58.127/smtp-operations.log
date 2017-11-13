@@ -1,0 +1,380 @@
+
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!user mx95user1!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+
+-(1)-The SMTP process of mx95user1 is:
+
+
+220 mx-172-26-202-87.openwave.com ESMTP server (InterMail vM.9.05.00.00 201-2473-137-117) ready Wed, 28 Jun 2017 19:06:21 -0700
+250 Sender <mx95user1> Ok
+550 Invalid recipient: <me7>
+250 Recipient <mx95user0> Ok
+354 Ok Send data ending with <CRLF>.<CRLF>
+250 Message received: 20170629020621.AAA12143.mx-172-26-202-87.openwave.com@[10.37.2.214]
+221 mx-172-26-202-87.openwave.com ESMTP server closing connection
+
+
+-(2)-###############The TCP connection status for mx95user1 from client are and from SMTP server are:###########
+
+from client--> tcp        0    144 10.37.2.214:34708       172.26.202.87:20025     ESTABLISHED
+from server--> tcp        0      0 172.26.202.87:20025     10.37.2.214:34708       ESTABLISHED
+
+
+-(3)-The SMTPlogs for account mx95user1 is:
+
+20170628 190621528-0700 mx-172-26-202-87 mta 12143 15174 140426850588416 Note;SmtpConnectionReceived(70/1) [10.37.2.214]:fromhost=10.37.2.214:fromport=34708:localAddr=172.26.202.87:sid=17F6B33F-685AA7DA-00000002.0
+20170628 190621529-0700 mx-172-26-202-87 mta 12143 15174 140426850588416 Warn;SmtpAddressFixed(70/13) [10.37.2.214]:MAIL FROM\3amx95user1:<mx95user1>:fromhost=10.37.2.214:fromport=34708:localAddr=172.26.202.87:sid=17F6B33F-685AA7DA-00000002.1
+20170628 190621736-0700 mx-172-26-202-87 mta 12143 15174 140426850588416 Warn;SmtpAddressFixed(70/13) [10.37.2.214]:RCPT TO\3ame7:<me7>:from=<mx95user1>:fromhost=10.37.2.214:fromport=34708:localAddr=172.26.202.87:sid=17F6B33F-685AA7DA-00000002.1
+20170628 190621758-0700 mx-172-26-202-87 mta 12143 15174 140426850588416 Warn;UserDataException(504/1) MBX_NOT_FOUND:{uid=[me7@openwave.com], adminControl=[true], senderBlocking=[true], sharedMailbox=[true], email=[me7@openwave.com]}:MailboxService\3aGET:The given Mailbox does not exist.:Mailbox me7@openwave.com does not exist in SUR backend:user=me7@openwave.com:from=<mx95user1>:fromhost=10.37.2.214:fromport=34708:localAddr=172.26.202.87:sid=17F6B33F-685AA7DA-00000002.1
+20170628 190621758-0700 mx-172-26-202-87 mta 12143 15174 140426850588416 Warn;AcctUnknownUser(50/9) user=me7@openwave.com:from=<mx95user1>:fromhost=10.37.2.214:fromport=34708:localAddr=172.26.202.87:sid=17F6B33F-685AA7DA-00000002.1
+20170628 190621758-0700 mx-172-26-202-87 mta 12143 15174 140426850588416 Warn;SmtpAddressFixed(70/13) [10.37.2.214]:RCPT TO\3amx95user0:<mx95user0>:from=<mx95user1>:fromhost=10.37.2.214:fromport=34708:localAddr=172.26.202.87:sid=17F6B33F-685AA7DA-00000002.1
+20170628 190621775-0700 mx-172-26-202-87 mta 12143 15174 140426850588416 Note;MsgTrace(65/26) received from internet:from=<mx95user1>:msgid=<20170629020621.AAA12143.mx-172-26-202-87.openwave.com@[10.37.2.214]>:fromhost=[10.37.2.214]:fromport=34708:localAddr=172.26.202.87:sid=17F6B33F-685AA7DA-00000002.1:msgsize=407:time=0:sender=<mx95user1>:rcpts=<mx95user0@openwave.com>:protocol=SMTP:encoding=plaintext:auth=
+20170628 190621775-0700 mx-172-26-202-87 mta 12143 15177 140426846861056 Note;MsgTrace(65/26) docid will be used for message-id:user=mx95user0@openwave.com:from=<mx95user1@openwave.com>:msgid=<20170629020621.AAA12143.mx-172-26-202-87.openwave.com@[10.37.2.214]>:size=522:fromhost=10.37.2.214:fromport=34708:localAddr=[172.26.202.87]:sid=17F6B33F-685AA7DA-00000002.1
+20170628 190621835-0700 mx-172-26-202-87 mta 12143 15178 140426848458496 Note;MsgTrace(65/26) delivered:user=mx95user0@openwave.com:mbox=6193575739903935134:mss=mx-172-26-203-121:from=<mx95user1@openwave.com>:msgid=<20170629020621.AAA12143.mx-172-26-202-87.openwave.com@[10.37.2.214]>:size=561:port=55014:fromhost=10.37.2.214:fromport=34708:localAddr=[172.26.202.87]:sid=17F6B33F-685AA7DA-00000002.1:docid=8bfbd3ae-5c6f-11e7-a2be-1829e8842d93:node=mx-172-26-203-121:nodePort=55014
+20170628 190625963-0700 mx-172-26-202-87 mta 12143 15174 140426850588416 Note;SmtpConnectionClosed(70/2) [10.37.2.214]:4:1:150:fromhost=[10.37.2.214]:fromport=34708:localAddr=172.26.202.87:sid=17F6B33F-685AA7DA-00000002.1
+
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!user mx95user2!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+
+-(1)-The SMTP process of mx95user2 is:
+
+
+220 mx-172-26-202-87.openwave.com ESMTP server (InterMail vM.9.05.00.00 201-2473-137-117) ready Wed, 28 Jun 2017 19:06:32 -0700
+250 Sender <mx95user2> Ok
+550 Invalid recipient: <me7>
+250 Recipient <mx95user0> Ok
+354 Ok Send data ending with <CRLF>.<CRLF>
+250 Message received: 20170629020632.AAB12143.mx-172-26-202-87.openwave.com@[10.37.2.214]
+221 mx-172-26-202-87.openwave.com ESMTP server closing connection
+
+
+-(2)-###############The TCP connection status for mx95user2 from client are and from SMTP server are:###########
+
+from client--> tcp        0    144 10.37.2.214:34716       172.26.202.87:20025     ESTABLISHED
+from server--> tcp        0      0 172.26.202.87:20025     10.37.2.214:34716       ESTABLISHED
+
+
+-(3)-The SMTPlogs for account mx95user2 is:
+
+20170628 190632036-0700 mx-172-26-202-87 mta 12143 15174 140426850588416 Note;SmtpConnectionReceived(70/1) [10.37.2.214]:fromhost=10.37.2.214:fromport=34716:localAddr=172.26.202.87:sid=17F6B33F-685AA7DA-00000004.0
+20170628 190632036-0700 mx-172-26-202-87 mta 12143 15174 140426850588416 Warn;SmtpAddressFixed(70/13) [10.37.2.214]:MAIL FROM\3amx95user2:<mx95user2>:fromhost=10.37.2.214:fromport=34716:localAddr=172.26.202.87:sid=17F6B33F-685AA7DA-00000004.1
+20170628 190632239-0700 mx-172-26-202-87 mta 12143 15174 140426850588416 Warn;SmtpAddressFixed(70/13) [10.37.2.214]:RCPT TO\3ame7:<me7>:from=<mx95user2>:fromhost=10.37.2.214:fromport=34716:localAddr=172.26.202.87:sid=17F6B33F-685AA7DA-00000004.1
+20170628 190632250-0700 mx-172-26-202-87 mta 12143 15174 140426850588416 Warn;UserDataException(504/1) MBX_NOT_FOUND:{uid=[me7@openwave.com], adminControl=[true], senderBlocking=[true], sharedMailbox=[true], email=[me7@openwave.com]}:MailboxService\3aGET:The given Mailbox does not exist.:Mailbox me7@openwave.com does not exist in SUR backend:user=me7@openwave.com:from=<mx95user2>:fromhost=10.37.2.214:fromport=34716:localAddr=172.26.202.87:sid=17F6B33F-685AA7DA-00000004.1
+20170628 190632250-0700 mx-172-26-202-87 mta 12143 15174 140426850588416 Warn;AcctUnknownUser(50/9) user=me7@openwave.com:from=<mx95user2>:fromhost=10.37.2.214:fromport=34716:localAddr=172.26.202.87:sid=17F6B33F-685AA7DA-00000004.1
+20170628 190632251-0700 mx-172-26-202-87 mta 12143 15174 140426850588416 Warn;SmtpAddressFixed(70/13) [10.37.2.214]:RCPT TO\3amx95user0:<mx95user0>:from=<mx95user2>:fromhost=10.37.2.214:fromport=34716:localAddr=172.26.202.87:sid=17F6B33F-685AA7DA-00000004.1
+20170628 190632265-0700 mx-172-26-202-87 mta 12143 15174 140426850588416 Note;MsgTrace(65/26) received from internet:from=<mx95user2>:msgid=<20170629020632.AAB12143.mx-172-26-202-87.openwave.com@[10.37.2.214]>:fromhost=[10.37.2.214]:fromport=34716:localAddr=172.26.202.87:sid=17F6B33F-685AA7DA-00000004.1:msgsize=407:time=0:sender=<mx95user2>:rcpts=<mx95user0@openwave.com>:protocol=SMTP:encoding=plaintext:auth=
+20170628 190632265-0700 mx-172-26-202-87 mta 12143 15177 140426846861056 Note;MsgTrace(65/26) docid will be used for message-id:user=mx95user0@openwave.com:from=<mx95user2@openwave.com>:msgid=<20170629020632.AAB12143.mx-172-26-202-87.openwave.com@[10.37.2.214]>:size=522:fromhost=10.37.2.214:fromport=34716:localAddr=[172.26.202.87]:sid=17F6B33F-685AA7DA-00000004.1
+20170628 190632305-0700 mx-172-26-202-87 mta 12143 15178 140426848458496 Note;MsgTrace(65/26) delivered:user=mx95user0@openwave.com:mbox=6193575739903935134:mss=mx-172-26-203-121:from=<mx95user2@openwave.com>:msgid=<20170629020632.AAB12143.mx-172-26-202-87.openwave.com@[10.37.2.214]>:size=561:port=55014:fromhost=10.37.2.214:fromport=34716:localAddr=[172.26.202.87]:sid=17F6B33F-685AA7DA-00000004.1:docid=923c7c82-5c6f-11e7-bbd3-59e458535a63:node=mx-172-26-203-121:nodePort=55014
+20170628 190635980-0700 mx-172-26-202-87 mta 12143 15174 140426850588416 Note;SmtpConnectionClosed(70/2) [10.37.2.214]:3:1:150:fromhost=[10.37.2.214]:fromport=34716:localAddr=172.26.202.87:sid=17F6B33F-685AA7DA-00000004.1
+
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!user mx95user3!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+
+-(1)-The SMTP process of mx95user3 is:
+
+
+220 mx-172-26-202-87.openwave.com ESMTP server (InterMail vM.9.05.00.00 201-2473-137-117) ready Wed, 28 Jun 2017 19:06:42 -0700
+250 Sender <mx95user3> Ok
+550 Invalid recipient: <me7>
+250 Recipient <mx95user0> Ok
+354 Ok Send data ending with <CRLF>.<CRLF>
+250 Message received: 20170629020643.AAC12143.mx-172-26-202-87.openwave.com@[10.37.2.214]
+221 mx-172-26-202-87.openwave.com ESMTP server closing connection
+
+
+-(2)-###############The TCP connection status for mx95user3 from client are and from SMTP server are:###########
+
+from client--> tcp        0    144 10.37.2.214:34726       172.26.202.87:20025     ESTABLISHED
+from server--> tcp        0      0 172.26.202.87:20025     10.37.2.214:34726       ESTABLISHED
+
+
+-(3)-The SMTPlogs for account mx95user3 is:
+
+20170628 190642906-0700 mx-172-26-202-87 mta 12143 15174 140426850588416 Note;SmtpConnectionReceived(70/1) [10.37.2.214]:fromhost=10.37.2.214:fromport=34726:localAddr=172.26.202.87:sid=17F6B33F-685AA7DA-00000006.0
+20170628 190642906-0700 mx-172-26-202-87 mta 12143 15174 140426850588416 Warn;SmtpAddressFixed(70/13) [10.37.2.214]:MAIL FROM\3amx95user3:<mx95user3>:fromhost=10.37.2.214:fromport=34726:localAddr=172.26.202.87:sid=17F6B33F-685AA7DA-00000006.1
+20170628 190643133-0700 mx-172-26-202-87 mta 12143 15174 140426850588416 Warn;SmtpAddressFixed(70/13) [10.37.2.214]:RCPT TO\3ame7:<me7>:from=<mx95user3>:fromhost=10.37.2.214:fromport=34726:localAddr=172.26.202.87:sid=17F6B33F-685AA7DA-00000006.1
+20170628 190643146-0700 mx-172-26-202-87 mta 12143 15174 140426850588416 Warn;UserDataException(504/1) MBX_NOT_FOUND:{uid=[me7@openwave.com], adminControl=[true], senderBlocking=[true], sharedMailbox=[true], email=[me7@openwave.com]}:MailboxService\3aGET:The given Mailbox does not exist.:Mailbox me7@openwave.com does not exist in SUR backend:user=me7@openwave.com:from=<mx95user3>:fromhost=10.37.2.214:fromport=34726:localAddr=172.26.202.87:sid=17F6B33F-685AA7DA-00000006.1
+20170628 190643146-0700 mx-172-26-202-87 mta 12143 15174 140426850588416 Warn;AcctUnknownUser(50/9) user=me7@openwave.com:from=<mx95user3>:fromhost=10.37.2.214:fromport=34726:localAddr=172.26.202.87:sid=17F6B33F-685AA7DA-00000006.1
+20170628 190643146-0700 mx-172-26-202-87 mta 12143 15174 140426850588416 Warn;SmtpAddressFixed(70/13) [10.37.2.214]:RCPT TO\3amx95user0:<mx95user0>:from=<mx95user3>:fromhost=10.37.2.214:fromport=34726:localAddr=172.26.202.87:sid=17F6B33F-685AA7DA-00000006.1
+20170628 190643160-0700 mx-172-26-202-87 mta 12143 15174 140426850588416 Note;MsgTrace(65/26) received from internet:from=<mx95user3>:msgid=<20170629020643.AAC12143.mx-172-26-202-87.openwave.com@[10.37.2.214]>:fromhost=[10.37.2.214]:fromport=34726:localAddr=172.26.202.87:sid=17F6B33F-685AA7DA-00000006.1:msgsize=407:time=1:sender=<mx95user3>:rcpts=<mx95user0@openwave.com>:protocol=SMTP:encoding=plaintext:auth=
+20170628 190643160-0700 mx-172-26-202-87 mta 12143 15177 140426846861056 Note;MsgTrace(65/26) docid will be used for message-id:user=mx95user0@openwave.com:from=<mx95user3@openwave.com>:msgid=<20170629020643.AAC12143.mx-172-26-202-87.openwave.com@[10.37.2.214]>:size=522:fromhost=10.37.2.214:fromport=34726:localAddr=[172.26.202.87]:sid=17F6B33F-685AA7DA-00000006.1
+20170628 190643194-0700 mx-172-26-202-87 mta 12143 15178 140426848458496 Note;MsgTrace(65/26) delivered:user=mx95user0@openwave.com:mbox=6193575739903935134:mss=mx-172-26-203-121:from=<mx95user3@openwave.com>:msgid=<20170629020643.AAC12143.mx-172-26-202-87.openwave.com@[10.37.2.214]>:size=561:port=55014:fromhost=10.37.2.214:fromport=34726:localAddr=[172.26.202.87]:sid=17F6B33F-685AA7DA-00000006.1:docid=98bae594-5c6f-11e7-a1b3-62f070dfd0f5:node=mx-172-26-203-121:nodePort=55014
+20170628 190645785-0700 mx-172-26-202-87 mta 12143 15174 140426850588416 Note;SmtpConnectionClosed(70/2) [10.37.2.214]:3:1:150:fromhost=[10.37.2.214]:fromport=34726:localAddr=172.26.202.87:sid=17F6B33F-685AA7DA-00000006.1
+
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!user mx95user4!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+
+-(1)-The SMTP process of mx95user4 is:
+
+
+220 mx-172-26-202-87.openwave.com ESMTP server (InterMail vM.9.05.00.00 201-2473-137-117) ready Wed, 28 Jun 2017 19:06:52 -0700
+250 Sender <mx95user4> Ok
+550 Invalid recipient: <me7>
+250 Recipient <mx95user0> Ok
+354 Ok Send data ending with <CRLF>.<CRLF>
+250 Message received: 20170629020652.AAD12143.mx-172-26-202-87.openwave.com@[10.37.2.214]
+221 mx-172-26-202-87.openwave.com ESMTP server closing connection
+
+
+-(2)-###############The TCP connection status for mx95user4 from client are and from SMTP server are:###########
+
+from client--> tcp        0    144 10.37.2.214:34740       172.26.202.87:20025     ESTABLISHED
+from server--> tcp        0      0 172.26.202.87:20025     10.37.2.214:34740       ESTABLISHED
+
+
+-(3)-The SMTPlogs for account mx95user4 is:
+
+20170628 190652510-0700 mx-172-26-202-87 mta 12143 15174 140426850588416 Note;SmtpConnectionReceived(70/1) [10.37.2.214]:fromhost=10.37.2.214:fromport=34740:localAddr=172.26.202.87:sid=17F6B33F-685AA7DA-00000008.0
+20170628 190652510-0700 mx-172-26-202-87 mta 12143 15174 140426850588416 Warn;SmtpAddressFixed(70/13) [10.37.2.214]:MAIL FROM\3amx95user4:<mx95user4>:fromhost=10.37.2.214:fromport=34740:localAddr=172.26.202.87:sid=17F6B33F-685AA7DA-00000008.1
+20170628 190652724-0700 mx-172-26-202-87 mta 12143 15174 140426850588416 Warn;SmtpAddressFixed(70/13) [10.37.2.214]:RCPT TO\3ame7:<me7>:from=<mx95user4>:fromhost=10.37.2.214:fromport=34740:localAddr=172.26.202.87:sid=17F6B33F-685AA7DA-00000008.1
+20170628 190652735-0700 mx-172-26-202-87 mta 12143 15174 140426850588416 Warn;UserDataException(504/1) MBX_NOT_FOUND:{uid=[me7@openwave.com], adminControl=[true], senderBlocking=[true], sharedMailbox=[true], email=[me7@openwave.com]}:MailboxService\3aGET:The given Mailbox does not exist.:Mailbox me7@openwave.com does not exist in SUR backend:user=me7@openwave.com:from=<mx95user4>:fromhost=10.37.2.214:fromport=34740:localAddr=172.26.202.87:sid=17F6B33F-685AA7DA-00000008.1
+20170628 190652735-0700 mx-172-26-202-87 mta 12143 15174 140426850588416 Warn;AcctUnknownUser(50/9) user=me7@openwave.com:from=<mx95user4>:fromhost=10.37.2.214:fromport=34740:localAddr=172.26.202.87:sid=17F6B33F-685AA7DA-00000008.1
+20170628 190652735-0700 mx-172-26-202-87 mta 12143 15174 140426850588416 Warn;SmtpAddressFixed(70/13) [10.37.2.214]:RCPT TO\3amx95user0:<mx95user0>:from=<mx95user4>:fromhost=10.37.2.214:fromport=34740:localAddr=172.26.202.87:sid=17F6B33F-685AA7DA-00000008.1
+20170628 190652750-0700 mx-172-26-202-87 mta 12143 15174 140426850588416 Note;MsgTrace(65/26) received from internet:from=<mx95user4>:msgid=<20170629020652.AAD12143.mx-172-26-202-87.openwave.com@[10.37.2.214]>:fromhost=[10.37.2.214]:fromport=34740:localAddr=172.26.202.87:sid=17F6B33F-685AA7DA-00000008.1:msgsize=407:time=0:sender=<mx95user4>:rcpts=<mx95user0@openwave.com>:protocol=SMTP:encoding=plaintext:auth=
+20170628 190652750-0700 mx-172-26-202-87 mta 12143 15177 140426846861056 Note;MsgTrace(65/26) docid will be used for message-id:user=mx95user0@openwave.com:from=<mx95user4@openwave.com>:msgid=<20170629020652.AAD12143.mx-172-26-202-87.openwave.com@[10.37.2.214]>:size=522:fromhost=10.37.2.214:fromport=34740:localAddr=[172.26.202.87]:sid=17F6B33F-685AA7DA-00000008.1
+20170628 190652776-0700 mx-172-26-202-87 mta 12143 15178 140426848458496 Note;MsgTrace(65/26) delivered:user=mx95user0@openwave.com:mbox=6193575739903935134:mss=mx-172-26-203-121:from=<mx95user4@openwave.com>:msgid=<20170629020652.AAD12143.mx-172-26-202-87.openwave.com@[10.37.2.214]>:size=561:port=55014:fromhost=10.37.2.214:fromport=34740:localAddr=[172.26.202.87]:sid=17F6B33F-685AA7DA-00000008.1:docid=9e723802-5c6f-11e7-83c8-b6296532a2fb:node=mx-172-26-203-121:nodePort=55014
+20170628 190655216-0700 mx-172-26-202-87 mta 12143 15174 140426850588416 Note;SmtpConnectionClosed(70/2) [10.37.2.214]:3:1:150:fromhost=[10.37.2.214]:fromport=34740:localAddr=172.26.202.87:sid=17F6B33F-685AA7DA-00000008.1
+
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!user mx95user5!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+
+-(1)-The SMTP process of mx95user5 is:
+
+
+220 mx-172-26-202-87.openwave.com ESMTP server (InterMail vM.9.05.00.00 201-2473-137-117) ready Wed, 28 Jun 2017 19:07:01 -0700
+250 Sender <mx95user5> Ok
+550 Invalid recipient: <me7>
+250 Recipient <mx95user0> Ok
+354 Ok Send data ending with <CRLF>.<CRLF>
+250 Message received: 20170629020701.AAE12143.mx-172-26-202-87.openwave.com@[10.37.2.214]
+221 mx-172-26-202-87.openwave.com ESMTP server closing connection
+
+
+-(2)-###############The TCP connection status for mx95user5 from client are and from SMTP server are:###########
+
+from client--> tcp        0    144 10.37.2.214:34750       172.26.202.87:20025     ESTABLISHED
+from server--> tcp        0      0 172.26.202.87:20025     10.37.2.214:34750       ESTABLISHED
+
+
+-(3)-The SMTPlogs for account mx95user5 is:
+
+20170628 190701650-0700 mx-172-26-202-87 mta 12143 15174 140426850588416 Note;SmtpConnectionReceived(70/1) [10.37.2.214]:fromhost=10.37.2.214:fromport=34750:localAddr=172.26.202.87:sid=17F6B33F-685AA7DA-0000000A.0
+20170628 190701650-0700 mx-172-26-202-87 mta 12143 15174 140426850588416 Warn;SmtpAddressFixed(70/13) [10.37.2.214]:MAIL FROM\3amx95user5:<mx95user5>:fromhost=10.37.2.214:fromport=34750:localAddr=172.26.202.87:sid=17F6B33F-685AA7DA-0000000A.1
+20170628 190701859-0700 mx-172-26-202-87 mta 12143 15174 140426850588416 Warn;SmtpAddressFixed(70/13) [10.37.2.214]:RCPT TO\3ame7:<me7>:from=<mx95user5>:fromhost=10.37.2.214:fromport=34750:localAddr=172.26.202.87:sid=17F6B33F-685AA7DA-0000000A.1
+20170628 190701869-0700 mx-172-26-202-87 mta 12143 15174 140426850588416 Warn;UserDataException(504/1) MBX_NOT_FOUND:{uid=[me7@openwave.com], adminControl=[true], senderBlocking=[true], sharedMailbox=[true], email=[me7@openwave.com]}:MailboxService\3aGET:The given Mailbox does not exist.:Mailbox me7@openwave.com does not exist in SUR backend:user=me7@openwave.com:from=<mx95user5>:fromhost=10.37.2.214:fromport=34750:localAddr=172.26.202.87:sid=17F6B33F-685AA7DA-0000000A.1
+20170628 190701869-0700 mx-172-26-202-87 mta 12143 15174 140426850588416 Warn;AcctUnknownUser(50/9) user=me7@openwave.com:from=<mx95user5>:fromhost=10.37.2.214:fromport=34750:localAddr=172.26.202.87:sid=17F6B33F-685AA7DA-0000000A.1
+20170628 190701869-0700 mx-172-26-202-87 mta 12143 15174 140426850588416 Warn;SmtpAddressFixed(70/13) [10.37.2.214]:RCPT TO\3amx95user0:<mx95user0>:from=<mx95user5>:fromhost=10.37.2.214:fromport=34750:localAddr=172.26.202.87:sid=17F6B33F-685AA7DA-0000000A.1
+20170628 190701887-0700 mx-172-26-202-87 mta 12143 15174 140426850588416 Note;MsgTrace(65/26) received from internet:from=<mx95user5>:msgid=<20170629020701.AAE12143.mx-172-26-202-87.openwave.com@[10.37.2.214]>:fromhost=[10.37.2.214]:fromport=34750:localAddr=172.26.202.87:sid=17F6B33F-685AA7DA-0000000A.1:msgsize=407:time=0:sender=<mx95user5>:rcpts=<mx95user0@openwave.com>:protocol=SMTP:encoding=plaintext:auth=
+20170628 190701887-0700 mx-172-26-202-87 mta 12143 15177 140426846861056 Note;MsgTrace(65/26) docid will be used for message-id:user=mx95user0@openwave.com:from=<mx95user5@openwave.com>:msgid=<20170629020701.AAE12143.mx-172-26-202-87.openwave.com@[10.37.2.214]>:size=522:fromhost=10.37.2.214:fromport=34750:localAddr=[172.26.202.87]:sid=17F6B33F-685AA7DA-0000000A.1
+20170628 190701918-0700 mx-172-26-202-87 mta 12143 15178 140426848458496 Note;MsgTrace(65/26) delivered:user=mx95user0@openwave.com:mbox=6193575739903935134:mss=mx-172-26-203-121:from=<mx95user5@openwave.com>:msgid=<20170629020701.AAE12143.mx-172-26-202-87.openwave.com@[10.37.2.214]>:size=561:port=55014:fromhost=10.37.2.214:fromport=34750:localAddr=[172.26.202.87]:sid=17F6B33F-685AA7DA-0000000A.1:docid=a3e464e0-5c6f-11e7-ad74-676f6d766e23:node=mx-172-26-203-121:nodePort=55014
+20170628 190704448-0700 mx-172-26-202-87 mta 12143 15174 140426850588416 Note;SmtpConnectionClosed(70/2) [10.37.2.214]:3:1:150:fromhost=[10.37.2.214]:fromport=34750:localAddr=172.26.202.87:sid=17F6B33F-685AA7DA-0000000A.1
+
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!user mx95user6!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+
+-(1)-The SMTP process of mx95user6 is:
+
+
+220 mx-172-26-202-87.openwave.com ESMTP server (InterMail vM.9.05.00.00 201-2473-137-117) ready Wed, 28 Jun 2017 19:07:10 -0700
+250 Sender <mx95user6> Ok
+550 Invalid recipient: <me7>
+250 Recipient <mx95user0> Ok
+354 Ok Send data ending with <CRLF>.<CRLF>
+250 Message received: 20170629020710.AAF12143.mx-172-26-202-87.openwave.com@[10.37.2.214]
+221 mx-172-26-202-87.openwave.com ESMTP server closing connection
+
+
+-(2)-###############The TCP connection status for mx95user6 from client are and from SMTP server are:###########
+
+from client--> tcp        0    144 10.37.2.214:34758       172.26.202.87:20025     ESTABLISHED
+from server--> tcp        0      0 172.26.202.87:20025     10.37.2.214:34758       ESTABLISHED
+
+
+-(3)-The SMTPlogs for account mx95user6 is:
+
+20170628 190710276-0700 mx-172-26-202-87 mta 12143 15174 140426850588416 Note;SmtpConnectionReceived(70/1) [10.37.2.214]:fromhost=10.37.2.214:fromport=34758:localAddr=172.26.202.87:sid=17F6B33F-685AA7DA-0000000C.0
+20170628 190710276-0700 mx-172-26-202-87 mta 12143 15174 140426850588416 Warn;SmtpAddressFixed(70/13) [10.37.2.214]:MAIL FROM\3amx95user6:<mx95user6>:fromhost=10.37.2.214:fromport=34758:localAddr=172.26.202.87:sid=17F6B33F-685AA7DA-0000000C.1
+20170628 190710475-0700 mx-172-26-202-87 mta 12143 15174 140426850588416 Warn;SmtpAddressFixed(70/13) [10.37.2.214]:RCPT TO\3ame7:<me7>:from=<mx95user6>:fromhost=10.37.2.214:fromport=34758:localAddr=172.26.202.87:sid=17F6B33F-685AA7DA-0000000C.1
+20170628 190710493-0700 mx-172-26-202-87 mta 12143 15174 140426850588416 Warn;UserDataException(504/1) MBX_NOT_FOUND:{uid=[me7@openwave.com], adminControl=[true], senderBlocking=[true], sharedMailbox=[true], email=[me7@openwave.com]}:MailboxService\3aGET:The given Mailbox does not exist.:Mailbox me7@openwave.com does not exist in SUR backend:user=me7@openwave.com:from=<mx95user6>:fromhost=10.37.2.214:fromport=34758:localAddr=172.26.202.87:sid=17F6B33F-685AA7DA-0000000C.1
+20170628 190710493-0700 mx-172-26-202-87 mta 12143 15174 140426850588416 Warn;AcctUnknownUser(50/9) user=me7@openwave.com:from=<mx95user6>:fromhost=10.37.2.214:fromport=34758:localAddr=172.26.202.87:sid=17F6B33F-685AA7DA-0000000C.1
+20170628 190710493-0700 mx-172-26-202-87 mta 12143 15174 140426850588416 Warn;SmtpAddressFixed(70/13) [10.37.2.214]:RCPT TO\3amx95user0:<mx95user0>:from=<mx95user6>:fromhost=10.37.2.214:fromport=34758:localAddr=172.26.202.87:sid=17F6B33F-685AA7DA-0000000C.1
+20170628 190710507-0700 mx-172-26-202-87 mta 12143 15174 140426850588416 Note;MsgTrace(65/26) received from internet:from=<mx95user6>:msgid=<20170629020710.AAF12143.mx-172-26-202-87.openwave.com@[10.37.2.214]>:fromhost=[10.37.2.214]:fromport=34758:localAddr=172.26.202.87:sid=17F6B33F-685AA7DA-0000000C.1:msgsize=407:time=0:sender=<mx95user6>:rcpts=<mx95user0@openwave.com>:protocol=SMTP:encoding=plaintext:auth=
+20170628 190710507-0700 mx-172-26-202-87 mta 12143 15177 140426846861056 Note;MsgTrace(65/26) docid will be used for message-id:user=mx95user0@openwave.com:from=<mx95user6@openwave.com>:msgid=<20170629020710.AAF12143.mx-172-26-202-87.openwave.com@[10.37.2.214]>:size=522:fromhost=10.37.2.214:fromport=34758:localAddr=[172.26.202.87]:sid=17F6B33F-685AA7DA-0000000C.1
+20170628 190710539-0700 mx-172-26-202-87 mta 12143 15178 140426848458496 Note;MsgTrace(65/26) delivered:user=mx95user0@openwave.com:mbox=6193575739903935134:mss=mx-172-26-203-121:from=<mx95user6@openwave.com>:msgid=<20170629020710.AAF12143.mx-172-26-202-87.openwave.com@[10.37.2.214]>:size=561:port=55014:fromhost=10.37.2.214:fromport=34758:localAddr=[172.26.202.87]:sid=17F6B33F-685AA7DA-0000000C.1:docid=a907b990-5c6f-11e7-bc91-f9962dccd1f6:node=mx-172-26-203-121:nodePort=55014
+20170628 190713447-0700 mx-172-26-202-87 mta 12143 15174 140426850588416 Note;SmtpConnectionClosed(70/2) [10.37.2.214]:3:1:150:fromhost=[10.37.2.214]:fromport=34758:localAddr=172.26.202.87:sid=17F6B33F-685AA7DA-0000000C.1
+
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!user mx95user7!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+
+-(1)-The SMTP process of mx95user7 is:
+
+
+220 mx-172-26-202-87.openwave.com ESMTP server (InterMail vM.9.05.00.00 201-2473-137-117) ready Wed, 28 Jun 2017 19:07:25 -0700
+250 Sender <mx95user7> Ok
+550 Invalid recipient: <me7>
+250 Recipient <mx95user0> Ok
+354 Ok Send data ending with <CRLF>.<CRLF>
+250 Message received: 20170629020725.AAG12143.mx-172-26-202-87.openwave.com@[10.37.2.214]
+221 mx-172-26-202-87.openwave.com ESMTP server closing connection
+
+
+-(2)-###############The TCP connection status for mx95user7 from client are and from SMTP server are:###########
+
+from client--> tcp        0    144 10.37.2.214:34774       172.26.202.87:20025     ESTABLISHED
+from server--> tcp        0      0 172.26.202.87:20025     10.37.2.214:34774       ESTABLISHED
+
+
+-(3)-The SMTPlogs for account mx95user7 is:
+
+20170628 190725405-0700 mx-172-26-202-87 mta 12143 15174 140426850588416 Note;SmtpConnectionReceived(70/1) [10.37.2.214]:fromhost=10.37.2.214:fromport=34774:localAddr=172.26.202.87:sid=17F6B33F-685AA7DA-0000000E.0
+20170628 190725405-0700 mx-172-26-202-87 mta 12143 15174 140426850588416 Warn;SmtpAddressFixed(70/13) [10.37.2.214]:MAIL FROM\3amx95user7:<mx95user7>:fromhost=10.37.2.214:fromport=34774:localAddr=172.26.202.87:sid=17F6B33F-685AA7DA-0000000E.1
+20170628 190725599-0700 mx-172-26-202-87 mta 12143 15174 140426850588416 Warn;SmtpAddressFixed(70/13) [10.37.2.214]:RCPT TO\3ame7:<me7>:from=<mx95user7>:fromhost=10.37.2.214:fromport=34774:localAddr=172.26.202.87:sid=17F6B33F-685AA7DA-0000000E.1
+20170628 190725614-0700 mx-172-26-202-87 mta 12143 15174 140426850588416 Warn;UserDataException(504/1) MBX_NOT_FOUND:{uid=[me7@openwave.com], adminControl=[true], senderBlocking=[true], sharedMailbox=[true], email=[me7@openwave.com]}:MailboxService\3aGET:The given Mailbox does not exist.:Mailbox me7@openwave.com does not exist in SUR backend:user=me7@openwave.com:from=<mx95user7>:fromhost=10.37.2.214:fromport=34774:localAddr=172.26.202.87:sid=17F6B33F-685AA7DA-0000000E.1
+20170628 190725614-0700 mx-172-26-202-87 mta 12143 15174 140426850588416 Warn;AcctUnknownUser(50/9) user=me7@openwave.com:from=<mx95user7>:fromhost=10.37.2.214:fromport=34774:localAddr=172.26.202.87:sid=17F6B33F-685AA7DA-0000000E.1
+20170628 190725614-0700 mx-172-26-202-87 mta 12143 15174 140426850588416 Warn;SmtpAddressFixed(70/13) [10.37.2.214]:RCPT TO\3amx95user0:<mx95user0>:from=<mx95user7>:fromhost=10.37.2.214:fromport=34774:localAddr=172.26.202.87:sid=17F6B33F-685AA7DA-0000000E.1
+20170628 190725629-0700 mx-172-26-202-87 mta 12143 15174 140426850588416 Note;MsgTrace(65/26) received from internet:from=<mx95user7>:msgid=<20170629020725.AAG12143.mx-172-26-202-87.openwave.com@[10.37.2.214]>:fromhost=[10.37.2.214]:fromport=34774:localAddr=172.26.202.87:sid=17F6B33F-685AA7DA-0000000E.1:msgsize=407:time=0:sender=<mx95user7>:rcpts=<mx95user0@openwave.com>:protocol=SMTP:encoding=plaintext:auth=
+20170628 190725630-0700 mx-172-26-202-87 mta 12143 15177 140426846861056 Note;MsgTrace(65/26) docid will be used for message-id:user=mx95user0@openwave.com:from=<mx95user7@openwave.com>:msgid=<20170629020725.AAG12143.mx-172-26-202-87.openwave.com@[10.37.2.214]>:size=522:fromhost=10.37.2.214:fromport=34774:localAddr=[172.26.202.87]:sid=17F6B33F-685AA7DA-0000000E.1
+20170628 190725689-0700 mx-172-26-202-87 mta 12143 15178 140426848458496 Note;MsgTrace(65/26) delivered:user=mx95user0@openwave.com:mbox=6193575739903935134:mss=mx-172-26-203-121:from=<mx95user7@openwave.com>:msgid=<20170629020725.AAG12143.mx-172-26-202-87.openwave.com@[10.37.2.214]>:size=561:port=55014:fromhost=10.37.2.214:fromport=34774:localAddr=[172.26.202.87]:sid=17F6B33F-685AA7DA-0000000E.1:docid=b20b3bd4-5c6f-11e7-a217-ef93df1e0125:node=mx-172-26-203-121:nodePort=55014
+20170628 190728356-0700 mx-172-26-202-87 mta 12143 15174 140426850588416 Note;SmtpConnectionClosed(70/2) [10.37.2.214]:3:1:150:fromhost=[10.37.2.214]:fromport=34774:localAddr=172.26.202.87:sid=17F6B33F-685AA7DA-0000000E.1
+
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!user mx95user8!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+
+-(1)-The SMTP process of mx95user8 is:
+
+
+220 mx-172-26-202-87.openwave.com ESMTP server (InterMail vM.9.05.00.00 201-2473-137-117) ready Wed, 28 Jun 2017 19:07:34 -0700
+250 Sender <mx95user8> Ok
+550 Invalid recipient: <me7>
+250 Recipient <mx95user0> Ok
+354 Ok Send data ending with <CRLF>.<CRLF>
+250 Message received: 20170629020734.AAH12143.mx-172-26-202-87.openwave.com@[10.37.2.214]
+221 mx-172-26-202-87.openwave.com ESMTP server closing connection
+
+
+-(2)-###############The TCP connection status for mx95user8 from client are and from SMTP server are:###########
+
+from client--> tcp        0    144 10.37.2.214:34786       172.26.202.87:20025     ESTABLISHED
+from server--> tcp        0      0 172.26.202.87:20025     10.37.2.214:34786       ESTABLISHED
+
+
+-(3)-The SMTPlogs for account mx95user8 is:
+
+20170628 190734367-0700 mx-172-26-202-87 mta 12143 15174 140426850588416 Note;SmtpConnectionReceived(70/1) [10.37.2.214]:fromhost=10.37.2.214:fromport=34786:localAddr=172.26.202.87:sid=17F6B33F-685AA7DA-00000010.0
+20170628 190734367-0700 mx-172-26-202-87 mta 12143 15174 140426850588416 Warn;SmtpAddressFixed(70/13) [10.37.2.214]:MAIL FROM\3amx95user8:<mx95user8>:fromhost=10.37.2.214:fromport=34786:localAddr=172.26.202.87:sid=17F6B33F-685AA7DA-00000010.1
+20170628 190734892-0700 mx-172-26-202-87 mta 12143 15174 140426850588416 Warn;SmtpAddressFixed(70/13) [10.37.2.214]:RCPT TO\3ame7:<me7>:from=<mx95user8>:fromhost=10.37.2.214:fromport=34786:localAddr=172.26.202.87:sid=17F6B33F-685AA7DA-00000010.1
+20170628 190734905-0700 mx-172-26-202-87 mta 12143 15174 140426850588416 Warn;UserDataException(504/1) MBX_NOT_FOUND:{uid=[me7@openwave.com], adminControl=[true], senderBlocking=[true], sharedMailbox=[true], email=[me7@openwave.com]}:MailboxService\3aGET:The given Mailbox does not exist.:Mailbox me7@openwave.com does not exist in SUR backend:user=me7@openwave.com:from=<mx95user8>:fromhost=10.37.2.214:fromport=34786:localAddr=172.26.202.87:sid=17F6B33F-685AA7DA-00000010.1
+20170628 190734905-0700 mx-172-26-202-87 mta 12143 15174 140426850588416 Warn;AcctUnknownUser(50/9) user=me7@openwave.com:from=<mx95user8>:fromhost=10.37.2.214:fromport=34786:localAddr=172.26.202.87:sid=17F6B33F-685AA7DA-00000010.1
+20170628 190734905-0700 mx-172-26-202-87 mta 12143 15174 140426850588416 Warn;SmtpAddressFixed(70/13) [10.37.2.214]:RCPT TO\3amx95user0:<mx95user0>:from=<mx95user8>:fromhost=10.37.2.214:fromport=34786:localAddr=172.26.202.87:sid=17F6B33F-685AA7DA-00000010.1
+20170628 190734918-0700 mx-172-26-202-87 mta 12143 15174 140426850588416 Note;MsgTrace(65/26) received from internet:from=<mx95user8>:msgid=<20170629020734.AAH12143.mx-172-26-202-87.openwave.com@[10.37.2.214]>:fromhost=[10.37.2.214]:fromport=34786:localAddr=172.26.202.87:sid=17F6B33F-685AA7DA-00000010.1:msgsize=407:time=0:sender=<mx95user8>:rcpts=<mx95user0@openwave.com>:protocol=SMTP:encoding=plaintext:auth=
+20170628 190734918-0700 mx-172-26-202-87 mta 12143 15177 140426846861056 Note;MsgTrace(65/26) docid will be used for message-id:user=mx95user0@openwave.com:from=<mx95user8@openwave.com>:msgid=<20170629020734.AAH12143.mx-172-26-202-87.openwave.com@[10.37.2.214]>:size=522:fromhost=10.37.2.214:fromport=34786:localAddr=[172.26.202.87]:sid=17F6B33F-685AA7DA-00000010.1
+20170628 190734950-0700 mx-172-26-202-87 mta 12143 15178 140426848458496 Note;MsgTrace(65/26) delivered:user=mx95user0@openwave.com:mbox=6193575739903935134:mss=mx-172-26-203-121:from=<mx95user8@openwave.com>:msgid=<20170629020734.AAH12143.mx-172-26-202-87.openwave.com@[10.37.2.214]>:size=561:port=55014:fromhost=10.37.2.214:fromport=34786:localAddr=[172.26.202.87]:sid=17F6B33F-685AA7DA-00000010.1:docid=b7949ce4-5c6f-11e7-bfd0-82290d37689d:node=mx-172-26-203-121:nodePort=55014
+20170628 190737177-0700 mx-172-26-202-87 mta 12143 15174 140426850588416 Note;SmtpConnectionClosed(70/2) [10.37.2.214]:3:1:150:fromhost=[10.37.2.214]:fromport=34786:localAddr=172.26.202.87:sid=17F6B33F-685AA7DA-00000010.1
+
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!user mx95user9!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+
+-(1)-The SMTP process of mx95user9 is:
+
+
+220 mx-172-26-202-87.openwave.com ESMTP server (InterMail vM.9.05.00.00 201-2473-137-117) ready Wed, 28 Jun 2017 19:07:48 -0700
+250 Sender <mx95user9> Ok
+550 Invalid recipient: <me7>
+250 Recipient <mx95user0> Ok
+354 Ok Send data ending with <CRLF>.<CRLF>
+250 Message received: 20170629020748.AAI12143.mx-172-26-202-87.openwave.com@[10.37.2.214]
+221 mx-172-26-202-87.openwave.com ESMTP server closing connection
+
+
+-(2)-###############The TCP connection status for mx95user9 from client are and from SMTP server are:###########
+
+from client--> tcp        0    144 10.37.2.214:34804       172.26.202.87:20025     ESTABLISHED
+from server--> tcp        0      0 172.26.202.87:20025     10.37.2.214:34804       ESTABLISHED
+
+
+-(3)-The SMTPlogs for account mx95user9 is:
+
+20170628 190748465-0700 mx-172-26-202-87 mta 12143 15174 140426850588416 Note;SmtpConnectionReceived(70/1) [10.37.2.214]:fromhost=10.37.2.214:fromport=34804:localAddr=172.26.202.87:sid=17F6B33F-685AA7DA-00000012.0
+20170628 190748465-0700 mx-172-26-202-87 mta 12143 15174 140426850588416 Warn;SmtpAddressFixed(70/13) [10.37.2.214]:MAIL FROM\3amx95user9:<mx95user9>:fromhost=10.37.2.214:fromport=34804:localAddr=172.26.202.87:sid=17F6B33F-685AA7DA-00000012.1
+20170628 190748658-0700 mx-172-26-202-87 mta 12143 15174 140426850588416 Warn;SmtpAddressFixed(70/13) [10.37.2.214]:RCPT TO\3ame7:<me7>:from=<mx95user9>:fromhost=10.37.2.214:fromport=34804:localAddr=172.26.202.87:sid=17F6B33F-685AA7DA-00000012.1
+20170628 190748669-0700 mx-172-26-202-87 mta 12143 15174 140426850588416 Warn;UserDataException(504/1) MBX_NOT_FOUND:{uid=[me7@openwave.com], adminControl=[true], senderBlocking=[true], sharedMailbox=[true], email=[me7@openwave.com]}:MailboxService\3aGET:The given Mailbox does not exist.:Mailbox me7@openwave.com does not exist in SUR backend:user=me7@openwave.com:from=<mx95user9>:fromhost=10.37.2.214:fromport=34804:localAddr=172.26.202.87:sid=17F6B33F-685AA7DA-00000012.1
+20170628 190748669-0700 mx-172-26-202-87 mta 12143 15174 140426850588416 Warn;AcctUnknownUser(50/9) user=me7@openwave.com:from=<mx95user9>:fromhost=10.37.2.214:fromport=34804:localAddr=172.26.202.87:sid=17F6B33F-685AA7DA-00000012.1
+20170628 190748669-0700 mx-172-26-202-87 mta 12143 15174 140426850588416 Warn;SmtpAddressFixed(70/13) [10.37.2.214]:RCPT TO\3amx95user0:<mx95user0>:from=<mx95user9>:fromhost=10.37.2.214:fromport=34804:localAddr=172.26.202.87:sid=17F6B33F-685AA7DA-00000012.1
+20170628 190748687-0700 mx-172-26-202-87 mta 12143 15174 140426850588416 Note;MsgTrace(65/26) received from internet:from=<mx95user9>:msgid=<20170629020748.AAI12143.mx-172-26-202-87.openwave.com@[10.37.2.214]>:fromhost=[10.37.2.214]:fromport=34804:localAddr=172.26.202.87:sid=17F6B33F-685AA7DA-00000012.1:msgsize=407:time=0:sender=<mx95user9>:rcpts=<mx95user0@openwave.com>:protocol=SMTP:encoding=plaintext:auth=
+20170628 190748687-0700 mx-172-26-202-87 mta 12143 15177 140426846861056 Note;MsgTrace(65/26) docid will be used for message-id:user=mx95user0@openwave.com:from=<mx95user9@openwave.com>:msgid=<20170629020748.AAI12143.mx-172-26-202-87.openwave.com@[10.37.2.214]>:size=522:fromhost=10.37.2.214:fromport=34804:localAddr=[172.26.202.87]:sid=17F6B33F-685AA7DA-00000012.1
+20170628 190748733-0700 mx-172-26-202-87 mta 12143 15178 140426848458496 Note;MsgTrace(65/26) delivered:user=mx95user0@openwave.com:mbox=6193575739903935134:mss=mx-172-26-203-121:from=<mx95user9@openwave.com>:msgid=<20170629020748.AAI12143.mx-172-26-202-87.openwave.com@[10.37.2.214]>:size=561:port=55014:fromhost=10.37.2.214:fromport=34804:localAddr=[172.26.202.87]:sid=17F6B33F-685AA7DA-00000012.1:docid=bfc97c9a-5c6f-11e7-9366-8c80f4eb318d:node=mx-172-26-203-121:nodePort=55014
+20170628 190751016-0700 mx-172-26-202-87 mta 12143 15174 140426850588416 Note;SmtpConnectionClosed(70/2) [10.37.2.214]:3:1:150:fromhost=[10.37.2.214]:fromport=34804:localAddr=172.26.202.87:sid=17F6B33F-685AA7DA-00000012.1
+
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!user mx95user10!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+
+-(1)-The SMTP process of mx95user10 is:
+
+
+220 mx-172-26-202-87.openwave.com ESMTP server (InterMail vM.9.05.00.00 201-2473-137-117) ready Wed, 28 Jun 2017 19:08:00 -0700
+250 Sender <mx95user10> Ok
+550 Invalid recipient: <me7>
+250 Recipient <mx95user0> Ok
+354 Ok Send data ending with <CRLF>.<CRLF>
+250 Message received: 20170629020800.AAJ12143.mx-172-26-202-87.openwave.com@[10.37.2.214]
+221 mx-172-26-202-87.openwave.com ESMTP server closing connection
+
+
+-(2)-###############The TCP connection status for mx95user10 from client are and from SMTP server are:###########
+
+from client--> tcp        0    145 10.37.2.214:34826       172.26.202.87:20025     ESTABLISHED
+from server--> tcp        0      0 172.26.202.87:20025     10.37.2.214:34826       ESTABLISHED
+
+
+-(3)-The SMTPlogs for account mx95user10 is:
+
+20170628 190800625-0700 mx-172-26-202-87 mta 12143 15174 140426850588416 Note;SmtpConnectionReceived(70/1) [10.37.2.214]:fromhost=10.37.2.214:fromport=34826:localAddr=172.26.202.87:sid=17F6B33F-685AA7DA-00000014.0
+20170628 190800626-0700 mx-172-26-202-87 mta 12143 15174 140426850588416 Warn;SmtpAddressFixed(70/13) [10.37.2.214]:MAIL FROM\3amx95user10:<mx95user10>:fromhost=10.37.2.214:fromport=34826:localAddr=172.26.202.87:sid=17F6B33F-685AA7DA-00000014.1
+20170628 190800828-0700 mx-172-26-202-87 mta 12143 15174 140426850588416 Warn;SmtpAddressFixed(70/13) [10.37.2.214]:RCPT TO\3ame7:<me7>:from=<mx95user10>:fromhost=10.37.2.214:fromport=34826:localAddr=172.26.202.87:sid=17F6B33F-685AA7DA-00000014.1
+20170628 190800845-0700 mx-172-26-202-87 mta 12143 15174 140426850588416 Warn;UserDataException(504/1) MBX_NOT_FOUND:{uid=[me7@openwave.com], adminControl=[true], senderBlocking=[true], sharedMailbox=[true], email=[me7@openwave.com]}:MailboxService\3aGET:The given Mailbox does not exist.:Mailbox me7@openwave.com does not exist in SUR backend:user=me7@openwave.com:from=<mx95user10>:fromhost=10.37.2.214:fromport=34826:localAddr=172.26.202.87:sid=17F6B33F-685AA7DA-00000014.1
+20170628 190800845-0700 mx-172-26-202-87 mta 12143 15174 140426850588416 Warn;AcctUnknownUser(50/9) user=me7@openwave.com:from=<mx95user10>:fromhost=10.37.2.214:fromport=34826:localAddr=172.26.202.87:sid=17F6B33F-685AA7DA-00000014.1
+20170628 190800845-0700 mx-172-26-202-87 mta 12143 15174 140426850588416 Warn;SmtpAddressFixed(70/13) [10.37.2.214]:RCPT TO\3amx95user0:<mx95user0>:from=<mx95user10>:fromhost=10.37.2.214:fromport=34826:localAddr=172.26.202.87:sid=17F6B33F-685AA7DA-00000014.1
+20170628 190800859-0700 mx-172-26-202-87 mta 12143 15174 140426850588416 Note;MsgTrace(65/26) received from internet:from=<mx95user10>:msgid=<20170629020800.AAJ12143.mx-172-26-202-87.openwave.com@[10.37.2.214]>:fromhost=[10.37.2.214]:fromport=34826:localAddr=172.26.202.87:sid=17F6B33F-685AA7DA-00000014.1:msgsize=407:time=0:sender=<mx95user10>:rcpts=<mx95user0@openwave.com>:protocol=SMTP:encoding=plaintext:auth=
+20170628 190800859-0700 mx-172-26-202-87 mta 12143 15177 140426846861056 Note;MsgTrace(65/26) docid will be used for message-id:user=mx95user0@openwave.com:from=<mx95user10@openwave.com>:msgid=<20170629020800.AAJ12143.mx-172-26-202-87.openwave.com@[10.37.2.214]>:size=523:fromhost=10.37.2.214:fromport=34826:localAddr=[172.26.202.87]:sid=17F6B33F-685AA7DA-00000014.1
+20170628 190800892-0700 mx-172-26-202-87 mta 12143 15178 140426848458496 Note;MsgTrace(65/26) delivered:user=mx95user0@openwave.com:mbox=6193575739903935134:mss=mx-172-26-203-121:from=<mx95user10@openwave.com>:msgid=<20170629020800.AAJ12143.mx-172-26-202-87.openwave.com@[10.37.2.214]>:size=563:port=55014:fromhost=10.37.2.214:fromport=34826:localAddr=[172.26.202.87]:sid=17F6B33F-685AA7DA-00000014.1:docid=c70adf44-5c6f-11e7-9469-fce6ed3a43a4:node=mx-172-26-203-121:nodePort=55014
+20170628 190804250-0700 mx-172-26-202-87 mta 12143 15174 140426850588416 Note;SmtpConnectionClosed(70/2) [10.37.2.214]:4:1:151:fromhost=[10.37.2.214]:fromport=34826:localAddr=172.26.202.87:sid=17F6B33F-685AA7DA-00000014.1
+
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!user mx95user1!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!user mx95user2!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!user mx95user3!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!user mx95user4!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!user mx95user5!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!user mx95user6!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!user mx95user7!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!user mx95user8!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!user mx95user9!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!user mx95user10!!!!!!!!!!!!!!!!!!!!!!!!!!!!
