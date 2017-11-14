@@ -1,12 +1,12 @@
 #!/bin/bash
 #use for loop to do this
 clientip=10.37.2.214
-IMAPHost=172.26.202.87
-IMAPPort=20143
-POPHost=172.26.202.87
-POPPort=20110
-SMTPHost=172.26.202.87
-SMTPPort=20025
+IMAPHost=10.49.58.127
+IMAPPort=10143
+POPHost=10.49.58.127
+POPPort=10110
+SMTPHost=10.49.58.127
+SMTPPort=10025
 FEPuser=imail2
 count=10
 NAThost=10.37.2.214
@@ -22,7 +22,7 @@ fi
 
 #delete old messages
 for (( i=1;i<=$count;i++ ))
-do 
+do
    ssh root@${IMAPHost} "su - ${user} -c \"immsgdelete mx95user$i@openwave.com  -all\""
 done
 
@@ -35,7 +35,7 @@ echo -e "-1-IMAP operations:login,select inbox;fetch 1 message,logout;\n"
 for ((i=1;i<=$count;i++ ))
 do
   #clear old log data
-  ssh root@$IMAPHost  'for j in `find /opt/imail2/log/ -name "*.[A-Za-z]*"` ; do cat /dev/null >$j; done'
+  ssh root@$IMAPHost  '> /opt/imail2/log/imapserv.log'
 	echo -e "\n\n!!!!!!!!!!!!!!!!!!!!!!!!!!!!user mx95user$i!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
 	echo -e "\n\n!!!!!!!!!!!!!!!!!!!!!!!!!!!!user mx95user$i!!!!!!!!!!!!!!!!!!!!!!!!!!!!">>imap-operations.log
 	exec 3<>/dev/tcp/$IMAPHost/$IMAPPort
@@ -52,7 +52,7 @@ do
 	#get port number from here :
   clientsta=`netstat -na |grep -i ESTABLISHED|grep -i $IMAPHost|grep -v tcp6|grep $IMAPPort`
   serversta=`ssh root@$IMAPHost "netstat -na |grep -i ESTABLISHED|grep -i $clientip |grep -v tcp6|grep $IMAPPort"`
-  NATsta=`ssh root@$NAThost "netstat -na |grep -i ESTABLISHED|grep -i $IMAPHost |grep -v tcp6|grep $IMAPPort"`
+  NATsta=`ssh ram@$NAThost "netstat -na |grep -i ESTABLISHED|grep -i $IMAPHost |grep -v tcp6|grep $IMAPPort"`
 	echo -en "a logout\r\n" >&3
 
   touch imap-temp.log
@@ -87,7 +87,7 @@ do
 	echo -ne "from client-->\n$clientsta\n" > port-temp.log
 	echo -ne "from server-->\n$serversta\n"
 	echo -ne "from server-->\n$serversta\n" >>port-temp.log
-  echo -ne "from NATser-->\n$NATsta\n"   
+  echo -ne "from NATser-->\n$NATsta\n"
   echo -ne "from NATser-->\n$NATsta\n"    >>port-temp.log
 	cat port-temp.log >>imap-operations.log
   #q=`wc -l port-temp.log `  #q is a lines of port output

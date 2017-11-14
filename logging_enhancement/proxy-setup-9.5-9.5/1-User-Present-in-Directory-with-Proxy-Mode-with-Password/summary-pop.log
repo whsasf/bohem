@@ -6,15 +6,15 @@ The pop operations logs telneting to MX9.5-1:
 +OK procu1 is welcome here
 +OK 2 messages
 1 405
-2 85
+2 82
 .
-+OK 85 octets
++OK 82 octets
 2-11111111
-Message-ID: <21-2017-0628-202722-12282@mx-172-26-202-87.openwave.com>
+Message-ID: <0-2017-1114-040833-8494@mx-10-49-58-118.openwave.com>
 
 .
 -ERR no such message.
-+OK procu1 InterMail SPOP3 server signing off.
++OK procu1 InterMail POP3 server signing off.
 
 
 
@@ -22,17 +22,16 @@ Message-ID: <21-2017-0628-202722-12282@mx-172-26-202-87.openwave.com>
 
 POPserv.log from MX9.5-1:
 
-20170628 202751601-0700 host-172-26-202-233 popserv 28377 9882 140635996493568 Warn;RmeInvalidCOSAttribute(68/25) mailpopproxyhost:user=procu1:mbox=6219174765629195555:cmd=pass <pswd>:fromhost=10.37.2.214:fromport=34958
-20170628 202751656-0700 host-172-26-202-233 popserv 28377 9882 140635996493568 Note;PopProxyConnMade(66/16) 172.26.202.87:20995:user=procu1:mbox=6219174765629195555:cmd=pass <pswd>:fromhost=10.37.2.214:fromport=34958
+20171114 171027591+0000 mx-10-49-58-127 popserv 30980 31500 139872689370880 Warn;RmeInvalidCOSAttribute(68/25) mailpopproxyhost:user=procu1:mbox=9023725111540210483:cmd=pass <pswd>:fromhost=10.6.104.238:fromport=53738
+20171114 171027628+0000 mx-10-49-58-127 popserv 30980 31500 139872689370880 Note;PopProxyConnMade(66/16) 10.49.58.118:20110:user=procu1:mbox=9023725111540210483:cmd=pass <pswd>:fromhost=10.6.104.238:fromport=53738
 
 
 POPserv.log from MX9.5-2:
 
-20170628 202751619-0700 mx-172-26-202-87 popserv 12235 3336 140690674824960 Note;SslHandshakeSucceeded(64/3):fromhost=172.26.202.233:fromport=46930
-20170628 202751650-0700 mx-172-26-202-87 popserv 12235 3336 140690674824960 Note;PopConnMade(66/9) user=procu1:mbox=5141136839546090424:mss=92xmc:cmd=PASS <pswd>:port=55014:fromhost=172.26.202.233:fromport=46930:node=mx-172-26-202-87:nodePort=55014
-20170628 202751832-0700 mx-172-26-202-87 popserv 12235 3336 140690674824960 Note;MsgTrace(65/26) retr:user=procu1:mbox=5141136839546090424:mss=92xmc:msgid=dd4b85be-5c7a-11e7-ac3f-84f9c8d54501:size=85:cmd=retr 2:port=55014:fromhost=172.26.202.233:fromport=46930:node=mx-172-26-202-87:nodePort=55014
-20170628 202751832-0700 mx-172-26-202-87 popserv 12235 3336 140690674824960 Warn;PopProtocolErr(66/1) retr 3:user=procu1:mbox=5141136839546090424:mss=92xmc:cmd=retr 3:port=55014:fromhost=172.26.202.233:fromport=46930:node=mx-172-26-202-87:nodePort=55014
-20170628 202751832-0700 mx-172-26-202-87 popserv 12235 3336 140690674824960 Note;PopConnQuit(66/13) user=procu1:mbox=5141136839546090424:mss=92xmc:cmd=quit:port=55014:fromhost=172.26.202.233:fromport=46930:node=mx-172-26-202-87:nodePort=55014:time=0
+20171114 040930766-0500 mx-10-49-58-118 popserv 8449 8872 140559143610112 Note;PopConnMade(66/9) user=procu1:mbox=7338352673530182903:mss=95xmc:cmd=PASS <pswd>:port=55014:fromhost=10.6.104.238:fromport=46267:node=mx-10-49-58-118:nodePort=55014
+20171114 040931125-0500 mx-10-49-58-118 popserv 8449 8872 140559143610112 Note;MsgTrace(65/26) retr:user=procu1:mbox=7338352673530182903:mss=95xmc:msgid=6426a782-c91b-11e7-9223-356eaf149c17:size=82:cmd=retr 2:port=55014:fromhost=10.6.104.238:fromport=46267:node=mx-10-49-58-118:nodePort=55014
+20171114 040931125-0500 mx-10-49-58-118 popserv 8449 8872 140559143610112 Warn;PopProtocolErr(66/1) retr 3:user=procu1:mbox=7338352673530182903:mss=95xmc:cmd=retr 3:port=55014:fromhost=10.6.104.238:fromport=46267:node=mx-10-49-58-118:nodePort=55014
+20171114 040931125-0500 mx-10-49-58-118 popserv 8449 8872 140559143610112 Note;PopConnQuit(66/13) user=procu1:mbox=7338352673530182903:mss=95xmc:cmd=quit:port=55014:fromhost=10.6.104.238:fromport=46267:node=mx-10-49-58-118:nodePort=55014:time=1
 
 [32m#####Logging enhancement for POP proxy is ok!!##### [0m
 

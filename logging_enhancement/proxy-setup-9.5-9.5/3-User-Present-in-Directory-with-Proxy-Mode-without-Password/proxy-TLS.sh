@@ -1,17 +1,17 @@
 #!/bin/bash
 #change the variables to meet your env in your testing
-mos1="172.26.202.245:8081"
-mos2="172.26.203.123:8081"
+mos1="10.49.58.129:8081"
+mos2="10.49.58.120:8081"
 testaccount1="procu1@openwave.com"
 testaccount2="procu2@openwave.com"
-FEPHost1=172.26.202.233
-FEPHost2=172.26.202.87
-IMAPHost1=172.26.202.233
-IMAPHost2=172.26.202.87
-POPHost1=172.26.202.233
-POPHost2=172.26.202.87
-SMTPHost1=172.26.202.233
-SMTPHost2=172.26.202.87
+FEPHost1=10.49.58.127
+FEPHost2=10.49.58.118
+IMAPHost1=10.49.58.127
+IMAPHost2=10.49.58.118
+POPHost1=10.49.58.127
+POPHost2=10.49.58.118
+SMTPHost1=10.49.58.127
+SMTPHost2=10.49.58.118
 IMAPPort1=10143
 IMAPPort2=20143
 POPPort1=10110
@@ -28,25 +28,25 @@ message="hi,procu2,this is procu1.good day to you !hahahahha!"
 
 #target# used to judge if FEP logs log correct "frpmhost:fromport"
 target1="fromhost=10.37.2.214:fromport="
-target2="fromhost=172.26.202.233:fromport="
+target2="fromhost=10.49.58.127:fromport="
 
 targett1="fromhost=10.37.2.214:fromport=|fromhost=\[10.37.2.214\]:fromport="
-targett2="fromhost=172.26.202.233:fromport=|fromhost=\[172.26.202.233\]:fromport="
+targett2="fromhost=10.49.58.127:fromport=|fromhost=\[10.49.58.127\]:fromport="
 tlsflag="SslHandshakeSucceeded"
 
 
 #preparations 
 echo -e "\n\n########################## !!!preparations!!! ###############################"
 #env preparations .THis test suit contains:user present in directary with password: mta.smtp.pop, mta-tls,pop-tls,smtp-tls
-#Two independent environment,first one: Mx9.5-1(172.26.202.233 imapport:10143, popport:10110 smtpport:10025), proxy server.
-#    the other one is                   Mx9.5-2(172.26.202.87  imapport:20143, popport:20110 smtpport:20025), 
+#Two independent environment,first one: Mx9.5-1(10.49.58.127 imapport:10143, popport:10110 smtpport:10025), proxy server.
+#    the other one is                   Mx9.5-2(10.49.58.118  imapport:20143, popport:20110 smtpport:20025), 
 #smtptls-20254  imaptls:20993  poptls:20995
 #edit keys:
 echo -e "\n\n########################## add keys ###############################"
 #(1)Mx9.5-1 IMAP/POP setting:
-ssh root@${FEPHost1} "su - ${imailuser} -c \"imconfcontrol -install -key "/*/imapserv/ImapProxyAuthenticate=false";imconfcontrol -install -key "/*/imapserv/imapProxyHost=imaps://172.26.202.87:20993";imconfcontrol -install -key "/*/imapserv/imapProxyPort=20993";imconfcontrol -install -key "/*/popserv/popProxyHost=pops://172.26.202.87:20995";imconfcontrol -install -key "/*/popserv/popProxyPort=20995";imconfcontrol -install -key "/*/imapserv/outboundEnableStarttls=true";imconfcontrol -install -key "/*/popserv/outboundEnableStarttls=true"\""
+ssh root@${FEPHost1} "su - ${imailuser} -c \"imconfcontrol -install -key "/*/imapserv/ImapProxyAuthenticate=false";imconfcontrol -install -key "/*/imapserv/imapProxyHost=imaps://10.49.58.118:20993";imconfcontrol -install -key "/*/imapserv/imapProxyPort=20993";imconfcontrol -install -key "/*/popserv/popProxyHost=pops://10.49.58.118:20995";imconfcontrol -install -key "/*/popserv/popProxyPort=20995";imconfcontrol -install -key "/*/imapserv/outboundEnableStarttls=true";imconfcontrol -install -key "/*/popserv/outboundEnableStarttls=true"\""
 #(2)9.5-1 MTA setting:
-ssh root@${FEPHost1} "su - ${imailuser} -c \"imconfcontrol -install -key "/*/mta/mtaProxyAuthentication=true";imconfcontrol -install -key "/*/mta/requireAuthentication=true";imconfcontrol -install -key "/*/mta/mtaProxyUnknownAccount=true";imconfcontrol -install -key "/*/mta/mtaProxyUnknownTarget=smtps://172.26.202.87:20465";imconfcontrol -install -key "/inbound-standardmta-direct/mta/requireAuthentication=true";imconfcontrol -install -key "/*/mta/relaySourcePolicy=allowAll";imconfcontrol -install -key "/inbound-standardmta-direct/mta/relaySourcePolicy=allowAll";imconfcontrol -install -key "/*/mxos/defaultPasswordStoreType=clear";imconfcontrol -install -key "/*/mta/outboundEnableStarttls=true"\""
+ssh root@${FEPHost1} "su - ${imailuser} -c \"imconfcontrol -install -key "/*/mta/mtaProxyAuthentication=true";imconfcontrol -install -key "/*/mta/requireAuthentication=true";imconfcontrol -install -key "/*/mta/mtaProxyUnknownAccount=true";imconfcontrol -install -key "/*/mta/mtaProxyUnknownTarget=smtps://10.49.58.118:20465";imconfcontrol -install -key "/inbound-standardmta-direct/mta/requireAuthentication=true";imconfcontrol -install -key "/*/mta/relaySourcePolicy=allowAll";imconfcontrol -install -key "/inbound-standardmta-direct/mta/relaySourcePolicy=allowAll";imconfcontrol -install -key "/*/mxos/defaultPasswordStoreType=clear";imconfcontrol -install -key "/*/mta/outboundEnableStarttls=true"\""
 #(3) mxos settings
 ssh root@${FEPHost1} "su - ${imailuser} -c \"imconfcontrol -install -key "/*/mxos/storeUserNameAsEmail=true"\""
 #(4)9.5-2 MTA setting:

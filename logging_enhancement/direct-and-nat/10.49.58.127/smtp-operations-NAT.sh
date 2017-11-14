@@ -1,12 +1,12 @@
 #!/bin/bash
 #use for loop to do this
 clientip=10.37.2.214
-IMAPHost=172.26.202.87
-IMAPPort=20143
-POPHost=172.26.202.87
-POPPort=20110
-SMTPHost=172.26.202.87
-SMTPPort=20025
+IMAPHost=10.49.58.127
+IMAPPort=10143
+POPHost=10.49.58.127
+POPPort=10110
+SMTPHost=10.49.58.127
+SMTPPort=10025
 FEPuser=imail2
 rcptto=mx95user0
 SUBJECT="Test Email"
@@ -30,7 +30,7 @@ echo -e "-2-SMTP operations:send an Enail to mx95user0@openwave.com;\n"
 for ((i=1;i<=$count;i++ ))
 do
   #clear old log data
-  ssh root@$SMTPHost  'for j in `find /opt/imail2/log/ -name "*.[A-Za-z]*"` ; do cat /dev/null >$j; done'
+  ssh root@$SMTPHost  '> /opt/imail2/log/mta.log'
 	echo -e "\n\n!!!!!!!!!!!!!!!!!!!!!!!!!!!!user mx95user$i!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
 	echo -e "\n\n!!!!!!!!!!!!!!!!!!!!!!!!!!!!user mx95user$i!!!!!!!!!!!!!!!!!!!!!!!!!!!!">>smtp-operations.log
 
@@ -47,7 +47,7 @@ do
 	#get port number from here :
   clientsta=`netstat -na |grep -i ESTABLISHED|grep -i $SMTPHost|grep -v tcp6|grep $SMTPPort`
   serversta=`ssh root@$SMTPHost "netstat -na |grep -i ESTABLISHED|grep -i $clientip |grep -v tcp6|grep $SMTPPort"`
-  NATsta=`ssh root@$NAThost "netstat -na |grep -i ESTABLISHED|grep -i $SMTPHost |grep -v tcp6|grep $SMTPPort"`
+  NATsta=`ssh ram@$NAThost "netstat -na |grep -i ESTABLISHED|grep -i $SMTPHost |grep -v tcp6|grep $SMTPPort"`
   echo -en "QUIT\r\n" >&3
   touch smtp-temp.log
 	cat <&3 > smtp-temp.log
@@ -80,7 +80,7 @@ do
 	echo -ne "from client--> $clientsta\n" > port-temp.log
 	echo -ne "from server--> $serversta\n"
 	echo -ne "from server--> $serversta\n" >>port-temp.log
-  echo -ne "from NATser--> $NATsta\n"   
+  echo -ne "from NATser--> $NATsta\n"
   echo -ne "from NATser--> $NATsta\n"    >>port-temp.log
 	cat port-temp.log >>smtp-operations.log
   #q=`wc -l port-temp.log `  #q is a lines of port output

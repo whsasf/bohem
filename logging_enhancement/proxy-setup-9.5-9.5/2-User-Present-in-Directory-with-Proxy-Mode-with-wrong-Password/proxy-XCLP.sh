@@ -1,17 +1,17 @@
 #!/bin/bash
 #change the variables to meet your env in your testing
-mos1="172.26.202.245:8081"
-mos2="172.26.203.123:8081"
+mos1="10.49.58.129:8081"
+mos2="10.49.58.120:8081"
 testaccount1="procu1@openwave.com"
 testaccount2="procu2@openwave.com"
-FEPHost1=172.26.202.233
-FEPHost2=172.26.202.87
-IMAPHost1=172.26.202.233
-IMAPHost2=172.26.202.87
-POPHost1=172.26.202.233
-POPHost2=172.26.202.87
-SMTPHost1=172.26.202.233
-SMTPHost2=172.26.202.87
+FEPHost1=10.49.58.127
+FEPHost2=10.49.58.118
+IMAPHost1=10.49.58.127
+IMAPHost2=10.49.58.118
+POPHost1=10.49.58.127
+POPHost2=10.49.58.118
+SMTPHost1=10.49.58.127
+SMTPHost2=10.49.58.118
 IMAPPort1=10143
 IMAPPort2=20143
 POPPort1=10110
@@ -28,10 +28,10 @@ message="hi,procu2,this is procu1.good day to you !hahahahha!"
 
 #target# used to judge if FEP logs log correct "frpmhost:fromport"
 target1="fromhost=10.37.2.214:fromport="
-target2="fromhost=172.26.202.233:fromport="
+target2="fromhost=10.49.58.127:fromport="
 
 targett1="fromhost=10.37.2.214:fromport=|fromhost=\[10.37.2.214\]:fromport="
-targett2="fromhost=172.26.202.233:fromport=|fromhost=\[172.26.202.233\]:fromport="
+targett2="fromhost=10.49.58.127:fromport=|fromhost=\[10.49.58.127\]:fromport="
 targett3="fromhost=10.37.2.215:fromport=|fromhost=\[10.37.2.215\]:fromport="
 
 #targett2="fromhost=10.37.2.214:|fromhost=\[10.37.2.214\]:fromport="
@@ -41,20 +41,20 @@ targett3="fromhost=10.37.2.215:fromport=|fromhost=\[10.37.2.215\]:fromport="
 #preparations 
 echo -e "\n\n########################## !!!preparations!!! ###############################"
 #env preparations .THis test suit contains:user present in directary with password: mta.smtp.pop, mta-tls,pop-tls,smtp-tls
-#Two independent environment,first one: Mx9.5-1(172.26.202.233 imapport:10143, popport:10110 smtpport:10025), proxy server.
-#    the other one is                   Mx9.5-2(172.26.202.87  imapport:20143, popport:20110 smtpport:20025), 
+#Two independent environment,first one: Mx9.5-1(10.49.58.127 imapport:10143, popport:10110 smtpport:10025), proxy server.
+#    the other one is                   Mx9.5-2(10.49.58.118  imapport:20143, popport:20110 smtpport:20025), 
 
 #edit keys:
 echo -e "\n\n########################## add keys ###############################"
 #(1)Mx9.5-1 IMAP/POP setting:
-ssh root@${FEPHost1} "su - ${imailuser} -c \"imconfcontrol -install -key "/*/imapserv/ImapProxyAuthenticate=false";imconfcontrol -install -key "/*/imapserv/imapProxyHost=imap://172.26.202.87:20143";imconfcontrol -install -key "/*/imapserv/imapProxyPort=20143";imconfcontrol -install -key "/*/popserv/popProxyHost=pop://172.26.202.87:20110";imconfcontrol -install -key "/*/popserv/popProxyPort=20110"\""
+ssh root@${FEPHost1} "su - ${imailuser} -c \"imconfcontrol -install -key "/*/imapserv/ImapProxyAuthenticate=false";imconfcontrol -install -key "/*/imapserv/imapProxyHost=imap://10.49.58.118:20143";imconfcontrol -install -key "/*/imapserv/imapProxyPort=20143";imconfcontrol -install -key "/*/popserv/popProxyHost=pop://10.49.58.118:20110";imconfcontrol -install -key "/*/popserv/popProxyPort=20110"\""
 #(2)9.5-1 MTA setting:
-ssh root@${FEPHost1} "su - ${imailuser} -c \"imconfcontrol -install -key "/*/mta/mtaProxyAuthentication=true";imconfcontrol -install -key "/*/mta/mtaProxyUnknownAccount=true";imconfcontrol -install -key "/*/mta/mtaProxyAuthentication=true";imconfcontrol -install -key "/*/mta/mtaProxyUnknownTarget=smtp://172.26.202.87:20025";imconfcontrol -install -key "/inbound-standardmta-direct/mta/requireAuthentication=true";imconfcontrol -install -key "/*/mta/relaySourcePolicy=allowAll";imconfcontrol -install -key "/inbound-standardmta-direct/mta/relaySourcePolicy=allowAll";imconfcontrol -install -key "/*/mxos/defaultPasswordStoreType=clear"\""
+ssh root@${FEPHost1} "su - ${imailuser} -c \"imconfcontrol -install -key "/*/mta/mtaProxyAuthentication=true";imconfcontrol -install -key "/*/mta/mtaProxyUnknownAccount=true";imconfcontrol -install -key "/*/mta/mtaProxyAuthentication=true";imconfcontrol -install -key "/*/mta/mtaProxyUnknownTarget=smtp://10.49.58.118:20025";imconfcontrol -install -key "/inbound-standardmta-direct/mta/requireAuthentication=true";imconfcontrol -install -key "/*/mta/relaySourcePolicy=allowAll";imconfcontrol -install -key "/inbound-standardmta-direct/mta/relaySourcePolicy=allowAll";imconfcontrol -install -key "/*/mxos/defaultPasswordStoreType=clear"\""
 #(3)9.5-2 MTA setting:
 ssh root@${FEPHost2} "su - ${imailuser} -c \"imconfcontrol -install -key "/*/mta/requireAuthentication=true";imconfcontrol -install -key "/inbound-standardmta-direct/mta/requireAuthentication=true";imconfcontrol -install -key "/*/mta/relaySourcePolicy=allowAll";imconfcontrol -install -key "/inbound-standardmta-direct/mta/relaySourcePolicy=allowAll";imconfcontrol -install -key "/*/mxos/defaultPasswordStoreType=clear"\""
 #(3-2) 9.5-2 enable xclp
 ssh root@${FEPHost1} "su - ${imailuser} -c \"imconfcontrol -install -key "/*/common/allowXCLP=true";imconfcontrol -install -key "/*/improxy/sendClientIp=true";imconfcontrol -install -key "/*/imapserv/allowXCLP=true";imconfcontrol -install -key "/*/imapserv/XclpAllowedIPs=10.37.2.214";imconfcontrol -install -key "/*/common/xclpAllowedIPs=10.37.2.214";imconfcontrol -install -key "/*/mta/allowXCLP=true";imconfcontrol -install -key "/*/mta/enableOutboundXCLP=true";imconfcontrol -install -key "/*/mta/outboundXCLPExpectsReply=true";imconfcontrol -install -key "/*/mta/XclpAllowedIPs=10.37.2.214";imconfcontrol -install -key "/92SITE2-inbound-standardmta-direct/mta/XclpAllowedIPs=10.37.2.214";imconfcontrol -install -key "/inbound-standardmta-direct/mta/allowXCLP=true";imconfcontrol -install -key "/inbound-standardmta-direct/mta/enableOutboundXCLP=true";imconfcontrol -install -key "/*/popserv/allowXCLP=true";imconfcontrol -install -key "/*/popserv/XclpAllowedIPs=10.37.2.214"\""
-ssh root@${FEPHost2} "su - ${imailuser} -c \"imconfcontrol -install -key "/*/common/allowXCLP=true";imconfcontrol -install -key "/*/improxy/sendClientIp=true";imconfcontrol -install -key "/*/imapserv/allowXCLP=true";imconfcontrol -install -key "/*/imapserv/XclpAllowedIPs=172.26.202.233";imconfcontrol -install -key "/*/common/xclpAllowedIPs=172.26.202.233";imconfcontrol -install -key "/*/mta/allowXCLP=true";imconfcontrol -install -key "/*/mta/enableOutboundXCLP=true";imconfcontrol -install -key "/*/mta/outboundXCLPExpectsReply=true";imconfcontrol -install -key "/*/mta/XclpAllowedIPs=172.26.202.233";imconfcontrol -install -key "/92SITE2-inbound-standardmta-direct/mta/XclpAllowedIPs=172.26.202.233";imconfcontrol -install -key "/inbound-standardmta-direct/mta/allowXCLP=true";imconfcontrol -install -key "/inbound-standardmta-direct/mta/enableOutboundXCLP=true";imconfcontrol -install -key "/*/popserv/allowXCLP=true";imconfcontrol -install -key "/*/popserv/XclpAllowedIPs=172.26.202.233"\""
+ssh root@${FEPHost2} "su - ${imailuser} -c \"imconfcontrol -install -key "/*/common/allowXCLP=true";imconfcontrol -install -key "/*/improxy/sendClientIp=true";imconfcontrol -install -key "/*/imapserv/allowXCLP=true";imconfcontrol -install -key "/*/imapserv/XclpAllowedIPs=10.49.58.127";imconfcontrol -install -key "/*/common/xclpAllowedIPs=10.49.58.127";imconfcontrol -install -key "/*/mta/allowXCLP=true";imconfcontrol -install -key "/*/mta/enableOutboundXCLP=true";imconfcontrol -install -key "/*/mta/outboundXCLPExpectsReply=true";imconfcontrol -install -key "/*/mta/XclpAllowedIPs=10.49.58.127";imconfcontrol -install -key "/92SITE2-inbound-standardmta-direct/mta/XclpAllowedIPs=10.49.58.127";imconfcontrol -install -key "/inbound-standardmta-direct/mta/allowXCLP=true";imconfcontrol -install -key "/inbound-standardmta-direct/mta/enableOutboundXCLP=true";imconfcontrol -install -key "/*/popserv/allowXCLP=true";imconfcontrol -install -key "/*/popserv/XclpAllowedIPs=10.49.58.127"\""
 
 #（3-3） restart FEPs
 ssh root@${FEPHost1} "su - ${imailuser} -c \"/opt/imail2/lib/imservctrl killStart\""

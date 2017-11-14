@@ -3,12 +3,12 @@
 +OK procu1 is welcome here
 +OK 2 messages
 1 405
-2 85
+2 82
 .
-+OK 85 octets
++OK 82 octets
 2-11111111
-Message-ID: <21-2017-0628-202722-12282@mx-172-26-202-87.openwave.com>
+Message-ID: <0-2017-1114-040833-8494@mx-10-49-58-118.openwave.com>
 
 .
 -ERR no such message.
-+OK procu1 InterMail SPOP3 server signing off.
++OK procu1 InterMail POP3 server signing off.
