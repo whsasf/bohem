@@ -1,0 +1,92 @@
+1c1
+< * 1 FETCH (FIRSTLINE (""))
+---
+> * 1 FETCH (FIRSTLINE ("我们都是中国人，中国人是好样的！人生自古谁无死，留取�"))
+1c1
+< * 1 FETCH (FIRSTLINE (""))
+---
+> * 1 FETCH (FIRSTLINE ("我们都是中国人，中国人是好样的！人生自古谁无死，留取�"))
+1c1
+< * 1 FETCH (FIRSTLINE ("我们都是中国人，中国人是好样的！人生自�"))
+---
+> * 1 FETCH (FIRSTLINE ("我们都是中国人，中国人是好样的！人生自古谁无死，留取�"))
+1c1
+< * 1 FETCH (FIRSTLINE ("=E6=88=91=E4=BB=AC=E9=83=BD=E6=98=AF=E4=B8=AD=E5=9B=BD=E4=BA=BA=EF=BC=8C=E4= =B"))
+---
+> * 1 FETCH (FIRSTLINE ("我们都是中国人，中国人是好样的！人生自古谁无死，留取�"))
+1c1
+< * 1 FETCH (FIRSTLINE ("我们都是中国人，中国人是好样的！人生自�"))
+---
+> * 1 FETCH (FIRSTLINE ("我们都是中国人，中国人是好样的！人生自古谁无死，留取�"))
+1c1
+< * 1 FETCH (FIRSTLINE ("=E6=88=91=E4=BB=AC=E9=83=BD=E6=98=AF=E4=B8=AD=E5=9B=BD=E4=BA=BA=EF=BC=8C=E4= =B"))
+---
+> * 1 FETCH (FIRSTLINE ("我们都是中国人，中国人是好样的！人生自古谁无死，留取�"))
+1c1
+< * 1 FETCH (FIRSTLINE ("我们都是中国人，中国人是好样的！人生自�"))
+---
+> * 1 FETCH (FIRSTLINE ("我们都是中国人，中国人是好样的！人生自古谁无死，留取�"))
+1c1
+< * 1 FETCH (FIRSTLINE ("=E6=88=91=E4=BB=AC=E9=83=BD=E6=98=AF=E4=B8=AD=E5=9B=BD=E4=BA=BA=EF=BC=8C=E4= =B"))
+---
+> * 1 FETCH (FIRSTLINE ("我们都是中国人，中国人是好样的！人生自古谁无死，留取�"))
+1c1
+< * 1 FETCH (FIRSTLINE ("=E6=88=91=E4=BB=AC=E9=83=BD=E6=98=AF=E4=B8=AD=E5=9B=BD=E4=BA=BA=EF=BC=8C=E4= =B"))
+---
+> * 1 FETCH (FIRSTLINE ("我们都是中国人，中国人是好样的！人生自古谁无死，留取�"))
+1c1
+< * 1 FETCH (FIRSTLINE ("我们都是中国人，中国人是好样的！人生自古谁无死，留取"))
+---
+> * 1 FETCH (FIRSTLINE ("我们都是中国人，中国人是好样的！人生自古谁无死，留取�"))
+1c1
+< * 1 FETCH (FIRSTLINE ("我们都是中国人，中国人是好样的！人生自古谁无死，留取"))
+---
+> * 1 FETCH (FIRSTLINE ("我们都是中国人，中国人是好样的！人生自�"))
+1c1
+< * 1 FETCH (FIRSTLINE ("我们都是中国人，中国人是好样的！人生自古谁无死，留取"))
+---
+> * 1 FETCH (FIRSTLINE ("我们都是中国人，中国人是好样的！人生自古谁无死，留取�"))
+====current path is:/home/ram/Desktop/MX9.5/Testcases/body_preview/3-Logic of selecting the firstline data/Testcases-body-preview-deal-spaces-encode-enhanced-new/good/Type-image-UTF-8-Chinese-messagebody-IMAP-and-SMTP================
+
+================Type-image-UTF-8-Chinese-messagebody-IMAP-and-SMTP Test finished===============
+
+====current path is:Type-image-UTF-8-Chinese-messagebody-IMAP-and-SMTP================
+====running logic-messagesend-IMAP-append-7bit ========
+====running logic-messagesend-IMAP-append-8bit ========
+====running logic-messagesend-IMAP-append-base64 ========
+====running logic-messagesend-IMAP-append-quoted-printable ========
+====running logic-messagesend-SMTP-7bit ========
+====running logic-messagesend-SMTP-8bit ========
+====running logic-messagesend-SMTP-base64 ========
+====running logic-messagesend-SMTP-quoted-printable ========
+================Type-image-UTF-8-Chinese-messagebody-IMAP-and-SMTP Test finished===============
+====current path is:Type-image-UTF-8-Chinese-messagebody-IMAP-and-SMTP====================current path is:Type-image-UTF-8-Chinese-messagebody-IMAP-and-SMTP================
+====running logic-messagesend-IMAP-append-7bit ============running logic-messagesend-IMAP-append-7bit ========
+====running logic-messagesend-IMAP-append-8bit ============running logic-messagesend-IMAP-append-8bit ========
+====running logic-messagesend-IMAP-append-base64 ========
+====running logic-messagesend-IMAP-append-quoted-printable ========
+====running logic-messagesend-SMTP-7bit ========
+====running logic-messagesend-SMTP-8bit ========
+====running logic-messagesend-SMTP-base64 ========
+====running logic-messagesend-SMTP-quoted-printable ========
+================Type-image-UTF-8-Chinese-messagebody-IMAP-and-SMTP Test finished===============
+====current path is:Type-image-UTF-8-Chinese-messagebody-IMAP-and-SMTP====================current path is:Type-image-UTF-8-Chinese-messagebody-IMAP-and-SMTP================
+====running logic-messagesend-IMAP-append-7bit ============running logic-messagesend-IMAP-append-7bit ========
+====running logic-messagesend-IMAP-append-8bit ============running logic-messagesend-IMAP-append-8bit ========
+====running logic-messagesend-IMAP-append-base64 ========
+====running logic-messagesend-IMAP-append-quoted-printable ========
+====running logic-messagesend-SMTP-7bit ========
+====running logic-messagesend-SMTP-8bit ========
+====running logic-messagesend-SMTP-base64 ========
+====running logic-messagesend-SMTP-quoted-printable ========
+================Type-image-UTF-8-Chinese-messagebody-IMAP-and-SMTP Test finished===============
+====current path is:Type-image-UTF-8-Chinese-messagebody-IMAP-and-SMTP====================current path is:Type-image-UTF-8-Chinese-messagebody-IMAP-and-SMTP================
+====running logic-messagesend-IMAP-append-7bit ============running logic-messagesend-IMAP-append-7bit ========
+====running logic-messagesend-IMAP-append-8bit ============running logic-messagesend-IMAP-append-8bit ========
+====running logic-messagesend-IMAP-append-base64 ========
+====running logic-messagesend-IMAP-append-quoted-printable ========
+====running logic-messagesend-SMTP-7bit ========
+====running logic-messagesend-SMTP-8bit ========
+====running logic-messagesend-SMTP-base64 ========
+====running logic-messagesend-SMTP-quoted-printable ========
+================Type-image-UTF-8-Chinese-messagebody-IMAP-and-SMTP Test finished===============

@@ -1,0 +1,10 @@
+from:xx2@openwave.com
+to:xx1@openwave.com
+subject:testemail-Arabic-ISO-8859-6-CRLF-quoted-printable
+MIME-Version: 1.0
+Content-Type: text/plain; charset=ISO-8859-6
+Content-Transfer-Encoding: quoted-printable
+
+     =AC =D9=E6 =CA=E6=E5=EA=CA=E7 =E4=C7 =EA=D3=CA=D7=EA=D9=E8=E6 =D4=D1=
+=C7=C1 =C7=E4=C3=D4=EA=C7=C1 =AC =E8=DA=C7=E4=C8=C7 =E5=C7 =E4=C7 =EA=CA=CD=
+=CF=CB =D9=E6 =E8=E4=EA=E6 =E4=E2=CF =E3=CA=C8 =E1=

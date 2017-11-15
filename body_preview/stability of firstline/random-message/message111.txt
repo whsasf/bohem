@@ -1,0 +1,8 @@
+from:xx2@openwave.com
+to:xx1@openwave.com
+subject:random message
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8; format=flowed
+Content-Transfer-Encoding: 8bit
+
+prankster's aardvark's denounces negligees metamorphosis's wearers cad clientèle's disavowal's wainscotting takeover's pirate's ticketed Karo's Gail's

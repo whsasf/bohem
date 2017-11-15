@@ -27,10 +27,10 @@ rcptto=procu2
 message="hi,procu2,this is procu1.good day to you !hahahahha!"
 
 #target# used to judge if FEP logs log correct "frpmhost:fromport"
-target1="fromhost=10.6.104.238:fromport="
+target1="fromhost=10.37.2.214:fromport="
 target2="fromhost=10.49.58.127:fromport="
 
-targett1="fromhost=10.6.104.238:fromport=|fromhost=\[10.6.104.238\]:fromport="
+targett1="fromhost=10.37.2.214:fromport=|fromhost=\[10.37.2.214\]:fromport="
 targett2="fromhost=10.49.58.127:fromport=|fromhost=\[10.49.58.127\]:fromport="
 tlsflag="SslHandshakeSucceeded"
 
@@ -101,8 +101,8 @@ exec 3>&-
 cat imap-temp.log
 
 #Now gether imap logs from MX9.5-1 and MX9.5-2
-ssh root@$IMAPHost1  'cat /opt/imail2/log/imapserv.log' > imapserv1.log
-ssh root@$IMAPHost2  'cat /opt/imail2/log/imapserv.log' > imapserv2.log
+ssh root@$IMAPHost1  'cat /opt/imail2/log/imapserv.log|grep -v "MsMssFailover"|grep -v "RmeInvalidCOSAttribute"|grep -v "ConfNonStandardPort"' > imapserv1.log
+ssh root@$IMAPHost2  'cat /opt/imail2/log/imapserv.log|grep -v "MsMssFailover"|grep -v "RmeInvalidCOSAttribute"|grep -v "ConfNonStandardPort"' > imapserv2.log
 
 #Prepare the summary-imap.log
 echo -e  "The imap operations logs telneting to MX9.5-1:\n\n" >summary-imap.log
@@ -123,7 +123,7 @@ c2=`grep $target2 imapserv2.log|wc -l`
 let cc1=c1+c2
 echo $cc1
 tlsflagct=`grep $tlsflag imapserv2.log|wc -l`
-if (( $cc1 == 15 )) && (( $tlsflagct == 1 ))
+if (( $cc1 == 13 )) && (( $tlsflagct == 1 ))
 
 then
   echo -ne "\n\033[32m#####Logging enhancement for IMAP proxy is ok!!##### \033[0m\n\n"
@@ -162,8 +162,8 @@ exec 3>&-
 cat pop-temp.log
 
 #Now gether pop logs from MX9.5-1 and MX9.5-2
-ssh root@$POPHost1  'cat /opt/imail2/log/popserv.log' > popserv1.log
-ssh root@$POPHost2  'cat /opt/imail2/log/popserv.log' > popserv2.log
+ssh root@$POPHost1  'cat /opt/imail2/log/popserv.log|grep -v "MsMssFailover"|grep -v "RmeInvalidCOSAttribute"|grep -v "ConfNonStandardPort"' > popserv1.log
+ssh root@$POPHost2  'cat /opt/imail2/log/popserv.log|grep -v "MsMssFailover"|grep -v "RmeInvalidCOSAttribute"|grep -v "ConfNonStandardPort"' > popserv2.log
 
 #Prepare the summary-pop.log
 echo -e  "The pop operations logs telneting to MX9.5-1:\n\n" >summary-pop.log
@@ -184,7 +184,7 @@ c2=`grep $target2 popserv2.log|wc -l`
 let cc1=c1+c2
 echo $cc1
 tlsflagct=`grep $tlsflag popserv2.log|wc -l`
-if (( $cc1 == 7 )) && (( $tlsflagct == 1 ))
+if (( $cc1 == 6 )) && (( $tlsflagct == 1 ))
 then
   echo -ne "\n\033[32m#####Logging enhancement for POP proxy is ok!!##### \033[0m\n\n"
   echo -ne "\n\033[32m#####Logging enhancement for POP proxy is ok!!##### \033[0m\n\n" >>summary-pop.log
@@ -228,8 +228,8 @@ exec 3>&-
 cat smtp-temp.log
 
 #Now gether smtp logs from MX9.5-1 and MX9.5-2
-ssh root@$SMTPHost1  'cat /opt/imail2/log/mta.log' > mta1.log
-ssh root@$SMTPHost2  'cat /opt/imail2/log/mta.log' > mta2.log
+ssh root@$SMTPHost1  'cat /opt/imail2/log/mta.log|grep -v "MsMssFailover"|grep -v "RmeInvalidCOSAttribute"|grep -v "ConfNonStandardPort"' > mta1.log
+ssh root@$SMTPHost2  'cat /opt/imail2/log/mta.log|grep -v "MsMssFailover"|grep -v "RmeInvalidCOSAttribute"|grep -v "ConfNonStandardPort"' > mta2.log
 
 #Prepare the summary-smtp.log
 echo -e  "The smtp operations logs telneting to MX9.5-1:\n\n" >summary-smtp.log

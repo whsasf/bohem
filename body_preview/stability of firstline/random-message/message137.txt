@@ -1,0 +1,8 @@
+from:xx2@openwave.com
+to:xx1@openwave.com
+subject:random message
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8; format=flowed
+Content-Transfer-Encoding: 8bit
+
+drawbridge's banter masque placentals uvulars cottons tinselled hazy razor's bashing Sanforized terracing italic torments palatal's

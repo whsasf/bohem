@@ -1,0 +1,84 @@
+Delete messsages successfully.
+
+
+Message body is:
+
+
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!Sending message!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+
+ sending message:
+
+
+220 mx-172-26-202-87.openwave.com ESMTP server (InterMail vM.9.05.00.00 201-2473-137-108) ready Fri, 17 Feb 2017 01:47:48 -0800
+250 Sender <xx2> Ok
+250 Recipient <xx1> Ok
+354 Ok Send data ending with <CRLF>.<CRLF>
+250 Message received: 20170217094748.BFL23163.mx-172-26-202-87.openwave.com@[10.37.2.214]
+221 mx-172-26-202-87.openwave.com ESMTP server closing connection
+
+
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!fetching first line data!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+* OK IMAP4 server (InterMail vM.9.05.00.00 201-2473-137-108) ready Fri, 17 Feb 2017 01:47:49 -0800 (PST)
+a OK LOGIN completed
+* 1 EXISTS
+* OK [UNSEEN 1] First unseen message
+* OK [UIDVALIDITY 1487128905] UIDs valid
+* OK [UIDNEXT 2896] Predicted next UID
+* FLAGS (\Answered \Flagged \Deleted \Draft \Seen)
+* OK [PERMANENTFLAGS (\* \Answered \Flagged \Deleted \Draft \Seen)] Permanent flags
+* 1 RECENT
+a OK [READ-WRITE] SELECT completed
+* 1 FETCH (RFC822 {1010}
+Return-Path: <xx2@openwave.com>
+Received: from [10.37.2.214] by mx-172-26-202-87.openwave.com
+          (InterMail vM.9.05.00.00 201-2473-137-108) with SMTP
+          id <20170217094748.BFL23163.mx-172-26-202-87.openwave.com@[10.37.2.214]>
+          for <xx1@openwave.com>; Fri, 17 Feb 2017 01:47:48 -0800
+Return-Path: <xx2@openwave.com>
+Received: from [10.37.2.214] by mx-172-26-202-87.openwave.com
+          (InterMail vM.9.05.00.00 201-2473-137-108) with ESMTP
+          id <20170217085657.BFK23163.mx-172-26-202-87.openwave.com@[10.37.2.214]>
+          for <xx1@openwave.com>; Fri, 17 Feb 2017 00:56:57 -0800
+To: "xx1@openwave.com" <xx1@openwave.com>
+From: xx2 <xx2@openwave.com>
+Subject: Pure Emoji expressions in message body
+Message-ID: <d3457d53-89dc-b15f-97e4-f0a1d4d331a2@openwave.com>
+Date: Fri, 17 Feb 2017 16:56:54 +0800
+User-Agent: MX
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8; format=flowed
+Content-Transfer-Encoding: 7bit
+
+:-)
+:-(
+;-)
+:-P
+:-[
+:-\
+=-O
+ FLAGS (\Recent \Seen))
+a OK FETCH completed
+* 1 FETCH (FIRSTLINE (":-) :-( ;-) :-P :-[ :- =-O "))
+a OK FETCH completed
+* BYE IMAP4 server terminating connection
+a OK LOGOUT completed
+
+
+
+
+[default@KeyspaceMetadata] get cf_folder['353038343036333135323632313531383036365fe1280902f32d11e6b9386b782020d67e'];
+=> (super_column=241f151a-f4f6-11e6-8079-c5fabf69781a,
+     (name=31, value=392e300332343166313531612d663466362d313165362d383037392d63356661626636393738316103300331343837333234383638033130313003300303330330033003035075726520456d6f6a692065787072657373696f6e7320696e206d65737361676520626f647903787832203c787832406f70656e776176652e636f6d3e03300322787831406f70656e776176652e636f6d22203c787831406f70656e776176652e636f6d3e0303323839350330033c64333435376435332d383964632d623135662d393765342d663061316434643333316132406f70656e776176652e636f6d3e033134383733323138313403030303, timestamp=1487324868670651)
+     (name=3138, value=3a2d29203a2d28203b2d29203a2d50203a2d5b203a2d5c203d2d4f2000, timestamp=1487324868670651)
+     (name=32, value=46, timestamp=1487324870729370)
+     (name=33, value=54, timestamp=1487324870768436)
+     (name=35, value=31343837333234383730, timestamp=1487324870764976)
+     (name=36, value=46, timestamp=1487324870768436)
+     (name=37, value=46, timestamp=1487324870768436)
+     (name=38, value=46, timestamp=1487324870768436)
+     (name=39, value=46, timestamp=1487324870768436))
+Returned 1 results.
+Elapsed time: 19 msec(s).

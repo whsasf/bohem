@@ -1,0 +1,50 @@
+The imap operations logs telneting to MX9.5-1:
+
+
+* OK IMAP4 server (InterMail vM.9.05.01.00 201-2473-137-123) ready Wed, 15 Nov 2017 15:01:42 +0000 (GMT)
+a OK LOGIN completed
+a NO The specified mailbox does not exist
+* 2 EXISTS
+* OK [UNSEEN 1] First unseen message
+* OK [UIDVALIDITY 1510729090] UIDs valid
+* OK [UIDNEXT 1002] Predicted next UID
+* FLAGS (\Answered \Flagged \Deleted \Draft \Seen)
+* OK [PERMANENTFLAGS (\* \Answered \Flagged \Deleted \Draft \Seen)] Permanent flags
+* 1 RECENT
+a OK [READ-WRITE] SELECT completed
+* 2 FETCH (RFC822 {83}
+2-11111111
+Message-ID: <1-2017-1115-020038-13824@mx-10-49-58-118.openwave.com>
+
+ FLAGS (\Recent \Seen))
+a OK FETCH completed
+a NO FETCH failed
+* BYE IMAP4 server terminating connection
+a OK LOGOUT completed
+
+
+
+
+
+IMAPserv.log from MX9.5-1:
+
+20171115 150142118+0000 mx-10-49-58-127 imapserv 17127 17191 139637197879040 Note;UserDataException(504/1) MBX_NOT_FOUND:{password=[XXXXX], protocolType=[imap], userName=[procu1]}:AuthenticateAndGetMailboxService\3aPOST:The given Mailbox does not exist.::user=procu1:cmd=a login procu1 <password>:fromhost=10.37.2.214:fromport=43824:sid=e3ae9348-ca15-11e7-ba6a-6168127b6c3b
+20171115 150142165+0000 mx-10-49-58-127 imapserv 17127 17191 139637197879040 Note;ImapProxyConnMade(56/34) imap\3a//10.49.58.118\3a20143:20143:user=procu1:cmd=a login procu1 <password>:fromhost=10.37.2.214:fromport=43824:sid=e3ae9348-ca15-11e7-ba6a-6168127b6c3b
+
+
+IMAPserv.log from MX9.5-2:
+
+20171115 020045304-0500 mx-10-49-58-118 imapserv 13824 14344 139785151821568 Note;ImapConnMade(56/16) user=procu1:mbox=6824727649421448509:mss=95xmc:cmd=a login "procu1" <password>:port=55014:fromhost=10.49.58.127:fromport=37628:sid=b3a90d7e-c9d2-11e7-918b-e0cd26c908fd:respcode=OK:resptime=43:node=mx-10-49-58-119:nodePort=55014
+20171115 020045527-0500 mx-10-49-58-118 imapserv 13824 13907 139785156613888 Note;MsgTrace(65/26) select:user=procu1:mbox=6824727649421448509:mss=95xmc:cmd=a select xxx:port=55014:fromhost=10.49.58.127:fromport=37628:sid=b3a90d7e-c9d2-11e7-918b-e0cd26c908fd:respcode=OK:resptime=2:node=mx-10-49-58-119:nodePort=55014
+20171115 020045528-0500 mx-10-49-58-118 imapserv 13824 13907 139785156613888 Warn;ImapCommandFailedReason(56/21) The specified mailbox does not exist:user=procu1:mbox=6824727649421448509:mss=95xmc:cmd=a select xxx:port=55014:fromhost=10.49.58.127:fromport=37628:sid=b3a90d7e-c9d2-11e7-918b-e0cd26c908fd:respcode=NO:resptime=2:node=mx-10-49-58-119:nodePort=55014
+20171115 020045557-0500 mx-10-49-58-118 imapserv 13824 13907 139785156613888 Note;ImapNotificationInfo(56/45) folder INBOX is subscribed for notification:user=procu1:mbox=6824727649421448509:mss=95xmc:fldr=inbox:cmd=a select inbox:port=55014:fromhost=10.49.58.127:fromport=37628:sid=b3a90d7e-c9d2-11e7-918b-e0cd26c908fd:node=mx-10-49-58-119:nodePort=55014
+20171115 020045573-0500 mx-10-49-58-118 imapserv 13824 13907 139785156613888 Note;MsgTrace(65/26) select:user=procu1:mbox=6824727649421448509:mss=95xmc:fldr=inbox:cmd=a select inbox:port=55014:fromhost=10.49.58.127:fromport=37628:sid=b3a90d7e-c9d2-11e7-918b-e0cd26c908fd:respcode=OK:resptime=45:node=mx-10-49-58-119:nodePort=55014
+20171115 020045583-0500 mx-10-49-58-118 imapserv 13824 13907 139785156613888 Note;MsgTrace(65/26) retr:user=procu1:mbox=6824727649421448509:mss=95xmc:fldr=inbox:msgid=afb5bdb6-c9d2-11e7-937f-551fc8ed4071:size=83:cmd=a fetch 2 rfc822:port=55014:fromhost=10.49.58.127:fromport=37628:sid=b3a90d7e-c9d2-11e7-918b-e0cd26c908fd:node=mx-10-49-58-119:nodePort=55014
+20171115 020045604-0500 mx-10-49-58-118 imapserv 13824 13907 139785156613888 Note;ImapFetchComplete(56/39) user=procu1:mbox=6824727649421448509:mss=95xmc:fldr=inbox:msgid=afb5bdb6-c9d2-11e7-937f-551fc8ed4071:size=83:cmd=a fetch 2 rfc822:port=55014:fromhost=10.49.58.127:fromport=37628:sid=b3a90d7e-c9d2-11e7-918b-e0cd26c908fd:respcode=OK:resptime=30:node=mx-10-49-58-119:nodePort=55014
+20171115 020045604-0500 mx-10-49-58-118 imapserv 13824 13907 139785156613888 Warn;ImapCommandFailed(56/20) user=procu1:mbox=6824727649421448509:mss=95xmc:fldr=inbox:cmd=a fetch 5 rfc822:port=55014:fromhost=10.49.58.127:fromport=37628:sid=b3a90d7e-c9d2-11e7-918b-e0cd26c908fd:respcode=NO:resptime=0:node=mx-10-49-58-119:nodePort=55014
+20171115 020045615-0500 mx-10-49-58-118 imapserv 13824 13907 139785156613888 Note;ImapNotificationInfo(56/45) folder INBOX is unsubscribed for notification:user=procu1:mbox=6824727649421448509:mss=95xmc:fldr=inbox:cmd=a logout:port=55014:fromhost=10.49.58.127:fromport=37628:sid=b3a90d7e-c9d2-11e7-918b-e0cd26c908fd:node=mx-10-49-58-119:nodePort=55014
+20171115 020045615-0500 mx-10-49-58-118 imapserv 13824 13907 139785156613888 Note;ImapLogout(56/43) user=procu1:mbox=6824727649421448509:mss=95xmc:cmd=a logout:port=55014:fromhost=10.49.58.127:fromport=37628:sid=b3a90d7e-c9d2-11e7-918b-e0cd26c908fd:respcode=OK:resptime=11:node=mx-10-49-58-119:nodePort=55014
+20171115 020045615-0500 mx-10-49-58-118 imapserv 13824 13907 139785156613888 Note;ImapDisconnected(56/17) user=procu1:mbox=6824727649421448509:mss=95xmc:cmd=a logout:port=55014:fromhost=10.49.58.127:fromport=37628:sid=b3a90d7e-c9d2-11e7-918b-e0cd26c908fd:respcode=OK:resptime=311:node=mx-10-49-58-119:nodePort=55014
+
+[32m#####Logging enhancement for IMAP proxy is ok!!##### [0m
+

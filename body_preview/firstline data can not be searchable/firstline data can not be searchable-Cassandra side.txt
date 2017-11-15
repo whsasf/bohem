@@ -1,0 +1,9 @@
+(1)found no create index operations when message arriving and fetch firstline data.
+(2)Found no keys or keywords to search firstline data in MX!!!!!!!!!!!!!!!!!!!!!!!
+no searchable settings or design for firstline dara in MX or MSS.
+
+
+
+
+
+

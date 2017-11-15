@@ -1,0 +1,118 @@
+1c1
+< * 1 FETCH (FIRSTLINE (""))
+---
+> * 1 FETCH (FIRSTLINE ("*Release Name* 	*PAB 9.2.113***Patch*** * *Release Date* 	02/10/2017 *Sign "))
+1c1
+< * 1 FETCH (FIRSTLINE (""))
+---
+> * 1 FETCH (FIRSTLINE ("*Release Name* 	*PAB 9.2.113***Patch*** * *Release Date* 	02/10/2017 *Sign "))
+1c1
+< * 1 FETCH (FIRSTLINE ("KlJlbGVhc2UgTmFtZSoKCSpQQUIgOS4yLjExMyoqKlBhdGNoKioqCioKKlJlbGVhc2UgRGF0ZSoK CT"))
+---
+> * 1 FETCH (FIRSTLINE ("*Release Name* 	*PAB 9.2.113***Patch*** * *Release Date* 	02/10/2017 *Sign "))
+1c1
+< * 1 FETCH (FIRSTLINE ("KlJlbGVhc2UgTmFtZSoKCSpQQUIgOS4yLjExMyoqKlBhdGNoKioqCioKKlJlbGVhc2UgRGF0ZSoK CT"))
+---
+> * 1 FETCH (FIRSTLINE ("*Release Name* 	*PAB 9.2.113***Patch*** * *Release Date* 	02/10/2017 *Sign "))
+1c1
+< * 1 FETCH (FIRSTLINE ("*Release Name* 	*PAB 9.2.113***Patch*** * *Release Date* 	"))
+---
+> * 1 FETCH (FIRSTLINE ("*Release Name* 	*PAB 9.2.113***Patch*** * *Release Date* 	02/10/2017 *Sign "))
+0a1
+> * 1 FETCH (FIRSTLINE ("*Release Name* 	*PAB 9.2.113***Patch*** * *Release Date* 	02/10/2017 *Sign "))
+1c1
+< * 1 FETCH (FIRSTLINE ("*Release Name* 	*PAB 9.2.113***Patch*** * *Release Date* 	02/10/2017 *Sign Off T"))
+---
+> * 1 FETCH (FIRSTLINE ("*Release Name* 	*PAB 9.2.113***Patch*** * *Release Date* 	"))
+1c1
+< * 1 FETCH (FIRSTLINE ("*Release Name* 	*PAB 9.2.113***Patch*** * *Release Date* 	02/10/2017 *Sign "))
+---
+> * 1 FETCH (FIRSTLINE ("*Release Name* 	*PAB 9.2.113***Patch*** * *Release Date* 	"))
+====current path is:/home/ram/Desktop/MX9.5/Testcases/body_preview/3-Logic of selecting the firstline data/Testcases-body-preview-deal-spaces-encode-enhanced-new/good/Type-HTML-contents-IMAP-and-SMTP================
+
+================Type-HTML-contents-IMAP-and-SMTP Test finished===============
+
+====current path is:Type-HTML-contents-IMAP-and-SMTP================
+====running logic-messagesend-IMAP-append-7bit ========
+====running logic-messagesend-IMAP-append-8bit ========
+====running logic-messagesend-IMAP-append-base64 ========
+====running logic-messagesend-IMAP-append-quoted-printable ========
+====running logic-messagesend-SMTP-7bit ========
+====running logic-messagesend-SMTP-8bit ========
+====running logic-messagesend-SMTP-base64 ========
+====running logic-messagesend-SMTP-quoted-printable ========
+================Type-HTML-contents-IMAP-and-SMTP Test finished===============
+====current path is:Type-HTML-contents-IMAP-and-SMTP====================current path is:Type-HTML-contents-IMAP-and-SMTP================
+====running logic-messagesend-IMAP-append-7bit ============running logic-messagesend-IMAP-append-7bit ========
+====running logic-messagesend-IMAP-append-8bit ============running logic-messagesend-IMAP-append-8bit ========
+====running logic-messagesend-IMAP-append-base64 ========
+====running logic-messagesend-IMAP-append-quoted-printable ========
+====running logic-messagesend-SMTP-7bit ========
+====running logic-messagesend-SMTP-8bit ========
+====running logic-messagesend-SMTP-base64 ========
+====running logic-messagesend-SMTP-quoted-printable ========
+================Type-HTML-contents-IMAP-and-SMTP Test finished===============
+====current path is:Type-HTML-contents-IMAP-and-SMTP====================current path is:Type-HTML-contents-IMAP-and-SMTP================
+====running logic-messagesend-IMAP-append-7bit ============running logic-messagesend-IMAP-append-7bit ========
+====running logic-messagesend-IMAP-append-8bit ============running logic-messagesend-IMAP-append-8bit ========
+====running logic-messagesend-IMAP-append-base64 ========
+====running logic-messagesend-IMAP-append-quoted-printable ========
+====running logic-messagesend-SMTP-7bit ========
+====running logic-messagesend-SMTP-8bit ========
+====running logic-messagesend-SMTP-base64 ========
+====running logic-messagesend-SMTP-quoted-printable ========
+================Type-HTML-contents-IMAP-and-SMTP Test finished===============
+====current path is:Type-HTML-contents-IMAP-and-SMTP====================current path is:Type-HTML-contents-IMAP-and-SMTP================
+====running logic-messagesend-IMAP-append-7bit ============running logic-messagesend-IMAP-append-7bit ========
+====running logic-messagesend-IMAP-append-8bit ============running logic-messagesend-IMAP-append-8bit ========
+====running logic-messagesend-IMAP-append-base64 ========
+====running logic-messagesend-IMAP-append-quoted-printable ========
+====running logic-messagesend-SMTP-7bit ========
+====running logic-messagesend-SMTP-8bit ========
+====running logic-messagesend-SMTP-base64 ========
+====running logic-messagesend-SMTP-quoted-printable ========
+================Type-HTML-contents-IMAP-and-SMTP Test finished===============
+1c1
+< * 1 FETCH (FIRSTLINE ("*Release Name* 	*PAB 9.2.113***Patch*** * *Release Date* 	02/10/2017 *Sign Off T"))
+---
+> * 1 FETCH (FIRSTLINE ("*Release Name* 	*PAB 9.2.113***Patch*** * *Release Date* 	02/10/2017 *Sign "))
+1c1
+< * 1 FETCH (FIRSTLINE ("*Release Name* 	*PAB 9.2.113***Patch*** * *Release Date* 	02/10/2017 *Sign Off T"))
+---
+> * 1 FETCH (FIRSTLINE ("*Release Name* 	*PAB 9.2.113***Patch*** * *Release Date* 	02/10/2017 *Sign "))
+1c1
+< * 1 FETCH (FIRSTLINE ("*Release Name* 	*PAB 9.2.113***Patch*** * *Release Date* 	02/10/2017 *Sign Off T"))
+---
+> * 1 FETCH (FIRSTLINE ("*Release Name* 	*PAB 9.2.113***Patch*** * *Release Date* 	02/10/2017 *Sign "))
+1c1
+< * 1 FETCH (FIRSTLINE ("*Release Name* 	*PAB 9.2.113***Patch*** * *Release Date* 	02/10/2017 *Sign Off T"))
+---
+> * 1 FETCH (FIRSTLINE ("*Release Name* 	*PAB 9.2.113***Patch*** * *Release Date* 	02/10/2017 *Sign "))
+1c1
+< * 1 FETCH (FIRSTLINE ("*Release Name* 	*PAB 9.2.113***Patch*** * *Release Date* 	02/10/2017 *Sign Off T"))
+---
+> * 1 FETCH (FIRSTLINE ("*Release Name* 	*PAB 9.2.113***Patch*** * *Release Date* 	02/10/2017 *Sign "))
+1c1
+< * 1 FETCH (FIRSTLINE ("*Release Name* 	*PAB 9.2.113***Patch*** * *Release Date* 	02/10/2017 *Sign Off T"))
+---
+> * 1 FETCH (FIRSTLINE ("*Release Name* 	*PAB 9.2.113***Patch*** * *Release Date* 	02/10/2017 *Sign "))
+1c1
+< * 1 FETCH (FIRSTLINE ("*Release Name* 	*PAB 9.2.113***Patch*** * *Release Date* 	02/10/2017 *Sign Off T"))
+---
+> * 1 FETCH (FIRSTLINE ("*Release Name* 	*PAB 9.2.113***Patch*** * *Release Date* 	02/10/2017 *Sign "))
+1c1
+< * 1 FETCH (FIRSTLINE ("*Release Name* 	*PAB 9.2.113***Patch*** * *Release Date* 	02/10/2017 *Sign Off T"))
+---
+> * 1 FETCH (FIRSTLINE ("*Release Name* 	*PAB 9.2.113***Patch*** * *Release Date* 	02/10/2017 *Sign "))
+1c1
+< * 1 FETCH (FIRSTLINE ("*Release Name* 	*PAB 9.2.113***Patch*** * *Release Date* 	02/10/2017 *Sign Off T"))
+---
+> * 1 FETCH (FIRSTLINE ("*Release Name* 	*PAB 9.2.113***Patch*** * *Release Date* 	02/10/2017 *Sign "))
+1c1
+< * 1 FETCH (FIRSTLINE ("*Release Name* 	*PAB 9.2.113***Patch*** * *Release Date* 	02/10/2017 *Sign Off T"))
+---
+> * 1 FETCH (FIRSTLINE ("*Release Name* 	*PAB 9.2.113***Patch*** * *Release Date* 	02/10/2017 *Sign "))
+1c1
+< * 1 FETCH (FIRSTLINE ("*Release Name* 	*PAB 9.2.113***Patch*** * *Release Date* 	02/10/2017 *Sign Off T"))
+---
+> * 1 FETCH (FIRSTLINE ("*Release Name* 	*PAB 9.2.113***Patch*** * *Release Date* 	02/10/2017 *Sign "))

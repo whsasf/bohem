@@ -1,0 +1,98 @@
+
+Delete messsages successfully.
+!!!!!!!!!!!!!!!!!!!!!!message delete successfully!!!!!!!!!!!!!!!!!
+
+
+Message body length = 706 
+Message is:
+Return-Path: <xx2@openwave.com>
+Received: from [10.13.8.221] by mx-172-26-202-87.openwave.com
+          (InterMail vM.9.05.00.00 201-2473-137-108) with ESMTP
+          id <20170218092432.BGS23163.mx-172-26-202-87.openwave.com@[10.13.8.221]>
+          for <xx1@openwave.com>; Sat, 18 Feb 2017 01:24:32 -0800
+From: xx2 <xx2@openwave.com>
+To: xx1@openwave.com
+Subject: symbols with texts in message body
+Message-ID: <73f08a4e-8851-9776-eb51-e04dad76336e@openwave.com>
+Date: Sat, 18 Feb 2017 17:24:31 +0800
+User-Agent: MX
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8; format=flowed
+Content-Transfer-Encoding: 8bit
+
+¢¤€©®µ¶¼¾¦¨¡×¿÷»º±²²¥§ª¬¸
+中国人
+)
+
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!Appending message!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+* OK IMAP4 server (InterMail vM.9.05.00.00 201-2473-137-108) ready Sat, 18 Feb 2017 01:43:31 -0800 (PST)
+a OK LOGIN completed
+* 0 EXISTS
+* OK [UNSEEN 0] First unseen message
+* OK [UIDVALIDITY 1487128905] UIDs valid
+* OK [UIDNEXT 2969] Predicted next UID
+* FLAGS (\Answered \Flagged \Deleted \Draft \Seen)
+* OK [PERMANENTFLAGS (\* \Answered \Flagged \Deleted \Draft \Seen)] Permanent flags
+* 0 RECENT
+a OK [READ-WRITE] SELECT completed
++ Ready for argument
+* 1 EXISTS
+* 1 RECENT
+a OK [APPENDUID 1487128905 2969] APPEND completed
+* BAD Null command
+* BYE IMAP4 server terminating connection
+a OK LOGOUT completed
+!!!!!!!!!!!!!!!!append finished!!!!!!!!!!!!!!!
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!fetching first line data!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+* OK IMAP4 server (InterMail vM.9.05.00.00 201-2473-137-108) ready Sat, 18 Feb 2017 01:43:31 -0800 (PST)
+a OK LOGIN completed
+* 1 EXISTS
+* OK [UNSEEN 1] First unseen message
+* OK [UIDVALIDITY 1487128905] UIDs valid
+* OK [UIDNEXT 2970] Predicted next UID
+* FLAGS (\Answered \Flagged \Deleted \Draft \Seen)
+* OK [PERMANENTFLAGS (\* \Answered \Flagged \Deleted \Draft \Seen)] Permanent flags
+* 1 RECENT
+a OK [READ-WRITE] SELECT completed
+* 1 FETCH (RFC822 {708}
+Return-Path: <xx2@openwave.com>
+Received: from [10.13.8.221] by mx-172-26-202-87.openwave.com
+          (InterMail vM.9.05.00.00 201-2473-137-108) with ESMTP
+          id <20170218092432.BGS23163.mx-172-26-202-87.openwave.com@[10.13.8.221]>
+          for <xx1@openwave.com>; Sat, 18 Feb 2017 01:24:32 -0800
+From: xx2 <xx2@openwave.com>
+To: xx1@openwave.com
+Subject: symbols with texts in message body
+Message-ID: <73f08a4e-8851-9776-eb51-e04dad76336e@openwave.com>
+Date: Sat, 18 Feb 2017 17:24:31 +0800
+User-Agent: MX
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8; format=flowed
+Content-Transfer-Encoding: 8bit
+
+¢¤€©®µ¶¼¾¦¨¡×¿÷»º±²²¥§ª¬¸
+中国人
+)
+ FLAGS (\Recent \Seen))
+a OK FETCH completed
+* 1 FETCH (FIRSTLINE ("¢¤€©®µ¶¼¾¦¨¡×¿÷»º±²²¥§ª¬¸ 中国人 ) "))
+a OK FETCH completed
+* BYE IMAP4 server terminating connection
+a OK LOGOUT completed
+
+
+[default@KeyspaceMetadata] get cf_folder['353038343036333135323632313531383036365fe1280902f32d11e6b9386b782020d67e'];
+=> (super_column=b5262fb2-f5be-11e6-bfe8-54dd676472f8,
+     (name=31, value=392e300362353236326662322d663562652d313165362d626665382d3534646436373634373266380330033134383734313130313103373038033003033303300330030373796d626f6c73207769746820746578747320696e206d65737361676520626f647903787832203c787832406f70656e776176652e636f6d3e033003787831406f70656e776176652e636f6d0303323936390330033c37336630386134652d383835312d393737362d656235312d653034646164373633333665406f70656e776176652e636f6d3e033134383734303938373103030303, timestamp=1487411011327227)
+     (name=3138, value=c2a2c2a4e282acc2a9c2aec2b5c2b6c2bcc2bec2a6c2a8c2a1c397c2bfc3b7c2bbc2bac2b1c2b2c2b2c2a5c2a7c2aac2acc2b820e4b8ade59bbde4baba20292000, timestamp=1487411011327227)
+     (name=32, value=46, timestamp=1487411012094554)
+     (name=33, value=54, timestamp=1487411012129764)
+     (name=35, value=31343837343131303132, timestamp=1487411012126433)
+     (name=36, value=46, timestamp=1487411012129764)
+     (name=37, value=46, timestamp=1487411012129764)
+     (name=38, value=46, timestamp=1487411012129764)
+     (name=39, value=46, timestamp=1487411012129764))
+Returned 1 results.
+Elapsed time: 27 msec(s).

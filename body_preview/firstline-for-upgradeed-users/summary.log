@@ -1,0 +1,32 @@
+* OK IMAP4 server (InterMail vM.9.05.00.00 201-2473-137-116) ready Tue, 13 Jun 2017 01:25:27 -0700 (PDT)
+a OK LOGIN completed
+* 2 EXISTS
+* OK [UNSEEN 2] First unseen message
+* OK [UIDVALIDITY 1497342314] UIDs valid
+* OK [UIDNEXT 1003] Predicted next UID
+* FLAGS (\Answered \Flagged \Deleted \Draft \Seen)
+* OK [PERMANENTFLAGS (\* \Answered \Flagged \Deleted \Draft \Seen)] Permanent flags
+* 1 RECENT
+a OK [READ-WRITE] SELECT completed
+* 1 FETCH (FIRSTLINE ("، ويمكن تح Nobody! いくつにな 我们是中国人， "))
+* 2 FETCH (FIRSTLINE (""))
+a OK FETCH completed
+* 1 FETCH (FIRSTLINE ("، ويمكن تح Nobody! いくつにな 我们是中国人， ") UID 1001)
+* 2 FETCH (FIRSTLINE ("") UID 1002)
+a OK UID FETCH completed
+* 2 EXISTS
+* OK [UNSEEN 2] First unseen message
+* OK [UIDVALIDITY 1497342314] UIDs valid
+* OK [UIDNEXT 1003] Predicted next UID
+* FLAGS (\Answered \Flagged \Deleted \Draft \Seen)
+* OK [PERMANENTFLAGS (\* \Answered \Flagged \Deleted \Draft \Seen)] Permanent flags
+* 0 RECENT
+a OK [READ-WRITE] SELECT completed
+* 1 FETCH (FIRSTLINE ("، ويمكن تح Nobody! いくつにな 我们是中国人， "))
+* 2 FETCH (FIRSTLINE ("، ويمكن تح Nobody! いくつにな 我们是中国人， "))
+a OK FETCH completed
+* 1 FETCH (FIRSTLINE ("، ويمكن تح Nobody! いくつにな 我们是中国人， ") UID 1001)
+* 2 FETCH (FIRSTLINE ("، ويمكن تح Nobody! いくつにな 我们是中国人， ") UID 1002)
+a OK UID FETCH completed
+* BYE IMAP4 server terminating connection
+a OK LOGOUT completed

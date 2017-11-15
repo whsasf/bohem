@@ -1,0 +1,8 @@
+from:xx2@openwave.com
+to:xx1@openwave.com
+subject:random message
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8; format=flowed
+Content-Transfer-Encoding: 8bit
+
+zinced predict Levesque's procurator Lester persecutor's mouthful plagiarist's whoppers linden's Bunker unsociable virago hyperbole's OSHA's

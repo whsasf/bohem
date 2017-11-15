@@ -1,0 +1,10 @@
+from:xx2@openwave.com
+to:xx1@openwave.com
+subject:testemail-Arabic-UTF-8-CRLF-8bit
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: 8bit
+
+لا تعبس ا
+بدا  حتي انت حزين  لانك 
+ا تدري م     

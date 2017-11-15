@@ -1,0 +1,38 @@
+purpose:
+ test if the firstline data generated once reveiving the message or after "a fetch 1:* firstline" command ?  in IMAP append.
+
+ (1) Append a message to xx2@openwave.com .with these contents:
+hi xx2.this is xx1.hahahahahahhaha
+ (2)don ot read this message or do not fetch firstline against this message, Get message ID and mailbox ID:
+
+   mailbox ID:5180882398004624220    HEX:35313830383832333938303034363234323230
+   message ID:"6f3ccb80-e13e-11e6-8247-588a13d48143"
+ (3)From cassandra ,get the 3188 value of this message:
+   #######################################################
+=> (super_column=6f3ccb80-e13e-11e6-8247-588a13d48143,
+     (name=31, value=392e300336663363636238302d653133652d313165362d383234372d35383861313364343831343303300331343835313536383935033130380330030303300330030303033103030331313039033003033003030303, timestamp=1485156895220479)
+     (name=3138, value=6869207878322e74686973206973207878312e686168616861686168616868616861204d6573736167652d49443a203c36312d323031372d303132322d3233333435352d37313135406d782d3137322d32362d3230322d3800, timestamp=1485156895220479)
+     (name=32, value=54, timestamp=1485156895220479)
+     (name=33, value=46, timestamp=1485156895220479)
+     (name=35, value=30, timestamp=1485156895220479))
+Returned 26 results.
+  #########################################################################
+
+value=6869207878322e74686973206973207878312e686168616861686168616868616861204d6573736167652d49443a203c36312d323031372d303132322d3233333435352d37313135406d782d3137322d32362d3230322d3800,
+to ASCII:
+hi xx2.this is xx1.hahahahahahhaha Message-ID: <61-2017-0122-233455-7115@mx-172-26-202-8
+
+(4) from imap fetch command:
+
+a fetch 26 firstline
+* 26 FETCH (FIRSTLINE (hi xx2.this is xx1.hahahahahahhaha Message-ID: <61-2017-0122-233455-7115@mx-172-26-202-8))
+a OK FETCH completed
+
+the same with get from cassandra.
+#(5)Find a problem:
+     hapened only once. firstline data returned empty at first several try while already existed in cassandra using IMAP fetch command.
+     need keep monitoring .
+
+(6)summary:
+    /*/common/enableXFIRSTLINE: [true]
+    ONce the key is enabled, new reveived message will auto create firsline data (body preview)  in IMAP append.

@@ -1,0 +1,11 @@
+from:xx2@openwave.com
+to:xx1@openwave.com
+subject:testemail-Chinese-UTF-8-CRLF-base64
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: base64
+
+5oCS5Y+R5Yay5Yag77yMDQogICAgIOWHremYkeWkhOOAgea9h+a9h+mbqOath+OAguaKrOacm+ec
+vOOAgeS7sOWkqemVv+WVuO+8jA0K5aOu5oCA5r+A54OI44CC5LiJ5Y2B5Yqf5ZCN5bCY5LiO5Zyf
+77yM5YWr5Y2D6YeM6Lev5LqR5ZKM5pyI44CCDQrojqvnrYnpl7LvvIznmb3kuoblsJHlubTlpLTv
+vIznqbrmgrLliIfjgII=

@@ -1,0 +1,119 @@
+1 Schema (cassandra DB) preparations   -1
+
+2 MEssage body type support            -21
+   -1 Message body type-empty
+     --1 Message body type-empty-IMAP
+     --2 Message body type-empty-SMTP
+   -2 Message body type-Text/plain
+     --1 Message body type-Single chars-ASCII
+     --2 Message body type-multi chars
+        ---1 Message body type-multi chars-Chinese
+        ---2 Message body type-multi chars-Japanese
+        ---3 Message body type-multi chars-Arabic
+   -3 Message body type-Emoji
+      --1 Message body type-Emoji-ASCII format
+      --2 Message body type-Emoji-image format
+   -4 Message body type-Attachments
+      --1 Message body type-Attachments-documents
+      --2 Message body type-Attachments-images
+      --3 Message body type-Attachments-audio
+      --4 Message body type-Attachments-video
+   -5 Message body type-Source codes
+      --1 Message body type-Source codes-normal
+      --2 Message body type-Source codes-dangerous
+   -6 Message body type-Style format texts
+      --1 Message body type-Style format texts-HTML
+      --2 Message body type-Style format texts-Hyper link
+      --3 Message body type-Style format texts-OTher styles
+   -7 Message body type-images
+   -8 Message body type-audio
+   -9 Message body type-Video
+   -10 Message body type-Symbols
+
+3 Logic of selecting the FirstLIne Data    -
+  
+  -1Text/plain:
+    --1 ASCII chars
+      ---1 ASCII chars-CRLF
+           ----1 ASCII chars-CRLF-IMAP 
+           ----2 ASCII chars-CRLF-SMTP
+      ---2 ASCII chars-LF
+           ----1 ASCII chars-LF-IMAP 
+           ----2 ASCII chars-LF-SMTP
+    --2 Chinese words
+      ---1 Chinese words-UTF8
+         ----1 Chinese words-UTF8-CRLF
+             -----1 Chinese words-UTF8-CRLF-IMAP
+             -----2 Chinese words-UTF8-CRLF-SMTP
+         ----2 Chinese words-UTF8-LF
+             -----1 Chinese words-UTF8-LF-IMAP
+             -----2 Chinese words-UTF8-LF-SMTP
+      ---2 Chinese words-GBK
+         ----1 Chinese words-GBK-CRLF
+             -----1 Chinese words-GBK-CRLF-IMAP
+             -----2 Chinese words-GBK-CRLF-SMTP
+         ----2 Chinese words-GBK-LF
+             -----1 Chinese words-GBK-LF-IMAP
+             -----2 Chinese words-GBK-LF-SMTP
+    --3 Japanese words
+      ---1 Japanese words-UTF8
+         ----1 Japanese words-UTF8-CRLF
+             -----1 Japanese words-UTF8-CRLF-IMAP
+             -----2 Japanese words-UTF8-CRLF-SMTP
+         ----2 Japanese words-UTF8-LF
+             -----1 Japanese words-UTF8-LF-IMAP
+             -----2 Japanese words-UTF8-LF-SMTP
+      ---2 Japanese words-GBK
+         ----1 Japanese words-GBK-CRLF
+             -----1 Japanese words-GBK-CRLF-IMAP
+             -----2 Japanese words-GBK-CRLF-SMTP
+         ----2 Japanese words-GBK-LF
+             -----1 Japanese words-GBK-LF-IMAP
+             -----2 Japanese words-GBK-LF-SMTP
+      ---3 Japanese words-EUC-JP
+         ----1 Japanese words-EUC-JP-CRLF
+              -----1 Japanese words-EUC-JP-CRLF-IMAP
+              -----2 Japanese words-EUC-JP-CRLF-SMTP
+         ----2 Japanese words-EUC-JP-LF
+              -----1 Japanese words-EUC-JP-LF-IMAP
+              -----2 Japanese words-EUC-JP-LF-SMTP
+      ---4 Japanese words-SHIFT_JIS
+         ----1 Japanese words-SHIFT_JIS-CRLF
+               -----1 Japanese words-SHIFT_JIS-CRLF-IMAP
+               -----2 Japanese words-SHIFT_JIS-CRLF-SMTP
+         ----2 Japanese words-SHIFT_JIS-LF
+               -----1 Japanese words-SHIFT_JIS-LF-IMAP
+               -----2 Japanese words-SHIFT_JIS-LF-SMTP
+    --4 Arabic words
+      ---1 Arabic words-UTF8
+          ----1 Arabic words-UTF8-CRLF
+               -----1 Arabic words-UTF8-CRLF-IMAP
+               -----2 Arabic words-UTF8-CRLF-SMTP
+          ----2 Arabic words-UTF8-LF
+               -----1 Arabic words-UTF8-LF-IMAP
+               -----2 Arabic words-UTF8-LF-SMTP
+      ---2 Arabic words-ISO-8859-6
+          ----1 Arabic words-ISO-8859-6-CRLF
+               -----1 Arabic words-ISO-8859-6-CRLF-IMAP
+               -----2 Arabic words-ISO-8859-6-CRLF-SMTP
+          ----2 Arabic words-ISO-8859-6-LF
+               -----1 Arabic words-ISO-8859-6-LF-IMAP
+               -----2 Arabic words-ISO-8859-6-LF-SMTP
+    --5 Mixed languages in message body in UTF8
+       ---1 mixed languave-UTF8-CRLF
+           ----1 mixed languave-UTF8-CRLF-IMAP
+           ----2 mixed languave-UTF8-CRLF-SMTP
+       ---2 mixed languave-UTF8-LF
+           ----1 mixed languave-UTF8-LF-IMAP
+           ----2 mixed languave-UTF8-LF-SMTP
+  -2 Other types with Texts
+    --1 Images
+      --pure image
+      --image with text
+    --2 audio
+    --3 video
+    --4 Emoji
+    --5 symbols
+    --6 attachments
+    --7 source codes
+    --8 other style type 

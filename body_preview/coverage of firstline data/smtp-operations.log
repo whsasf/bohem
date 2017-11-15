@@ -1,0 +1,18 @@
+* OK IMAP4 server (InterMail vM.9.05.00.00 201-2473-137-113) ready Wed, 24 May 2017 19:19:15 -0700 (PDT)
+a OK LOGIN completed
+* 1 EXISTS
+* OK [UNSEEN 1] First unseen message
+* OK [UIDVALIDITY 1495673622] UIDs valid
+* OK [UIDNEXT 1011] Predicted next UID
+* FLAGS (\Answered \Flagged \Deleted \Draft \Seen)
+* OK [PERMANENTFLAGS (\* \Answered \Flagged \Deleted \Draft \Seen)] Permanent flags
+* 1 RECENT
+a OK [READ-WRITE] SELECT completed
+a OK [COPYUID 1495673622 1010 1009] COPY completed
+a OK [COPYUID 1495673622 1010 1009] COPY completed
+a OK [COPYUID 1495673622 1010 1009] COPY completed
+a OK [COPYUID 1495673622 1010 1009] COPY completed
+a OK [COPYUID 1495678754 1010 1000] COPY completed
+a OK [COPYUID 1495678754 1010 1000] COPY completed
+* BYE IMAP4 server terminating connection
+a OK LOGOUT completed

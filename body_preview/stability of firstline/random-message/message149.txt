@@ -1,0 +1,8 @@
+from:xx2@openwave.com
+to:xx1@openwave.com
+subject:random message
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8; format=flowed
+Content-Transfer-Encoding: 8bit
+
+Andrea's falseness's Maalox's ponytail binder's shriveled oddity marksmanship's nutted oxygenating feminine's existences knickknack's cloak honeycombs

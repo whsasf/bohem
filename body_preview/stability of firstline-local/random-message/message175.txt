@@ -1,0 +1,8 @@
+from:xx2@openwave.com
+to:xx1@openwave.com
+subject:random message
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8; format=flowed
+Content-Transfer-Encoding: 8bit
+
+rudeness Vesalius's Fillmore's Douay's flighty wantonness racked licorice's shiftiest exploitation bumbler's Hotpoint's nicknack's explorations knowingly

@@ -1,0 +1,46 @@
+Return-Path: <xx2@openwave.com>
+Received: from [10.13.8.221] by mx-172-26-202-87.openwave.com
+          (InterMail vM.9.05.00.00 201-2473-137-108) with ESMTP
+          id <20170218101559.BHB23163.mx-172-26-202-87.openwave.com@[10.13.8.221]>
+          for <xx1@openwave.com>; Sat, 18 Feb 2017 02:15:59 -0800
+Subject: black bg with texts in message body
+Message-ID: <0b557513-346a-3e76-b199-d536689c3463@openwave.com>
+Date: Sat, 18 Feb 2017 18:15:47 +0800
+User-Agent: MX
+MIME-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="------------C578863D993184C5EBE85CA4"
+
+This is a multi-part message in MIME format.
+--------------C578863D993184C5EBE85CA4
+Content-Type: text/plain; charset=utf-8; format=flowed
+Content-Transfer-Encoding: 7bit
+
+، ويمكن تح
+Nobody!
+いくつにな
+我们是中国人，
+
+--------------C578863D993184C5EBE85CA4
+Content-Type: text/html; charset=utf-8
+Content-Transfer-Encoding: 8bit
+
+<html>
+  <head>
+
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  </head>
+  <body bgcolor="#000000" alink="#EE0000" link="#0B6CDA" text="#000000"
+    vlink="#551A8B">
+    <p><font color="#ffffff">، ويمكن تح
+<br>
+        Nobody!
+<br>
+        いくつにな
+<br>
+        我们是中国人，<br>
+      </font></p>
+  </body>
+</html>
+
+--------------C578863D993184C5EBE85CA4--

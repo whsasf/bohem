@@ -1,0 +1,41 @@
+/////////////////////////////////// -1- Japanese words \\\\\\\\\\\\\\\\\\"
+echo /////////////////////////////////// -1- Japanese words \\\\\\\\\\\\\\\\\\"
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!fetching first line data!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+* OK IMAP4 server (InterMail vM.9.05.00.00 201-2473-137-108) ready Tue, 14 Feb 2017 00:39:10 -0800 (PST)
+a OK LOGIN completed
+* 24 EXISTS
+* OK [UNSEEN 1] First unseen message
+* OK [UIDVALIDITY 1486976145] UIDs valid
+* OK [UIDNEXT 1716] Predicted next UID
+* FLAGS (\Answered \Flagged \Deleted \Draft \Seen)
+* OK [PERMANENTFLAGS (\* \Answered \Flagged \Deleted \Draft \Seen)] Permanent flags
+* 24 RECENT
+a OK [READ-WRITE] SELECT completed
+* 1 FETCH (FIRSTLINE ("人は何かの犠牲なしに 何も得ることはできない "))
+* 2 FETCH (FIRSTLINE ("     人は何かの犠牲なしに 何も得ることはできない "))
+* 3 FETCH (FIRSTLINE ("人は何かの犠牲     なしに 何も得ることはできない "))
+* 4 FETCH (FIRSTLINE ("人は何かの犠牲なしに 何も得ることはできない      "))
+* 5 FETCH (FIRSTLINE ("人は何かの 犠牲なしに 何も得ることはできない "))
+* 6 FETCH (FIRSTLINE ("     人は何かの 犠牲なしに 何も得ることはできない "))
+* 7 FETCH (FIRSTLINE ("人は何かの      犠牲なしに 何も得ることはできない "))
+* 8 FETCH (FIRSTLINE ("人は何かの 犠牲なしに 何も得ることはできない      "))
+* 9 FETCH (FIRSTLINE ("时の流れより现れ、我ここ  にて暗黒を誓い、いま我々と一 "))
+* 10 FETCH (FIRSTLINE ("     时の流れより现れ、我ここにて暗黒を誓い、いま我々と "))
+* 11 FETCH (FIRSTLINE ("时の流れより     现れ、我ここにて暗黒を誓い、いま我々と "))
+* 12 FETCH (FIRSTLINE ("时の流れより现れ、我ここにて暗黒を誓い、いま我々と      "))
+* 13 FETCH (FIRSTLINE ("时の流れ より现れ、我ここ にて暗黒を誓い、いま我々と一 "))
+* 14 FETCH (FIRSTLINE ("     时の流れ より现れ、我ここに  て暗黒を誓い、いま我々 "))
+* 15 FETCH (FIRSTLINE ("时の流れ       より现れ、我ここにて暗黒 を誓い、いま我々 "))
+* 16 FETCH (FIRSTLINE ("时の流れ より现れ、我ここにて暗黒  を誓い、いま我々      "))
+* 17 FETCH (FIRSTLINE ("外から见たら不幸でも中は幸せだということもある。幸せの形は�"))
+* 18 FETCH (FIRSTLINE ("     外から见たら不幸でも中は幸せだということもある。幸せの形"))
+* 19 FETCH (FIRSTLINE ("外から见たら不幸でも中     は幸せだということもある。幸せの形"))
+* 20 FETCH (FIRSTLINE ("外から见たら不幸でも中は幸せだということもある。幸せの形は�"))
+* 21 FETCH (FIRSTLINE ("外から见たら 不幸でも中は幸せだということもある。 幸せの形�"))
+* 22 FETCH (FIRSTLINE ("     外から见たら 不幸でも中は幸せだということもある。 幸せ�"))
+* 23 FETCH (FIRSTLINE ("外から见たら      不幸でも中は幸せだということもある。 幸せ�"))
+* 24 FETCH (FIRSTLINE ("外から见たら 不幸でも中は幸せだということもある。 幸せの形�"))
+a OK FETCH completed
+* BYE IMAP4 server terminating connection
+a OK LOGOUT completed

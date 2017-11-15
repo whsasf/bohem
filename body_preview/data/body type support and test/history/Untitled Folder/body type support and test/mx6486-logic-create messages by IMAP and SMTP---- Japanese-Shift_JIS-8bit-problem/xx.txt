@@ -1,0 +1,7 @@
+from:xx2@openwave.com
+to:xx6@openwave.com
+subject:testemail-Japanese-Shift_JIS
+MIME-Version: 1.0
+Content-Type: text/plain; charset=Shift_JIS; format=flowed
+Content-Transfer-Encoding: 8bit
+

@@ -1,0 +1,8 @@
+from:xx2@openwave.com
+to:xx6@openwave.com
+subject:testemail-Japanese-GBK
+MIME-Version: 1.0
+Content-Type: text/plain; charset=gbk; format=flowed
+Content-Transfer-Encoding: 8bit
+
+     „‡¤òÎÕ¤é¤Ê¤±¤ì¤Ğ¡¢¤ª¤Ş¤¨¤òÊØ¤ì¤Ê¤¤¡£„‡¤òÎÕ¤Ã¤¿¤Ş¤Ş¤Ç¤Ï¡¢¤ª¤Ş¤¨¤ò±§ ¤­¤·¤á¤é

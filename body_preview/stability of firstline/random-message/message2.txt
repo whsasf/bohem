@@ -1,0 +1,8 @@
+from:xx2@openwave.com
+to:xx1@openwave.com
+subject:random message
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8; format=flowed
+Content-Transfer-Encoding: 8bit
+
+indexes drained rummage's procrastinator's splitting's Allen tumble's cheap evasiveness's disenchanting Porsche's leaflet Fran textbook Maryanne's

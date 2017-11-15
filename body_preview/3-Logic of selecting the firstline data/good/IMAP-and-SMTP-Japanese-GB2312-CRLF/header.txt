@@ -1,0 +1,7 @@
+from:xx2@openwave.com
+to:xx1@openwave.com
+subject:testemail-Japanese-GB2312-8bit-CRLF
+MIME-Version: 1.0
+Content-Type: text/plain; charset=gb2312; format=flowed
+Content-Transfer-Encoding: 8bit
+

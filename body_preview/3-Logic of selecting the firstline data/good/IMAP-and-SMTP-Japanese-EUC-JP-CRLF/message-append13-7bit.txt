@@ -1,0 +1,10 @@
+from:xx2@openwave.com
+to:xx1@openwave.com
+subject:testemail-Japanes-EUC-JP-CRLF-7bit
+MIME-Version: 1.0
+Content-Type: text/plain; charset=EUC-JP
+Content-Transfer-Encoding: 7bit
+
+剣を握らなけ
+れば、おまえを守れない。剣を握ったまま
+では、おまえを抱きしめられ

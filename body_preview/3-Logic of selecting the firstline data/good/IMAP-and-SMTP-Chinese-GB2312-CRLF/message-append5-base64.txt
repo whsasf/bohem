@@ -1,0 +1,9 @@
+from:xx2@openwave.com
+to:xx1@openwave.com
+subject:testemail-Chinese-GB2312-CRLF-base64
+MIME-Version: 1.0
+Content-Type: text/plain; charset=gb2312
+Content-Transfer-Encoding: base64
+
+xa23orPludqjrMa+wLu0pqGiDQrk7OTs0+rQqqGjzKfN+9HboaLR9szss6TQpaOs17O7s7ykwdKh
+ow==

@@ -1,0 +1,150 @@
+1c1
+< * 1 FETCH (FIRSTLINE (""))
+---
+> * 1 FETCH (FIRSTLINE ("، ويمكن تحميلها باء ، ولكن لا يكون من chrome.jpg"))
+1c1
+< * 1 FETCH (FIRSTLINE (""))
+---
+> * 1 FETCH (FIRSTLINE ("، ويمكن تحميلها باء ، ولكن لا يكون من chrome.jpg"))
+1c1
+< * 1 FETCH (FIRSTLINE ("2Iwg2YjZitmF2YPZhiDYqtit2YXZitmE2YfYpyDYqNin2KEg2Iwg2YjZhNmD2YYg2YTYpyDZitmD 2Y"))
+---
+> * 1 FETCH (FIRSTLINE ("، ويمكن تحميلها باء ، ولكن لا يكون من chrome.jpg"))
+1c1
+< * 1 FETCH (FIRSTLINE ("، ويمكن تحميلها باء ، ولكن لا يك�"))
+---
+> * 1 FETCH (FIRSTLINE ("، ويمكن تحميلها باء ، ولكن لا يكون من chrome.jpg"))
+1c1
+< * 1 FETCH (FIRSTLINE ("، ويمكن تحميله�"))
+---
+> * 1 FETCH (FIRSTLINE ("، ويمكن تحميلها باء ، ولكن لا يكون من chrome.jpg"))
+1c1
+< * 1 FETCH (FIRSTLINE ("، ويمكن تحميله�"))
+---
+> * 1 FETCH (FIRSTLINE ("، ويمكن تحميله�"))
+1c1
+< * 1 FETCH (FIRSTLINE ("، ويمكن تحميله�"))
+---
+> * 1 FETCH (FIRSTLINE ("، ويمكن تحميله�")
+1c1
+< * 1 FETCH (FIRSTLINE ("، ويمكن تحميلها باء ، ولكن لا يك�"))
+---
+> * 1 FETCH (FIRSTLINE ("، ويمكن تحميلها باء ، ولكن لا يكون من chrome.jpg"))
+1c1
+< * 1 FETCH (FIRSTLINE ("، ويمكن تحميله�"))
+---
+> * 1 FETCH (FIRSTLINE ("، ويمكن تحميله�")
+1c1
+< * 1 FETCH (FIRSTLINE ("، ويمكن تحميله�"))
+---
+> * 1 FETCH (FIRSTLINE ("، ويمكن تحميله�"))
+0a1
+> * 1 FETCH (FIRSTLINE ("، ويمكن تحميلها باء ، ولكن لا يكون من chrome.jpg"))
+1c1
+< * 1 FETCH (FIRSTLINE ("، ويمكن تحميلها باء ، ولكن لا يكون من chrome.jpgch"))
+---
+> * 1 FETCH (FIRSTLINE ("، ويمكن تحميلها باء ، ولكن لا يك�"))
+1c1
+< * 1 FETCH (FIRSTLINE ("، ويمكن تحميلها باء ، ولكن لا يكون من chrome.jpg"))
+---
+> * 1 FETCH (FIRSTLINE ("، ويمكن تحميله�"))
+1c1
+< * 1 FETCH (FIRSTLINE ("، ويمكن تحميلها باء ، ولكن لا يكون من chrome.jpg"))
+---
+> * 1 FETCH (FIRSTLINE ("، ويمكن تحميله�"))
+1c1
+< * 1 FETCH (FIRSTLINE ("، ويمكن تحميلها باء ، ولكن لا يكون من chrome.jpg"))
+---
+> * 1 FETCH (FIRSTLINE ("، ويمكن تحميله�"))
+1c1
+< * 1 FETCH (FIRSTLINE ("، ويمكن تحميلها باء ، ولكن لا يكون من chrome.jpg"))
+---
+> * 1 FETCH (FIRSTLINE ("، ويمكن تحميله�"))
+====current path is:/home/ram/Desktop/MX9.5/Testcases/body_preview/3-Logic of selecting the firstline data/Testcases-body-preview-deal-spaces-encode-enhanced-new/good/Type-image-UTF-8-Arabic-messagebody-IMAP-and-SMTP================
+
+================Type-image-UTF-8-Arabic-messagebody-IMAP-and-SMTP Test finished===============
+
+====current path is:Type-image-UTF-8-Arabic-messagebody-IMAP-and-SMTP================
+====running logic-messagesend-IMAP-append-7bit ========
+====running logic-messagesend-IMAP-append-8bit ========
+====running logic-messagesend-IMAP-append-base64 ========
+====running logic-messagesend-IMAP-append-quoted-printable ========
+====running logic-messagesend-SMTP-7bit ========
+====running logic-messagesend-SMTP-8bit ========
+====running logic-messagesend-SMTP-base64 ========
+====running logic-messagesend-SMTP-quoted-printable ========
+================Type-image-UTF-8-Arabic-messagebody-IMAP-and-SMTP Test finished===============
+====current path is:Type-image-UTF-8-Arabic-messagebody-IMAP-and-SMTP====================current path is:Type-image-UTF-8-Arabic-messagebody-IMAP-and-SMTP================
+====running logic-messagesend-IMAP-append-7bit ============running logic-messagesend-IMAP-append-7bit ========
+====running logic-messagesend-IMAP-append-8bit ============running logic-messagesend-IMAP-append-8bit ========
+====running logic-messagesend-IMAP-append-base64 ========
+====running logic-messagesend-IMAP-append-quoted-printable ========
+====running logic-messagesend-SMTP-7bit ========
+====running logic-messagesend-SMTP-8bit ========
+====running logic-messagesend-SMTP-base64 ========
+====running logic-messagesend-SMTP-quoted-printable ========
+================Type-image-UTF-8-Arabic-messagebody-IMAP-and-SMTP Test finished===============
+====current path is:Type-image-UTF-8-Arabic-messagebody-IMAP-and-SMTP====================current path is:Type-image-UTF-8-Arabic-messagebody-IMAP-and-SMTP================
+====running logic-messagesend-IMAP-append-7bit ============running logic-messagesend-IMAP-append-7bit ========
+====running logic-messagesend-IMAP-append-8bit ============running logic-messagesend-IMAP-append-8bit ========
+====running logic-messagesend-IMAP-append-base64 ========
+====running logic-messagesend-IMAP-append-quoted-printable ========
+====running logic-messagesend-SMTP-7bit ========
+====running logic-messagesend-SMTP-8bit ========
+====running logic-messagesend-SMTP-base64 ========
+====running logic-messagesend-SMTP-quoted-printable ========
+================Type-image-UTF-8-Arabic-messagebody-IMAP-and-SMTP Test finished===============
+====current path is:Type-image-UTF-8-Arabic-messagebody-IMAP-and-SMTP====================current path is:Type-image-UTF-8-Arabic-messagebody-IMAP-and-SMTP================
+====running logic-messagesend-IMAP-append-7bit ============running logic-messagesend-IMAP-append-7bit ========
+====running logic-messagesend-IMAP-append-8bit ============running logic-messagesend-IMAP-append-8bit ========
+====running logic-messagesend-IMAP-append-base64 ========
+====running logic-messagesend-IMAP-append-quoted-printable ========
+====running logic-messagesend-SMTP-7bit ========
+====running logic-messagesend-SMTP-8bit ========
+====running logic-messagesend-SMTP-base64 ========
+====running logic-messagesend-SMTP-quoted-printable ========
+================Type-image-UTF-8-Arabic-messagebody-IMAP-and-SMTP Test finished===============
+1c1
+< * 1 FETCH (FIRSTLINE ("، ويمكن تحميلها باء ، ولكن لا يكون من chrome.jpgchr"))
+---
+> * 1 FETCH (FIRSTLINE ("، ويمكن تحميلها باء ، ولكن لا يكون من chrome.jpg"))
+1c1
+< * 1 FETCH (FIRSTLINE ("، ويمكن تحميلها باء ، ولكن لا يكون من chrome.jpgchr"))
+---
+> * 1 FETCH (FIRSTLINE ("، ويمكن تحميلها باء ، ولكن لا يكون من chrome.jpg"))
+1c1
+< * 1 FETCH (FIRSTLINE ("، ويمكن تحميلها باء ، ولكن لا يكون من chrome.jpgchr"))
+---
+> * 1 FETCH (FIRSTLINE ("، ويمكن تحميلها باء ، ولكن لا يكون من chrome.jpg"))
+1c1
+< * 1 FETCH (FIRSTLINE ("، ويمكن تحميلها باء ، ولكن لا يكون من chrome.jpgchr"))
+---
+> * 1 FETCH (FIRSTLINE ("، ويمكن تحميلها باء ، ولكن لا يكون من chrome.jpg"))
+1c1
+< * 1 FETCH (FIRSTLINE ("، ويمكن تحميلها باء ، ولكن لا يكون من chrome.jpgchr"))
+---
+> * 1 FETCH (FIRSTLINE ("، ويمكن تحميلها باء ، ولكن لا يكون من chrome.jpg"))
+1c1
+< * 1 FETCH (FIRSTLINE ("، ويمكن تحميلها باء ، ولكن لا يكون من chrome.jpgchr"))
+---
+> * 1 FETCH (FIRSTLINE ("، ويمكن تحميلها باء ، ولكن لا يكون من chrome.jpg"))
+1c1
+< * 1 FETCH (FIRSTLINE ("، ويمكن تحميلها باء ، ولكن لا يكون من chrome.jpgchr"))
+---
+> * 1 FETCH (FIRSTLINE ("، ويمكن تحميلها باء ، ولكن لا يكون من chrome.jpg"))
+1c1
+< * 1 FETCH (FIRSTLINE ("، ويمكن تحميلها باء ، ولكن لا يكون من chrome.jpgchr"))
+---
+> * 1 FETCH (FIRSTLINE ("، ويمكن تحميلها باء ، ولكن لا يكون من chrome.jpg"))
+1c1
+< * 1 FETCH (FIRSTLINE ("، ويمكن تحميلها باء ، ولكن لا يكون من chrome.jpgchr"))
+---
+> * 1 FETCH (FIRSTLINE ("، ويمكن تحميلها باء ، ولكن لا يكون من chrome.jpg"))
+1c1
+< * 1 FETCH (FIRSTLINE ("، ويمكن تحميلها باء ، ولكن لا يكون من chrome.jpgchr"))
+---
+> * 1 FETCH (FIRSTLINE ("، ويمكن تحميلها باء ، ولكن لا يكون من chrome.jpg"))
+1c1
+< * 1 FETCH (FIRSTLINE ("، ويمكن تحميلها باء ، ولكن لا يكون من chrome.jpgchr"))
+---
+> * 1 FETCH (FIRSTLINE ("، ويمكن تحميلها باء ، ولكن لا يكون من chrome.jpg"))

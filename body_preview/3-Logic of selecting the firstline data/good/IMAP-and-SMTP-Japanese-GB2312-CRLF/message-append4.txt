@@ -1,0 +1,8 @@
+from:xx2@openwave.com
+to:xx1@openwave.com
+subject:testemail-Japanese-GBK-8bit-CRLF
+MIME-Version: 1.0
+Content-Type: text/plain; charset=gbk; format=flowed
+Content-Transfer-Encoding: 8bit
+
+人は何かの犠牲なしに 何も得ることはできない     

@@ -1,0 +1,5 @@
+from:xx2@openwave.com
+to:xx1@openwave.com
+subject:testemail-Ascii
+
+The lunatic, the lover and the po     et are of imagination all compact. (A Mids

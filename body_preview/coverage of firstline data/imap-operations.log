@@ -1,0 +1,98 @@
+* OK IMAP4 server (InterMail vM.9.05.00.00 201-2473-137-113) ready Wed, 24 May 2017 19:19:16 -0700 (PDT)
+a OK LOGIN completed
+* 1 EXISTS
+* OK [UNSEEN 1] First unseen message
+* OK [UIDVALIDITY 1495673622] UIDs valid
+* OK [UIDNEXT 1011] Predicted next UID
+* FLAGS (\Answered \Flagged \Deleted \Draft \Seen)
+* OK [PERMANENTFLAGS (\* \Answered \Flagged \Deleted \Draft \Seen)] Permanent flags
+* 0 RECENT
+a OK [READ-WRITE] SELECT completed
+* 1 FETCH (FIRSTLINE ("، ويمكن تح SMTP Nobody! いくつにな 我们是中国人， "))
+a OK FETCH completed
+* 1 FETCH (FIRSTLINE ("، ويمكن تح SMTP Nobody! いくつにな 我们是中国人， ") UID 1010)
+a OK UID FETCH completed
+* 1 EXISTS
+* OK [UNSEEN 1] First unseen message
+* OK [UIDVALIDITY 1495673622] UIDs valid
+* OK [UIDNEXT 1010] Predicted next UID
+* FLAGS (\Answered \Flagged \Deleted \Draft \Seen)
+* OK [PERMANENTFLAGS (\* \Answered \Flagged \Deleted \Draft \Seen)] Permanent flags
+* 1 RECENT
+a OK [READ-WRITE] SELECT completed
+* 1 FETCH (FIRSTLINE ("، ويمكن تح SMTP Nobody! いくつにな 我们是中国人， "))
+a OK FETCH completed
+* 1 FETCH (FIRSTLINE ("، ويمكن تح SMTP Nobody! いくつにな 我们是中国人， ") UID 1009)
+a OK UID FETCH completed
+* 1 EXISTS
+* OK [UNSEEN 1] First unseen message
+* OK [UIDVALIDITY 1495673622] UIDs valid
+* OK [UIDNEXT 1010] Predicted next UID
+* FLAGS (\Answered \Flagged \Deleted \Draft \Seen)
+* OK [PERMANENTFLAGS (\* \Answered \Flagged \Deleted \Draft \Seen)] Permanent flags
+* 1 RECENT
+a OK [READ-WRITE] SELECT completed
+* 1 FETCH (FIRSTLINE ("، ويمكن تح SMTP Nobody! いくつにな 我们是中国人， "))
+a OK FETCH completed
+* 1 FETCH (FIRSTLINE ("، ويمكن تح SMTP Nobody! いくつにな 我们是中国人， ") UID 1009)
+a OK UID FETCH completed
+* 1 EXISTS
+* OK [UNSEEN 1] First unseen message
+* OK [UIDVALIDITY 1495673622] UIDs valid
+* OK [UIDNEXT 1010] Predicted next UID
+* FLAGS (\Answered \Flagged \Deleted \Draft \Seen)
+* OK [PERMANENTFLAGS (\* \Answered \Flagged \Deleted \Draft \Seen)] Permanent flags
+* 1 RECENT
+a OK [READ-WRITE] SELECT completed
+* 1 FETCH (FIRSTLINE ("، ويمكن تح SMTP Nobody! いくつにな 我们是中国人， "))
+a OK FETCH completed
+* 1 FETCH (FIRSTLINE ("، ويمكن تح SMTP Nobody! いくつにな 我们是中国人， ") UID 1009)
+a OK UID FETCH completed
+* 1 EXISTS
+* OK [UNSEEN 1] First unseen message
+* OK [UIDVALIDITY 1495673622] UIDs valid
+* OK [UIDNEXT 1010] Predicted next UID
+* FLAGS (\Answered \Flagged \Deleted \Draft \Seen)
+* OK [PERMANENTFLAGS (\* \Answered \Flagged \Deleted \Draft \Seen)] Permanent flags
+* 1 RECENT
+a OK [READ-WRITE] SELECT completed
+* 1 FETCH (FIRSTLINE ("، ويمكن تح SMTP Nobody! いくつにな 我们是中国人， "))
+a OK FETCH completed
+* 1 FETCH (FIRSTLINE ("، ويمكن تح SMTP Nobody! いくつにな 我们是中国人， ") UID 1009)
+a OK UID FETCH completed
+* 1 EXISTS
+* OK [UNSEEN 1] First unseen message
+* OK [UIDVALIDITY 1495678754] UIDs valid
+* OK [UIDNEXT 1001] Predicted next UID
+* FLAGS (\Answered \Flagged \Deleted \Draft \Seen)
+* OK [PERMANENTFLAGS (\* \Answered \Flagged \Deleted \Draft \Seen)] Permanent flags
+* 1 RECENT
+a OK [READ-WRITE] SELECT completed
+* 1 FETCH (FIRSTLINE ("، ويمكن تح SMTP Nobody! いくつにな 我们是中国人， "))
+a OK FETCH completed
+* 1 FETCH (FIRSTLINE ("، ويمكن تح SMTP Nobody! いくつにな 我们是中国人， ") UID 1000)
+a OK UID FETCH completed
+* 1 EXISTS
+* OK [UNSEEN 1] First unseen message
+* OK [UIDVALIDITY 1495678754] UIDs valid
+* OK [UIDNEXT 1001] Predicted next UID
+* FLAGS (\Answered \Flagged \Deleted \Draft \Seen)
+* OK [PERMANENTFLAGS (\* \Answered \Flagged \Deleted \Draft \Seen)] Permanent flags
+* 1 RECENT
+a OK [READ-WRITE] SELECT completed
+* 1 FETCH (FIRSTLINE ("، ويمكن تح SMTP Nobody! いくつにな 我们是中国人， "))
+a OK FETCH completed
+* 1 FETCH (FIRSTLINE ("، ويمكن تح SMTP Nobody! いくつにな 我们是中国人， ") UID 1000)
+a OK UID FETCH completed
+* 1 EXISTS
+* OK [UNSEEN 1] First unseen message
+* OK [UIDVALIDITY 1495673622] UIDs valid
+* OK [UIDNEXT 1011] Predicted next UID
+* FLAGS (\Answered \Flagged \Deleted \Draft \Seen)
+* OK [PERMANENTFLAGS (\* \Answered \Flagged \Deleted \Draft \Seen)] Permanent flags
+* 0 RECENT
+a OK [READ-WRITE] SELECT completed
+a OK DELETE completed
+a OK DELETE completed
+* BYE IMAP4 server terminating connection
+a OK LOGOUT completed

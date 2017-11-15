@@ -1,0 +1,7 @@
+from:xx2@openwave.com
+to:xx1@openwave.com
+subject:testemail-Arabic-UTF8
+
+لا تعبس ا
+     بدا  حتي انت حزين  لانك ل
+ا تدري م

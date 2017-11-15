@@ -1,0 +1,9 @@
+from:xx2@openwave.com
+to:xx1@openwave.com
+subject:testemail-Japanese-GB2312-CRLF-base64
+MIME-Version: 1.0
+Content-Type: text/plain; charset=gb2312
+Content-Transfer-Encoding: base64
+
+paql7KTPpKSkxA0KpKuks6TO0rvOtqTLpOLYk6SxpMoNCg0KDQoNCg0KpKTW2elnpPK8r6ThpMah
+osrAvefSu6TO2JSxpqTy0oqkxKSxpMahor74jJ2kyqTDpMak5KTro6G6o9lczfWky6OhICAgICA=

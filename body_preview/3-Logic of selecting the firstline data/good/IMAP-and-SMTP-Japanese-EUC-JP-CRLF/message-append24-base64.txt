@@ -1,0 +1,9 @@
+from:xx2@openwave.com
+to:xx1@openwave.com
+subject:testemail-Japanes-EUC-JP-CRLF-base64
+MIME-Version: 1.0
+Content-Type: text/plain; charset=EUC-JP
+Content-Transfer-Encoding: base64
+
+paql7KTPpKSkxA0KpKuks6TOsOzMo6TLpOLJ6aSxpMoNCqSkw+e01qTyvbik4aTGoaLApLOmsOyk
+zrriyvWk8rirpMSksaTGoaLC0KTKpMOkxqTkpOuhqrOkwrGypqTLoaogICAgIA==

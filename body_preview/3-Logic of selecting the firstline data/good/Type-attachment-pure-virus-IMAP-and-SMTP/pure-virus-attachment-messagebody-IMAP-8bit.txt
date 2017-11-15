@@ -1,0 +1,30 @@
+Return-Path: <xx2@openwave.com>
+Received: from [10.13.8.221] by mx-172-26-202-87.openwave.com
+          (InterMail vM.9.05.00.00 201-2473-137-108) with ESMTP
+          id <20170219030805.BJK23163.mx-172-26-202-87.openwave.com@[10.13.8.221]>
+          for <xx1@openwave.com>; Sat, 18 Feb 2017 19:08:05 -0800
+To: xx1@openwave.com
+From: xx2 <xx2@openwave.com>
+Subject: pure virus in attachment
+Message-ID: <854fc56e-2a40-76b7-6109-8f51aa9a56d5@openwave.com>
+Date: Sun, 19 Feb 2017 11:08:04 +0800
+User-Agent: MX
+MIME-Version: 1.0
+Content-Type: multipart/mixed;
+ boundary="------------75DC31484EA216D9A6118F7F"
+
+This is a multi-part message in MIME format.
+--------------75DC31484EA216D9A6118F7F
+Content-Transfer-Encoding: 7bit
+
+--------------75DC31484EA216D9A6118F7F
+Content-Type: text/plain; charset=UTF-8;
+Content-Transfer-Encoding: 8bit
+ name="virus"
+Content-Transfer-Encoding: base64
+Content-Disposition: attachment;
+ filename="virus"
+
+WDVPIVAlQEFQWzRcUFpYNTQoUF4pN0NDKTd9JEVJQ0FSLVNUQU5EQVJELUFOVElWSVJVUy1U
+RVNULUZJTEUhJEgrSCogCg==
+--------------75DC31484EA216D9A6118F7F--

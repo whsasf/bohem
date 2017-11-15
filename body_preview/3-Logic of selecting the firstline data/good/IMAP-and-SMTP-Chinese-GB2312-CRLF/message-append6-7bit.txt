@@ -1,0 +1,9 @@
+from:xx2@openwave.com
+to:xx1@openwave.com
+subject:testemail-Chinese-GB2312-CRLF-7bit
+MIME-Version: 1.0
+Content-Type: text/plain; charset=gb2312
+Content-Transfer-Encoding: 7bit
+
+     Å­·¢³å¹Ú£¬Æ¾À»´¦¡¢
+äìäìÓêĞª¡£Ì§ÍûÑÛ¡¢ÑöÌì³¤Ğ¥£¬×³»³¼¤ÁÒ¡£

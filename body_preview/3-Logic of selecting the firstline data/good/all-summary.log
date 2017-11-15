@@ -1,0 +1,1843 @@
+-------------------------------------Test Process-------------------------------------
+
+
+
+##############################################
+######   Test/Plain  Testing #################
+##############################################
+================IMAP-and-SMTP-ASCII-chars-CRLF Testing===============
+====current path is:IMAP-and-SMTP-ASCII-chars-CRLF================
+====running logic-messagesend-IMAP-append-7bit ========
+[32m ###################### 1-1 FETCH Test success ######################[0m
+[32m ###################### 1-2 UID FETCH Test success ##################[0m
+
+====running logic-messagesend-IMAP-append-8bit ========
+[32m ###################### 1-1 FETCH Test success ######################[0m
+[32m ###################### 1-2 UID FETCH Test success ##################[0m
+
+====running logic-messagesend-IMAP-append-base64 ========
+[32m ###################### 1-1 FETCH Test success ######################[0m
+[32m ###################### 1-2 UID FETCH Test success ##################[0m
+
+====running logic-messagesend-IMAP-append-quoted-printable ========
+[32m ###################### 1-1 FETCH Test success ######################[0m
+[32m ###################### 1-2 UID FETCH Test success ##################[0m
+
+====running logic-messagesend-SMTP-7bit ========
+[32m ###################### 2-1 FETCH Test success ######################[0m
+[32m ###################### 2-2 UID FETCH Test success ##################[0m
+
+====running logic-messagesend-SMTP-8bit ========
+[32m ###################### 2-1 FETCH Test success ######################[0m
+[32m ###################### 2-2 UID FETCH Test success ##################[0m
+
+====running logic-messagesend-SMTP-base64 ========
+[32m ###################### 2-1 FETCH Test success ######################[0m
+[32m ###################### 2-2 UID FETCH Test success ##################[0m
+
+====running logic-messagesend-SMTP-quoted-printable ========
+[32m ###################### 2-1 FETCH Test success ######################[0m
+[32m ###################### 2-2 UID FETCH Test success ##################[0m
+
+================IMAP-and-SMTP-ASCII-chars-CRLF Test finished===============
+================IMAP-and-SMTP-Chinese-UTF8-CRLF Testing===============
+====current path is:IMAP-and-SMTP-Chinese-UTF8-CRLF================
+====running logic-messagesend-IMAP-append-7bit ========
+[32m ###################### 1-1 FETCH Test success ######################[0m
+[32m ###################### 1-2 UID FETCH Test success ##################[0m
+
+====running logic-messagesend-IMAP-append-8bit ========
+[32m ###################### 1-1 FETCH Test success ######################[0m
+[32m ###################### 1-2 UID FETCH Test success ##################[0m
+
+====running logic-messagesend-IMAP-append-base64 ========
+[32m ###################### 1-1 FETCH Test success ######################[0m
+[32m ###################### 1-2 UID FETCH Test success ##################[0m
+
+====running logic-messagesend-IMAP-append-quoted-printable ========
+[32m ###################### 1-1 FETCH Test success ######################[0m
+[32m ###################### 1-2 UID FETCH Test success ##################[0m
+
+====running logic-messagesend-SMTP-7bit ========
+[32m ###################### 2-1 FETCH Test success ######################[0m
+[32m ###################### 2-2 UID FETCH Test success ##################[0m
+
+====running logic-messagesend-SMTP-8bit ========
+[32m ###################### 2-1 FETCH Test success ######################[0m
+[32m ###################### 2-2 UID FETCH Test success ##################[0m
+
+====running logic-messagesend-SMTP-base64 ========
+[32m ###################### 2-1 FETCH Test success ######################[0m
+[32m ###################### 2-2 UID FETCH Test success ##################[0m
+
+====running logic-messagesend-SMTP-quoted-printable ========
+[32m ###################### 2-1 FETCH Test success ######################[0m
+[32m ###################### 2-2 UID FETCH Test success ##################[0m
+
+================IMAP-and-SMTP-Chinese-UTF8-CRLF Test finished===============
+================IMAP-and-SMTP-Chinese-GB2312-CRLF Testing===============
+====current path is:IMAP-and-SMTP-Chinese-GB2312-CRLF================
+====running logic-messagesend-IMAP-append-7bit ========
+[32m ###################### 1-1 FETCH Test success ######################[0m
+[32m ###################### 1-2 UID FETCH Test success ##################[0m
+
+====running logic-messagesend-IMAP-append-8bit ========
+[32m ###################### 1-1 FETCH Test success ######################[0m
+[32m ###################### 1-2 UID FETCH Test success ##################[0m
+
+====running logic-messagesend-IMAP-append-base64 ========
+[32m ###################### 1-1 FETCH Test success ######################[0m
+[32m ###################### 1-2 UID FETCH Test success ##################[0m
+
+====running logic-messagesend-IMAP-append-quoted-printable ========
+[32m ###################### 1-1 FETCH Test success ######################[0m
+[32m ###################### 1-2 UID FETCH Test success ##################[0m
+
+====running logic-messagesend-SMTP-7bit ========
+[32m ###################### 2-1 FETCH Test success ######################[0m
+[32m ###################### 2-2 UID FETCH Test success ##################[0m
+
+====running logic-messagesend-SMTP-8bit ========
+[32m ###################### 2-1 FETCH Test success ######################[0m
+[32m ###################### 2-2 UID FETCH Test success ##################[0m
+
+====running logic-messagesend-SMTP-base64 ========
+[32m ###################### 2-1 FETCH Test success ######################[0m
+[32m ###################### 2-2 UID FETCH Test success ##################[0m
+
+====running logic-messagesend-SMTP-quoted-printable ========
+[32m ###################### 2-1 FETCH Test success ######################[0m
+[32m ###################### 2-2 UID FETCH Test success ##################[0m
+
+================IMAP-and-SMTP-Chinese-GB2312-CRLF Test finished===============
+================IMAP-and-SMTP-Japanese-UTF8-CRLF Testing===============
+====current path is:IMAP-and-SMTP-Japanese-UTF8-CRLF================
+====running logic-messagesend-IMAP-append-7bit ========
+[32m ###################### 1-1 FETCH Test success ######################[0m
+[32m ###################### 1-2 UID FETCH Test success ##################[0m
+
+====running logic-messagesend-IMAP-append-8bit ========
+[32m ###################### 1-1 FETCH Test success ######################[0m
+[32m ###################### 1-2 UID FETCH Test success ##################[0m
+
+====running logic-messagesend-IMAP-append-base64 ========
+[32m ###################### 1-1 FETCH Test success ######################[0m
+[32m ###################### 1-2 UID FETCH Test success ##################[0m
+
+====running logic-messagesend-IMAP-append-quoted-printable ========
+[32m ###################### 1-1 FETCH Test success ######################[0m
+[32m ###################### 1-2 UID FETCH Test success ##################[0m
+
+====running logic-messagesend-SMTP-7bit ========
+[32m ###################### 2-1 FETCH Test success ######################[0m
+[32m ###################### 2-2 UID FETCH Test success ##################[0m
+
+====running logic-messagesend-SMTP-8bit ========
+[32m ###################### 2-1 FETCH Test success ######################[0m
+[32m ###################### 2-2 UID FETCH Test success ##################[0m
+
+====running logic-messagesend-SMTP-base64 ========
+[32m ###################### 2-1 FETCH Test success ######################[0m
+[32m ###################### 2-2 UID FETCH Test success ##################[0m
+
+====running logic-messagesend-SMTP-quoted-printable ========
+[32m ###################### 2-1 FETCH Test success ######################[0m
+[32m ###################### 2-2 UID FETCH Test success ##################[0m
+
+================IMAP-and-SMTP-Japanese-UTF8-CRLF Test finished===============
+================IMAP-and-SMTP-Japanese-EUC-JP-CRLF Testing===============
+====current path is:IMAP-and-SMTP-Japanese-EUC-JP-CRLF================
+====running logic-messagesend-IMAP-append-7bit ========
+[32m ###################### 1-1 FETCH Test success ######################[0m
+[32m ###################### 1-2 UID FETCH Test success ##################[0m
+
+====running logic-messagesend-IMAP-append-8bit ========
+[32m ###################### 1-1 FETCH Test success ######################[0m
+[32m ###################### 1-2 UID FETCH Test success ##################[0m
+
+====running logic-messagesend-IMAP-append-base64 ========
+[32m ###################### 1-1 FETCH Test success ######################[0m
+[32m ###################### 1-2 UID FETCH Test success ##################[0m
+
+====running logic-messagesend-IMAP-append-quoted-printable ========
+[32m ###################### 1-1 FETCH Test success ######################[0m
+[32m ###################### 1-2 UID FETCH Test success ##################[0m
+
+====running logic-messagesend-SMTP-7bit ========
+[32m ###################### 2-1 FETCH Test success ######################[0m
+[32m ###################### 2-2 UID FETCH Test success ##################[0m
+
+====running logic-messagesend-SMTP-8bit ========
+[32m ###################### 2-1 FETCH Test success ######################[0m
+[32m ###################### 2-2 UID FETCH Test success ##################[0m
+
+====running logic-messagesend-SMTP-base64 ========
+[32m ###################### 2-1 FETCH Test success ######################[0m
+[32m ###################### 2-2 UID FETCH Test success ##################[0m
+
+====running logic-messagesend-SMTP-quoted-printable ========
+[32m ###################### 2-1 FETCH Test success ######################[0m
+[32m ###################### 2-2 UID FETCH Test success ##################[0m
+
+================IMAP-and-SMTP-Japanese-EUC-JP-CRLF Test finished===============
+================IMAP-and-SMTP-Japanese-Shift_JIS-CRLF Testing===============
+====current path is:IMAP-and-SMTP-Japanese-Shift_JIS-CRLF================
+====running logic-messagesend-IMAP-append-7bit ========
+[32m ###################### 1-1 FETCH Test success ######################[0m
+[32m ###################### 1-2 UID FETCH Test success ##################[0m
+
+====running logic-messagesend-IMAP-append-8bit ========
+[32m ###################### 1-1 FETCH Test success ######################[0m
+[32m ###################### 1-2 UID FETCH Test success ##################[0m
+
+====running logic-messagesend-IMAP-append-base64 ========
+[32m ###################### 1-1 FETCH Test success ######################[0m
+[32m ###################### 1-2 UID FETCH Test success ##################[0m
+
+====running logic-messagesend-IMAP-append-quoted-printable ========
+[32m ###################### 1-1 FETCH Test success ######################[0m
+[32m ###################### 1-2 UID FETCH Test success ##################[0m
+
+====running logic-messagesend-SMTP-7bit ========
+[32m ###################### 2-1 FETCH Test success ######################[0m
+[32m ###################### 2-2 UID FETCH Test success ##################[0m
+
+====running logic-messagesend-SMTP-8bit ========
+[32m ###################### 2-1 FETCH Test success ######################[0m
+[32m ###################### 2-2 UID FETCH Test success ##################[0m
+
+====running logic-messagesend-SMTP-base64 ========
+[32m ###################### 2-1 FETCH Test success ######################[0m
+[32m ###################### 2-2 UID FETCH Test success ##################[0m
+
+====running logic-messagesend-SMTP-quoted-printable ========
+[32m ###################### 2-1 FETCH Test success ######################[0m
+[32m ###################### 2-2 UID FETCH Test success ##################[0m
+
+================IMAP-and-SMTP-Japanese-Shift_JIS-CRLF Test finished===============
+================IMAP-and-SMTP-Japanese-GB2312-CRLF Testing===============
+====current path is:IMAP-and-SMTP-Japanese-GB2312-CRLF================
+====running logic-messagesend-IMAP-append-7bit ========
+[32m ###################### 1-1 FETCH Test success ######################[0m
+[32m ###################### 1-2 UID FETCH Test success ##################[0m
+
+====running logic-messagesend-IMAP-append-8bit ========
+[32m ###################### 1-1 FETCH Test success ######################[0m
+[32m ###################### 1-2 UID FETCH Test success ##################[0m
+
+====running logic-messagesend-IMAP-append-base64 ========
+[32m ###################### 1-1 FETCH Test success ######################[0m
+[32m ###################### 1-2 UID FETCH Test success ##################[0m
+
+====running logic-messagesend-IMAP-append-quoted-printable ========
+[32m ###################### 1-1 FETCH Test success ######################[0m
+[32m ###################### 1-2 UID FETCH Test success ##################[0m
+
+====running logic-messagesend-SMTP-7bit ========
+[32m ###################### 2-1 FETCH Test success ######################[0m
+[32m ###################### 2-2 UID FETCH Test success ##################[0m
+
+====running logic-messagesend-SMTP-8bit ========
+[32m ###################### 2-1 FETCH Test success ######################[0m
+[32m ###################### 2-2 UID FETCH Test success ##################[0m
+
+====running logic-messagesend-SMTP-base64 ========
+[32m ###################### 2-1 FETCH Test success ######################[0m
+[32m ###################### 2-2 UID FETCH Test success ##################[0m
+
+====running logic-messagesend-SMTP-quoted-printable ========
+[32m ###################### 2-1 FETCH Test success ######################[0m
+[32m ###################### 2-2 UID FETCH Test success ##################[0m
+
+================IMAP-and-SMTP-Japanese-GB2312-CRLF Test finished===============
+================IMAP-and-SMTP-Arabic-UTF8-CRLF Testing===============
+====current path is:IMAP-and-SMTP-Arabic-UTF8-CRLF================
+====running logic-messagesend-IMAP-append-7bit ========
+[32m ###################### 1-1 FETCH Test success ######################[0m
+[32m ###################### 1-2 UID FETCH Test success ##################[0m
+
+====running logic-messagesend-IMAP-append-8bit ========
+[32m ###################### 1-1 FETCH Test success ######################[0m
+[32m ###################### 1-2 UID FETCH Test success ##################[0m
+
+====running logic-messagesend-IMAP-append-base64 ========
+[32m ###################### 1-1 FETCH Test success ######################[0m
+[32m ###################### 1-2 UID FETCH Test success ##################[0m
+
+====running logic-messagesend-IMAP-append-quoted-printable ========
+[32m ###################### 1-1 FETCH Test success ######################[0m
+[32m ###################### 1-2 UID FETCH Test success ##################[0m
+
+====running logic-messagesend-SMTP-7bit ========
+[32m ###################### 2-1 FETCH Test success ######################[0m
+[32m ###################### 2-2 UID FETCH Test success ##################[0m
+
+====running logic-messagesend-SMTP-8bit ========
+[32m ###################### 2-1 FETCH Test success ######################[0m
+[32m ###################### 2-2 UID FETCH Test success ##################[0m
+
+====running logic-messagesend-SMTP-base64 ========
+[32m ###################### 2-1 FETCH Test success ######################[0m
+[32m ###################### 2-2 UID FETCH Test success ##################[0m
+
+====running logic-messagesend-SMTP-quoted-printable ========
+[32m ###################### 2-1 FETCH Test success ######################[0m
+[32m ###################### 2-2 UID FETCH Test success ##################[0m
+
+================IMAP-and-SMTP-Arabic-UTF8-CRLF Test finished===============
+================IMAP-and-SMTP-Arabic-ISO-8859-6-CRLF  Testing===============
+====current path is:IMAP-and-SMTP-Arabic-ISO-8859-6-CRLF================
+====running logic-messagesend-IMAP-append-7bit ========
+[32m ###################### 1-1 FETCH Test success ######################[0m
+[32m ###################### 1-2 UID FETCH Test success ##################[0m
+
+====running logic-messagesend-IMAP-append-8bit ========
+[32m ###################### 1-1 FETCH Test success ######################[0m
+[32m ###################### 1-2 UID FETCH Test success ##################[0m
+
+====running logic-messagesend-IMAP-append-base64 ========
+[32m ###################### 1-1 FETCH Test success ######################[0m
+[32m ###################### 1-2 UID FETCH Test success ##################[0m
+
+====running logic-messagesend-IMAP-append-quoted-printable ========
+[32m ###################### 1-1 FETCH Test success ######################[0m
+[32m ###################### 1-2 UID FETCH Test success ##################[0m
+
+====running logic-messagesend-SMTP-7bit ========
+[32m ###################### 2-1 FETCH Test success ######################[0m
+[32m ###################### 2-2 UID FETCH Test success ##################[0m
+
+====running logic-messagesend-SMTP-8bit ========
+[32m ###################### 2-1 FETCH Test success ######################[0m
+[32m ###################### 2-2 UID FETCH Test success ##################[0m
+
+====running logic-messagesend-SMTP-base64 ========
+[32m ###################### 2-1 FETCH Test success ######################[0m
+[32m ###################### 2-2 UID FETCH Test success ##################[0m
+
+====running logic-messagesend-SMTP-quoted-printable ========
+[32m ###################### 2-1 FETCH Test success ######################[0m
+[32m ###################### 2-2 UID FETCH Test success ##################[0m
+
+================IMAP-and-SMTP-Arabic-ISO-8859-6-CRLF  Test finished===============
+================IMAP-and-SMTP-mixed-UTF-8-language Testing===============
+====current path is:IMAP-and-SMTP-mixed-UTF-8-language================
+====running logic-messagesend-IMAP-append-7bit ========
+[32m ###################### 1-1 FETCH Test success ######################[0m
+[32m ###################### 1-2 UID FETCH Test success ##################[0m
+
+====running logic-messagesend-IMAP-append-8bit ========
+[32m ###################### 1-1 FETCH Test success ######################[0m
+[32m ###################### 1-2 UID FETCH Test success ##################[0m
+
+====running logic-messagesend-IMAP-append-base64 ========
+[32m ###################### 1-1 FETCH Test success ######################[0m
+[32m ###################### 1-2 UID FETCH Test success ##################[0m
+
+====running logic-messagesend-IMAP-append-quoted-printable ========
+[32m ###################### 1-1 FETCH Test success ######################[0m
+[32m ###################### 1-2 UID FETCH Test success ##################[0m
+
+====running logic-messagesend-SMTP-7bit ========
+[32m ###################### 2-1 FETCH Test success ######################[0m
+[32m ###################### 2-2 UID FETCH Test success ##################[0m
+
+====running logic-messagesend-SMTP-8bit ========
+[32m ###################### 2-1 FETCH Test success ######################[0m
+[32m ###################### 2-2 UID FETCH Test success ##################[0m
+
+====running logic-messagesend-SMTP-base64 ========
+[32m ###################### 2-1 FETCH Test success ######################[0m
+[32m ###################### 2-2 UID FETCH Test success ##################[0m
+
+====running logic-messagesend-SMTP-quoted-printable ========
+[32m ###################### 2-1 FETCH Test success ######################[0m
+[32m ###################### 2-2 UID FETCH Test success ##################[0m
+
+================IMAP-and-SMTP-mixed-UTF-8-language Test finished===============
+##############################################
+######  Attachments with  ####################
+##############################################
+================Type-attachment-pure-audio-IMAP-SMTP Testing===============
+====current path is:Type-attachment-pure-audio-IMAP-SMTP================
+====running logic-messagesend-IMAP-append-7bit ========
+[32m ###################### 1-1 FETCH Test success ######################[0m
+[32m ###################### 1-2 UID FETCH Test success ##################[0m
+
+====running logic-messagesend-IMAP-append-8bit ========
+[32m ###################### 1-1 FETCH Test success ######################[0m
+[32m ###################### 1-2 UID FETCH Test success ##################[0m
+
+====running logic-messagesend-IMAP-append-base64 ========
+[32m ###################### 1-1 FETCH Test success ######################[0m
+[32m ###################### 1-2 UID FETCH Test success ##################[0m
+
+====running logic-messagesend-IMAP-append-quoted-printable ========
+[32m ###################### 1-1 FETCH Test success ######################[0m
+[32m ###################### 1-2 UID FETCH Test success ##################[0m
+
+====running logic-messagesend-SMTP-7bit ========
+[32m ###################### 2-1 FETCH Test success ######################[0m
+[32m ###################### 2-2 UID FETCH Test success ##################[0m
+
+====running logic-messagesend-SMTP-8bit ========
+[32m ###################### 2-1 FETCH Test success ######################[0m
+[32m ###################### 2-2 UID FETCH Test success ##################[0m
+
+====running logic-messagesend-SMTP-base64 ========
+[32m ###################### 2-1 FETCH Test success ######################[0m
+[32m ###################### 2-2 UID FETCH Test success ##################[0m
+
+====running logic-messagesend-SMTP-quoted-printable ========
+[32m ###################### 2-1 FETCH Test success ######################[0m
+[32m ###################### 2-2 UID FETCH Test success ##################[0m
+
+================Type-attachment-pure-audio-IMAP-SMTP Test finished===============
+================Type-attachment-pure-image-IMAP-SMTP Testing===============
+====current path is:Type-attachment-pure-image-IMAP-SMTP================
+====running logic-messagesend-IMAP-append-7bit ========
+[32m ###################### 1-1 FETCH Test success ######################[0m
+[32m ###################### 1-2 UID FETCH Test success ##################[0m
+
+====running logic-messagesend-IMAP-append-8bit ========
+[32m ###################### 1-1 FETCH Test success ######################[0m
+[32m ###################### 1-2 UID FETCH Test success ##################[0m
+
+====running logic-messagesend-IMAP-append-base64 ========
+[32m ###################### 1-1 FETCH Test success ######################[0m
+[32m ###################### 1-2 UID FETCH Test success ##################[0m
+
+====running logic-messagesend-IMAP-append-quoted-printable ========
+[32m ###################### 1-1 FETCH Test success ######################[0m
+[32m ###################### 1-2 UID FETCH Test success ##################[0m
+
+====running logic-messagesend-SMTP-7bit ========
+[32m ###################### 2-1 FETCH Test success ######################[0m
+[32m ###################### 2-2 UID FETCH Test success ##################[0m
+
+====running logic-messagesend-SMTP-8bit ========
+[32m ###################### 2-1 FETCH Test success ######################[0m
+[32m ###################### 2-2 UID FETCH Test success ##################[0m
+
+====running logic-messagesend-SMTP-base64 ========
+[32m ###################### 2-1 FETCH Test success ######################[0m
+[32m ###################### 2-2 UID FETCH Test success ##################[0m
+
+====running logic-messagesend-SMTP-quoted-printable ========
+[32m ###################### 2-1 FETCH Test success ######################[0m
+[32m ###################### 2-2 UID FETCH Test success ##################[0m
+
+================Type-attachment-pure-image-IMAP-SMTP Test finished===============
+================Type-attachment-pure-pdf-IMAP-and-SMTP Testing===============
+====current path is:Type-attachment-pure-pdf-IMAP-and-SMTP================
+====running logic-messagesend-IMAP-append-7bit ========
+[32m ###################### 1-1 FETCH Test success ######################[0m
+[32m ###################### 1-2 UID FETCH Test success ##################[0m
+
+====running logic-messagesend-IMAP-append-8bit ========
+[32m ###################### 1-1 FETCH Test success ######################[0m
+[32m ###################### 1-2 UID FETCH Test success ##################[0m
+
+====running logic-messagesend-IMAP-append-base64 ========
+[32m ###################### 1-1 FETCH Test success ######################[0m
+[32m ###################### 1-2 UID FETCH Test success ##################[0m
+
+====running logic-messagesend-IMAP-append-quoted-printable ========
+[32m ###################### 1-1 FETCH Test success ######################[0m
+[32m ###################### 1-2 UID FETCH Test success ##################[0m
+
+====running logic-messagesend-SMTP-7bit ========
+[32m ###################### 2-1 FETCH Test success ######################[0m
+[32m ###################### 2-2 UID FETCH Test success ##################[0m
+
+====running logic-messagesend-SMTP-8bit ========
+[32m ###################### 2-1 FETCH Test success ######################[0m
+[32m ###################### 2-2 UID FETCH Test success ##################[0m
+
+====running logic-messagesend-SMTP-base64 ========
+[32m ###################### 2-1 FETCH Test success ######################[0m
+[32m ###################### 2-2 UID FETCH Test success ##################[0m
+
+====running logic-messagesend-SMTP-quoted-printable ========
+[32m ###################### 2-1 FETCH Test success ######################[0m
+[32m ###################### 2-2 UID FETCH Test success ##################[0m
+
+================Type-attachment-pure-pdf-IMAP-and-SMTP Test finished===============
+================Type-attachment-pure-python-IMAP-and-SMTP Testing===============
+====current path is:Type-attachment-pure-python-IMAP-and-SMTP================
+====running logic-messagesend-IMAP-append-7bit ========
+[32m ###################### 1-1 FETCH Test success ######################[0m
+[32m ###################### 1-2 UID FETCH Test success ##################[0m
+
+====running logic-messagesend-IMAP-append-8bit ========
+[32m ###################### 1-1 FETCH Test success ######################[0m
+[32m ###################### 1-2 UID FETCH Test success ##################[0m
+
+====running logic-messagesend-IMAP-append-base64 ========
+[32m ###################### 1-1 FETCH Test success ######################[0m
+[32m ###################### 1-2 UID FETCH Test success ##################[0m
+
+====running logic-messagesend-IMAP-append-quoted-printable ========
+[32m ###################### 1-1 FETCH Test success ######################[0m
+[32m ###################### 1-2 UID FETCH Test success ##################[0m
+
+====running logic-messagesend-SMTP-7bit ========
+[32m ###################### 2-1 FETCH Test success ######################[0m
+[32m ###################### 2-2 UID FETCH Test success ##################[0m
+
+====running logic-messagesend-SMTP-8bit ========
+[32m ###################### 2-1 FETCH Test success ######################[0m
+[32m ###################### 2-2 UID FETCH Test success ##################[0m
+
+====running logic-messagesend-SMTP-base64 ========
+[32m ###################### 2-1 FETCH Test success ######################[0m
+[32m ###################### 2-2 UID FETCH Test success ##################[0m
+
+====running logic-messagesend-SMTP-quoted-printable ========
+[32m ###################### 2-1 FETCH Test success ######################[0m
+[32m ###################### 2-2 UID FETCH Test success ##################[0m
+
+================Type-attachment-pure-python-IMAP-and-SMTP Test finished===============
+================Type-attachment-pure-tar-IMAP-and-SMTP Testing===============
+====current path is:Type-attachment-pure-tar-IMAP-and-SMTP================
+====running logic-messagesend-IMAP-append-7bit ========
+[32m ###################### 1-1 FETCH Test success ######################[0m
+[32m ###################### 1-2 UID FETCH Test success ##################[0m
+
+====running logic-messagesend-IMAP-append-8bit ========
+[32m ###################### 1-1 FETCH Test success ######################[0m
+[32m ###################### 1-2 UID FETCH Test success ##################[0m
+
+====running logic-messagesend-IMAP-append-base64 ========
+[32m ###################### 1-1 FETCH Test success ######################[0m
+[32m ###################### 1-2 UID FETCH Test success ##################[0m
+
+====running logic-messagesend-IMAP-append-quoted-printable ========
+[32m ###################### 1-1 FETCH Test success ######################[0m
+[32m ###################### 1-2 UID FETCH Test success ##################[0m
+
+====running logic-messagesend-SMTP-7bit ========
+[32m ###################### 2-1 FETCH Test success ######################[0m
+[32m ###################### 2-2 UID FETCH Test success ##################[0m
+
+====running logic-messagesend-SMTP-8bit ========
+[32m ###################### 2-1 FETCH Test success ######################[0m
+[32m ###################### 2-2 UID FETCH Test success ##################[0m
+
+====running logic-messagesend-SMTP-base64 ========
+[32m ###################### 2-1 FETCH Test success ######################[0m
+[32m ###################### 2-2 UID FETCH Test success ##################[0m
+
+====running logic-messagesend-SMTP-quoted-printable ========
+[32m ###################### 2-1 FETCH Test success ######################[0m
+[32m ###################### 2-2 UID FETCH Test success ##################[0m
+
+================Type-attachment-pure-tar-IMAP-and-SMTP Test finished===============
+================Type-attachment-pure-txt-IMAP-and-SMTP Testing===============
+====current path is:Type-attachment-pure-txt-IMAP-and-SMTP================
+====running logic-messagesend-IMAP-append-7bit ========
+[32m ###################### 1-1 FETCH Test success ######################[0m
+[32m ###################### 1-2 UID FETCH Test success ##################[0m
+
+====running logic-messagesend-IMAP-append-8bit ========
+[32m ###################### 1-1 FETCH Test success ######################[0m
+[32m ###################### 1-2 UID FETCH Test success ##################[0m
+
+====running logic-messagesend-IMAP-append-base64 ========
+[32m ###################### 1-1 FETCH Test success ######################[0m
+[32m ###################### 1-2 UID FETCH Test success ##################[0m
+
+====running logic-messagesend-IMAP-append-quoted-printable ========
+[32m ###################### 1-1 FETCH Test success ######################[0m
+[32m ###################### 1-2 UID FETCH Test success ##################[0m
+
+====running logic-messagesend-SMTP-7bit ========
+[32m ###################### 2-1 FETCH Test success ######################[0m
+[32m ###################### 2-2 UID FETCH Test success ##################[0m
+
+====running logic-messagesend-SMTP-8bit ========
+[32m ###################### 2-1 FETCH Test success ######################[0m
+[32m ###################### 2-2 UID FETCH Test success ##################[0m
+
+====running logic-messagesend-SMTP-base64 ========
+[32m ###################### 2-1 FETCH Test success ######################[0m
+[32m ###################### 2-2 UID FETCH Test success ##################[0m
+
+====running logic-messagesend-SMTP-quoted-printable ========
+[32m ###################### 2-1 FETCH Test success ######################[0m
+[32m ###################### 2-2 UID FETCH Test success ##################[0m
+
+================Type-attachment-pure-txt-IMAP-and-SMTP Test finished===============
+================Type-attachment-pure-video-IMAP-SMTP Testing===============
+====current path is:Type-attachment-pure-video-IMAP-SMTP================
+====running logic-messagesend-IMAP-append-7bit ========
+[32m ###################### 1-1 FETCH Test success ######################[0m
+[32m ###################### 1-2 UID FETCH Test success ##################[0m
+
+====running logic-messagesend-IMAP-append-8bit ========
+[32m ###################### 1-1 FETCH Test success ######################[0m
+[32m ###################### 1-2 UID FETCH Test success ##################[0m
+
+====running logic-messagesend-IMAP-append-base64 ========
+[32m ###################### 1-1 FETCH Test success ######################[0m
+[32m ###################### 1-2 UID FETCH Test success ##################[0m
+
+====running logic-messagesend-IMAP-append-quoted-printable ========
+[32m ###################### 1-1 FETCH Test success ######################[0m
+[32m ###################### 1-2 UID FETCH Test success ##################[0m
+
+====running logic-messagesend-SMTP-7bit ========
+[32m ###################### 2-1 FETCH Test success ######################[0m
+[32m ###################### 2-2 UID FETCH Test success ##################[0m
+
+====running logic-messagesend-SMTP-8bit ========
+[32m ###################### 2-1 FETCH Test success ######################[0m
+[32m ###################### 2-2 UID FETCH Test success ##################[0m
+
+====running logic-messagesend-SMTP-base64 ========
+[32m ###################### 2-1 FETCH Test success ######################[0m
+[32m ###################### 2-2 UID FETCH Test success ##################[0m
+
+====running logic-messagesend-SMTP-quoted-printable ========
+[32m ###################### 2-1 FETCH Test success ######################[0m
+[32m ###################### 2-2 UID FETCH Test success ##################[0m
+
+================Type-attachment-pure-video-IMAP-SMTP Test finished===============
+================Type-attachment-pure-virus-IMAP-and-SMTP Testing===============
+====current path is:Type-attachment-pure-virus-IMAP-and-SMTP================
+====running logic-messagesend-IMAP-append-7bit ========
+[32m ###################### 1-1 FETCH Test success ######################[0m
+[32m ###################### 1-2 UID FETCH Test success ##################[0m
+
+====running logic-messagesend-IMAP-append-8bit ========
+[32m ###################### 1-1 FETCH Test success ######################[0m
+[32m ###################### 1-2 UID FETCH Test success ##################[0m
+
+====running logic-messagesend-IMAP-append-base64 ========
+[32m ###################### 1-1 FETCH Test success ######################[0m
+[32m ###################### 1-2 UID FETCH Test success ##################[0m
+
+====running logic-messagesend-IMAP-append-quoted-printable ========
+[32m ###################### 1-1 FETCH Test success ######################[0m
+[32m ###################### 1-2 UID FETCH Test success ##################[0m
+
+====running logic-messagesend-SMTP-7bit ========
+[32m ###################### 2-1 FETCH Test success ######################[0m
+[32m ###################### 2-2 UID FETCH Test success ##################[0m
+
+====running logic-messagesend-SMTP-8bit ========
+[32m ###################### 2-1 FETCH Test success ######################[0m
+[32m ###################### 2-2 UID FETCH Test success ##################[0m
+
+====running logic-messagesend-SMTP-base64 ========
+[32m ###################### 2-1 FETCH Test success ######################[0m
+[32m ###################### 2-2 UID FETCH Test success ##################[0m
+
+====running logic-messagesend-SMTP-quoted-printable ========
+[32m ###################### 2-1 FETCH Test success ######################[0m
+[32m ###################### 2-2 UID FETCH Test success ##################[0m
+
+================Type-attachment-pure-virus-IMAP-and-SMTP Test finished===============
+================Type-attachment-audio-texts-IMAP-SMTP Testing===============
+====current path is:Type-attachment-audio-texts-IMAP-SMTP================
+====running logic-messagesend-IMAP-append-7bit ========
+[32m ###################### 1-1 FETCH Test success ######################[0m
+[32m ###################### 1-2 UID FETCH Test success ##################[0m
+
+====running logic-messagesend-IMAP-append-8bit ========
+[32m ###################### 1-1 FETCH Test success ######################[0m
+[32m ###################### 1-2 UID FETCH Test success ##################[0m
+
+====running logic-messagesend-IMAP-append-base64 ========
+[32m ###################### 1-1 FETCH Test success ######################[0m
+[32m ###################### 1-2 UID FETCH Test success ##################[0m
+
+====running logic-messagesend-IMAP-append-quoted-printable ========
+[32m ###################### 1-1 FETCH Test success ######################[0m
+[32m ###################### 1-2 UID FETCH Test success ##################[0m
+
+====running logic-messagesend-SMTP-7bit ========
+[32m ###################### 2-1 FETCH Test success ######################[0m
+[32m ###################### 2-2 UID FETCH Test success ##################[0m
+
+====running logic-messagesend-SMTP-8bit ========
+[32m ###################### 2-1 FETCH Test success ######################[0m
+[32m ###################### 2-2 UID FETCH Test success ##################[0m
+
+====running logic-messagesend-SMTP-base64 ========
+[32m ###################### 2-1 FETCH Test success ######################[0m
+[32m ###################### 2-2 UID FETCH Test success ##################[0m
+
+====running logic-messagesend-SMTP-quoted-printable ========
+[32m ###################### 2-1 FETCH Test success ######################[0m
+[32m ###################### 2-2 UID FETCH Test success ##################[0m
+
+================Type-attachment-audio-texts-IMAP-SMTP Test finished===============
+================Type-attachment-images-with-texts-IMAP-SMTP Testing===============
+====current path is:Type-attachment-images-with-texts-IMAP-SMTP================
+====running logic-messagesend-IMAP-append-7bit ========
+[32m ###################### 1-1 FETCH Test success ######################[0m
+[32m ###################### 1-2 UID FETCH Test success ##################[0m
+
+====running logic-messagesend-IMAP-append-8bit ========
+[32m ###################### 1-1 FETCH Test success ######################[0m
+[32m ###################### 1-2 UID FETCH Test success ##################[0m
+
+====running logic-messagesend-IMAP-append-base64 ========
+[32m ###################### 1-1 FETCH Test success ######################[0m
+[32m ###################### 1-2 UID FETCH Test success ##################[0m
+
+====running logic-messagesend-IMAP-append-quoted-printable ========
+[32m ###################### 1-1 FETCH Test success ######################[0m
+[32m ###################### 1-2 UID FETCH Test success ##################[0m
+
+====running logic-messagesend-SMTP-7bit ========
+[32m ###################### 2-1 FETCH Test success ######################[0m
+[32m ###################### 2-2 UID FETCH Test success ##################[0m
+
+====running logic-messagesend-SMTP-8bit ========
+[32m ###################### 2-1 FETCH Test success ######################[0m
+[32m ###################### 2-2 UID FETCH Test success ##################[0m
+
+====running logic-messagesend-SMTP-base64 ========
+[32m ###################### 2-1 FETCH Test success ######################[0m
+[32m ###################### 2-2 UID FETCH Test success ##################[0m
+
+====running logic-messagesend-SMTP-quoted-printable ========
+[32m ###################### 2-1 FETCH Test success ######################[0m
+[32m ###################### 2-2 UID FETCH Test success ##################[0m
+
+================Type-attachment-images-with-texts-IMAP-SMTP Test finished===============
+================Type-attachment-pdf-texts-IMAP-and-SMTP Testing===============
+====current path is:Type-attachment-pdf-texts-IMAP-and-SMTP================
+====running logic-messagesend-IMAP-append-7bit ========
+[32m ###################### 1-1 FETCH Test success ######################[0m
+[32m ###################### 1-2 UID FETCH Test success ##################[0m
+
+====running logic-messagesend-IMAP-append-8bit ========
+[32m ###################### 1-1 FETCH Test success ######################[0m
+[32m ###################### 1-2 UID FETCH Test success ##################[0m
+
+====running logic-messagesend-IMAP-append-base64 ========
+[32m ###################### 1-1 FETCH Test success ######################[0m
+[32m ###################### 1-2 UID FETCH Test success ##################[0m
+
+====running logic-messagesend-IMAP-append-quoted-printable ========
+[32m ###################### 1-1 FETCH Test success ######################[0m
+[32m ###################### 1-2 UID FETCH Test success ##################[0m
+
+====running logic-messagesend-SMTP-7bit ========
+[32m ###################### 2-1 FETCH Test success ######################[0m
+[32m ###################### 2-2 UID FETCH Test success ##################[0m
+
+====running logic-messagesend-SMTP-8bit ========
+[32m ###################### 2-1 FETCH Test success ######################[0m
+[32m ###################### 2-2 UID FETCH Test success ##################[0m
+
+====running logic-messagesend-SMTP-base64 ========
+[32m ###################### 2-1 FETCH Test success ######################[0m
+[32m ###################### 2-2 UID FETCH Test success ##################[0m
+
+====running logic-messagesend-SMTP-quoted-printable ========
+[32m ###################### 2-1 FETCH Test success ######################[0m
+[32m ###################### 2-2 UID FETCH Test success ##################[0m
+
+================Type-attachment-pdf-texts-IMAP-and-SMTP Test finished===============
+================Type-attachment-python-Texts-IMAP-and-SMTP Testing===============
+====current path is:Type-attachment-python-Texts-IMAP-and-SMTP================
+====running logic-messagesend-IMAP-append-7bit ========
+[32m ###################### 1-1 FETCH Test success ######################[0m
+[32m ###################### 1-2 UID FETCH Test success ##################[0m
+
+====running logic-messagesend-IMAP-append-8bit ========
+[32m ###################### 1-1 FETCH Test success ######################[0m
+[32m ###################### 1-2 UID FETCH Test success ##################[0m
+
+====running logic-messagesend-IMAP-append-base64 ========
+[32m ###################### 1-1 FETCH Test success ######################[0m
+[32m ###################### 1-2 UID FETCH Test success ##################[0m
+
+====running logic-messagesend-IMAP-append-quoted-printable ========
+[32m ###################### 1-1 FETCH Test success ######################[0m
+[32m ###################### 1-2 UID FETCH Test success ##################[0m
+
+====running logic-messagesend-SMTP-7bit ========
+[32m ###################### 2-1 FETCH Test success ######################[0m
+[32m ###################### 2-2 UID FETCH Test success ##################[0m
+
+====running logic-messagesend-SMTP-8bit ========
+[32m ###################### 2-1 FETCH Test success ######################[0m
+[32m ###################### 2-2 UID FETCH Test success ##################[0m
+
+====running logic-messagesend-SMTP-base64 ========
+[32m ###################### 2-1 FETCH Test success ######################[0m
+[32m ###################### 2-2 UID FETCH Test success ##################[0m
+
+====running logic-messagesend-SMTP-quoted-printable ========
+[32m ###################### 2-1 FETCH Test success ######################[0m
+[32m ###################### 2-2 UID FETCH Test success ##################[0m
+
+================Type-attachment-python-Texts-IMAP-and-SMTP Test finished===============
+================Type-attachment-tar-with-text-IMAP-and-SMTP Testing===============
+====current path is:Type-attachment-tar-with-text-IMAP-and-SMTP================
+====running logic-messagesend-IMAP-append-7bit ========
+[32m ###################### 1-1 FETCH Test success ######################[0m
+[32m ###################### 1-2 UID FETCH Test success ##################[0m
+
+====running logic-messagesend-IMAP-append-8bit ========
+[32m ###################### 1-1 FETCH Test success ######################[0m
+[32m ###################### 1-2 UID FETCH Test success ##################[0m
+
+====running logic-messagesend-IMAP-append-base64 ========
+[32m ###################### 1-1 FETCH Test success ######################[0m
+[32m ###################### 1-2 UID FETCH Test success ##################[0m
+
+====running logic-messagesend-IMAP-append-quoted-printable ========
+[32m ###################### 1-1 FETCH Test success ######################[0m
+[32m ###################### 1-2 UID FETCH Test success ##################[0m
+
+====running logic-messagesend-SMTP-7bit ========
+[32m ###################### 2-1 FETCH Test success ######################[0m
+[32m ###################### 2-2 UID FETCH Test success ##################[0m
+
+====running logic-messagesend-SMTP-8bit ========
+[32m ###################### 2-1 FETCH Test success ######################[0m
+[32m ###################### 2-2 UID FETCH Test success ##################[0m
+
+====running logic-messagesend-SMTP-base64 ========
+[32m ###################### 2-1 FETCH Test success ######################[0m
+[32m ###################### 2-2 UID FETCH Test success ##################[0m
+
+====running logic-messagesend-SMTP-quoted-printable ========
+[32m ###################### 2-1 FETCH Test success ######################[0m
+[32m ###################### 2-2 UID FETCH Test success ##################[0m
+
+================Type-attachment-tar-with-text-IMAP-and-SMTP Test finished===============
+================Type-attachment-txt-with-text-content-IMAP-and-SMTP Testing===============
+====current path is:Type-attachment-txt-with-text-content-IMAP-and-SMTP================
+====running logic-messagesend-IMAP-append-7bit ========
+[32m ###################### 1-1 FETCH Test success ######################[0m
+[32m ###################### 1-2 UID FETCH Test success ##################[0m
+
+====running logic-messagesend-IMAP-append-8bit ========
+[32m ###################### 1-1 FETCH Test success ######################[0m
+[32m ###################### 1-2 UID FETCH Test success ##################[0m
+
+====running logic-messagesend-IMAP-append-base64 ========
+[32m ###################### 1-1 FETCH Test success ######################[0m
+[32m ###################### 1-2 UID FETCH Test success ##################[0m
+
+====running logic-messagesend-IMAP-append-quoted-printable ========
+[32m ###################### 1-1 FETCH Test success ######################[0m
+[32m ###################### 1-2 UID FETCH Test success ##################[0m
+
+====running logic-messagesend-SMTP-7bit ========
+[32m ###################### 2-1 FETCH Test success ######################[0m
+[32m ###################### 2-2 UID FETCH Test success ##################[0m
+
+====running logic-messagesend-SMTP-8bit ========
+[32m ###################### 2-1 FETCH Test success ######################[0m
+[32m ###################### 2-2 UID FETCH Test success ##################[0m
+
+====running logic-messagesend-SMTP-base64 ========
+[32m ###################### 2-1 FETCH Test success ######################[0m
+[32m ###################### 2-2 UID FETCH Test success ##################[0m
+
+====running logic-messagesend-SMTP-quoted-printable ========
+[32m ###################### 2-1 FETCH Test success ######################[0m
+[32m ###################### 2-2 UID FETCH Test success ##################[0m
+
+================Type-attachment-txt-with-text-content-IMAP-and-SMTP Test finished===============
+================Type-attachment-video-with-texts-IMAP-SMTP Testing===============
+====current path is:Type-attachment-video-with-texts-IMAP-SMTP================
+====running logic-messagesend-IMAP-append-7bit ========
+[32m ###################### 1-1 FETCH Test success ######################[0m
+[32m ###################### 1-2 UID FETCH Test success ##################[0m
+
+====running logic-messagesend-IMAP-append-8bit ========
+[32m ###################### 1-1 FETCH Test success ######################[0m
+[32m ###################### 1-2 UID FETCH Test success ##################[0m
+
+====running logic-messagesend-IMAP-append-base64 ========
+[32m ###################### 1-1 FETCH Test success ######################[0m
+[32m ###################### 1-2 UID FETCH Test success ##################[0m
+
+====running logic-messagesend-IMAP-append-quoted-printable ========
+[32m ###################### 1-1 FETCH Test success ######################[0m
+[32m ###################### 1-2 UID FETCH Test success ##################[0m
+
+====running logic-messagesend-SMTP-7bit ========
+[32m ###################### 2-1 FETCH Test success ######################[0m
+[32m ###################### 2-2 UID FETCH Test success ##################[0m
+
+====running logic-messagesend-SMTP-8bit ========
+[32m ###################### 2-1 FETCH Test success ######################[0m
+[32m ###################### 2-2 UID FETCH Test success ##################[0m
+
+====running logic-messagesend-SMTP-base64 ========
+[32m ###################### 2-1 FETCH Test success ######################[0m
+[32m ###################### 2-2 UID FETCH Test success ##################[0m
+
+====running logic-messagesend-SMTP-quoted-printable ========
+[32m ###################### 2-1 FETCH Test success ######################[0m
+[32m ###################### 2-2 UID FETCH Test success ##################[0m
+
+================Type-attachment-video-with-texts-IMAP-SMTP Test finished===============
+================Type-attachment-virus-with-texts-IMAP-SMTP Testing===============
+====current path is:Type-attachment-virus-with-texts-IMAP-SMTP================
+====running logic-messagesend-IMAP-append-7bit ========
+[32m ###################### 1-1 FETCH Test success ######################[0m
+[32m ###################### 1-2 UID FETCH Test success ##################[0m
+
+====running logic-messagesend-IMAP-append-8bit ========
+[32m ###################### 1-1 FETCH Test success ######################[0m
+[32m ###################### 1-2 UID FETCH Test success ##################[0m
+
+====running logic-messagesend-IMAP-append-base64 ========
+[32m ###################### 1-1 FETCH Test success ######################[0m
+[32m ###################### 1-2 UID FETCH Test success ##################[0m
+
+====running logic-messagesend-IMAP-append-quoted-printable ========
+[32m ###################### 1-1 FETCH Test success ######################[0m
+[32m ###################### 1-2 UID FETCH Test success ##################[0m
+
+====running logic-messagesend-SMTP-7bit ========
+[32m ###################### 2-1 FETCH Test success ######################[0m
+[32m ###################### 2-2 UID FETCH Test success ##################[0m
+
+====running logic-messagesend-SMTP-8bit ========
+[32m ###################### 2-1 FETCH Test success ######################[0m
+[32m ###################### 2-2 UID FETCH Test success ##################[0m
+
+====running logic-messagesend-SMTP-base64 ========
+[32m ###################### 2-1 FETCH Test success ######################[0m
+[32m ###################### 2-2 UID FETCH Test success ##################[0m
+
+====running logic-messagesend-SMTP-quoted-printable ========
+[32m ###################### 2-1 FETCH Test success ######################[0m
+[32m ###################### 2-2 UID FETCH Test success ##################[0m
+
+================Type-attachment-virus-with-texts-IMAP-SMTP Test finished===============
+##############################################
+###### Formats message body ##################
+##############################################
+================Type-blac-bg-with-no-texts-IMAP-and-SMTP Testing===============
+====current path is:Type-blac-bg-with-no-texts-IMAP-and-SMTP================
+====running logic-messagesend-IMAP-append-7bit ========
+[32m ###################### 1-1 FETCH Test success ######################[0m
+[32m ###################### 1-2 UID FETCH Test success ##################[0m
+
+====running logic-messagesend-IMAP-append-8bit ========
+[32m ###################### 1-1 FETCH Test success ######################[0m
+[32m ###################### 1-2 UID FETCH Test success ##################[0m
+
+====running logic-messagesend-IMAP-append-base64 ========
+[32m ###################### 1-1 FETCH Test success ######################[0m
+[32m ###################### 1-2 UID FETCH Test success ##################[0m
+
+====running logic-messagesend-IMAP-append-quoted-printable ========
+[32m ###################### 1-1 FETCH Test success ######################[0m
+[32m ###################### 1-2 UID FETCH Test success ##################[0m
+
+====running logic-messagesend-SMTP-7bit ========
+[32m ###################### 2-1 FETCH Test success ######################[0m
+[32m ###################### 2-2 UID FETCH Test success ##################[0m
+
+====running logic-messagesend-SMTP-8bit ========
+[32m ###################### 2-1 FETCH Test success ######################[0m
+[32m ###################### 2-2 UID FETCH Test success ##################[0m
+
+====running logic-messagesend-SMTP-base64 ========
+[32m ###################### 2-1 FETCH Test success ######################[0m
+[32m ###################### 2-2 UID FETCH Test success ##################[0m
+
+====running logic-messagesend-SMTP-quoted-printable ========
+[32m ###################### 2-1 FETCH Test success ######################[0m
+[32m ###################### 2-2 UID FETCH Test success ##################[0m
+
+================Type-blac-bg-with-no-texts-IMAP-and-SMTP Test finished===============
+================Type-black-bg-with-huge-fonts-IMAP-andSMTP Testing===============
+====current path is:Type-black-bg-with-huge-fonts-IMAP-andSMTP================
+====running logic-messagesend-IMAP-append-7bit ========
+[32m ###################### 2-1 FETCH Test success ######################[0m
+[32m ###################### 2-2 UID FETCH Test success ##################[0m
+
+====running logic-messagesend-IMAP-append-8bit ========
+[32m ###################### 2-1 FETCH Test success ######################[0m
+[32m ###################### 2-2 UID FETCH Test success ##################[0m
+
+====running logic-messagesend-IMAP-append-base64 ========
+[32m ###################### 2-1 FETCH Test success ######################[0m
+[32m ###################### 2-2 UID FETCH Test success ##################[0m
+
+====running logic-messagesend-IMAP-append-quoted-printable ========
+[32m ###################### 2-1 FETCH Test success ######################[0m
+[32m ###################### 2-2 UID FETCH Test success ##################[0m
+
+====running logic-messagesend-SMTP-7bit ========
+[32m ###################### 2-1 FETCH Test success ######################[0m
+[32m ###################### 2-2 UID FETCH Test success ##################[0m
+
+====running logic-messagesend-SMTP-8bit ========
+[32m ###################### 2-1 FETCH Test success ######################[0m
+[32m ###################### 2-2 UID FETCH Test success ##################[0m
+
+====running logic-messagesend-SMTP-base64 ========
+[32m ###################### 2-1 FETCH Test success ######################[0m
+[32m ###################### 2-2 UID FETCH Test success ##################[0m
+
+====running logic-messagesend-SMTP-quoted-printable ========
+[32m ###################### 2-1 FETCH Test success ######################[0m
+[32m ###################### 2-2 UID FETCH Test success ##################[0m
+
+================Type-black-bg-with-huge-fonts-IMAP-andSMTP Test finished===============
+================Type-black-bg-with-mixed-style-texts-IMAP-and-SMTP Testing===============
+====current path is:Type-black-bg-with-mixed-style-texts-IMAP-and-SMTP================
+====running logic-messagesend-IMAP-append-7bit ========
+[32m ###################### 1-1 FETCH Test success ######################[0m
+[32m ###################### 1-2 UID FETCH Test success ##################[0m
+
+====running logic-messagesend-IMAP-append-8bit ========
+[32m ###################### 1-1 FETCH Test success ######################[0m
+[32m ###################### 1-2 UID FETCH Test success ##################[0m
+
+====running logic-messagesend-IMAP-append-base64 ========
+[32m ###################### 1-1 FETCH Test success ######################[0m
+[32m ###################### 1-2 UID FETCH Test success ##################[0m
+
+====running logic-messagesend-IMAP-append-quoted-printable ========
+[32m ###################### 1-1 FETCH Test success ######################[0m
+[32m ###################### 1-2 UID FETCH Test success ##################[0m
+
+====running logic-messagesend-SMTP-7bit ========
+[32m ###################### 2-1 FETCH Test success ######################[0m
+[32m ###################### 2-2 UID FETCH Test success ##################[0m
+
+====running logic-messagesend-SMTP-8bit ========
+[32m ###################### 2-1 FETCH Test success ######################[0m
+[32m ###################### 2-2 UID FETCH Test success ##################[0m
+
+====running logic-messagesend-SMTP-base64 ========
+[32m ###################### 2-1 FETCH Test success ######################[0m
+[32m ###################### 2-2 UID FETCH Test success ##################[0m
+
+====running logic-messagesend-SMTP-quoted-printable ========
+[32m ###################### 2-1 FETCH Test success ######################[0m
+[32m ###################### 2-2 UID FETCH Test success ##################[0m
+
+================Type-black-bg-with-mixed-style-texts-IMAP-and-SMTP Test finished===============
+================Type-black-bg-with-texts-IMAP-and-SMTP Testing===============
+====current path is:Type-black-bg-with-texts-IMAP-and-SMTP================
+====running logic-messagesend-IMAP-append-7bit ========
+[32m ###################### 1-1 FETCH Test success ######################[0m
+[32m ###################### 1-2 UID FETCH Test success ##################[0m
+
+====running logic-messagesend-IMAP-append-8bit ========
+[32m ###################### 1-1 FETCH Test success ######################[0m
+[32m ###################### 1-2 UID FETCH Test success ##################[0m
+
+====running logic-messagesend-IMAP-append-base64 ========
+[32m ###################### 1-1 FETCH Test success ######################[0m
+[32m ###################### 1-2 UID FETCH Test success ##################[0m
+
+====running logic-messagesend-IMAP-append-quoted-printable ========
+[32m ###################### 1-1 FETCH Test success ######################[0m
+[32m ###################### 1-2 UID FETCH Test success ##################[0m
+
+====running logic-messagesend-SMTP-7bit ========
+[32m ###################### 2-1 FETCH Test success ######################[0m
+[32m ###################### 2-2 UID FETCH Test success ##################[0m
+
+====running logic-messagesend-SMTP-8bit ========
+[32m ###################### 2-1 FETCH Test success ######################[0m
+[32m ###################### 2-2 UID FETCH Test success ##################[0m
+
+====running logic-messagesend-SMTP-base64 ========
+[32m ###################### 2-1 FETCH Test success ######################[0m
+[32m ###################### 2-2 UID FETCH Test success ##################[0m
+
+====running logic-messagesend-SMTP-quoted-printable ========
+[32m ###################### 2-1 FETCH Test success ######################[0m
+[32m ###################### 2-2 UID FETCH Test success ##################[0m
+
+================Type-black-bg-with-texts-IMAP-and-SMTP Test finished===============
+##############################################
+################### Emoji ####################
+##############################################
+================Type-char-Emoji-IMAP-and-SMTP Testing===============
+====current path is:Type-char-Emoji-IMAP-and-SMTP================
+====running logic-messagesend-IMAP-append-7bit ========
+[32m ###################### 1-1 FETCH Test success ######################[0m
+[32m ###################### 1-2 UID FETCH Test success ##################[0m
+
+====running logic-messagesend-IMAP-append-8bit ========
+[32m ###################### 1-1 FETCH Test success ######################[0m
+[32m ###################### 1-2 UID FETCH Test success ##################[0m
+
+====running logic-messagesend-IMAP-append-base64 ========
+[32m ###################### 1-1 FETCH Test success ######################[0m
+[32m ###################### 1-2 UID FETCH Test success ##################[0m
+
+====running logic-messagesend-IMAP-append-quoted-printable ========
+[32m ###################### 1-1 FETCH Test success ######################[0m
+[32m ###################### 1-2 UID FETCH Test success ##################[0m
+
+====running logic-messagesend-SMTP-7bit ========
+[32m ###################### 1-1 FETCH Test success ######################[0m
+[32m ###################### 1-2 UID FETCH Test success ##################[0m
+
+====running logic-messagesend-SMTP-8bit ========
+[32m ###################### 1-1 FETCH Test success ######################[0m
+[32m ###################### 1-2 UID FETCH Test success ##################[0m
+
+====running logic-messagesend-SMTP-base64 ========
+[32m ###################### 1-1 FETCH Test success ######################[0m
+[32m ###################### 1-2 UID FETCH Test success ##################[0m
+
+====running logic-messagesend-SMTP-quoted-printable ========
+[32m ###################### 1-1 FETCH Test success ######################[0m
+[32m ###################### 1-2 UID FETCH Test success ##################[0m
+
+================Type-char-Emoji-IMAP-and-SMTP Test finished===============
+================Type-char-Emoji-UTF-8-text-IMAP-and-SMTP Testing===============
+====current path is:Type-char-Emoji-UTF-8-text-IMAP-and-SMTP================
+====running logic-messagesend-IMAP-append-7bit ========
+[32m ###################### 1-1 FETCH Test success ######################[0m
+[32m ###################### 1-2 UID FETCH Test success ##################[0m
+
+====running logic-messagesend-IMAP-append-8bit ========
+[32m ###################### 1-1 FETCH Test success ######################[0m
+[32m ###################### 1-2 UID FETCH Test success ##################[0m
+
+====running logic-messagesend-IMAP-append-base64 ========
+[32m ###################### 1-1 FETCH Test success ######################[0m
+[32m ###################### 1-2 UID FETCH Test success ##################[0m
+
+====running logic-messagesend-IMAP-append-quoted-printable ========
+[32m ###################### 1-1 FETCH Test success ######################[0m
+[32m ###################### 1-2 UID FETCH Test success ##################[0m
+
+====running logic-messagesend-SMTP-7bit ========
+[32m ###################### 2-1 FETCH Test success ######################[0m
+[32m ###################### 2-2 UID FETCH Test success ##################[0m
+
+====running logic-messagesend-SMTP-8bit ========
+[32m ###################### 2-1 FETCH Test success ######################[0m
+[32m ###################### 2-2 UID FETCH Test success ##################[0m
+
+====running logic-messagesend-SMTP-base64 ========
+[32m ###################### 2-1 FETCH Test success ######################[0m
+[32m ###################### 2-2 UID FETCH Test success ##################[0m
+
+====running logic-messagesend-SMTP-quoted-printable ========
+[32m ###################### 2-1 FETCH Test success ######################[0m
+[32m ###################### 2-2 UID FETCH Test success ##################[0m
+
+================Type-char-Emoji-UTF-8-text-IMAP-and-SMTP Test finished===============
+================Type-image-Emoji-IMAP-and-SMTP Testing===============
+====current path is:Type-image-Emoji-IMAP-and-SMTP================
+====running logic-messagesend-IMAP-append-7bit ========
+[32m ###################### 1-1 FETCH Test success ######################[0m
+[32m ###################### 1-2 UID FETCH Test success ##################[0m
+
+====running logic-messagesend-IMAP-append-8bit ========
+[32m ###################### 1-1 FETCH Test success ######################[0m
+[32m ###################### 1-2 UID FETCH Test success ##################[0m
+
+====running logic-messagesend-IMAP-append-base64 ========
+[32m ###################### 1-1 FETCH Test success ######################[0m
+[32m ###################### 1-2 UID FETCH Test success ##################[0m
+
+====running logic-messagesend-IMAP-append-quoted-printable ========
+[32m ###################### 1-1 FETCH Test success ######################[0m
+[32m ###################### 1-2 UID FETCH Test success ##################[0m
+
+====running logic-messagesend-SMTP-7bit ========
+[32m ###################### 2-1 FETCH Test success ######################[0m
+[32m ###################### 2-2 UID FETCH Test success ##################[0m
+
+====running logic-messagesend-SMTP-8bit ========
+[32m ###################### 2-1 FETCH Test success ######################[0m
+[32m ###################### 2-2 UID FETCH Test success ##################[0m
+
+====running logic-messagesend-SMTP-base64 ========
+[32m ###################### 2-1 FETCH Test success ######################[0m
+[32m ###################### 2-2 UID FETCH Test success ##################[0m
+
+====running logic-messagesend-SMTP-quoted-printable ========
+[32m ###################### 2-1 FETCH Test success ######################[0m
+[32m ###################### 2-2 UID FETCH Test success ##################[0m
+
+================Type-image-Emoji-IMAP-and-SMTP Test finished===============
+================Type-image-Emoji-UTF-8-text-IMAP-and-SMTP Testing===============
+====current path is:Type-image-Emoji-UTF-8-text-IMAP-and-SMTP================
+====running logic-messagesend-IMAP-append-7bit ========
+[32m ###################### 1-1 FETCH Test success ######################[0m
+[32m ###################### 1-2 UID FETCH Test success ##################[0m
+
+====running logic-messagesend-IMAP-append-8bit ========
+[32m ###################### 1-1 FETCH Test success ######################[0m
+[32m ###################### 1-2 UID FETCH Test success ##################[0m
+
+====running logic-messagesend-IMAP-append-base64 ========
+[32m ###################### 1-1 FETCH Test success ######################[0m
+[32m ###################### 1-2 UID FETCH Test success ##################[0m
+
+====running logic-messagesend-IMAP-append-quoted-printable ========
+[32m ###################### 1-1 FETCH Test success ######################[0m
+[32m ###################### 1-2 UID FETCH Test success ##################[0m
+
+====running logic-messagesend-SMTP-7bit ========
+[32m ###################### 2-1 FETCH Test success ######################[0m
+[32m ###################### 2-2 UID FETCH Test success ##################[0m
+
+====running logic-messagesend-SMTP-8bit ========
+[32m ###################### 2-1 FETCH Test success ######################[0m
+[32m ###################### 2-2 UID FETCH Test success ##################[0m
+
+====running logic-messagesend-SMTP-base64 ========
+[32m ###################### 2-1 FETCH Test success ######################[0m
+[32m ###################### 2-2 UID FETCH Test success ##################[0m
+
+====running logic-messagesend-SMTP-quoted-printable ========
+[32m ###################### 2-1 FETCH Test success ######################[0m
+[32m ###################### 2-2 UID FETCH Test success ##################[0m
+
+================Type-image-Emoji-UTF-8-text-IMAP-and-SMTP Test finished===============
+##############################################
+######## Special messagebody contents ########
+##############################################
+================Type-C-content-in-body-IMAP-SMTP Testing===============
+====current path is:Type-C-content-in-body-IMAP-SMTP================
+====running logic-messagesend-IMAP-append-7bit ========
+[32m ###################### 1-1 FETCH Test success ######################[0m
+[32m ###################### 1-2 UID FETCH Test success ##################[0m
+
+====running logic-messagesend-IMAP-append-8bit ========
+[32m ###################### 1-1 FETCH Test success ######################[0m
+[32m ###################### 1-2 UID FETCH Test success ##################[0m
+
+====running logic-messagesend-IMAP-append-base64 ========
+[32m ###################### 1-1 FETCH Test success ######################[0m
+[32m ###################### 1-2 UID FETCH Test success ##################[0m
+
+====running logic-messagesend-IMAP-append-quoted-printable ========
+[32m ###################### 1-1 FETCH Test success ######################[0m
+[32m ###################### 1-2 UID FETCH Test success ##################[0m
+
+====running logic-messagesend-SMTP-7bit ========
+[32m ###################### 2-1 FETCH Test success ######################[0m
+[32m ###################### 2-2 UID FETCH Test success ##################[0m
+
+====running logic-messagesend-SMTP-8bit ========
+[32m ###################### 2-1 FETCH Test success ######################[0m
+[32m ###################### 2-2 UID FETCH Test success ##################[0m
+
+====running logic-messagesend-SMTP-base64 ========
+[32m ###################### 2-1 FETCH Test success ######################[0m
+[32m ###################### 2-2 UID FETCH Test success ##################[0m
+
+====running logic-messagesend-SMTP-quoted-printable ========
+[32m ###################### 2-1 FETCH Test success ######################[0m
+[32m ###################### 2-2 UID FETCH Test success ##################[0m
+
+================Type-C-content-in-body-IMAP-SMTP Test finished===============
+================Type-C-content-with-normal-texts-IMAP-SMTP Testing===============
+====current path is:Type-C-content-with-normal-texts-IMAP-SMTP================
+====running logic-messagesend-IMAP-append-7bit ========
+[32m ###################### 1-1 FETCH Test success ######################[0m
+[32m ###################### 1-2 UID FETCH Test success ##################[0m
+
+====running logic-messagesend-IMAP-append-8bit ========
+[32m ###################### 1-1 FETCH Test success ######################[0m
+[32m ###################### 1-2 UID FETCH Test success ##################[0m
+
+====running logic-messagesend-IMAP-append-base64 ========
+[32m ###################### 1-1 FETCH Test success ######################[0m
+[32m ###################### 1-2 UID FETCH Test success ##################[0m
+
+====running logic-messagesend-IMAP-append-quoted-printable ========
+[32m ###################### 1-1 FETCH Test success ######################[0m
+[32m ###################### 1-2 UID FETCH Test success ##################[0m
+
+====running logic-messagesend-SMTP-7bit ========
+[32m ###################### 2-1 FETCH Test success ######################[0m
+[32m ###################### 2-2 UID FETCH Test success ##################[0m
+
+====running logic-messagesend-SMTP-8bit ========
+[32m ###################### 2-1 FETCH Test success ######################[0m
+[32m ###################### 2-2 UID FETCH Test success ##################[0m
+
+====running logic-messagesend-SMTP-base64 ========
+[32m ###################### 2-1 FETCH Test success ######################[0m
+[32m ###################### 2-2 UID FETCH Test success ##################[0m
+
+====running logic-messagesend-SMTP-quoted-printable ========
+[32m ###################### 2-1 FETCH Test success ######################[0m
+[32m ###################### 2-2 UID FETCH Test success ##################[0m
+
+================Type-C-content-with-normal-texts-IMAP-SMTP Test finished===============
+================Type-html-content-IMAP-SMTP Testing===============
+====current path is:Type-html-content-IMAP-SMTP================
+====running logic-messagesend-IMAP-append-7bit ========
+[32m ###################### 1-1 FETCH Test success ######################[0m
+[32m ###################### 1-2 UID FETCH Test success ##################[0m
+
+====running logic-messagesend-IMAP-append-8bit ========
+[32m ###################### 1-1 FETCH Test success ######################[0m
+[32m ###################### 1-2 UID FETCH Test success ##################[0m
+
+====running logic-messagesend-IMAP-append-base64 ========
+[32m ###################### 1-1 FETCH Test success ######################[0m
+[32m ###################### 1-2 UID FETCH Test success ##################[0m
+
+====running logic-messagesend-IMAP-append-quoted-printable ========
+[32m ###################### 1-1 FETCH Test success ######################[0m
+[32m ###################### 1-2 UID FETCH Test success ##################[0m
+
+====running logic-messagesend-SMTP-7bit ========
+[32m ###################### 2-1 FETCH Test success ######################[0m
+[32m ###################### 2-2 UID FETCH Test success ##################[0m
+
+====running logic-messagesend-SMTP-8bit ========
+[32m ###################### 2-1 FETCH Test success ######################[0m
+[32m ###################### 2-2 UID FETCH Test success ##################[0m
+
+====running logic-messagesend-SMTP-base64 ========
+[32m ###################### 2-1 FETCH Test success ######################[0m
+[32m ###################### 2-2 UID FETCH Test success ##################[0m
+
+====running logic-messagesend-SMTP-quoted-printable ========
+[32m ###################### 2-1 FETCH Test success ######################[0m
+[32m ###################### 2-2 UID FETCH Test success ##################[0m
+
+================Type-html-content-IMAP-SMTP Test finished===============
+================Type-HTML-contents-IMAP-and-SMTP Testing===============
+====current path is:Type-HTML-contents-IMAP-and-SMTP================
+====running logic-messagesend-IMAP-append-7bit ========
+[32m ###################### 1-1 FETCH Test success ######################[0m
+[32m ###################### 1-2 UID FETCH Test success ##################[0m
+
+====running logic-messagesend-IMAP-append-8bit ========
+[32m ###################### 1-1 FETCH Test success ######################[0m
+[32m ###################### 1-2 UID FETCH Test success ##################[0m
+
+====running logic-messagesend-IMAP-append-base64 ========
+[32m ###################### 1-1 FETCH Test success ######################[0m
+[32m ###################### 1-2 UID FETCH Test success ##################[0m
+
+====running logic-messagesend-IMAP-append-quoted-printable ========
+[32m ###################### 1-1 FETCH Test success ######################[0m
+[32m ###################### 1-2 UID FETCH Test success ##################[0m
+
+====running logic-messagesend-SMTP-7bit ========
+[32m ###################### 2-1 FETCH Test success ######################[0m
+[32m ###################### 2-2 UID FETCH Test success ##################[0m
+
+====running logic-messagesend-SMTP-8bit ========
+[32m ###################### 2-1 FETCH Test success ######################[0m
+[32m ###################### 2-2 UID FETCH Test success ##################[0m
+
+====running logic-messagesend-SMTP-base64 ========
+[32m ###################### 2-1 FETCH Test success ######################[0m
+[32m ###################### 2-2 UID FETCH Test success ##################[0m
+
+====running logic-messagesend-SMTP-quoted-printable ========
+[32m ###################### 2-1 FETCH Test success ######################[0m
+[32m ###################### 2-2 UID FETCH Test success ##################[0m
+
+================Type-HTML-contents-IMAP-and-SMTP Test finished===============
+================Type-HTML-contents-with-mixed-texts-IMAP-and-SMTP Testing===============
+====current path is:Type-HTML-contents-with-mixed-texts-IMAP-and-SMTP================
+====running logic-messagesend-IMAP-append-7bit ========
+[32m ###################### 1-1 FETCH Test success ######################[0m
+[32m ###################### 1-2 UID FETCH Test success ##################[0m
+
+====running logic-messagesend-IMAP-append-8bit ========
+[32m ###################### 1-1 FETCH Test success ######################[0m
+[32m ###################### 1-2 UID FETCH Test success ##################[0m
+
+====running logic-messagesend-IMAP-append-base64 ========
+[32m ###################### 1-1 FETCH Test success ######################[0m
+[32m ###################### 1-2 UID FETCH Test success ##################[0m
+
+====running logic-messagesend-IMAP-append-quoted-printable ========
+[32m ###################### 1-1 FETCH Test success ######################[0m
+[32m ###################### 1-2 UID FETCH Test success ##################[0m
+
+====running logic-messagesend-SMTP-7bit ========
+[32m ###################### 2-1 FETCH Test success ######################[0m
+[32m ###################### 2-2 UID FETCH Test success ##################[0m
+
+====running logic-messagesend-SMTP-8bit ========
+[32m ###################### 2-1 FETCH Test success ######################[0m
+[32m ###################### 2-2 UID FETCH Test success ##################[0m
+
+====running logic-messagesend-SMTP-base64 ========
+[32m ###################### 2-1 FETCH Test success ######################[0m
+[32m ###################### 2-2 UID FETCH Test success ##################[0m
+
+====running logic-messagesend-SMTP-quoted-printable ========
+[32m ###################### 2-1 FETCH Test success ######################[0m
+[32m ###################### 2-2 UID FETCH Test success ##################[0m
+
+================Type-HTML-contents-with-mixed-texts-IMAP-and-SMTP Test finished===============
+================Type-html-content-with-texts-IMAP-SMTP Testing===============
+====current path is:Type-html-content-with-texts-IMAP-SMTP================
+====running logic-messagesend-IMAP-append-7bit ========
+[32m ###################### 1-1 FETCH Test success ######################[0m
+[32m ###################### 1-2 UID FETCH Test success ##################[0m
+
+====running logic-messagesend-IMAP-append-8bit ========
+[32m ###################### 1-1 FETCH Test success ######################[0m
+[32m ###################### 1-2 UID FETCH Test success ##################[0m
+
+====running logic-messagesend-IMAP-append-base64 ========
+[32m ###################### 1-1 FETCH Test success ######################[0m
+[32m ###################### 1-2 UID FETCH Test success ##################[0m
+
+====running logic-messagesend-IMAP-append-quoted-printable ========
+[32m ###################### 1-1 FETCH Test success ######################[0m
+[32m ###################### 1-2 UID FETCH Test success ##################[0m
+
+====running logic-messagesend-SMTP-7bit ========
+[32m ###################### 1-1 FETCH Test success ######################[0m
+[32m ###################### 1-2 UID FETCH Test success ##################[0m
+
+====running logic-messagesend-SMTP-8bit ========
+[32m ###################### 1-1 FETCH Test success ######################[0m
+[32m ###################### 1-2 UID FETCH Test success ##################[0m
+
+====running logic-messagesend-SMTP-base64 ========
+[32m ###################### 1-1 FETCH Test success ######################[0m
+[32m ###################### 1-2 UID FETCH Test success ##################[0m
+
+====running logic-messagesend-SMTP-quoted-printable ========
+[32m ###################### 1-1 FETCH Test success ######################[0m
+[32m ###################### 1-2 UID FETCH Test success ##################[0m
+
+================Type-html-content-with-texts-IMAP-SMTP Test finished===============
+================Type-hyperlink-with-mixed-texts-IMAP-and-SMTP Testing===============
+====current path is:Type-hyperlink-with-mixed-texts-IMAP-and-SMTP================
+====running logic-messagesend-IMAP-append-7bit ========
+[32m ###################### 1-1 FETCH Test success ######################[0m
+[32m ###################### 1-2 UID FETCH Test success ##################[0m
+
+====running logic-messagesend-IMAP-append-8bit ========
+[32m ###################### 1-1 FETCH Test success ######################[0m
+[32m ###################### 1-2 UID FETCH Test success ##################[0m
+
+====running logic-messagesend-IMAP-append-base64 ========
+[32m ###################### 1-1 FETCH Test success ######################[0m
+[32m ###################### 1-2 UID FETCH Test success ##################[0m
+
+====running logic-messagesend-IMAP-append-quoted-printable ========
+[32m ###################### 1-1 FETCH Test success ######################[0m
+[32m ###################### 1-2 UID FETCH Test success ##################[0m
+
+====running logic-messagesend-SMTP-7bit ========
+[32m ###################### 2-1 FETCH Test success ######################[0m
+[32m ###################### 2-2 UID FETCH Test success ##################[0m
+
+====running logic-messagesend-SMTP-8bit ========
+[32m ###################### 2-1 FETCH Test success ######################[0m
+[32m ###################### 2-2 UID FETCH Test success ##################[0m
+
+====running logic-messagesend-SMTP-base64 ========
+[32m ###################### 2-1 FETCH Test success ######################[0m
+[32m ###################### 2-2 UID FETCH Test success ##################[0m
+
+====running logic-messagesend-SMTP-quoted-printable ========
+[32m ###################### 2-1 FETCH Test success ######################[0m
+[32m ###################### 2-2 UID FETCH Test success ##################[0m
+
+================Type-hyperlink-with-mixed-texts-IMAP-and-SMTP Test finished===============
+================Type-image-alternate-text-IMAP-and-SMTP Testing===============
+====current path is:Type-image-alternate-text-IMAP-and-SMTP================
+====running logic-messagesend-IMAP-append-7bit ========
+[32m ###################### 1-1 FETCH Test success ######################[0m
+[32m ###################### 1-2 UID FETCH Test success ##################[0m
+
+====running logic-messagesend-IMAP-append-8bit ========
+[32m ###################### 1-1 FETCH Test success ######################[0m
+[32m ###################### 1-2 UID FETCH Test success ##################[0m
+
+====running logic-messagesend-IMAP-append-base64 ========
+[32m ###################### 1-1 FETCH Test success ######################[0m
+[32m ###################### 1-2 UID FETCH Test success ##################[0m
+
+====running logic-messagesend-IMAP-append-quoted-printable ========
+[32m ###################### 1-1 FETCH Test success ######################[0m
+[32m ###################### 1-2 UID FETCH Test success ##################[0m
+
+====running logic-messagesend-SMTP-7bit ========
+[32m ###################### 2-1 FETCH Test success ######################[0m
+[32m ###################### 2-2 UID FETCH Test success ##################[0m
+
+====running logic-messagesend-SMTP-8bit ========
+[32m ###################### 2-1 FETCH Test success ######################[0m
+[32m ###################### 2-2 UID FETCH Test success ##################[0m
+
+====running logic-messagesend-SMTP-base64 ========
+[32m ###################### 2-1 FETCH Test success ######################[0m
+[32m ###################### 2-2 UID FETCH Test success ##################[0m
+
+====running logic-messagesend-SMTP-quoted-printable ========
+[32m ###################### 2-1 FETCH Test success ######################[0m
+[32m ###################### 2-2 UID FETCH Test success ##################[0m
+
+================Type-image-alternate-text-IMAP-and-SMTP Test finished===============
+================Type-image-UTF-8-Arabic-messagebody-IMAP-and-SMTP Testing===============
+====current path is:Type-image-UTF-8-Arabic-messagebody-IMAP-and-SMTP================
+====running logic-messagesend-IMAP-append-7bit ========
+[32m ###################### 1-1 FETCH Test success ######################[0m
+[32m ###################### 1-2 UID FETCH Test success ##################[0m
+
+====running logic-messagesend-IMAP-append-8bit ========
+[32m ###################### 1-1 FETCH Test success ######################[0m
+[32m ###################### 1-2 UID FETCH Test success ##################[0m
+
+====running logic-messagesend-IMAP-append-base64 ========
+[32m ###################### 1-1 FETCH Test success ######################[0m
+[32m ###################### 1-2 UID FETCH Test success ##################[0m
+
+====running logic-messagesend-IMAP-append-quoted-printable ========
+[32m ###################### 1-1 FETCH Test success ######################[0m
+[32m ###################### 1-2 UID FETCH Test success ##################[0m
+
+====running logic-messagesend-SMTP-7bit ========
+[32m ###################### 2-1 FETCH Test success ######################[0m
+[32m ###################### 2-2 UID FETCH Test success ##################[0m
+
+====running logic-messagesend-SMTP-8bit ========
+[32m ###################### 2-1 FETCH Test success ######################[0m
+[32m ###################### 2-2 UID FETCH Test success ##################[0m
+
+====running logic-messagesend-SMTP-base64 ========
+[32m ###################### 2-1 FETCH Test success ######################[0m
+[32m ###################### 2-2 UID FETCH Test success ##################[0m
+
+====running logic-messagesend-SMTP-quoted-printable ========
+[32m ###################### 2-1 FETCH Test success ######################[0m
+[32m ###################### 2-2 UID FETCH Test success ##################[0m
+
+================Type-image-UTF-8-Arabic-messagebody-IMAP-and-SMTP Test finished===============
+================Type-image-UTF-8-Chinese-messagebody-IMAP-and-SMTP Testing===============
+====current path is:Type-image-UTF-8-Chinese-messagebody-IMAP-and-SMTP================
+====running logic-messagesend-IMAP-append-7bit ========
+[32m ###################### 1-1 FETCH Test success ######################[0m
+[32m ###################### 1-2 UID FETCH Test success ##################[0m
+
+====running logic-messagesend-IMAP-append-8bit ========
+[32m ###################### 1-1 FETCH Test success ######################[0m
+[32m ###################### 1-2 UID FETCH Test success ##################[0m
+
+====running logic-messagesend-IMAP-append-base64 ========
+[32m ###################### 1-1 FETCH Test success ######################[0m
+[32m ###################### 1-2 UID FETCH Test success ##################[0m
+
+====running logic-messagesend-IMAP-append-quoted-printable ========
+[32m ###################### 1-1 FETCH Test success ######################[0m
+[32m ###################### 1-2 UID FETCH Test success ##################[0m
+
+====running logic-messagesend-SMTP-7bit ========
+[32m ###################### 2-1 FETCH Test success ######################[0m
+[32m ###################### 2-2 UID FETCH Test success ##################[0m
+
+====running logic-messagesend-SMTP-8bit ========
+[32m ###################### 2-1 FETCH Test success ######################[0m
+[32m ###################### 2-2 UID FETCH Test success ##################[0m
+
+====running logic-messagesend-SMTP-base64 ========
+[32m ###################### 2-1 FETCH Test success ######################[0m
+[32m ###################### 2-2 UID FETCH Test success ##################[0m
+
+====running logic-messagesend-SMTP-quoted-printable ========
+[32m ###################### 2-1 FETCH Test success ######################[0m
+[32m ###################### 2-2 UID FETCH Test success ##################[0m
+
+================Type-image-UTF-8-Chinese-messagebody-IMAP-and-SMTP Test finished===============
+================Type-image-UTF-8-English-message-body-IMAP-and-SMTP Testing===============
+====current path is:Type-image-UTF-8-English-message-body-IMAP-and-SMTP================
+====running logic-messagesend-IMAP-append-7bit ========
+[32m ###################### 1-1 FETCH Test success ######################[0m
+[32m ###################### 1-2 UID FETCH Test success ##################[0m
+
+====running logic-messagesend-IMAP-append-8bit ========
+[32m ###################### 1-1 FETCH Test success ######################[0m
+[32m ###################### 1-2 UID FETCH Test success ##################[0m
+
+====running logic-messagesend-IMAP-append-base64 ========
+[32m ###################### 1-1 FETCH Test success ######################[0m
+[32m ###################### 1-2 UID FETCH Test success ##################[0m
+
+====running logic-messagesend-IMAP-append-quoted-printable ========
+[32m ###################### 1-1 FETCH Test success ######################[0m
+[32m ###################### 1-2 UID FETCH Test success ##################[0m
+
+====running logic-messagesend-SMTP-7bit ========
+[32m ###################### 2-1 FETCH Test success ######################[0m
+[32m ###################### 2-2 UID FETCH Test success ##################[0m
+
+====running logic-messagesend-SMTP-8bit ========
+[32m ###################### 2-1 FETCH Test success ######################[0m
+[32m ###################### 2-2 UID FETCH Test success ##################[0m
+
+====running logic-messagesend-SMTP-base64 ========
+[32m ###################### 2-1 FETCH Test success ######################[0m
+[32m ###################### 2-2 UID FETCH Test success ##################[0m
+
+====running logic-messagesend-SMTP-quoted-printable ========
+[32m ###################### 2-1 FETCH Test success ######################[0m
+[32m ###################### 2-2 UID FETCH Test success ##################[0m
+
+================Type-image-UTF-8-English-message-body-IMAP-and-SMTP Test finished===============
+================Type-image-UTF-8-Japanese-messagebody-IMAP-and-SMTP Testing===============
+====current path is:Type-image-UTF-8-Japanese-messagebody-IMAP-and-SMTP================
+====running logic-messagesend-IMAP-append-7bit ========
+[32m ###################### 1-1 FETCH Test success ######################[0m
+[32m ###################### 1-2 UID FETCH Test success ##################[0m
+
+====running logic-messagesend-IMAP-append-8bit ========
+[32m ###################### 1-1 FETCH Test success ######################[0m
+[32m ###################### 1-2 UID FETCH Test success ##################[0m
+
+====running logic-messagesend-IMAP-append-base64 ========
+[32m ###################### 1-1 FETCH Test success ######################[0m
+[32m ###################### 1-2 UID FETCH Test success ##################[0m
+
+====running logic-messagesend-IMAP-append-quoted-printable ========
+[32m ###################### 1-1 FETCH Test success ######################[0m
+[32m ###################### 1-2 UID FETCH Test success ##################[0m
+
+====running logic-messagesend-SMTP-7bit ========
+[32m ###################### 2-1 FETCH Test success ######################[0m
+[32m ###################### 2-2 UID FETCH Test success ##################[0m
+
+====running logic-messagesend-SMTP-8bit ========
+[32m ###################### 2-1 FETCH Test success ######################[0m
+[32m ###################### 2-2 UID FETCH Test success ##################[0m
+
+====running logic-messagesend-SMTP-base64 ========
+[32m ###################### 2-1 FETCH Test success ######################[0m
+[32m ###################### 2-2 UID FETCH Test success ##################[0m
+
+====running logic-messagesend-SMTP-quoted-printable ========
+[32m ###################### 2-1 FETCH Test success ######################[0m
+[32m ###################### 2-2 UID FETCH Test success ##################[0m
+
+================Type-image-UTF-8-Japanese-messagebody-IMAP-and-SMTP Test finished===============
+================Type-image-UTF-8-mixed-texts-messagebody-IMAP-and-SMTP Testing===============
+====current path is:Type-image-UTF-8-mixed-texts-messagebody-IMAP-and-SMTP================
+====running logic-messagesend-IMAP-append-7bit ========
+[32m ###################### 1-1 FETCH Test success ######################[0m
+[32m ###################### 1-2 UID FETCH Test success ##################[0m
+
+====running logic-messagesend-IMAP-append-8bit ========
+[32m ###################### 1-1 FETCH Test success ######################[0m
+[32m ###################### 1-2 UID FETCH Test success ##################[0m
+
+====running logic-messagesend-IMAP-append-base64 ========
+[32m ###################### 1-1 FETCH Test success ######################[0m
+[32m ###################### 1-2 UID FETCH Test success ##################[0m
+
+====running logic-messagesend-IMAP-append-quoted-printable ========
+[32m ###################### 1-1 FETCH Test success ######################[0m
+[32m ###################### 1-2 UID FETCH Test success ##################[0m
+
+====running logic-messagesend-SMTP-7bit ========
+[32m ###################### 2-1 FETCH Test success ######################[0m
+[32m ###################### 2-2 UID FETCH Test success ##################[0m
+
+====running logic-messagesend-SMTP-8bit ========
+[32m ###################### 2-1 FETCH Test success ######################[0m
+[32m ###################### 2-2 UID FETCH Test success ##################[0m
+
+====running logic-messagesend-SMTP-base64 ========
+[32m ###################### 2-1 FETCH Test success ######################[0m
+[32m ###################### 2-2 UID FETCH Test success ##################[0m
+
+====running logic-messagesend-SMTP-quoted-printable ========
+[32m ###################### 2-1 FETCH Test success ######################[0m
+[32m ###################### 2-2 UID FETCH Test success ##################[0m
+
+================Type-image-UTF-8-mixed-texts-messagebody-IMAP-and-SMTP Test finished===============
+================Type-pure-hyperlink-IMAP-and-SMTP Testing===============
+====current path is:Type-pure-hyperlink-IMAP-and-SMTP================
+====running logic-messagesend-IMAP-append-7bit ========
+[32m ###################### 2-1 FETCH Test success ######################[0m
+[32m ###################### 2-2 UID FETCH Test success ##################[0m
+
+====running logic-messagesend-IMAP-append-8bit ========
+[32m ###################### 2-1 FETCH Test success ######################[0m
+[32m ###################### 2-2 UID FETCH Test success ##################[0m
+
+====running logic-messagesend-IMAP-append-base64 ========
+[32m ###################### 2-1 FETCH Test success ######################[0m
+[32m ###################### 2-2 UID FETCH Test success ##################[0m
+
+====running logic-messagesend-IMAP-append-quoted-printable ========
+[32m ###################### 2-1 FETCH Test success ######################[0m
+[32m ###################### 2-2 UID FETCH Test success ##################[0m
+
+====running logic-messagesend-SMTP-7bit ========
+[32m ###################### 2-1 FETCH Test success ######################[0m
+[32m ###################### 2-2 UID FETCH Test success ##################[0m
+
+====running logic-messagesend-SMTP-8bit ========
+[32m ###################### 2-1 FETCH Test success ######################[0m
+[32m ###################### 2-2 UID FETCH Test success ##################[0m
+
+====running logic-messagesend-SMTP-base64 ========
+[32m ###################### 2-1 FETCH Test success ######################[0m
+[32m ###################### 2-2 UID FETCH Test success ##################[0m
+
+====running logic-messagesend-SMTP-quoted-printable ========
+[32m ###################### 2-1 FETCH Test success ######################[0m
+[32m ###################### 2-2 UID FETCH Test success ##################[0m
+
+================Type-pure-hyperlink-IMAP-and-SMTP Test finished===============
+================Type-pure-image-messagebody-IMAP-and-SMTP Testing===============
+====current path is:Type-pure-image-messagebody-IMAP-and-SMTP================
+====running logic-messagesend-IMAP-append-7bit ========
+[32m ###################### 1-1 FETCH Test success ######################[0m
+[32m ###################### 1-2 UID FETCH Test success ##################[0m
+
+====running logic-messagesend-IMAP-append-8bit ========
+[32m ###################### 1-1 FETCH Test success ######################[0m
+[32m ###################### 1-2 UID FETCH Test success ##################[0m
+
+====running logic-messagesend-IMAP-append-base64 ========
+[32m ###################### 1-1 FETCH Test success ######################[0m
+[32m ###################### 1-2 UID FETCH Test success ##################[0m
+
+====running logic-messagesend-IMAP-append-quoted-printable ========
+[32m ###################### 1-1 FETCH Test success ######################[0m
+[32m ###################### 1-2 UID FETCH Test success ##################[0m
+
+====running logic-messagesend-SMTP-7bit ========
+[32m ###################### 2-1 FETCH Test success ######################[0m
+[32m ###################### 2-2 UID FETCH Test success ##################[0m
+
+====running logic-messagesend-SMTP-8bit ========
+[32m ###################### 2-1 FETCH Test success ######################[0m
+[32m ###################### 2-2 UID FETCH Test success ##################[0m
+
+====running logic-messagesend-SMTP-base64 ========
+[32m ###################### 2-1 FETCH Test success ######################[0m
+[32m ###################### 2-2 UID FETCH Test success ##################[0m
+
+====running logic-messagesend-SMTP-quoted-printable ========
+[32m ###################### 2-1 FETCH Test success ######################[0m
+[32m ###################### 2-2 UID FETCH Test success ##################[0m
+
+================Type-pure-image-messagebody-IMAP-and-SMTP Test finished===============
+================type-symbols-UTF8-IMAP-and-SMTP Testing===============
+====current path is:type-symbols-UTF8-IMAP-and-SMTP================
+====running logic-messagesend-IMAP-append-7bit ========
+[32m ###################### 1-1 FETCH Test success ######################[0m
+[32m ###################### 1-2 UID FETCH Test success ##################[0m
+
+====running logic-messagesend-IMAP-append-8bit ========
+[32m ###################### 1-1 FETCH Test success ######################[0m
+[32m ###################### 1-2 UID FETCH Test success ##################[0m
+
+====running logic-messagesend-IMAP-append-base64 ========
+[32m ###################### 1-1 FETCH Test success ######################[0m
+[32m ###################### 1-2 UID FETCH Test success ##################[0m
+
+====running logic-messagesend-IMAP-append-quoted-printable ========
+[32m ###################### 1-1 FETCH Test success ######################[0m
+[32m ###################### 1-2 UID FETCH Test success ##################[0m
+
+====running logic-messagesend-SMTP-7bit ========
+[32m ###################### 2-1 FETCH Test success ######################[0m
+[32m ###################### 2-2 UID FETCH Test success ##################[0m
+
+====running logic-messagesend-SMTP-8bit ========
+[32m ###################### 2-1 FETCH Test success ######################[0m
+[32m ###################### 2-2 UID FETCH Test success ##################[0m
+
+====running logic-messagesend-SMTP-base64 ========
+[32m ###################### 2-1 FETCH Test success ######################[0m
+[32m ###################### 2-2 UID FETCH Test success ##################[0m
+
+====running logic-messagesend-SMTP-quoted-printable ========
+[32m ###################### 2-1 FETCH Test success ######################[0m
+[32m ###################### 2-2 UID FETCH Test success ##################[0m
+
+================type-symbols-UTF8-IMAP-and-SMTP Test finished===============
+================Type-virus-code-IMAP-and-SMTP Testing===============
+====current path is:Type-virus-code-IMAP-and-SMTP================
+====running logic-messagesend-IMAP-append-7bit ========
+[32m ###################### 1-1 FETCH Test success ######################[0m
+[32m ###################### 1-2 UID FETCH Test success ##################[0m
+
+====running logic-messagesend-IMAP-append-8bit ========
+[32m ###################### 1-1 FETCH Test success ######################[0m
+[32m ###################### 1-2 UID FETCH Test success ##################[0m
+
+====running logic-messagesend-IMAP-append-base64 ========
+[32m ###################### 1-1 FETCH Test success ######################[0m
+[32m ###################### 1-2 UID FETCH Test success ##################[0m
+
+====running logic-messagesend-IMAP-append-quoted-printable ========
+[32m ###################### 1-1 FETCH Test success ######################[0m
+[32m ###################### 1-2 UID FETCH Test success ##################[0m
+
+====running logic-messagesend-SMTP-7bit ========
+[32m ###################### 2-1 FETCH Test success ######################[0m
+[32m ###################### 2-2 UID FETCH Test success ##################[0m
+
+====running logic-messagesend-SMTP-8bit ========
+[32m ###################### 2-1 FETCH Test success ######################[0m
+[32m ###################### 2-2 UID FETCH Test success ##################[0m
+
+====running logic-messagesend-SMTP-base64 ========
+[32m ###################### 2-1 FETCH Test success ######################[0m
+[32m ###################### 2-2 UID FETCH Test success ##################[0m
+
+====running logic-messagesend-SMTP-quoted-printable ========
+[32m ###################### 2-1 FETCH Test success ######################[0m
+[32m ###################### 2-2 UID FETCH Test success ##################[0m
+
+================Type-virus-code-IMAP-and-SMTP Test finished===============
+================Type-virus-code-with-texts-IMAP-and-SMTP Testing===============
+====current path is:Type-virus-code-with-texts-IMAP-and-SMTP================
+====running logic-messagesend-IMAP-append-7bit ========
+[32m ###################### 1-1 FETCH Test success ######################[0m
+[32m ###################### 1-2 UID FETCH Test success ##################[0m
+
+====running logic-messagesend-IMAP-append-8bit ========
+[32m ###################### 1-1 FETCH Test success ######################[0m
+[32m ###################### 1-2 UID FETCH Test success ##################[0m
+
+====running logic-messagesend-IMAP-append-base64 ========
+[32m ###################### 1-1 FETCH Test success ######################[0m
+[32m ###################### 1-2 UID FETCH Test success ##################[0m
+
+====running logic-messagesend-IMAP-append-quoted-printable ========
+[32m ###################### 1-1 FETCH Test success ######################[0m
+[32m ###################### 1-2 UID FETCH Test success ##################[0m
+
+====running logic-messagesend-SMTP-7bit ========
+[32m ###################### 2-1 FETCH Test success ######################[0m
+[32m ###################### 2-2 UID FETCH Test success ##################[0m
+
+====running logic-messagesend-SMTP-8bit ========
+[32m ###################### 2-1 FETCH Test success ######################[0m
+[32m ###################### 2-2 UID FETCH Test success ##################[0m
+
+====running logic-messagesend-SMTP-base64 ========
+[32m ###################### 2-1 FETCH Test success ######################[0m
+[32m ###################### 2-2 UID FETCH Test success ##################[0m
+
+====running logic-messagesend-SMTP-quoted-printable ========
+[32m ###################### 2-1 FETCH Test success ######################[0m
+[32m ###################### 2-2 UID FETCH Test success ##################[0m
+
+================Type-virus-code-with-texts-IMAP-and-SMTP Test finished===============
+
+Total  testcases  are:832
+Success testcases are:832
+Failed  testcases are:0

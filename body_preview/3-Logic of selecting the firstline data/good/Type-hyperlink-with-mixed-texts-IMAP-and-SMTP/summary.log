@@ -1,0 +1,73 @@
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!fetching first line data!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+* OK IMAP4 server (InterMail vM.9.05.00.00 201-2473-137-116) ready Sun, 11 Jun 2017 20:43:02 -0700 (PDT)
+a OK LOGIN completed
+* 1 EXISTS
+* OK [UNSEEN 1] First unseen message
+* OK [UIDVALIDITY 1497231880] UIDs valid
+* OK [UIDNEXT 3065] Predicted next UID
+* FLAGS (\Answered \Flagged \Deleted \Draft \Seen)
+* OK [PERMANENTFLAGS (\* \Answered \Flagged \Deleted \Draft \Seen)] Permanent flags
+* 1 RECENT
+a OK [READ-WRITE] SELECT completed
+* 1 FETCH (RFC822 {1900}
+Return-Path: <xx2@openwave.com>
+Received: from [10.37.2.214] by mx-172-26-202-87.openwave.com
+          (InterMail vM.9.05.00.00 201-2473-137-116) with SMTP
+          id <20170612034300.BPZ32283.mx-172-26-202-87.openwave.com@[10.37.2.214]>
+          for <xx1@openwave.com>; Sun, 11 Jun 2017 20:43:00 -0700
+Received: from [10.13.8.221] by mx-172-26-202-87.openwave.com
+          (InterMail vM.9.05.00.00 201-2473-137-108) with ESMTP
+          id <20170218033243.BGQ23163.mx-172-26-202-87.openwave.com@[10.13.8.221]>
+          for <xx1@openwave.com>; Fri, 17 Feb 2017 19:32:43 -0800
+Return-Path: <xx2@openwave.com>
+Subject: hyper link with mixed texts in message body
+Message-ID: <a80f43c2-c975-2abd-01ed-b06f2020ae29@openwave.com>
+Date: Sat, 18 Feb 2017 11:32:41 +0800
+User-Agent: MX
+MIME-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="------------1562932DF9BF46914A79E2EB"
+From: <xx2@openwave.com>
+
+This is a multi-part message in MIME format.
+--------------1562932DF9BF46914A79E2EB
+Content-Type: text/plain; charset=utf-8; format=flowed
+Content-Transfer-Encoding: quoted-printable
+
+=D8=8C =D9=88=D9=8A=D9=85=D9=83=D9=86 =D8=AA=D8=AD
+Nobody!
+=E3=81=84=E3=81=8F=E3=81=A4=E3=81=AB=E3=81=AA
+=E6=88=91=E4=BB=AC=E6=98=AF=E4=B8=AD=E5=9B=BD=E4=BA=BA=EF=BC=8C
+
+=E6=88=91=E4=BB=AC=E9=83=BD=E6=98=AF=E4=B8=AD=E5=9B=BD=E4=BA=BA <https://ww=
+w.baidu.com>=
+
+
+
+--------------1562932DF9BF46914A79E2EB
+Content-Type: text/html; charset=utf-8
+Content-Transfer-Encoding: 8bit
+
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  </head>
+  <body bgcolor="#FFFFFF" text="#000000">
+    <p>، ويمكن تح<br>
+      Nobody!<br>
+      いくつにな<br>
+      我们是中国人，</p>
+    <p><a href="https://www.baidu.com">我们都是中国人</a></p>
+  </body>
+</html>
+
+--------------1562932DF9BF46914A79E2EB--
+ FLAGS (\Recent \Seen))
+a OK FETCH completed
+* 1 FETCH (FIRSTLINE ("، ويمكن تح Nobody! いくつにな 我们是中国人， 我们都是中"))
+a OK FETCH completed
+* 1 FETCH (FIRSTLINE ("، ويمكن تح Nobody! いくつにな 我们是中国人， 我们都是中") UID 3064)
+a OK UID FETCH completed
+* BYE IMAP4 server terminating connection
+a OK LOGOUT completed

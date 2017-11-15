@@ -1,0 +1,109 @@
+Delete messsages successfully.
+
+
+Message body is:
+
+
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!Sending message!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+
+ sending message:
+
+
+220 mx-172-26-202-87.openwave.com ESMTP server (InterMail vM.9.05.00.00 201-2473-137-108) ready Sat, 18 Feb 2017 02:30:34 -0800
+250 Sender <xx2> Ok
+250 Recipient <xx1> Ok
+354 Ok Send data ending with <CRLF>.<CRLF>
+250 Message received: 20170218103034.BHE23163.mx-172-26-202-87.openwave.com@[10.13.8.221]
+221 mx-172-26-202-87.openwave.com ESMTP server closing connection
+
+
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!fetching first line data!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+* OK IMAP4 server (InterMail vM.9.05.00.00 201-2473-137-108) ready Sat, 18 Feb 2017 02:30:35 -0800 (PST)
+a OK LOGIN completed
+* 1 EXISTS
+* OK [UNSEEN 1] First unseen message
+* OK [UIDVALIDITY 1487128905] UIDs valid
+* OK [UIDNEXT 2989] Predicted next UID
+* FLAGS (\Answered \Flagged \Deleted \Draft \Seen)
+* OK [PERMANENTFLAGS (\* \Answered \Flagged \Deleted \Draft \Seen)] Permanent flags
+* 1 RECENT
+a OK [READ-WRITE] SELECT completed
+* 1 FETCH (RFC822 {1755}
+Return-Path: <xx2@openwave.com>
+Received: from [10.13.8.221] by mx-172-26-202-87.openwave.com
+          (InterMail vM.9.05.00.00 201-2473-137-108) with SMTP
+          id <20170218103034.BHE23163.mx-172-26-202-87.openwave.com@[10.13.8.221]>
+          for <xx1@openwave.com>; Sat, 18 Feb 2017 02:30:34 -0800
+Return-Path: <xx2@openwave.com>
+Received: from [10.13.8.221] by mx-172-26-202-87.openwave.com
+          (InterMail vM.9.05.00.00 201-2473-137-108) with ESMTP
+          id <20170218102755.BHD23163.mx-172-26-202-87.openwave.com@[10.13.8.221]>
+          for <xx1@openwave.com>; Sat, 18 Feb 2017 02:27:55 -0800
+To: xx1@openwave.com
+From: xx2 <xx2@openwave.com>
+Subject: black bg with huge fonts in message body
+Message-ID: <f1c7e88c-c6fb-749f-d5f1-aec986ab2d1f@openwave.com>
+Date: Sat, 18 Feb 2017 18:27:53 +0800
+User-Agent: MX
+MIME-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="------------BC1386BD713A018738446178"
+
+This is a multi-part message in MIME format.
+--------------BC1386BD713A018738446178
+Content-Type: text/plain; charset=utf-8; format=flowed
+Content-Transfer-Encoding: 8bit
+
+، ويمكن تح
+Nobody!
+いくつにな
+我们是中国人，
+
+
+--------------BC1386BD713A018738446178
+Content-Type: text/html; charset=utf-8
+Content-Transfer-Encoding: 8bit
+
+<html>
+  <head>
+
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  </head>
+  <body bgcolor="#000000" alink="#EE0000" link="#0B6CDA" text="#000000"
+    vlink="#551A8B">
+    <p><font color="#ffffff" size="+3">، ويمكن تح
+<br>
+        Nobody!
+<br>
+        いくつにな
+<br>
+        我们是中国人，</font><br>
+    </p>
+  </body>
+</html>
+
+--------------BC1386BD713A018738446178--
+ FLAGS (\Recent \Seen))
+a OK FETCH completed
+* 1 FETCH (FIRSTLINE ("، ويمكن تح Nobody! いくつにな 我们是中国人， "))
+a OK FETCH completed
+* BYE IMAP4 server terminating connection
+a OK LOGOUT completed
+
+
+[default@KeyspaceMetadata] get cf_folder['353038343036333135323632313531383036365fe1280902f32d11e6b9386b782020d67e'];
+=> (super_column=484b44e8-f5c5-11e6-ae38-5bedc6e4aa96,
+     (name=31, value=392e300334383462343465382d663563352d313165362d616533382d3562656463366534616139360330033134383734313338333503313735350330030333033003300303626c61636b2062672077697468206875676520666f6e747320696e206d65737361676520626f647903787832203c787832406f70656e776176652e636f6d3e033003787831406f70656e776176652e636f6d0303323938380330033c66316337653838632d633666622d373439662d643566312d616563393836616232643166406f70656e776176652e636f6d3e033134383734313336373303030303, timestamp=1487413835180343)
+     (name=3138, value=d88c20d988d98ad985d983d98620d8aad8ad204e6f626f64792120e38184e3818fe381a4e381abe381aa20e68891e4bbace698afe4b8ade59bbde4babaefbc8c2000, timestamp=1487413835180343)
+     (name=32, value=46, timestamp=1487413835932850)
+     (name=33, value=54, timestamp=1487413835973459)
+     (name=35, value=31343837343133383335, timestamp=1487413835969151)
+     (name=36, value=46, timestamp=1487413835973459)
+     (name=37, value=46, timestamp=1487413835973459)
+     (name=38, value=46, timestamp=1487413835973459)
+     (name=39, value=46, timestamp=1487413835973459))
+Returned 1 results.
+Elapsed time: 27 msec(s).

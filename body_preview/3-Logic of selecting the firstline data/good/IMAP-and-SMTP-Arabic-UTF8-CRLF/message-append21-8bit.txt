@@ -1,0 +1,11 @@
+from:xx2@openwave.com
+to:xx1@openwave.com
+subject:testemail-Arabic-UTF-8-CRLF-8bit
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: 8bit
+
+ربما  الل
+ه يريدنا ان نلتقي بعض النا
+س السيؤون  قبل افضل  لكي عندما نقا
+بل الحبيب اخيرا سنعرف كيف نكون الممتنين

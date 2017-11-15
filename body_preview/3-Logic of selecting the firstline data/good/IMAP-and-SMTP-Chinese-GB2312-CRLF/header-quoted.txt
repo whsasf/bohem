@@ -1,0 +1,7 @@
+from:xx2@openwave.com
+to:xx1@openwave.com
+subject:testemail-Chinese-GB2312-CRLF-quoted-printable
+MIME-Version: 1.0
+Content-Type: text/plain; charset=gb2312
+Content-Transfer-Encoding: quoted-printable
+

@@ -1,0 +1,137 @@
+Delete messsages successfully.
+!!!!!!!!!!!!!!!!!!!!!!message delete successfully!!!!!!!!!!!!!!!!!
+
+
+Message body length = 1269 
+Message is:
+Return-Path: <xx2@openwave.com>
+Received: from [10.13.8.221] by mx-172-26-202-87.openwave.com
+          (InterMail vM.9.05.00.00 201-2473-137-108) with ESMTP
+          id <20170218032637.BGO23163.mx-172-26-202-87.openwave.com@[10.13.8.221]>
+          for <xx1@openwave.com>; Fri, 17 Feb 2017 19:26:37 -0800
+From: xx2 <xx2@openwave.com>
+Subject: hyper link with mixed texts in message body
+To: xx1@openwave.com
+Message-ID: <63a41329-6798-ff5f-c061-c36ddc238cc8@openwave.com>
+Date: Sat, 18 Feb 2017 11:26:36 +0800
+User-Agent: MX
+MIME-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="------------84140ED1F59389DED0F5DE4D"
+
+This is a multi-part message in MIME format.
+--------------84140ED1F59389DED0F5DE4D
+Content-Type: text/plain; charset=utf-8; format=flowed
+Content-Transfer-Encoding: 8bit
+
+我们都是中国人 <https://www.baidu.com>
+
+
+--------------84140ED1F59389DED0F5DE4D
+Content-Type: text/html; charset=utf-8
+Content-Transfer-Encoding: 8bit
+
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  </head>
+  <body bgcolor="#FFFFFF" text="#000000">
+    <p><a href="https://www.baidu.com">我们都是中国人</a></p>
+  </body>
+</html>
+
+--------------84140ED1F59389DED0F5DE4D--
+
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!Appending message!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+* OK IMAP4 server (InterMail vM.9.05.00.00 201-2473-137-108) ready Fri, 17 Feb 2017 19:30:14 -0800 (PST)
+a OK LOGIN completed
+* 0 EXISTS
+* OK [UNSEEN 0] First unseen message
+* OK [UIDVALIDITY 1487128905] UIDs valid
+* OK [UIDNEXT 2958] Predicted next UID
+* FLAGS (\Answered \Flagged \Deleted \Draft \Seen)
+* OK [PERMANENTFLAGS (\* \Answered \Flagged \Deleted \Draft \Seen)] Permanent flags
+* 0 RECENT
+a OK [READ-WRITE] SELECT completed
++ Ready for argument
+* 1 EXISTS
+* 1 RECENT
+a OK [APPENDUID 1487128905 2958] APPEND completed
+* BAD Null command
+* BYE IMAP4 server terminating connection
+a OK LOGOUT completed
+!!!!!!!!!!!!!!!!append finished!!!!!!!!!!!!!!!
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!fetching first line data!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+* OK IMAP4 server (InterMail vM.9.05.00.00 201-2473-137-108) ready Fri, 17 Feb 2017 19:30:15 -0800 (PST)
+a OK LOGIN completed
+* 1 EXISTS
+* OK [UNSEEN 1] First unseen message
+* OK [UIDVALIDITY 1487128905] UIDs valid
+* OK [UIDNEXT 2959] Predicted next UID
+* FLAGS (\Answered \Flagged \Deleted \Draft \Seen)
+* OK [PERMANENTFLAGS (\* \Answered \Flagged \Deleted \Draft \Seen)] Permanent flags
+* 1 RECENT
+a OK [READ-WRITE] SELECT completed
+* 1 FETCH (RFC822 {1271}
+Return-Path: <xx2@openwave.com>
+Received: from [10.13.8.221] by mx-172-26-202-87.openwave.com
+          (InterMail vM.9.05.00.00 201-2473-137-108) with ESMTP
+          id <20170218032637.BGO23163.mx-172-26-202-87.openwave.com@[10.13.8.221]>
+          for <xx1@openwave.com>; Fri, 17 Feb 2017 19:26:37 -0800
+From: xx2 <xx2@openwave.com>
+Subject: hyper link with mixed texts in message body
+To: xx1@openwave.com
+Message-ID: <63a41329-6798-ff5f-c061-c36ddc238cc8@openwave.com>
+Date: Sat, 18 Feb 2017 11:26:36 +0800
+User-Agent: MX
+MIME-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="------------84140ED1F59389DED0F5DE4D"
+
+This is a multi-part message in MIME format.
+--------------84140ED1F59389DED0F5DE4D
+Content-Type: text/plain; charset=utf-8; format=flowed
+Content-Transfer-Encoding: 8bit
+
+我们都是中国人 <https://www.baidu.com>
+
+
+--------------84140ED1F59389DED0F5DE4D
+Content-Type: text/html; charset=utf-8
+Content-Transfer-Encoding: 8bit
+
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  </head>
+  <body bgcolor="#FFFFFF" text="#000000">
+    <p><a href="https://www.baidu.com">我们都是中国人</a></p>
+  </body>
+</html>
+
+--------------84140ED1F59389DED0F5DE4D--
+ FLAGS (\Recent \Seen))
+a OK FETCH completed
+* 1 FETCH (FIRSTLINE ("我们都是中国人 <https://www.baidu.com> "))
+a OK FETCH completed
+* BYE IMAP4 server terminating connection
+a OK LOGOUT completed
+
+
+
+
+[default@KeyspaceMetadata] get cf_folder['353038343036333135323632313531383036365fe1280902f32d11e6b9386b782020d67e'];
+=> (super_column=8f9b04c2-f58a-11e6-aac8-0d3ff6221e7b,
+     (name=31, value=392e300338663962303463322d663538612d313165362d616163382d30643366663632323165376203300331343837333838363134033132373103300303330330033003036879706572206c696e6b2077697468206d6978656420746578747320696e206d65737361676520626f647903787832203c787832406f70656e776176652e636f6d3e033003787831406f70656e776176652e636f6d0303323935380330033c36336134313332392d363739382d666635662d633036312d633336646463323338636338406f70656e776176652e636f6d3e033134383733383833393603030303, timestamp=1487388614511057)
+     (name=3138, value=e68891e4bbace983bde698afe4b8ade59bbde4baba203c68747470733a2f2f7777772e62616964752e636f6d3e2000, timestamp=1487388614511057)
+     (name=32, value=46, timestamp=1487388615296558)
+     (name=33, value=54, timestamp=1487388615339642)
+     (name=35, value=31343837333838363135, timestamp=1487388615335892)
+     (name=36, value=46, timestamp=1487388615339642)
+     (name=37, value=46, timestamp=1487388615339642)
+     (name=38, value=46, timestamp=1487388615339642)
+     (name=39, value=46, timestamp=1487388615339642))
+Returned 1 results.
+Elapsed time: 24 msec(s).

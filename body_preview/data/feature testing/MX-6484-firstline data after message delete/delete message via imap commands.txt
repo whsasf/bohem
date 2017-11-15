@@ -1,0 +1,138 @@
+
+1-------------message deliverered via smtp:
+(1)Send a message to xx2@openwave.com with these content:
+   ssssssssssssssssssssssssssssssssssssssssss
+(2)messageID:"8299fece-e1d8-11e6-b60e-80225baed619" ,this is the 27th message .
+(3)can find firstile data in cassandra db for this message:
+/////////////////////////////////////////////////////
+=> (super_column=4ec8f472-e13f-11e6-9607-e79cf538efbe,
+     (name=31, value=392e300334656338663437322d653133662d313165362d393630372d65373963663533386566626503300331343835313537323730033530380330030333033003300303033c787831406f70656e776176652e636f6d3e0330030303313131300330033c32303137303132333037343130342e424257393334382e6d782d3137322d32362d3230322d38372e6f70656e776176652e636f6d405b31302e33372e322e3231345d3e033134383531353732373003030303, timestamp=1485157270267994)
+     (name=32, value=46, timestamp=1485157550217489)
+     (name=33, value=54, timestamp=1485157555464579)
+     (name=35, value=31343835313537353535, timestamp=1485157555460848)
+     (name=36, value=46, timestamp=1485157555464579)
+     (name=37, value=46, timestamp=1485157555464579)
+     (name=38, value=46, timestamp=1485157555464579)
+     (name=39, value=46, timestamp=1485157555464579))
+=> (super_column=8299fece-e1d8-11e6-b60e-80225baed619,
+     (name=31, value=392e300338323939666563652d653164382d313165362d623630652d38303232356261656436313903300331343835323233303730033530330330030333033003300303033c787831406f70656e776176652e636f6d3e0330030303313131320330033c32303137303132343031353732392e424258393334382e6d782d3137322d32362d3230322d38372e6f70656e776176652e636f6d405b31302e33372e322e3231345d3e033134383532323330373003030303, timestamp=1485223070204509)
+     (name=3138, value=7373737373737373737373737373737373737373737373737373737373737373737373737373737373732000, timestamp=1485223070204509)
+
+  -----translate:ssssssssssssssssssssssssssssssssssssssssss 
+
+     (name=32, value=46, timestamp=1485223082967048)
+     (name=33, value=54, timestamp=1485223094526999)
+     (name=35, value=31343835323233303934, timestamp=1485223094521685)
+     (name=36, value=46, timestamp=1485223094526999)
+     (name=37, value=46, timestamp=1485223094526999)
+     (name=38, value=46, timestamp=1485223094526999)
+     (name=39, value=46, timestamp=1485223094526999))
+Returned 27 results.
+////////////////////////////////////////////////
+(4)Now delete this message from IMAP commans:
+
+a store 27 +flags.silent (\deleted)
+a OK STORE completed
+a expunge
+* 27 EXPUNGE
+* 26 EXISTS
+* 0 RECENT
+a OK EXPUNGE completed
+a select inbox
+* 26 EXISTS
+* OK [UNSEEN 25] First unseen message
+* OK [UIDVALIDITY 1484896050] UIDs valid
+* OK [UIDNEXT 1113] Predicted next UID
+* FLAGS (\Answered \Flagged \Deleted \Draft \Seen)
+* OK [PERMANENTFLAGS (\* \Answered \Flagged \Deleted \Draft \Seen)] Permanent flags
+* 0 RECENT
+a OK [READ-WRITE] SELECT completed
+(5) from mailbox and cassandra, this message gone ,along with the firstline data:
+///////////////////////////////////////////
+=> (super_column=4ec8f472-e13f-11e6-9607-e79cf538efbe,
+     (name=31, value=392e300334656338663437322d653133662d313165362d393630372d65373963663533386566626503300331343835313537323730033530380330030333033003300303033c787831406f70656e776176652e636f6d3e0330030303313131300330033c32303137303132333037343130342e424257393334382e6d782d3137322d32362d3230322d38372e6f70656e776176652e636f6d405b31302e33372e322e3231345d3e033134383531353732373003030303, timestamp=1485157270267994)
+     (name=32, value=46, timestamp=1485157550217489)
+     (name=33, value=54, timestamp=1485157555464579)
+     (name=35, value=31343835313537353535, timestamp=1485157555460848)
+     (name=36, value=46, timestamp=1485157555464579)
+     (name=37, value=46, timestamp=1485157555464579)
+     (name=38, value=46, timestamp=1485157555464579)
+     (name=39, value=46, timestamp=1485157555464579))
+Returned 26 results.
+/////////////////////////////////////////////
+
+the previous 26th message becomes the last message.
+
+
+2-------------message deliverered via IMAP append:
+
+(1)Append a message to xx2@openwave.com,with these content:
+   zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz
+(2) messageID:"506ea56a-e1da-11e6-8292-01ef2c4f4674"
+   firstline data returns after fetch firstline data and exist in cassandra dn:
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+a fetch 27 firstline
+* 27 FETCH (FIRSTLINE (zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz Message-ID: <63-2017-0123-181044-7115@mx-172-26-202-87.))
+a OK FETCH completed
+
+
+=> (super_column=4ec8f472-e13f-11e6-9607-e79cf538efbe,
+     (name=31, value=392e300334656338663437322d653133662d313165362d393630372d65373963663533386566626503300331343835313537323730033530380330030333033003300303033c787831406f70656e776176652e636f6d3e0330030303313131300330033c32303137303132333037343130342e424257393334382e6d782d3137322d32362d3230322d38372e6f70656e776176652e636f6d405b31302e33372e322e3231345d3e033134383531353732373003030303, timestamp=1485157270267994)
+     (name=32, value=46, timestamp=1485157550217489)
+     (name=33, value=54, timestamp=1485157555464579)
+     (name=35, value=31343835313537353535, timestamp=1485157555460848)
+     (name=36, value=46, timestamp=1485157555464579)
+     (name=37, value=46, timestamp=1485157555464579)
+     (name=38, value=46, timestamp=1485157555464579)
+     (name=39, value=46, timestamp=1485157555464579))
+=> (super_column=506ea56a-e1da-11e6-8292-01ef2c4f4674,
+     (name=31, value=392e300335303665613536612d653164612d313165362d383239322d30316566326334663436373403300331343835323233383434033130360330030303300330030303033103030331313133033003033003030303, timestamp=1485223845032880)
+     (name=3138, value=7a7a7a7a7a7a7a7a7a7a7a7a7a7a7a7a7a7a7a7a7a7a7a7a7a7a7a7a7a7a7a7a204d6573736167652d49443a203c36332d323031372d303132332d3138313034342d37313135406d782d3137322d32362d3230322d38372e00, timestamp=1485223845032880)
+
+-----translated:zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz Message-ID: <63-2017-0123-181044-7115@mx-172-26-202-87.
+ 
+    (name=32, value=54, timestamp=1485223845032880)
+     (name=33, value=46, timestamp=1485223845032880)
+     (name=35, value=30, timestamp=1485223845032880))
+Returned 27 results.
+
+////////////////////////////////////////////////////////////////////////////////////////////////////
+
+(3)Now ,delete this message using IMAP delete:
+
+a store 27 +flags.silent (\deleted)
+a OK STORE completed
+a expunge
+* 27 EXPUNGE
+* 26 EXISTS
+* 0 RECENT
+a OK EXPUNGE completed
+a select inbox
+* 26 EXISTS
+* OK [UNSEEN 25] First unseen message
+* OK [UIDVALIDITY 1484896050] UIDs valid
+* OK [UIDNEXT 1114] Predicted next UID
+* FLAGS (\Answered \Flagged \Deleted \Draft \Seen)
+* OK [PERMANENTFLAGS (\* \Answered \Flagged \Deleted \Draft \Seen)] Permanent flags
+* 0 RECENT
+a OK [READ-WRITE] SELECT completed
+
+(4) message gone ,along with firstline data from cassandra db:
+////////////////////////////////////
+=> (super_column=4ec8f472-e13f-11e6-9607-e79cf538efbe,
+     (name=31, value=392e300334656338663437322d653133662d313165362d393630372d65373963663533386566626503300331343835313537323730033530380330030333033003300303033c787831406f70656e776176652e636f6d3e0330030303313131300330033c32303137303132333037343130342e424257393334382e6d782d3137322d32362d3230322d38372e6f70656e776176652e636f6d405b31302e33372e322e3231345d3e033134383531353732373003030303, timestamp=1485157270267994)
+     (name=32, value=46, timestamp=1485157550217489)
+     (name=33, value=54, timestamp=1485157555464579)
+     (name=35, value=31343835313537353535, timestamp=1485157555460848)
+     (name=36, value=46, timestamp=1485157555464579)
+     (name=37, value=46, timestamp=1485157555464579)
+     (name=38, value=46, timestamp=1485157555464579)
+     (name=39, value=46, timestamp=1485157555464579))
+Returned 26 results.
+////////////////////////////////////////
+
+
+Summary:
+for messages delivered by smtp or IMAP appending, after IMAP delete command,messages gone successfully with firstline data from cassandra db. 
+                   

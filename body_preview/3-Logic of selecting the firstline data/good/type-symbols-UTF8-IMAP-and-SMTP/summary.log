@@ -1,0 +1,44 @@
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!fetching first line data!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+* OK IMAP4 server (InterMail vM.9.05.00.00 201-2473-137-116) ready Sun, 11 Jun 2017 20:56:27 -0700 (PDT)
+a OK LOGIN completed
+* 1 EXISTS
+* OK [UNSEEN 1] First unseen message
+* OK [UIDVALIDITY 1497231880] UIDs valid
+* OK [UIDNEXT 3137] Predicted next UID
+* FLAGS (\Answered \Flagged \Deleted \Draft \Seen)
+* OK [PERMANENTFLAGS (\* \Answered \Flagged \Deleted \Draft \Seen)] Permanent flags
+* 1 RECENT
+a OK [READ-WRITE] SELECT completed
+* 1 FETCH (RFC822 {1128}
+Return-Path: <xx2@openwave.com>
+Received: from [10.37.2.214] by mx-172-26-202-87.openwave.com
+          (InterMail vM.9.05.00.00 201-2473-137-116) with SMTP
+          id <20170612035626.BRJ32283.mx-172-26-202-87.openwave.com@[10.37.2.214]>
+          for <xx1@openwave.com>; Sun, 11 Jun 2017 20:56:26 -0700
+Received: from [10.13.8.221] by mx-172-26-202-87.openwave.com
+          (InterMail vM.9.05.00.00 201-2473-137-108) with ESMTP
+          id <20170218092432.BGS23163.mx-172-26-202-87.openwave.com@[10.13.8.221]>
+          for <xx1@openwave.com>; Sat, 18 Feb 2017 01:24:32 -0800
+Return-Path: <xx2@openwave.com>
+Subject: symbols with texts in message body
+Message-ID: <73f08a4e-8851-9776-eb51-e04dad76336e@openwave.com>
+Date: Sat, 18 Feb 2017 17:24:31 +0800
+User-Agent: MX
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8; format=flowed
+Content-Transfer-Encoding: quoted-printable
+From: <xx2@openwave.com>
+
+=C2=A2=C2=A4=E2=82=AC=C2=A9=C2=AE=C2=B5=C2=B6=C2=BC=C2=BE=C2=A6=C2=A8=C2=A1=
+=C3=97=C2=BF=C3=B7=C2=BB=C2=BA=C2=B1=C2=B2=C2=B2=C2=A5=C2=A7=C2=AA=C2=AC=C2=
+=B8
+=E4=B8=AD=E5=9B=BD=E4=BA=BA=
+ FLAGS (\Recent \Seen))
+a OK FETCH completed
+* 1 FETCH (FIRSTLINE ("¢¤€©®µ¶¼¾¦¨¡×¿÷»º±²²¥§ª¬¸ 中国人 "))
+a OK FETCH completed
+* 1 FETCH (FIRSTLINE ("¢¤€©®µ¶¼¾¦¨¡×¿÷»º±²²¥§ª¬¸ 中国人 ") UID 3136)
+a OK UID FETCH completed
+* BYE IMAP4 server terminating connection
+a OK LOGOUT completed

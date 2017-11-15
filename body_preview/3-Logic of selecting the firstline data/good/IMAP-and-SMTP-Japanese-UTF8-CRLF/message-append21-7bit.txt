@@ -1,0 +1,10 @@
+from:xx2@openwave.com
+to:xx1@openwave.com
+subject:testemail-Japanes-UTF-8-CRLF-7bit
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: 7bit
+
+外から见たら
+不幸でも中は幸せだということもある。
+幸せの形はひとつじゃない

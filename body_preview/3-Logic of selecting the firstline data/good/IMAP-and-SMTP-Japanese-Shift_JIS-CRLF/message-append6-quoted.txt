@@ -1,0 +1,10 @@
+from:xx2@openwave.com
+to:xx1@openwave.com
+subject:testemail-Japanes-Shift_JIS-CRLF-quoted-printable
+MIME-Version: 1.0
+Content-Type: text/plain; charset=Shift_JIS
+Content-Transfer-Encoding: quoted-printable
+
+     =90l=82=CD=89=BD=82=A9=82=CC
+=8B]=90=B5=82=C8=82=B5=82=C9 =89=BD=82=E0=93=BE=82=E9=82=B1=82=C6=82=CD=82=
+=C5=82=AB=82=C8=82=A2=

@@ -1,0 +1,174 @@
+1. message delivered via smtp
+(1)send a message to xx3@openwave.com ,with thesecontents:
+
+subject:xxxxxxxxxxxxxxxxxxxxxxx
+
+pppppppppppppppppppppppppppppppppppppppppppppp 
+
+(2)messageID:"feba3352-e372-11e6-9507-5f418f42086f"
+
+(3)first data appear in "a fetch fisrline aommand " and cassandra db:
+////////////////////////////////////////////////////////
+
+
+a fetch 1 firstline
+* 1 FETCH (FIRSTLINE (pppppppppppppppppppppppppppppppppppppppppppppp ))
+a OK FETCH completed
+
+
+[default@KeyspaceMetadata] get cf_folder['383538343032323936383539393838353633345f79a315b6e36e11e6af9899e72c5ff59f'];
+=> (super_column=feba3352-e372-11e6-9507-5f418f42086f,
+     (name=31, value=392e300366656261333335322d653337322d313165362d393530372d35663431386634323038366603300331343835333939333732033735380330030333033003300303787878787878787878787878787878787878787878787803787834203c787834406f70656e776176652e636f6d3e033003787833203c787833406f70656e776176652e636f6d3e0303313030330330033c37393361346235322d343562392d343964662d333334352d613930323136336439363632406f70656e776176652e636f6d3e033134383533393933373003030303, timestamp=1485399372105338)
+     (name=3138, value=707070707070707070707070707070707070707070707070707070707070707070707070707070707070707070702000, timestamp=1485399372105338)
+     (name=32, value=46, timestamp=1485399455886045)
+     (name=33, value=54, timestamp=1485399377489281)
+     (name=35, value=31343835333939333736, timestamp=1485399376611263))
+Returned 1 results.
+Elapsed time: 3.18 msec(s).
+////////////////////////////////////////////////////////
+
+(4)Now delete this message from thunderbird client:
+(5)After delete,message goes to Trash folder,message still exists in masilbox along with firstline data.
+
+(6)AFter runing "a expunge " commabnd,message disappear from mailbox and cassandra db,along with firstline data:
+
+/////////////////////////////////////////////////////////////
+[default@KeyspaceMetadata] get cf_folder['383538343032323936383539393838353633345f79a315b6e36e11e6af9899e72c5ff59f'];
+Returned 0 results.
+Elapsed time: 0.72 msec(s)
+
+////////////////////////////////////////////////////////////
+
+
+
+2. message delivered via imap append
+
+mailbox ID: 8584022968599885634    38353834303232393638353939383835363334
+
+
+(1)before append:
+   /////////////////////////////////////////////
+=> (super_column=79a4500c-e36e-11e6-bead-9c68b2eff2f6,
+     (name=31, value=392e300337396134353030632d653336652d313165362d626561642d3963363862326566663266360330033134383533393734333003343035033003033303300330030357656c636f6d6520746f2053796e6368726f6e6f737320456d61696c033c696e666f406f776d6573736167696e672e636f6d3e0330030303313030300330033c57656c636f6d653e033003030303, timestamp=1485397430819592)
+     (name=3138, value=3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d2057656c636f6d65207400, timestamp=1485397430819592)
+     (name=32, value=46, timestamp=1485397430819592)
+     (name=33, value=54, timestamp=1485397476923969)
+     (name=35, value=31343835333937343735, timestamp=1485397475247696))
+Returned 1 results.
+Elapsed time: 19 msec(s).
+///////////////////////////////////////////////////
+
+(2) append a message to xx1@openwave.com  with these contents:
+     
+subject:test delete mail
+
+mmmmmmmmmmmmmmmmmmmmmm
+
+(3)message ID:"ba4e2e2c-e36c-11e6-af64-54a3f990027e" 
+(4)Firstline data appears in mailbox and cassandra db:
+//////////////////////////////////////////////
+
+a fetch 3 rfc822
+* 3 FETCH (RFC822 {121}
+subject: message2
+Message-ID: <5-2017-0125-184409-9077@mx-172-26-202-87.openwave.com>
+
+fffffffffffffffffffffffffffff
+)
+a OK FETCH completed
+
+
+
+
+=> (super_column=79a4500c-e36e-11e6-bead-9c68b2eff2f6,
+     (name=31, value=392e300337396134353030632d653336652d313165362d626561642d3963363862326566663266360330033134383533393734333003343035033003033303300330030357656c636f6d6520746f2053796e6368726f6e6f737320456d61696c033c696e666f406f776d6573736167696e672e636f6d3e0330030303313030300330033c57656c636f6d653e033003030303, timestamp=1485397430819592)
+     (name=3138, value=3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d2057656c636f6d65207400, timestamp=1485397430819592)
+     (name=32, value=46, timestamp=1485397430819592)
+     (name=33, value=54, timestamp=1485397476923969)
+     (name=35, value=31343835333937343735, timestamp=1485397475247696)
+     (name=39, value=54, timestamp=1485398714078618))
+=> (super_column=eae1f1b6-e36e-11e6-be6c-a5a8741c6dfe,
+     (name=31, value=392e300365616531663162362d653336652d313165362d626536632d61356138373431633664666503300331343835333937363230033132310330030333033003300303746573742064656c6574652076696120617070656e64030330030303313030310330033c342d323031372d303132352d3138323730302d39303737406d782d3137322d32362d3230322d38372e6f70656e776176652e636f6d3e033003030303, timestamp=1485397620827751)
+     (name=3138, value=787878787878787878787878787878782000, timestamp=1485397620827751)
+     (name=32, value=46, timestamp=1485398007588535)
+     (name=33, value=54, timestamp=1485397626030811)
+     (name=35, value=31343835333938353736, timestamp=1485398576672078)
+     (name=36, value=46, timestamp=1485397626030811)
+     (name=37, value=46, timestamp=1485397626030811)
+     (name=38, value=46, timestamp=1485397626030811)
+     (name=39, value=54, timestamp=1485397978609039))
+=> (super_column=4fd2f8e8-e371-11e6-8e22-9861c9cb1279,
+     (name=31, value=392e300334666432663865382d653337312d313165362d386532322d393836316339636231323739033003313438353339383634390331323103300303330330033003036d65737361676532030330030303313030320330033c352d323031372d303132352d3138343430392d39303737406d782d3137322d32362d3230322d38372e6f70656e776176652e636f6d3e033003030303, timestamp=1485398649176504)
+     (name=3138, value=66666666666666666666666666666666666666666666666666666666662000, timestamp=1485398649176504)
+     (name=32, value=54, timestamp=1485398649176504)
+     (name=33, value=54, timestamp=1485398655566095)
+     (name=35, value=31343835333938363534, timestamp=1485398654481286)
+     (name=39, value=54, timestamp=1485398773735129))
+Returned 3 results.
+Elapsed time: 5.31 msec(s).
+///////////////////////////////////////////////////////
+
+(5)Now  delete this message from thunderbird UI:
+(6)The message message will go to trash.message still exist in mailbox and cassandra DB .
+(7)Now delete it from trash using thunderbird UI, message disappear from UI ,but still exist in mailbox and cassandrabd:
+ ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+=> (super_column=79a4500c-e36e-11e6-bead-9c68b2eff2f6,
+     (name=31, value=392e300337396134353030632d653336652d313165362d626561642d3963363862326566663266360330033134383533393734333003343035033003033303300330030357656c636f6d6520746f2053796e6368726f6e6f737320456d61696c033c696e666f406f776d6573736167696e672e636f6d3e0330030303313030300330033c57656c636f6d653e033003030303, timestamp=1485397430819592)
+     (name=3138, value=3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d2057656c636f6d65207400, timestamp=1485397430819592)
+     (name=32, value=46, timestamp=1485397430819592)
+     (name=33, value=54, timestamp=1485397476923969)
+     (name=35, value=31343835333937343735, timestamp=1485397475247696)
+     (name=39, value=54, timestamp=1485398714078618))
+=> (super_column=eae1f1b6-e36e-11e6-be6c-a5a8741c6dfe,
+     (name=31, value=392e300365616531663162362d653336652d313165362d626536632d61356138373431633664666503300331343835333937363230033132310330030333033003300303746573742064656c6574652076696120617070656e64030330030303313030310330033c342d323031372d303132352d3138323730302d39303737406d782d3137322d32362d3230322d38372e6f70656e776176652e636f6d3e033003030303, timestamp=1485397620827751)
+     (name=3138, value=787878787878787878787878787878782000, timestamp=1485397620827751)
+     (name=32, value=46, timestamp=1485398007588535)
+     (name=33, value=54, timestamp=1485397626030811)
+     (name=35, value=31343835333938353736, timestamp=1485398576672078)
+     (name=36, value=46, timestamp=1485397626030811)
+     (name=37, value=46, timestamp=1485397626030811)
+     (name=38, value=46, timestamp=1485397626030811)
+     (name=39, value=54, timestamp=1485397978609039))
+=> (super_column=4fd2f8e8-e371-11e6-8e22-9861c9cb1279,
+     (name=31, value=392e300334666432663865382d653337312d313165362d386532322d393836316339636231323739033003313438353339383634390331323103300303330330033003036d65737361676532030330030303313030320330033c352d323031372d303132352d3138343430392d39303737406d782d3137322d32362d3230322d38372e6f70656e776176652e636f6d3e033003030303, timestamp=1485398649176504)
+     (name=3138, value=66666666666666666666666666666666666666666666666666666666662000, timestamp=1485398649176504)
+     (name=32, value=54, timestamp=1485398649176504)
+     (name=33, value=54, timestamp=1485398655566095)
+     (name=35, value=31343835333938363534, timestamp=1485398654481286)
+     (name=39, value=54, timestamp=1485398773735129))
+Returned 3 results.
+Elapsed time: 5.31 msec(s).
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+(8)Run "a expunge" ,mesage will disappear from mailbox and cassandra DB.
+
+
+a select inbox
+* 0 EXISTS
+* OK [UNSEEN 0] First unseen message
+* OK [UIDVALIDITY 1485397430] UIDs valid
+* OK [UIDNEXT 1003] Predicted next UID
+* FLAGS (\Answered \Flagged \Deleted \Draft \Seen)
+* OK [PERMANENTFLAGS (\* \Answered \Flagged \Deleted \Draft \Seen)] Permanent flags
+* 0 RECENT
+a OK [READ-WRITE] SELECT completed
+
+
+
+a select TRash
+a NO The specified mailbox does not exist
+
+
+
+
+[default@KeyspaceMetadata] get cf_folder['383538343032323936383539393838353633345f79a315b6e36e11e6af9899e72c5ff59f'];
+Returned 0 results.
+Elapsed time: 0.74 msec(s).
+
+
+Summary:
+
+(1)After deleting message sent via smtp from thunderbird UI, message will go to Trash folder. Message still exists in mailbox and cassandra along with the first line data. Only after "a expunge" commands, message will truly disappear with firstline data. 
+(2)After deleting message appended via IMAP from thunderbird UI,message will go to Trash folder. Message still exists in mailbox and cassandra along with the first line data. Only after "a expunge" commands, message will truly disappear with firstline data. 
+
+
+

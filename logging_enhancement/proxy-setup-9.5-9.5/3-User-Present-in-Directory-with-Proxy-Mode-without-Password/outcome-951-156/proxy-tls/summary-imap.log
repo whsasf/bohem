@@ -1,0 +1,32 @@
+The imap operations logs telneting to MX9.5-1:
+
+
+* OK IMAP4 server (InterMail vM.9.05.01.00 201-2473-137-123) ready Wed, 15 Nov 2017 14:30:28 +0000 (GMT)
+a BAD Missing required argument to LOGIN
+a BAD Unrecognized command, please login
+a BAD Unrecognized command, please login
+a BAD Unrecognized command, please login
+a BAD Unrecognized command, please login
+* BYE IMAP4 server terminating connection
+a OK LOGOUT completed
+
+
+
+
+
+IMAPserv.log from MX9.5-1:
+
+20171115 143028147+0000 mx-10-49-58-127 imapserv 3093 3163 140200551151360 Warn;ImapProtocolErr(56/19) Missing required argument to LOGIN:cmd=a login procu1:fromhost=10.37.2.214:fromport=42072:sid=86b6b61a-ca11-11e7-86db-dd374f42690b:respcode=BAD:resptime=0
+20171115 143028423+0000 mx-10-49-58-127 imapserv 3093 3174 140200548222720 Warn;ImapProtocolErr(56/19) Unrecognized command, please login:cmd=a select xxx:fromhost=10.37.2.214:fromport=42072:sid=86b6b61a-ca11-11e7-86db-dd374f42690b:respcode=BAD:resptime=0
+20171115 143028423+0000 mx-10-49-58-127 imapserv 3093 3174 140200548222720 Warn;ImapProtocolErr(56/19) Unrecognized command, please login:cmd=a select inbox:fromhost=10.37.2.214:fromport=42072:sid=86b6b61a-ca11-11e7-86db-dd374f42690b:respcode=BAD:resptime=0
+20171115 143028424+0000 mx-10-49-58-127 imapserv 3093 3174 140200548222720 Warn;ImapProtocolErr(56/19) Unrecognized command, please login:cmd=a fetch 2 rfc822:fromhost=10.37.2.214:fromport=42072:sid=86b6b61a-ca11-11e7-86db-dd374f42690b:respcode=BAD:resptime=0
+20171115 143028424+0000 mx-10-49-58-127 imapserv 3093 3174 140200548222720 Warn;ImapProtocolErr(56/19) Unrecognized command, please login:cmd=a fetch 5 rfc822:fromhost=10.37.2.214:fromport=42072:sid=86b6b61a-ca11-11e7-86db-dd374f42690b:respcode=BAD:resptime=0
+20171115 143028424+0000 mx-10-49-58-127 imapserv 3093 3174 140200548222720 Note;ImapLogout(56/43) cmd=a logout:fromhost=10.37.2.214:fromport=42072:sid=86b6b61a-ca11-11e7-86db-dd374f42690b:respcode=OK:resptime=0
+20171115 143028424+0000 mx-10-49-58-127 imapserv 3093 3174 140200548222720 Note;ImapDisconnected(56/17) cmd=a logout:fromhost=10.37.2.214:fromport=42072:sid=86b6b61a-ca11-11e7-86db-dd374f42690b:respcode=OK:resptime=277
+
+
+IMAPserv.log from MX9.5-2:
+
+
+[32m#####Logging enhancement for IMAP proxy is ok!!##### [0m
+

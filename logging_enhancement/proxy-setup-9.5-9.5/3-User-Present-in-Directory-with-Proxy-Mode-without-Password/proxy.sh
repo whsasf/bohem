@@ -125,8 +125,8 @@ exec 3>&-
 cat imap-temp.log
 
 #Now gether imap logs from MX9.5-1 and MX9.5-2
-ssh root@$IMAPHost1  'cat /opt/imail2/log/imapserv.log' > imapserv1.log
-ssh root@$IMAPHost2  'cat /opt/imail2/log/imapserv.log' > imapserv2.log
+ssh root@$IMAPHost1  'cat /opt/imail2/log/imapserv.log|grep -v "MsMssFailover"|grep -v "RmeInvalidCOSAttribute"|grep -v "ConfNonStandardPort"' > imapserv1.log
+ssh root@$IMAPHost2  'cat /opt/imail2/log/imapserv.log|grep -v "MsMssFailover"|grep -v "RmeInvalidCOSAttribute"|grep -v "ConfNonStandardPort"' > imapserv2.log
 
 #Prepare the summary-imap.log
 echo -e  "The imap operations logs telneting to MX9.5-1:\n\n" >summary-imap.log
@@ -183,8 +183,8 @@ exec 3>&-
 cat pop-temp.log
 
 #Now gether pop logs from MX9.5-1 and MX9.5-2
-ssh root@$POPHost1  'cat /opt/imail2/log/popserv.log' > popserv1.log
-ssh root@$POPHost2  'cat /opt/imail2/log/popserv.log' > popserv2.log
+ssh root@$POPHost1  'cat /opt/imail2/log/popserv.log|grep -v "MsMssFailover"|grep -v "RmeInvalidCOSAttribute"|grep -v "ConfNonStandardPort"' > popserv1.log
+ssh root@$POPHost2  'cat /opt/imail2/log/popserv.log|grep -v "MsMssFailover"|grep -v "RmeInvalidCOSAttribute"|grep -v "ConfNonStandardPort"' > popserv2.log
 
 #Prepare the summary-pop.log
 echo -e  "The pop operations logs telneting to MX9.5-1:\n\n" >summary-pop.log
@@ -248,8 +248,8 @@ exec 3>&-
 cat smtp-temp.log
 
 #Now gether smtp logs from MX9.5-1 and MX9.5-2
-ssh root@$SMTPHost1  'cat /opt/imail2/log/mta.log' > mta1.log
-ssh root@$SMTPHost2  'cat /opt/imail2/log/mta.log' > mta2.log
+ssh root@$SMTPHost1  'cat /opt/imail2/log/mta.log|grep -v "MsMssFailover"|grep -v "RmeInvalidCOSAttribute"|grep -v "ConfNonStandardPort"' > mta1.log
+ssh root@$SMTPHost2  'cat /opt/imail2/log/mta.log|grep -v "MsMssFailover"|grep -v "RmeInvalidCOSAttribute"|grep -v "ConfNonStandardPort"' > mta2.log
 
 #Prepare the summary-smtp.log
 echo -e  "The smtp operations logs telneting to MX9.5-1:\n\n" >summary-smtp.log

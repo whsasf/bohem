@@ -1,0 +1,8 @@
+from:xx2@openwave.com
+to:xx6@openwave.com
+subject:testemail-Japanese-UTF8
+MIME-Version: 1.0
+Content-Type: text/plain; charset=UTF-8; format=flowed
+Content-Transfer-Encoding: 8bit
+
+     外から见たら不幸でも中は幸せだということもある。幸せの形はひとつじゃない

@@ -1,0 +1,8 @@
+from:xx2@openwave.com
+to:xx1@openwave.com
+subject:random message
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8; format=flowed
+Content-Transfer-Encoding: 8bit
+
+accusing jaywalker's extrication's wham's mailbox lingual verification Ariadne's wineglasses settlers north boat Orville's Barack politics's

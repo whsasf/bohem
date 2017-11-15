@@ -1,0 +1,6 @@
+from:xx2@openwave.com
+to:xx1@openwave.com
+subject:testemail-Arabic-UTF8
+
+     ليس لانك
+من انت  ولكن لان عندما  اكون

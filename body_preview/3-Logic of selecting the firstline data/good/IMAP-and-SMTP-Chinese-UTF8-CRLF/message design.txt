@@ -1,0 +1,131 @@
+///////////////////////////-1- empty message body\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+#0)empty message body-(message1.txt)
+
+///////////////////////////-2- Chinese words message body-UTF-8 \\\\\\\\\\\\\\\\\\\\\\\\\\\\
+
+less than 80 bytes
+1-1) less than 80 Bytes (14 words,42 bytes)-(message1.txt)
+
+怒发冲冠，凭阑处、潇潇雨歇。
+
+1-2) less than 80 Chars (14 words with 5 whitespaces in the beginning-47bytes)-(message2.txt)
+
+     怒发冲冠，凭阑处、潇潇雨歇。
+
+1-3) less than 80 Chars (14  words with 5 whitespaces in the middle-47 bytes)-(message3.txt)
+
+怒发冲冠，凭阑     处、潇潇雨歇。
+
+1-4) less than 80 Chars (14  words with 5 whitespaces in the ending-47 bytes)-(message4.txt)
+
+怒发冲冠，凭阑处、潇潇雨歇。     
+
+1-5) chars with CR: 85 bytes with one CR -(message5.txt)
+
+怒发冲冠，凭阑处、
+潇潇雨歇。抬望眼、仰天长啸，壮怀激烈。
+
+1-6) chars with CR with 5 white spaces in begging:-(message6.txt)
+
+     怒发冲冠，凭阑处、
+潇潇雨歇。抬望眼、仰天长啸，壮怀激烈。
+
+1-7) chars with CR with 5 white spaces in middle:-(message7.txt)
+
+怒发冲冠，凭阑处、
+     潇潇雨歇。抬望眼、仰天长啸，壮怀激烈。
+
+1-8) chars with CR with 5 white spaces in ending:-(message8.txt)
+
+怒发冲冠，凭阑处、
+潇潇雨歇。抬望眼、仰天长啸，壮怀激烈。     
+
+
+Equal 80 bytes
+2-1)Equal to 80 bytes  (30 words,80 bytes)-(message9.txt)
+
+怒发冲冠，凭阑处、潇潇雨歇。抬望眼,,仰天长啸，壮怀激烈
+
+2-2)Equal to 80 bytes (80 bytes) with 5 whitespaces in the beginning-(message10.txt)
+
+     怒发冲冠，凭阑处、潇潇雨歇。抬望眼仰天长啸，壮怀激
+
+2-3)Equal to 80 bytes  (80 bytes) with 5 whitespaces in the middle -(message11.txt)
+
+怒发冲冠，凭阑处、潇潇雨歇。抬望眼     仰天长啸，壮怀激
+
+
+2-4)Equal to 80 bytes  (80 bytes) with 5 whitespaces in the ending-(message12.txt)
+
+怒发冲冠，凭阑处、潇潇雨歇。抬望眼仰天长啸，壮怀激     
+
+
+2-5)Equal to 80 bytes  (80 bytes) with CR . -(message13.txt)
+
+怒发冲冠，
+凭阑处,潇潇雨歇。抬望眼、仰天长啸，壮怀激烈
+
+2-6)Equal to 80 bytes  (80 bytes) with CR . with 5 whitespace in begging-(message14.txt)
+
+     怒发冲冠，
+凭阑处,潇 潇雨歇。抬望眼仰天长啸，壮怀激
+
+2-7)Equal to 80 bytes  (80 bytes) with CR . with 5 whitespace in middle-(message15.txt)
+
+怒发冲冠，
+     凭阑处,潇 潇雨歇。抬望眼仰天长啸，壮怀激
+
+2-8)Equal to 80 bytes  (80 bytes) with CR . with 5 whitespace in ending-(message16.txt)
+
+怒发冲冠，
+凭阑处,潇 潇雨歇。抬望眼仰天长啸，壮怀激     
+
+
+3-1) longer than 80 bytes:-(message17.txt)
+
+怒发冲冠，凭阑处、潇潇雨歇。抬望眼、仰天长啸，壮怀激烈。三十功名尘与土，八千里路云和月。莫等闲，白了少年头，空悲切。
+
+3-2)longer than 80 bytes with 5 white spaces in beginning:-(message18.txt)
+
+     怒发冲冠，凭阑处、潇潇雨歇。抬望眼、仰天长啸，壮怀激烈。三十功名尘与土，八千里路云和月。莫等闲，白了少年头，空悲切。
+
+3-3)longer than 80 bytes with 5 white spaces in  middle:-(message19.txt)
+
+怒发冲冠，凭阑处、潇潇     雨歇。抬望眼、仰天长啸，壮怀激烈。三十功名尘与土，八千里路云和月。莫等闲，白了少年头，空悲切。
+
+3-4)longer than 80 bytes with 5 white spaces in  ending:(message20.txt)
+
+怒发冲冠，凭阑处、潇潇雨歇。抬望眼、仰天长啸，壮怀激烈。三十功名尘与土，八千里路云和月。莫等闲，白了少年头，空悲切。     
+
+3-5) longer than 80 bytes with CR:(message21.txt)
+
+怒发冲冠，
+凭阑处、潇潇雨歇。抬望眼、仰天长啸，
+壮怀激烈。三十功名尘与土，八千里路云和月。
+莫等闲，白了少年头，空悲切。
+
+3-6) longer than 80 chars with CR: with 5 whitespce in beggining-(message22.txt)
+
+     怒发冲冠，
+凭阑处、潇潇雨歇。抬望眼、仰天长啸，
+壮怀激烈。三十功名尘与土，八千里路云和月。
+莫等闲，白了少年头，空悲切。
+
+3-7) longer than 80 chars with CR: with 5 whitespce in  middle-(message23.txt)
+
+怒发冲冠，
+     凭阑处、潇潇雨歇。抬望眼、仰天长啸，
+壮怀激烈。三十功名尘与土，八千里路云和月。
+莫等闲，白了少年头，空悲切。
+
+3-8)longer than 80 chars with CR: with 5 whitespce in ending-(message24.txt)
+
+怒发冲冠，
+凭阑处、潇潇雨歇。抬望眼、仰天长啸，
+壮怀激烈。三十功名尘与土，八千里路云和月。
+莫等闲，白了少年头，空悲切。     
+3-9) several CRS .message25.txt
+我是中国人
+
+
+你呢？哈哈哈哈哈哈哈！！！

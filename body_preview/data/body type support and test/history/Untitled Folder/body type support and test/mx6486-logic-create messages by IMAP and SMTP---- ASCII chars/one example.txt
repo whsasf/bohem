@@ -1,0 +1,141 @@
+Notice: centents between(not including) "()" are the firstline data
+1-1):original message:
+                           //empty
+1-2):firstline data:
+                           //empty
+2-1):original message:
+To be or not to be.That is a question.
+2-2):firstline data:
+(To be or not to be.That is a question. )
+
+3-1):original message:
+     To be or not to be.That is a question.
+3-2):firstline data:
+(     To be or not to be.That is a question. )
+
+4-1):original message:
+To be or not to be     .That is a question.
+4-2):firstline data:
+(To be or not to be     .That is a question. )
+
+5-1):original message:
+To be or not to be.That is a question.        //5 whitespace in the tail
+5-2):firstline data:
+(To be or not to be.That is a question.      )
+
+6-1):original message:
+The lunatic,
+the lover and the poet are of imagination all compact.
+6-2):firstline data:
+(The lunatic, the lover and the poet are of imagination all compact. )
+
+7-1):original message:
+     The lunatic,
+the lover and the poet are of imagination all compact.
+7-2):firstline data:
+(     The lunatic, the lover and the poet are of imagination all compact. )
+
+8-1):original message:
+The lunatic,
+     the lover and the poet are of imagination all compact.
+8-2):firstline data:
+(The lunatic,      the lover and the poet are of imagination all compact. )
+
+9-1):original message:
+The lunatic,
+the lover and the poet are of imagination all compact.
+9-2):firstline data:
+(The lunatic, the lover and the poet are of imagination all compact.      )
+
+10-1):original message:
+The lunatic, the lover and the poet are of imagination all compact. (A Midsummer Night’s D
+10-2):firstline data:
+(The lunatic, the lover and the poet are of imagination all compact. (A Midsummer Night's )
+
+11-1):original message:
+     The lunatic, the lover and the poet are of imagination all compact. (A Midsummer Nigh
+11-2):firstline data:
+(     The lunatic, the lover and the poet are of imagination all compact. (A Midsummer Nig)
+
+12-1):original message:
+The lunatic, the lover and the po     et are of imagination all compact. (A Midsummer Nigh
+12-2):firstline data:
+(The lunatic, the lover and the po     et are of imagination all compact. (A Midsummer Nig)
+
+13-1):original message:
+The lunatic, the lover and the poet are of imagination all compact. (A Midsummer Nigh       //5 white spaces in the tail
+13-2):firstline data:
+(The lunatic, the lover and the poet are of imagination all compact. (A Midsummer Nigh    )
+
+14-1):original message:
+The lunatic
+, the lover and the poet are of imagination all compact. (A Midsummer Night's D
+14-2):firstline data:
+(
+The lunatic , the lover and the poet are of imagination all compact. (A Midsummer Night')
+
+15-1):original message:
+     The lunatic
+, the lover and the poet are of imagination all compact. (A Midsummer Nigh
+15-2):firstline data:
+(     The lunatic , the lover and the poet are of imagination all compact. (A Midsummer N)
+
+16-1):original message:
+The lunatic
+, the lover and the po     et are of imagination all compact. (A Midsummer Nigh
+16-2):firstline data:
+(The lunatic , the lover and the po     et are of imagination all compact. (A Midsummer N)
+
+17-1):original message:
+The lunatic
+, the lover and the poet are of imagination all compact. (A Midsummer Nigh       //5 white spaces in the tail
+17-2):firstline data:
+(The lunatic , the lover and the poet are of imagination all compact. (A Midsummer Nigh  )
+
+18-1):original message:
+You gods divine! Make Cressida’s name the very crown of falsehood, if ever she leave Troilus. (Troilus and Cressida 4.2)
+18-2):firstline data:
+(You gods divine! Make Cressida's name the very crown of falsehood, if ever she leave Troi)
+
+19-1):original message:
+     You gods divine! Make Cressida’s name the very crown of falsehood, if ever she leave Troilus. (Troilus and Cressida 4.2)
+19-2):firstline data:
+(     You gods divine! Make Cressida's name the very crown of falsehood, if ever she leave)
+
+20-1):original message:
+You gods divine! Make Cressida’     s name the very crown of falsehood, if ever she leave Troilus. (Troilus and Cressida 4.2)
+20-2):firstline data:
+(You gods divine! Make Cressida'     s name the very crown of falsehood, if ever she leave)
+
+21-1):original message:
+You gods divine! Make Cressida’s name the very crown of falsehood, if ever she leave Troilus. (Troilus and Cressida 4.2)
+21-2):firstline data:
+(You gods divine! Make Cressida's name the very crown of falsehood, if ever she leave Troi)
+
+22-1):original message:
+You gods divine
+! Make Cressida’s name the very crown of falsehood
+, if ever she leave Troilus. (Troilus and Cressida 4.2)
+22-2):firstline data:
+(You gods divine ! Make Cressida's name the very crown of falsehood , if ever she leave )
+
+23-1):original message:
+     You gods divine
+! Make Cressida’s name the very crown of falsehood
+, if ever she leave Troilus. (Troilus and Cressida 4.2)
+23-2):firstline data:
+(     You gods divine ! Make Cressida's name the very crown of falsehood , if ever she l)
+
+24-1):original message:
+You gods divine
+! Make Cressida’     s name the very crown of falsehood
+, if ever she leave Troilus. (Troilus and Cressida 4.2)
+24-2):firstline data:
+(You gods divine ! Make Cressida'     s name the very crown of falsehood , if ever she l)
+
+25-1):original message:
+You gods divine
+! Make Cressida’s name the very crown of falsehood
+, if ever she leave Troilus. (Troilus and Cressida 4.2)
+25-2):firstline data:
+(You gods divine ! Make Cressida's name the very crown of falsehood , if ever she leave )

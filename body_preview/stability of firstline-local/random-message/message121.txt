@@ -1,0 +1,8 @@
+from:xx2@openwave.com
+to:xx1@openwave.com
+subject:random message
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8; format=flowed
+Content-Transfer-Encoding: 8bit
+
+specifications tangy partizan hakes anoints kookier Miami's ebonies syphilis Zukor creak's malaise undercoated nudging drove

@@ -1,0 +1,43 @@
+The smtp operations logs telneting to MX9.5-1:
+
+
+220 mx-10-49-58-127.openwave.com ESMTP server (InterMail vM.9.05.01.00 201-2473-137-123) ready Wed, 15 Nov 2017 13:54:02 +0000
+250 Ok
+334 VXNlcm5hbWU6
+334 UGFzc3dvcmQ6
+535 Authentication failed
+553 Authentication is required to send mail as <xx2>
+553 Authentication is required to send mail as <procu1>
+503 Bad sequence of commands (specify MAIL first)
+503 No sender specified
+500 Command unknown: 'HI,PROCU2,THIS'
+500 Command unknown: '.'
+221 mx-10-49-58-127.openwave.com ESMTP server closing connection
+
+
+
+
+
+SMTPserv.log from MX9.5-1:
+
+20171115 135402994+0000 mx-10-49-58-127 mta 24469 25181 139997814216448 Note;SmtpConnectionReceived(70/1) [10.37.2.214]:fromhost=10.37.2.214:fromport=39034:localAddr=10.49.58.127:sid=2F906B3B-A6E4FF4D-00000004.0
+20171115 135403283+0000 mx-10-49-58-127 mta 24469 25181 139997814216448 Note;UserDataException(504/1) MBX_AUTHENTICATION_FAILED:{password=[XXXXX], protocolType=[smtp], email=[procu1@openwave.com]}:AuthenticateAndGetMailboxService\3aPOST:Authenticating Failed.::user=procu1@openwave.com:fromhost=[10.37.2.215]:fromport=39034:localAddr=10.49.58.127:sid=2F906B3B-A6E4FF4D-00000004.0
+20171115 135404299+0000 mx-10-49-58-127 mta 24469 25181 139997814216448 Note;MtaAuthFailBadPswd(79/49) user=procu1@openwave.com:fromhost=[10.37.2.215]:fromport=39034:localAddr=10.49.58.127:sid=2F906B3B-A6E4FF4D-00000004.0
+20171115 135405301+0000 mx-10-49-58-127 mta 24469 25181 139997814216448 Warn;SmtpAddressFixed(70/13) [10.37.2.215]:mail from\3axx2:<xx2>:user=procu1@openwave.com:fromhost=[10.37.2.215]:fromport=39034:localAddr=10.49.58.127:sid=2F906B3B-A6E4FF4D-00000004.1
+20171115 135405311+0000 mx-10-49-58-127 mta 24469 25181 139997814216448 Warn;UserDataException(504/1) MBX_NOT_FOUND:{uid=[xx2@openwave.com], adminControl=[true], senderBlocking=[true], sharedMailbox=[true], email=[xx2@openwave.com]}:MailboxService\3aGET:The given Mailbox does not exist.:Mailbox xx2@openwave.com does not exist in SUR backend:user=xx2@openwave.com:fromhost=[10.37.2.215]:fromport=39034:localAddr=10.49.58.127:sid=2F906B3B-A6E4FF4D-00000004.1
+20171115 135405311+0000 mx-10-49-58-127 mta 24469 25181 139997814216448 Warn;AcctUnknownUser(50/9) user=xx2@openwave.com:fromhost=[10.37.2.215]:fromport=39034:localAddr=10.49.58.127:sid=2F906B3B-A6E4FF4D-00000004.1
+20171115 135405311+0000 mx-10-49-58-127 mta 24469 25181 139997814216448 Note;MtaMessageSenderNotAuth(79/53) user=<xx2>:fromhost=[10.37.2.215]:fromport=39034:localAddr=10.49.58.127:sid=2F906B3B-A6E4FF4D-00000004.1
+20171115 135405312+0000 mx-10-49-58-127 mta 24469 25181 139997814216448 Warn;SmtpAddressFixed(70/13) [10.37.2.215]:mail from\3aprocu1:<procu1>:user=<xx2>:fromhost=[10.37.2.215]:fromport=39034:localAddr=10.49.58.127:sid=2F906B3B-A6E4FF4D-00000004.2
+20171115 135405326+0000 mx-10-49-58-127 mta 24469 25181 139997814216448 Note;MtaMessageSenderNotAuth(79/53) user=<procu1>:fromhost=[10.37.2.215]:fromport=39034:localAddr=10.49.58.127:sid=2F906B3B-A6E4FF4D-00000004.2
+20171115 135405326+0000 mx-10-49-58-127 mta 24469 25181 139997814216448 Warn;SmtpServerCommandUnknown(70/6) [10.37.2.215]:HI,PROCU2,THIS:user=<procu1>:fromhost=[10.37.2.215]:fromport=39034:localAddr=10.49.58.127:sid=2F906B3B-A6E4FF4D-00000004.2
+20171115 135405326+0000 mx-10-49-58-127 mta 24469 25181 139997814216448 Warn;SmtpServerCommandUnknown(70/6) [10.37.2.215]:.:user=<procu1>:fromhost=[10.37.2.215]:fromport=39034:localAddr=10.49.58.127:sid=2F906B3B-A6E4FF4D-00000004.2
+20171115 135405326+0000 mx-10-49-58-127 mta 24469 25181 139997814216448 Note;SmtpConnectionClosed(70/2) [10.37.2.215]:3:0:184:user=<procu1>:fromhost=[10.37.2.215]:fromport=39034:localAddr=10.49.58.127:sid=2F906B3B-A6E4FF4D-00000004.2
+
+
+SMTPserv.log from MX9.5-2:
+
+20171115 005306437-0500 mx-10-49-58-118 mta 21537 22106 139982574761728 Note;UserDataException(504/1) MBX_AUTHENTICATION_FAILED:{password=[XXXXX], protocolType=[smtp], email=[procu1@openwave.com]}:AuthenticateAndGetMailboxService\3aPOST:Authenticating Failed.::user=procu1@openwave.com:fromhost=[10.37.2.215]:fromport=49061:localAddr=10.49.58.118:sid=73B10CEE-51C93DF5-00000002.0
+20171115 005306437-0500 mx-10-49-58-118 mta 21537 22106 139982574761728 Note;MtaAuthFailBadPswd(79/49) user=procu1@openwave.com:fromhost=[10.37.2.215]:fromport=49061:localAddr=10.49.58.118:sid=73B10CEE-51C93DF5-00000002.0
+
+[32m#####Logging enhancement for SMTP Relay nontransparent is ok!!##### [0m
+

@@ -1,0 +1,122 @@
+Delete messsages successfully.
+!!!!!!!!!!!!!!!!!!!!!!message delete successfully!!!!!!!!!!!!!!!!!
+
+
+Message body length = 1128 
+Message is:
+Return-Path: <xx2@openwave.com>
+Received: from [10.13.8.221] by mx-172-26-202-87.openwave.com
+          (InterMail vM.9.05.00.00 201-2473-137-108) with ESMTP
+          id <20170219030805.BJK23163.mx-172-26-202-87.openwave.com@[10.13.8.221]>
+          for <xx1@openwave.com>; Sat, 18 Feb 2017 19:08:05 -0800
+To: xx1@openwave.com
+From: xx2 <xx2@openwave.com>
+Subject: pure virus in attachment
+Message-ID: <854fc56e-2a40-76b7-6109-8f51aa9a56d5@openwave.com>
+Date: Sun, 19 Feb 2017 11:08:04 +0800
+User-Agent: MX
+MIME-Version: 1.0
+Content-Type: multipart/mixed;
+ boundary="------------75DC31484EA216D9A6118F7F"
+
+This is a multi-part message in MIME format.
+--------------75DC31484EA216D9A6118F7F
+Content-Type: text/plain; charset=utf-8; format=flowed
+Content-Transfer-Encoding: 7bit
+
+--------------75DC31484EA216D9A6118F7F
+Content-Type: text/plain; charset=UTF-8;
+ name="virus"
+Content-Transfer-Encoding: base64
+Content-Disposition: attachment;
+ filename="virus"
+
+WDVPIVAlQEFQWzRcUFpYNTQoUF4pN0NDKTd9JEVJQ0FSLVNUQU5EQVJELUFOVElWSVJVUy1U
+RVNULUZJTEUhJEgrSCogCg==
+--------------75DC31484EA216D9A6118F7F--
+
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!Appending message!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+* OK IMAP4 server (InterMail vM.9.05.00.00 201-2473-137-108) ready Sat, 18 Feb 2017 19:12:41 -0800 (PST)
+a OK LOGIN completed
+* 0 EXISTS
+* OK [UNSEEN 0] First unseen message
+* OK [UIDVALIDITY 1487128905] UIDs valid
+* OK [UIDNEXT 3071] Predicted next UID
+* FLAGS (\Answered \Flagged \Deleted \Draft \Seen)
+* OK [PERMANENTFLAGS (\* \Answered \Flagged \Deleted \Draft \Seen)] Permanent flags
+* 0 RECENT
+a OK [READ-WRITE] SELECT completed
++ Ready for argument
+* 1 EXISTS
+* 1 RECENT
+a OK [APPENDUID 1487128905 3071] APPEND completed
+* BAD Null command
+* BYE IMAP4 server terminating connection
+a OK LOGOUT completed
+!!!!!!!!!!!!!!!!append finished!!!!!!!!!!!!!!!
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!fetching first line data!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+* OK IMAP4 server (InterMail vM.9.05.00.00 201-2473-137-108) ready Sat, 18 Feb 2017 19:12:42 -0800 (PST)
+a OK LOGIN completed
+* 1 EXISTS
+* OK [UNSEEN 1] First unseen message
+* OK [UIDVALIDITY 1487128905] UIDs valid
+* OK [UIDNEXT 3072] Predicted next UID
+* FLAGS (\Answered \Flagged \Deleted \Draft \Seen)
+* OK [PERMANENTFLAGS (\* \Answered \Flagged \Deleted \Draft \Seen)] Permanent flags
+* 1 RECENT
+a OK [READ-WRITE] SELECT completed
+* 1 FETCH (RFC822 {1130}
+Return-Path: <xx2@openwave.com>
+Received: from [10.13.8.221] by mx-172-26-202-87.openwave.com
+          (InterMail vM.9.05.00.00 201-2473-137-108) with ESMTP
+          id <20170219030805.BJK23163.mx-172-26-202-87.openwave.com@[10.13.8.221]>
+          for <xx1@openwave.com>; Sat, 18 Feb 2017 19:08:05 -0800
+To: xx1@openwave.com
+From: xx2 <xx2@openwave.com>
+Subject: pure virus in attachment
+Message-ID: <854fc56e-2a40-76b7-6109-8f51aa9a56d5@openwave.com>
+Date: Sun, 19 Feb 2017 11:08:04 +0800
+User-Agent: MX
+MIME-Version: 1.0
+Content-Type: multipart/mixed;
+ boundary="------------75DC31484EA216D9A6118F7F"
+
+This is a multi-part message in MIME format.
+--------------75DC31484EA216D9A6118F7F
+Content-Type: text/plain; charset=utf-8; format=flowed
+Content-Transfer-Encoding: 7bit
+
+--------------75DC31484EA216D9A6118F7F
+Content-Type: text/plain; charset=UTF-8;
+ name="virus"
+Content-Transfer-Encoding: base64
+Content-Disposition: attachment;
+ filename="virus"
+
+WDVPIVAlQEFQWzRcUFpYNTQoUF4pN0NDKTd9JEVJQ0FSLVNUQU5EQVJELUFOVElWSVJVUy1U
+RVNULUZJTEUhJEgrSCogCg==
+--------------75DC31484EA216D9A6118F7F--
+ FLAGS (\Recent \Seen))
+a OK FETCH completed
+* 1 FETCH (FIRSTLINE (""))
+a OK FETCH completed
+* BYE IMAP4 server terminating connection
+a OK LOGOUT completed
+
+
+
+[default@KeyspaceMetadata] get cf_folder['353038343036333135323632313531383036365fe1280902f32d11e6b9386b782020d67e'];
+=> (super_column=468486ba-f651-11e6-8790-5e799fcde3e0,
+     (name=31, value=392e300334363834383662612d663635312d313165362d383739302d35653739396663646533653003300331343837343733393631033131333003300303330330033003037075726520766972757320696e206174746163686d656e7403787832203c787832406f70656e776176652e636f6d3e033103787831406f70656e776176652e636f6d0303333037310330033c38353466633536652d326134302d373662372d363130392d386635316161396135366435406f70656e776176652e636f6d3e033134383734373336383403030303, timestamp=1487473961736866)
+     (name=3138, value=00, timestamp=1487473961736866)
+     (name=32, value=46, timestamp=1487473962520203)
+     (name=33, value=54, timestamp=1487473962561619)
+     (name=35, value=31343837343733393632, timestamp=1487473962557791)
+     (name=36, value=46, timestamp=1487473962561619)
+     (name=37, value=46, timestamp=1487473962561619)
+     (name=38, value=46, timestamp=1487473962561619)
+     (name=39, value=46, timestamp=1487473962561619))
+Returned 1 results.
+Elapsed time: 22 msec(s).

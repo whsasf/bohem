@@ -1,0 +1,437 @@
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!fetching first line data!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+* OK IMAP4 server (InterMail vM.9.05.00.00 201-2473-137-116) ready Sun, 11 Jun 2017 20:40:07 -0700 (PDT)
+a OK LOGIN completed
+* 1 EXISTS
+* OK [UNSEEN 1] First unseen message
+* OK [UIDVALIDITY 1497231880] UIDs valid
+* OK [UIDNEXT 3049] Predicted next UID
+* FLAGS (\Answered \Flagged \Deleted \Draft \Seen)
+* OK [PERMANENTFLAGS (\* \Answered \Flagged \Deleted \Draft \Seen)] Permanent flags
+* 1 RECENT
+a OK [READ-WRITE] SELECT completed
+* 1 FETCH (RFC822 {23071}
+Return-Path: <xx2@openwave.com>
+Received: from [10.37.2.214] by mx-172-26-202-87.openwave.com
+          (InterMail vM.9.05.00.00 201-2473-137-116) with SMTP
+          id <20170612034006.BPR32283.mx-172-26-202-87.openwave.com@[10.37.2.214]>
+          for <xx1@openwave.com>; Sun, 11 Jun 2017 20:40:06 -0700
+Received: from [10.13.8.221] by mx-172-26-202-87.openwave.com
+          (InterMail vM.9.05.00.00 201-2473-137-108) with ESMTP
+          id <20170218021333.BGD23163.mx-172-26-202-87.openwave.com@[10.13.8.221]>
+          for <xx1@openwave.com>; Fri, 17 Feb 2017 18:13:33 -0800
+Return-Path: <xx2@openwave.com>
+Subject: html with mixed texts in message body
+Message-ID: <15853839-d9ca-6a96-92cd-7d91081a1509@openwave.com>
+Date: Sat, 18 Feb 2017 10:13:32 +0800
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:45.0) Gecko/20100101
+ Thunderbird/45.7.0
+MIME-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="------------D3E08C8C463B5EE9439C15DD"
+From: <xx2@openwave.com>
+
+This is a multi-part message in MIME format.
+--------------D3E08C8C463B5EE9439C15DD
+Content-Type: text/plain; charset=utf-8; format=flowed
+Content-Transfer-Encoding: quoted-printable
+
+=D8=8C =D9=88=D9=8A=D9=85=D9=83=D9=86 =D8=AA=D8=AD
+Nobody!
+=E3=81=84=E3=81=8F=E3=81=A4=E3=81=AB=E3=81=AA
+=E6=88=91=E4=BB=AC=E6=98=AF=E4=B8=AD=E5=9B=BD=E4=BA=BA=EF=BC=8C
+
+*=E8=B0=81=E6=98=AF
+*
+	*=E4=B8=AD=E5=9B=BD=E4=BA=BA******
+*
+*=E5=93=88=E5=93=88=E5=93=88
+*
+	02/10/2017
+*=E6=B2=A1=E6=9C=89=E4=BB=80=E4=B9=88=E6=98=AF=E4=B8=8D=E5=AF=B9=E7=9A=84
+*
+	https://jira.synchronoss.net:8443/jira/browse/PAB-289
+*=E4=BD=A0=E5=9C=A8=E5=93=AA=E9=87=8C
+*
+=09
+
+ftp> pwd
+257 "/release/pickup/PAB/PAB9.2.113"
+ftp> ls
+227 Entering Passive Mode (10,16,230,35,141,57)
+150 Here comes the directory listing.
+-rw-r--r--=C3=82 =C3=82 =C3=82 1 31087=C3=82 =C3=82 =C3=82 300=C3=82 =C3=82=
+ =C3=82 =C3=82 =C3=82 82280577 Feb 09=C3=82 2017=20
+PAB-9.2.113-escrow.tar.gz
+-rw-r--r--=C3=82 =C3=82 =C3=82 1 31087=C3=82 =C3=82 =C3=82 300=C3=82 =C3=82=
+ =C3=82 =C3=82 =C3=82 =C3=82 1536478 Feb 09=C3=82 2017=20
+PAB-9.2.113-linux-build.log
+-rw-r--r--=C3=82 =C3=82 =C3=82 1 31087=C3=82 =C3=82 =C3=82 300=C3=82 =C3=82=
+ =C3=82 =C3=82 =C3=82 56788729 Feb 09=C3=82 2017=20
+PAB-9.2.113-linux.tar.gz
+-rw-r--r--=C3=82 =C3=82 =C3=82 1 31087=C3=82 =C3=82 =C3=82 300=C3=82 =C3=82=
+ =C3=82 =C3=82 =C3=82 =C3=82 1605890 Feb 09=C3=82 2017=20
+PAB-9.2.113-linux64-build.log
+-rw-r--r--=C3=82 =C3=82 =C3=82 1 31087=C3=82 =C3=82 =C3=82 300=C3=82 =C3=82=
+ =C3=82 =C3=82 =C3=82 54059843 Feb 09=C3=82 2017=20
+PAB-9.2.113-linux64.tar.gz
+-rw-r--r--=C3=82 =C3=82 =C3=82 1 31087=C3=82 =C3=82 =C3=82 300=C3=82 =C3=82=
+ =C3=82 =C3=82 =C3=82 33917416 Feb 09=C3=82 2017=20
+owm-pab-9.2.113-0.el6.x86_64.rpm
+226 Directory send OK
+
+*=E4=B8=BA=E4=BB=80=E4=B9=88
+*
+	https://jira.synchronoss.net:8443/jira/secure/attachment/539351/PAB-9.2.11=
+3_Functional_TestReport.xlsx
+*Documents*
+	Release Notes
+*Customers*
+	All
+*Platform*
+	Linux
+*Release Type*
+	Patch
+
+
+
+
+--------------D3E08C8C463B5EE9439C15DD
+Content-Type: text/html; charset=utf-8
+Content-Transfer-Encoding: 8bit
+
+<html>
+  <head>
+
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  </head>
+  <body bgcolor="#FFFFFF" text="#000000">
+    <p>، ويمكن تح<br>
+      Nobody!<br>
+      いくつにな<br>
+      我们是中国人，</p>
+    <p>
+    </p>
+    <div class="moz-text-html" lang="x-unicode">
+      <p> </p>
+      <div class="moz-text-html" lang="x-unicode">
+        <p> <font style="color: rgb(0, 0, 0); font-family: Calibri,
+            Arial, Helvetica, sans-serif; font-size: 16px; font-style:
+            normal; font-variant-ligatures: normal; font-variant-caps:
+            normal; font-weight: normal; letter-spacing: normal;
+            orphans: 2; text-align: start; text-indent: 0px;
+            text-transform: none; white-space: normal; widows: 2;
+            word-spacing: 0px; -webkit-text-stroke-width: 0px;
+            background-color: rgb(255, 255, 255);"
+            face="Calibri,Arial,Helvetica,sans-serif" color="black"
+            size="3"><span id="x_x_x_divtagdefaultwrapper"
+              style="font-size: 12pt;"> </span></font></p>
+        <div id="x_x_x_divtagdefaultwrapper" style="background-color:
+          white;"><font style="color: rgb(0, 0, 0); font-family:
+            Calibri, Arial, Helvetica, sans-serif; font-size: 16px;
+            font-style: normal; font-variant-ligatures: normal;
+            font-variant-caps: normal; font-weight: normal;
+            letter-spacing: normal; orphans: 2; text-align: start;
+            text-indent: 0px; text-transform: none; white-space: normal;
+            widows: 2; word-spacing: 0px; -webkit-text-stroke-width:
+            0px; background-color: rgb(255, 255, 255);"
+            face="Calibri,Arial,Helvetica,sans-serif" color="black"
+            size="3"><font face="Calibri,Arial,Helvetica,sans-serif"><span
+                id="x_x_x_divtagdefaultwrapper" style="background-color:
+                white;">
+                <div id="x_x_x_divtagdefaultwrapper"><font
+                    face="Calibri,Arial,Helvetica,sans-serif">
+                    <table style="width: 904px;" border="0"
+                      cellpadding="0" cellspacing="0" width="904">
+                      <tbody>
+                        <tr style="height: 19.25pt;" height="32">
+                          <td style="width: 125.6pt; height: 19.25pt;
+                            background-color: rgb(166, 166, 166);
+                            padding: 0px 5.4pt; border-width: 1pt 1pt
+                            2.25pt; border-style: solid; border-color:
+                            rgb(79, 129, 189);" width="209"><span
+                              style="background-color: rgb(166, 166,
+                              166);">
+                              <div style="text-align: center;"
+                                align="center"><font
+                                  face="Cambria,serif" size="2"><span
+                                    style="font-size: 11pt;"><b>谁是<br>
+                                    </b></span></font></div>
+                            </span></td>
+                          <td style="width: 639pt; height: 19.25pt;
+                            background-color: rgb(166, 166, 166);
+                            padding: 0px 5.4pt; border-style: solid
+                            solid solid none; border-top-width: 1pt;
+                            border-right-width: 1pt;
+                            border-bottom-width: 2.25pt;
+                            border-top-color: rgb(79, 129, 189);
+                            border-right-color: rgb(79, 129, 189);
+                            border-bottom-color: rgb(79, 129, 189);"
+                            width="1065"><span style="background-color:
+                              rgb(166, 166, 166);"><font
+                                face="Cambria,serif" size="2"><span
+                                  style="font-size: 11pt;"><tt><font
+                                      face="Cambria,serif"><b>中国人</b></font></tt></span></font><font
+                                face="Cambria,serif" size="2"><span
+                                  style="font-size: 11pt;"><b><tt><b><span
+                                          style="font-size: 11pt;
+                                          background: none 0% 0% repeat
+                                          scroll rgb(166, 166, 166);"></span></b></tt></b></span></font><font
+                                face="Cambria,serif" size="2"><span
+                                  style="font-size: 11pt;"><b><br>
+                                  </b></span></font></span></td>
+                        </tr>
+                        <tr>
+                          <td style="width: 125.6pt; background-color:
+                            rgb(211, 223, 238); padding: 0px 5.4pt;
+                            border-width: 1pt; border-style: none solid
+                            solid; border-color: rgb(79, 129, 189);"
+                            width="209"><span style="background-color:
+                              rgb(211, 223, 238);">
+                              <div style="text-align: center;"
+                                align="center"><font
+                                  face="Cambria,serif" size="2"><span
+                                    style="font-size: 11pt;"><b>哈哈哈<br>
+                                    </b></span></font></div>
+                            </span></td>
+                          <td style="width: 639pt; background-color:
+                            rgb(211, 223, 238); padding: 0px 5.4pt;
+                            border-style: none solid solid none;
+                            border-right-width: 1pt;
+                            border-bottom-width: 1pt;
+                            border-right-color: rgb(79, 129, 189);
+                            border-bottom-color: rgb(79, 129, 189);"
+                            width="1065"><span style="background-color:
+                              rgb(211, 223, 238);"><font
+                                face="Calibri,sans-serif" size="2"><span
+                                  style="font-size: 11pt;">02/10/2017</span></font></span></td>
+                        </tr>
+                        <tr>
+                          <td style="width: 125.6pt; padding: 0px 5.4pt;
+                            border-width: 1pt; border-style: none solid
+                            solid; border-color: rgb(79, 129, 189);"
+                            width="209">
+                            <div style="text-align: center;"
+                              align="center"><font face="Cambria,serif"
+                                size="2"><span style="font-size: 11pt;"><b>没有什么是不对的<br>
+                                  </b></span></font></div>
+                          </td>
+                          <td style="width: 639pt; padding: 0px 5.4pt;
+                            border-style: none solid solid none;
+                            border-right-width: 1pt;
+                            border-bottom-width: 1pt;
+                            border-right-color: rgb(79, 129, 189);
+                            border-bottom-color: rgb(79, 129, 189);"
+                            width="1065"><a
+                              href="https://jira.synchronoss.net:8443/jira/browse/PAB-289"
+                              target="_blank" class="x_OWAAutoLink"
+                              id="LPlnk710814">https://jira.synchronoss.net:8443/jira/browse/PAB-289</a><br>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td style="width: 125.6pt; background-color:
+                            rgb(211, 223, 238); padding: 0px 5.4pt;
+                            border-width: 1pt; border-style: none solid
+                            solid; border-color: rgb(79, 129, 189);"
+                            width="209"><span style="background-color:
+                              rgb(211, 223, 238);">
+                              <div style="text-align: center;"
+                                align="center"><font
+                                  face="Cambria,serif" size="2"><span
+                                    style="font-size: 11pt;"><b>你在哪里<br>
+                                    </b></span></font></div>
+                            </span></td>
+                          <td style="width: 639pt; background-color:
+                            rgb(211, 223, 238); padding: 0px 5.4pt;
+                            border-style: none solid solid none;
+                            border-right-width: 1pt;
+                            border-bottom-width: 1pt;
+                            border-right-color: rgb(79, 129, 189);
+                            border-bottom-color: rgb(79, 129, 189);"
+                            width="1065"><span style="background-color:
+                              rgb(211, 223, 238);">
+                              <div>
+                                <div>
+                                  <div><br>
+                                  </div>
+                                  <div>ftp&gt; pwd<br>
+                                    257 "/release/pickup/PAB/PAB9.2.113"<br>
+                                    ftp&gt; ls<br>
+                                    227 Entering Passive Mode
+                                    (10,16,230,35,141,57)<br>
+                                    150 Here comes the directory
+                                    listing.<br>
+                                    -rw-r--r--Â Â Â 1 31087Â Â Â 300Â Â
+                                    Â Â Â 82280577 Feb 09Â 2017
+                                    PAB-9.2.113-escrow.tar.gz<br>
+                                    -rw-r--r--Â Â Â 1 31087Â Â Â 300Â Â
+                                    Â Â Â Â 1536478 Feb 09Â 2017
+                                    PAB-9.2.113-linux-build.log<br>
+                                    -rw-r--r--Â Â Â 1 31087Â Â Â 300Â Â
+                                    Â Â Â 56788729 Feb 09Â 2017
+                                    PAB-9.2.113-linux.tar.gz<br>
+                                    -rw-r--r--Â Â Â 1 31087Â Â Â 300Â Â
+                                    Â Â Â Â 1605890 Feb 09Â 2017
+                                    PAB-9.2.113-linux64-build.log<br>
+                                    -rw-r--r--Â Â Â 1 31087Â Â Â 300Â Â
+                                    Â Â Â 54059843 Feb 09Â 2017
+                                    PAB-9.2.113-linux64.tar.gz<br>
+                                    -rw-r--r--Â Â Â 1 31087Â Â Â 300Â Â
+                                    Â Â Â 33917416 Feb 09Â 2017
+                                    owm-pab-9.2.113-0.el6.x86_64.rpm<br>
+                                    226 Directory send OK<br>
+                                    <div><span style="color: rgb(51, 51,
+                                        51); font-family: Arial,
+                                        sans-serif; font-size: 14px;
+                                        font-style: normal;
+                                        font-variant-ligatures: normal;
+                                        font-variant-caps: normal;
+                                        font-weight: normal;
+                                        letter-spacing: normal;
+                                        line-height: 13.3333px;
+                                        text-align: start; text-indent:
+                                        0px; text-transform: none;
+                                        white-space: normal;
+                                        word-spacing: 0px;
+                                        background-color: rgb(255, 255,
+                                        255); float: none; display:
+                                        inline !important;"></span></div>
+                                    <br>
+                                  </div>
+                                </div>
+                              </div>
+                            </span></td>
+                        </tr>
+                        <tr>
+                          <td style="width: 125.6pt; padding: 0px 5.4pt;
+                            border-width: 1pt; border-style: none solid
+                            solid; border-color: rgb(79, 129, 189);"
+                            width="209">
+                            <div style="text-align: center;"
+                              align="center"><font face="Cambria,serif"
+                                size="2"><span style="font-size: 11pt;"><b>为什么<br>
+                                  </b></span></font></div>
+                          </td>
+                          <td dir="ltr" style="width: 639pt; padding:
+                            0px 5.4pt; border-style: none solid solid
+                            none; border-right-width: 1pt;
+                            border-right-color: rgb(79, 129, 189);
+                            border-bottom-width: 1pt;
+                            border-bottom-color: rgb(79, 129, 189);
+                            text-align: left;" width="1065"><a
+href="https://jira.synchronoss.net:8443/jira/secure/attachment/539351/PAB-9.2.113_Functional_TestReport.xlsx"
+                              target="_blank" class="x_OWAAutoLink"
+                              id="LPlnk826870">https://jira.synchronoss.net:8443/jira/secure/attachment/539351/PAB-9.2.113_Functional_TestReport.xlsx</a><br>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td style="width: 125.6pt; padding: 0px 5.4pt;
+                            border-width: 1pt; border-style: none solid
+                            solid; border-color: rgb(79, 129, 189);"
+                            width="209">
+                            <div style="text-align: center;"
+                              align="center"><font face="Cambria,serif"
+                                size="2"><span style="font-size: 11pt;"><b>Documents</b></span></font></div>
+                          </td>
+                          <td style="width: 639pt; padding: 0px 5.4pt;
+                            border-style: none solid solid none;
+                            border-right-width: 1pt;
+                            border-bottom-width: 1pt;
+                            border-right-color: rgb(79, 129, 189);
+                            border-bottom-color: rgb(79, 129, 189);"
+                            width="1065"><font face="Calibri,sans-serif"
+                              size="2"><span style="font-size: 11pt;">Release
+                                Notes<br>
+                              </span></font></td>
+                        </tr>
+                        <tr>
+                          <td style="width: 125.6pt; background-color:
+                            rgb(211, 223, 238); padding: 0px 5.4pt;
+                            border-width: 1pt; border-style: none solid
+                            solid; border-color: rgb(79, 129, 189);"
+                            width="209"><span style="background-color:
+                              rgb(211, 223, 238);">
+                              <div style="text-align: center;"
+                                align="center"><font
+                                  face="Cambria,serif" size="2"><span
+                                    style="font-size: 11pt;"><b>Customers</b></span></font></div>
+                            </span></td>
+                          <td style="width: 639pt; background-color:
+                            rgb(211, 223, 238); padding: 0px 5.4pt;
+                            border-style: none solid solid none;
+                            border-right-width: 1pt;
+                            border-bottom-width: 1pt;
+                            border-right-color: rgb(79, 129, 189);
+                            border-bottom-color: rgb(79, 129, 189);"
+                            width="1065"><span style="background-color:
+                              rgb(211, 223, 238);">All<br>
+                            </span></td>
+                        </tr>
+                        <tr>
+                          <td style="width: 125.6pt; padding: 0px 5.4pt;
+                            border-width: 1pt; border-style: none solid
+                            solid; border-color: rgb(79, 129, 189);"
+                            width="209">
+                            <div style="text-align: center;"
+                              align="center"><font face="Cambria,serif"
+                                size="2"><span style="font-size: 11pt;"><b>Platform</b></span></font></div>
+                          </td>
+                          <td style="width: 639pt; padding: 0px 5.4pt;
+                            border-style: none solid solid none;
+                            border-right-width: 1pt;
+                            border-bottom-width: 1pt;
+                            border-right-color: rgb(79, 129, 189);
+                            border-bottom-color: rgb(79, 129, 189);"
+                            width="1065">Linux</td>
+                        </tr>
+                        <tr>
+                          <td style="width: 125.6pt; background-color:
+                            rgb(211, 223, 238); padding: 0px 5.4pt;
+                            border-width: 1pt; border-style: none solid
+                            solid; border-color: rgb(79, 129, 189);"
+                            width="209"><span style="background-color:
+                              rgb(211, 223, 238);">
+                              <div style="text-align: center;"
+                                align="center"><font
+                                  face="Cambria,serif" size="2"><span
+                                    style="font-size: 11pt;"><b>Release
+                                      Type</b></span></font></div>
+                            </span></td>
+                          <td style="width: 639pt; background-color:
+                            rgb(211, 223, 238); padding: 0px 5.4pt;
+                            border-style: none solid solid none;
+                            border-right-width: 1pt;
+                            border-bottom-width: 1pt;
+                            border-right-color: rgb(79, 129, 189);
+                            border-bottom-color: rgb(79, 129, 189);"
+                            width="1065">Patch</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                    <font face="Courier New" color="#1F497D" size="4"><span
+                        style="font-size: 14pt;"></span></font></font><br
+                    class="Apple-interchange-newline">
+                </div>
+              </span></font></font></div>
+        <font style="color: rgb(0, 0, 0); font-family: Calibri, Arial,
+          Helvetica, sans-serif; font-size: 16px; font-style: normal;
+          font-variant-ligatures: normal; font-variant-caps: normal;
+          font-weight: normal; letter-spacing: normal; orphans: 2;
+          text-align: start; text-indent: 0px; text-transform: none;
+          white-space: normal; widows: 2; word-spacing: 0px;
+          -webkit-text-stroke-width: 0px; background-color: rgb(255,
+          255, 255);" face="Calibri,Arial,Helvetica,sans-serif"
+          color="black" size="3"> </font> </div>
+    </div>
+  </body>
+</html>
+
+--------------D3E08C8C463B5EE9439C15DD--
+ FLAGS (\Recent \Seen))
+a OK FETCH completed
+* 1 FETCH (FIRSTLINE ("، ويمكن تح Nobody! いくつにな 我们是中国人， *谁是 * 	*中"))
+a OK FETCH completed
+* 1 FETCH (FIRSTLINE ("، ويمكن تح Nobody! いくつにな 我们是中国人， *谁是 * 	*中") UID 3048)
+a OK UID FETCH completed
+* BYE IMAP4 server terminating connection
+a OK LOGOUT completed

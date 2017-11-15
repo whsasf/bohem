@@ -1,0 +1,8 @@
+from:xx2@openwave.com
+to:xx1@openwave.com
+subject:random message
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8; format=flowed
+Content-Transfer-Encoding: 8bit
+
+Omayyad ibuprofen Chimera's humanest Khartoum curdle whitewashed Afghanistan's premeditation's admittance Donner transmuted speedster's couples collusive

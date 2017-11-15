@@ -1,0 +1,179 @@
+Delete messsages successfully.
+!!!!!!!!!!!!!!!!!!!!!!message delete successfully!!!!!!!!!!!!!!!!!
+
+
+Message body length = 1998 
+Message is:
+Return-Path: <xx2@openwave.com>
+Received: from [10.13.8.221] by mx-172-26-202-87.openwave.com
+          (InterMail vM.9.05.00.00 201-2473-137-108) with ESMTP
+          id <20170218104030.BHG23163.mx-172-26-202-87.openwave.com@[10.13.8.221]>
+          for <xx1@openwave.com>; Sat, 18 Feb 2017 02:40:30 -0800
+From: xx2 <xx2@openwave.com>
+Subject: black bg with style "times,bold ,italic,underline,align center"
+To: xx1@openwave.com
+Message-ID: <2a17deb9-b83e-6e7d-74d7-e33ce35d7927@openwave.com>
+Date: Sat, 18 Feb 2017 18:40:29 +0800
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:45.0) Gecko/20100101
+ Thunderbird/45.7.0
+MIME-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="------------3C9C6A2F0E919F594A0AE73A"
+
+This is a multi-part message in MIME format.
+--------------3C9C6A2F0E919F594A0AE73A
+Content-Type: text/plain; charset=utf-8; format=flowed
+Content-Transfer-Encoding: 8bit
+
+*، ويمكن تح *
+
+ 1.
+    /Nobody! /
+
+_いくつにな _
+      我们是中国人，
+
+--------------3C9C6A2F0E919F594A0AE73A
+Content-Type: text/html; charset=utf-8
+Content-Transfer-Encoding: 8bit
+
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  </head>
+  <body bgcolor="#000000" alink="#EE0000" link="#0B6CDA" text="#000000"
+    vlink="#551A8B">
+    <font face="Times New Roman, Times, serif" color="#ffffff"><b>،
+        ويمكن تح
+      </b></font><font face="Times New Roman, Times, serif"><br>
+    </font>
+    <div align="right">
+      <ol>
+        <li>
+          <div align="center"><font face="Times New Roman, Times, serif"
+              color="#ffffff"><i>Nobody!
+              </i></font></div>
+        </li>
+      </ol>
+    </div>
+    <font face="Times New Roman, Times, serif"> <font color="#ffffff"><u>いくつにな
+        </u><br>
+      </font><font color="#ffffff">     我们是中国人，</font></font><br>
+  </body>
+</html>
+
+--------------3C9C6A2F0E919F594A0AE73A--
+
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!Appending message!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+* OK IMAP4 server (InterMail vM.9.05.00.00 201-2473-137-108) ready Sat, 18 Feb 2017 02:43:56 -0800 (PST)
+a OK LOGIN completed
+* 0 EXISTS
+* OK [UNSEEN 0] First unseen message
+* OK [UIDVALIDITY 1487128905] UIDs valid
+* OK [UIDNEXT 2991] Predicted next UID
+* FLAGS (\Answered \Flagged \Deleted \Draft \Seen)
+* OK [PERMANENTFLAGS (\* \Answered \Flagged \Deleted \Draft \Seen)] Permanent flags
+* 0 RECENT
+a OK [READ-WRITE] SELECT completed
++ Ready for argument
+* 1 EXISTS
+* 1 RECENT
+a OK [APPENDUID 1487128905 2991] APPEND completed
+* BYE IMAP4 server terminating connection
+a OK LOGOUT completed
+!!!!!!!!!!!!!!!!append finished!!!!!!!!!!!!!!!
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!fetching first line data!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+* OK IMAP4 server (InterMail vM.9.05.00.00 201-2473-137-108) ready Sat, 18 Feb 2017 02:43:57 -0800 (PST)
+a OK LOGIN completed
+* 1 EXISTS
+* OK [UNSEEN 1] First unseen message
+* OK [UIDVALIDITY 1487128905] UIDs valid
+* OK [UIDNEXT 2992] Predicted next UID
+* FLAGS (\Answered \Flagged \Deleted \Draft \Seen)
+* OK [PERMANENTFLAGS (\* \Answered \Flagged \Deleted \Draft \Seen)] Permanent flags
+* 1 RECENT
+a OK [READ-WRITE] SELECT completed
+* 1 FETCH (RFC822 {2000}
+Return-Path: <xx2@openwave.com>
+Received: from [10.13.8.221] by mx-172-26-202-87.openwave.com
+          (InterMail vM.9.05.00.00 201-2473-137-108) with ESMTP
+          id <20170218104030.BHG23163.mx-172-26-202-87.openwave.com@[10.13.8.221]>
+          for <xx1@openwave.com>; Sat, 18 Feb 2017 02:40:30 -0800
+From: xx2 <xx2@openwave.com>
+Subject: black bg with style "times,bold ,italic,underline,align center"
+To: xx1@openwave.com
+Message-ID: <2a17deb9-b83e-6e7d-74d7-e33ce35d7927@openwave.com>
+Date: Sat, 18 Feb 2017 18:40:29 +0800
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:45.0) Gecko/20100101
+ Thunderbird/45.7.0
+MIME-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="------------3C9C6A2F0E919F594A0AE73A"
+
+This is a multi-part message in MIME format.
+--------------3C9C6A2F0E919F594A0AE73A
+Content-Type: text/plain; charset=utf-8; format=flowed
+Content-Transfer-Encoding: 8bit
+
+*، ويمكن تح *
+
+ 1.
+    /Nobody! /
+
+_いくつにな _
+      我们是中国人，
+
+--------------3C9C6A2F0E919F594A0AE73A
+Content-Type: text/html; charset=utf-8
+Content-Transfer-Encoding: 8bit
+
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  </head>
+  <body bgcolor="#000000" alink="#EE0000" link="#0B6CDA" text="#000000"
+    vlink="#551A8B">
+    <font face="Times New Roman, Times, serif" color="#ffffff"><b>،
+        ويمكن تح
+      </b></font><font face="Times New Roman, Times, serif"><br>
+    </font>
+    <div align="right">
+      <ol>
+        <li>
+          <div align="center"><font face="Times New Roman, Times, serif"
+              color="#ffffff"><i>Nobody!
+              </i></font></div>
+        </li>
+      </ol>
+    </div>
+    <font face="Times New Roman, Times, serif"> <font color="#ffffff"><u>いくつにな
+        </u><br>
+      </font><font color="#ffffff">     我们是中国人，</font></font><br>
+  </body>
+</html>
+
+--------------3C9C6A2F0E919F594A0AE73A--
+ FLAGS (\Recent \Seen))
+a OK FETCH completed
+* 1 FETCH (FIRSTLINE ("*، ويمكن تح *  1.     /Nobody! / _いくつにな _       我们"))
+a OK FETCH completed
+* BYE IMAP4 server terminating connection
+a OK LOGOUT completed
+
+
+
+[default@KeyspaceMetadata] get cf_folder['353038343036333135323632313531383036365fe1280902f32d11e6b9386b782020d67e'];
+=> (super_column=262032e6-f5c7-11e6-8a26-b629f7178cab,
+     (name=31, value=392e300332363230333265362d663563372d313165362d386132362d6236323966373137386361620330033134383734313436333603323030300330030333033003300303626c61636b2062672077697468207374796c65202274696d65732c626f6c64202c6974616c69632c756e6465726c696e652c616c69676e2063656e7465722203787832203c787832406f70656e776176652e636f6d3e033003787831406f70656e776176652e636f6d0303323939310330033c32613137646562392d623833652d366537642d373464372d653333636533356437393237406f70656e776176652e636f6d3e033134383734313434323903030303, timestamp=1487414636844348)
+     (name=3138, value=2ad88c20d988d98ad985d983d98620d8aad8ad202a2020312e20202020202f4e6f626f647921202f205fe38184e3818fe381a4e381abe381aa205f20202020202020e68891e4bbac00, timestamp=1487414636844348)
+     (name=32, value=46, timestamp=1487414637612558)
+     (name=33, value=54, timestamp=1487414637654481)
+     (name=35, value=31343837343134373433, timestamp=1487414743773018)
+     (name=36, value=46, timestamp=1487414637654481)
+     (name=37, value=46, timestamp=1487414637654481)
+     (name=38, value=46, timestamp=1487414637654481)
+     (name=39, value=46, timestamp=1487414637654481))
+Returned 1 results.
+Elapsed time: 87 msec(s).

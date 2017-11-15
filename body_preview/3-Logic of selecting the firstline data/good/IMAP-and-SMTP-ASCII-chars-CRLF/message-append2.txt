@@ -1,0 +1,5 @@
+from:xx2@openwave.com
+to:xx1@openwave.com
+subject:testemail-Ascii-CRLF
+
+To be or not to be.That is a question.

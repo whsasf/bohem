@@ -1,0 +1,27 @@
+[root@host-172-26-202-234 logs]# python  report.py 
+1.0.01) Positive:Create hoh  group admin mailbox 
+1.0.04) Positive:Delete  hoh family mailbox 
+1.01.01) Positive:Create hoh  group admin mailbox with groupName="spark.co.nz" 
+1.01.04) Positive:Delete  family mailbox 
+cleanup) Positive:delete contact,mailbox,cos 
+
+
+****************MailboxHoh.xlsx****************
+****** Failed case count in the suite: 6 ******
+
+2.01.01) Negative: Get Datastore Service key with Invalid string value for 'key1'=value 
+
+
+****************DataStore.xlsx****************
+****** Failed case count in the suite: 1 ******
+
+********************Feature List Details**********************
+Domain 142 0
+Mailbox 3647 7
+Cos 1500 0
+Folder 173 0
+Message 0 0
+Notify 96 0
+Address Book 0 0
+Tasks 0 0
+********************Feature List Details**********************

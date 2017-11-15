@@ -1,0 +1,108 @@
+1c1
+< * 1 FETCH (FIRSTLINE (""))
+---
+> * 1 FETCH (FIRSTLINE ("いくつになったら、オレは、何かに伤ついたりいくつにな�"))
+1c1
+< * 1 FETCH (FIRSTLINE (""))
+---
+> * 1 FETCH (FIRSTLINE ("いくつになったら、オレは、何かに伤ついたりいくつにな�"))
+1c1
+< * 1 FETCH (FIRSTLINE ("44GE44GP44Gk44Gr44Gq44Gj44Gf44KJ44CB44Kq44Os44Gv44CB5L2V44GL44Gr5Lyk44Gk44GE 44"))
+---
+> * 1 FETCH (FIRSTLINE ("いくつになったら、オレは、何かに伤ついたりいくつにな�"))
+1c1
+< * 1 FETCH (FIRSTLINE ("=E3=81=84=E3=81=8F=E3=81=A4=E3=81=AB=E3=81=AA=E3=81=A3=E3=81=9F=E3=82=89=E3= =8"))
+---
+> * 1 FETCH (FIRSTLINE ("いくつになったら、オレは、何かに伤ついたりいくつにな�"))
+1c1
+< * 1 FETCH (FIRSTLINE ("いくつになったら、オレは、何かに伤つい�"))
+---
+> * 1 FETCH (FIRSTLINE ("いくつになったら、オレは、何かに伤ついたりいくつにな�"))
+1c1
+< * 1 FETCH (FIRSTLINE ("いくつになったら、オレは、何かに伤つい�"))
+---
+> * 1 FETCH (FIRSTLINE ("いくつになったら、オレは、何かに伤ついたりいくつにな�"))
+1c1
+< * 1 FETCH (FIRSTLINE ("いくつになったら、オレは、何かに伤つい�"))
+---
+> * 1 FETCH (FIRSTLINE ("いくつになったら、オレは、何かに伤ついたりいくつにな�"))
+1c1
+< * 1 FETCH (FIRSTLINE ("いくつになったら、オレは、何かに伤つい�"))
+---
+> * 1 FETCH (FIRSTLINE ("いくつになったら、オレは、何かに伤ついたりいくつにな�"))
+1c1
+< * 1 FETCH (FIRSTLINE ("=E3=81=84=E3=81=8F=E3=81=A4=E3=81=AB=E3=81=AA=E3=81=A3=E3=81=9F=E3=82=89=E3= =8"))
+---
+> * 1 FETCH (FIRSTLINE ("いくつになったら、オレは、何かに伤ついたりいくつにな�"))
+1c1
+< * 1 FETCH (FIRSTLINE ("44GE44GP44Gk44Gr44Gq44Gj44Gf44KJ44CB44Kq44Os44Gv44CB5L2V44GL44Gr5Lyk44Gk44GE 44"))
+---
+> * 1 FETCH (FIRSTLINE ("いくつになったら、オレは、何かに伤つい�"))
+1c1
+< * 1 FETCH (FIRSTLINE ("=E3=81=84=E3=81=8F=E3=81=A4=E3=81=AB=E3=81=AA=E3=81=A3=E3=81=9F=E3=82=89=E3= =8"))
+---
+> * 1 FETCH (FIRSTLINE ("いくつになったら、オレは、何かに伤ついたりいくつにな�"))
+1c1
+< * 1 FETCH (FIRSTLINE (""))
+---
+> * 1 FETCH (FIRSTLINE ("いくつになったら、オレは、何かに伤ついたりいくつにな�"))
+1c1
+< * 1 FETCH (FIRSTLINE ("いくつになったら、オレは、何かに伤ついたりいくつにな"))
+---
+> * 1 FETCH (FIRSTLINE ("いくつになったら、オレは、何かに伤ついたりいくつにな�"))
+1c1
+< * 1 FETCH (FIRSTLINE ("いくつになったら、オレは、何かに伤ついたりいくつにな"))
+---
+> * 1 FETCH (FIRSTLINE (""))
+1c1
+< * 1 FETCH (FIRSTLINE ("いくつになったら、オレは、何かに伤ついたりいくつにな"))
+---
+> * 1 FETCH (FIRSTLINE ("いくつになったら、オレは、何かに伤つい�"))
+1c1
+< * 1 FETCH (FIRSTLINE ("いくつになったら、オレは、何かに伤ついたりいくつにな"))
+---
+> * 1 FETCH (FIRSTLINE ("いくつになったら、オレは、何かに伤ついたりいくつにな�"))
+====current path is:/home/ram/Desktop/MX9.5/Testcases/body_preview/3-Logic of selecting the firstline data/Testcases-body-preview-deal-spaces-encode-enhanced-new/good/Type-image-UTF-8-Japanese-messagebody-IMAP-and-SMTP================
+
+================Type-image-UTF-8-Japanese-messagebody-IMAP-and-SMTP Test finished===============
+
+====current path is:Type-image-UTF-8-Japanese-messagebody-IMAP-and-SMTP================
+====running logic-messagesend-IMAP-append-7bit ========
+====running logic-messagesend-IMAP-append-8bit ========
+====running logic-messagesend-IMAP-append-base64 ========
+====running logic-messagesend-IMAP-append-quoted-printable ========
+====running logic-messagesend-SMTP-7bit ========
+====running logic-messagesend-SMTP-8bit ========
+====running logic-messagesend-SMTP-base64 ========
+====running logic-messagesend-SMTP-quoted-printable ========
+================Type-image-UTF-8-Japanese-messagebody-IMAP-and-SMTP Test finished===============
+====current path is:Type-image-UTF-8-Japanese-messagebody-IMAP-and-SMTP====================current path is:Type-image-UTF-8-Japanese-messagebody-IMAP-and-SMTP================
+====running logic-messagesend-IMAP-append-7bit ============running logic-messagesend-IMAP-append-7bit ========
+====running logic-messagesend-IMAP-append-8bit ============running logic-messagesend-IMAP-append-8bit ========
+====running logic-messagesend-IMAP-append-base64 ========
+====running logic-messagesend-IMAP-append-quoted-printable ========
+====running logic-messagesend-SMTP-7bit ========
+====running logic-messagesend-SMTP-8bit ========
+====running logic-messagesend-SMTP-base64 ========
+====running logic-messagesend-SMTP-quoted-printable ========
+================Type-image-UTF-8-Japanese-messagebody-IMAP-and-SMTP Test finished===============
+====current path is:Type-image-UTF-8-Japanese-messagebody-IMAP-and-SMTP====================current path is:Type-image-UTF-8-Japanese-messagebody-IMAP-and-SMTP================
+====running logic-messagesend-IMAP-append-7bit ============running logic-messagesend-IMAP-append-7bit ========
+====running logic-messagesend-IMAP-append-8bit ============running logic-messagesend-IMAP-append-8bit ========
+====running logic-messagesend-IMAP-append-base64 ========
+====running logic-messagesend-IMAP-append-quoted-printable ========
+====running logic-messagesend-SMTP-7bit ========
+====running logic-messagesend-SMTP-8bit ========
+====running logic-messagesend-SMTP-base64 ========
+====running logic-messagesend-SMTP-quoted-printable ========
+================Type-image-UTF-8-Japanese-messagebody-IMAP-and-SMTP Test finished===============
+====current path is:Type-image-UTF-8-Japanese-messagebody-IMAP-and-SMTP====================current path is:Type-image-UTF-8-Japanese-messagebody-IMAP-and-SMTP================
+====running logic-messagesend-IMAP-append-7bit ============running logic-messagesend-IMAP-append-7bit ========
+====running logic-messagesend-IMAP-append-8bit ============running logic-messagesend-IMAP-append-8bit ========
+====running logic-messagesend-IMAP-append-base64 ========
+====running logic-messagesend-IMAP-append-quoted-printable ========
+====running logic-messagesend-SMTP-7bit ========
+====running logic-messagesend-SMTP-8bit ========
+====running logic-messagesend-SMTP-base64 ========
+====running logic-messagesend-SMTP-quoted-printable ========
+================Type-image-UTF-8-Japanese-messagebody-IMAP-and-SMTP Test finished===============

@@ -1,0 +1,10 @@
+#!/bin/bash
+cp 1-testmessage2to1.txt    1-testmessage2to1.bak
+cp 2-testmessage1re2.txt    2-testmessage1re2.bak
+cp 3-testmessage2re1.txt    3-testmessage2re1.bak
+cp 4-testmessage3to2.txt    4-testmessage3to2.bak
+cp 5-testmessage2re3.txt    5-testmessage2re3.bak
+cp 6-testmessage3re2.txt    6-testmessage3re2.bak
+cp 7-testmessage1to3.txt    7-testmessage1to3.bak
+cp 8-testmessage3re1.txt    8-testmessage3re1.bak
+cp 9-testmessage1re3.txt    9-testmessage1re3.bak

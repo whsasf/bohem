@@ -1,0 +1,11 @@
+from:xx2@openwave.com
+to:xx1@openwave.com
+subject:testemail-mixd-UTF-8-CRLF-7bit
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: 7bit
+
+، ويمكن تح
+Nobody!
+いくつにな
+我们是中国人，

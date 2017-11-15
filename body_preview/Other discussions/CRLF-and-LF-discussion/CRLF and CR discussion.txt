@@ -1,0 +1,190 @@
+CRLF :\r\n   0d0a   mostly used in windows
+LF:\n        0a     mostyly used in Linux
+
+
+--1---
+IN current  MX, all message with CRLF or LF will be stored as CRLF no matter it's CRLF  or LF in origuinal message body.
+
+Here are 2 examples:
+
+1 message body LF situation:
+(1)Orinigal message body with LF:
+my people
+
+
+
+youe people.hahaha
+#####################################
+6d792070656f706c65 0a0a0a0a 796f75652070656f706c652e686168616861
+
+(2)After delievering message to mailbox, get message body from cassandra:
+
+6d7920 00000480 70656f706c65 0d0a 0d0a 0d0a 0d0a 796f7565
+
+auto transformed to "0d0a" from "0a"
+
+2 message body CRLF situation:
+
+(1) original message boy CRLF situation:
+
+You gods divine
+! Make Cressida's name the very crown of falsehood
+, if ever she leave Troilus. (Troilus and Cressida 4.2) 
+
+#####################################
+
+596f7520676f647320646976696e65   0d0a  21204d616b652043726573736964612773206e616d652074686520766572792063726f776e206f662066616c7365686f6f64  0d0a  2c206966206576657220736865206c656176652054726f696c75732e202854726f696c757320616e6420437265737369646120342e3229 
+
+(2)After delievering message to mailbox, get message body from cassandra: 
+
+596f752000004080676f647320646976696e65
+
+0d0a   21204d616b6520437221456964612773206e61004000806d652074686520766572792063728118206f662066616c7365686f6f64
+
+0d0a   2c200100c2206966206501252073e1766c656176652054726f696c75732e2028354a20616e6447400000008020342e322920202020200d0a
+ 
+
+--2--
+FROM DEV and mike, the CRLF and LF is not the important point of MX9.5 testing ,so will not put too many focus on it .
+
+/////////////////////////////////////////////////////////////////////
+Ram,
+
+ 
+
+                We reviewed with product management. It looks like we need to implement #2 below (merge white space). But part #4 will be skipped.
+
+ 
+
+-Mike
+
+ 
+
+From: HaiSheng Wang 
+Sent: Thursday, February 16, 2017 10:07 AM
+To: Akash Hajari <Akash.Hajari@synchronoss.com>
+Cc: Krishna Murthy Achari <Krishna.MurthyAchari@synchronoss.com>; Rajesh R <Rajesh.R@synchronoss.com>; James Song <James.Song@synchronoss.com>; Steven Bai <Steven.Bai@synchronoss.com>; Mike Burstein <Mike.Burstein@synchronoss.com>
+Subject: Re: Concerns about body_preview ---part3
+
+ 
+
+Hi Akash ,
+
+ 
+
+    Good day. I have launched a JIRA issue about the second concerns mentioned in this Email, we can follow it. 
+
+    MX-5688
+
+  
+
+    Thanks and Regards
+
+    Ram
+
+ 
+
+  
+
+
+On Wed, Feb 15, 2017 at 4:34 PM, ram <hwan0001@synchronoss.com> wrote:
+
+
+
+Hi Akash,
+
+ 
+
+Good day.
+
+ 
+
+From the body_preview design DOC, we can see these:
+
+ 
+
+    1)-Start with the 1st character of the body after headers.
+
+    2)-Read characters.If there are multiple whitespace characters treat them as a single white space character.
+
+    3)-Once you find a non-whitespace character this is considered the start of the "first line"
+
+    4)-Keep reading until you find 80 characters or hit new line (\n, \r\n).
+
+ 
+
+My questiosn regarding them:
+
+ 
+
+(1)Several continuous CRLF will be treated as a single one, which is not mentioned in design doc, so is this normal behavior designed by you,right ?
+
+ 
+
+example:
+
+raw: 
+
+ 
+
+my people
+
+ 
+
+ 
+
+ 
+
+youe people.hahaha
+
+ 
+
+firstline data:
+
+ 
+
+"my people youe people.hahaha "
+
+  
+
+(2)Currently if message body start with several whitespaces, they will all be kept down in firstline data, this behavior seems not obey the second requirement. What do you think ?
+
+ 
+
+example(5 white space in the beginning):
+
+ 
+
+     The lunatic, the lover and the poet are of imagination all compact. (A Mids
+
+ 
+
+firstline data:
+
+ 
+
+"     The lunatic, the lover and the poet are of imagination all compact. (A Mids"
+
+ 
+
+(3)From the last requirement, seems CRLF or LF for new line symbols are both supported,in current testing, we find CRLF are 
+
+ 
+
+used. Please confirm this first and wil we support "LF" ? 
+
+ 
+
+ Looking forward to your response.
+
+ 
+
+ Thanks and Regards
+
+ Ram
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+
+

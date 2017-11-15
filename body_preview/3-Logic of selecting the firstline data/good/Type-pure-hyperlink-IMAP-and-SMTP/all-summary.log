@@ -1,0 +1,80 @@
+1c1
+< * 1 FETCH (FIRSTLINE (""))
+---
+> * 1 FETCH (FIRSTLINE ("我们都是中国人 <https://www.baidu.com> "))
+1c1
+< * 1 FETCH (FIRSTLINE (""))
+---
+> * 1 FETCH (FIRSTLINE ("我们都是中国人 <https://www.baidu.com> "))
+1c1
+< * 1 FETCH (FIRSTLINE ("5oiR5Lus6YO95piv5Lit5Zu95Lq6IDxodHRwczovL3d3dy5iYWlkdS5jb20+CgoKCg=="))
+---
+> * 1 FETCH (FIRSTLINE ("我们都是中国人 <https://www.baidu.com> "))
+1c1
+< * 1 FETCH (FIRSTLINE ("=E6=88=91=E4=BB=AC=E9=83=BD=E6=98=AF=E4=B8=AD=E5=9B=BD=E4=BA=BA <https://ww= w."))
+---
+> * 1 FETCH (FIRSTLINE ("我们都是中国人 <https://www.baidu.com> "))
+1c1
+< * 1 FETCH (FIRSTLINE ("我们都是中国人 <https://www."))
+---
+> * 1 FETCH (FIRSTLINE ("我们都是中国人 <https://www.baidu.com> "))
+1c1
+< * 1 FETCH (FIRSTLINE (""))
+---
+> * 1 FETCH (FIRSTLINE ("我们都是中国人 <https://www.baidu.com> "))
+1c1
+< * 1 FETCH (FIRSTLINE ("我们都是中国人 <https://www.baidu.com>"))
+---
+> * 1 FETCH (FIRSTLINE ("我们都是中国人 <https://www."))
+1c1
+< * 1 FETCH (FIRSTLINE ("我们都是中国人 <https://www.baidu.com>"))
+---
+> * 1 FETCH (FIRSTLINE ("我们都是中国人 <https://www.baidu.com> "))
+1c1
+< * 1 FETCH (FIRSTLINE ("我们都是中国人 <https://www.baidu.com>"))
+---
+> * 1 FETCH (FIRSTLINE ("我们都是中国人 <https://www."))
+====current path is:/home/ram/Desktop/MX9.5/Testcases/body_preview/3-Logic of selecting the firstline data/Testcases-body-preview-deal-spaces-encode-enhanced-new/good/Type-pure-hyperlink-IMAP-and-SMTP================
+
+================Type-pure-hyperlink-IMAP-and-SMTP Test finished===============
+
+====current path is:Type-pure-hyperlink-IMAP-and-SMTP================
+====running logic-messagesend-IMAP-append-7bit ========
+====running logic-messagesend-IMAP-append-8bit ========
+====running logic-messagesend-IMAP-append-base64 ========
+====running logic-messagesend-IMAP-append-quoted-printable ========
+====running logic-messagesend-SMTP-7bit ========
+====running logic-messagesend-SMTP-8bit ========
+====running logic-messagesend-SMTP-base64 ========
+====running logic-messagesend-SMTP-quoted-printable ========
+================Type-pure-hyperlink-IMAP-and-SMTP Test finished===============
+====current path is:Type-pure-hyperlink-IMAP-and-SMTP====================current path is:Type-pure-hyperlink-IMAP-and-SMTP================
+====running logic-messagesend-IMAP-append-7bit ============running logic-messagesend-IMAP-append-7bit ========
+====running logic-messagesend-IMAP-append-8bit ============running logic-messagesend-IMAP-append-8bit ========
+====running logic-messagesend-IMAP-append-base64 ========
+====running logic-messagesend-IMAP-append-quoted-printable ========
+====running logic-messagesend-SMTP-7bit ========
+====running logic-messagesend-SMTP-8bit ========
+====running logic-messagesend-SMTP-base64 ========
+====running logic-messagesend-SMTP-quoted-printable ========
+================Type-pure-hyperlink-IMAP-and-SMTP Test finished===============
+====current path is:Type-pure-hyperlink-IMAP-and-SMTP====================current path is:Type-pure-hyperlink-IMAP-and-SMTP================
+====running logic-messagesend-IMAP-append-7bit ============running logic-messagesend-IMAP-append-7bit ========
+====running logic-messagesend-IMAP-append-8bit ============running logic-messagesend-IMAP-append-8bit ========
+====running logic-messagesend-IMAP-append-base64 ========
+====running logic-messagesend-IMAP-append-quoted-printable ========
+====running logic-messagesend-SMTP-7bit ========
+====running logic-messagesend-SMTP-8bit ========
+====running logic-messagesend-SMTP-base64 ========
+====running logic-messagesend-SMTP-quoted-printable ========
+================Type-pure-hyperlink-IMAP-and-SMTP Test finished===============
+====current path is:Type-pure-hyperlink-IMAP-and-SMTP====================current path is:Type-pure-hyperlink-IMAP-and-SMTP================
+====running logic-messagesend-IMAP-append-7bit ============running logic-messagesend-IMAP-append-7bit ========
+====running logic-messagesend-IMAP-append-8bit ============running logic-messagesend-IMAP-append-8bit ========
+====running logic-messagesend-IMAP-append-base64 ========
+====running logic-messagesend-IMAP-append-quoted-printable ========
+====running logic-messagesend-SMTP-7bit ========
+====running logic-messagesend-SMTP-8bit ========
+====running logic-messagesend-SMTP-base64 ========
+====running logic-messagesend-SMTP-quoted-printable ========
+================Type-pure-hyperlink-IMAP-and-SMTP Test finished===============

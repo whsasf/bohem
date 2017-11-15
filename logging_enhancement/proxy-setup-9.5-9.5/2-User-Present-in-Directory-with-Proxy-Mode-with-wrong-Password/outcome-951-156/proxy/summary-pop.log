@@ -1,0 +1,24 @@
+The pop operations logs telneting to MX9.5-1:
+
+
++OK InterMail POP3 server ready. <19708.2017111513415673@mx-10-49-58-127.openwave.com>
++OK please send PASS command
+-ERR mail storage services unavailable, wait a few minutes and try again.
+
+
+
+
+
+POPserv.log from MX9.5-1:
+
+20171115 134157670+0000 mx-10-49-58-127 popserv 19708 20598 139656227632896 Note;UserDataException(504/1) MBX_NOT_FOUND:{password=[XXXXX], protocolType=[pop], userName=[procu1]}:AuthenticateAndGetMailboxService\3aPOST:The given Mailbox does not exist.::user=procu1:cmd=pass <pswd>:fromhost=10.37.2.214:fromport=34860
+20171115 134157688+0000 mx-10-49-58-127 popserv 19708 20598 139656227632896 Erro;PopProxyUserFailed(66/11) 10.49.58.118:20110:-ERR invalid user name or password.:user=procu1:cmd=pass <pswd>:fromhost=10.37.2.214:fromport=34860
+
+
+POPserv.log from MX9.5-2:
+
+20171115 004100826-0500 mx-10-49-58-118 popserv 17111 17798 139646706149120 Note;UserDataException(504/1) MBX_AUTHENTICATION_FAILED:{password=[XXXXX], protocolType=[pop], userName=[procu1]}:AuthenticateAndGetMailboxService\3aPOST:Authenticating Failed.::user=procu1:cmd=PASS <pswd>:fromhost=10.49.58.127:fromport=40423
+20171115 004100826-0500 mx-10-49-58-118 popserv 17111 17798 139646706149120 Note;AcctBadPswd(50/6) user=procu1:cmd=PASS <pswd>:fromhost=10.49.58.127:fromport=40423
+
+[32m#####Logging enhancement for POP proxy is ok!!##### [0m
+

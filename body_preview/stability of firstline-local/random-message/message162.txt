@@ -1,0 +1,8 @@
+from:xx2@openwave.com
+to:xx1@openwave.com
+subject:random message
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8; format=flowed
+Content-Transfer-Encoding: 8bit
+
+device manages guideline beatified gobbledygook spurns marlin's Chopra substantive's Cunningham capabilities seminarian's messiahs circularity Messiah

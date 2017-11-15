@@ -1,0 +1,80 @@
+1c1
+< * 1 FETCH (FIRSTLINE ("Oi0pCjotKAo7LSkKOi1QCjotWwo6LVwKPS1P "))
+---
+> * 1 FETCH (FIRSTLINE (":-) :-( ;-) :-P :-[ :- =-O "))
+1c1
+< * 1 FETCH (FIRSTLINE (":-) :-( ;-) :-P :-[ :- =3D-O= "))
+---
+> * 1 FETCH (FIRSTLINE (":-) :-( ;-) :-P :-[ :- =-O "))
+1c1
+< * 1 FETCH (FIRSTLINE ("Oi0pCjotKAo7LSkKOi1QCjotWwo6LVwKPS1P "))
+---
+> * 1 FETCH (FIRSTLINE (":-) :-( ;-) :-P :-[ :- =-O "))
+1c1
+< * 1 FETCH (FIRSTLINE (":-) :-( ;-) :-P :-[ :- =3D-O= "))
+---
+> * 1 FETCH (FIRSTLINE (":-) :-( ;-) :-P :-[ :- =-O "))
+1c1
+< * 1 FETCH (FIRSTLINE ("Oi0pCjotKAo7LSkKOi1QCjotWwo6LVwKPS1P "))
+---
+> * 1 FETCH (FIRSTLINE (":-) :-( ;-) :-P :-[ :- =-O "))
+1c1
+< * 1 FETCH (FIRSTLINE ("Oi0pCjotKAo7LSkKOi1QCjotWwo6LVwKPS1P "))
+---
+> * 1 FETCH (FIRSTLINE (":-) :-( ;-) :-P :-[ :- =-O "))
+1c1
+< * 1 FETCH (FIRSTLINE (":-) :-( ;-) :-P :-[ :- =-O"))
+---
+> * 1 FETCH (FIRSTLINE (":-) :-( ;-) :-P :-[ :- =-O "))
+1c1
+< * 1 FETCH (FIRSTLINE (":-) :-( ;-) :-P :-[ :- =-O"))
+---
+> * 1 FETCH (FIRSTLINE (":-) :-( ;-) :-P :-[ :- =-O "))
+1c1
+< * 1 FETCH (FIRSTLINE (":-) :-( ;-) :-P :-[ :- =-O"))
+---
+> * 1 FETCH (FIRSTLINE (":-) :-( ;-) :-P :-[ :- =-O "))
+====current path is:/home/ram/Desktop/MX9.5/Testcases/body_preview/3-Logic of selecting the firstline data/Testcases-body-preview-deal-spaces-encode-enhanced-new/good/Type-char-Emoji-IMAP-and-SMTP================
+
+================Type-char-Emoji-IMAP-and-SMTP Test finished===============
+
+====current path is:Type-char-Emoji-IMAP-and-SMTP================
+====running logic-messagesend-IMAP-append-7bit ========
+====running logic-messagesend-IMAP-append-8bit ========
+====running logic-messagesend-IMAP-append-base64 ========
+====running logic-messagesend-IMAP-append-quoted-printable ========
+====running logic-messagesend-SMTP-7bit ========
+====running logic-messagesend-SMTP-8bit ========
+====running logic-messagesend-SMTP-base64 ========
+====running logic-messagesend-SMTP-quoted-printable ========
+================Type-char-Emoji-IMAP-and-SMTP Test finished===============
+====current path is:Type-char-Emoji-IMAP-and-SMTP====================current path is:Type-char-Emoji-IMAP-and-SMTP================
+====running logic-messagesend-IMAP-append-7bit ============running logic-messagesend-IMAP-append-7bit ========
+====running logic-messagesend-IMAP-append-8bit ============running logic-messagesend-IMAP-append-8bit ========
+====running logic-messagesend-IMAP-append-base64 ========
+====running logic-messagesend-IMAP-append-quoted-printable ========
+====running logic-messagesend-SMTP-7bit ========
+====running logic-messagesend-SMTP-8bit ========
+====running logic-messagesend-SMTP-base64 ========
+====running logic-messagesend-SMTP-quoted-printable ========
+================Type-char-Emoji-IMAP-and-SMTP Test finished===============
+====current path is:Type-char-Emoji-IMAP-and-SMTP====================current path is:Type-char-Emoji-IMAP-and-SMTP================
+====running logic-messagesend-IMAP-append-7bit ============running logic-messagesend-IMAP-append-7bit ========
+====running logic-messagesend-IMAP-append-8bit ============running logic-messagesend-IMAP-append-8bit ========
+====running logic-messagesend-IMAP-append-base64 ========
+====running logic-messagesend-IMAP-append-quoted-printable ========
+====running logic-messagesend-SMTP-7bit ========
+====running logic-messagesend-SMTP-8bit ========
+====running logic-messagesend-SMTP-base64 ========
+====running logic-messagesend-SMTP-quoted-printable ========
+================Type-char-Emoji-IMAP-and-SMTP Test finished===============
+====current path is:Type-char-Emoji-IMAP-and-SMTP====================current path is:Type-char-Emoji-IMAP-and-SMTP================
+====running logic-messagesend-IMAP-append-7bit ============running logic-messagesend-IMAP-append-7bit ========
+====running logic-messagesend-IMAP-append-8bit ============running logic-messagesend-IMAP-append-8bit ========
+====running logic-messagesend-IMAP-append-base64 ========
+====running logic-messagesend-IMAP-append-quoted-printable ========
+====running logic-messagesend-SMTP-7bit ========
+====running logic-messagesend-SMTP-8bit ========
+====running logic-messagesend-SMTP-base64 ========
+====running logic-messagesend-SMTP-quoted-printable ========
+================Type-char-Emoji-IMAP-and-SMTP Test finished===============

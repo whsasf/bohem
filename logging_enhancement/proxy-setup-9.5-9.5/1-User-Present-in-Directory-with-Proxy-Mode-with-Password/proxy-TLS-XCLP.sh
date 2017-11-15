@@ -28,11 +28,11 @@ message="hi,procu2,this is procu1.good day to you !hahahahha!"
 tlsflag="SslHandshakeSucceeded"
 
 #target# used to judge if FEP logs log correct "frpmhost:fromport"
-target1="fromhost=10.6.104.238:fromport="
+target1="fromhost=10.37.2.214:fromport="
 target2="fromhost=10.49.58.127:fromport="
 
-targett1="fromhost=10.6.104.238:fromport=|fromhost=\[10.6.104.238\]:fromport="
-targett2="fromhost=10.6.104.238:|fromhost=\[10.6.104.238\]:fromport="
+targett1="fromhost=10.37.2.214:fromport=|fromhost=\[10.37.2.214\]:fromport="
+targett2="fromhost=10.37.2.214:|fromhost=\[10.37.2.214\]:fromport="
 
 
 
@@ -51,8 +51,8 @@ ssh root@${FEPHost1} "su - ${imailuser} -c \"imconfcontrol -install -key "/*/mta
 #(3)9.5-2 MTA setting:
 ssh root@${FEPHost2} "su - ${imailuser} -c \"imconfcontrol -install -key "/*/mta/requireAuthentication=true";imconfcontrol -install -key "/inbound-standardmta-direct/mta/requireAuthentication=true";imconfcontrol -install -key "/*/mta/relaySourcePolicy=allowAll";imconfcontrol -install -key "/inbound-standardmta-direct/mta/relaySourcePolicy=allowAll";imconfcontrol -install -key "/*/mxos/defaultPasswordStoreType=clear"\""
 #(3-2) 9.5-2 enable xclp
-ssh root@${FEPHost1} "su - ${imailuser} -c \"imconfcontrol -install -key "/*/common/allowXCLP=true";imconfcontrol -install -key "/*/improxy/sendClientIp=true";imconfcontrol -install -key "/*/imapserv/allowXCLP=true";imconfcontrol -install -key "/*/imapserv/XclpAllowedIPs=10.6.104.238";imconfcontrol -install -key "/*/common/xclpAllowedIPs=10.6.104.238";imconfcontrol -install -key "/*/mta/allowXCLP=true";imconfcontrol -install -key "/*/mta/enableOutboundXCLP=true";imconfcontrol -install -key "/*/mta/outboundXCLPExpectsReply=true";imconfcontrol -install -key "/*/mta/XclpAllowedIPs=10.6.104.238";imconfcontrol -install -key "/92SITE2-inbound-standardmta-direct/mta/XclpAllowedIPs=10.6.104.238";imconfcontrol -install -key "/inbound-standardmta-direct/mta/allowXCLP=true";imconfcontrol -install -key "/inbound-standardmta-direct/mta/enableOutboundXCLP=true";imconfcontrol -install -key "/*/popserv/allowXCLP=true";imconfcontrol -install -key "/*/popserv/XclpAllowedIPs=10.6.104.238"\""
-ssh root@${FEPHost2} "su - ${imailuser} -c \"imconfcontrol -install -key "/*/common/allowXCLP=true";imconfcontrol -install -key "/*/improxy/sendClientIp=true";imconfcontrol -install -key "/*/imapserv/allowXCLP=true";imconfcontrol -install -key "/*/imapserv/XclpAllowedIPs=10.49.58.127";imconfcontrol -install -key "/*/common/xclpAllowedIPs=10.49.58.127";imconfcontrol -install -key "/*/mta/allowXCLP=true";imconfcontrol -install -key "/*/mta/enableOutboundXCLP=true";imconfcontrol -install -key "/*/mta/outboundXCLPExpectsReply=true";imconfcontrol -install -key "/*/mta/XclpAllowedIPs=10.49.58.127";imconfcontrol -install -key "/92SITE2-inbound-standardmta-direct/mta/XclpAllowedIPs=10.49.58.127";imconfcontrol -install -key "/inbound-standardmta-direct/mta/allowXCLP=true";imconfcontrol -install -key "/inbound-standardmta-direct/mta/enableOutboundXCLP=true";imconfcontrol -install -key "/*/popserv/allowXCLP=true";imconfcontrol -install -key "/*/popserv/XclpAllowedIPs=10.49.58.127"\""
+ssh root@${FEPHost1} "su - ${imailuser} -c \"imconfcontrol -install -key "/*/common/allowXCLP=true";imconfcontrol -install -key "/*/improxy/sendClientIp=true";imconfcontrol -install -key "/*/imapserv/allowXCLP=true";imconfcontrol -install -key "/*/imapserv/XclpAllowedIPs=10.37.2.214";imconfcontrol -install -key "/*/common/xclpAllowedIPs=10.37.2.214";imconfcontrol -install -key "/*/mta/allowXCLP=true";imconfcontrol -install -key "/*/mta/enableOutboundXCLP=true";imconfcontrol -install -key "/*/mta/outboundXCLPExpectsReply=true";imconfcontrol -install -key "/*/mta/XclpAllowedIPs=10.37.2.214";imconfcontrol -install -key "/95SITE-inbound-standardmta-direct/mta/XclpAllowedIPs=10.37.2.214";imconfcontrol -install -key "/inbound-standardmta-direct/mta/allowXCLP=true";imconfcontrol -install -key "/inbound-standardmta-direct/mta/enableOutboundXCLP=true";imconfcontrol -install -key "/*/popserv/allowXCLP=true";imconfcontrol -install -key "/*/popserv/XclpAllowedIPs=10.37.2.214"\""
+ssh root@${FEPHost2} "su - ${imailuser} -c \"imconfcontrol -install -key "/*/common/allowXCLP=true";imconfcontrol -install -key "/*/improxy/sendClientIp=true";imconfcontrol -install -key "/*/imapserv/allowXCLP=true";imconfcontrol -install -key "/*/imapserv/XclpAllowedIPs=10.49.58.127";imconfcontrol -install -key "/*/common/xclpAllowedIPs=10.49.58.127";imconfcontrol -install -key "/*/mta/allowXCLP=true";imconfcontrol -install -key "/*/mta/enableOutboundXCLP=true";imconfcontrol -install -key "/*/mta/outboundXCLPExpectsReply=true";imconfcontrol -install -key "/*/mta/XclpAllowedIPs=10.49.58.127";imconfcontrol -install -key "/95SITE-inbound-standardmta-direct/mta/XclpAllowedIPs=10.49.58.127";imconfcontrol -install -key "/inbound-standardmta-direct/mta/allowXCLP=true";imconfcontrol -install -key "/inbound-standardmta-direct/mta/enableOutboundXCLP=true";imconfcontrol -install -key "/*/popserv/allowXCLP=true";imconfcontrol -install -key "/*/popserv/XclpAllowedIPs=10.49.58.127"\""
 
 #（3-3） restart FEPs
 ssh root@${FEPHost1} "su - ${imailuser} -c \"/opt/imail2/lib/imservctrl killStart\""
@@ -97,11 +97,11 @@ ssh root@${IMAPHost2}  			 'cat /dev/null > /opt/imail2/log/imapserv.log'
 
 #Doing IMAP operations
 exec 3<>/dev/tcp/$IMAPHost1/$IMAPPort1
-echo -en "a xclp 10.6.104.238\r\n" >&3
+echo -en "a xclp 10.37.2.214\r\n" >&3
 sleep 5
 echo -en "a login $loginuser1 p\r\n" >&3
 sleep 10
-#echo -en "xclp 10.6.104.238\r\n" >&3
+#echo -en "xclp 10.37.2.214\r\n" >&3
 echo -en "a select xxx\r\n" >&3
 echo -en "a select inbox\r\n" >&3
 echo -en "a fetch 2 rfc822\r\n" >&3
@@ -112,8 +112,8 @@ exec 3>&-
 cat imap-temp.log
 
 #Now gether imap logs from MX9.5-1 and MX9.5-2
-ssh root@$IMAPHost1  'cat /opt/imail2/log/imapserv.log' > imapserv1.log
-ssh root@$IMAPHost2  'cat /opt/imail2/log/imapserv.log' > imapserv2.log
+ssh root@$IMAPHost1  'cat /opt/imail2/log/imapserv.log|grep -v "MsMssFailover"|grep -v "RmeInvalidCOSAttribute"|grep -v "ConfNonStandardPort"' > imapserv1.log
+ssh root@$IMAPHost2  'cat /opt/imail2/log/imapserv.log|grep -v "MsMssFailover"|grep -v "RmeInvalidCOSAttribute"|grep -v "ConfNonStandardPort"' > imapserv2.log
 
 #Prepare the summary-imap.log
 echo -e  "The imap operations logs telneting to MX9.5-1:\n\n" >summary-imap.log
@@ -132,10 +132,10 @@ cat imapserv2.log >>summary-imap.log
 c1=`grep $target1 imapserv1.log|wc -l`
 c2=`grep $target1 imapserv2.log|wc -l`
 let cc1=c1+c2
-
+echo cc1=$cc1
 #tls flag detect
 tlsflagct=`grep $tlsflag imapserv2.log|wc -l`
-if (( $cc1 == 16 )) && (( $tlsflagct == 1 ))
+if (( $cc1 == 12 )) && (( $tlsflagct == 1 ))
 then
   echo -ne "\n\033[32m#####Logging enhancement for IMAP proxy is ok!!##### \033[0m\n\n"
   echo -ne "\n\033[32m#####Logging enhancement for IMAP proxy is ok!!##### \033[0m\n\n" >>summary-imap.log
@@ -160,11 +160,11 @@ ssh root@${POPHost2}  'cat /dev/null > /opt/imail2/log/popserv.log'
 #Doing POP operations
 
 exec 3<>/dev/tcp/$POPHost1/$POPPort1
-echo -en "xclp 10.6.104.238\r\n" >&3
+echo -en "xclp 10.37.2.214\r\n" >&3
 echo -en "user $loginuser1\r\n" >&3
 sleep 10
 echo -en "pass p\r\n" >&3
-#echo -en "xclp 10.6.104.238\r\n" >&3
+#echo -en "xclp 10.37.2.214\r\n" >&3
 echo -en "list\r\n" >&3
 echo -en "retr 2\r\n" >&3
 echo -en "retr 3\r\n" >&3
@@ -175,8 +175,8 @@ exec 3>&-
 cat pop-temp.log
 
 #Now gether pop logs from MX9.5-1 and MX9.5-2
-ssh root@$POPHost1  'cat /opt/imail2/log/popserv.log' > popserv1.log
-ssh root@$POPHost2  'cat /opt/imail2/log/popserv.log' > popserv2.log
+ssh root@$POPHost1  'cat /opt/imail2/log/popserv.log|grep -v "MsMssFailover"|grep -v "RmeInvalidCOSAttribute"|grep -v "ConfNonStandardPort"' > popserv1.log
+ssh root@$POPHost2  'cat /opt/imail2/log/popserv.log|grep -v "MsMssFailover"|grep -v "RmeInvalidCOSAttribute"|grep -v "ConfNonStandardPort"' > popserv2.log
 
 #Prepare the summary-pop.log
 echo -e  "The pop operations logs telneting to MX9.5-1:\n\n" >summary-pop.log
@@ -195,9 +195,9 @@ cat popserv2.log >>summary-pop.log
 c1=`grep $target1 popserv1.log|wc -l`
 c2=`grep $target1 popserv2.log|wc -l`
 let cc1=c1+c2
-
+echo cc1=$cc1
 tlsflagct=`grep $tlsflag popserv2.log|wc -l`
-if (( $cc1 == 6 )) && (( $tlsflagct == 1 ))
+if (( $cc1 == 5 )) && (( $tlsflagct == 1 ))
 then
   echo -ne "\n\033[32m#####Logging enhancement for POP proxy is ok!!##### \033[0m\n\n"
   echo -ne "\n\033[32m#####Logging enhancement for POP proxy is ok!!##### \033[0m\n\n" >>summary-pop.log
@@ -228,7 +228,7 @@ exec 3<>/dev/tcp/$SMTPHost1/$SMTPPort1
 echo -en "auth login\r\n" >&3
 echo -en "cHJvY3UxQG9wZW53YXZlLmNvbQ==\r\n" >&3
 echo -en "cA==\r\n" >&3
-echo -en "xclp 10.6.104.238\r\n" >&3
+echo -en "xclp 10.37.2.214\r\n" >&3
 echo -en "mail from:$wrongfrom\r\n" >&3
 echo -en "mail from:$correctfrom\r\n" >&3
 echo -en "rcpt to:$rcptto\r\n" >&3
@@ -242,8 +242,8 @@ exec 3>&-
 cat smtp-temp.log
 
 #Now gether smtp logs from MX9.5-1 and MX9.5-2
-ssh root@$SMTPHost1  'cat /opt/imail2/log/mta.log' > mta1.log
-ssh root@$SMTPHost2  'cat /opt/imail2/log/mta.log' > mta2.log
+ssh root@$SMTPHost1  'cat /opt/imail2/log/mta.log|grep -v "MsMssFailover"|grep -v "RmeInvalidCOSAttribute"|grep -v "ConfNonStandardPort"' > mta1.log
+ssh root@$SMTPHost2  'cat /opt/imail2/log/mta.log|grep -v "MsMssFailover"|grep -v "RmeInvalidCOSAttribute"|grep -v "ConfNonStandardPort"' > mta2.log
 
 #Prepare the summary-smtp.log
 echo -e  "The smtp operations logs telneting to MX9.5-1:\n\n" >summary-smtp.log
@@ -261,6 +261,7 @@ cat mta2.log >>summary-smtp.log
 
 #c1=`grep -E "$targett1" mta1.log|wc -l`
 c2=`grep -E "$targett1" mta2.log|wc -l`
+echo c2=$c2
 #let cc1=c1+c2
 tlsflagct=`grep $tlsflag mta2.log|wc -l`
 if (( $c2 == 11 )) && (( $tlsflagct == 1 ))
@@ -294,8 +295,8 @@ ssh root@${FEPHost1} "su - ${imailuser} -c \"imconfcontrol -install -key "/*/mta
 #(3)9.5-2 MTA setting:
 ssh root@${FEPHost2} "su - ${imailuser} -c \"imconfcontrol -install -key "/*/mta/requireAuthentication";imconfcontrol -install -key "/inbound-standardmta-direct/mta/requireAuthentication";imconfcontrol -install -key "/*/mta/relaySourcePolicy= ";imconfcontrol -install -key "/inbound-standardmta-direct/mta/relaySourcePolicy= ";imconfcontrol -install -key "/*/mxos/defaultPasswordStoreType=sha512"\""
 #(3-2)9.5-2 disable XCLP
-ssh root@${FEPHost1} "su - ${imailuser} -c \"imconfcontrol -install -key "/*/common/allowXCLP";imconfcontrol -install -key "/*/improxy/sendClientIp";imconfcontrol -install -key "/*/imapserv/allowXCLP";imconfcontrol -install -key "/*/imapserv/XclpAllowedIPs= ";imconfcontrol -install -key "/*/mta/allowXCLP";imconfcontrol -install -key "/*/mta/enableOutboundXCLP";imconfcontrol -install -key "/*/mta/outboundXCLPExpectsReply";imconfcontrol -install -key "/*/mta/XclpAllowedIPs= ";imconfcontrol -install -key "/92SITE2-inbound-standardmta-direct/mta/XclpAllowedIPs= ";imconfcontrol -install -key "/inbound-standardmta-direct/mta/allowXCLP";imconfcontrol -install -key "/inbound-standardmta-direct/mta/enableOutboundXCLP";imconfcontrol -install -key "/*/popserv/allowXCLP";imconfcontrol -install -key "/*/popserv/XclpAllowedIPs= ";imconfcontrol -install -key "/*/common/xclpAllowedIPs= "\""
-ssh root@${FEPHost2} "su - ${imailuser} -c \"imconfcontrol -install -key "/*/common/allowXCLP";imconfcontrol -install -key "/*/improxy/sendClientIp";imconfcontrol -install -key "/*/imapserv/allowXCLP";imconfcontrol -install -key "/*/imapserv/XclpAllowedIPs= ";imconfcontrol -install -key "/*/mta/allowXCLP";imconfcontrol -install -key "/*/mta/enableOutboundXCLP";imconfcontrol -install -key "/*/mta/outboundXCLPExpectsReply";imconfcontrol -install -key "/*/mta/XclpAllowedIPs= ";imconfcontrol -install -key "/92SITE2-inbound-standardmta-direct/mta/XclpAllowedIPs= ";imconfcontrol -install -key "/inbound-standardmta-direct/mta/allowXCLP";imconfcontrol -install -key "/inbound-standardmta-direct/mta/enableOutboundXCLP";imconfcontrol -install -key "/*/popserv/allowXCLP";imconfcontrol -install -key "/*/popserv/XclpAllowedIPs= ";imconfcontrol -install -key "/*/common/xclpAllowedIPs= "\""
+ssh root@${FEPHost1} "su - ${imailuser} -c \"imconfcontrol -install -key "/*/common/allowXCLP";imconfcontrol -install -key "/*/improxy/sendClientIp";imconfcontrol -install -key "/*/imapserv/allowXCLP";imconfcontrol -install -key "/*/imapserv/XclpAllowedIPs= ";imconfcontrol -install -key "/*/mta/allowXCLP";imconfcontrol -install -key "/*/mta/enableOutboundXCLP";imconfcontrol -install -key "/*/mta/outboundXCLPExpectsReply";imconfcontrol -install -key "/*/mta/XclpAllowedIPs= ";imconfcontrol -install -key "/95SITE-inbound-standardmta-direct/mta/XclpAllowedIPs= ";imconfcontrol -install -key "/inbound-standardmta-direct/mta/allowXCLP";imconfcontrol -install -key "/inbound-standardmta-direct/mta/enableOutboundXCLP";imconfcontrol -install -key "/*/popserv/allowXCLP";imconfcontrol -install -key "/*/popserv/XclpAllowedIPs= ";imconfcontrol -install -key "/*/common/xclpAllowedIPs= "\""
+ssh root@${FEPHost2} "su - ${imailuser} -c \"imconfcontrol -install -key "/*/common/allowXCLP";imconfcontrol -install -key "/*/improxy/sendClientIp";imconfcontrol -install -key "/*/imapserv/allowXCLP";imconfcontrol -install -key "/*/imapserv/XclpAllowedIPs= ";imconfcontrol -install -key "/*/mta/allowXCLP";imconfcontrol -install -key "/*/mta/enableOutboundXCLP";imconfcontrol -install -key "/*/mta/outboundXCLPExpectsReply";imconfcontrol -install -key "/*/mta/XclpAllowedIPs= ";imconfcontrol -install -key "/95SITE-inbound-standardmta-direct/mta/XclpAllowedIPs= ";imconfcontrol -install -key "/inbound-standardmta-direct/mta/allowXCLP";imconfcontrol -install -key "/inbound-standardmta-direct/mta/enableOutboundXCLP";imconfcontrol -install -key "/*/popserv/allowXCLP";imconfcontrol -install -key "/*/popserv/XclpAllowedIPs= ";imconfcontrol -install -key "/*/common/xclpAllowedIPs= "\""
 
 #（3-3） restart FEPs
 ssh root@${FEPHost1} "su - ${imailuser} -c \"/opt/imail2/lib/imservctrl killStart\""

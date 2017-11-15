@@ -1,0 +1,79 @@
+Delete messsages successfully.
+
+
+Message body is:
+
+
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!Sending message!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+
+ sending message:
+
+
+220 mx-172-26-202-87.openwave.com ESMTP server (InterMail vM.9.05.00.00 201-2473-137-108) ready Sat, 18 Feb 2017 01:44:05 -0800
+250 Sender <xx2> Ok
+250 Recipient <xx1> Ok
+354 Ok Send data ending with <CRLF>.<CRLF>
+250 Message received: 20170218094405.BGW23163.mx-172-26-202-87.openwave.com@[10.13.8.221]
+221 mx-172-26-202-87.openwave.com ESMTP server closing connection
+
+
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!fetching first line data!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+* OK IMAP4 server (InterMail vM.9.05.00.00 201-2473-137-108) ready Sat, 18 Feb 2017 01:44:06 -0800 (PST)
+a OK LOGIN completed
+* 1 EXISTS
+* OK [UNSEEN 1] First unseen message
+* OK [UIDVALIDITY 1487128905] UIDs valid
+* OK [UIDNEXT 2971] Predicted next UID
+* FLAGS (\Answered \Flagged \Deleted \Draft \Seen)
+* OK [PERMANENTFLAGS (\* \Answered \Flagged \Deleted \Draft \Seen)] Permanent flags
+* 1 RECENT
+a OK [READ-WRITE] SELECT completed
+* 1 FETCH (RFC822 {1018}
+Return-Path: <xx2@openwave.com>
+Received: from [10.13.8.221] by mx-172-26-202-87.openwave.com
+          (InterMail vM.9.05.00.00 201-2473-137-108) with SMTP
+          id <20170218094405.BGW23163.mx-172-26-202-87.openwave.com@[10.13.8.221]>
+          for <xx1@openwave.com>; Sat, 18 Feb 2017 01:44:05 -0800
+Return-Path: <xx2@openwave.com>
+Received: from [10.13.8.221] by mx-172-26-202-87.openwave.com
+          (InterMail vM.9.05.00.00 201-2473-137-108) with ESMTP
+          id <20170218092432.BGS23163.mx-172-26-202-87.openwave.com@[10.13.8.221]>
+          for <xx1@openwave.com>; Sat, 18 Feb 2017 01:24:32 -0800
+From: xx2 <xx2@openwave.com>
+To: xx1@openwave.com
+Subject: symbols with texts in message body
+Message-ID: <73f08a4e-8851-9776-eb51-e04dad76336e@openwave.com>
+Date: Sat, 18 Feb 2017 17:24:31 +0800
+User-Agent: MX
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8; format=flowed
+Content-Transfer-Encoding: 8bit
+
+¢¤€©®µ¶¼¾¦¨¡×¿÷»º±²²¥§ª¬¸
+中国人
+)
+ FLAGS (\Recent \Seen))
+a OK FETCH completed
+* 1 FETCH (FIRSTLINE ("¢¤€©®µ¶¼¾¦¨¡×¿÷»º±²²¥§ª¬¸ 中国人 ) "))
+a OK FETCH completed
+* BYE IMAP4 server terminating connection
+a OK LOGOUT completed
+
+
+
+[default@KeyspaceMetadata] get cf_folder['353038343036333135323632313531383036365fe1280902f32d11e6b9386b782020d67e'];
+=> (super_column=c972557c-f5be-11e6-a0d8-5e109298b282,
+     (name=31, value=392e300363393732353537632d663562652d313165362d613064382d356531303932393862323832033003313438373431313034350331303138033003033303300330030373796d626f6c73207769746820746578747320696e206d65737361676520626f647903787832203c787832406f70656e776176652e636f6d3e033003787831406f70656e776176652e636f6d0303323937300330033c37336630386134652d383835312d393737362d656235312d653034646164373633333665406f70656e776176652e636f6d3e033134383734303938373103030303, timestamp=1487411045382273)
+     (name=3138, value=c2a2c2a4e282acc2a9c2aec2b5c2b6c2bcc2bec2a6c2a8c2a1c397c2bfc3b7c2bbc2bac2b1c2b2c2b2c2a5c2a7c2aac2acc2b820e4b8ade59bbde4baba20292000, timestamp=1487411045382273)
+     (name=32, value=46, timestamp=1487411046452763)
+     (name=33, value=54, timestamp=1487411046489695)
+     (name=35, value=31343837343131303436, timestamp=1487411046485683)
+     (name=36, value=46, timestamp=1487411046489695)
+     (name=37, value=46, timestamp=1487411046489695)
+     (name=38, value=46, timestamp=1487411046489695)
+     (name=39, value=46, timestamp=1487411046489695))
+Returned 1 results.
+Elapsed time: 22 msec(s).

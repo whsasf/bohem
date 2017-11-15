@@ -1,0 +1,10 @@
+، ويمكن تح
+Nobody!
+いくつにな
+我们是中国人，
+
+#include <stdio.h>
+main()
+{
+printf ("Hello,world");
+}

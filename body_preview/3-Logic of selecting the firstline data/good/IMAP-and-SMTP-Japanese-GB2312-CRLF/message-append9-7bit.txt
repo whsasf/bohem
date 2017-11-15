@@ -1,0 +1,8 @@
+from:xx2@openwave.com
+to:xx1@openwave.com
+subject:testemail-Japanese-GB2312-CRLF-7bit
+MIME-Version: 1.0
+Content-Type: text/plain; charset=gb2312
+Content-Transfer-Encoding: 7bit
+
+„‡¤òÎÕ¤é¤Ê¤±¤ì¤Ð¡¢¤ª¤Þ¤¨¤òÊØ¤ì¤Ê¤¤¡£„‡¤òÎÕ¤Ã¤¿¤Þ¤Þ¤Ç¤Ï¡¢¤ª¤Þ¤¨¤ò±§¤­¤·¤á¤é¤ì¤Ê¤¤

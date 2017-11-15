@@ -1,0 +1,104 @@
+Delete messsages successfully.
+
+
+Message body is:
+
+
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!Sending message!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+
+ sending message:
+
+
+220 mx-172-26-202-87.openwave.com ESMTP server (InterMail vM.9.05.00.00 201-2473-137-108) ready Sat, 18 Feb 2017 06:54:50 -0800
+250 Sender <xx2> Ok
+250 Recipient <xx1> Ok
+354 Ok Send data ending with <CRLF>.<CRLF>
+250 Message received: 20170218145450.BHJ23163.mx-172-26-202-87.openwave.com@[10.13.8.221]
+221 mx-172-26-202-87.openwave.com ESMTP server closing connection
+
+
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!fetching first line data!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+* OK IMAP4 server (InterMail vM.9.05.00.00 201-2473-137-108) ready Sat, 18 Feb 2017 06:54:51 -0800 (PST)
+a OK LOGIN completed
+* 1 EXISTS
+* OK [UNSEEN 1] First unseen message
+* OK [UIDVALIDITY 1487128905] UIDs valid
+* OK [UIDNEXT 2996] Predicted next UID
+* FLAGS (\Answered \Flagged \Deleted \Draft \Seen)
+* OK [PERMANENTFLAGS (\* \Answered \Flagged \Deleted \Draft \Seen)] Permanent flags
+* 1 RECENT
+a OK [READ-WRITE] SELECT completed
+* 1 FETCH (RFC822 {2513}
+Return-Path: <xx2@openwave.com>
+Received: from [10.13.8.221] by mx-172-26-202-87.openwave.com
+          (InterMail vM.9.05.00.00 201-2473-137-108) with SMTP
+          id <20170218145450.BHJ23163.mx-172-26-202-87.openwave.com@[10.13.8.221]>
+          for <xx1@openwave.com>; Sat, 18 Feb 2017 06:54:50 -0800
+Return-Path: <xx2@openwave.com>
+Received: from [10.13.8.221] by mx-172-26-202-87.openwave.com
+          (InterMail vM.9.05.00.00 201-2473-137-108) with ESMTP
+          id <20170218144816.BHI23163.mx-172-26-202-87.openwave.com@[10.13.8.221]>
+          for <xx1@openwave.com>; Sat, 18 Feb 2017 06:48:16 -0800
+To: xx1@openwave.com
+From: xx2 <xx2@openwave.com>
+Subject: pure txt attachment in message body
+Message-ID: <8010cfad-9e92-5824-a4b5-f79c8cea4484@openwave.com>
+Date: Sat, 18 Feb 2017 22:48:13 +0800
+User-Agent: MX
+MIME-Version: 1.0
+Content-Type: multipart/mixed;
+ boundary="------------3AE8C5686D9CD2C784088B15"
+
+This is a multi-part message in MIME format.
+--------------3AE8C5686D9CD2C784088B15
+Content-Type: text/plain; charset=utf-8; format=flowed
+Content-Transfer-Encoding: 7bit
+
+--------------3AE8C5686D9CD2C784088B15
+Content-Type: text/plain; charset=UTF-8;
+ name="after python.txt"
+Content-Transfer-Encoding: base64
+Content-Disposition: attachment;
+ filename="after python.txt"
+
+W3Jvb3RAaG9zdC0xNzItMjYtMjAyLTIzNCBsb2dzXSMgcHl0aG9uICByZXBvcnQucHkgCjEu
+MC4wMSkgUG9zaXRpdmU6Q3JlYXRlIGhvaCAgZ3JvdXAgYWRtaW4gbWFpbGJveCAKMS4wLjA0
+KSBQb3NpdGl2ZTpEZWxldGUgIGhvaCBmYW1pbHkgbWFpbGJveCAKMS4wMS4wMSkgUG9zaXRp
+dmU6Q3JlYXRlIGhvaCAgZ3JvdXAgYWRtaW4gbWFpbGJveCB3aXRoIGdyb3VwTmFtZT0ic3Bh
+cmsuY28ubnoiIAoxLjAxLjA0KSBQb3NpdGl2ZTpEZWxldGUgIGZhbWlseSBtYWlsYm94IApj
+bGVhbnVwKSBQb3NpdGl2ZTpkZWxldGUgY29udGFjdCxtYWlsYm94LGNvcyAKCgoqKioqKioq
+KioqKioqKioqTWFpbGJveEhvaC54bHN4KioqKioqKioqKioqKioqKgoqKioqKiogRmFpbGVk
+IGNhc2UgY291bnQgaW4gdGhlIHN1aXRlOiA2ICoqKioqKgoKMi4wMS4wMSkgTmVnYXRpdmU6
+IEdldCBEYXRhc3RvcmUgU2VydmljZSBrZXkgd2l0aCBJbnZhbGlkIHN0cmluZyB2YWx1ZSBm
+b3IgJ2tleTEnPXZhbHVlIAoKCioqKioqKioqKioqKioqKipEYXRhU3RvcmUueGxzeCoqKioq
+KioqKioqKioqKioKKioqKioqIEZhaWxlZCBjYXNlIGNvdW50IGluIHRoZSBzdWl0ZTogMSAq
+KioqKioKCioqKioqKioqKioqKioqKioqKioqRmVhdHVyZSBMaXN0IERldGFpbHMqKioqKioq
+KioqKioqKioqKioqKioqCkRvbWFpbiAxNDIgMApNYWlsYm94IDM2NDcgNwpDb3MgMTUwMCAw
+CkZvbGRlciAxNzMgMApNZXNzYWdlIDAgMApOb3RpZnkgOTYgMApBZGRyZXNzIEJvb2sgMCAw
+ClRhc2tzIDAgMAoqKioqKioqKioqKioqKioqKioqKkZlYXR1cmUgTGlzdCBEZXRhaWxzKioq
+KioqKioqKioqKioqKioqKioqKgo=
+--------------3AE8C5686D9CD2C784088B15--
+ FLAGS (\Recent \Seen))
+a OK FETCH completed
+* 1 FETCH (FIRSTLINE (""))
+a OK FETCH completed
+* BYE IMAP4 server terminating connection
+a OK LOGOUT completed
+
+
+[default@KeyspaceMetadata] get cf_folder['353038343036333135323632313531383036365fe1280902f32d11e6b9386b782020d67e'];
+=> (super_column=330c2a5a-f5ea-11e6-97a0-89f432fd5c5a,
+     (name=31, value=392e300333333063326135612d663565612d313165362d393761302d38396634333266643563356103300331343837343239363930033235313303300303330330033003037075726520747874206174746163686d656e7420696e206d65737361676520626f647903787832203c787832406f70656e776176652e636f6d3e033103787831406f70656e776176652e636f6d0303323939350330033c38303130636661642d396539322d353832342d613462352d663739633863656134343834406f70656e776176652e636f6d3e033134383734323932393303030303, timestamp=1487429690913746)
+     (name=3138, value=00, timestamp=1487429690913746)
+     (name=32, value=46, timestamp=1487429692278167)
+     (name=33, value=54, timestamp=1487429692321382)
+     (name=35, value=31343837343239363932, timestamp=1487429692317775)
+     (name=36, value=46, timestamp=1487429692321382)
+     (name=37, value=46, timestamp=1487429692321382)
+     (name=38, value=46, timestamp=1487429692321382)
+     (name=39, value=46, timestamp=1487429692321382))
+Returned 1 results.
+Elapsed time: 21 msec(s).

@@ -1,0 +1,38 @@
+*Release Name*
+	*PAB 9.2.113***Patch***
+*
+*Release Date*
+	02/10/2017
+*Sign Off Ticket*
+	https://jira.synchronoss.net:8443/jira/browse/PAB-289
+*Packages on FTP*
+=09
+
+ftp> pwd
+257 "/release/pickup/PAB/PAB9.2.113"
+ftp> ls
+227 Entering Passive Mode (10,16,230,35,141,57)
+150 Here comes the directory listing.
+-rw-r--r--    1 31087    300 82280577 Feb 09  2017 PAB-9.2.113-escrow.tar.gz
+-rw-r--r--    1 31087    300 1536478 Feb 09  2017=20
+PAB-9.2.113-linux-build.log
+-rw-r--r--    1 31087    300 56788729 Feb 09  2017 PAB-9.2.113-linux.tar.gz
+-rw-r--r--    1 31087    300 1605890 Feb 09  2017=20
+PAB-9.2.113-linux64-build.log
+-rw-r--r--    1 31087    300 54059843 Feb 09  2017=20
+PAB-9.2.113-linux64.tar.gz
+-rw-r--r--    1 31087    300 33917416 Feb 09  2017=20
+owm-pab-9.2.113-0.el6.x86_64.rpm
+226 Directory send OK
+
+*QC Summary link*
+	https://jira.synchronoss.net:8443/jira/secure/attachment/539351/PAB-9.2.11=
+3_Functional_TestReport.xlsx
+*Documents*
+	Release Notes
+*Customers*
+	All
+*Platform*
+	Linux
+*Release Type*
+	Patch=

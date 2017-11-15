@@ -1,0 +1,8 @@
+from:xx2@openwave.com
+to:xx1@openwave.com
+subject:random message
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8; format=flowed
+Content-Transfer-Encoding: 8bit
+
+cocked sublimed aspirin's subscribes epilepsy Aurelio joints Wheeling's shilled Alaskans reoccupies Judas suntans Gibbon loganberries

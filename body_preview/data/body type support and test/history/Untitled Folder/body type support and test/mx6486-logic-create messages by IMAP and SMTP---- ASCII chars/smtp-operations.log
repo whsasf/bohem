@@ -1,0 +1,350 @@
+
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!Sending message1!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+
+\ sending message1:
+
+
+220 mx-172-26-202-87.openwave.com ESMTP server (InterMail vM.9.05.00.00 201-2473-137-108) ready Mon, 13 Feb 2017 23:56:01 -0800
+250 Sender <xx2> Ok
+250 Recipient <xx6> Ok
+354 Ok Send data ending with <CRLF>.<CRLF>
+250 Message received: 20170214075601.CCJ4556.mx-172-26-202-87.openwave.com@[10.37.2.214]
+221 mx-172-26-202-87.openwave.com ESMTP server closing connection
+
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!Sending message2!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+
+\ sending message2:
+
+
+220 mx-172-26-202-87.openwave.com ESMTP server (InterMail vM.9.05.00.00 201-2473-137-108) ready Mon, 13 Feb 2017 23:56:02 -0800
+250 Sender <xx2> Ok
+250 Recipient <xx6> Ok
+354 Ok Send data ending with <CRLF>.<CRLF>
+250 Message received: 20170214075602.CCK4556.mx-172-26-202-87.openwave.com@[10.37.2.214]
+221 mx-172-26-202-87.openwave.com ESMTP server closing connection
+
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!Sending message3!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+
+\ sending message3:
+
+
+220 mx-172-26-202-87.openwave.com ESMTP server (InterMail vM.9.05.00.00 201-2473-137-108) ready Mon, 13 Feb 2017 23:56:02 -0800
+250 Sender <xx2> Ok
+250 Recipient <xx6> Ok
+354 Ok Send data ending with <CRLF>.<CRLF>
+250 Message received: 20170214075603.CCL4556.mx-172-26-202-87.openwave.com@[10.37.2.214]
+221 mx-172-26-202-87.openwave.com ESMTP server closing connection
+
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!Sending message4!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+
+\ sending message4:
+
+
+220 mx-172-26-202-87.openwave.com ESMTP server (InterMail vM.9.05.00.00 201-2473-137-108) ready Mon, 13 Feb 2017 23:56:03 -0800
+250 Sender <xx2> Ok
+250 Recipient <xx6> Ok
+354 Ok Send data ending with <CRLF>.<CRLF>
+250 Message received: 20170214075603.CCM4556.mx-172-26-202-87.openwave.com@[10.37.2.214]
+221 mx-172-26-202-87.openwave.com ESMTP server closing connection
+
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!Sending message5!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+
+\ sending message5:
+
+
+220 mx-172-26-202-87.openwave.com ESMTP server (InterMail vM.9.05.00.00 201-2473-137-108) ready Mon, 13 Feb 2017 23:56:03 -0800
+250 Sender <xx2> Ok
+250 Recipient <xx6> Ok
+354 Ok Send data ending with <CRLF>.<CRLF>
+250 Message received: 20170214075604.CCN4556.mx-172-26-202-87.openwave.com@[10.37.2.214]
+221 mx-172-26-202-87.openwave.com ESMTP server closing connection
+
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!Sending message6!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+
+\ sending message6:
+
+
+220 mx-172-26-202-87.openwave.com ESMTP server (InterMail vM.9.05.00.00 201-2473-137-108) ready Mon, 13 Feb 2017 23:56:04 -0800
+250 Sender <xx2> Ok
+250 Recipient <xx6> Ok
+354 Ok Send data ending with <CRLF>.<CRLF>
+250 Message received: 20170214075604.CCO4556.mx-172-26-202-87.openwave.com@[10.37.2.214]
+221 mx-172-26-202-87.openwave.com ESMTP server closing connection
+
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!Sending message7!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+
+\ sending message7:
+
+
+220 mx-172-26-202-87.openwave.com ESMTP server (InterMail vM.9.05.00.00 201-2473-137-108) ready Mon, 13 Feb 2017 23:56:05 -0800
+250 Sender <xx2> Ok
+250 Recipient <xx6> Ok
+354 Ok Send data ending with <CRLF>.<CRLF>
+250 Message received: 20170214075605.CCP4556.mx-172-26-202-87.openwave.com@[10.37.2.214]
+221 mx-172-26-202-87.openwave.com ESMTP server closing connection
+
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!Sending message8!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+
+\ sending message8:
+
+
+220 mx-172-26-202-87.openwave.com ESMTP server (InterMail vM.9.05.00.00 201-2473-137-108) ready Mon, 13 Feb 2017 23:56:05 -0800
+250 Sender <xx2> Ok
+250 Recipient <xx6> Ok
+354 Ok Send data ending with <CRLF>.<CRLF>
+250 Message received: 20170214075605.CCQ4556.mx-172-26-202-87.openwave.com@[10.37.2.214]
+221 mx-172-26-202-87.openwave.com ESMTP server closing connection
+
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!Sending message9!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+
+\ sending message9:
+
+
+220 mx-172-26-202-87.openwave.com ESMTP server (InterMail vM.9.05.00.00 201-2473-137-108) ready Mon, 13 Feb 2017 23:56:06 -0800
+250 Sender <xx2> Ok
+250 Recipient <xx6> Ok
+354 Ok Send data ending with <CRLF>.<CRLF>
+250 Message received: 20170214075606.CCR4556.mx-172-26-202-87.openwave.com@[10.37.2.214]
+221 mx-172-26-202-87.openwave.com ESMTP server closing connection
+
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!Sending message10!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+
+\ sending message10:
+
+
+220 mx-172-26-202-87.openwave.com ESMTP server (InterMail vM.9.05.00.00 201-2473-137-108) ready Mon, 13 Feb 2017 23:56:06 -0800
+250 Sender <xx2> Ok
+250 Recipient <xx6> Ok
+354 Ok Send data ending with <CRLF>.<CRLF>
+250 Message received: 20170214075607.CCS4556.mx-172-26-202-87.openwave.com@[10.37.2.214]
+221 mx-172-26-202-87.openwave.com ESMTP server closing connection
+
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!Sending message11!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+
+\ sending message11:
+
+
+220 mx-172-26-202-87.openwave.com ESMTP server (InterMail vM.9.05.00.00 201-2473-137-108) ready Mon, 13 Feb 2017 23:56:07 -0800
+250 Sender <xx2> Ok
+250 Recipient <xx6> Ok
+354 Ok Send data ending with <CRLF>.<CRLF>
+250 Message received: 20170214075607.CCT4556.mx-172-26-202-87.openwave.com@[10.37.2.214]
+221 mx-172-26-202-87.openwave.com ESMTP server closing connection
+
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!Sending message12!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+
+\ sending message12:
+
+
+220 mx-172-26-202-87.openwave.com ESMTP server (InterMail vM.9.05.00.00 201-2473-137-108) ready Mon, 13 Feb 2017 23:56:08 -0800
+250 Sender <xx2> Ok
+250 Recipient <xx6> Ok
+354 Ok Send data ending with <CRLF>.<CRLF>
+250 Message received: 20170214075608.CCU4556.mx-172-26-202-87.openwave.com@[10.37.2.214]
+221 mx-172-26-202-87.openwave.com ESMTP server closing connection
+
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!Sending message13!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+
+\ sending message13:
+
+
+220 mx-172-26-202-87.openwave.com ESMTP server (InterMail vM.9.05.00.00 201-2473-137-108) ready Mon, 13 Feb 2017 23:56:08 -0800
+250 Sender <xx2> Ok
+250 Recipient <xx6> Ok
+354 Ok Send data ending with <CRLF>.<CRLF>
+250 Message received: 20170214075608.CCV4556.mx-172-26-202-87.openwave.com@[10.37.2.214]
+221 mx-172-26-202-87.openwave.com ESMTP server closing connection
+
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!Sending message14!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+
+\ sending message14:
+
+
+220 mx-172-26-202-87.openwave.com ESMTP server (InterMail vM.9.05.00.00 201-2473-137-108) ready Mon, 13 Feb 2017 23:56:09 -0800
+250 Sender <xx2> Ok
+250 Recipient <xx6> Ok
+354 Ok Send data ending with <CRLF>.<CRLF>
+250 Message received: 20170214075609.CCW4556.mx-172-26-202-87.openwave.com@[10.37.2.214]
+221 mx-172-26-202-87.openwave.com ESMTP server closing connection
+
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!Sending message15!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+
+\ sending message15:
+
+
+220 mx-172-26-202-87.openwave.com ESMTP server (InterMail vM.9.05.00.00 201-2473-137-108) ready Mon, 13 Feb 2017 23:56:09 -0800
+250 Sender <xx2> Ok
+250 Recipient <xx6> Ok
+354 Ok Send data ending with <CRLF>.<CRLF>
+250 Message received: 20170214075610.CCX4556.mx-172-26-202-87.openwave.com@[10.37.2.214]
+221 mx-172-26-202-87.openwave.com ESMTP server closing connection
+
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!Sending message16!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+
+\ sending message16:
+
+
+220 mx-172-26-202-87.openwave.com ESMTP server (InterMail vM.9.05.00.00 201-2473-137-108) ready Mon, 13 Feb 2017 23:56:10 -0800
+250 Sender <xx2> Ok
+250 Recipient <xx6> Ok
+354 Ok Send data ending with <CRLF>.<CRLF>
+250 Message received: 20170214075610.CCY4556.mx-172-26-202-87.openwave.com@[10.37.2.214]
+221 mx-172-26-202-87.openwave.com ESMTP server closing connection
+
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!Sending message17!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+
+\ sending message17:
+
+
+220 mx-172-26-202-87.openwave.com ESMTP server (InterMail vM.9.05.00.00 201-2473-137-108) ready Mon, 13 Feb 2017 23:56:10 -0800
+250 Sender <xx2> Ok
+250 Recipient <xx6> Ok
+354 Ok Send data ending with <CRLF>.<CRLF>
+250 Message received: 20170214075611.CCZ4556.mx-172-26-202-87.openwave.com@[10.37.2.214]
+221 mx-172-26-202-87.openwave.com ESMTP server closing connection
+
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!Sending message18!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+
+\ sending message18:
+
+
+220 mx-172-26-202-87.openwave.com ESMTP server (InterMail vM.9.05.00.00 201-2473-137-108) ready Mon, 13 Feb 2017 23:56:11 -0800
+250 Sender <xx2> Ok
+250 Recipient <xx6> Ok
+354 Ok Send data ending with <CRLF>.<CRLF>
+250 Message received: 20170214075611.CDA4556.mx-172-26-202-87.openwave.com@[10.37.2.214]
+221 mx-172-26-202-87.openwave.com ESMTP server closing connection
+
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!Sending message19!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+
+\ sending message19:
+
+
+220 mx-172-26-202-87.openwave.com ESMTP server (InterMail vM.9.05.00.00 201-2473-137-108) ready Mon, 13 Feb 2017 23:56:12 -0800
+250 Sender <xx2> Ok
+250 Recipient <xx6> Ok
+354 Ok Send data ending with <CRLF>.<CRLF>
+250 Message received: 20170214075612.CDB4556.mx-172-26-202-87.openwave.com@[10.37.2.214]
+221 mx-172-26-202-87.openwave.com ESMTP server closing connection
+
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!Sending message20!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+
+\ sending message20:
+
+
+220 mx-172-26-202-87.openwave.com ESMTP server (InterMail vM.9.05.00.00 201-2473-137-108) ready Mon, 13 Feb 2017 23:56:12 -0800
+250 Sender <xx2> Ok
+250 Recipient <xx6> Ok
+354 Ok Send data ending with <CRLF>.<CRLF>
+250 Message received: 20170214075612.CDC4556.mx-172-26-202-87.openwave.com@[10.37.2.214]
+221 mx-172-26-202-87.openwave.com ESMTP server closing connection
+
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!Sending message21!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+
+\ sending message21:
+
+
+220 mx-172-26-202-87.openwave.com ESMTP server (InterMail vM.9.05.00.00 201-2473-137-108) ready Mon, 13 Feb 2017 23:56:13 -0800
+250 Sender <xx2> Ok
+250 Recipient <xx6> Ok
+354 Ok Send data ending with <CRLF>.<CRLF>
+250 Message received: 20170214075613.CDD4556.mx-172-26-202-87.openwave.com@[10.37.2.214]
+221 mx-172-26-202-87.openwave.com ESMTP server closing connection
+
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!Sending message22!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+
+\ sending message22:
+
+
+220 mx-172-26-202-87.openwave.com ESMTP server (InterMail vM.9.05.00.00 201-2473-137-108) ready Mon, 13 Feb 2017 23:56:13 -0800
+250 Sender <xx2> Ok
+250 Recipient <xx6> Ok
+354 Ok Send data ending with <CRLF>.<CRLF>
+250 Message received: 20170214075614.CDE4556.mx-172-26-202-87.openwave.com@[10.37.2.214]
+221 mx-172-26-202-87.openwave.com ESMTP server closing connection
+
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!Sending message23!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+
+\ sending message23:
+
+
+220 mx-172-26-202-87.openwave.com ESMTP server (InterMail vM.9.05.00.00 201-2473-137-108) ready Mon, 13 Feb 2017 23:56:14 -0800
+250 Sender <xx2> Ok
+250 Recipient <xx6> Ok
+354 Ok Send data ending with <CRLF>.<CRLF>
+250 Message received: 20170214075614.CDF4556.mx-172-26-202-87.openwave.com@[10.37.2.214]
+221 mx-172-26-202-87.openwave.com ESMTP server closing connection
+
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!Sending message24!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+
+\ sending message24:
+
+
+220 mx-172-26-202-87.openwave.com ESMTP server (InterMail vM.9.05.00.00 201-2473-137-108) ready Mon, 13 Feb 2017 23:56:15 -0800
+250 Sender <xx2> Ok
+250 Recipient <xx6> Ok
+354 Ok Send data ending with <CRLF>.<CRLF>
+250 Message received: 20170214075615.CDG4556.mx-172-26-202-87.openwave.com@[10.37.2.214]
+221 mx-172-26-202-87.openwave.com ESMTP server closing connection
+
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!Sending message25!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+
+\ sending message25:
+
+
+220 mx-172-26-202-87.openwave.com ESMTP server (InterMail vM.9.05.00.00 201-2473-137-108) ready Mon, 13 Feb 2017 23:56:15 -0800
+250 Sender <xx2> Ok
+250 Recipient <xx6> Ok
+354 Ok Send data ending with <CRLF>.<CRLF>
+250 Message received: 20170214075615.CDH4556.mx-172-26-202-87.openwave.com@[10.37.2.214]
+221 mx-172-26-202-87.openwave.com ESMTP server closing connection

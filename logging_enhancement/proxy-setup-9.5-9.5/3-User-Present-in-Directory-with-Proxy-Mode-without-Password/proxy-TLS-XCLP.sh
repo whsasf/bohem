@@ -50,8 +50,8 @@ ssh root@${FEPHost1} "su - ${imailuser} -c \"imconfcontrol -install -key "/*/mta
 #(3)9.5-2 MTA setting:
 ssh root@${FEPHost2} "su - ${imailuser} -c \"imconfcontrol -install -key "/*/mta/requireAuthentication=true";imconfcontrol -install -key "/inbound-standardmta-direct/mta/requireAuthentication=true";imconfcontrol -install -key "/*/mta/relaySourcePolicy=allowAll";imconfcontrol -install -key "/inbound-standardmta-direct/mta/relaySourcePolicy=allowAll";imconfcontrol -install -key "/*/mxos/defaultPasswordStoreType=clear"\""
 #(3-2) 9.5-2 enable xclp
-ssh root@${FEPHost1} "su - ${imailuser} -c \"imconfcontrol -install -key "/*/common/allowXCLP=true";imconfcontrol -install -key "/*/improxy/sendClientIp=true";imconfcontrol -install -key "/*/imapserv/allowXCLP=true";imconfcontrol -install -key "/*/imapserv/XclpAllowedIPs=10.37.2.214";imconfcontrol -install -key "/*/common/xclpAllowedIPs=10.37.2.214";imconfcontrol -install -key "/*/mta/allowXCLP=true";imconfcontrol -install -key "/*/mta/enableOutboundXCLP=true";imconfcontrol -install -key "/*/mta/outboundXCLPExpectsReply=true";imconfcontrol -install -key "/*/mta/XclpAllowedIPs=10.37.2.214";imconfcontrol -install -key "/92SITE2-inbound-standardmta-direct/mta/XclpAllowedIPs=10.37.2.214";imconfcontrol -install -key "/inbound-standardmta-direct/mta/allowXCLP=true";imconfcontrol -install -key "/inbound-standardmta-direct/mta/enableOutboundXCLP=true";imconfcontrol -install -key "/*/popserv/allowXCLP=true";imconfcontrol -install -key "/*/popserv/XclpAllowedIPs=10.37.2.214"\""
-ssh root@${FEPHost2} "su - ${imailuser} -c \"imconfcontrol -install -key "/*/common/allowXCLP=true";imconfcontrol -install -key "/*/improxy/sendClientIp=true";imconfcontrol -install -key "/*/imapserv/allowXCLP=true";imconfcontrol -install -key "/*/imapserv/XclpAllowedIPs=10.49.58.127";imconfcontrol -install -key "/*/common/xclpAllowedIPs=10.49.58.127";imconfcontrol -install -key "/*/mta/allowXCLP=true";imconfcontrol -install -key "/*/mta/enableOutboundXCLP=true";imconfcontrol -install -key "/*/mta/outboundXCLPExpectsReply=true";imconfcontrol -install -key "/*/mta/XclpAllowedIPs=10.49.58.127";imconfcontrol -install -key "/92SITE2-inbound-standardmta-direct/mta/XclpAllowedIPs=10.49.58.127";imconfcontrol -install -key "/inbound-standardmta-direct/mta/allowXCLP=true";imconfcontrol -install -key "/inbound-standardmta-direct/mta/enableOutboundXCLP=true";imconfcontrol -install -key "/*/popserv/allowXCLP=true";imconfcontrol -install -key "/*/popserv/XclpAllowedIPs=10.49.58.127"\""
+ssh root@${FEPHost1} "su - ${imailuser} -c \"imconfcontrol -install -key "/*/common/allowXCLP=true";imconfcontrol -install -key "/*/improxy/sendClientIp=true";imconfcontrol -install -key "/*/imapserv/allowXCLP=true";imconfcontrol -install -key "/*/imapserv/XclpAllowedIPs=10.37.2.214";imconfcontrol -install -key "/*/common/xclpAllowedIPs=10.37.2.214";imconfcontrol -install -key "/*/mta/allowXCLP=true";imconfcontrol -install -key "/*/mta/enableOutboundXCLP=true";imconfcontrol -install -key "/*/mta/outboundXCLPExpectsReply=true";imconfcontrol -install -key "/*/mta/XclpAllowedIPs=10.37.2.214";imconfcontrol -install -key "/95SITE-inbound-standardmta-direct/mta/XclpAllowedIPs=10.37.2.214";imconfcontrol -install -key "/inbound-standardmta-direct/mta/allowXCLP=true";imconfcontrol -install -key "/inbound-standardmta-direct/mta/enableOutboundXCLP=true";imconfcontrol -install -key "/*/popserv/allowXCLP=true";imconfcontrol -install -key "/*/popserv/XclpAllowedIPs=10.37.2.214"\""
+ssh root@${FEPHost2} "su - ${imailuser} -c \"imconfcontrol -install -key "/*/common/allowXCLP=true";imconfcontrol -install -key "/*/improxy/sendClientIp=true";imconfcontrol -install -key "/*/imapserv/allowXCLP=true";imconfcontrol -install -key "/*/imapserv/XclpAllowedIPs=10.49.58.127";imconfcontrol -install -key "/*/common/xclpAllowedIPs=10.49.58.127";imconfcontrol -install -key "/*/mta/allowXCLP=true";imconfcontrol -install -key "/*/mta/enableOutboundXCLP=true";imconfcontrol -install -key "/*/mta/outboundXCLPExpectsReply=true";imconfcontrol -install -key "/*/mta/XclpAllowedIPs=10.49.58.127";imconfcontrol -install -key "/95SITE-inbound-standardmta-direct/mta/XclpAllowedIPs=10.49.58.127";imconfcontrol -install -key "/inbound-standardmta-direct/mta/allowXCLP=true";imconfcontrol -install -key "/inbound-standardmta-direct/mta/enableOutboundXCLP=true";imconfcontrol -install -key "/*/popserv/allowXCLP=true";imconfcontrol -install -key "/*/popserv/XclpAllowedIPs=10.49.58.127"\""
 
 #（3-3） restart FEPs
 ssh root@${FEPHost1} "su - ${imailuser} -c \"/opt/imail2/lib/imservctrl killStart\""
@@ -111,8 +111,8 @@ exec 3>&-
 cat imap-temp.log
 
 #Now gether imap logs from MX9.5-1 and MX9.5-2
-ssh root@$IMAPHost1  'cat /opt/imail2/log/imapserv.log' > imapserv1.log
-ssh root@$IMAPHost2  'cat /opt/imail2/log/imapserv.log' > imapserv2.log
+ssh root@$IMAPHost1  'cat /opt/imail2/log/imapserv.log|grep -v "MsMssFailover"|grep -v "RmeInvalidCOSAttribute"|grep -v "ConfNonStandardPort"' > imapserv1.log
+ssh root@$IMAPHost2  'cat /opt/imail2/log/imapserv.log|grep -v "MsMssFailover"|grep -v "RmeInvalidCOSAttribute"|grep -v "ConfNonStandardPort"' > imapserv2.log
 
 #Prepare the summary-imap.log
 echo -e  "The imap operations logs telneting to MX9.5-1:\n\n" >summary-imap.log
@@ -174,8 +174,8 @@ exec 3>&-
 cat pop-temp.log
 
 #Now gether pop logs from MX9.5-1 and MX9.5-2
-ssh root@$POPHost1  'cat /opt/imail2/log/popserv.log' > popserv1.log
-ssh root@$POPHost2  'cat /opt/imail2/log/popserv.log' > popserv2.log
+ssh root@$POPHost1  'cat /opt/imail2/log/popserv.log|grep -v "MsMssFailover"|grep -v "RmeInvalidCOSAttribute"|grep -v "ConfNonStandardPort"' > popserv1.log
+ssh root@$POPHost2  'cat /opt/imail2/log/popserv.log|grep -v "MsMssFailover"|grep -v "RmeInvalidCOSAttribute"|grep -v "ConfNonStandardPort"' > popserv2.log
 
 #Prepare the summary-pop.log
 echo -e  "The pop operations logs telneting to MX9.5-1:\n\n" >summary-pop.log
@@ -240,8 +240,8 @@ exec 3>&-
 cat smtp-temp.log
 
 #Now gether smtp logs from MX9.5-1 and MX9.5-2
-ssh root@$SMTPHost1  'cat /opt/imail2/log/mta.log' > mta1.log
-ssh root@$SMTPHost2  'cat /opt/imail2/log/mta.log' > mta2.log
+ssh root@$SMTPHost1  'cat /opt/imail2/log/mta.log|grep -v "MsMssFailover"|grep -v "RmeInvalidCOSAttribute"|grep -v "ConfNonStandardPort"' > mta1.log
+ssh root@$SMTPHost2  'cat /opt/imail2/log/mta.log|grep -v "MsMssFailover"|grep -v "RmeInvalidCOSAttribute"|grep -v "ConfNonStandardPort"' > mta2.log
 
 #Prepare the summary-smtp.log
 echo -e  "The smtp operations logs telneting to MX9.5-1:\n\n" >summary-smtp.log
@@ -292,8 +292,8 @@ ssh root@${FEPHost1} "su - ${imailuser} -c \"imconfcontrol -install -key "/*/mta
 #(3)9.5-2 MTA setting:
 ssh root@${FEPHost2} "su - ${imailuser} -c \"imconfcontrol -install -key "/*/mta/requireAuthentication";imconfcontrol -install -key "/inbound-standardmta-direct/mta/requireAuthentication";imconfcontrol -install -key "/*/mta/relaySourcePolicy= ";imconfcontrol -install -key "/inbound-standardmta-direct/mta/relaySourcePolicy= ";imconfcontrol -install -key "/*/mxos/defaultPasswordStoreType=sha512"\""
 #(3-2)9.5-2 disable XCLP
-ssh root@${FEPHost1} "su - ${imailuser} -c \"imconfcontrol -install -key "/*/common/allowXCLP";imconfcontrol -install -key "/*/improxy/sendClientIp";imconfcontrol -install -key "/*/imapserv/allowXCLP";imconfcontrol -install -key "/*/imapserv/XclpAllowedIPs= ";imconfcontrol -install -key "/*/mta/allowXCLP";imconfcontrol -install -key "/*/mta/enableOutboundXCLP";imconfcontrol -install -key "/*/mta/outboundXCLPExpectsReply";imconfcontrol -install -key "/*/mta/XclpAllowedIPs= ";imconfcontrol -install -key "/92SITE2-inbound-standardmta-direct/mta/XclpAllowedIPs= ";imconfcontrol -install -key "/inbound-standardmta-direct/mta/allowXCLP";imconfcontrol -install -key "/inbound-standardmta-direct/mta/enableOutboundXCLP";imconfcontrol -install -key "/*/popserv/allowXCLP";imconfcontrol -install -key "/*/popserv/XclpAllowedIPs= ";imconfcontrol -install -key "/*/common/xclpAllowedIPs= "\""
-ssh root@${FEPHost2} "su - ${imailuser} -c \"imconfcontrol -install -key "/*/common/allowXCLP";imconfcontrol -install -key "/*/improxy/sendClientIp";imconfcontrol -install -key "/*/imapserv/allowXCLP";imconfcontrol -install -key "/*/imapserv/XclpAllowedIPs= ";imconfcontrol -install -key "/*/mta/allowXCLP";imconfcontrol -install -key "/*/mta/enableOutboundXCLP";imconfcontrol -install -key "/*/mta/outboundXCLPExpectsReply";imconfcontrol -install -key "/*/mta/XclpAllowedIPs= ";imconfcontrol -install -key "/92SITE2-inbound-standardmta-direct/mta/XclpAllowedIPs= ";imconfcontrol -install -key "/inbound-standardmta-direct/mta/allowXCLP";imconfcontrol -install -key "/inbound-standardmta-direct/mta/enableOutboundXCLP";imconfcontrol -install -key "/*/popserv/allowXCLP";imconfcontrol -install -key "/*/popserv/XclpAllowedIPs= ";imconfcontrol -install -key "/*/common/xclpAllowedIPs= "\""
+ssh root@${FEPHost1} "su - ${imailuser} -c \"imconfcontrol -install -key "/*/common/allowXCLP";imconfcontrol -install -key "/*/improxy/sendClientIp";imconfcontrol -install -key "/*/imapserv/allowXCLP";imconfcontrol -install -key "/*/imapserv/XclpAllowedIPs= ";imconfcontrol -install -key "/*/mta/allowXCLP";imconfcontrol -install -key "/*/mta/enableOutboundXCLP";imconfcontrol -install -key "/*/mta/outboundXCLPExpectsReply";imconfcontrol -install -key "/*/mta/XclpAllowedIPs= ";imconfcontrol -install -key "/95SITE-inbound-standardmta-direct/mta/XclpAllowedIPs= ";imconfcontrol -install -key "/inbound-standardmta-direct/mta/allowXCLP";imconfcontrol -install -key "/inbound-standardmta-direct/mta/enableOutboundXCLP";imconfcontrol -install -key "/*/popserv/allowXCLP";imconfcontrol -install -key "/*/popserv/XclpAllowedIPs= ";imconfcontrol -install -key "/*/common/xclpAllowedIPs= "\""
+ssh root@${FEPHost2} "su - ${imailuser} -c \"imconfcontrol -install -key "/*/common/allowXCLP";imconfcontrol -install -key "/*/improxy/sendClientIp";imconfcontrol -install -key "/*/imapserv/allowXCLP";imconfcontrol -install -key "/*/imapserv/XclpAllowedIPs= ";imconfcontrol -install -key "/*/mta/allowXCLP";imconfcontrol -install -key "/*/mta/enableOutboundXCLP";imconfcontrol -install -key "/*/mta/outboundXCLPExpectsReply";imconfcontrol -install -key "/*/mta/XclpAllowedIPs= ";imconfcontrol -install -key "/95SITE-inbound-standardmta-direct/mta/XclpAllowedIPs= ";imconfcontrol -install -key "/inbound-standardmta-direct/mta/allowXCLP";imconfcontrol -install -key "/inbound-standardmta-direct/mta/enableOutboundXCLP";imconfcontrol -install -key "/*/popserv/allowXCLP";imconfcontrol -install -key "/*/popserv/XclpAllowedIPs= ";imconfcontrol -install -key "/*/common/xclpAllowedIPs= "\""
 
 #（3-3） restart FEPs
 ssh root@${FEPHost1} "su - ${imailuser} -c \"/opt/imail2/lib/imservctrl killStart\""

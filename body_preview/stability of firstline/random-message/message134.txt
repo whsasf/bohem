@@ -1,0 +1,8 @@
+from:xx2@openwave.com
+to:xx1@openwave.com
+subject:random message
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8; format=flowed
+Content-Transfer-Encoding: 8bit
+
+blackout dalliance soaps verdure's futurities brandished readability's usherettes dossier Dijon sulphuring octette's echoes chastens twining

@@ -1,0 +1,8 @@
+from:xx2@openwave.com
+to:xx1@openwave.com
+subject:random message
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8; format=flowed
+Content-Transfer-Encoding: 8bit
+
+condors sissiest envisions scope brutishly catalogue's crookedness aches Trumbull's airdropped octal Gilliam extrapolation's recapitulates selling

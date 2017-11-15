@@ -1,0 +1,99 @@
+Delete messsages successfully.
+
+
+Message body is:
+
+
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!Sending message!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+
+ sending message:
+
+
+220 mx-172-26-202-87.openwave.com ESMTP server (InterMail vM.9.05.00.00 201-2473-137-108) ready Fri, 17 Feb 2017 19:31:00 -0800
+250 Sender <xx2> Ok
+250 Recipient <xx1> Ok
+354 Ok Send data ending with <CRLF>.<CRLF>
+250 Message received: 20170218033101.BGP23163.mx-172-26-202-87.openwave.com@[10.13.8.221]
+221 mx-172-26-202-87.openwave.com ESMTP server closing connection
+
+
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!fetching first line data!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+* OK IMAP4 server (InterMail vM.9.05.00.00 201-2473-137-108) ready Fri, 17 Feb 2017 19:31:01 -0800 (PST)
+a OK LOGIN completed
+* 1 EXISTS
+* OK [UNSEEN 1] First unseen message
+* OK [UIDVALIDITY 1487128905] UIDs valid
+* OK [UIDNEXT 2960] Predicted next UID
+* FLAGS (\Answered \Flagged \Deleted \Draft \Seen)
+* OK [PERMANENTFLAGS (\* \Answered \Flagged \Deleted \Draft \Seen)] Permanent flags
+* 1 RECENT
+a OK [READ-WRITE] SELECT completed
+* 1 FETCH (RFC822 {1581}
+Return-Path: <xx2@openwave.com>
+Received: from [10.13.8.221] by mx-172-26-202-87.openwave.com
+          (InterMail vM.9.05.00.00 201-2473-137-108) with SMTP
+          id <20170218033101.BGP23163.mx-172-26-202-87.openwave.com@[10.13.8.221]>
+          for <xx1@openwave.com>; Fri, 17 Feb 2017 19:31:01 -0800
+Return-Path: <xx2@openwave.com>
+Received: from [10.13.8.221] by mx-172-26-202-87.openwave.com
+          (InterMail vM.9.05.00.00 201-2473-137-108) with ESMTP
+          id <20170218032637.BGO23163.mx-172-26-202-87.openwave.com@[10.13.8.221]>
+          for <xx1@openwave.com>; Fri, 17 Feb 2017 19:26:37 -0800
+From: xx2 <xx2@openwave.com>
+Subject: hyper link with mixed texts in message body
+To: xx1@openwave.com
+Message-ID: <63a41329-6798-ff5f-c061-c36ddc238cc8@openwave.com>
+Date: Sat, 18 Feb 2017 11:26:36 +0800
+User-Agent: MX
+MIME-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="------------84140ED1F59389DED0F5DE4D"
+
+This is a multi-part message in MIME format.
+--------------84140ED1F59389DED0F5DE4D
+Content-Type: text/plain; charset=utf-8; format=flowed
+Content-Transfer-Encoding: 8bit
+
+我们都是中国人 <https://www.baidu.com>
+
+
+--------------84140ED1F59389DED0F5DE4D
+Content-Type: text/html; charset=utf-8
+Content-Transfer-Encoding: 8bit
+
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  </head>
+  <body bgcolor="#FFFFFF" text="#000000">
+    <p><a href="https://www.baidu.com">我们都是中国人</a></p>
+  </body>
+</html>
+
+--------------84140ED1F59389DED0F5DE4D--
+ FLAGS (\Recent \Seen))
+a OK FETCH completed
+* 1 FETCH (FIRSTLINE ("我们都是中国人 <https://www.baidu.com> "))
+a OK FETCH completed
+* BYE IMAP4 server terminating connection
+a OK LOGOUT completed
+
+
+
+
+[default@KeyspaceMetadata] get cf_folder['353038343036333135323632313531383036365fe1280902f32d11e6b9386b782020d67e'];
+=> (super_column=ab5bc3ea-f58a-11e6-8902-032681693d51,
+     (name=31, value=392e300361623562633365612d663538612d313165362d383930322d30333236383136393364353103300331343837333838363631033135383103300303330330033003036879706572206c696e6b2077697468206d6978656420746578747320696e206d65737361676520626f647903787832203c787832406f70656e776176652e636f6d3e033003787831406f70656e776176652e636f6d0303323935390330033c36336134313332392d363739382d666635662d633036312d633336646463323338636338406f70656e776176652e636f6d3e033134383733383833393603030303, timestamp=1487388661072488)
+     (name=3138, value=e68891e4bbace983bde698afe4b8ade59bbde4baba203c68747470733a2f2f7777772e62616964752e636f6d3e2000, timestamp=1487388661072488)
+     (name=32, value=46, timestamp=1487388661791576)
+     (name=33, value=54, timestamp=1487388661831802)
+     (name=35, value=31343837333838363631, timestamp=1487388661827238)
+     (name=36, value=46, timestamp=1487388661831802)
+     (name=37, value=46, timestamp=1487388661831802)
+     (name=38, value=46, timestamp=1487388661831802)
+     (name=39, value=46, timestamp=1487388661831802))
+Returned 1 results.
+Elapsed time: 20 msec(s).

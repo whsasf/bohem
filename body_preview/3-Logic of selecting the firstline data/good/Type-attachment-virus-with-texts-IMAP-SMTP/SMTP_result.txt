@@ -1,0 +1,95 @@
+Delete messsages successfully.
+
+
+Message body is:
+
+
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!Sending message!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+
+ sending message:
+
+
+220 mx-172-26-202-87.openwave.com ESMTP server (InterMail vM.9.05.00.00 201-2473-137-108) ready Sat, 18 Feb 2017 19:18:41 -0800
+250 Sender <xx2> Ok
+250 Recipient <xx1> Ok
+354 Ok Send data ending with <CRLF>.<CRLF>
+250 Message received: 20170219031841.BJM23163.mx-172-26-202-87.openwave.com@[10.13.8.221]
+221 mx-172-26-202-87.openwave.com ESMTP server closing connection
+
+
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!fetching first line data!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+* OK IMAP4 server (InterMail vM.9.05.00.00 201-2473-137-108) ready Sat, 18 Feb 2017 19:18:42 -0800 (PST)
+a OK LOGIN completed
+* 1 EXISTS
+* OK [UNSEEN 1] First unseen message
+* OK [UIDVALIDITY 1487128905] UIDs valid
+* OK [UIDNEXT 3075] Predicted next UID
+* FLAGS (\Answered \Flagged \Deleted \Draft \Seen)
+* OK [PERMANENTFLAGS (\* \Answered \Flagged \Deleted \Draft \Seen)] Permanent flags
+* 1 RECENT
+a OK [READ-WRITE] SELECT completed
+* 1 FETCH (RFC822 {1515}
+Return-Path: <xx2@openwave.com>
+Received: from [10.13.8.221] by mx-172-26-202-87.openwave.com
+          (InterMail vM.9.05.00.00 201-2473-137-108) with SMTP
+          id <20170219031841.BJM23163.mx-172-26-202-87.openwave.com@[10.13.8.221]>
+          for <xx1@openwave.com>; Sat, 18 Feb 2017 19:18:41 -0800
+Return-Path: <xx2@openwave.com>
+Received: from [10.13.8.221] by mx-172-26-202-87.openwave.com
+          (InterMail vM.9.05.00.00 201-2473-137-108) with ESMTP
+          id <20170219030805.BJK23163.mx-172-26-202-87.openwave.com@[10.13.8.221]>
+          for <xx1@openwave.com>; Sat, 18 Feb 2017 19:08:05 -0800
+To: xx1@openwave.com
+From: xx2 <xx2@openwave.com>
+Subject: virus in attachment with texts 
+Message-ID: <854fc56e-2a40-76b7-6109-8f51aa9a56d5@openwave.com>
+Date: Sun, 19 Feb 2017 11:08:04 +0800
+User-Agent: MX
+MIME-Version: 1.0
+Content-Type: multipart/mixed;
+ boundary="------------75DC31484EA216D9A6118F7F"
+
+This is a multi-part message in MIME format.
+--------------75DC31484EA216D9A6118F7F
+Content-Type: text/plain; charset=utf-8; format=flowed
+Content-Transfer-Encoding: 7bit
+
+، ويمكن تح
+Nobody!
+いくつにな
+我们是中国人，
+--------------75DC31484EA216D9A6118F7F
+Content-Type: text/plain; charset=UTF-8;
+ name="virus"
+Content-Transfer-Encoding: base64
+Content-Disposition: attachment;
+ filename="virus"
+
+WDVPIVAlQEFQWzRcUFpYNTQoUF4pN0NDKTd9JEVJQ0FSLVNUQU5EQVJELUFOVElWSVJVUy1U
+RVNULUZJTEUhJEgrSCogCg==
+--------------75DC31484EA216D9A6118F7F--
+ FLAGS (\Recent \Seen))
+a OK FETCH completed
+* 1 FETCH (FIRSTLINE ("، ويمكن تح Nobody! いくつにな 我们是中国人，"))
+a OK FETCH completed
+* BYE IMAP4 server terminating connection
+a OK LOGOUT completed
+
+
+
+[default@KeyspaceMetadata] get cf_folder['353038343036333135323632313531383036365fe1280902f32d11e6b9386b782020d67e'];
+=> (super_column=1d1ec014-f652-11e6-a58b-904a6f795498,
+     (name=31, value=392e300331643165633031342d663635322d313165362d613538622d3930346136663739353439380330033134383734373433323103313531350330030333033003300303766972757320696e206174746163686d656e7420776974682074657874732003787832203c787832406f70656e776176652e636f6d3e033103787831406f70656e776176652e636f6d0303333037340330033c38353466633536652d326134302d373662372d363130392d386635316161396135366435406f70656e776176652e636f6d3e033134383734373336383403030303, timestamp=1487474321784259)
+     (name=3138, value=d88c20d988d98ad985d983d98620d8aad8ad204e6f626f64792120e38184e3818fe381a4e381abe381aa20e68891e4bbace698afe4b8ade59bbde4babaefbc8c00, timestamp=1487474321784259)
+     (name=32, value=46, timestamp=1487474322523478)
+     (name=33, value=54, timestamp=1487474322555214)
+     (name=35, value=31343837343734333232, timestamp=1487474322551618)
+     (name=36, value=46, timestamp=1487474322555214)
+     (name=37, value=46, timestamp=1487474322555214)
+     (name=38, value=46, timestamp=1487474322555214)
+     (name=39, value=46, timestamp=1487474322555214))
+Returned 1 results.
+Elapsed time: 21 msec(s).

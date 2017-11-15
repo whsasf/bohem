@@ -1,0 +1,5 @@
+from:xx2@openwave.com
+to:xx1@openwave.com
+subject:testemail-Arabic-UTF8
+
+لا الفتي  ولا الفتاة يستحق دموعك  بل يستحق لم

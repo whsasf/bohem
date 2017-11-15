@@ -1,0 +1,15 @@
+from:xx2@openwave.com
+to:xx1@openwave.com
+subject:testemail-Arabic-UTF-8-CRLF-quoted-printable
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: quoted-printable
+
+=D8=B1=D8=A8=D9=85=D8=A7  =D8=A7=D9=84=D9=84=D9=87 =D9=8A=D8=B1=D9=8A=D8=AF=
+=D9=86=D8=A7 =D8=A7=D9=86 =D9=86=D9=84=D8=AA=D9=82=D9=8A =D8=A8=D8=B9=D8=B6=
+ =D8=A7=D9=84=D9=86=D8=A7=D8=B3 =D8=A7=D9=84=D8=B3=D9=8A=D8=A4=D9=88=D9=86 =
+ =D9=82=D8=A8=D9=84 =D8=A7=D9=81=D8=B6=D9=84  =D9=84=D9=83=D9=8A =D8=B9=D9=
+=86=D8=AF=D9=85=D8=A7 =D9=86=D9=82=D8=A7=D8=A8=D9=84 =D8=A7=D9=84=D8=AD=D8=
+=A8=D9=8A=D8=A8 =D8=A7=D8=AE=D9=8A=D8=B1=D8=A7 =D8=B3=D9=86=D8=B9=D8=B1=D9=
+=81 =D9=83=D9=8A=D9=81 =D9=86=D9=83=D9=88=D9=86 =D8=A7=D9=84=D9=85=D9=85=D8=
+=AA=D9=86=D9=8A=D9=86    =20=

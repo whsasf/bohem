@@ -1,0 +1,9 @@
+from:xx2@openwave.com
+to:xx1@openwave.com
+subject:testemail-Ascii-CRLF-quoted-printable
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: quoted-printable
+
+You gods divine! Make Cressida's name the very crown of falsehood, if ever =
+she leave Troilus. (Troilus and Cressida 4.2)=

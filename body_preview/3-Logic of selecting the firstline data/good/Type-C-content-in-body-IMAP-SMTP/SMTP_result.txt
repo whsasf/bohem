@@ -1,0 +1,81 @@
+Delete messsages successfully.
+
+
+Message body is:
+
+
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!Sending message!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+
+ sending message:
+
+
+220 mx-172-26-202-87.openwave.com ESMTP server (InterMail vM.9.05.00.00 201-2473-137-108) ready Sat, 18 Feb 2017 18:17:55 -0800
+250 Sender <xx2> Ok
+250 Recipient <xx1> Ok
+354 Ok Send data ending with <CRLF>.<CRLF>
+250 Message received: 20170219021755.BJE23163.mx-172-26-202-87.openwave.com@[10.13.8.221]
+221 mx-172-26-202-87.openwave.com ESMTP server closing connection
+
+
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!fetching first line data!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+* OK IMAP4 server (InterMail vM.9.05.00.00 201-2473-137-108) ready Sat, 18 Feb 2017 18:17:56 -0800 (PST)
+a OK LOGIN completed
+* 1 EXISTS
+* OK [UNSEEN 1] First unseen message
+* OK [UIDVALIDITY 1487128905] UIDs valid
+* OK [UIDNEXT 3058] Predicted next UID
+* FLAGS (\Answered \Flagged \Deleted \Draft \Seen)
+* OK [PERMANENTFLAGS (\* \Answered \Flagged \Deleted \Draft \Seen)] Permanent flags
+* 1 RECENT
+a OK [READ-WRITE] SELECT completed
+* 1 FETCH (RFC822 {1004}
+Return-Path: <xx2@openwave.com>
+Received: from [10.13.8.221] by mx-172-26-202-87.openwave.com
+          (InterMail vM.9.05.00.00 201-2473-137-108) with SMTP
+          id <20170219021755.BJE23163.mx-172-26-202-87.openwave.com@[10.13.8.221]>
+          for <xx1@openwave.com>; Sat, 18 Feb 2017 18:17:55 -0800
+Return-Path: <xx2@openwave.com>
+Received: from [10.13.8.221] by mx-172-26-202-87.openwave.com
+          (InterMail vM.9.05.00.00 201-2473-137-108) with ESMTP
+          id <20170219021305.BJD23163.mx-172-26-202-87.openwave.com@[10.13.8.221]>
+          for <xx1@openwave.com>; Sat, 18 Feb 2017 18:13:05 -0800
+To: xx1@openwave.com
+From: xx2 <xx2@openwave.com>
+Subject: c source code in message body
+Message-ID: <a29a13b0-4168-9ee0-e27c-2ad8ca1c945a@openwave.com>
+Date: Sun, 19 Feb 2017 10:13:04 +0800
+User-Agent: MX
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8; format=flowed
+Content-Transfer-Encoding: 7bit
+
+#include <stdio.h>
+main()
+{
+printf ("Hello,world");
+}
+ FLAGS (\Recent \Seen))
+a OK FETCH completed
+* 1 FETCH (FIRSTLINE ("#include <stdio.h> main() { printf (Hello,world); } "))
+a OK FETCH completed
+* BYE IMAP4 server terminating connection
+a OK LOGOUT completed
+
+
+
+[default@KeyspaceMetadata] get cf_folder['353038343036333135323632313531383036365fe1280902f32d11e6b9386b782020d67e'];
+=> (super_column=a001bc42-f649-11e6-96f9-94319b983045,
+     (name=31, value=392e300361303031626334322d663634392d313165362d393666392d39343331396239383330343503300331343837343730363735033130303403300303330330033003036320736f7572636520636f646520696e206d65737361676520626f647903787832203c787832406f70656e776176652e636f6d3e033003787831406f70656e776176652e636f6d0303333035370330033c61323961313362302d343136382d396565302d653237632d326164386361316339343561406f70656e776176652e636f6d3e033134383734373033383403030303, timestamp=1487470675907565)
+     (name=3138, value=23696e636c756465203c737464696f2e683e206d61696e2829207b207072696e746620282248656c6c6f2c776f726c6422293b207d2000, timestamp=1487470675907565)
+     (name=32, value=46, timestamp=1487470676645502)
+     (name=33, value=54, timestamp=1487470676677929)
+     (name=35, value=31343837343730363736, timestamp=1487470676673699)
+     (name=36, value=46, timestamp=1487470676677929)
+     (name=37, value=46, timestamp=1487470676677929)
+     (name=38, value=46, timestamp=1487470676677929)
+     (name=39, value=46, timestamp=1487470676677929))
+Returned 1 results.
+Elapsed time: 21 msec(s).

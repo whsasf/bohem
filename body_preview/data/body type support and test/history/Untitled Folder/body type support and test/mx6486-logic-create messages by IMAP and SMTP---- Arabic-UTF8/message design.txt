@@ -1,0 +1,130 @@
+///////////////////////////-1- empty message body\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+0)empty message body-(message1.txt)
+
+///////////////////////////-2- Arabic words message body-UTF-8 \\\\\\\\\\\\\\\\\\\\\\\\\\\\
+
+less than 80 bytes
+1-1) less than 80 Bytes (35 words,61 bytes)-(message2.txt)
+
+لا تبك لانه انتهي  ابتسم ! مع الحدث
+
+1-2) less than 80 Chars (35 words with 5 whitespaces in the beginning-66bytes)-(message3.txt)
+
+     لا تبك لانه انتهي  ابتسم ! مع الحدث
+
+1-3) less than 80 Chars (35  words with 5 whitespaces in the middle-66 bytes)-(message4.txt)
+
+لا تبك لانه انته     ي  ابتسم ! مع الحدث
+
+1-4) less than 80 Chars (35  words with 5 whitespaces in the ending-66 bytes)-(message5.txt)
+
+لا تبك لانه انتهي  ابتسم ! مع الحدث     
+
+1-5) chars with CR:  with one CR -(message6.txt)
+
+ليس لانك
+من انت  ولكن لان عندما  اكون
+
+1-6) chars with CR with 5 white spaces in begging:-(message7.txt)
+
+     ليس لانك
+من انت  ولكن لان عندما  اكون
+
+1-7) chars with CR with 5 white spaces in middle:-(message8.txt)
+
+ليس لانك
+     من انت  ولكن لان عندما  اكون
+
+1-8) chars with CR with 5 white spaces in ending:-(message9.txt)
+
+ليس لانك
+من انت  ولكن لان عندما  اكون        
+
+
+Equal 80 bytes
+2-1)Equal to 80 bytes  (28 words,80 bytes)-(message10.txt)
+
+لا الفتي  ولا الفتاة يستحق دموعك  بل يستحق لم
+
+2-2)Equal to 80 bytes (80 bytes) with 5 whitespaces in the beginning-(message11.txt)
+
+     لا الفتي  ولا الفتاة يستحق دم عك  بل يحق لم
+
+2-3)Equal to 80 bytes  (80 bytes) with 5 whitespaces in the middle -(message12.txt)
+
+لا الفتي  ولا الفتاة يس     تحق دموعك  بل يستحق
+
+
+2-4)Equal to 80 bytes  (80 bytes) with 5 whitespaces in the ending-(message13.txt)
+
+لا الفتي  ولا الفتاة يستحق وعك بل يستحق لم     
+
+
+2-5)Equal to 80 bytes  (80 bytes) with CR . -(message14.txt)
+
+لا تعبس ا
+بدا  حتي انت حزين  لانك ل
+ا تدري من ا
+
+2-6)Equal to 80 bytes  (80 bytes) with CR . with 5 whitespace in begging-(message15.txt)
+
+     لا تعبس ا
+بدا  حتي انت حزين  لانك ل
+ا تدري م
+
+2-7)Equal to 80 bytes  (80 bytes) with CR . with 5 whitespace in middle-(message16.txt)
+
+لا تعبس ا
+     بدا  حتي انت حزين  لانك ل
+ا تدري م
+
+2-8)Equal to 80 bytes  (80 bytes) with CR . with 5 whitespace in ending-(message17.txt)
+
+لا تعبس ا
+بدا  حتي انت حزين  لانك ل
+ا تدري م         
+
+
+3-1) longer than 80 bytes:-(message18.txt)
+
+ربما  الله يريدنا ان نلتقي بعض الناس السيؤون  قبل افضل  لكي عندما نقابل الحبيب اخيرا سنعرف كيف نكون الممتنين
+
+3-2)longer than 80 bytes with 5 white spaces in beginning:-(message19.txt)
+
+     ربما  الله يريدنا ان نلتقي بعض الناس السيؤون  قبل افضل  لكي عندما نقابل الحبيب اخيرا سنعرف كيف نكون الممتنين
+
+3-3)longer than 80 bytes with 5 white spaces in  middle:-(message20.txt)
+
+ربما  الله يريدنا ان نلتقي بعض الناس السيؤون  قبل افضل  لكي عندما نقابل الحبيب اخيرا سنعرف كيف نكون      الممتنين
+
+3-4)longer than 80 bytes with 5 white spaces in  ending:(message21.txt)
+
+ربما  الله يريدنا ان نلتقي بعض الناس السيؤون  قبل افضل  لكي عندما نقابل الحبيب اخيرا سنعرف كيف نكون الممتنين     
+
+3-5) longer than 80 bytes with CR:(message22.txt)
+
+ربما  الل
+ه يريدنا ان نلتقي بعض النا
+س السيؤون  قبل افضل  لكي عندما نقا
+بل الحبيب اخيرا سنعرف كيف نكون الممتنين
+
+3-6) longer than 80 chars with CR: with 5 whitespce in beggining-(message23.txt)
+
+     ربما  الل
+ه يريدنا ان نلتقي بعض النا
+س السيؤون  قبل افضل  لكي عندما نقا
+بل الحبيب اخيرا سنعرف كيف نكون الممتنين
+
+3-7) longer than 80 chars with CR: with 5 whitespce in  middle-(message24.txt)
+
+ربما  الل
+     ه يريدنا ان نلتقي بعض النا
+س السيؤون  قبل افضل  لكي عندما نقا
+بل الحبيب اخيرا سنعرف كيف نكون الممتنين
+
+3-8)longer than 80 chars with CR: with 5 whitespce in ending-(message25.txt)
+
+ربما  الل
+ه يريدنا ان نلتقي بعض النا
+س السيؤون  قبل افضل  لكي عندما نقا
+بل الحبيب اخيرا سنعرف كيف نكون الممتنين      

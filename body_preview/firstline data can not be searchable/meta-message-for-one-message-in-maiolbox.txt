@@ -1,0 +1,66 @@
+mailbox id:7364414057306169194
+           
+373336343431343035373330363136393139345f76fae6e2ffaf11e68b83c3c8c04f564f
+
+
+//////////////////from cassandra-cli///////////////////////////////////////////////////////////////
+[default@KeyspaceMetadata] get cf_folder['373336343431343035373330363136393139345f76fae6e2ffaf11e68b83c3c8c04f564f'];
+Returned 0 results.
+Elapsed time: 42 msec(s).
+[default@KeyspaceMetadata] get cf_folder['373336343431343035373330363136393139345f76fae6e2ffaf11e68b83c3c8c04f564f'];
+=> (super_column=312ec25c-ffda-11e6-a639-b9786fa8a908,
+     (name=31, value=392e300333313265633235632d666664612d313165362d613633392d62393738366661386139303803300331343838353232333237033531320330030333033003300303033c787832406f70656e776176652e636f6d3e0330030303333437300330033c32303137303330333036323532302e43555031383530332e6d782d3137322d32362d3230322d38372e6f70656e776176652e636f6d405b31302e33372e322e3231345d3e033134383835323233323703030303, timestamp=1488522327492574)
+     (name=3138, value=377479726b7765727938776572757765687239383233687277657972776f723932337268776c65726977656f727765727765722000, timestamp=1488522327492574)
+     (name=32, value=46, timestamp=1488522337202141)
+     (name=33, value=54, timestamp=1488522340503089)
+     (name=35, value=31343838353232333430, timestamp=1488522340499311)
+     (name=36, value=46, timestamp=1488522340503089)
+     (name=37, value=46, timestamp=1488522340503089)
+     (name=38, value=46, timestamp=1488522340503089)
+     (name=39, value=46, timestamp=1488522340503089))
+Returned 1 results.
+Elapsed time: 45 msec(s).
+
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+
+
+
+//////////////////////from cqlsh/////////////////////////////////////////////////////////////////////////////
+
+cqlsh:KeyspaceMetadata> select * from "CF_Folder" where column1=312ec25c-ffda-11e6-a639-b9786fa8a908 ALLOW FILTERING;
+
+ key                                                                        | column1                              | column2 | value
+----------------------------------------------------------------------------+--------------------------------------+---------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+ 0x373336343431343035373330363136393139345f76fae6e2ffaf11e68b83c3c8c04f564f | 312ec25c-ffda-11e6-a639-b9786fa8a908 |    0x31 | 0x392e300333313265633235632d666664612d313165362d613633392d62393738366661386139303803300331343838353232333237033531320330030333033003300303033c787832406f70656e776176652e636f6d3e0330030303333437300330033c32303137303330333036323532302e43555031383530332e6d782d3137322d32362d3230322d38372e6f70656e776176652e636f6d405b31302e33372e322e3231345d3e033134383835323233323703030303
+ 0x373336343431343035373330363136393139345f76fae6e2ffaf11e68b83c3c8c04f564f | 312ec25c-ffda-11e6-a639-b9786fa8a908 |  0x3138 |                                                                                                                                                                                                                                                                     0x377479726b7765727938776572757765687239383233687277657972776f723932337268776c65726977656f727765727765722000
+ 0x373336343431343035373330363136393139345f76fae6e2ffaf11e68b83c3c8c04f564f | 312ec25c-ffda-11e6-a639-b9786fa8a908 |    0x32 |                                                                                                                                                                                                                                                                                                                                                                             0x46
+ 0x373336343431343035373330363136393139345f76fae6e2ffaf11e68b83c3c8c04f564f | 312ec25c-ffda-11e6-a639-b9786fa8a908 |    0x33 |                                                                                                                                                                                                                                                                                                                                                                             0x54
+ 0x373336343431343035373330363136393139345f76fae6e2ffaf11e68b83c3c8c04f564f | 312ec25c-ffda-11e6-a639-b9786fa8a908 |    0x35 |                                                                                                                                                                                                                                                                                                                                                           0x31343838353232363433
+ 0x373336343431343035373330363136393139345f76fae6e2ffaf11e68b83c3c8c04f564f | 312ec25c-ffda-11e6-a639-b9786fa8a908 |    0x36 |                                                                                                                                                                                                                                                                                                                                                                             0x46
+ 0x373336343431343035373330363136393139345f76fae6e2ffaf11e68b83c3c8c04f564f | 312ec25c-ffda-11e6-a639-b9786fa8a908 |    0x37 |                                                                                                                                                                                                                                                                                                                                                                             0x46
+ 0x373336343431343035373330363136393139345f76fae6e2ffaf11e68b83c3c8c04f564f | 312ec25c-ffda-11e6-a639-b9786fa8a908 |    0x38 |                                                                                                                                                                                                                                                                                                                                                                             0x46
+ 0x373336343431343035373330363136393139345f76fae6e2ffaf11e68b83c3c8c04f564f | 312ec25c-ffda-11e6-a639-b9786fa8a908 |    0x39 |                                                                                                                                                                                                                                                                                                                                                                             0x46
+
+(9 rows)
+cqlsh:KeyspaceMetadata> 
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+
+(1)try to search data based on column2 ()
+cqlsh:KeyspaceMetadata> select * from "CF_Folder" where column2=0x3138 ALLOW FILTERING;                                            
+InvalidRequest: code=2200 [Invalid query] message="PRIMARY KEY column "column2" cannot be restricted (preceding column "column1" is not restricted)"
+
+summary: 
+failed:means there is no index for column2. pass
+
+(2)try to search data based on value(firstline data):
+
+cqlsh:KeyspaceMetadata> select * from "CF_Folder" where value=0x377479726b7765727938776572757765687239383233687277657972776f723932337268776c65726977656f72776572776572200;
+InvalidRequest: code=2200 [Invalid query] message="Predicates on the non-primary-key column (value) of a COMPACT table are not yet supported"
+
+summary:
+failed: means there is no index for  value column
+
+(3)try to create index for column2 :
+cqlsh:KeyspaceMetadata> create index xx on "CF_Folder"(column2);
+InvalidRequest: code=2200 [Invalid query] message="Secondary indexes are not supported on PRIMARY KEY columns in COMPACT STORAGE tables"
+summary: can not create second index for thia table,which is good. 

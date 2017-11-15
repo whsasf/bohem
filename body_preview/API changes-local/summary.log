@@ -1,0 +1,107 @@
+#############################################################################################
+######################################SUMMARY################################################
+#############################################################################################
+
+
+running X-THREAD commands now :
+
+
+1----for u1 ,there should have 4 messages total,all unseen,belongs to 3 conversions,each has 2,1,1 messages:
+
+(1)######X-THREAD  COMMAND###########
+#real command: a UID X-THREAD (PARTICIPANTS) UTF-8 ALL
+* X-THREAD ("10038@openwave.com;23568@openwave.com" 1003 1 1 "成功者になるためではなく、価値のある者になるために努")
+* X-THREAD ("10038@openwave.com;19848@openwave.com" 1002 2 2 "Ｒeally, that's great!hahahah 	I do believe so.thanks.hahahhahah 		wefwefwefwef")
+* X-THREAD (";<info@owmessaging.com>" 1000 1 1 "============================================================================ Wel")
+a OK UID X-THREAD completed
+[32m###################### X-THREAD for u1 successfully!! ##################[0m
+
+
+(2)######X-THREAD LIST COMMAND###########
+#real command: a UID X-THREAD (PARTICIPANTS) LIST ("10038@openwave.com;19848@openwave.com") UTF-8 ALL
+* X-THREAD (1002 1001)
+a OK UID X-THREAD completed
+[32m###################### X-THREAD LIST for u1 successfully!! ##################[0m
+
+
+(3)######X-THREAD STORE COMMAND###########
+#real command: a UID X-THREAD (PARTICIPANTS) STORE ("10038@openwave.com;19848@openwave.com") +flags \Seen
+* FLAGS (\Answered \Flagged \Deleted \Draft \Seen)
+* OK [PERMANENTFLAGS (\* \Answered \Flagged \Deleted \Draft \Seen)] Permanent flags
+* 2 FETCH (FLAGS (\Seen) UID 1001)
+* 3 FETCH (FLAGS (\Seen) UID 1002)
+#real command: a UID X-THREAD (PARTICIPANTS) UTF-8 ALL
+* X-THREAD ("10038@openwave.com;23568@openwave.com" 1003 1 1 "成功者になるためではなく、価値のある者になるために努")
+* X-THREAD ("10038@openwave.com;19848@openwave.com" 1002 2 0 "Ｒeally, that's great!hahahah 	I do believe so.thanks.hahahhahah 		wefwefwefwef")
+* X-THREAD (";<info@owmessaging.com>" 1000 1 1 "============================================================================ Wel")
+a OK UID X-THREAD completed
+[32m###################### X-THREAD STORE for u1 successfully!! ##################[0m
+
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+2----for u2 ,there should have 4 messages total,all unseen,belongs to 3 conversions,each has 2,1,1 messages:
+
+(1)######X-THREAD  COMMAND###########
+#real command: a UID X-THREAD (PARTICIPANTS) UTF-8 ALL
+* X-THREAD ("19848@openwave.com;23568@openwave.com" 1003 2 2 "靖康耻，犹未雪；臣子恨，何时灭。驾长车	 	三十功名尘与")
+* X-THREAD ("10038@openwave.com;19848@openwave.com" 1001 1 1 "I do believe so.thanks.hahahhahah 	wefwefwefwefwefwefwef ")
+* X-THREAD (";<info@owmessaging.com>" 1000 1 1 "============================================================================ Wel")
+a OK UID X-THREAD completed
+[32m###################### X-THREAD for u2 successfully!! ##################[0m
+
+
+(2)######X-THREAD LIST COMMAND###########
+#real command: a UID X-THREAD (PARTICIPANTS) LIST ("19848@openwave.com;23568@openwave.com") UTF-8 ALL
+* X-THREAD (1003 1002)
+a OK UID X-THREAD completed
+[32m###################### X-THREAD LIST for u2 successfully!! ##################[0m
+
+
+(3)######X-THREAD STORE COMMAND###########
+#real command: a UID X-THREAD (PARTICIPANTS) STORE ("19848@openwave.com;23568@openwave.com") +flags \Seen
+* FLAGS (\Answered \Flagged \Deleted \Draft \Seen)
+* OK [PERMANENTFLAGS (\* \Answered \Flagged \Deleted \Draft \Seen)] Permanent flags
+* 3 FETCH (FLAGS (\Seen) UID 1002)
+* 4 FETCH (FLAGS (\Seen) UID 1003)
+#real command: a UID X-THREAD (PARTICIPANTS) UTF-8 ALL
+* X-THREAD ("19848@openwave.com;23568@openwave.com" 1003 2 0 "靖康耻，犹未雪；臣子恨，何时灭。驾长车	 	三十功名尘与")
+* X-THREAD ("10038@openwave.com;19848@openwave.com" 1001 1 1 "I do believe so.thanks.hahahhahah 	wefwefwefwefwefwefwef ")
+* X-THREAD (";<info@owmessaging.com>" 1000 1 1 "============================================================================ Wel")
+a OK UID X-THREAD completed
+[32m###################### X-THREAD STORE for u2 successfully!! ##################[0m
+
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+3----for u3 ,there should have 4 messages total,all unseen,belongs to 3 conversions,each has 2,1,1 messages:
+
+(1)######X-THREAD  COMMAND###########
+#real command: a UID X-THREAD (PARTICIPANTS) UTF-8 ALL
+* X-THREAD ("10038@openwave.com;23568@openwave.com" 1003 2 2 "すべて実現でき 	成功者になるためではなく、価値のある者")
+* X-THREAD ("19848@openwave.com;23568@openwave.com" 1001 1 1 "三十功名尘与土，八千里路云和月。莫等闲，白了少年头，")
+* X-THREAD (";<info@owmessaging.com>" 1000 1 1 "============================================================================ Wel")
+a OK UID X-THREAD completed
+[32m###################### X-THREAD for u3 successfully!! ##################[0m
+
+
+(2)######X-THREAD LIST COMMAND###########
+#real command: a UID X-THREAD (PARTICIPANTS) LIST ("10038@openwave.com;23568@openwave.com") UTF-8 ALL
+* X-THREAD (1003 1002)
+a OK UID X-THREAD completed
+[32m###################### X-THREAD LIST for u3 successfully!! ##################[0m
+
+
+(3)######X-THREAD STORE COMMAND###########
+#real command: a UID X-THREAD (PARTICIPANTS) STORE ("10038@openwave.com;23568@openwave.com") +flags \Seen
+* FLAGS (\Answered \Flagged \Deleted \Draft \Seen)
+* OK [PERMANENTFLAGS (\* \Answered \Flagged \Deleted \Draft \Seen)] Permanent flags
+* 3 FETCH (FLAGS (\Seen) UID 1002)
+* 4 FETCH (FLAGS (\Seen) UID 1003)
+#real command: a UID X-THREAD (PARTICIPANTS) UTF-8 ALL
+* X-THREAD ("10038@openwave.com;23568@openwave.com" 1003 2 0 "すべて実現でき 	成功者になるためではなく、価値のある者")
+* X-THREAD ("19848@openwave.com;23568@openwave.com" 1001 1 1 "三十功名尘与土，八千里路云和月。莫等闲，白了少年头，")
+* X-THREAD (";<info@owmessaging.com>" 1000 1 1 "============================================================================ Wel")
+a OK UID X-THREAD completed
+[32m###################### X-THREAD STORE for u3 successfully!! ##################[0m
+
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++

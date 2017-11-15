@@ -1,0 +1,10 @@
+from:xx2@openwave.com
+to:xx6@openwave.com
+subject:testemail-Japanese-GBK
+MIME-Version: 1.0
+Content-Type: text/plain; charset=gbk; format=flowed
+Content-Transfer-Encoding: 8bit
+
+オレはいつ
+かこの一味にも負けな
+い仲間を集めて、世界一の財宝を見つけて、绝対なってやる！海賊王に！     

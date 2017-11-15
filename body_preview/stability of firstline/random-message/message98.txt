@@ -1,0 +1,8 @@
+from:xx2@openwave.com
+to:xx1@openwave.com
+subject:random message
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8; format=flowed
+Content-Transfer-Encoding: 8bit
+
+bootees percussionist's verdict rattletrap stumbling orthopedics's commendations jurisprudence pyromania Barbara authorizing Wheaties raincoats Casals grommets

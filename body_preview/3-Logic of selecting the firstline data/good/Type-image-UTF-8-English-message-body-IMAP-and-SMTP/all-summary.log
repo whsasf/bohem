@@ -1,0 +1,194 @@
+1c1
+< * 1 FETCH (FIRSTLINE (""))
+---
+> * 1 FETCH (FIRSTLINE ("This is a test Email with pics and UTF-8 contents message body. chrome.jpgchr"))
+1c1
+< * 1 FETCH (FIRSTLINE (""))
+---
+> * 1 FETCH (FIRSTLINE ("This is a test Email with pics and UTF-8 contents message body. chrome.jpgchr"))
+0a1
+> * 1 FETCH (FIRSTLINE ("This is a test Email with pics and UTF-8 contents message body. chrome.jpgchr"))
+1c1
+< * 1 FETCH (FIRSTLINE ("VGhpcyBpcyBhIHRlc3QgRW1haWwgd2l0aCBwaWNzIGFuZCBVVEYtOCBjb250ZW50cyBtZXNzYWdl IG"))
+---
+> * 1 FETCH (FIRSTLINE ("This is a test Email with pics and UTF-8 contents message body. chrome.jpgchr"))
+1c1
+< * 1 FETCH (FIRSTLINE ("This is a test Email with pics and UTF-8 contents message "))
+---
+> * 1 FETCH (FIRSTLINE ("This is a test Email with pics and UTF-8 contents message body. chrome.jpgchr"))
+1c1
+< * 1 FETCH (FIRSTLINE ("This is a test Email with pics and UTF-8 contents message "))
+---
+> * 1 FETCH (FIRSTLINE ("This is a test Email with pics and UTF-8 contents message body. chrome.jpgchr"))
+1c1
+< * 1 FETCH (FIRSTLINE ("This is a test Email with pics and UTF-8 contents message "))
+---
+> * 1 FETCH (FIRSTLINE ("This is a test Email with pics and UTF-8 contents message body. chrome.jpgchr"))
+1c1
+< * 1 FETCH (FIRSTLINE ("This is a test Email with pics and UTF-8 contents message "))
+---
+> * 1 FETCH (FIRSTLINE ("This is a test Email with pics and UTF-8 contents message body. chrome.jpgchr"))
+1c1
+< * 1 FETCH (FIRSTLINE ("This is a test Email with pics and UTF-8 contents message "))
+---
+> * 1 FETCH (FIRSTLINE ("This is a test Email with pics and UTF-8 contents message body. chrome.jpgchr"))
+1c1
+< * 1 FETCH (FIRSTLINE ("This is a test Email with pics and UTF-8 contents message "))
+---
+> * 1 FETCH (FIRSTLINE ("This is a test Email with pics and UTF-8 contents message body. chrome.jpgchr"))
+1c1
+< * 1 FETCH (FIRSTLINE ("This is a test Email with pics and UTF-8 contents message "))
+---
+> * 1 FETCH (FIRSTLINE ("This is a test Email with pics and UTF-8 contents message body. chrome.jpgchr"))
+1c1
+< * 1 FETCH (FIRSTLINE ("VGhpcyBpcyBhIHRlc3QgRW1haWwgd2l0aCBwaWNzIGFuZCBVVEYtOCBjb250ZW50cyBtZXNzYWdl IG"))
+---
+> * 1 FETCH (FIRSTLINE ("This is a test Email with pics and UTF-8 contents message "))
+1c1
+< * 1 FETCH (FIRSTLINE ("VGhpcyBpcyBhIHRlc3QgRW1haWwgd2l0aCBwaWNzIGFuZCBVVEYtOCBjb250ZW50cyBtZXNzYWdl IG"))
+---
+> * 1 FETCH (FIRSTLINE ("This is a test Email with pics and UTF-8 contents message "))
+1c1
+< * 1 FETCH (FIRSTLINE ("VGhpcyBpcyBhIHRlc3QgRW1haWwgd2l0aCBwaWNzIGFuZCBVVEYtOCBjb250ZW50cyBtZXNzYWdl IG"))
+---
+> * 1 FETCH (FIRSTLINE ("This is a test Email with pics and UTF-8 contents message "))
+1c1
+< * 1 FETCH (FIRSTLINE (""))
+---
+> * 1 FETCH (FIRSTLINE ("This is a test Email with pics and UTF-8 contents message body. chrome.jpgchr"))
+1c1
+< * 1 FETCH (FIRSTLINE (""))
+---
+> * 1 FETCH (FIRSTLINE ("This is a test Email with pics and UTF-8 contents message body. chrome.jpgchr"))
+1c1
+< * 1 FETCH (FIRSTLINE (""))
+---
+> * 1 FETCH (FIRSTLINE ("This is a test Email with pics and UTF-8 contents message body. chrome.jpgchr"))
+1c1
+< * 1 FETCH (FIRSTLINE (""))
+---
+> * 1 FETCH (FIRSTLINE ("This is a test Email with pics and UTF-8 contents message body. chrome.jpgchr"))
+1c1
+< * 1 FETCH (FIRSTLINE (""))
+---
+> * 1 FETCH (FIRSTLINE ("This is a test Email with pics and UTF-8 contents message body. chrome.jpgchr"))
+1c1
+< * 1 FETCH (FIRSTLINE (""))
+---
+> * 1 FETCH (FIRSTLINE ("This is a test Email with pics and UTF-8 contents message "))
+1c1
+< * 1 FETCH (FIRSTLINE (""))
+---
+> * 1 FETCH (FIRSTLINE ("This is a test Email with pics and UTF-8 contents message body. chrome.jpgchr"))
+1c1
+< * 1 FETCH (FIRSTLINE (""))
+---
+> * 1 FETCH (FIRSTLINE ("This is a test Email with pics and UTF-8 contents message body. chrome.jpgchr"))
+1c1
+< * 1 FETCH (FIRSTLINE (""))
+---
+> * 1 FETCH (FIRSTLINE ("This is a test Email with pics and UTF-8 contents message body. chrome.jpgchr"))
+1c1
+< * 1 FETCH (FIRSTLINE ("This is a test Email with pics and UTF-8 contents message body. chrome.jpgchrom"))
+---
+> * 1 FETCH (FIRSTLINE ("This is a test Email with pics and UTF-8 contents message "))
+1c1
+< * 1 FETCH (FIRSTLINE ("This is a test Email with pics and UTF-8 contents message body. chrome.jpgchr"))
+---
+> * 1 FETCH (FIRSTLINE ("This is a test Email with pics and UTF-8 contents message "))
+1c1
+< * 1 FETCH (FIRSTLINE (""))
+---
+> * 1 FETCH (FIRSTLINE ("This is a test Email with pics and UTF-8 contents message body. chrome.jpgchr"))
+1c1
+< * 1 FETCH (FIRSTLINE (""))
+---
+> * 1 FETCH (FIRSTLINE ("This is a test Email with pics and UTF-8 contents message body. chrome.jpgchr"))
+====current path is:/home/ram/Desktop/MX9.5/Testcases/body_preview/3-Logic of selecting the firstline data/Testcases-body-preview-deal-spaces-encode-enhanced-new/good/Type-image-UTF-8-English-message-body-IMAP-and-SMTP================
+
+================Type-image-UTF-8-English-message-body-IMAP-and-SMTP Test finished===============
+
+====current path is:Type-image-UTF-8-English-message-body-IMAP-and-SMTP================
+====running logic-messagesend-IMAP-append-7bit ========
+====running logic-messagesend-IMAP-append-8bit ========
+====running logic-messagesend-IMAP-append-base64 ========
+====running logic-messagesend-IMAP-append-quoted-printable ========
+====running logic-messagesend-SMTP-7bit ========
+====running logic-messagesend-SMTP-8bit ========
+====running logic-messagesend-SMTP-base64 ========
+====running logic-messagesend-SMTP-quoted-printable ========
+================Type-image-UTF-8-English-message-body-IMAP-and-SMTP Test finished===============
+====current path is:Type-image-UTF-8-English-message-body-IMAP-and-SMTP====================current path is:Type-image-UTF-8-English-message-body-IMAP-and-SMTP================
+====running logic-messagesend-IMAP-append-7bit ============running logic-messagesend-IMAP-append-7bit ========
+====running logic-messagesend-IMAP-append-8bit ============running logic-messagesend-IMAP-append-8bit ========
+====running logic-messagesend-IMAP-append-base64 ========
+====running logic-messagesend-IMAP-append-quoted-printable ========
+====running logic-messagesend-SMTP-7bit ========
+====running logic-messagesend-SMTP-8bit ========
+====running logic-messagesend-SMTP-base64 ========
+====running logic-messagesend-SMTP-quoted-printable ========
+================Type-image-UTF-8-English-message-body-IMAP-and-SMTP Test finished===============
+====current path is:Type-image-UTF-8-English-message-body-IMAP-and-SMTP====================current path is:Type-image-UTF-8-English-message-body-IMAP-and-SMTP================
+====running logic-messagesend-IMAP-append-7bit ============running logic-messagesend-IMAP-append-7bit ========
+====running logic-messagesend-IMAP-append-8bit ============running logic-messagesend-IMAP-append-8bit ========
+====running logic-messagesend-IMAP-append-base64 ========
+====running logic-messagesend-IMAP-append-quoted-printable ========
+====running logic-messagesend-SMTP-7bit ========
+====running logic-messagesend-SMTP-8bit ========
+====running logic-messagesend-SMTP-base64 ========
+====running logic-messagesend-SMTP-quoted-printable ========
+================Type-image-UTF-8-English-message-body-IMAP-and-SMTP Test finished===============
+====current path is:Type-image-UTF-8-English-message-body-IMAP-and-SMTP====================current path is:Type-image-UTF-8-English-message-body-IMAP-and-SMTP================
+====running logic-messagesend-IMAP-append-7bit ============running logic-messagesend-IMAP-append-7bit ========
+====running logic-messagesend-IMAP-append-8bit ============running logic-messagesend-IMAP-append-8bit ========
+====running logic-messagesend-IMAP-append-base64 ========
+====running logic-messagesend-IMAP-append-quoted-printable ========
+====running logic-messagesend-SMTP-7bit ========
+====running logic-messagesend-SMTP-8bit ========
+====running logic-messagesend-SMTP-base64 ========
+====running logic-messagesend-SMTP-quoted-printable ========
+================Type-image-UTF-8-English-message-body-IMAP-and-SMTP Test finished===============
+1c1
+< * 1 FETCH (FIRSTLINE ("This is a test Email with pics and UTF-8 contents message body. chrome.jpgchrome"))
+---
+> * 1 FETCH (FIRSTLINE ("This is a test Email with pics and UTF-8 contents message body. chrome.jpgchr"))
+1c1
+< * 1 FETCH (FIRSTLINE ("This is a test Email with pics and UTF-8 contents message body. chrome.jpgchrome"))
+---
+> * 1 FETCH (FIRSTLINE ("This is a test Email with pics and UTF-8 contents message body. chrome.jpgchr"))
+1c1
+< * 1 FETCH (FIRSTLINE ("This is a test Email with pics and UTF-8 contents message body. chrome.jpgchrome"))
+---
+> * 1 FETCH (FIRSTLINE ("This is a test Email with pics and UTF-8 contents message body. chrome.jpgchr"))
+1c1
+< * 1 FETCH (FIRSTLINE ("This is a test Email with pics and UTF-8 contents message body. chrome.jpgchrome"))
+---
+> * 1 FETCH (FIRSTLINE ("This is a test Email with pics and UTF-8 contents message body. chrome.jpgchr"))
+1c1
+< * 1 FETCH (FIRSTLINE ("This is a test Email with pics and UTF-8 contents message body. chrome.jpgchrome"))
+---
+> * 1 FETCH (FIRSTLINE ("This is a test Email with pics and UTF-8 contents message body. chrome.jpgchr"))
+1c1
+< * 1 FETCH (FIRSTLINE ("This is a test Email with pics and UTF-8 contents message body. chrome.jpgchrome"))
+---
+> * 1 FETCH (FIRSTLINE ("This is a test Email with pics and UTF-8 contents message body. chrome.jpgchr"))
+1c1
+< * 1 FETCH (FIRSTLINE ("This is a test Email with pics and UTF-8 contents message body. chrome.jpgchrome"))
+---
+> * 1 FETCH (FIRSTLINE ("This is a test Email with pics and UTF-8 contents message body. chrome.jpgchr"))
+1c1
+< * 1 FETCH (FIRSTLINE ("This is a test Email with pics and UTF-8 contents message body. chrome.jpgchrome"))
+---
+> * 1 FETCH (FIRSTLINE ("This is a test Email with pics and UTF-8 contents message body. chrome.jpgchr"))
+1c1
+< * 1 FETCH (FIRSTLINE ("This is a test Email with pics and UTF-8 contents message body. chrome.jpgchrome"))
+---
+> * 1 FETCH (FIRSTLINE ("This is a test Email with pics and UTF-8 contents message body. chrome.jpgchr"))
+1c1
+< * 1 FETCH (FIRSTLINE ("This is a test Email with pics and UTF-8 contents message body. chrome.jpgchrome"))
+---
+> * 1 FETCH (FIRSTLINE ("This is a test Email with pics and UTF-8 contents message body. chrome.jpgchr"))
+1c1
+< * 1 FETCH (FIRSTLINE ("This is a test Email with pics and UTF-8 contents message body. chrome.jpgchrome"))
+---
+> * 1 FETCH (FIRSTLINE ("This is a test Email with pics and UTF-8 contents message body. chrome.jpgchr"))

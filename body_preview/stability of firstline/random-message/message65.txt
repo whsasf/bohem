@@ -1,0 +1,8 @@
+from:xx2@openwave.com
+to:xx1@openwave.com
+subject:random message
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8; format=flowed
+Content-Transfer-Encoding: 8bit
+
+opossum's proscribe filbert's testifies briers website's conniving calculation's sunbeams decline's cow's Ronald's bivouacked seaweed's gadgetry

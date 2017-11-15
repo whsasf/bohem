@@ -1,0 +1,9 @@
+from:xx2@openwave.com
+to:xx1@openwave.com
+subject:testemail-Japanes-Shift_JIS-CRLF-7bit
+MIME-Version: 1.0
+Content-Type: text/plain; charset=Shift_JIS
+Content-Transfer-Encoding: 7bit
+
+l‚Í‰½‚©‚Ì
+‹]µ‚È‚µ‚É ‰½‚à“¾‚é‚±‚Æ‚Í‚Å‚«‚È‚¢

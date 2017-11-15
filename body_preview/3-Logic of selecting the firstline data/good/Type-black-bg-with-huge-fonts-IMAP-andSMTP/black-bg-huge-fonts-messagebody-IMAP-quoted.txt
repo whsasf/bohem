@@ -1,0 +1,47 @@
+Return-Path: <xx2@openwave.com>
+Received: from [10.13.8.221] by mx-172-26-202-87.openwave.com
+          (InterMail vM.9.05.00.00 201-2473-137-108) with ESMTP
+          id <20170218102755.BHD23163.mx-172-26-202-87.openwave.com@[10.13.8.221]>
+          for <xx1@openwave.com>; Sat, 18 Feb 2017 02:27:55 -0800
+To: xx1@openwave.com
+From: xx2 <xx2@openwave.com>
+Subject: black bg with huge fonts in message body
+Message-ID: <f1c7e88c-c6fb-749f-d5f1-aec986ab2d1f@openwave.com>
+Date: Sat, 18 Feb 2017 18:27:53 +0800
+User-Agent: MX
+MIME-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="------------BC1386BD713A018738446178"
+
+This is a multi-part message in MIME format.
+--------------BC1386BD713A018738446178
+Content-Type: text/plain; charset=utf-8; format=flowed
+Content-Transfer-Encoding: quoted-printable
+
+=D8=8C =D9=88=D9=8A=D9=85=D9=83=D9=86 =D8=AA=D8=AD
+Nobody!
+=E3=81=84=E3=81=8F=E3=81=A4=E3=81=AB=E3=81=AA
+=E6=88=91=E4=BB=AC=E6=98=AF=E4=B8=AD=E5=9B=BD=E4=BA=BA=EF=BC=8C=
+--------------BC1386BD713A018738446178
+Content-Type: text/html; charset=utf-8
+Content-Transfer-Encoding: 8bit
+
+<html>
+  <head>
+
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  </head>
+  <body bgcolor="#000000" alink="#EE0000" link="#0B6CDA" text="#000000"
+    vlink="#551A8B">
+    <p><font color="#ffffff" size="+3">، ويمكن تح
+<br>
+        Nobody!
+<br>
+        いくつにな
+<br>
+        我们是中国人，</font><br>
+    </p>
+  </body>
+</html>
+
+--------------BC1386BD713A018738446178--

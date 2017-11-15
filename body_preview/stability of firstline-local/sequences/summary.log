@@ -1,0 +1,328 @@
+[32m
+11111111111111111111fetching first line data the 1 time11111111111111111111[0m
+
+* OK IMAP4 server (InterMail vM.9.05.00.00 201-2473-137-113) ready Wed, 24 May 2017 19:41:05 -0700 (PDT)
+a OK LOGIN completed
+* 7 EXISTS
+* OK [UNSEEN 1] First unseen message
+* OK [UIDVALIDITY 1495673622] UIDs valid
+* OK [UIDNEXT 1826] Predicted next UID
+* FLAGS (\Answered \Flagged \Deleted \Draft \Seen)
+* OK [PERMANENTFLAGS (\* \Answered \Flagged \Deleted \Draft \Seen)] Permanent flags
+* 7 RECENT
+a OK [READ-WRITE] SELECT completed
+* 1 FETCH (FIRSTLINE ("You gods divine! Make Cressida' s name the very crown of falsehood, if ever she "))
+* 2 FETCH (FIRSTLINE ("You gods divine! Make Cressida's name the very crown of falsehood, if ever she l"))
+* 3 FETCH (FIRSTLINE ("You gods divine ! Make Cressida's name the very crown of falsehood , if ever she"))
+* 4 FETCH (FIRSTLINE ("You gods divine ! Make Cressida's name the very crown of falsehood , if ever she"))
+* 5 FETCH (FIRSTLINE ("You gods divine ! Make Cressida' s name the very crown of falsehood , if ever sh"))
+* 6 FETCH (FIRSTLINE ("You gods divine ! Make Cressida's name the very crown of falsehood , if ever she"))
+* 7 FETCH (FIRSTLINE ("my people youe people.hahaha "))
+a OK FETCH completed
+* 1 FETCH (FIRSTLINE ("You gods divine! Make Cressida' s name the very crown of falsehood, if ever she ") UID 1819)
+* 2 FETCH (FIRSTLINE ("You gods divine! Make Cressida's name the very crown of falsehood, if ever she l") UID 1820)
+* 3 FETCH (FIRSTLINE ("You gods divine ! Make Cressida's name the very crown of falsehood , if ever she") UID 1821)
+* 4 FETCH (FIRSTLINE ("You gods divine ! Make Cressida's name the very crown of falsehood , if ever she") UID 1822)
+* 5 FETCH (FIRSTLINE ("You gods divine ! Make Cressida' s name the very crown of falsehood , if ever sh") UID 1823)
+* 6 FETCH (FIRSTLINE ("You gods divine ! Make Cressida's name the very crown of falsehood , if ever she") UID 1824)
+* 7 FETCH (FIRSTLINE ("my people youe people.hahaha ") UID 1825)
+a OK UID FETCH completed
+* BYE IMAP4 server terminating connection
+a OK LOGOUT completed
+[32m
+22222222222222222222fetching first line data the 2 time22222222222222222222[0m
+
+* OK IMAP4 server (InterMail vM.9.05.00.00 201-2473-137-113) ready Wed, 24 May 2017 19:41:05 -0700 (PDT)
+a OK LOGIN completed
+* 7 EXISTS
+* OK [UNSEEN 1] First unseen message
+* OK [UIDVALIDITY 1495673622] UIDs valid
+* OK [UIDNEXT 1826] Predicted next UID
+* FLAGS (\Answered \Flagged \Deleted \Draft \Seen)
+* OK [PERMANENTFLAGS (\* \Answered \Flagged \Deleted \Draft \Seen)] Permanent flags
+* 0 RECENT
+a OK [READ-WRITE] SELECT completed
+* 1 FETCH (RFC822 {274}
+from:xx2@openwave.com
+to:xx1@openwave.com
+subject:testemail-Ascii-CRLF
+Message-ID: <206-2017-0524-194104-7417@mx-172-26-202-87.openwave.com>
+
+You gods divine! Make Cressida'     s name the very crown of falsehood, if ever she leave Troilus. (Troilus and Cressida 4.2)
+ FLAGS (\Seen))
+* 2 FETCH (RFC822 {274}
+from:xx2@openwave.com
+to:xx1@openwave.com
+subject:testemail-Ascii-CRLF
+Message-ID: <207-2017-0524-194104-7417@mx-172-26-202-87.openwave.com>
+
+You gods divine! Make Cressida's name the very crown of falsehood, if ever she leave Troilus. (Troilus and Cressida 4.2)     
+ FLAGS (\Seen))
+* 3 FETCH (RFC822 {273}
+from:xx2@openwave.com
+to:xx1@openwave.com
+subject:testemail-Ascii-CRLF
+Message-ID: <208-2017-0524-194104-7417@mx-172-26-202-87.openwave.com>
+
+You gods divine
+! Make Cressida's name the very crown of falsehood
+, if ever she leave Troilus. (Troilus and Cressida 4.2)
+ FLAGS (\Seen))
+* 4 FETCH (RFC822 {278}
+from:xx2@openwave.com
+to:xx1@openwave.com
+subject:testemail-Ascii-CRLF
+Message-ID: <209-2017-0524-194104-7417@mx-172-26-202-87.openwave.com>
+
+     You gods divine
+! Make Cressida's name the very crown of falsehood
+, if ever she leave Troilus. (Troilus and Cressida 4.2)
+ FLAGS (\Seen))
+* 5 FETCH (RFC822 {278}
+from:xx2@openwave.com
+to:xx1@openwave.com
+subject:testemail-Ascii-CRLF
+Message-ID: <210-2017-0524-194104-7417@mx-172-26-202-87.openwave.com>
+
+You gods divine
+! Make Cressida'     s name the very crown of falsehood
+, if ever she leave Troilus. (Troilus and Cressida 4.2)
+ FLAGS (\Seen))
+* 6 FETCH (RFC822 {278}
+from:xx2@openwave.com
+to:xx1@openwave.com
+subject:testemail-Ascii-CRLF
+Message-ID: <211-2017-0524-194104-7417@mx-172-26-202-87.openwave.com>
+
+You gods divine
+! Make Cressida's name the very crown of falsehood
+, if ever she leave Troilus. (Troilus and Cressida 4.2)     
+ FLAGS (\Seen))
+* 7 FETCH (RFC822 {188}
+from:xx2@openwave.com
+to:xx1@openwave.com
+subject:testemail-Ascii-CRLF
+Message-ID: <212-2017-0524-194104-7417@mx-172-26-202-87.openwave.com>
+
+my people
+
+
+
+
+youe people.hahaha
+ FLAGS (\Seen))
+a OK FETCH completed
+* 1 FETCH (FIRSTLINE ("You gods divine! Make Cressida' s name the very crown of falsehood, if ever she "))
+* 2 FETCH (FIRSTLINE ("You gods divine! Make Cressida's name the very crown of falsehood, if ever she l"))
+* 3 FETCH (FIRSTLINE ("You gods divine ! Make Cressida's name the very crown of falsehood , if ever she"))
+* 4 FETCH (FIRSTLINE ("You gods divine ! Make Cressida's name the very crown of falsehood , if ever she"))
+* 5 FETCH (FIRSTLINE ("You gods divine ! Make Cressida' s name the very crown of falsehood , if ever sh"))
+* 6 FETCH (FIRSTLINE ("You gods divine ! Make Cressida's name the very crown of falsehood , if ever she"))
+* 7 FETCH (FIRSTLINE ("my people youe people.hahaha "))
+a OK FETCH completed
+* 1 FETCH (FIRSTLINE ("You gods divine! Make Cressida' s name the very crown of falsehood, if ever she ") UID 1819)
+* 2 FETCH (FIRSTLINE ("You gods divine! Make Cressida's name the very crown of falsehood, if ever she l") UID 1820)
+* 3 FETCH (FIRSTLINE ("You gods divine ! Make Cressida's name the very crown of falsehood , if ever she") UID 1821)
+* 4 FETCH (FIRSTLINE ("You gods divine ! Make Cressida's name the very crown of falsehood , if ever she") UID 1822)
+* 5 FETCH (FIRSTLINE ("You gods divine ! Make Cressida' s name the very crown of falsehood , if ever sh") UID 1823)
+* 6 FETCH (FIRSTLINE ("You gods divine ! Make Cressida's name the very crown of falsehood , if ever she") UID 1824)
+* 7 FETCH (FIRSTLINE ("my people youe people.hahaha ") UID 1825)
+a OK UID FETCH completed
+* BYE IMAP4 server terminating connection
+a OK LOGOUT completed
+[32m
+33333333333333333333fetching first line data the 3 time33333333333333333333[0m
+
+* OK IMAP4 server (InterMail vM.9.05.00.00 201-2473-137-113) ready Wed, 24 May 2017 19:41:06 -0700 (PDT)
+a OK LOGIN completed
+* 7 EXISTS
+* OK [UNSEEN 0] First unseen message
+* OK [UIDVALIDITY 1495673622] UIDs valid
+* OK [UIDNEXT 1826] Predicted next UID
+* FLAGS (\Answered \Flagged \Deleted \Draft \Seen)
+* OK [PERMANENTFLAGS (\* \Answered \Flagged \Deleted \Draft \Seen)] Permanent flags
+* 0 RECENT
+a OK [READ-WRITE] SELECT completed
++ Ready for argument
+* 8 EXISTS
+* 1 RECENT
+a OK [APPENDUID 1495673622 1826] APPEND completed
+* 1 FETCH (RFC822 {274}
+from:xx2@openwave.com
+to:xx1@openwave.com
+subject:testemail-Ascii-CRLF
+Message-ID: <206-2017-0524-194104-7417@mx-172-26-202-87.openwave.com>
+
+You gods divine! Make Cressida'     s name the very crown of falsehood, if ever she leave Troilus. (Troilus and Cressida 4.2)
+)
+* 2 FETCH (RFC822 {274}
+from:xx2@openwave.com
+to:xx1@openwave.com
+subject:testemail-Ascii-CRLF
+Message-ID: <207-2017-0524-194104-7417@mx-172-26-202-87.openwave.com>
+
+You gods divine! Make Cressida's name the very crown of falsehood, if ever she leave Troilus. (Troilus and Cressida 4.2)     
+)
+* 3 FETCH (RFC822 {273}
+from:xx2@openwave.com
+to:xx1@openwave.com
+subject:testemail-Ascii-CRLF
+Message-ID: <208-2017-0524-194104-7417@mx-172-26-202-87.openwave.com>
+
+You gods divine
+! Make Cressida's name the very crown of falsehood
+, if ever she leave Troilus. (Troilus and Cressida 4.2)
+)
+* 4 FETCH (RFC822 {278}
+from:xx2@openwave.com
+to:xx1@openwave.com
+subject:testemail-Ascii-CRLF
+Message-ID: <209-2017-0524-194104-7417@mx-172-26-202-87.openwave.com>
+
+     You gods divine
+! Make Cressida's name the very crown of falsehood
+, if ever she leave Troilus. (Troilus and Cressida 4.2)
+)
+* 5 FETCH (RFC822 {278}
+from:xx2@openwave.com
+to:xx1@openwave.com
+subject:testemail-Ascii-CRLF
+Message-ID: <210-2017-0524-194104-7417@mx-172-26-202-87.openwave.com>
+
+You gods divine
+! Make Cressida'     s name the very crown of falsehood
+, if ever she leave Troilus. (Troilus and Cressida 4.2)
+)
+* 6 FETCH (RFC822 {278}
+from:xx2@openwave.com
+to:xx1@openwave.com
+subject:testemail-Ascii-CRLF
+Message-ID: <211-2017-0524-194104-7417@mx-172-26-202-87.openwave.com>
+
+You gods divine
+! Make Cressida's name the very crown of falsehood
+, if ever she leave Troilus. (Troilus and Cressida 4.2)     
+)
+* 7 FETCH (RFC822 {188}
+from:xx2@openwave.com
+to:xx1@openwave.com
+subject:testemail-Ascii-CRLF
+Message-ID: <212-2017-0524-194104-7417@mx-172-26-202-87.openwave.com>
+
+my people
+
+
+
+
+youe people.hahaha
+)
+* 8 FETCH (RFC822 {84}
+xxxxxxxxx
+Message-ID: <213-2017-0524-194106-7417@mx-172-26-202-87.openwave.com>
+
+ FLAGS (\Recent \Seen))
+a OK FETCH completed
+* 1 FETCH (FIRSTLINE ("You gods divine! Make Cressida' s name the very crown of falsehood, if ever she "))
+* 2 FETCH (FIRSTLINE ("You gods divine! Make Cressida's name the very crown of falsehood, if ever she l"))
+* 3 FETCH (FIRSTLINE ("You gods divine ! Make Cressida's name the very crown of falsehood , if ever she"))
+* 4 FETCH (FIRSTLINE ("You gods divine ! Make Cressida's name the very crown of falsehood , if ever she"))
+* 5 FETCH (FIRSTLINE ("You gods divine ! Make Cressida' s name the very crown of falsehood , if ever sh"))
+* 6 FETCH (FIRSTLINE ("You gods divine ! Make Cressida's name the very crown of falsehood , if ever she"))
+* 7 FETCH (FIRSTLINE ("my people youe people.hahaha "))
+* 8 FETCH (FIRSTLINE ("xxxxxxxxx Message-ID: <213-2017-0524-194106-7417@mx-172-26-202-87.openwave.com> "))
+a OK FETCH completed
+* 1 FETCH (FIRSTLINE ("You gods divine! Make Cressida' s name the very crown of falsehood, if ever she ") UID 1819)
+* 2 FETCH (FIRSTLINE ("You gods divine! Make Cressida's name the very crown of falsehood, if ever she l") UID 1820)
+* 3 FETCH (FIRSTLINE ("You gods divine ! Make Cressida's name the very crown of falsehood , if ever she") UID 1821)
+* 4 FETCH (FIRSTLINE ("You gods divine ! Make Cressida's name the very crown of falsehood , if ever she") UID 1822)
+* 5 FETCH (FIRSTLINE ("You gods divine ! Make Cressida' s name the very crown of falsehood , if ever sh") UID 1823)
+* 6 FETCH (FIRSTLINE ("You gods divine ! Make Cressida's name the very crown of falsehood , if ever she") UID 1824)
+* 7 FETCH (FIRSTLINE ("my people youe people.hahaha ") UID 1825)
+* 8 FETCH (FIRSTLINE ("xxxxxxxxx Message-ID: <213-2017-0524-194106-7417@mx-172-26-202-87.openwave.com> ") UID 1826)
+a OK UID FETCH completed
+* BYE IMAP4 server terminating connection
+a OK LOGOUT completed
+[32m
+44444444444444444444fetching first line data the 4 time44444444444444444444[0m
+
+* OK IMAP4 server (InterMail vM.9.05.00.00 201-2473-137-113) ready Wed, 24 May 2017 19:41:07 -0700 (PDT)
+a OK LOGIN completed
+* 8 EXISTS
+* OK [UNSEEN 0] First unseen message
+* OK [UIDVALIDITY 1495673622] UIDs valid
+* OK [UIDNEXT 1827] Predicted next UID
+* FLAGS (\Answered \Flagged \Deleted \Draft \Seen)
+* OK [PERMANENTFLAGS (\* \Answered \Flagged \Deleted \Draft \Seen)] Permanent flags
+* 1 RECENT
+a OK [READ-WRITE] SELECT completed
++ Ready for argument
+* 9 EXISTS
+* 2 RECENT
+a OK [APPENDUID 1495673622 1827] APPEND completed
+* 1 FETCH (FIRSTLINE ("You gods divine! Make Cressida' s name the very crown of falsehood, if ever she "))
+* 2 FETCH (FIRSTLINE ("You gods divine! Make Cressida's name the very crown of falsehood, if ever she l"))
+* 3 FETCH (FIRSTLINE ("You gods divine ! Make Cressida's name the very crown of falsehood , if ever she"))
+* 4 FETCH (FIRSTLINE ("You gods divine ! Make Cressida's name the very crown of falsehood , if ever she"))
+* 5 FETCH (FIRSTLINE ("You gods divine ! Make Cressida' s name the very crown of falsehood , if ever sh"))
+* 6 FETCH (FIRSTLINE ("You gods divine ! Make Cressida's name the very crown of falsehood , if ever she"))
+* 7 FETCH (FIRSTLINE ("my people youe people.hahaha "))
+* 8 FETCH (FIRSTLINE ("xxxxxxxxx Message-ID: <213-2017-0524-194106-7417@mx-172-26-202-87.openwave.com> "))
+* 9 FETCH (FIRSTLINE ("xxxxxxxxx Message-ID: <214-2017-0524-194107-7417@mx-172-26-202-87.openwave.com> "))
+a OK FETCH completed
+* 1 FETCH (FIRSTLINE ("You gods divine! Make Cressida' s name the very crown of falsehood, if ever she ") UID 1819)
+* 2 FETCH (FIRSTLINE ("You gods divine! Make Cressida's name the very crown of falsehood, if ever she l") UID 1820)
+* 3 FETCH (FIRSTLINE ("You gods divine ! Make Cressida's name the very crown of falsehood , if ever she") UID 1821)
+* 4 FETCH (FIRSTLINE ("You gods divine ! Make Cressida's name the very crown of falsehood , if ever she") UID 1822)
+* 5 FETCH (FIRSTLINE ("You gods divine ! Make Cressida' s name the very crown of falsehood , if ever sh") UID 1823)
+* 6 FETCH (FIRSTLINE ("You gods divine ! Make Cressida's name the very crown of falsehood , if ever she") UID 1824)
+* 7 FETCH (FIRSTLINE ("my people youe people.hahaha ") UID 1825)
+* 8 FETCH (FIRSTLINE ("xxxxxxxxx Message-ID: <213-2017-0524-194106-7417@mx-172-26-202-87.openwave.com> ") UID 1826)
+* 9 FETCH (FIRSTLINE ("xxxxxxxxx Message-ID: <214-2017-0524-194107-7417@mx-172-26-202-87.openwave.com> ") UID 1827)
+a OK UID FETCH completed
+* BYE IMAP4 server terminating connection
+a OK LOGOUT completed
+[32m
+55555555555555555555 fetching first line data the 5 time55555555555555555555[0m
+
+* OK IMAP4 server (InterMail vM.9.05.00.00 201-2473-137-113) ready Wed, 24 May 2017 19:41:08 -0700 (PDT)
+a OK LOGIN completed
+a BAD Unrecognized command: FETCH
+a BAD Unrecognized command: UID FETCH
+* BYE IMAP4 server terminating connection
+a OK LOGOUT completed
+[32m
+66666666666666666666fetching first line data the 6 time66666666666666666666[0m
+
+* OK IMAP4 server (InterMail vM.9.05.00.00 201-2473-137-113) ready Wed, 24 May 2017 19:41:09 -0700 (PDT)
+a OK LOGIN completed
+* 9 EXISTS
+* OK [UNSEEN 9] First unseen message
+* OK [UIDVALIDITY 1495673622] UIDs valid
+* OK [UIDNEXT 1828] Predicted next UID
+* FLAGS (\Answered \Flagged \Deleted \Draft \Seen)
+* OK [PERMANENTFLAGS (\* \Answered \Flagged \Deleted \Draft \Seen)] Permanent flags
+* 1 RECENT
+a OK [READ-WRITE] SELECT completed
+a NO FETCH failed
+a NO FETCH failed
+a OK UID FETCH completed
+* BYE IMAP4 server terminating connection
+a OK LOGOUT completed
+[32m
+77777777777777777777fetching first line data the 7 time77777777777777777777[0m
+
+* OK IMAP4 server (InterMail vM.9.05.00.00 201-2473-137-113) ready Wed, 24 May 2017 19:41:09 -0700 (PDT)
+a OK LOGIN completed
+* 9 EXISTS
+* OK [UNSEEN 9] First unseen message
+* OK [UIDVALIDITY 1495673622] UIDs valid
+* OK [UIDNEXT 1828] Predicted next UID
+* FLAGS (\Answered \Flagged \Deleted \Draft \Seen)
+* OK [PERMANENTFLAGS (\* \Answered \Flagged \Deleted \Draft \Seen)] Permanent flags
+* 0 RECENT
+a OK [READ-WRITE] SELECT completed
+a NO FETCH failed
+a NO FETCH failed
+a OK UID FETCH completed
+* BYE IMAP4 server terminating connection
+a OK LOGOUT completed

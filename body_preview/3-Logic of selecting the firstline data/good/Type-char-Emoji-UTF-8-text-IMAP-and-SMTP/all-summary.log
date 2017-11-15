@@ -1,0 +1,136 @@
+1c1
+< * 1 FETCH (FIRSTLINE ("Oi0pCjotKAo7LSkKCtiMINmI2YrZhdmD2YYg2KrYrQpOb2JvZHkhCuOBhOOBj+OBpOOBq+OBqgrm iJ"))
+---
+> * 1 FETCH (FIRSTLINE (":-) :-( ;-) ، ويمكن تح Nobody! いくつにな 我们是中国�"))
+1c1
+< * 1 FETCH (FIRSTLINE (":-) :-( ;-) =D8=8C =D9=88=D9=8A=D9=85=D9=83=D9=86 =D8=AA=D8=AD Nobody! =E"))
+---
+> * 1 FETCH (FIRSTLINE (":-) :-( ;-) ، ويمكن تح Nobody! いくつにな 我们是中国�"))
+1c1
+< * 1 FETCH (FIRSTLINE ("Oi0pCjotKAo7LSkKCtiMINmI2YrZhdmD2YYg2KrYrQpOb2JvZHkhCuOBhOOBj+OBpOOBq+OBqgrm iJ"))
+---
+> * 1 FETCH (FIRSTLINE (":-) :-( ;-) ، ويمكن تح Nobody! いくつにな 我们是中国�"))
+1c1
+< * 1 FETCH (FIRSTLINE ("Oi0pCjotKAo7LSkKCtiMINmI2YrZhdmD2YYg2KrYrQpOb2JvZHkhCuOBhOOBj+OBpOOBq+OBqgrm iJ"))
+---
+> * 1 FETCH (FIRSTLINE (":-) :-( ;-) ، ويمكن تح Nobody! いくつにな 我们是中国�"))
+1c1
+< * 1 FETCH (FIRSTLINE (":-) :-( ;-) ، ويمكن تح Nobody! いくつにな �"))
+---
+> * 1 FETCH (FIRSTLINE (":-) :-( ;-) ، ويمكن تح Nobody! いくつにな 我们是中国�"))
+1c1
+< * 1 FETCH (FIRSTLINE (":-) :-( ;-) =D8=8C =D9=88=D9=8A=D9=85=D9=83=D9=86 =D8=AA=D8=AD Nobody! =E"))
+---
+> * 1 FETCH (FIRSTLINE (":-) :-( ;-) ، ويمكن تح Nobody! いくつにな 我们是中国�"))
+1c1
+< * 1 FETCH (FIRSTLINE (":-) :-( ;-) =D8=8C =D9=88=D9=8A=D9=85=D9=83=D9=86 =D8=AA=D8=AD Nobody! =E"))
+---
+> * 1 FETCH (FIRSTLINE (":-) :-( ;-) ، ويمكن تح Nobody! いくつにな 我们是中国�"))
+1c1
+< * 1 FETCH (FIRSTLINE (":-) :-( ;-) ، ويمكن تح Nobody! いくつにな 我们是中国"))
+---
+> * 1 FETCH (FIRSTLINE (":-) :-( ;-) ، ويمكن تح Nobody! いくつにな 我们是中国�"))
+1c1
+< * 1 FETCH (FIRSTLINE (":-) :-( ;-) ، ويمكن تح Nobody! いくつにな 我们是中国人，"))
+---
+> * 1 FETCH (FIRSTLINE (":-) :-( ;-) ، ويمكن تح Nobody! いくつにな �"))
+1c1
+< * 1 FETCH (FIRSTLINE (":-) :-( ;-) ، ويمكن تح Nobody! いくつにな 我们是中国"))
+---
+> * 1 FETCH (FIRSTLINE (":-) :-( ;-) ، ويمكن تح Nobody! いくつにな 我们是中国�"))
+1c1
+< * 1 FETCH (FIRSTLINE ("Oi0pCjotKAo7LSkKCtiMINmI2YrZhdmD2YYg2KrYrQpOb2JvZHkhCuOBhOOBj+OBpOOBq+OBqgrm iJH"))
+---
+> * 1 FETCH (FIRSTLINE (":-) :-( ;-) ، ويمكن تح Nobody! いくつにな 我们是中国人，"))
+1c1
+< * 1 FETCH (FIRSTLINE (":-) :-( ;-) ، ويمكن تح Nobody! いくつにな 我们是中国"))
+---
+> * 1 FETCH (FIRSTLINE (":-) :-( ;-) ، ويمكن تح Nobody! いくつにな 我们是中国人，"))
+====current path is:/home/ram/Desktop/MX9.5/Testcases/body_preview/3-Logic of selecting the firstline data/Testcases-body-preview-deal-spaces-encode-enhanced-new/good/Type-char-Emoji-UTF-8-text-IMAP-and-SMTP================
+
+================Type-char-Emoji-UTF-8-text-IMAP-and-SMTP Test finished===============
+
+====current path is:Type-char-Emoji-UTF-8-text-IMAP-and-SMTP================
+====running logic-messagesend-IMAP-append-7bit ========
+====running logic-messagesend-IMAP-append-8bit ========
+====running logic-messagesend-IMAP-append-base64 ========
+====running logic-messagesend-IMAP-append-quoted-printable ========
+====running logic-messagesend-SMTP-7bit ========
+====running logic-messagesend-SMTP-8bit ========
+====running logic-messagesend-SMTP-base64 ========
+====running logic-messagesend-SMTP-quoted-printable ========
+================Type-char-Emoji-UTF-8-text-IMAP-and-SMTP Test finished===============
+====current path is:Type-char-Emoji-UTF-8-text-IMAP-and-SMTP====================current path is:Type-char-Emoji-UTF-8-text-IMAP-and-SMTP================
+====running logic-messagesend-IMAP-append-7bit ============running logic-messagesend-IMAP-append-7bit ========
+====running logic-messagesend-IMAP-append-8bit ============running logic-messagesend-IMAP-append-8bit ========
+====running logic-messagesend-IMAP-append-base64 ========
+====running logic-messagesend-IMAP-append-quoted-printable ========
+====running logic-messagesend-SMTP-7bit ========
+====running logic-messagesend-SMTP-8bit ========
+====running logic-messagesend-SMTP-base64 ========
+====running logic-messagesend-SMTP-quoted-printable ========
+================Type-char-Emoji-UTF-8-text-IMAP-and-SMTP Test finished===============
+====current path is:Type-char-Emoji-UTF-8-text-IMAP-and-SMTP====================current path is:Type-char-Emoji-UTF-8-text-IMAP-and-SMTP================
+====running logic-messagesend-IMAP-append-7bit ============running logic-messagesend-IMAP-append-7bit ========
+====running logic-messagesend-IMAP-append-8bit ============running logic-messagesend-IMAP-append-8bit ========
+====running logic-messagesend-IMAP-append-base64 ========
+====running logic-messagesend-IMAP-append-quoted-printable ========
+====running logic-messagesend-SMTP-7bit ========
+====running logic-messagesend-SMTP-8bit ========
+====running logic-messagesend-SMTP-base64 ========
+====running logic-messagesend-SMTP-quoted-printable ========
+================Type-char-Emoji-UTF-8-text-IMAP-and-SMTP Test finished===============
+====current path is:Type-char-Emoji-UTF-8-text-IMAP-and-SMTP====================current path is:Type-char-Emoji-UTF-8-text-IMAP-and-SMTP================
+====running logic-messagesend-IMAP-append-7bit ============running logic-messagesend-IMAP-append-7bit ========
+====running logic-messagesend-IMAP-append-8bit ============running logic-messagesend-IMAP-append-8bit ========
+====running logic-messagesend-IMAP-append-base64 ========
+====running logic-messagesend-IMAP-append-quoted-printable ========
+====running logic-messagesend-SMTP-7bit ========
+====running logic-messagesend-SMTP-8bit ========
+====running logic-messagesend-SMTP-base64 ========
+====running logic-messagesend-SMTP-quoted-printable ========
+================Type-char-Emoji-UTF-8-text-IMAP-and-SMTP Test finished===============
+1c1
+< * 1 FETCH (FIRSTLINE (":-) :-( ;-) ، ويمكن تح Nobody! いくつにな 我们是中国人， "))
+---
+> * 1 FETCH (FIRSTLINE (":-) :-( ;-) ، ويمكن تح Nobody! いくつにな 我们是中国"))
+1c1
+< * 1 FETCH (FIRSTLINE (":-) :-( ;-) ، ويمكن تح Nobody! いくつにな 我们是中国人， "))
+---
+> * 1 FETCH (FIRSTLINE (":-) :-( ;-) ، ويمكن تح Nobody! いくつにな 我们是中国"))
+1c1
+< * 1 FETCH (FIRSTLINE (":-) :-( ;-) ، ويمكن تح Nobody! いくつにな 我们是中国人，"))
+---
+> * 1 FETCH (FIRSTLINE (":-) :-( ;-) ، ويمكن تح Nobody! いくつにな 我们是中国"))
+1c1
+< * 1 FETCH (FIRSTLINE (":-) :-( ;-) ، ويمكن تح Nobody! いくつにな 我们是中国人，"))
+---
+> * 1 FETCH (FIRSTLINE (":-) :-( ;-) ، ويمكن تح Nobody! いくつにな 我们是中国"))
+1c1
+< * 1 FETCH (FIRSTLINE (":-) :-( ;-) ، ويمكن تح Nobody! いくつにな 我们是中国人， "))
+---
+> * 1 FETCH (FIRSTLINE (":-) :-( ;-) ، ويمكن تح Nobody! いくつにな 我们是中国"))
+1c1
+< * 1 FETCH (FIRSTLINE (":-) :-( ;-) ، ويمكن تح Nobody! いくつにな 我们是中国人， "))
+---
+> * 1 FETCH (FIRSTLINE (":-) :-( ;-) ، ويمكن تح Nobody! いくつにな 我们是中国"))
+1c1
+< * 1 FETCH (FIRSTLINE (":-) :-( ;-) ، ويمكن تح Nobody! いくつにな 我们是中国人，"))
+---
+> * 1 FETCH (FIRSTLINE (":-) :-( ;-) ، ويمكن تح Nobody! いくつにな 我们是中国"))
+1c1
+< * 1 FETCH (FIRSTLINE (":-) :-( ;-) ، ويمكن تح Nobody! いくつにな 我们是中国人，"))
+---
+> * 1 FETCH (FIRSTLINE (":-) :-( ;-) ، ويمكن تح Nobody! いくつにな 我们是中国"))
+1c1
+< * 1 FETCH (FIRSTLINE (":-) :-( ;-) ، ويمكن تح Nobody! いくつにな 我们是中国人， "))
+---
+> * 1 FETCH (FIRSTLINE (":-) :-( ;-) ، ويمكن تح Nobody! いくつにな 我们是中国"))
+1c1
+< * 1 FETCH (FIRSTLINE (":-) :-( ;-) ، ويمكن تح Nobody! いくつにな 我们是中国人，"))
+---
+> * 1 FETCH (FIRSTLINE (":-) :-( ;-) ، ويمكن تح Nobody! いくつにな 我们是中国"))
+1c1
+< * 1 FETCH (FIRSTLINE (":-) :-( ;-) ، ويمكن تح Nobody! いくつにな 我们是中国人，"))
+---
+> * 1 FETCH (FIRSTLINE (":-) :-( ;-) ، ويمكن تح Nobody! いくつにな 我们是中国"))

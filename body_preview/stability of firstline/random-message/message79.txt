@@ -1,0 +1,8 @@
+from:xx2@openwave.com
+to:xx1@openwave.com
+subject:random message
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8; format=flowed
+Content-Transfer-Encoding: 8bit
+
+blitzed Maisie lampshade wedge's Seminoles Dexedrine congaed dispensations whoop's shamefulness's dicky slinging Jermaine's ripened Shawna

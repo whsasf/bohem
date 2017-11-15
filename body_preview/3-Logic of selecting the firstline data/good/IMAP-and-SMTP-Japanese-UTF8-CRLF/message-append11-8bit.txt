@@ -1,0 +1,8 @@
+from:xx2@openwave.com
+to:xx1@openwave.com
+subject:testemail-Japanes-UTF-8-CRLF-8bit
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: 8bit
+
+时の流れより     现れ、我ここにて暗黒を誓い、いま我々と

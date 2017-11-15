@@ -1,0 +1,82 @@
+Delete messsages successfully.
+
+
+Message body is:
+
+
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!Sending message!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+
+ sending message:
+
+
+220 mx-172-26-202-87.openwave.com ESMTP server (InterMail vM.9.05.00.00 201-2473-137-108) ready Sat, 18 Feb 2017 19:04:45 -0800
+250 Sender <xx2> Ok
+250 Recipient <xx1> Ok
+354 Ok Send data ending with <CRLF>.<CRLF>
+250 Message received: 20170219030446.BJJ23163.mx-172-26-202-87.openwave.com@[10.13.8.221]
+221 mx-172-26-202-87.openwave.com ESMTP server closing connection
+
+
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!fetching first line data!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+* OK IMAP4 server (InterMail vM.9.05.00.00 201-2473-137-108) ready Sat, 18 Feb 2017 19:04:46 -0800 (PST)
+a OK LOGIN completed
+* 1 EXISTS
+* OK [UNSEEN 1] First unseen message
+* OK [UIDVALIDITY 1487128905] UIDs valid
+* OK [UIDNEXT 3070] Predicted next UID
+* FLAGS (\Answered \Flagged \Deleted \Draft \Seen)
+* OK [PERMANENTFLAGS (\* \Answered \Flagged \Deleted \Draft \Seen)] Permanent flags
+* 1 RECENT
+a OK [READ-WRITE] SELECT completed
+* 1 FETCH (RFC822 {1093}
+Return-Path: <xx2@openwave.com>
+Received: from [10.13.8.221] by mx-172-26-202-87.openwave.com
+          (InterMail vM.9.05.00.00 201-2473-137-108) with SMTP
+          id <20170219030446.BJJ23163.mx-172-26-202-87.openwave.com@[10.13.8.221]>
+          for <xx1@openwave.com>; Sat, 18 Feb 2017 19:04:46 -0800
+Return-Path: <xx2@openwave.com>
+Received: from [10.13.8.221] by mx-172-26-202-87.openwave.com
+          (InterMail vM.9.05.00.00 201-2473-137-108) with ESMTP
+          id <20170219021305.BJD23163.mx-172-26-202-87.openwave.com@[10.13.8.221]>
+          for <xx1@openwave.com>; Sat, 18 Feb 2017 18:13:05 -0800
+To: xx1@openwave.com
+From: xx2 <xx2@openwave.com>
+Subject: virus code with texts in message body
+Message-ID: <a29a13b0-4168-9ee0-e27c-2ad8ca1c945a@openwave.com>
+Date: Sun, 19 Feb 2017 10:13:04 +0800
+User-Agent: MX
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8; format=flowed
+Content-Transfer-Encoding: 7bit
+
+  
+Nobody!
+
+
+X5O!P%@AP[4\PZX54(P^)7CC)7}$EICAR-STANDARD-ANTIVIRUS-TEST-FILE!$H+H* 
+ FLAGS (\Recent \Seen))
+a OK FETCH completed
+* 1 FETCH (FIRSTLINE ("   Nobody!   X5O!P%@AP[4"))
+a OK FETCH completed
+* BYE IMAP4 server terminating connection
+a OK LOGOUT completed
+
+
+
+
+[default@KeyspaceMetadata] get cf_folder['353038343036333135323632313531383036365fe1280902f32d11e6b9386b782020d67e'];
+=> (super_column=2b19b810-f650-11e6-9192-a69eac62d904,
+     (name=31, value=392e300332623139623831302d663635302d313165362d393139322d6136396561633632643930340330033134383734373334383603313039330330030333033003300303766972757320636f6465207769746820746578747320696e206d65737361676520626f647903787832203c787832406f70656e776176652e636f6d3e033003787831406f70656e776176652e636f6d0303333036390330033c61323961313362302d343136382d396565302d653237632d326164386361316339343561406f70656e776176652e636f6d3e033134383734373033383403030303, timestamp=1487473486247481)
+     (name=3138, value=d88c20d988d98ad985d983d98620d8aad8ad204e6f626f64792120e38184e3818fe381a4e381abe381aa20e68891e4bbace698afe4b8ade59bbde4babaefbc8c2058354f2150254041505b3400, timestamp=1487473486247481)
+     (name=32, value=46, timestamp=1487473487018431)
+     (name=33, value=54, timestamp=1487473487133181)
+     (name=35, value=31343837343733343837, timestamp=1487473487128400)
+     (name=36, value=46, timestamp=1487473487133181)
+     (name=37, value=46, timestamp=1487473487133181)
+     (name=38, value=46, timestamp=1487473487133181)
+     (name=39, value=46, timestamp=1487473487133181))
+Returned 1 results.
+Elapsed time: 22 msec(s).

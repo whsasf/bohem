@@ -6,11 +6,11 @@ The pop operations logs telneting to MX9.5-1:
 +OK procu1 is welcome here
 +OK 2 messages
 1 405
-2 83
+2 82
 .
-+OK 83 octets
++OK 82 octets
 2-11111111
-Message-ID: <4-2017-1114-033132-18363@mx-10-49-58-118.openwave.com>
+Message-ID: <6-2017-1114-191129-1618@mx-10-49-58-118.openwave.com>
 
 .
 -ERR no such message.
@@ -22,16 +22,15 @@ Message-ID: <4-2017-1114-033132-18363@mx-10-49-58-118.openwave.com>
 
 POPserv.log from MX9.5-1:
 
-20171114 163303645+0000 mx-10-49-58-127 popserv 7658 18024 140293092042496 Warn;RmeInvalidCOSAttribute(68/25) mailpopproxyhost:user=procu1:mbox=6495490474441473625:cmd=pass <pswd>:fromhost=10.6.104.238:fromport=53150
-20171114 163303675+0000 mx-10-49-58-127 popserv 7658 18024 140293092042496 Note;PopProxyConnMade(66/16) 10.49.58.118:20110:user=procu1:mbox=6495490474441473625:cmd=pass <pswd>:fromhost=10.6.104.238:fromport=53150
+20171115 081248147+0000 mx-10-49-58-127 popserv 27722 2862 140377923598080 Note;PopProxyConnMade(66/16) 10.49.58.118:20110:user=procu1:mbox=6413504060659677166:cmd=pass <pswd>:fromhost=10.37.2.214:fromport=56308
 
 
 POPserv.log from MX9.5-2:
 
-20171114 033206814-0500 mx-10-49-58-118 popserv 18881 28394 139831822481152 Note;PopConnMade(66/9) user=procu1:mbox=7943279928028628538:mss=95xmc:cmd=PASS <pswd>:port=55014:fromhost=10.49.58.127:fromport=33652:node=mx-10-49-58-118:nodePort=55014
-20171114 033207180-0500 mx-10-49-58-118 popserv 18881 28394 139831822481152 Note;MsgTrace(65/26) retr:user=procu1:mbox=7943279928028628538:mss=95xmc:msgid=37c89c86-c916-11e7-9527-123dffcdbdce:size=83:cmd=retr 2:port=55014:fromhost=10.49.58.127:fromport=33652:node=mx-10-49-58-118:nodePort=55014
-20171114 033207180-0500 mx-10-49-58-118 popserv 18881 28394 139831822481152 Warn;PopProtocolErr(66/1) retr 3:user=procu1:mbox=7943279928028628538:mss=95xmc:cmd=retr 3:port=55014:fromhost=10.49.58.127:fromport=33652:node=mx-10-49-58-118:nodePort=55014
-20171114 033207180-0500 mx-10-49-58-118 popserv 18881 28394 139831822481152 Note;PopConnQuit(66/13) user=procu1:mbox=7943279928028628538:mss=95xmc:cmd=quit:port=55014:fromhost=10.49.58.127:fromport=33652:node=mx-10-49-58-118:nodePort=55014:time=1
+20171114 191151286-0500 mx-10-49-58-118 popserv 1575 8081 139996755052288 Note;PopConnMade(66/9) user=procu1:mbox=5553435464398635504:mss=mx-10-49-58-118:cmd=PASS <pswd>:port=55014:fromhost=10.49.58.127:fromport=40304:node=mx-10-49-58-118:nodePort=55014
+20171114 191151877-0500 mx-10-49-58-118 popserv 1575 8081 139996755052288 Note;MsgTrace(65/26) retr:user=procu1:mbox=5553435464398635504:mss=mx-10-49-58-118:msgid=8773c912-c999-11e7-8925-1816134cae3f:size=82:cmd=retr 2:port=55014:fromhost=10.49.58.127:fromport=40304:node=mx-10-49-58-118:nodePort=55014
+20171114 191151877-0500 mx-10-49-58-118 popserv 1575 8081 139996755052288 Warn;PopProtocolErr(66/1) retr 3:user=procu1:mbox=5553435464398635504:mss=mx-10-49-58-118:cmd=retr 3:port=55014:fromhost=10.49.58.127:fromport=40304:node=mx-10-49-58-118:nodePort=55014
+20171114 191151877-0500 mx-10-49-58-118 popserv 1575 8081 139996755052288 Note;PopConnQuit(66/13) user=procu1:mbox=5553435464398635504:mss=mx-10-49-58-118:cmd=quit:port=55014:fromhost=10.49.58.127:fromport=40304:node=mx-10-49-58-118:nodePort=55014:time=0
 
 [32m#####Logging enhancement for POP proxy is ok!!##### [0m
 

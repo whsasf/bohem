@@ -1,0 +1,8 @@
+from:xx2@openwave.com
+to:xx1@openwave.com
+subject:testemail-Arabic-ISO-8859-6-8bit-CRLF
+MIME-Version: 1.0
+Content-Type: text/plain; charset=ISO-8859-6; format=flowed
+Content-Transfer-Encoding: 8bit
+
+     ¬ Ùæ ÊæåêÊç äÇ êÓÊ×êÙèæ ÔÑÇÁ ÇäÃÔêÇÁ ¬ èÚÇäÈÇ åÇ äÇ êÊÍÏË Ùæ èäêæ äâÏ ãÊÈ á

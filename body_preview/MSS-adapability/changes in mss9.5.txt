@@ -1,0 +1,47 @@
+API Changes
+MSS
+
+New attributeTypes meaning for MSS_SL_GETMESSAGEATTRIBUTES and MSS_SL_RETRIEVESORTEDMSGS
+
+6	attributeTypes	vector<int16>	
+List of attribute types to request for in reply. Types are as follows. If the vector is empty, MSS returns all supporting attributes. The attribute messageUUID is always included in the reply even though not specified.
+
+0: messageUUID
+1: bounce
+2: msgDeliveredNDR
+3: msgPrivate
+4: hasAttachments
+5: richmail flag
+6: arrivalTime
+7: msgExpirationSeconds
+8: msgFirstSeenSeconds
+9: timeFirstAccessed
+10: timeLastAccessed
+11: size
+12: uid
+13: msgFlags
+14: keywords
+15: msgType
+16: priority
+17: multipleMsgs
+18: subject
+19: from
+20: to
+21: cc
+22: date
+23: references
+24: sender
+25: bcc
+26: replyTo
+27: inReplyTo
+28: blobMessageId
+29: specialDeleted
+31: conversation
+38: seqno
+39: oldMsgId
+
+40: MODSEQ
+
+41: ParticipantID
+
+42: FIRSTLINE

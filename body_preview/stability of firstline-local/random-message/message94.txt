@@ -1,0 +1,8 @@
+from:xx2@openwave.com
+to:xx1@openwave.com
+subject:random message
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8; format=flowed
+Content-Transfer-Encoding: 8bit
+
+zippers largely portraiture tetrahedrons sarcasms poop's mandrake triennials Agassiz periodicals Whitehall infamy's surrender's picker pterodactyls
