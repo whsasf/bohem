@@ -1,0 +1,66 @@
+	**********  Starting /home/ram/workspace/bohem/Automation/multiple-messages-simultaneously-for-in-and-out-domains-senders/Deliever-message-before-AutoReplyStart-when-only-it-set/mx-10254-10270  **********
+Test started: Thu Nov 16 10:16:32 CST 2017
+########## 1 Clear mta.log using expect tool ...
+spawn ssh imail2@10.49.58.118
+Password: 
+Last login: Wed Nov 15 21:13:51 2017 from bigchina
+[?1034hmx-10-49-58-118:imail2:Mx9.5:~$ > ~/log/mta.log
+mx-10-49-58-118:imail2:Mx9.5:~$ ########## 2 Accounts provision ...
+7742300416304200258
+4736974753525939702
+6163806356677705578
+6762510736203776857
+7121717664062391467
+[32m########## 2 Accont provision successfully, we can continue now[0m
+spawn ssh root@10.49.58.118
+Last login: Wed Nov 15 21:12:51 2017 from bigchina
+]0;root@mx-10-49-58-118:~[?1034h[root@mx-10-49-58-118 ~]# date +%s
+1510798517
+]0;root@mx-10-49-58-118:~[root@mx-10-49-58-118 ~]# 
+]0;root@mx-10-49-58-118:~[root@mx-10-49-58-118 ~]# ########## 4 Configure user1 to vacation autoreply mode using expect tool ...
+spawn ssh imail2@10.49.58.118
+Password: 
+Last login: Wed Nov 15 21:14:22 2017 from bigchina
+[?1034hmx-10-49-58-118:imail2:Mx9.5:~$ echo 'internal:' >data.txt
+mx-10-49-58-118:imail2:Mx9.5:~$ echo 'Echo,This is an autoreply message for internal senders!' >>data.txt
+mx-10-49-58-118:imail2:Mx9.5:~$ echo 'external:' >>data.txt
+mx-10-49-58-118:imail2:Mx9.5:~$ echo 'Echo,This is an external autoreply message for external senders!' >>data.txt
+mx-10-49-58-118:imail2:Mx9.5:~$ autoreplyctrl ar17004@openwave.com echo data.txt 1510798817 none
+AutoReply data updated Successfully.
+mx-10-49-58-118:imail2:Mx9.5:~$ [32m##########4 Congifuration successfully[0m
+##########5 delieber 1 message from user1 to user2 ...
+########## 6 Check mta.log using expect tool ...
+spawn ssh imail2@10.49.58.118
+Password: 
+Last login: Wed Nov 15 21:15:20 2017 from bigchina
+[?1034hmx-10-49-58-118:imail2:Mx9.5:~$ cat log/mta.log
+20171115 211524756-0500 mx-10-49-58-118 mta 2873 5139 140669319079680 Note;SmtpConnectionReceived(70/1) [10.37.2.214]:fromhost=10.37.2.214:fromport=52818:localAddr=10.49.58.118:sid=BD1BA205-A361058B-00000074.0
+20171115 211524763-0500 mx-10-49-58-118 mta 2873 5140 140669318813440 Note;SmtpConnectionReceived(70/1) [10.37.2.214]:fromhost=10.37.2.214:fromport=52820:localAddr=10.49.58.118:sid=BD1BA205-A361058B-00000076.0
+20171115 211524764-0500 mx-10-49-58-118 mta 2873 5138 140669319345920 Note;SmtpConnectionReceived(70/1) [10.37.2.214]:fromhost=10.37.2.214:fromport=52822:localAddr=10.49.58.118:sid=BD1BA205-A361058B-00000078.0
+20171115 211524764-0500 mx-10-49-58-118 mta 2873 3580 140669337511680 Note;SmtpConnectionReceived(70/1) [10.37.2.214]:fromhost=10.37.2.214:fromport=52824:localAddr=10.49.58.118:sid=BD1BA205-A361058B-0000007A.0
+20171115 211541318-0500 mx-10-49-58-118 mta 2873 5139 140669319079680 Erro;UserDataException(504/1) GEN_INTERNAL_ERROR::GET:[MxOsHost=mx-10-49-58-120],[MxOsPort=8081]:Error=:fromhost=10.37.2.214:fromport=52818:localAddr=10.49.58.118:sid=BD1BA205-A361058B-00000074.1
+20171115 211541319-0500 mx-10-49-58-118 mta 2873 5139 140669319079680 Erro;MtaDomainTableUpdateFailed(79/45) fromhost=10.37.2.214:fromport=52818:localAddr=10.49.58.118:sid=BD1BA205-A361058B-00000074.1
+20171115 211541323-0500 mx-10-49-58-118 mta 2873 5140 140669318813440 Warn;UserDataException(504/1) GEN_INTERNAL_ERROR::GET:[MxOsHost=mx-10-49-58-120],[MxOsPort=8081]:Error=:user=ar3282@openwave.com:fromhost=10.37.2.214:fromport=52820:localAddr=10.49.58.118:sid=BD1BA205-A361058B-00000076.1
+20171115 211541323-0500 mx-10-49-58-118 mta 2873 3580 140669337511680 Warn;UserDataException(504/1) GEN_INTERNAL_ERROR::GET:[MxOsHost=mx-10-49-58-120],[MxOsPort=8081]:Error=:user=ar8083@openwave.com:fromhost=10.37.2.214:fromport=52824:localAddr=10.49.58.118:sid=BD1BA205-A361058B-0000007A.1
+20171115 211541324-0500 mx-10-49-58-118 mta 2873 5138 140669319345920 Warn;UserDataException(504/1) GEN_INTERNAL_ERROR::GET:[MxOsHost=mx-10-49-58-120],[MxOsPort=8081]:Error=:user=ar17838@whsasf.com:fromhost=10.37.2.214:fromport=52822:localAddr=10.49.58.118:sid=BD1BA205-A361058B-00000078.1
+20171115 211557321-0500 mx-10-49-58-118 mta 2873 5139 140669319079680 Warn;UserDataException(504/1) GEN_INTERNAL_ERROR::GET:[MxOsHost=mx-10-49-58-120],[MxOsPort=8081]:Error=:user=ar8987@whsasf.com:fromhost=10.37.2.214:fromport=52818:localAddr=10.49.58.118:sid=BD1BA205-A361058B-00000074.1
+20171115 211557321-0500 mx-10-49-58-118 mta 2873 9803 140669315618560 Warn;MtaDomainTableLoadFailed(79/44)
+20171115 211557607-0500 mx-10-49-58-118 mta 2873 5138 140669319345920 Warn;UserDataException(504/1) GEN_INTERNAL_ERROR::GET:[MxOsHost=mx-10-49-58-120],[MxOsPort=8081]:Error=:user=ar17004@openwave.com:from=<ar17838@whsasf.com>:fromhost=10.37.2.214:fromport=52822:localAddr=10.49.58.118:sid=BD1BA205-A361058B-00000078.1
+20171115 211557608-0500 mx-10-49-58-118 mta 2873 5140 140669318813440 Warn;UserDataException(504/1) GEN_INTERNAL_ERROR::GET:[MxOsHost=mx-10-49-58-120],[MxOsPort=8081]:Error=:user=ar17004@openwave.com:from=<ar3282@openwave.com>:fromhost=10.37.2.214:fromport=52820:localAddr=10.49.58.118:sid=BD1BA205-A361058B-00000076.1
+20171115 211557609-0500 mx-10-49-58-118 mta 2873 3580 140669337511680 Warn;UserDataException(504/1) GEN_INTERNAL_ERROR::GET:[MxOsHost=mx-10-49-58-120],[MxOsPort=8081]:Error=:user=ar17004@openwave.com:from=<ar8083@openwave.com>:fromhost=10.37.2.214:fromport=52824:localAddr=10.49.58.118:sid=BD1BA205-A361058B-0000007A.1
+20171115 211558166-0500 mx-10-49-58-118 mta 2873 3580 140669337511680 Note;SmtpSenderBlocked(70/50) [10.37.2.214]:<ar8083@openwave.com>:1:from=<ar8083@openwave.com>:fromhost=10.37.2.214:fromport=52824:localAddr=10.49.58.118:sid=BD1BA205-A361058B-0000007A.1
+20171115 211558166-0500 mx-10-49-58-118 mta 2873 5140 140669318813440 Note;SmtpSenderBlocked(70/50) [10.37.2.214]:<ar3282@openwave.com>:1:from=<ar3282@openwave.com>:fromhost=10.37.2.214:fromport=52820:localAddr=10.49.58.118:sid=BD1BA205-A361058B-00000076.1
+20171115 211558166-0500 mx-10-49-58-118 mta 2873 3580 140669337511680 Note;SmtpConnectionClosedAbnormally(70/76) [10.37.2.214]:34:0:86:from=<ar8083@openwave.com>:fromhost=10.37.2.214:fromport=52824:localAddr=10.49.58.118:sid=BD1BA205-A361058B-0000007A.1
+20171115 211558166-0500 mx-10-49-58-118 mta 2873 5140 140669318813440 Note;SmtpConnectionClosedAbnormally(70/76) [10.37.2.214]:34:0:86:from=<ar3282@openwave.com>:fromhost=10.37.2.214:fromport=52820:localAddr=10.49.58.118:sid=BD1BA205-A361058B-00000076.1
+20171115 211558166-0500 mx-10-49-58-118 mta 2873 5138 140669319345920 Note;SmtpSenderBlocked(70/50) [10.37.2.214]:<ar17838@whsasf.com>:1:from=<ar17838@whsasf.com>:fromhost=10.37.2.214:fromport=52822:localAddr=10.49.58.118:sid=BD1BA205-A361058B-00000078.1
+20171115 211558177-0500 mx-10-49-58-118 mta 2873 5138 140669319345920 Note;SmtpConnectionClosedAbnormally(70/76) [10.37.2.214]:34:0:83:from=<ar17838@whsasf.com>:fromhost=10.37.2.214:fromport=52822:localAddr=10.49.58.118:sid=BD1BA205-A361058B-00000078.1
+20171115 211613603-0500 mx-10-49-58-118 mta 2873 5139 140669319079680 Warn;UserDataException(504/1) GEN_INTERNAL_ERROR::GET:[MxOsHost=mx-10-49-58-120],[MxOsPort=8081]:Error=:user=ar17004@openwave.com:from=<ar8987@whsasf.com>:fromhost=10.37.2.214:fromport=52818:localAddr=10.49.58.118:sid=BD1BA205-A361058B-00000074.1
+20171115 211614162-0500 mx-10-49-58-118 mta 2873 5139 140669319079680 Note;SmtpSenderBlocked(70/50) [10.37.2.214]:<ar8987@whsasf.com>:1:from=<ar8987@whsasf.com>:fromhost=10.37.2.214:fromport=52818:localAddr=10.49.58.118:sid=BD1BA205-A361058B-00000074.1
+20171115 211614162-0500 mx-10-49-58-118 mta 2873 5139 140669319079680 Note;SmtpConnectionClosedAbnormally(70/76) [10.37.2.214]:50:0:82:from=<ar8987@whsasf.com>:fromhost=10.37.2.214:fromport=52818:localAddr=10.49.58.118:sid=BD1BA205-A361058B-00000074.1
+mx-10-49-58-118:imail2:Mx9.5:~$ [31m##########6 Autoreply messaeg undelievered failed!Please check manually,Exiting now ...[0m
+##########  doing some clear job ...
+TESTFAILED: /home/ram/workspace/bohem/Automation/multiple-messages-simultaneously-for-in-and-out-domains-senders/Deliever-message-before-AutoReplyStart-when-only-it-set/mx-10254-10270: Test didn't report success or failure or skipped (180 sec.)
+FAILED: /home/ram/workspace/bohem/Automation/multiple-messages-simultaneously-for-in-and-out-domains-senders/Deliever-message-before-AutoReplyStart-when-only-it-set/mx-10254-10270 [20171116-101632] (180 sec.) 160
+Test ended: Thu Nov 16 10:19:32 CST 2017
+
+[31m##########  Accont deleted failed,PLease check manually,Exiting now ...[0m

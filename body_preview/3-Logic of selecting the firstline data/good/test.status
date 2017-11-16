@@ -1,0 +1,63 @@
+))"|grep -v "FLAGS"
+
+) UID"
+
+
+
+
+testsuit name                                         testscripts number       test-results         testcase number
+
+IMAP-and-SMTP-Arabic-ISO-8859-6-CRLF/                  8                            passed           192
+IMAP-and-SMTP-Arabic-UTF8-CRLF/                        8                            passed           192
+IMAP-and-SMTP-ASCII-chars-CRLF/                        8                            passed           192
+IMAP-and-SMTP-Chinese-GB2312-CRLF/                     8                            passed           192  
+IMAP-and-SMTP-Chinese-UTF8-CRLF/                       8                            passed           192
+IMAP-and-SMTP-Japanese-EUC-JP-CRLF/                    8                            passed           192
+IMAP-and-SMTP-Japanese-Shift_JIS-CRLF/                 8                            passed           192
+IMAP-and-SMTP-Japanese-UTF8-CRLF/                      8                            passed           192
+IMAP-and-SMTP-Japanese-GB2312-CRLF/             
+IMAP-and-SMTP-mixed-UTF-8-language/                    8                            passed           8
+Type-attachment-audio-texts-IMAP-SMTP/                 8                            passed           8
+Type-attachment-images-with-texts-IMAP-SMTP/           8                            passed           8
+Type-attachment-pdf-texts-IMAP-and-SMTP/               8                            passed           8
+Type-attachment-pure-audio-IMAP-SMTP/                  8                            passed           8
+Type-attachment-pure-image-IMAP-SMTP/                  8                            passed           8
+Type-attachment-pure-pdf-IMAP-and-SMTP/                8                            passed           8
+Type-attachment-pure-python-IMAP-and-SMTP/             8                            passed           8
+Type-attachment-pure-tar-IMAP-and-SMTP/                8                            passed           8
+Type-attachment-pure-txt-IMAP-and-SMTP/                8                            passed           8
+Type-attachment-pure-video-IMAP-SMTP/                  8                            passed           8
+Type-attachment-pure-virus-IMAP-and-SMTP/              8                            passed           8
+Type-attachment-python-Texts-IMAP-and-SMTP/            8                            passed           8
+Type-attachment-tar-with-text-IMAP-and-SMTP/
+Type-attachment-txt-with-text-content-IMAP-and-SMTP/
+Type-attachment-video-with-texts-IMAP-SMTP/
+Type-attachment-virus-with-texts-IMAP-SMTP/
+
+Type-blac-bg-with-no-texts-IMAP-and-SMTP/
+Type-black-bg-with-huge-fonts-IMAP-andSMTP/
+Type-black-bg-with-mixed-style-texts-IMAP-and-SMTP/
+Type-black-bg-with-texts-IMAP-and-SMTP/
+Type-C-content-in-body-IMAP-SMTP/
+Type-C-content-with-normal-texts-IMAP-SMTP/
+Type-char-Emoji-IMAP-and-SMTP/
+Type-char-Emoji-UTF-8-text-IMAP-and-SMTP/
+Type-html-content-IMAP-SMTP/
+Type-HTML-contents-IMAP-and-SMTP/
+Type-HTML-contents-with-mixed-texts-IMAP-and-SMTP/
+Type-html-content-with-texts-IMAP-SMTP/
+Type-hyperlink-with-mixed-texts-IMAP-and-SMTP/
+
+Type-image-alternate-text-IMAP-and-SMTP/
+Type-image-Emoji-IMAP-and-SMTP/
+Type-image-Emoji-UTF-8-text-IMAP-and-SMTP/
+Type-image-UTF-8-Arabic-messagebody-IMAP-and-SMTP/
+Type-image-UTF-8-Chinese-messagebody-IMAP-and-SMTP/
+Type-image-UTF-8-English-message-body-IMAP-and-SMTP/
+Type-image-UTF-8-Japanese-messagebody-IMAP-and-SMTP/
+Type-image-UTF-8-mixed-texts-messagebody-IMAP-and-SMTP/
+Type-pure-hyperlink-IMAP-and-SMTP/
+Type-pure-image-messagebody-IMAP-and-SMTP/
+type-symbols-UTF8-IMAP-and-SMTP/
+Type-virus-code-IMAP-and-SMTP/
+Type-virus-code-with-texts-IMAP-and-SMTP/

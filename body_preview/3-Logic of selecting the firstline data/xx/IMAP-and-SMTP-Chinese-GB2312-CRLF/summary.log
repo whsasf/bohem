@@ -1,0 +1,598 @@
+/////////////////////////////////// -1- Chinese words \\\\\\\\\\\\\\\\\\"
+echo /////////////////////////////////// -1- Chinese words \\\\\\\\\\\\\\\\\\"
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!fetching first line data!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+* OK IMAP4 server (InterMail vM.9.05.01.00 201-2473-137-123) ready Thu, 16 Nov 2017 09:32:30 +0000 (GMT)
+a OK LOGIN completed
+* 25 EXISTS
+* OK [UNSEEN 1] First unseen message
+* OK [UIDVALIDITY 1510820600] UIDs valid
+* OK [UIDNEXT 1734] Predicted next UID
+* FLAGS (\Answered \Flagged \Deleted \Draft \Seen)
+* OK [PERMANENTFLAGS (\* \Answered \Flagged \Deleted \Draft \Seen)] Permanent flags
+* 25 RECENT
+a OK [READ-WRITE] SELECT completed
+* 1 FETCH (RFC822 {707}
+Return-Path: <xx2@openwave.com>
+Received: from [10.37.2.214] by mx-10-49-58-127.openwave.com
+          (InterMail vM.9.05.01.00 201-2473-137-123) with SMTP
+          id <20171116093209.AKT522.mx-10-49-58-127.openwave.com@[10.37.2.214]>
+          for <xx1@openwave.com>; Thu, 16 Nov 2017 09:32:09 +0000
+subject: testemail-Chinese-GB2312-CRLF-quoted-printable
+MIME-Version: 1.0
+Content-Type: text/plain; charset=gb2312
+Content-Transfer-Encoding: quoted-printable
+Date: Thu, 16 Nov 2017 09:32:09 +0000
+Message-Id: <20171116093209.AKT522.mx-10-49-58-127.openwave.com@[10.37.2.214]>
+From: <xx2@openwave.com>
+
+=C5=AD=B7=A2=B3=E5=B9=DA=A3=AC=C6=BE=C0=BB=B4=A6=A1=A2=E4=EC=E4=EC=D3=EA=D0=
+=AA=A1=A3=
+ FLAGS (\Recent \Seen))
+* 2 FETCH (RFC822 {712}
+Return-Path: <xx2@openwave.com>
+Received: from [10.37.2.214] by mx-10-49-58-127.openwave.com
+          (InterMail vM.9.05.01.00 201-2473-137-123) with SMTP
+          id <20171116093210.AKU522.mx-10-49-58-127.openwave.com@[10.37.2.214]>
+          for <xx1@openwave.com>; Thu, 16 Nov 2017 09:32:10 +0000
+subject: testemail-Chinese-GB2312-CRLF-quoted-printable
+MIME-Version: 1.0
+Content-Type: text/plain; charset=gb2312
+Content-Transfer-Encoding: quoted-printable
+Date: Thu, 16 Nov 2017 09:32:10 +0000
+Message-Id: <20171116093210.AKU522.mx-10-49-58-127.openwave.com@[10.37.2.214]>
+From: <xx2@openwave.com>
+
+     =C5=AD=B7=A2=B3=E5=B9=DA=A3=AC=C6=BE=C0=BB=B4=A6=A1=A2=E4=EC=E4=EC=D3=
+=EA=D0=AA=A1=A3=
+ FLAGS (\Recent \Seen))
+* 3 FETCH (RFC822 {712}
+Return-Path: <xx2@openwave.com>
+Received: from [10.37.2.214] by mx-10-49-58-127.openwave.com
+          (InterMail vM.9.05.01.00 201-2473-137-123) with SMTP
+          id <20171116093210.AKV522.mx-10-49-58-127.openwave.com@[10.37.2.214]>
+          for <xx1@openwave.com>; Thu, 16 Nov 2017 09:32:10 +0000
+subject: testemail-Chinese-GB2312-CRLF-quoted-printable
+MIME-Version: 1.0
+Content-Type: text/plain; charset=gb2312
+Content-Transfer-Encoding: quoted-printable
+Date: Thu, 16 Nov 2017 09:32:10 +0000
+Message-Id: <20171116093210.AKV522.mx-10-49-58-127.openwave.com@[10.37.2.214]>
+From: <xx2@openwave.com>
+
+=C5=AD=B7=A2=B3=E5=B9=DA=A3=AC=C6=BE=C0=BB     =B4=A6=A1=A2=E4=EC=E4=EC=D3=
+=EA=D0=AA=A1=A3=
+ FLAGS (\Recent \Seen))
+* 4 FETCH (RFC822 {714}
+Return-Path: <xx2@openwave.com>
+Received: from [10.37.2.214] by mx-10-49-58-127.openwave.com
+          (InterMail vM.9.05.01.00 201-2473-137-123) with SMTP
+          id <20171116093211.AKW522.mx-10-49-58-127.openwave.com@[10.37.2.214]>
+          for <xx1@openwave.com>; Thu, 16 Nov 2017 09:32:11 +0000
+subject: testemail-Chinese-GB2312-CRLF-quoted-printable
+MIME-Version: 1.0
+Content-Type: text/plain; charset=gb2312
+Content-Transfer-Encoding: quoted-printable
+Date: Thu, 16 Nov 2017 09:32:11 +0000
+Message-Id: <20171116093211.AKW522.mx-10-49-58-127.openwave.com@[10.37.2.214]>
+From: <xx2@openwave.com>
+
+=C5=AD=B7=A2=B3=E5=B9=DA=A3=AC=C6=BE=C0=BB=B4=A6=A1=A2=E4=EC=E4=EC=D3=EA=D0=
+=AA=A1=A3    =20=
+ FLAGS (\Recent \Seen))
+* 5 FETCH (RFC822 {793}
+Return-Path: <xx2@openwave.com>
+Received: from [10.37.2.214] by mx-10-49-58-127.openwave.com
+          (InterMail vM.9.05.01.00 201-2473-137-123) with SMTP
+          id <20171116093212.AKX522.mx-10-49-58-127.openwave.com@[10.37.2.214]>
+          for <xx1@openwave.com>; Thu, 16 Nov 2017 09:32:12 +0000
+subject: testemail-Chinese-GB2312-CRLF-quoted-printable
+MIME-Version: 1.0
+Content-Type: text/plain; charset=gb2312
+Content-Transfer-Encoding: quoted-printable
+Date: Thu, 16 Nov 2017 09:32:12 +0000
+Message-Id: <20171116093212.AKX522.mx-10-49-58-127.openwave.com@[10.37.2.214]>
+From: <xx2@openwave.com>
+
+=C5=AD=B7=A2=B3=E5=B9=DA=A3=AC=C6=BE=C0=BB=B4=A6=A1=A2
+=E4=EC=E4=EC=D3=EA=D0=AA=A1=A3=CC=A7=CD=FB=D1=DB=A1=A2=D1=F6=CC=EC=B3=A4=D0=
+=A5=A3=AC=D7=B3=BB=B3=BC=A4=C1=D2=A1=A3=
+ FLAGS (\Recent \Seen))
+* 6 FETCH (RFC822 {798}
+Return-Path: <xx2@openwave.com>
+Received: from [10.37.2.214] by mx-10-49-58-127.openwave.com
+          (InterMail vM.9.05.01.00 201-2473-137-123) with SMTP
+          id <20171116093213.AKY522.mx-10-49-58-127.openwave.com@[10.37.2.214]>
+          for <xx1@openwave.com>; Thu, 16 Nov 2017 09:32:13 +0000
+subject: testemail-Chinese-GB2312-CRLF-quoted-printable
+MIME-Version: 1.0
+Content-Type: text/plain; charset=gb2312
+Content-Transfer-Encoding: quoted-printable
+Date: Thu, 16 Nov 2017 09:32:13 +0000
+Message-Id: <20171116093213.AKY522.mx-10-49-58-127.openwave.com@[10.37.2.214]>
+From: <xx2@openwave.com>
+
+     =C5=AD=B7=A2=B3=E5=B9=DA=A3=AC=C6=BE=C0=BB=B4=A6=A1=A2
+=E4=EC=E4=EC=D3=EA=D0=AA=A1=A3=CC=A7=CD=FB=D1=DB=A1=A2=D1=F6=CC=EC=B3=A4=D0=
+=A5=A3=AC=D7=B3=BB=B3=BC=A4=C1=D2=A1=A3=
+ FLAGS (\Recent \Seen))
+* 7 FETCH (RFC822 {798}
+Return-Path: <xx2@openwave.com>
+Received: from [10.37.2.214] by mx-10-49-58-127.openwave.com
+          (InterMail vM.9.05.01.00 201-2473-137-123) with SMTP
+          id <20171116093214.AKZ522.mx-10-49-58-127.openwave.com@[10.37.2.214]>
+          for <xx1@openwave.com>; Thu, 16 Nov 2017 09:32:14 +0000
+subject: testemail-Chinese-GB2312-CRLF-quoted-printable
+MIME-Version: 1.0
+Content-Type: text/plain; charset=gb2312
+Content-Transfer-Encoding: quoted-printable
+Date: Thu, 16 Nov 2017 09:32:14 +0000
+Message-Id: <20171116093214.AKZ522.mx-10-49-58-127.openwave.com@[10.37.2.214]>
+From: <xx2@openwave.com>
+
+=C5=AD=B7=A2=B3=E5=B9=DA=A3=AC=C6=BE=C0=BB=B4=A6=A1=A2
+     =E4=EC=E4=EC=D3=EA=D0=AA=A1=A3=CC=A7=CD=FB=D1=DB=A1=A2=D1=F6=CC=EC=B3=
+=A4=D0=A5=A3=AC=D7=B3=BB=B3=BC=A4=C1=D2=A1=A3=
+ FLAGS (\Recent \Seen))
+* 8 FETCH (RFC822 {800}
+Return-Path: <xx2@openwave.com>
+Received: from [10.37.2.214] by mx-10-49-58-127.openwave.com
+          (InterMail vM.9.05.01.00 201-2473-137-123) with SMTP
+          id <20171116093215.ALA522.mx-10-49-58-127.openwave.com@[10.37.2.214]>
+          for <xx1@openwave.com>; Thu, 16 Nov 2017 09:32:15 +0000
+subject: testemail-Chinese-GB2312-CRLF-quoted-printable
+MIME-Version: 1.0
+Content-Type: text/plain; charset=gb2312
+Content-Transfer-Encoding: quoted-printable
+Date: Thu, 16 Nov 2017 09:32:15 +0000
+Message-Id: <20171116093215.ALA522.mx-10-49-58-127.openwave.com@[10.37.2.214]>
+From: <xx2@openwave.com>
+
+=C5=AD=B7=A2=B3=E5=B9=DA=A3=AC=C6=BE=C0=BB=B4=A6=A1=A2
+=E4=EC=E4=EC=D3=EA=D0=AA=A1=A3=CC=A7=CD=FB=D1=DB=A1=A2=D1=F6=CC=EC=B3=A4=D0=
+=A5=A3=AC=D7=B3=BB=B3=BC=A4=C1=D2=A1=A3    =20=
+ FLAGS (\Recent \Seen))
+* 9 FETCH (RFC822 {869}
+Return-Path: <xx2@openwave.com>
+Received: from [10.37.2.214] by mx-10-49-58-127.openwave.com
+          (InterMail vM.9.05.01.00 201-2473-137-123) with SMTP
+          id <20171116093216.ALB522.mx-10-49-58-127.openwave.com@[10.37.2.214]>
+          for <xx1@openwave.com>; Thu, 16 Nov 2017 09:32:16 +0000
+subject: testemail-Chinese-GB2312-CRLF-quoted-printable
+MIME-Version: 1.0
+Content-Type: text/plain; charset=gb2312
+Content-Transfer-Encoding: quoted-printable
+Date: Thu, 16 Nov 2017 09:32:16 +0000
+Message-Id: <20171116093216.ALB522.mx-10-49-58-127.openwave.com@[10.37.2.214]>
+From: <xx2@openwave.com>
+
+=C5=AD=B7=A2=B3=E5=B9=DA=A3=AC=C6=BE=C0=BB=B4=A6=A1=A2=E4=EC=E4=EC=D3=EA=D0=
+=AA=A1=A3=CC=A7=CD=FB=D1=DB=A3=AC=D1=F6=CC=EC=B3=A4=D0=A5=A3=AC=D7=B3=BB=B3=
+=BC=A4=C1=D2=A1=A3=C8=FD=CA=AE=B9=A6=C3=FB=B3=BE=D3=EB=CD=C1=A3=AC=B0=CB=C7=
+=A7=C0=EF=C2=B7=
+ FLAGS (\Recent \Seen))
+* 10 FETCH (RFC822 {857}
+Return-Path: <xx2@openwave.com>
+Received: from [10.37.2.214] by mx-10-49-58-127.openwave.com
+          (InterMail vM.9.05.01.00 201-2473-137-123) with SMTP
+          id <20171116093216.ALC522.mx-10-49-58-127.openwave.com@[10.37.2.214]>
+          for <xx1@openwave.com>; Thu, 16 Nov 2017 09:32:16 +0000
+subject: testemail-Chinese-GB2312-CRLF-quoted-printable
+MIME-Version: 1.0
+Content-Type: text/plain; charset=gb2312
+Content-Transfer-Encoding: quoted-printable
+Date: Thu, 16 Nov 2017 09:32:16 +0000
+Message-Id: <20171116093216.ALC522.mx-10-49-58-127.openwave.com@[10.37.2.214]>
+From: <xx2@openwave.com>
+
+     =C5=AD=B7=A2=B3=E5=B9=DA=A3=AC=C6=BE=C0=BB=B4=A6=A1=A2=E4=EC=E4=EC=D3=
+=EA=D0=AA=A1=A3=CC=A7=CD=FB=D1=DB=A3=AC=D1=F6=CC=EC=B3=A4=D0=A5=A3=AC=D7=B3=
+=BB=B3,=BC=A4=C1=D2=A1=A3=C8=FD=CA=AE=B9=A6=C3=FB=B3=BE=D3=EB=CD=C1=A3=AC=
+=B0=CB=
+ FLAGS (\Recent \Seen))
+* 11 FETCH (RFC822 {857}
+Return-Path: <xx2@openwave.com>
+Received: from [10.37.2.214] by mx-10-49-58-127.openwave.com
+          (InterMail vM.9.05.01.00 201-2473-137-123) with SMTP
+          id <20171116093217.ALD522.mx-10-49-58-127.openwave.com@[10.37.2.214]>
+          for <xx1@openwave.com>; Thu, 16 Nov 2017 09:32:17 +0000
+subject: testemail-Chinese-GB2312-CRLF-quoted-printable
+MIME-Version: 1.0
+Content-Type: text/plain; charset=gb2312
+Content-Transfer-Encoding: quoted-printable
+Date: Thu, 16 Nov 2017 09:32:17 +0000
+Message-Id: <20171116093217.ALD522.mx-10-49-58-127.openwave.com@[10.37.2.214]>
+From: <xx2@openwave.com>
+
+=C5=AD=B7=A2=B3=E5=B9=DA=A3=AC=C6=BE=C0=BB=B4=A6=A1=A2=E4=EC=E4=EC     =D3=
+=EA=D0=AA=A1=A3=CC=A7=CD=FB=D1=DB=A3=AC=D1=F6=CC=EC=B3=A4=D0=A5=A3=AC=D7=B3=
+=BB=B3,=BC=A4=C1=D2=A1=A3=C8=FD=CA=AE=B9=A6=C3=FB=B3=BE=D3=EB=CD=C1=A3=AC=
+=B0=CB=
+ FLAGS (\Recent \Seen))
+* 12 FETCH (RFC822 {859}
+Return-Path: <xx2@openwave.com>
+Received: from [10.37.2.214] by mx-10-49-58-127.openwave.com
+          (InterMail vM.9.05.01.00 201-2473-137-123) with SMTP
+          id <20171116093218.ALE522.mx-10-49-58-127.openwave.com@[10.37.2.214]>
+          for <xx1@openwave.com>; Thu, 16 Nov 2017 09:32:18 +0000
+subject: testemail-Chinese-GB2312-CRLF-quoted-printable
+MIME-Version: 1.0
+Content-Type: text/plain; charset=gb2312
+Content-Transfer-Encoding: quoted-printable
+Date: Thu, 16 Nov 2017 09:32:18 +0000
+Message-Id: <20171116093218.ALE522.mx-10-49-58-127.openwave.com@[10.37.2.214]>
+From: <xx2@openwave.com>
+
+=C5=AD=B7=A2=B3=E5=B9=DA=A3=AC=C6=BE=C0=BB=B4=A6=A1=A2=E4=EC=E4=EC=D3=EA=D0=
+=AA=A1=A3=CC=A7=CD=FB=D1=DB=A3=AC=D1=F6=CC=EC=B3=A4=D0=A5=A3=AC=D7=B3=BB=B3=
+,=BC=A4=C1=D2=A1=A3=C8=FD=CA=AE=B9=A6=C3=FB=B3=BE=D3=EB=CD=C1=A3=AC=B0=CB  =
+  =20=
+ FLAGS (\Recent \Seen))
+* 13 FETCH (RFC822 {851}
+Return-Path: <xx2@openwave.com>
+Received: from [10.37.2.214] by mx-10-49-58-127.openwave.com
+          (InterMail vM.9.05.01.00 201-2473-137-123) with SMTP
+          id <20171116093219.ALF522.mx-10-49-58-127.openwave.com@[10.37.2.214]>
+          for <xx1@openwave.com>; Thu, 16 Nov 2017 09:32:19 +0000
+subject: testemail-Chinese-GB2312-CRLF-quoted-printable
+MIME-Version: 1.0
+Content-Type: text/plain; charset=gb2312
+Content-Transfer-Encoding: quoted-printable
+Date: Thu, 16 Nov 2017 09:32:19 +0000
+Message-Id: <20171116093219.ALF522.mx-10-49-58-127.openwave.com@[10.37.2.214]>
+From: <xx2@openwave.com>
+
+=C5=AD=B7=A2=B3=E5=B9=DA=A3=AC
+=C6=BE=C0=BB=B4=A6=A1=A2=E4=EC=E4=EC=D3=EA=D0=AA=A1=A3
+=CC=A7=CD=FB=D1=DB=A3=AC=D1=F6=CC=EC=B3=A4=D0=A5=A3=AC=D7=B3=BB=B3,=BC=A4=
+=C1=D2=A1=A3=C8=FD=CA=AE=B9=A6=C3=FB=B3=BE=D3=EB=CD=C1=A3=AC=B0=CB,=
+ FLAGS (\Recent \Seen))
+* 14 FETCH (RFC822 {843}
+Return-Path: <xx2@openwave.com>
+Received: from [10.37.2.214] by mx-10-49-58-127.openwave.com
+          (InterMail vM.9.05.01.00 201-2473-137-123) with SMTP
+          id <20171116093220.ALG522.mx-10-49-58-127.openwave.com@[10.37.2.214]>
+          for <xx1@openwave.com>; Thu, 16 Nov 2017 09:32:20 +0000
+subject: testemail-Chinese-GB2312-CRLF-quoted-printable
+MIME-Version: 1.0
+Content-Type: text/plain; charset=gb2312
+Content-Transfer-Encoding: quoted-printable
+Date: Thu, 16 Nov 2017 09:32:20 +0000
+Message-Id: <20171116093220.ALG522.mx-10-49-58-127.openwave.com@[10.37.2.214]>
+From: <xx2@openwave.com>
+
+     =C5=AD=B7=A2=B3=E5=B9=DA=A3=AC
+=C6=BE=C0=BB=B4=A6=A1=A2=E4=EC=E4=EC=D3=EA=D0=AA=A1=A3
+=CC=A7=CD=FB=D1=DB=A3=AC=D1=F6=CC=EC=B3=A4=D0=A5=A3=AC=D7=B3=BB=B3,=BC=A4=
+=C1=D2=A1=A3=C8=FD=CA=AE=B9=A6=C3=FB=B3=BE=D3=EB=A3=AC=
+ FLAGS (\Recent \Seen))
+* 15 FETCH (RFC822 {843}
+Return-Path: <xx2@openwave.com>
+Received: from [10.37.2.214] by mx-10-49-58-127.openwave.com
+          (InterMail vM.9.05.01.00 201-2473-137-123) with SMTP
+          id <20171116093221.ALH522.mx-10-49-58-127.openwave.com@[10.37.2.214]>
+          for <xx1@openwave.com>; Thu, 16 Nov 2017 09:32:21 +0000
+subject: testemail-Chinese-GB2312-CRLF-quoted-printable
+MIME-Version: 1.0
+Content-Type: text/plain; charset=gb2312
+Content-Transfer-Encoding: quoted-printable
+Date: Thu, 16 Nov 2017 09:32:21 +0000
+Message-Id: <20171116093221.ALH522.mx-10-49-58-127.openwave.com@[10.37.2.214]>
+From: <xx2@openwave.com>
+
+=C5=AD=B7=A2=B3=E5=B9=DA=A3=AC
+     =C6=BE=C0=BB=B4=A6=A1=A2=E4=EC=E4=EC=D3=EA=D0=AA=A1=A3
+=CC=A7=CD=FB=D1=DB=A3=AC=D1=F6=CC=EC=B3=A4=D0=A5=A3=AC=D7=B3=BB=B3,=BC=A4=
+=C1=D2=A1=A3=C8=FD=CA=AE=B9=A6=C3=FB=B3=BE=D3=EB=A3=AC=
+ FLAGS (\Recent \Seen))
+* 16 FETCH (RFC822 {845}
+Return-Path: <xx2@openwave.com>
+Received: from [10.37.2.214] by mx-10-49-58-127.openwave.com
+          (InterMail vM.9.05.01.00 201-2473-137-123) with SMTP
+          id <20171116093222.ALI522.mx-10-49-58-127.openwave.com@[10.37.2.214]>
+          for <xx1@openwave.com>; Thu, 16 Nov 2017 09:32:22 +0000
+subject: testemail-Chinese-GB2312-CRLF-quoted-printable
+MIME-Version: 1.0
+Content-Type: text/plain; charset=gb2312
+Content-Transfer-Encoding: quoted-printable
+Date: Thu, 16 Nov 2017 09:32:22 +0000
+Message-Id: <20171116093222.ALI522.mx-10-49-58-127.openwave.com@[10.37.2.214]>
+From: <xx2@openwave.com>
+
+=C5=AD=B7=A2=B3=E5=B9=DA=A3=AC
+=C6=BE=C0=BB=B4=A6=A1=A2=E4=EC=E4=EC=D3=EA=D0=AA=A1=A3
+=CC=A7=CD=FB=D1=DB=A3=AC=D1=F6=CC=EC=B3=A4=D0=A5=A3=AC=D7=B3=BB=B3,=BC=A4=
+=C1=D2=A1=A3=C8=FD=CA=AE=B9=A6=C3=FB=B3=BE=D3=EB=A3=AC    =20=
+ FLAGS (\Recent \Seen))
+* 17 FETCH (RFC822 {980}
+Return-Path: <xx2@openwave.com>
+Received: from [10.37.2.214] by mx-10-49-58-127.openwave.com
+          (InterMail vM.9.05.01.00 201-2473-137-123) with SMTP
+          id <20171116093222.ALJ522.mx-10-49-58-127.openwave.com@[10.37.2.214]>
+          for <xx1@openwave.com>; Thu, 16 Nov 2017 09:32:22 +0000
+subject: testemail-Chinese-GB2312-CRLF-quoted-printable
+MIME-Version: 1.0
+Content-Type: text/plain; charset=gb2312
+Content-Transfer-Encoding: quoted-printable
+Date: Thu, 16 Nov 2017 09:32:22 +0000
+Message-Id: <20171116093222.ALJ522.mx-10-49-58-127.openwave.com@[10.37.2.214]>
+From: <xx2@openwave.com>
+
+=C5=AD=B7=A2=B3=E5=B9=DA=A3=AC=C6=BE=C0=BB=B4=A6=A1=A2=E4=EC=E4=EC=D3=EA=D0=
+=AA=A1=A3=CC=A7=CD=FB=D1=DB=A1=A2=D1=F6=CC=EC=B3=A4=D0=A5=A3=AC=D7=B3=BB=B3=
+=BC=A4=C1=D2=A1=A3=C8=FD=CA=AE=B9=A6=C3=FB=B3=BE=D3=EB=CD=C1=A3=AC=B0=CB=C7=
+=A7=C0=EF=C2=B7=D4=C6=BA=CD=D4=C2=A1=A3=C4=AA=B5=C8=CF=D0=A3=AC=B0=D7=C1=CB=
+=C9=D9=C4=EA=CD=B7=A3=AC=BF=D5=B1=AF=C7=D0=A1=A3=
+ FLAGS (\Recent \Seen))
+* 18 FETCH (RFC822 {985}
+Return-Path: <xx2@openwave.com>
+Received: from [10.37.2.214] by mx-10-49-58-127.openwave.com
+          (InterMail vM.9.05.01.00 201-2473-137-123) with SMTP
+          id <20171116093223.ALK522.mx-10-49-58-127.openwave.com@[10.37.2.214]>
+          for <xx1@openwave.com>; Thu, 16 Nov 2017 09:32:23 +0000
+subject: testemail-Chinese-GB2312-CRLF-quoted-printable
+MIME-Version: 1.0
+Content-Type: text/plain; charset=gb2312
+Content-Transfer-Encoding: quoted-printable
+Date: Thu, 16 Nov 2017 09:32:23 +0000
+Message-Id: <20171116093223.ALK522.mx-10-49-58-127.openwave.com@[10.37.2.214]>
+From: <xx2@openwave.com>
+
+     =C5=AD=B7=A2=B3=E5=B9=DA=A3=AC=C6=BE=C0=BB=B4=A6=A1=A2=E4=EC=E4=EC=D3=
+=EA=D0=AA=A1=A3=CC=A7=CD=FB=D1=DB=A1=A2=D1=F6=CC=EC=B3=A4=D0=A5=A3=AC=D7=B3=
+=BB=B3=BC=A4=C1=D2=A1=A3=C8=FD=CA=AE=B9=A6=C3=FB=B3=BE=D3=EB=CD=C1=A3=AC=B0=
+=CB=C7=A7=C0=EF=C2=B7=D4=C6=BA=CD=D4=C2=A1=A3=C4=AA=B5=C8=CF=D0=A3=AC=B0=D7=
+=C1=CB=C9=D9=C4=EA=CD=B7=A3=AC=BF=D5=B1=AF=C7=D0=A1=A3=
+ FLAGS (\Recent \Seen))
+* 19 FETCH (RFC822 {985}
+Return-Path: <xx2@openwave.com>
+Received: from [10.37.2.214] by mx-10-49-58-127.openwave.com
+          (InterMail vM.9.05.01.00 201-2473-137-123) with SMTP
+          id <20171116093224.ALL522.mx-10-49-58-127.openwave.com@[10.37.2.214]>
+          for <xx1@openwave.com>; Thu, 16 Nov 2017 09:32:24 +0000
+subject: testemail-Chinese-GB2312-CRLF-quoted-printable
+MIME-Version: 1.0
+Content-Type: text/plain; charset=gb2312
+Content-Transfer-Encoding: quoted-printable
+Date: Thu, 16 Nov 2017 09:32:24 +0000
+Message-Id: <20171116093224.ALL522.mx-10-49-58-127.openwave.com@[10.37.2.214]>
+From: <xx2@openwave.com>
+
+=C5=AD=B7=A2=B3=E5=B9=DA=A3=AC=C6=BE=C0=BB=B4=A6=A1=A2=E4=EC=E4=EC     =D3=
+=EA=D0=AA=A1=A3=CC=A7=CD=FB=D1=DB=A1=A2=D1=F6=CC=EC=B3=A4=D0=A5=A3=AC=D7=B3=
+=BB=B3=BC=A4=C1=D2=A1=A3=C8=FD=CA=AE=B9=A6=C3=FB=B3=BE=D3=EB=CD=C1=A3=AC=B0=
+=CB=C7=A7=C0=EF=C2=B7=D4=C6=BA=CD=D4=C2=A1=A3=C4=AA=B5=C8=CF=D0=A3=AC=B0=D7=
+=C1=CB=C9=D9=C4=EA=CD=B7=A3=AC=BF=D5=B1=AF=C7=D0=A1=A3=
+ FLAGS (\Recent \Seen))
+* 20 FETCH (RFC822 {987}
+Return-Path: <xx2@openwave.com>
+Received: from [10.37.2.214] by mx-10-49-58-127.openwave.com
+          (InterMail vM.9.05.01.00 201-2473-137-123) with SMTP
+          id <20171116093225.ALM522.mx-10-49-58-127.openwave.com@[10.37.2.214]>
+          for <xx1@openwave.com>; Thu, 16 Nov 2017 09:32:25 +0000
+subject: testemail-Chinese-GB2312-CRLF-quoted-printable
+MIME-Version: 1.0
+Content-Type: text/plain; charset=gb2312
+Content-Transfer-Encoding: quoted-printable
+Date: Thu, 16 Nov 2017 09:32:25 +0000
+Message-Id: <20171116093225.ALM522.mx-10-49-58-127.openwave.com@[10.37.2.214]>
+From: <xx2@openwave.com>
+
+=C5=AD=B7=A2=B3=E5=B9=DA=A3=AC=C6=BE=C0=BB=B4=A6=A1=A2=E4=EC=E4=EC=D3=EA=D0=
+=AA=A1=A3=CC=A7=CD=FB=D1=DB=A1=A2=D1=F6=CC=EC=B3=A4=D0=A5=A3=AC=D7=B3=BB=B3=
+=BC=A4=C1=D2=A1=A3=C8=FD=CA=AE=B9=A6=C3=FB=B3=BE=D3=EB=CD=C1=A3=AC=B0=CB=C7=
+=A7=C0=EF=C2=B7=D4=C6=BA=CD=D4=C2=A1=A3=C4=AA=B5=C8=CF=D0=A3=AC=B0=D7=C1=CB=
+=C9=D9=C4=EA=CD=B7=A3=AC=BF=D5=B1=AF=C7=D0=A1=A3    =20=
+ FLAGS (\Recent \Seen))
+* 21 FETCH (RFC822 {983}
+Return-Path: <xx2@openwave.com>
+Received: from [10.37.2.214] by mx-10-49-58-127.openwave.com
+          (InterMail vM.9.05.01.00 201-2473-137-123) with SMTP
+          id <20171116093226.ALN522.mx-10-49-58-127.openwave.com@[10.37.2.214]>
+          for <xx1@openwave.com>; Thu, 16 Nov 2017 09:32:26 +0000
+subject: testemail-Chinese-GB2312-CRLF-quoted-printable
+MIME-Version: 1.0
+Content-Type: text/plain; charset=gb2312
+Content-Transfer-Encoding: quoted-printable
+Date: Thu, 16 Nov 2017 09:32:26 +0000
+Message-Id: <20171116093226.ALN522.mx-10-49-58-127.openwave.com@[10.37.2.214]>
+From: <xx2@openwave.com>
+
+=C5=AD=B7=A2=B3=E5=B9=DA=A3=AC
+=C6=BE=C0=BB=B4=A6=A1=A2=E4=EC=E4=EC=D3=EA=D0=AA=A1=A3=CC=A7=CD=FB=D1=DB=A1=
+=A2=D1=F6=CC=EC=B3=A4=D0=A5=A3=AC
+=D7=B3=BB=B3=BC=A4=C1=D2=A1=A3=C8=FD=CA=AE=B9=A6=C3=FB=B3=BE=D3=EB=CD=C1=A3=
+=AC=B0=CB=C7=A7=C0=EF=C2=B7=D4=C6=BA=CD=D4=C2=A1=A3
+=C4=AA=B5=C8=CF=D0=A3=AC=B0=D7=C1=CB=C9=D9=C4=EA=CD=B7=A3=AC=BF=D5=B1=AF=C7=
+=D0=A1=A3=
+ FLAGS (\Recent \Seen))
+* 22 FETCH (RFC822 {988}
+Return-Path: <xx2@openwave.com>
+Received: from [10.37.2.214] by mx-10-49-58-127.openwave.com
+          (InterMail vM.9.05.01.00 201-2473-137-123) with SMTP
+          id <20171116093227.ALO522.mx-10-49-58-127.openwave.com@[10.37.2.214]>
+          for <xx1@openwave.com>; Thu, 16 Nov 2017 09:32:27 +0000
+subject: testemail-Chinese-GB2312-CRLF-quoted-printable
+MIME-Version: 1.0
+Content-Type: text/plain; charset=gb2312
+Content-Transfer-Encoding: quoted-printable
+Date: Thu, 16 Nov 2017 09:32:27 +0000
+Message-Id: <20171116093227.ALO522.mx-10-49-58-127.openwave.com@[10.37.2.214]>
+From: <xx2@openwave.com>
+
+     =C5=AD=B7=A2=B3=E5=B9=DA=A3=AC
+=C6=BE=C0=BB=B4=A6=A1=A2=E4=EC=E4=EC=D3=EA=D0=AA=A1=A3=CC=A7=CD=FB=D1=DB=A1=
+=A2=D1=F6=CC=EC=B3=A4=D0=A5=A3=AC
+=D7=B3=BB=B3=BC=A4=C1=D2=A1=A3=C8=FD=CA=AE=B9=A6=C3=FB=B3=BE=D3=EB=CD=C1=A3=
+=AC=B0=CB=C7=A7=C0=EF=C2=B7=D4=C6=BA=CD=D4=C2=A1=A3
+=C4=AA=B5=C8=CF=D0=A3=AC=B0=D7=C1=CB=C9=D9=C4=EA=CD=B7=A3=AC=BF=D5=B1=AF=C7=
+=D0=A1=A3=
+ FLAGS (\Recent \Seen))
+* 23 FETCH (RFC822 {988}
+Return-Path: <xx2@openwave.com>
+Received: from [10.37.2.214] by mx-10-49-58-127.openwave.com
+          (InterMail vM.9.05.01.00 201-2473-137-123) with SMTP
+          id <20171116093228.ALP522.mx-10-49-58-127.openwave.com@[10.37.2.214]>
+          for <xx1@openwave.com>; Thu, 16 Nov 2017 09:32:28 +0000
+subject: testemail-Chinese-GB2312-CRLF-quoted-printable
+MIME-Version: 1.0
+Content-Type: text/plain; charset=gb2312
+Content-Transfer-Encoding: quoted-printable
+Date: Thu, 16 Nov 2017 09:32:28 +0000
+Message-Id: <20171116093228.ALP522.mx-10-49-58-127.openwave.com@[10.37.2.214]>
+From: <xx2@openwave.com>
+
+=C5=AD=B7=A2=B3=E5=B9=DA=A3=AC
+     =C6=BE=C0=BB=B4=A6=A1=A2=E4=EC=E4=EC=D3=EA=D0=AA=A1=A3=CC=A7=CD=FB=D1=
+=DB=A1=A2=D1=F6=CC=EC=B3=A4=D0=A5=A3=AC
+=D7=B3=BB=B3=BC=A4=C1=D2=A1=A3=C8=FD=CA=AE=B9=A6=C3=FB=B3=BE=D3=EB=CD=C1=A3=
+=AC=B0=CB=C7=A7=C0=EF=C2=B7=D4=C6=BA=CD=D4=C2=A1=A3
+=C4=AA=B5=C8=CF=D0=A3=AC=B0=D7=C1=CB=C9=D9=C4=EA=CD=B7=A3=AC=BF=D5=B1=AF=C7=
+=D0=A1=A3=
+ FLAGS (\Recent \Seen))
+* 24 FETCH (RFC822 {990}
+Return-Path: <xx2@openwave.com>
+Received: from [10.37.2.214] by mx-10-49-58-127.openwave.com
+          (InterMail vM.9.05.01.00 201-2473-137-123) with SMTP
+          id <20171116093228.ALQ522.mx-10-49-58-127.openwave.com@[10.37.2.214]>
+          for <xx1@openwave.com>; Thu, 16 Nov 2017 09:32:28 +0000
+subject: testemail-Chinese-GB2312-CRLF-quoted-printable
+MIME-Version: 1.0
+Content-Type: text/plain; charset=gb2312
+Content-Transfer-Encoding: quoted-printable
+Date: Thu, 16 Nov 2017 09:32:28 +0000
+Message-Id: <20171116093228.ALQ522.mx-10-49-58-127.openwave.com@[10.37.2.214]>
+From: <xx2@openwave.com>
+
+=C5=AD=B7=A2=B3=E5=B9=DA=A3=AC
+=C6=BE=C0=BB=B4=A6=A1=A2=E4=EC=E4=EC=D3=EA=D0=AA=A1=A3=CC=A7=CD=FB=D1=DB=A1=
+=A2=D1=F6=CC=EC=B3=A4=D0=A5=A3=AC
+=D7=B3=BB=B3=BC=A4=C1=D2=A1=A3=C8=FD=CA=AE=B9=A6=C3=FB=B3=BE=D3=EB=CD=C1=A3=
+=AC=B0=CB=C7=A7=C0=EF=C2=B7=D4=C6=BA=CD=D4=C2=A1=A3
+=C4=AA=B5=C8=CF=D0=A3=AC=B0=D7=C1=CB=C9=D9=C4=EA=CD=B7=A3=AC=BF=D5=B1=AF=C7=
+=D0=A1=A3    =20=
+ FLAGS (\Recent \Seen))
+* 25 FETCH (RFC822 {734}
+Return-Path: <xx2@openwave.com>
+Received: from [10.37.2.214] by mx-10-49-58-127.openwave.com
+          (InterMail vM.9.05.01.00 201-2473-137-123) with SMTP
+          id <20171116093229.ALR522.mx-10-49-58-127.openwave.com@[10.37.2.214]>
+          for <xx1@openwave.com>; Thu, 16 Nov 2017 09:32:29 +0000
+subject: testemail-Chinese-GB2312-CRLF-quoted-printable
+MIME-Version: 1.0
+Content-Type: text/plain; charset=gb2312
+Content-Transfer-Encoding: quoted-printable
+Date: Thu, 16 Nov 2017 09:32:29 +0000
+Message-Id: <20171116093229.ALR522.mx-10-49-58-127.openwave.com@[10.37.2.214]>
+From: <xx2@openwave.com>
+
+=CE=D2=CA=C7=D6=D0=B9=FA=C8=CB
+
+
+=C4=E3=C4=D8=A3=BF=B9=FE=B9=FE=B9=FE=B9=FE=B9=FE=B9=FE=B9=FE=A3=A1=A3=A1=A3=A1=
+ FLAGS (\Recent \Seen))
+a OK FETCH completed
+* 1 FETCH (FIRSTLINE ("{42}
+怒发冲冠，凭阑处、潇潇雨歇。"))
+* 2 FETCH (FIRSTLINE ("{42}
+怒发冲冠，凭阑处、潇潇雨歇。"))
+* 3 FETCH (FIRSTLINE ("{43}
+怒发冲冠，凭阑 处、潇潇雨歇。"))
+* 4 FETCH (FIRSTLINE ("{43}
+怒发冲冠，凭阑处、潇潇雨歇。 "))
+* 5 FETCH (FIRSTLINE ("{79}
+怒发冲冠，凭阑处、 潇潇雨歇。抬望眼、仰天长啸，壮怀激"))
+* 6 FETCH (FIRSTLINE ("{79}
+怒发冲冠，凭阑处、 潇潇雨歇。抬望眼、仰天长啸，壮怀激"))
+* 7 FETCH (FIRSTLINE ("{80}
+怒发冲冠，凭阑处、  潇潇雨歇。抬望眼、仰天长啸，壮怀激"))
+* 8 FETCH (FIRSTLINE ("{79}
+怒发冲冠，凭阑处、 潇潇雨歇。抬望眼、仰天长啸，壮怀激"))
+* 9 FETCH (FIRSTLINE ("{78}
+怒发冲冠，凭阑处、潇潇雨歇。抬望眼，仰天长啸，壮怀激"))
+* 10 FETCH (FIRSTLINE ("{79}
+怒发冲冠，凭阑处、潇潇雨歇。抬望眼，仰天长啸，壮怀,激"))
+* 11 FETCH (FIRSTLINE ("{80}
+怒发冲冠，凭阑处、潇潇 雨歇。抬望眼，仰天长啸，壮怀,激"))
+* 12 FETCH (FIRSTLINE ("{79}
+怒发冲冠，凭阑处、潇潇雨歇。抬望眼，仰天长啸，壮怀,激"))
+* 13 FETCH (FIRSTLINE ("{78}
+怒发冲冠， 凭阑处、潇潇雨歇。 抬望眼，仰天长啸，壮怀,"))
+* 14 FETCH (FIRSTLINE ("{78}
+怒发冲冠， 凭阑处、潇潇雨歇。 抬望眼，仰天长啸，壮怀,"))
+* 15 FETCH (FIRSTLINE ("{79}
+怒发冲冠，  凭阑处、潇潇雨歇。 抬望眼，仰天长啸，壮怀,"))
+* 16 FETCH (FIRSTLINE ("{78}
+怒发冲冠， 凭阑处、潇潇雨歇。 抬望眼，仰天长啸，壮怀,"))
+* 17 FETCH (FIRSTLINE ("{78}
+怒发冲冠，凭阑处、潇潇雨歇。抬望眼、仰天长啸，壮怀激"))
+* 18 FETCH (FIRSTLINE ("{78}
+怒发冲冠，凭阑处、潇潇雨歇。抬望眼、仰天长啸，壮怀激"))
+* 19 FETCH (FIRSTLINE ("{79}
+怒发冲冠，凭阑处、潇潇 雨歇。抬望眼、仰天长啸，壮怀激"))
+* 20 FETCH (FIRSTLINE ("{78}
+怒发冲冠，凭阑处、潇潇雨歇。抬望眼、仰天长啸，壮怀激"))
+* 21 FETCH (FIRSTLINE ("{80}
+怒发冲冠， 凭阑处、潇潇雨歇。抬望眼、仰天长啸， 壮怀激"))
+* 22 FETCH (FIRSTLINE ("{80}
+怒发冲冠， 凭阑处、潇潇雨歇。抬望眼、仰天长啸， 壮怀激"))
+* 23 FETCH (FIRSTLINE ("{78}
+怒发冲冠，  凭阑处、潇潇雨歇。抬望眼、仰天长啸， 壮怀"))
+* 24 FETCH (FIRSTLINE ("{80}
+怒发冲冠， 凭阑处、潇潇雨歇。抬望眼、仰天长啸， 壮怀激"))
+* 25 FETCH (FIRSTLINE ("{55}
+我是中国人 你呢？哈哈哈哈哈哈哈！！！"))
+a OK FETCH completed
+* 1 FETCH (FIRSTLINE ("{42}
+怒发冲冠，凭阑处、潇潇雨歇。") UID 1709)
+* 2 FETCH (FIRSTLINE ("{42}
+怒发冲冠，凭阑处、潇潇雨歇。") UID 1710)
+* 3 FETCH (FIRSTLINE ("{43}
+怒发冲冠，凭阑 处、潇潇雨歇。") UID 1711)
+* 4 FETCH (FIRSTLINE ("{43}
+怒发冲冠，凭阑处、潇潇雨歇。 ") UID 1712)
+* 5 FETCH (FIRSTLINE ("{79}
+怒发冲冠，凭阑处、 潇潇雨歇。抬望眼、仰天长啸，壮怀激") UID 1713)
+* 6 FETCH (FIRSTLINE ("{79}
+怒发冲冠，凭阑处、 潇潇雨歇。抬望眼、仰天长啸，壮怀激") UID 1714)
+* 7 FETCH (FIRSTLINE ("{80}
+怒发冲冠，凭阑处、  潇潇雨歇。抬望眼、仰天长啸，壮怀激") UID 1715)
+* 8 FETCH (FIRSTLINE ("{79}
+怒发冲冠，凭阑处、 潇潇雨歇。抬望眼、仰天长啸，壮怀激") UID 1716)
+* 9 FETCH (FIRSTLINE ("{78}
+怒发冲冠，凭阑处、潇潇雨歇。抬望眼，仰天长啸，壮怀激") UID 1717)
+* 10 FETCH (FIRSTLINE ("{79}
+怒发冲冠，凭阑处、潇潇雨歇。抬望眼，仰天长啸，壮怀,激") UID 1718)
+* 11 FETCH (FIRSTLINE ("{80}
+怒发冲冠，凭阑处、潇潇 雨歇。抬望眼，仰天长啸，壮怀,激") UID 1719)
+* 12 FETCH (FIRSTLINE ("{79}
+怒发冲冠，凭阑处、潇潇雨歇。抬望眼，仰天长啸，壮怀,激") UID 1720)
+* 13 FETCH (FIRSTLINE ("{78}
+怒发冲冠， 凭阑处、潇潇雨歇。 抬望眼，仰天长啸，壮怀,") UID 1721)
+* 14 FETCH (FIRSTLINE ("{78}
+怒发冲冠， 凭阑处、潇潇雨歇。 抬望眼，仰天长啸，壮怀,") UID 1722)
+* 15 FETCH (FIRSTLINE ("{79}
+怒发冲冠，  凭阑处、潇潇雨歇。 抬望眼，仰天长啸，壮怀,") UID 1723)
+* 16 FETCH (FIRSTLINE ("{78}
+怒发冲冠， 凭阑处、潇潇雨歇。 抬望眼，仰天长啸，壮怀,") UID 1724)
+* 17 FETCH (FIRSTLINE ("{78}
+怒发冲冠，凭阑处、潇潇雨歇。抬望眼、仰天长啸，壮怀激") UID 1725)
+* 18 FETCH (FIRSTLINE ("{78}
+怒发冲冠，凭阑处、潇潇雨歇。抬望眼、仰天长啸，壮怀激") UID 1726)
+* 19 FETCH (FIRSTLINE ("{79}
+怒发冲冠，凭阑处、潇潇 雨歇。抬望眼、仰天长啸，壮怀激") UID 1727)
+* 20 FETCH (FIRSTLINE ("{78}
+怒发冲冠，凭阑处、潇潇雨歇。抬望眼、仰天长啸，壮怀激") UID 1728)
+* 21 FETCH (FIRSTLINE ("{80}
+怒发冲冠， 凭阑处、潇潇雨歇。抬望眼、仰天长啸， 壮怀激") UID 1729)
+* 22 FETCH (FIRSTLINE ("{80}
+怒发冲冠， 凭阑处、潇潇雨歇。抬望眼、仰天长啸， 壮怀激") UID 1730)
+* 23 FETCH (FIRSTLINE ("{78}
+怒发冲冠，  凭阑处、潇潇雨歇。抬望眼、仰天长啸， 壮怀") UID 1731)
+* 24 FETCH (FIRSTLINE ("{80}
+怒发冲冠， 凭阑处、潇潇雨歇。抬望眼、仰天长啸， 壮怀激") UID 1732)
+* 25 FETCH (FIRSTLINE ("{55}
+我是中国人 你呢？哈哈哈哈哈哈哈！！！") UID 1733)
+a OK UID FETCH completed
+* BYE IMAP4 server terminating connection
+a OK LOGOUT completed

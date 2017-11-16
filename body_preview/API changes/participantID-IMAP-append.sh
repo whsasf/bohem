@@ -4,7 +4,7 @@ u1=`echo $RANDOM`
 u2=`echo $RANDOM`
 u3=`echo $RANDOM`
 deleteuser=$u1@openwave.com
-IMAPHost=172.26.202.87
+IMAPHost=10.49.58.118
 IMAPPort=20143
 loginuser1=$u1
 loginuser2=$u2
@@ -15,12 +15,12 @@ mailfrom2=$u2
 rcptto2=$u2
 mailfrom3=$u3
 rcptto3=$u3
-SMTPHost=172.26.202.87
+SMTPHost=10.49.58.118
 SMTPPort=20025
 user=imail2
-FEPHost2=172.26.202.87
+FEPHost2=10.49.58.118
 imailuser=imail2
-moshost="172.26.203.123:8081"
+moshost="10.49.58.120:8081"
 
 
 echo $u1@openwave.com

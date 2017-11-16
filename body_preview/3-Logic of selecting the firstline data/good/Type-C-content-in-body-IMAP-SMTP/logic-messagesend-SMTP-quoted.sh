@@ -24,11 +24,11 @@ then
 	cat /dev/null >$uidfetchtarget
 fi
 
-SMTPHost=172.26.202.87
-SMTPPort=20025
+SMTPHost=10.49.58.127
+SMTPPort=10025
 
-IMAPHost=172.26.202.87
-IMAPPort=20143
+IMAPHost=10.49.58.127
+IMAPPort=10143
 
 #count=26
 mailfrom=xx2

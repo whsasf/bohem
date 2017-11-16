@@ -1,0 +1,20 @@
+	**********  Starting /home/ram/workspace/bohem/Automation/single-message/Deliever-message-after-AutoReplyStart-when-only-it-set/external-domain/mx-10295/  **********
+Test started: Thu Nov 16 09:41:32 CST 2017
+########## 1 Clear mta.log using expect tool ...
+spawn ssh imail2@10.49.58.118
+Password: 
+Last login: Wed Nov 15 20:36:18 2017 from bigchina
+[?1034hmx-10-49-58-118:imail2:Mx9.5:~$ > ~/log/mta.log
+mx-10-49-58-118:imail2:Mx9.5:~$ rm: cannot remove 'expect*.log': No such file or directory
+rm: cannot remove 'imapfetch*.log': No such file or directory
+rm: cannot remove 'send*.log': No such file or directory
+########## 2 Accounts provision ...
+TESTFAILED: /home/ram/workspace/bohem/Automation/single-message/Deliever-message-after-AutoReplyStart-when-only-it-set/external-domain/mx-10295/: Test didn't report success or failure or skipped (180 sec.)
+FAILED: /home/ram/workspace/bohem/Automation/single-message/Deliever-message-after-AutoReplyStart-when-only-it-set/external-domain/mx-10295/ [20171116-094132] (180 sec.) 103
+Test ended: Thu Nov 16 09:44:32 CST 2017
+
+<html><head><title>Apache Tomcat/7.0.27 - Error report</title><style><!--H1 {font-family:Tahoma,Arial,sans-serif;color:white;background-color:#525D76;font-size:22px;} H2 {font-family:Tahoma,Arial,sans-serif;color:white;background-color:#525D76;font-size:16px;} H3 {font-family:Tahoma,Arial,sans-serif;color:white;background-color:#525D76;font-size:14px;} BODY {font-family:Tahoma,Arial,sans-serif;color:black;background-color:white;} B {font-family:Tahoma,Arial,sans-serif;color:white;background-color:#525D76;} P {font-family:Tahoma,Arial,sans-serif;background:white;color:black;font-size:12px;}A {color : black;}A.name {color : black;}HR {color : #525D76;}--></style> </head><body><h1>HTTP Status 500 - </h1><HR size="1" noshade="noshade"><p><b>type</b> Exception report</p><p><b>message</b> <u></u></p><p><b>description</b> <u>The server encountered an internal error () that prevented it from fulfilling this request.</u></p><p><b>exception</b> <pre>java.lang.NullPointerException org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:472) org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:98) org.apache.catalina.valves.AccessLogValve.invoke(AccessLogValve.java:927) org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:407) org.apache.coyote.http11.AbstractHttp11Processor.process(AbstractHttp11Processor.java:999) org.apache.coyote.AbstractProtocol$AbstractConnectionHandler.process(AbstractProtocol.java:565) org.apache.tomcat.util.net.JIoEndpoint$SocketProcessor.run(JIoEndpoint.java:307) java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) java.lang.Thread.run(Thread.java:748) </pre></p><p><b>note</b> <u>The full stack trace of the root cause is available in the Apache Tomcat/7.0.27 logs.</u></p><HR size="1" noshade="noshade"><h3>Apache Tomcat/7.0.27</h3></body></html>
+
+[31m########## 2 Accont provision failed,PLease check manually,Exiting now ...[0m
+##########  doing some clear job ...
+[31m##########  Accont deleted failed,PLease check manually,Exiting now ...[0m

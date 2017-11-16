@@ -2,17 +2,17 @@
 #use xx1@openave.com  p  as test uer
 
 deleteuser=xx1@openwave.com
-IMAPHost=172.26.202.87
+IMAPHost=10.49.58.118
 IMAPPort=20143
 loginuser=xx1
 mailfrom=xx2
 rcptto=xx1
-SMTPHost=172.26.202.87
+SMTPHost=10.49.58.118
 SMTPPort=20025
 user=imail2
-FEPHost1=172.26.202.87
+FEPHost1=10.49.58.118
 imailuser=imail2
-moshost=172.26.203.123:8081
+moshost=10.49.58.120:8081
 
 
 #(0)add some keys and restart imap srevers:

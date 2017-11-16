@@ -1,8 +1,8 @@
-imapmail: host[10.49.58.118] port[20143] user[ar5164] pass[p] folder[inbox] message[2]
+imapmail: host[10.49.58.118] port[20143] user[ar9429] pass[p] folder[inbox] message[2]
 xx OK LOGIN completed
 * 2 EXISTS
 * OK [UNSEEN 1] First unseen message
-* OK [UIDVALIDITY 1510501278] UIDs valid
+* OK [UIDVALIDITY 1510799666] UIDs valid
 * OK [UIDNEXT 1002] Predicted next UID
 * FLAGS (\Answered \Flagged \Deleted \Draft \Seen)
 * OK [PERMANENTFLAGS (\* \Answered \Flagged \Deleted \Draft \Seen)] Permanent flags
@@ -11,12 +11,12 @@ xx OK [READ-WRITE] SELECT completed
 * 2 FETCH (BODY[] {543}
 Return-Path: <>
 Subject: Re: test message about autoreply feature
-To: ar5164@openwave.com
-From: "Auto-reply from ar28033@openwave.com" <ar28033@openwave.com>
-In-Reply-To: <20171112154406.AAL26417.mx-10-49-58-118.openwave.com@openwave.com>
+To: ar9429@openwave.com
+From: "Auto-reply from ar11237@openwave.com" <ar11237@openwave.com>
+In-Reply-To: <20171116023527.ACI11909.mx-10-49-58-118.openwave.com@openwave.com>
 Precedence: bulk
-Date: Sun, 12 Nov 2017 10:44:07 -0500
-Message-ID: <20171112154407.AAN26417.mx-10-49-58-118.openwave.com@mx-10-49-58-118>
+Date: Wed, 15 Nov 2017 21:35:28 -0500
+Message-ID: <20171116023528.ACM11909.mx-10-49-58-118.openwave.com@mx-10-49-58-118>
 MIME-Version: 1.0
 Content-Type: text/plain;
 		charset=UTF-8
@@ -28,11 +28,11 @@ Reply,This is an autoreply message for internal senders!
 xx OK FETCH completed
 * BYE IMAP4 server terminating connection
 xx OK LOGOUT completed
-imapmail: host[10.49.58.118] port[20143] user[ar4202] pass[p] folder[inbox] message[2]
+imapmail: host[10.49.58.118] port[20143] user[ar1186] pass[p] folder[inbox] message[2]
 xx OK LOGIN completed
 * 2 EXISTS
 * OK [UNSEEN 1] First unseen message
-* OK [UIDVALIDITY 1510501278] UIDs valid
+* OK [UIDVALIDITY 1510799667] UIDs valid
 * OK [UIDNEXT 1002] Predicted next UID
 * FLAGS (\Answered \Flagged \Deleted \Draft \Seen)
 * OK [PERMANENTFLAGS (\* \Answered \Flagged \Deleted \Draft \Seen)] Permanent flags
@@ -41,12 +41,12 @@ xx OK [READ-WRITE] SELECT completed
 * 2 FETCH (BODY[] {543}
 Return-Path: <>
 Subject: Re: test message about autoreply feature
-To: ar4202@openwave.com
-From: "Auto-reply from ar28033@openwave.com" <ar28033@openwave.com>
-In-Reply-To: <20171112154406.AAJ26417.mx-10-49-58-118.openwave.com@openwave.com>
+To: ar1186@openwave.com
+From: "Auto-reply from ar11237@openwave.com" <ar11237@openwave.com>
+In-Reply-To: <20171116023527.ACL11909.mx-10-49-58-118.openwave.com@openwave.com>
 Precedence: bulk
-Date: Sun, 12 Nov 2017 10:44:07 -0500
-Message-ID: <20171112154407.AAO26417.mx-10-49-58-118.openwave.com@mx-10-49-58-118>
+Date: Wed, 15 Nov 2017 21:35:28 -0500
+Message-ID: <20171116023528.ACP11909.mx-10-49-58-118.openwave.com@mx-10-49-58-118>
 MIME-Version: 1.0
 Content-Type: text/plain;
 		charset=UTF-8
@@ -58,25 +58,25 @@ Reply,This is an autoreply message for internal senders!
 xx OK FETCH completed
 * BYE IMAP4 server terminating connection
 xx OK LOGOUT completed
-imapmail: host[10.49.58.118] port[20143] user[ar7583] pass[p] folder[inbox] message[2]
+imapmail: host[10.49.58.118] port[20143] user[ar24312] pass[p] folder[inbox] message[2]
 xx OK LOGIN completed
 * 2 EXISTS
 * OK [UNSEEN 1] First unseen message
-* OK [UIDVALIDITY 1510501424] UIDs valid
+* OK [UIDVALIDITY 1510799520] UIDs valid
 * OK [UIDNEXT 1002] Predicted next UID
 * FLAGS (\Answered \Flagged \Deleted \Draft \Seen)
 * OK [PERMANENTFLAGS (\* \Answered \Flagged \Deleted \Draft \Seen)] Permanent flags
 * 1 RECENT
 xx OK [READ-WRITE] SELECT completed
-* 2 FETCH (BODY[] {548}
+* 2 FETCH (BODY[] {549}
 Return-Path: <>
 Subject: Re: test message about autoreply feature
-To: ar7583@whsasf.com
-From: "Auto-reply from ar28033@openwave.com" <ar28033@openwave.com>
-In-Reply-To: <20171112154406.AAK26417.mx-10-49-58-118.openwave.com@whsasf.com>
+To: ar24312@whsasf.com
+From: "Auto-reply from ar11237@openwave.com" <ar11237@openwave.com>
+In-Reply-To: <20171116023527.ACK11909.mx-10-49-58-118.openwave.com@whsasf.com>
 Precedence: bulk
-Date: Sun, 12 Nov 2017 10:44:07 -0500
-Message-ID: <20171112154407.AAM26417.mx-10-49-58-118.openwave.com@mx-10-49-58-118>
+Date: Wed, 15 Nov 2017 21:35:28 -0500
+Message-ID: <20171116023528.ACO11909.mx-10-49-58-118.openwave.com@mx-10-49-58-118>
 MIME-Version: 1.0
 Content-Type: text/plain;
 		charset=UTF-8
@@ -88,11 +88,11 @@ Reply,This is an external autoreply message for external senders!
 xx OK FETCH completed
 * BYE IMAP4 server terminating connection
 xx OK LOGOUT completed
-imapmail: host[10.49.58.118] port[20143] user[ar27432] pass[p] folder[inbox] message[2]
+imapmail: host[10.49.58.118] port[20143] user[ar24755] pass[p] folder[inbox] message[2]
 xx OK LOGIN completed
 * 2 EXISTS
 * OK [UNSEEN 1] First unseen message
-* OK [UIDVALIDITY 1510501424] UIDs valid
+* OK [UIDVALIDITY 1510799669] UIDs valid
 * OK [UIDNEXT 1002] Predicted next UID
 * FLAGS (\Answered \Flagged \Deleted \Draft \Seen)
 * OK [PERMANENTFLAGS (\* \Answered \Flagged \Deleted \Draft \Seen)] Permanent flags
@@ -101,12 +101,12 @@ xx OK [READ-WRITE] SELECT completed
 * 2 FETCH (BODY[] {549}
 Return-Path: <>
 Subject: Re: test message about autoreply feature
-To: ar27432@whsasf.com
-From: "Auto-reply from ar28033@openwave.com" <ar28033@openwave.com>
-In-Reply-To: <20171112154406.AAI26417.mx-10-49-58-118.openwave.com@whsasf.com>
+To: ar24755@whsasf.com
+From: "Auto-reply from ar11237@openwave.com" <ar11237@openwave.com>
+In-Reply-To: <20171116023527.ACJ11909.mx-10-49-58-118.openwave.com@whsasf.com>
 Precedence: bulk
-Date: Sun, 12 Nov 2017 10:44:07 -0500
-Message-ID: <20171112154407.AAP26417.mx-10-49-58-118.openwave.com@mx-10-49-58-118>
+Date: Wed, 15 Nov 2017 21:35:28 -0500
+Message-ID: <20171116023528.ACN11909.mx-10-49-58-118.openwave.com@mx-10-49-58-118>
 MIME-Version: 1.0
 Content-Type: text/plain;
 		charset=UTF-8

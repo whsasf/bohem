@@ -1,0 +1,342 @@
+	**********  Starting /home/ram/workspace/bohem/Automation/multiple-messages-simultaneously-for-in-and-out-domains-senders/Deliever-message-when-autoReplyStartDate-and-autoReplyStopDate-unset/mx-10235-10269  **********
+Test started: Thu Nov 16 09:56:20 CST 2017
+########## 1 Clear mta.log using expect tool ...
+spawn ssh imail2@10.49.58.118
+Password: 
+Last login: Wed Nov 15 20:53:45 2017 from bigchina
+[?1034hmx-10-49-58-118:imail2:Mx9.5:~$ > ~/log/mta.log
+mx-10-49-58-118:imail2:Mx9.5:~$ ########## 2 Accounts provision ...
+8347270031813193331
+4707718753765246415
+6300909010166485754
+4760754382636335233
+7370945185495495681
+[32m########## 2 Accont provision successfully, we can continue now[0m
+########## 3 Configure user1 to echo autoreply mode using expect tool ...
+spawn ssh imail2@10.49.58.118
+Password: 
+Last login: Wed Nov 15 20:53:58 2017 from bigchina
+[?1034hmx-10-49-58-118:imail2:Mx9.5:~$ echo 'internal:' >data.txt
+mx-10-49-58-118:imail2:Mx9.5:~$ echo 'Echo,This is an autoreply message for internal senders!' >>data.txt
+mx-10-49-58-118:imail2:Mx9.5:~$ echo 'external:' >>data.txt
+mx-10-49-58-118:imail2:Mx9.5:~$ echo 'Echo,This is an external autoreply message for external senders!' >>data.txt
+mx-10-49-58-118:imail2:Mx9.5:~$ autoreplyctrl ar3122@openwave.com echo data.txt none none
+AutoReply data updated Successfully.
+mx-10-49-58-118:imail2:Mx9.5:~$ [32m##########3 Congifuration successfully[0m
+##########4 delieber 1 message from user1 to user2 ...
+########## 5 Check mta.log using expect tool ...
+spawn ssh imail2@10.49.58.118
+Password: 
+Last login: Wed Nov 15 20:54:24 2017 from bigchina
+[?1034hmx-10-49-58-118:imail2:Mx9.5:~$ cat /opt/imail2/log/mta.log
+20171115 205422409-0500 mx-10-49-58-118 mta 2873 3045 140669322008320 Note;MtaQueueDirRemoved(79/54) /opt/imail2/spool/deferred/MTA
+20171115 205422427-0500 mx-10-49-58-118 mta 2873 3586 140669320677120 Warn;UserDataException(504/1) MBX_NOT_FOUND:{uid=[ar1699@openwave.com], adminControl=[true], senderBlocking=[true], sharedMailbox=[true], email=[ar1699@openwave.com]}:MailboxService\3aGET:The given Mailbox does not exist.:Mailbox ar1699@openwave.com does not exist in SUR backend:from=<ar25964@whsasf.com>:msgid=<20171116015340.AAN2873.mx-10-49-58-118.openwave.com@whsasf.com>:size=546:fromhost=10.37.2.214:fromport=51392:localAddr=[10.49.58.118]:sid=BD1BA205-A361058B-00000010.1
+20171115 205422433-0500 mx-10-49-58-118 mta 2873 5311 140669316949760 Warn;UserDataException(504/1) MBX_NOT_FOUND:{uid=[ar1699@openwave.com], adminControl=[true], senderBlocking=[true], sharedMailbox=[true], email=[ar1699@openwave.com]}:MailboxService\3aGET:The given Mailbox does not exist.:Mailbox ar1699@openwave.com does not exist in SUR backend:from=<ar14123@openwave.com>:msgid=<20171116015340.AAM2873.mx-10-49-58-118.openwave.com@openwave.com>:size=554:fromhost=10.37.2.214:fromport=51388:localAddr=[10.49.58.118]:sid=BD1BA205-A361058B-0000000C.1
+20171115 205422433-0500 mx-10-49-58-118 mta 2873 5311 140669316949760 Note;AcctInvalidUser(50/35) ar1699@openwave.com:user=ar1699@openwave.com:from=<ar14123@openwave.com>:msgid=<20171116015340.AAM2873.mx-10-49-58-118.openwave.com@openwave.com>:size=554:fromhost=10.37.2.214:fromport=51388:localAddr=[10.49.58.118]:sid=BD1BA205-A361058B-0000000C.1
+20171115 205422433-0500 mx-10-49-58-118 mta 2873 5311 140669316949760 Note;MsgTrace(65/26) bounced:user=ar1699@openwave.com:from=<ar14123@openwave.com>:msgid=<20171116015340.AAM2873.mx-10-49-58-118.openwave.com@openwave.com>:size=554:fromhost=10.37.2.214:fromport=51388:localAddr=[10.49.58.118]:sid=BD1BA205-A361058B-0000000C.1:docid=f8ace140-ca70-11e7-8bc5-ce2e1ba79761
+20171115 205422433-0500 mx-10-49-58-118 mta 2873 5311 140669316949760 Note;MsgTrace(65/26) handled by Error-Handler:from=<ar14123@openwave.com>:msgid=<20171116015340.AAM2873.mx-10-49-58-118.openwave.com@openwave.com>:size=554:fromhost=10.37.2.214:fromport=51388:localAddr=[10.49.58.118]:sid=BD1BA205-A361058B-0000000C.1:msgfile=/opt/imail2/spool/control/316/20171116015341.AAR2873.mx-10-49-58-118.openwave.com@openwave.com-Control:msgid=<20171116015340.AAM2873.mx-10-49-58-118.openwave.com@openwave.com>
+20171115 205422433-0500 mx-10-49-58-118 mta 2873 5311 140669316949760 Note;AcctInvalidUser(50/35) ar1699@openwave.com:user=ar1699@openwave.com:from=<ar14123@openwave.com>:msgid=<20171116015340.AAM2873.mx-10-49-58-118.openwave.com@openwave.com>:size=554:fromhost=10.37.2.214:fromport=51388:localAddr=[10.49.58.118]:sid=BD1BA205-A361058B-0000000C.1
+20171115 205422435-0500 mx-10-49-58-118 mta 2873 5311 140669316949760 Note;MsgTrace(65/26) AcctInvalidUser (created by Error-Handler):from=<ar14123@openwave.com>:msgid=20171116015422.AAS2873.mx-10-49-58-118.openwave.com@mx-10-49-58-118:size=554:fromhost=10.37.2.214:fromport=51388:localAddr=[10.49.58.118]:sid=BD1BA205-A361058B-0000000C.1:oldid=<20171116015340.AAM2873.mx-10-49-58-118.openwave.com@openwave.com>:oldfrom=<ar14123@openwave.com>:oldrcpts=<ar1699@openwave.com>
+20171115 205422439-0500 mx-10-49-58-118 mta 2873 5149 140669318280960 Warn;UserDataException(504/1) MBX_NOT_FOUND:{uid=[ar1699@openwave.com], adminControl=[true], senderBlocking=[true], sharedMailbox=[true], email=[ar1699@openwave.com]}:MailboxService\3aGET:The given Mailbox does not exist.:Mailbox ar1699@openwave.com does not exist in SUR backend:from=<ar9835@whsasf.com>:msgid=<20171116015340.AAL2873.mx-10-49-58-118.openwave.com@whsasf.com>:size=545:fromhost=10.37.2.214:fromport=51386:localAddr=[10.49.58.118]:sid=BD1BA205-A361058B-0000000E.1
+20171115 205422439-0500 mx-10-49-58-118 mta 2873 5149 140669318280960 Note;AcctInvalidUser(50/35) ar1699@openwave.com:user=ar1699@openwave.com:from=<ar9835@whsasf.com>:msgid=<20171116015340.AAL2873.mx-10-49-58-118.openwave.com@whsasf.com>:size=545:fromhost=10.37.2.214:fromport=51386:localAddr=[10.49.58.118]:sid=BD1BA205-A361058B-0000000E.1
+20171115 205422440-0500 mx-10-49-58-118 mta 2873 5149 140669318280960 Note;MsgTrace(65/26) bounced:user=ar1699@openwave.com:from=<ar9835@whsasf.com>:msgid=<20171116015340.AAL2873.mx-10-49-58-118.openwave.com@whsasf.com>:size=545:fromhost=10.37.2.214:fromport=51386:localAddr=[10.49.58.118]:sid=BD1BA205-A361058B-0000000E.1:docid=f8acb9fe-ca70-11e7-8357-3b038d981f91
+20171115 205422440-0500 mx-10-49-58-118 mta 2873 5149 140669318280960 Note;MsgTrace(65/26) handled by Error-Handler:from=<ar9835@whsasf.com>:msgid=<20171116015340.AAL2873.mx-10-49-58-118.openwave.com@whsasf.com>:size=545:fromhost=10.37.2.214:fromport=51386:localAddr=[10.49.58.118]:sid=BD1BA205-A361058B-0000000E.1:msgfile=/opt/imail2/spool/control/232/20171116015341.AAP2873.mx-10-49-58-118.openwave.com@whsasf.com-Control:msgid=<20171116015340.AAL2873.mx-10-49-58-118.openwave.com@whsasf.com>
+20171115 205422440-0500 mx-10-49-58-118 mta 2873 5149 140669318280960 Note;AcctInvalidUser(50/35) ar1699@openwave.com:user=ar1699@openwave.com:from=<ar9835@whsasf.com>:msgid=<20171116015340.AAL2873.mx-10-49-58-118.openwave.com@whsasf.com>:size=545:fromhost=10.37.2.214:fromport=51386:localAddr=[10.49.58.118]:sid=BD1BA205-A361058B-0000000E.1
+20171115 205422440-0500 mx-10-49-58-118 mta 2873 3586 140669320677120 Note;AcctInvalidUser(50/35) ar1699@openwave.com:user=ar1699@openwave.com:from=<ar25964@whsasf.com>:msgid=<20171116015340.AAN2873.mx-10-49-58-118.openwave.com@whsasf.com>:size=546:fromhost=10.37.2.214:fromport=51392:localAddr=[10.49.58.118]:sid=BD1BA205-A361058B-00000010.1
+20171115 205422440-0500 mx-10-49-58-118 mta 2873 3586 140669320677120 Note;MsgTrace(65/26) bounced:user=ar1699@openwave.com:from=<ar25964@whsasf.com>:msgid=<20171116015340.AAN2873.mx-10-49-58-118.openwave.com@whsasf.com>:size=546:fromhost=10.37.2.214:fromport=51392:localAddr=[10.49.58.118]:sid=BD1BA205-A361058B-00000010.1:docid=f8aced98-ca70-11e7-9abe-8e59c9b1e13f
+20171115 205422441-0500 mx-10-49-58-118 mta 2873 3586 140669320677120 Note;MsgTrace(65/26) handled by Error-Handler:from=<ar25964@whsasf.com>:msgid=<20171116015340.AAN2873.mx-10-49-58-118.openwave.com@whsasf.com>:size=546:fromhost=10.37.2.214:fromport=51392:localAddr=[10.49.58.118]:sid=BD1BA205-A361058B-00000010.1:msgfile=/opt/imail2/spool/control/97/20171116015341.AAQ2873.mx-10-49-58-118.openwave.com@whsasf.com-Control:msgid=<20171116015340.AAN2873.mx-10-49-58-118.openwave.com@whsasf.com>
+20171115 205422441-0500 mx-10-49-58-118 mta 2873 3586 140669320677120 Note;AcctInvalidUser(50/35) ar1699@openwave.com:user=ar1699@openwave.com:from=<ar25964@whsasf.com>:msgid=<20171116015340.AAN2873.mx-10-49-58-118.openwave.com@whsasf.com>:size=546:fromhost=10.37.2.214:fromport=51392:localAddr=[10.49.58.118]:sid=BD1BA205-A361058B-00000010.1
+20171115 205422442-0500 mx-10-49-58-118 mta 2873 5149 140669318280960 Note;MsgTrace(65/26) AcctInvalidUser (created by Error-Handler):from=<ar9835@whsasf.com>:msgid=20171116015422.AAT2873.mx-10-49-58-118.openwave.com@mx-10-49-58-118:size=545:fromhost=10.37.2.214:fromport=51386:localAddr=[10.49.58.118]:sid=BD1BA205-A361058B-0000000E.1:oldid=<20171116015340.AAL2873.mx-10-49-58-118.openwave.com@whsasf.com>:oldfrom=<ar9835@whsasf.com>:oldrcpts=<ar1699@openwave.com>
+20171115 205422442-0500 mx-10-49-58-118 mta 2873 3586 140669320677120 Note;MtaQueueServerConnMade(79/113) mx-10-49-58-118:from=<ar25964@whsasf.com>:msgid=<20171116015340.AAN2873.mx-10-49-58-118.openwave.com@whsasf.com>:size=546:fromhost=10.37.2.214:fromport=51392:localAddr=[10.49.58.118]:sid=BD1BA205-A361058B-00000010.1
+20171115 205422443-0500 mx-10-49-58-118 mta 2873 3586 140669320677120 Note;MsgTrace(65/26) AcctInvalidUser (created by Error-Handler):from=<ar25964@whsasf.com>:msgid=20171116015422.AAU2873.mx-10-49-58-118.openwave.com@mx-10-49-58-118:size=546:fromhost=10.37.2.214:fromport=51392:localAddr=[10.49.58.118]:sid=BD1BA205-A361058B-00000010.1:oldid=<20171116015340.AAN2873.mx-10-49-58-118.openwave.com@whsasf.com>:oldfrom=<ar25964@whsasf.com>:oldrcpts=<ar1699@openwave.com>
+20171115 205422445-0500 mx-10-49-58-118 mta 2873 5312 140669316683520 Warn;UserDataException(504/1) MBX_NOT_FOUND:{uid=[ar1699@openwave.com], adminControl=[true], senderBlocking=[true], sharedMailbox=[true], email=[ar1699@openwave.com]}:MailboxService\3aGET:The given Mailbox does not exist.:Mailbox ar1699@openwave.com does not exist in SUR backend:from=<ar29577@openwave.com>:msgid=<20171116015340.AAK2873.mx-10-49-58-118.openwave.com@openwave.com>:size=554:fromhost=10.37.2.214:fromport=51394:localAddr=[10.49.58.118]:sid=BD1BA205-A361058B-00000012.1
+20171115 205422445-0500 mx-10-49-58-118 mta 2873 5312 140669316683520 Note;AcctInvalidUser(50/35) ar1699@openwave.com:user=ar1699@openwave.com:from=<ar29577@openwave.com>:msgid=<20171116015340.AAK2873.mx-10-49-58-118.openwave.com@openwave.com>:size=554:fromhost=10.37.2.214:fromport=51394:localAddr=[10.49.58.118]:sid=BD1BA205-A361058B-00000012.1
+20171115 205422445-0500 mx-10-49-58-118 mta 2873 5312 140669316683520 Note;MsgTrace(65/26) bounced:user=ar1699@openwave.com:from=<ar29577@openwave.com>:msgid=<20171116015340.AAK2873.mx-10-49-58-118.openwave.com@openwave.com>:size=554:fromhost=10.37.2.214:fromport=51394:localAddr=[10.49.58.118]:sid=BD1BA205-A361058B-00000012.1:docid=f8aad058-ca70-11e7-aa0d-8b8d59dbf1d1
+20171115 205422445-0500 mx-10-49-58-118 mta 2873 5312 140669316683520 Note;MsgTrace(65/26) handled by Error-Handler:from=<ar29577@openwave.com>:msgid=<20171116015340.AAK2873.mx-10-49-58-118.openwave.com@openwave.com>:size=554:fromhost=10.37.2.214:fromport=51394:localAddr=[10.49.58.118]:sid=BD1BA205-A361058B-00000012.1:msgfile=/opt/imail2/spool/control/125/20171116015341.AAO2873.mx-10-49-58-118.openwave.com@openwave.com-Control:msgid=<20171116015340.AAK2873.mx-10-49-58-118.openwave.com@openwave.com>
+20171115 205422445-0500 mx-10-49-58-118 mta 2873 5312 140669316683520 Note;AcctInvalidUser(50/35) ar1699@openwave.com:user=ar1699@openwave.com:from=<ar29577@openwave.com>:msgid=<20171116015340.AAK2873.mx-10-49-58-118.openwave.com@openwave.com>:size=554:fromhost=10.37.2.214:fromport=51394:localAddr=[10.49.58.118]:sid=BD1BA205-A361058B-00000012.1
+20171115 205422447-0500 mx-10-49-58-118 mta 2873 5312 140669316683520 Note;MsgTrace(65/26) AcctInvalidUser (created by Error-Handler):from=<ar29577@openwave.com>:msgid=20171116015422.AAV2873.mx-10-49-58-118.openwave.com@mx-10-49-58-118:size=554:fromhost=10.37.2.214:fromport=51394:localAddr=[10.49.58.118]:sid=BD1BA205-A361058B-00000012.1:oldid=<20171116015340.AAK2873.mx-10-49-58-118.openwave.com@openwave.com>:oldfrom=<ar29577@openwave.com>:oldrcpts=<ar1699@openwave.com>
+20171115 205422453-0500 mx-10-49-58-118 mta 2873 5313 140669316417280 Warn;UserDataException(504/1) MBX_NOT_FOUND:{uid=[ar13132@openwave.com], adminControl=[true], senderBlocking=[true], sharedMailbox=[true], email=[ar13132@openwave.com]}:MailboxService\3aGET:The given Mailbox does not exist.:Mailbox ar13132@openwave.com does not exist in SUR backend:from=<ar25098@whsasf.com>:msgid=<20171116014937.AAE2873.mx-10-49-58-118.openwave.com@whsasf.com>:size=548:fromhost=10.37.2.214:fromport=51080:localAddr=[10.49.58.118]:sid=BD1BA205-A361058B-00000006.1
+20171115 205422453-0500 mx-10-49-58-118 mta 2873 5313 140669316417280 Note;AcctInvalidUser(50/35) ar13132@openwave.com:user=ar13132@openwave.com:from=<ar25098@whsasf.com>:msgid=<20171116014937.AAE2873.mx-10-49-58-118.openwave.com@whsasf.com>:size=548:fromhost=10.37.2.214:fromport=51080:localAddr=[10.49.58.118]:sid=BD1BA205-A361058B-00000006.1
+20171115 205422453-0500 mx-10-49-58-118 mta 2873 5313 140669316417280 Note;MsgTrace(65/26) bounced:user=ar13132@openwave.com:from=<ar25098@whsasf.com>:msgid=<20171116014937.AAE2873.mx-10-49-58-118.openwave.com@whsasf.com>:size=548:fromhost=10.37.2.214:fromport=51080:localAddr=[10.49.58.118]:sid=BD1BA205-A361058B-00000006.1:docid=67d79fac-ca70-11e7-8898-37f0074dd0db
+20171115 205422453-0500 mx-10-49-58-118 mta 2873 5313 140669316417280 Note;MsgTrace(65/26) handled by Error-Handler:from=<ar25098@whsasf.com>:msgid=<20171116014937.AAE2873.mx-10-49-58-118.openwave.com@whsasf.com>:size=548:fromhost=10.37.2.214:fromport=51080:localAddr=[10.49.58.118]:sid=BD1BA205-A361058B-00000006.1:msgfile=/opt/imail2/spool/control/367/20171116014938.AAF2873.mx-10-49-58-118.openwave.com@whsasf.com-Control:msgid=<20171116014937.AAE2873.mx-10-49-58-118.openwave.com@whsasf.com>
+20171115 205422453-0500 mx-10-49-58-118 mta 2873 5313 140669316417280 Note;AcctInvalidUser(50/35) ar13132@openwave.com:user=ar13132@openwave.com:from=<ar25098@whsasf.com>:msgid=<20171116014937.AAE2873.mx-10-49-58-118.openwave.com@whsasf.com>:size=548:fromhost=10.37.2.214:fromport=51080:localAddr=[10.49.58.118]:sid=BD1BA205-A361058B-00000006.1
+20171115 205422454-0500 mx-10-49-58-118 mta 2873 5313 140669316417280 Note;MsgTrace(65/26) AcctInvalidUser (created by Error-Handler):from=<ar25098@whsasf.com>:msgid=20171116015422.AAW2873.mx-10-49-58-118.openwave.com@mx-10-49-58-118:size=548:fromhost=10.37.2.214:fromport=51080:localAddr=[10.49.58.118]:sid=BD1BA205-A361058B-00000006.1:oldid=<20171116014937.AAE2873.mx-10-49-58-118.openwave.com@whsasf.com>:oldfrom=<ar25098@whsasf.com>:oldrcpts=<ar13132@openwave.com>
+20171115 205422458-0500 mx-10-49-58-118 mta 2873 5314 140669316151040 Warn;UserDataException(504/1) MBX_NOT_FOUND:{uid=[ar14123@openwave.com], adminControl=[true], senderBlocking=[true], sharedMailbox=[true], email=[ar14123@openwave.com]}:MailboxService\3aGET:The given Mailbox does not exist.:Mailbox ar14123@openwave.com does not exist in SUR backend:user=<ar14123@openwave.com>:from=<>:msgid=<20171116015422.AAS2873.mx-10-49-58-118.openwave.com@mx-10-49-58-118>:size=486:sid=BD1BA205-A361058B-0000000C.1
+20171115 205422458-0500 mx-10-49-58-118 mta 2873 5314 140669316151040 Note;AcctInvalidUser(50/35) ar14123@openwave.com:user=ar14123@openwave.com:from=<>:msgid=<20171116015422.AAS2873.mx-10-49-58-118.openwave.com@mx-10-49-58-118>:size=486:sid=BD1BA205-A361058B-0000000C.1
+20171115 205422458-0500 mx-10-49-58-118 mta 2873 5314 140669316151040 Note;MsgTrace(65/26) bounced:user=ar14123@openwave.com:from=<>:msgid=<20171116015422.AAS2873.mx-10-49-58-118.openwave.com@mx-10-49-58-118>:size=486:sid=BD1BA205-A361058B-0000000C.1:docid=110e3a2c-ca71-11e7-bdec-464e1a509bcd
+20171115 205422458-0500 mx-10-49-58-118 mta 2873 5314 140669316151040 Note;MsgTrace(65/26) handled by Error-Handler:from=<>:msgid=<20171116015422.AAS2873.mx-10-49-58-118.openwave.com@mx-10-49-58-118>:size=486:sid=BD1BA205-A361058B-0000000C.1:msgfile=/opt/imail2/spool/control/374/20171116015422.AAS2873.mx-10-49-58-118.openwave.com@mx-10-49-58-118-Control:msgid=<20171116015422.AAS2873.mx-10-49-58-118.openwave.com@mx-10-49-58-118>
+20171115 205422458-0500 mx-10-49-58-118 mta 2873 5314 140669316151040 Note;AcctInvalidUser(50/35) ar14123@openwave.com:user=ar14123@openwave.com:from=<>:msgid=<20171116015422.AAS2873.mx-10-49-58-118.openwave.com@mx-10-49-58-118>:size=486:sid=BD1BA205-A361058B-0000000C.1
+20171115 205422459-0500 mx-10-49-58-118 mta 2873 5314 140669316151040 Note;MsgTrace(65/26) moved to queue/errors directory:from=<>:msgid=<20171116015422.AAS2873.mx-10-49-58-118.openwave.com@mx-10-49-58-118>:size=486:sid=BD1BA205-A361058B-0000000C.1:msgfile=20171116015422.AAX2873.mx-10-49-58-118.openwave.com@mx-10-49-58-118-Control:msgid=<20171116015422.AAS2873.mx-10-49-58-118.openwave.com@mx-10-49-58-118>:queuehost=mx-10-49-58-118
+20171115 205422465-0500 mx-10-49-58-118 mta 2873 5312 140669316683520 Warn;UserDataException(504/1) MBX_NOT_FOUND:{uid=[ar25098@whsasf.com], adminControl=[true], senderBlocking=[true], sharedMailbox=[true], email=[ar25098@whsasf.com]}:MailboxService\3aGET:The given Mailbox does not exist.:Mailbox ar25098@whsasf.com does not exist in SUR backend:user=<ar25098@whsasf.com>:from=<>:msgid=<20171116015422.AAW2873.mx-10-49-58-118.openwave.com@mx-10-49-58-118>:size=485:sid=BD1BA205-A361058B-00000006.1
+20171115 205422465-0500 mx-10-49-58-118 mta 2873 5312 140669316683520 Note;AcctInvalidUser(50/35) ar25098@whsasf.com:user=ar25098@whsasf.com:from=<>:msgid=<20171116015422.AAW2873.mx-10-49-58-118.openwave.com@mx-10-49-58-118>:size=485:sid=BD1BA205-A361058B-00000006.1
+20171115 205422465-0500 mx-10-49-58-118 mta 2873 5312 140669316683520 Note;MsgTrace(65/26) bounced:user=ar25098@whsasf.com:from=<>:msgid=<20171116015422.AAW2873.mx-10-49-58-118.openwave.com@mx-10-49-58-118>:size=485:sid=BD1BA205-A361058B-00000006.1:docid=11113222-ca71-11e7-b5a6-1bb9c324ec17
+20171115 205422465-0500 mx-10-49-58-118 mta 2873 5312 140669316683520 Note;MsgTrace(65/26) handled by Error-Handler:from=<>:msgid=<20171116015422.AAW2873.mx-10-49-58-118.openwave.com@mx-10-49-58-118>:size=485:sid=BD1BA205-A361058B-00000006.1:msgfile=/opt/imail2/spool/control/254/20171116015422.AAW2873.mx-10-49-58-118.openwave.com@mx-10-49-58-118-Control:msgid=<20171116015422.AAW2873.mx-10-49-58-118.openwave.com@mx-10-49-58-118>
+20171115 205422465-0500 mx-10-49-58-118 mta 2873 5312 140669316683520 Note;AcctInvalidUser(50/35) ar25098@whsasf.com:user=ar25098@whsasf.com:from=<>:msgid=<20171116015422.AAW2873.mx-10-49-58-118.openwave.com@mx-10-49-58-118>:size=485:sid=BD1BA205-A361058B-00000006.1
+20171115 205422465-0500 mx-10-49-58-118 mta 2873 5312 140669316683520 Note;MsgTrace(65/26) moved to queue/errors directory:from=<>:msgid=<20171116015422.AAW2873.mx-10-49-58-118.openwave.com@mx-10-49-58-118>:size=485:sid=BD1BA205-A361058B-00000006.1:msgfile=20171116015422.AAY2873.mx-10-49-58-118.openwave.com@mx-10-49-58-118-Control:msgid=<20171116015422.AAW2873.mx-10-49-58-118.openwave.com@mx-10-49-58-118>:queuehost=mx-10-49-58-118
+20171115 205422469-0500 mx-10-49-58-118 mta 2873 5149 140669318280960 Warn;UserDataException(504/1) MBX_NOT_FOUND:{uid=[ar25964@whsasf.com], adminControl=[true], senderBlocking=[true], sharedMailbox=[true], email=[ar25964@whsasf.com]}:MailboxService\3aGET:The given Mailbox does not exist.:Mailbox ar25964@whsasf.com does not exist in SUR backend:user=<ar25964@whsasf.com>:from=<>:msgid=<20171116015422.AAU2873.mx-10-49-58-118.openwave.com@mx-10-49-58-118>:size=485:sid=BD1BA205-A361058B-00000010.1
+20171115 205422469-0500 mx-10-49-58-118 mta 2873 5149 140669318280960 Note;AcctInvalidUser(50/35) ar25964@whsasf.com:user=ar25964@whsasf.com:from=<>:msgid=<20171116015422.AAU2873.mx-10-49-58-118.openwave.com@mx-10-49-58-118>:size=485:sid=BD1BA205-A361058B-00000010.1
+20171115 205422469-0500 mx-10-49-58-118 mta 2873 5149 140669318280960 Note;MsgTrace(65/26) bounced:user=ar25964@whsasf.com:from=<>:msgid=<20171116015422.AAU2873.mx-10-49-58-118.openwave.com@mx-10-49-58-118>:size=485:sid=BD1BA205-A361058B-00000010.1:docid=110f4e3a-ca71-11e7-a2a4-028944e9ef10
+20171115 205422469-0500 mx-10-49-58-118 mta 2873 5149 140669318280960 Note;MsgTrace(65/26) handled by Error-Handler:from=<>:msgid=<20171116015422.AAU2873.mx-10-49-58-118.openwave.com@mx-10-49-58-118>:size=485:sid=BD1BA205-A361058B-00000010.1:msgfile=/opt/imail2/spool/control/314/20171116015422.AAU2873.mx-10-49-58-118.openwave.com@mx-10-49-58-118-Control:msgid=<20171116015422.AAU2873.mx-10-49-58-118.openwave.com@mx-10-49-58-118>
+20171115 205422469-0500 mx-10-49-58-118 mta 2873 5149 140669318280960 Note;AcctInvalidUser(50/35) ar25964@whsasf.com:user=ar25964@whsasf.com:from=<>:msgid=<20171116015422.AAU2873.mx-10-49-58-118.openwave.com@mx-10-49-58-118>:size=485:sid=BD1BA205-A361058B-00000010.1
+20171115 205422470-0500 mx-10-49-58-118 mta 2873 5149 140669318280960 Note;MsgTrace(65/26) moved to queue/errors directory:from=<>:msgid=<20171116015422.AAU2873.mx-10-49-58-118.openwave.com@mx-10-49-58-118>:size=485:sid=BD1BA205-A361058B-00000010.1:msgfile=20171116015422.AAZ2873.mx-10-49-58-118.openwave.com@mx-10-49-58-118-Control:msgid=<20171116015422.AAU2873.mx-10-49-58-118.openwave.com@mx-10-49-58-118>:queuehost=mx-10-49-58-118
+20171115 205422474-0500 mx-10-49-58-118 mta 2873 3586 140669320677120 Warn;UserDataException(504/1) MBX_NOT_FOUND:{uid=[ar29577@openwave.com], adminControl=[true], senderBlocking=[true], sharedMailbox=[true], email=[ar29577@openwave.com]}:MailboxService\3aGET:The given Mailbox does not exist.:Mailbox ar29577@openwave.com does not exist in SUR backend:user=<ar29577@openwave.com>:from=<>:msgid=<20171116015422.AAV2873.mx-10-49-58-118.openwave.com@mx-10-49-58-118>:size=487:sid=BD1BA205-A361058B-00000012.1
+20171115 205422474-0500 mx-10-49-58-118 mta 2873 3586 140669320677120 Note;AcctInvalidUser(50/35) ar29577@openwave.com:user=ar29577@openwave.com:from=<>:msgid=<20171116015422.AAV2873.mx-10-49-58-118.openwave.com@mx-10-49-58-118>:size=487:sid=BD1BA205-A361058B-00000012.1
+20171115 205422474-0500 mx-10-49-58-118 mta 2873 3586 140669320677120 Note;MsgTrace(65/26) bounced:user=ar29577@openwave.com:from=<>:msgid=<20171116015422.AAV2873.mx-10-49-58-118.openwave.com@mx-10-49-58-118>:size=487:sid=BD1BA205-A361058B-00000012.1:docid=111001e0-ca71-11e7-bd19-3cafaaec5678
+20171115 205422475-0500 mx-10-49-58-118 mta 2873 3586 140669320677120 Note;MsgTrace(65/26) handled by Error-Handler:from=<>:msgid=<20171116015422.AAV2873.mx-10-49-58-118.openwave.com@mx-10-49-58-118>:size=487:sid=BD1BA205-A361058B-00000012.1:msgfile=/opt/imail2/spool/control/7/20171116015422.AAV2873.mx-10-49-58-118.openwave.com@mx-10-49-58-118-Control:msgid=<20171116015422.AAV2873.mx-10-49-58-118.openwave.com@mx-10-49-58-118>
+20171115 205422475-0500 mx-10-49-58-118 mta 2873 3586 140669320677120 Note;AcctInvalidUser(50/35) ar29577@openwave.com:user=ar29577@openwave.com:from=<>:msgid=<20171116015422.AAV2873.mx-10-49-58-118.openwave.com@mx-10-49-58-118>:size=487:sid=BD1BA205-A361058B-00000012.1
+20171115 205422475-0500 mx-10-49-58-118 mta 2873 5311 140669316949760 Warn;UserDataException(504/1) MBX_NOT_FOUND:{uid=[ar9835@whsasf.com], adminControl=[true], senderBlocking=[true], sharedMailbox=[true], email=[ar9835@whsasf.com]}:MailboxService\3aGET:The given Mailbox does not exist.:Mailbox ar9835@whsasf.com does not exist in SUR backend:user=<ar9835@whsasf.com>:from=<>:msgid=<20171116015422.AAT2873.mx-10-49-58-118.openwave.com@mx-10-49-58-118>:size=484:sid=BD1BA205-A361058B-0000000E.1
+20171115 205422475-0500 mx-10-49-58-118 mta 2873 3586 140669320677120 Note;MsgTrace(65/26) moved to queue/errors directory:from=<>:msgid=<20171116015422.AAV2873.mx-10-49-58-118.openwave.com@mx-10-49-58-118>:size=487:sid=BD1BA205-A361058B-00000012.1:msgfile=20171116015422.ABA2873.mx-10-49-58-118.openwave.com@mx-10-49-58-118-Control:msgid=<20171116015422.AAV2873.mx-10-49-58-118.openwave.com@mx-10-49-58-118>:queuehost=mx-10-49-58-118
+20171115 205422475-0500 mx-10-49-58-118 mta 2873 5311 140669316949760 Note;AcctInvalidUser(50/35) ar9835@whsasf.com:user=ar9835@whsasf.com:from=<>:msgid=<20171116015422.AAT2873.mx-10-49-58-118.openwave.com@mx-10-49-58-118>:size=484:sid=BD1BA205-A361058B-0000000E.1
+20171115 205422475-0500 mx-10-49-58-118 mta 2873 5311 140669316949760 Note;MsgTrace(65/26) bounced:user=ar9835@whsasf.com:from=<>:msgid=<20171116015422.AAT2873.mx-10-49-58-118.openwave.com@mx-10-49-58-118>:size=484:sid=BD1BA205-A361058B-0000000E.1:docid=110f4048-ca71-11e7-acf0-5938a8f0fe5a
+20171115 205422476-0500 mx-10-49-58-118 mta 2873 5311 140669316949760 Note;MsgTrace(65/26) handled by Error-Handler:from=<>:msgid=<20171116015422.AAT2873.mx-10-49-58-118.openwave.com@mx-10-49-58-118>:size=484:sid=BD1BA205-A361058B-0000000E.1:msgfile=/opt/imail2/spool/control/67/20171116015422.AAT2873.mx-10-49-58-118.openwave.com@mx-10-49-58-118-Control:msgid=<20171116015422.AAT2873.mx-10-49-58-118.openwave.com@mx-10-49-58-118>
+20171115 205422476-0500 mx-10-49-58-118 mta 2873 5311 140669316949760 Note;AcctInvalidUser(50/35) ar9835@whsasf.com:user=ar9835@whsasf.com:from=<>:msgid=<20171116015422.AAT2873.mx-10-49-58-118.openwave.com@mx-10-49-58-118>:size=484:sid=BD1BA205-A361058B-0000000E.1
+20171115 205422477-0500 mx-10-49-58-118 mta 2873 5311 140669316949760 Note;MsgTrace(65/26) moved to queue/errors directory:from=<>:msgid=<20171116015422.AAT2873.mx-10-49-58-118.openwave.com@mx-10-49-58-118>:size=484:sid=BD1BA205-A361058B-0000000E.1:msgfile=20171116015422.ABB2873.mx-10-49-58-118.openwave.com@mx-10-49-58-118-Control:msgid=<20171116015422.AAT2873.mx-10-49-58-118.openwave.com@mx-10-49-58-118>:queuehost=mx-10-49-58-118
+20171115 205430414-0500 mx-10-49-58-118 mta 2873 5140 140669318813440 Note;SmtpConnectionReceived(70/1) [10.37.2.214]:fromhost=10.37.2.214:fromport=51448:localAddr=10.49.58.118:sid=BD1BA205-A361058B-00000014.0
+20171115 205430416-0500 mx-10-49-58-118 mta 2873 5138 140669319345920 Note;SmtpConnectionReceived(70/1) [10.37.2.214]:fromhost=10.37.2.214:fromport=51450:localAddr=10.49.58.118:sid=BD1BA205-A361058B-00000016.0
+20171115 205430421-0500 mx-10-49-58-118 mta 2873 3580 140669337511680 Note;SmtpConnectionReceived(70/1) [10.37.2.214]:fromhost=10.37.2.214:fromport=51452:localAddr=10.49.58.118:sid=BD1BA205-A361058B-00000018.0
+20171115 205430421-0500 mx-10-49-58-118 mta 2873 5139 140669319079680 Note;SmtpConnectionReceived(70/1) [10.37.2.214]:fromhost=10.37.2.214:fromport=51454:localAddr=10.49.58.118:sid=BD1BA205-A361058B-0000001A.0
+20171115 205432165-0500 mx-10-49-58-118 mta 2873 5140 140669318813440 Note;MsgTrace(65/26) received from internet:from=<ar2178@openwave.com>:msgid=<20171116015431.ABC2873.mx-10-49-58-118.openwave.com@openwave.com>:fromhost=[10.37.2.214]:fromport=51448:localAddr=10.49.58.118:sid=BD1BA205-A361058B-00000014.1:msgsize=440:time=2:sender=<ar2178@openwave.com>:rcpts=<ar3122@openwave.com>:protocol=ESMTP:encoding=plaintext:auth=
+20171115 205432165-0500 mx-10-49-58-118 mta 2873 5314 140669316151040 Note;MsgTrace(65/26) docid will be used for message-id:user=ar3122@openwave.com:from=<ar2178@openwave.com>:msgid=<20171116015431.ABC2873.mx-10-49-58-118.openwave.com@openwave.com>:size=549:fromhost=10.37.2.214:fromport=51448:localAddr=[10.49.58.118]:sid=BD1BA205-A361058B-00000014.1
+20171115 205432167-0500 mx-10-49-58-118 mta 2873 5138 140669319345920 Note;MsgTrace(65/26) received from internet:from=<ar20393@openwave.com>:msgid=<20171116015431.ABD2873.mx-10-49-58-118.openwave.com@openwave.com>:fromhost=[10.37.2.214]:fromport=51450:localAddr=10.49.58.118:sid=BD1BA205-A361058B-00000016.1:msgsize=440:time=2:sender=<ar20393@openwave.com>:rcpts=<ar3122@openwave.com>:protocol=ESMTP:encoding=plaintext:auth=
+20171115 205432167-0500 mx-10-49-58-118 mta 2873 5149 140669318280960 Note;MsgTrace(65/26) docid will be used for message-id:user=ar3122@openwave.com:from=<ar20393@openwave.com>:msgid=<20171116015431.ABD2873.mx-10-49-58-118.openwave.com@openwave.com>:size=550:fromhost=10.37.2.214:fromport=51450:localAddr=[10.49.58.118]:sid=BD1BA205-A361058B-00000016.1
+20171115 205432175-0500 mx-10-49-58-118 mta 2873 5313 140669316417280 Note;MsgTrace(65/26) docid will be used for message-id:user=ar3122@openwave.com:from=<ar31220@whsasf.com>:msgid=<20171116015431.ABE2873.mx-10-49-58-118.openwave.com@whsasf.com>:size=542:fromhost=10.37.2.214:fromport=51452:localAddr=[10.49.58.118]:sid=BD1BA205-A361058B-00000018.1
+20171115 205432175-0500 mx-10-49-58-118 mta 2873 3580 140669337511680 Note;MsgTrace(65/26) received from internet:from=<ar31220@whsasf.com>:msgid=<20171116015431.ABE2873.mx-10-49-58-118.openwave.com@whsasf.com>:fromhost=[10.37.2.214]:fromport=51452:localAddr=10.49.58.118:sid=BD1BA205-A361058B-00000018.1:msgsize=436:time=1:sender=<ar31220@whsasf.com>:rcpts=<ar3122@openwave.com>:protocol=ESMTP:encoding=plaintext:auth=
+20171115 205432178-0500 mx-10-49-58-118 mta 2873 5139 140669319079680 Note;MsgTrace(65/26) received from internet:from=<ar27179@whsasf.com>:msgid=<20171116015431.ABF2873.mx-10-49-58-118.openwave.com@whsasf.com>:fromhost=[10.37.2.214]:fromport=51454:localAddr=10.49.58.118:sid=BD1BA205-A361058B-0000001A.1:msgsize=436:time=1:sender=<ar27179@whsasf.com>:rcpts=<ar3122@openwave.com>:protocol=ESMTP:encoding=plaintext:auth=
+20171115 205432178-0500 mx-10-49-58-118 mta 2873 5312 140669316683520 Note;MsgTrace(65/26) docid will be used for message-id:user=ar3122@openwave.com:from=<ar27179@whsasf.com>:msgid=<20171116015431.ABF2873.mx-10-49-58-118.openwave.com@whsasf.com>:size=542:fromhost=10.37.2.214:fromport=51454:localAddr=[10.49.58.118]:sid=BD1BA205-A361058B-0000001A.1
+20171115 205432216-0500 mx-10-49-58-118 mta 2873 5148 140669318547200 Note;MsgTrace(65/26) delivered:user=ar3122@openwave.com:mbox=8347270031813193331:mss=mx-10-49-58-118:from=<ar2178@openwave.com>:msgid=<20171116015431.ABC2873.mx-10-49-58-118.openwave.com@openwave.com>:size=549:port=55014:fromhost=10.37.2.214:fromport=51448:localAddr=[10.49.58.118]:sid=BD1BA205-A361058B-00000014.1:docid=16dae02c-ca71-11e7-a23c-4e5c2e466710:node=mx-10-49-58-118:nodePort=55014
+20171115 205432221-0500 mx-10-49-58-118 mta 2873 3589 140669320144640 Note;MsgTrace(65/26) autoreplied:user=ar3122@openwave.com:mbox=8347270031813193331:mss=mx-10-49-58-119:from=<ar2178@openwave.com>:msgid=<20171116015431.ABC2873.mx-10-49-58-118.openwave.com@openwave.com>:size=549:port=55014:fromhost=10.37.2.214:fromport=51448:localAddr=[10.49.58.118]:sid=BD1BA205-A361058B-00000014.1:node=mx-10-49-58-119:nodePort=55014
+20171115 205432234-0500 mx-10-49-58-118 mta 2873 3586 140669320677120 Note;MsgTrace(65/26) docid will be used for message-id:user=ar2178@openwave.com:from=<>:msgid=<20171116015432.ABG2873.mx-10-49-58-118.openwave.com@mx-10-49-58-118>:size=486:sid=BD1BA205-A361058B-00000014.1
+20171115 205432238-0500 mx-10-49-58-118 mta 2873 5383 140669315884800 Note;MsgTrace(65/26) delivered:user=ar3122@openwave.com:mbox=8347270031813193331:mss=mx-10-49-58-118:from=<ar27179@whsasf.com>:msgid=<20171116015431.ABF2873.mx-10-49-58-118.openwave.com@whsasf.com>:size=542:port=55014:fromhost=10.37.2.214:fromport=51454:localAddr=[10.49.58.118]:sid=BD1BA205-A361058B-0000001A.1:docid=16dcfd62-ca71-11e7-a76f-b22b1c4f9ef4:node=mx-10-49-58-118:nodePort=55014
+20171115 205432243-0500 mx-10-49-58-118 mta 2873 5154 140669317216000 Note;MsgTrace(65/26) autoreplied:user=ar3122@openwave.com:mbox=8347270031813193331:mss=mx-10-49-58-119:from=<ar27179@whsasf.com>:msgid=<20171116015431.ABF2873.mx-10-49-58-118.openwave.com@whsasf.com>:size=542:port=55014:fromhost=10.37.2.214:fromport=51454:localAddr=[10.49.58.118]:sid=BD1BA205-A361058B-0000001A.1:node=mx-10-49-58-119:nodePort=55014
+20171115 205432261-0500 mx-10-49-58-118 mta 2873 5311 140669316949760 Note;MsgTrace(65/26) docid will be used for message-id:user=ar27179@whsasf.com:from=<>:msgid=<20171116015432.ABH2873.mx-10-49-58-118.openwave.com@mx-10-49-58-118>:size=483:sid=BD1BA205-A361058B-0000001A.1
+20171115 205432261-0500 mx-10-49-58-118 mta 2873 3590 140669319878400 Note;MsgTrace(65/26) delivered:user=ar3122@openwave.com:mbox=8347270031813193331:mss=mx-10-49-58-118:from=<ar31220@whsasf.com>:msgid=<20171116015431.ABE2873.mx-10-49-58-118.openwave.com@whsasf.com>:size=542:port=55014:fromhost=10.37.2.214:fromport=51452:localAddr=[10.49.58.118]:sid=BD1BA205-A361058B-00000018.1:docid=16dc671c-ca71-11e7-9af2-c8c603a822b1:node=mx-10-49-58-118:nodePort=55014
+20171115 205432267-0500 mx-10-49-58-118 mta 2873 5153 140669317482240 Note;MsgTrace(65/26) autoreplied:user=ar3122@openwave.com:mbox=8347270031813193331:mss=mx-10-49-58-119:from=<ar31220@whsasf.com>:msgid=<20171116015431.ABE2873.mx-10-49-58-118.openwave.com@whsasf.com>:size=542:port=55014:fromhost=10.37.2.214:fromport=51452:localAddr=[10.49.58.118]:sid=BD1BA205-A361058B-00000018.1:node=mx-10-49-58-119:nodePort=55014
+20171115 205432281-0500 mx-10-49-58-118 mta 2873 5314 140669316151040 Note;MsgTrace(65/26) docid will be used for message-id:user=ar31220@whsasf.com:from=<>:msgid=<20171116015432.ABI2873.mx-10-49-58-118.openwave.com@mx-10-49-58-118>:size=482:sid=BD1BA205-A361058B-00000018.1
+20171115 205432290-0500 mx-10-49-58-118 mta 2873 5150 140669318014720 Note;MsgTrace(65/26) delivered:user=ar3122@openwave.com:mbox=8347270031813193331:mss=mx-10-49-58-118:from=<ar20393@openwave.com>:msgid=<20171116015431.ABD2873.mx-10-49-58-118.openwave.com@openwave.com>:size=550:port=55014:fromhost=10.37.2.214:fromport=51450:localAddr=[10.49.58.118]:sid=BD1BA205-A361058B-00000016.1:docid=16db3414-ca71-11e7-b0d7-340822388987:node=mx-10-49-58-118:nodePort=55014
+20171115 205432293-0500 mx-10-49-58-118 mta 2873 5152 140669317748480 Note;MsgTrace(65/26) delivered:user=ar2178@openwave.com:mbox=4707718753765246415:mss=mx-10-49-58-119:from=<>:msgid=<20171116015432.ABG2873.mx-10-49-58-118.openwave.com@mx-10-49-58-118>:size=1407:port=55014:fromhost=10.37.2.214:fromport=51450:localAddr=[10.49.58.118]:sid=BD1BA205-A361058B-00000014.1:docid=16e3789a-ca71-11e7-935b-5b9738a2391a:node=mx-10-49-58-119:nodePort=55014
+20171115 205432294-0500 mx-10-49-58-118 mta 2873 3589 140669320144640 Note;MsgTrace(65/26) autoreplied:user=ar3122@openwave.com:mss=mx-10-49-58-119:from=<ar20393@openwave.com>:msgid=<20171116015431.ABD2873.mx-10-49-58-118.openwave.com@openwave.com>:size=550:port=55014:fromhost=10.37.2.214:fromport=51450:localAddr=[10.49.58.118]:sid=BD1BA205-A361058B-00000016.1:node=mx-10-49-58-119:nodePort=55014
+20171115 205432309-0500 mx-10-49-58-118 mta 2873 5149 140669318280960 Note;MsgTrace(65/26) docid will be used for message-id:user=ar20393@openwave.com:from=<>:msgid=<20171116015432.ABJ2873.mx-10-49-58-118.openwave.com@mx-10-49-58-118>:size=487:sid=BD1BA205-A361058B-00000016.1
+20171115 205432310-0500 mx-10-49-58-118 mta 2873 5148 140669318547200 Note;MsgTrace(65/26) delivered:user=ar27179@whsasf.com:mbox=7370945185495495681:mss=mx-10-49-58-118:from=<>:msgid=<20171116015432.ABH2873.mx-10-49-58-118.openwave.com@mx-10-49-58-118>:size=1406:port=55014:fromhost=10.37.2.214:fromport=51448:localAddr=[10.49.58.118]:sid=BD1BA205-A361058B-0000001A.1:docid=16e6ca22-ca71-11e7-af7d-460a63adaa1a:node=mx-10-49-58-118:nodePort=55014
+20171115 205432335-0500 mx-10-49-58-118 mta 2873 5383 140669315884800 Note;MsgTrace(65/26) delivered:user=ar31220@whsasf.com:mbox=4760754382636335233:mss=mx-10-49-58-118:from=<>:msgid=<20171116015432.ABI2873.mx-10-49-58-118.openwave.com@mx-10-49-58-118>:size=1402:port=55014:fromhost=10.37.2.214:fromport=51454:localAddr=[10.49.58.118]:sid=BD1BA205-A361058B-00000018.1:docid=16ea7dfc-ca71-11e7-b1e5-919351541caa:node=mx-10-49-58-118:nodePort=55014
+20171115 205432350-0500 mx-10-49-58-118 mta 2873 3590 140669319878400 Note;MsgTrace(65/26) delivered:user=ar20393@openwave.com:mbox=6300909010166485754:mss=mx-10-49-58-118:from=<>:msgid=<20171116015432.ABJ2873.mx-10-49-58-118.openwave.com@mx-10-49-58-118>:size=1409:port=55014:fromhost=10.37.2.214:fromport=51452:localAddr=[10.49.58.118]:sid=BD1BA205-A361058B-00000016.1:docid=16eeafda-ca71-11e7-8dda-27d1b8ed2ab7:node=mx-10-49-58-118:nodePort=55014
+20171115 205432443-0500 mx-10-49-58-118 mta 2873 5140 140669318813440 Note;SmtpConnectionClosed(70/2) [10.37.2.214]:2:1:195:fromhost=[10.37.2.214]:fromport=51448:localAddr=10.49.58.118:sid=BD1BA205-A361058B-00000014.1
+20171115 205432445-0500 mx-10-49-58-118 mta 2873 5138 140669319345920 Note;SmtpConnectionClosed(70/2) [10.37.2.214]:2:1:196:fromhost=[10.37.2.214]:fromport=51450:localAddr=10.49.58.118:sid=BD1BA205-A361058B-00000016.1
+20171115 205432452-0500 mx-10-49-58-118 mta 2873 3580 140669337511680 Note;SmtpConnectionClosed(70/2) [10.37.2.214]:2:1:192:fromhost=[10.37.2.214]:fromport=51452:localAddr=10.49.58.118:sid=BD1BA205-A361058B-00000018.1
+20171115 205432455-0500 mx-10-49-58-118 mta 2873 5139 140669319079680 Note;SmtpConnectionClosed(70/2) [10.37.2.214]:2:1:192:fromhost=[10.37.2.214]:fromport=51454:localAddr=10.49.58.118:sid=BD1BA205-A361058B-0000001A.1
+mx-10-49-58-118:imail2:Mx9.5:~$ [32m##########5 Autoreply messaeg delievered successfully!![0m
+########## 5 check autoreplied message in inbox of user2,user3,user4,user5 ...
+imapmail: host[10.49.58.118] port[20143] user[ar2178] pass[p] folder[inbox] message[2]
+xx OK LOGIN completed
+* 2 EXISTS
+* OK [UNSEEN 1] First unseen message
+* OK [UIDVALIDITY 1510797240] UIDs valid
+* OK [UIDNEXT 1002] Predicted next UID
+* FLAGS (\Answered \Flagged \Deleted \Draft \Seen)
+* OK [PERMANENTFLAGS (\* \Answered \Flagged \Deleted \Draft \Seen)] Permanent flags
+* 1 RECENT
+xx OK [READ-WRITE] SELECT completed
+* 2 FETCH (BODY[] {1407}
+Return-Path: <>
+Subject: Re: test message about autoreply feature
+To: ar2178@openwave.com
+From: "Auto-reply from ar3122@openwave.com" <ar3122@openwave.com>
+In-Reply-To: <20171116015431.ABC2873.mx-10-49-58-118.openwave.com@openwave.com>
+Precedence: bulk
+Date: Wed, 15 Nov 2017 20:54:32 -0500
+Message-ID: <20171116015432.ABG2873.mx-10-49-58-118.openwave.com@mx-10-49-58-118>
+MIME-Version: 1.0
+Content-Type: multipart/mixed;
+		Boundary="===========================_ _= 2165967(2873)1510797272"
+
+
+--===========================_ _= 2165967(2873)1510797272
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+
+Echo,This is an autoreply message for internal senders!
+
+--===========================_ _= 2165967(2873)1510797272
+Content-Type: message/rfc822
+
+Received: from openwave.com ([10.37.2.214]) by mx-10-49-58-118.openwave.com
+          (InterMail vM.9.05.01.00 201-2473-137-123) with ESMTP
+          id <20171116015431.ABC2873.mx-10-49-58-118.openwave.com@openwave.com>
+          for <ar3122@openwave.com>; Wed, 15 Nov 2017 20:54:31 -0500
+Subject: test message about autoreply feature
+To: ar3122@openwave.com
+Date: Wed, 15 Nov 2017 20:54:32 -0500
+Message-Id: <20171116015431.ABC2873.mx-10-49-58-118.openwave.com@openwave.com>
+From: <ar2178@openwave.com>
+
+Echo,This ia a wonderful world!!
+
+--===========================_ _= 2165967(2873)1510797272--
+
+ FLAGS (\Recent \Seen))
+xx OK FETCH completed
+* BYE IMAP4 server terminating connection
+xx OK LOGOUT completed
+imapmail: host[10.49.58.118] port[20143] user[ar20393] pass[p] folder[inbox] message[2]
+xx OK LOGIN completed
+* 2 EXISTS
+* OK [UNSEEN 1] First unseen message
+* OK [UIDVALIDITY 1510797092] UIDs valid
+* OK [UIDNEXT 1002] Predicted next UID
+* FLAGS (\Answered \Flagged \Deleted \Draft \Seen)
+* OK [PERMANENTFLAGS (\* \Answered \Flagged \Deleted \Draft \Seen)] Permanent flags
+* 1 RECENT
+xx OK [READ-WRITE] SELECT completed
+* 2 FETCH (BODY[] {1409}
+Return-Path: <>
+Subject: Re: test message about autoreply feature
+To: ar20393@openwave.com
+From: "Auto-reply from ar3122@openwave.com" <ar3122@openwave.com>
+In-Reply-To: <20171116015431.ABD2873.mx-10-49-58-118.openwave.com@openwave.com>
+Precedence: bulk
+Date: Wed, 15 Nov 2017 20:54:32 -0500
+Message-ID: <20171116015432.ABJ2873.mx-10-49-58-118.openwave.com@mx-10-49-58-118>
+MIME-Version: 1.0
+Content-Type: multipart/mixed;
+		Boundary="===========================_ _= 7293047(2873)1510797272"
+
+
+--===========================_ _= 7293047(2873)1510797272
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+
+Echo,This is an autoreply message for internal senders!
+
+--===========================_ _= 7293047(2873)1510797272
+Content-Type: message/rfc822
+
+Received: from openwave.com ([10.37.2.214]) by mx-10-49-58-118.openwave.com
+          (InterMail vM.9.05.01.00 201-2473-137-123) with ESMTP
+          id <20171116015431.ABD2873.mx-10-49-58-118.openwave.com@openwave.com>
+          for <ar3122@openwave.com>; Wed, 15 Nov 2017 20:54:31 -0500
+Subject: test message about autoreply feature
+To: ar3122@openwave.com
+Date: Wed, 15 Nov 2017 20:54:32 -0500
+Message-Id: <20171116015431.ABD2873.mx-10-49-58-118.openwave.com@openwave.com>
+From: <ar20393@openwave.com>
+
+Echo,This ia a wonderful world!!
+
+--===========================_ _= 7293047(2873)1510797272--
+
+ FLAGS (\Recent \Seen))
+xx OK FETCH completed
+* BYE IMAP4 server terminating connection
+xx OK LOGOUT completed
+imapmail: host[10.49.58.118] port[20143] user[ar31220] pass[p] folder[inbox] message[2]
+xx OK LOGIN completed
+* 2 EXISTS
+* OK [UNSEEN 1] First unseen message
+* OK [UIDVALIDITY 1510797093] UIDs valid
+* OK [UIDNEXT 1002] Predicted next UID
+* FLAGS (\Answered \Flagged \Deleted \Draft \Seen)
+* OK [PERMANENTFLAGS (\* \Answered \Flagged \Deleted \Draft \Seen)] Permanent flags
+* 1 RECENT
+xx OK [READ-WRITE] SELECT completed
+* 2 FETCH (BODY[] {1402}
+Return-Path: <>
+Subject: Re: test message about autoreply feature
+To: ar31220@whsasf.com
+From: "Auto-reply from ar3122@openwave.com" <ar3122@openwave.com>
+In-Reply-To: <20171116015431.ABE2873.mx-10-49-58-118.openwave.com@whsasf.com>
+Precedence: bulk
+Date: Wed, 15 Nov 2017 20:54:32 -0500
+Message-ID: <20171116015432.ABI2873.mx-10-49-58-118.openwave.com@mx-10-49-58-118>
+MIME-Version: 1.0
+Content-Type: multipart/mixed;
+		Boundary="===========================_ _= 825747(2873)1510797272"
+
+
+--===========================_ _= 825747(2873)1510797272
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+
+Echo,This is an external autoreply message for external senders!
+
+--===========================_ _= 825747(2873)1510797272
+Content-Type: message/rfc822
+
+Received: from whsasf.com ([10.37.2.214]) by mx-10-49-58-118.openwave.com
+          (InterMail vM.9.05.01.00 201-2473-137-123) with ESMTP
+          id <20171116015431.ABE2873.mx-10-49-58-118.openwave.com@whsasf.com>
+          for <ar3122@openwave.com>; Wed, 15 Nov 2017 20:54:31 -0500
+Subject: test message about autoreply feature
+To: ar3122@openwave.com
+Date: Wed, 15 Nov 2017 20:54:32 -0500
+Message-Id: <20171116015431.ABE2873.mx-10-49-58-118.openwave.com@whsasf.com>
+From: <ar31220@whsasf.com>
+
+Echo,This ia a wonderful world!!
+
+--===========================_ _= 825747(2873)1510797272--
+
+ FLAGS (\Recent \Seen))
+xx OK FETCH completed
+* BYE IMAP4 server terminating connection
+xx OK LOGOUT completed
+imapmail: host[10.49.58.118] port[20143] user[ar27179] pass[p] folder[inbox] message[2]
+xx OK LOGIN completed
+* 2 EXISTS
+* OK [UNSEEN 1] First unseen message
+* OK [UIDVALIDITY 1510797094] UIDs valid
+* OK [UIDNEXT 1002] Predicted next UID
+* FLAGS (\Answered \Flagged \Deleted \Draft \Seen)
+* OK [PERMANENTFLAGS (\* \Answered \Flagged \Deleted \Draft \Seen)] Permanent flags
+* 1 RECENT
+xx OK [READ-WRITE] SELECT completed
+* 2 FETCH (BODY[] {1406}
+Return-Path: <>
+Subject: Re: test message about autoreply feature
+To: ar27179@whsasf.com
+From: "Auto-reply from ar3122@openwave.com" <ar3122@openwave.com>
+In-Reply-To: <20171116015431.ABF2873.mx-10-49-58-118.openwave.com@whsasf.com>
+Precedence: bulk
+Date: Wed, 15 Nov 2017 20:54:32 -0500
+Message-ID: <20171116015432.ABH2873.mx-10-49-58-118.openwave.com@mx-10-49-58-118>
+MIME-Version: 1.0
+Content-Type: multipart/mixed;
+		Boundary="===========================_ _= 8748499(2873)1510797272"
+
+
+--===========================_ _= 8748499(2873)1510797272
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+
+Echo,This is an external autoreply message for external senders!
+
+--===========================_ _= 8748499(2873)1510797272
+Content-Type: message/rfc822
+
+Received: from whsasf.com ([10.37.2.214]) by mx-10-49-58-118.openwave.com
+          (InterMail vM.9.05.01.00 201-2473-137-123) with ESMTP
+          id <20171116015431.ABF2873.mx-10-49-58-118.openwave.com@whsasf.com>
+          for <ar3122@openwave.com>; Wed, 15 Nov 2017 20:54:31 -0500
+Subject: test message about autoreply feature
+To: ar3122@openwave.com
+Date: Wed, 15 Nov 2017 20:54:32 -0500
+Message-Id: <20171116015431.ABF2873.mx-10-49-58-118.openwave.com@whsasf.com>
+From: <ar27179@whsasf.com>
+
+Echo,This ia a wonderful world!!
+
+--===========================_ _= 8748499(2873)1510797272--
+
+ FLAGS (\Recent \Seen))
+xx OK FETCH completed
+* BYE IMAP4 server terminating connection
+xx OK LOGOUT completed
+[32m##########6 Check autoreplied messaeges successfully!![0m
+TESTPASSED: /home/ram/workspace/bohem/Automation/multiple-messages-simultaneously-for-in-and-out-domains-senders/Deliever-message-when-autoReplyStartDate-and-autoReplyStopDate-unset/mx-10235-10269: AutoReply in echo mode without start/stop date for hybrid sender test success! (52 sec.)
+##########  doing some clear job ...
+[32m##########  Accont deleted successfully[0m
+PASSED: /home/ram/workspace/bohem/Automation/multiple-messages-simultaneously-for-in-and-out-domains-senders/Deliever-message-when-autoReplyStartDate-and-autoReplyStopDate-unset/mx-10235-10269 [20171116-095620] (60 sec.) 128
+Test ended: Thu Nov 16 09:57:20 CST 2017
+

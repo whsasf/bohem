@@ -35,13 +35,13 @@ begin compare:
 [32m ################# the 30 firstline data exist in message30.txt #####[0m
 [32m ################# the 31 firstline data exist in message31.txt #####[0m
 [32m ################# the 32 firstline data exist in message32.txt #####[0m
-[32m ################# the 33 firstline data exist in message33.txt #####[0m
+[31m ################# the 33 firstline data not exist in message33.txt #####[0m
 [32m ################# the 34 firstline data exist in message34.txt #####[0m
 [32m ################# the 35 firstline data exist in message35.txt #####[0m
 [32m ################# the 36 firstline data exist in message36.txt #####[0m
 [32m ################# the 37 firstline data exist in message37.txt #####[0m
 [32m ################# the 38 firstline data exist in message38.txt #####[0m
-[32m ################# the 39 firstline data exist in message39.txt #####[0m
+[31m ################# the 39 firstline data not exist in message39.txt #####[0m
 [32m ################# the 40 firstline data exist in message40.txt #####[0m
 [32m ################# the 41 firstline data exist in message41.txt #####[0m
 [32m ################# the 42 firstline data exist in message42.txt #####[0m
@@ -66,11 +66,11 @@ begin compare:
 [32m ################# the 61 firstline data exist in message61.txt #####[0m
 [32m ################# the 62 firstline data exist in message62.txt #####[0m
 [32m ################# the 63 firstline data exist in message63.txt #####[0m
-[32m ################# the 64 firstline data exist in message64.txt #####[0m
+[31m ################# the 64 firstline data not exist in message64.txt #####[0m
 [32m ################# the 65 firstline data exist in message65.txt #####[0m
 [32m ################# the 66 firstline data exist in message66.txt #####[0m
 [32m ################# the 67 firstline data exist in message67.txt #####[0m
-[32m ################# the 68 firstline data exist in message68.txt #####[0m
+[31m ################# the 68 firstline data not exist in message68.txt #####[0m
 [32m ################# the 69 firstline data exist in message69.txt #####[0m
 [32m ################# the 70 firstline data exist in message70.txt #####[0m
 [32m ################# the 71 firstline data exist in message71.txt #####[0m
@@ -106,7 +106,7 @@ begin compare:
 [32m ################# the 101 firstline data exist in message101.txt #####[0m
 [32m ################# the 102 firstline data exist in message102.txt #####[0m
 [32m ################# the 103 firstline data exist in message103.txt #####[0m
-[32m ################# the 104 firstline data exist in message104.txt #####[0m
+[31m ################# the 104 firstline data not exist in message104.txt #####[0m
 [32m ################# the 105 firstline data exist in message105.txt #####[0m
 [32m ################# the 106 firstline data exist in message106.txt #####[0m
 [32m ################# the 107 firstline data exist in message107.txt #####[0m
@@ -167,7 +167,7 @@ begin compare:
 [32m ################# the 162 firstline data exist in message162.txt #####[0m
 [32m ################# the 163 firstline data exist in message163.txt #####[0m
 [32m ################# the 164 firstline data exist in message164.txt #####[0m
-[32m ################# the 165 firstline data exist in message165.txt #####[0m
+[31m ################# the 165 firstline data not exist in message165.txt #####[0m
 [32m ################# the 166 firstline data exist in message166.txt #####[0m
 [32m ################# the 167 firstline data exist in message167.txt #####[0m
 [32m ################# the 168 firstline data exist in message168.txt #####[0m
@@ -198,7 +198,7 @@ begin compare:
 [32m ################# the 193 firstline data exist in message193.txt #####[0m
 [32m ################# the 194 firstline data exist in message194.txt #####[0m
 [32m ################# the 195 firstline data exist in message195.txt #####[0m
-[32m ################# the 196 firstline data exist in message196.txt #####[0m
+[31m ################# the 196 firstline data not exist in message196.txt #####[0m
 [32m ################# the 197 firstline data exist in message197.txt #####[0m
 [32m ################# the 198 firstline data exist in message198.txt #####[0m
 [32m ################# the 199 firstline data exist in message199.txt #####[0m

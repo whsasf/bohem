@@ -1,5 +1,5 @@
-Received: 220 mx-10-49-58-118.openwave.com ESMTP server (InterMail vM.9.05.01.00 201-2473-137-123) ready Mon, 13 Nov 2017 00:24:14 -0500
-Sending command (to 10.49.58.118:20025): EHLO ar4841
+Received: 220 mx-10-49-58-118.openwave.com ESMTP server (InterMail vM.9.05.01.00 201-2473-137-123) ready Wed, 15 Nov 2017 23:21:32 -0500
+Sending command (to 10.49.58.118:20025): EHLO ar28098
 Received: 250-mx-10-49-58-118.openwave.com
 Received: 250-HELP
 Received: 250-VRFY
@@ -9,10 +9,10 @@ Received: 250-PIPELINING
 Received: 250-DSN
 Received: 250-8BITMIME
 Received: 250 SIZE 30996480
-Sending command (to 10.49.58.118:20025): MAIL FROM:<ar4841>
-Received: 250 Sender <ar4841> Ok
-Sending command (to 10.49.58.118:20025): RCPT TO:<ar7561>
-Received: 550 Invalid recipient: <ar7561>
+Sending command (to 10.49.58.118:20025): MAIL FROM:<ar28098>
+Received: 250 Sender <ar28098> Ok
+Sending command (to 10.49.58.118:20025): RCPT TO:<ar8794>
+Received: 550 Invalid recipient: <ar8794>
 Got an ERROR response
 Sending command (to 10.49.58.118:20025): DATA
 Received: 503 No recipients specified

@@ -8,10 +8,10 @@ then
 fi
 
 
-SMTPHost=172.26.202.87
+SMTPHost=10.49.58.118
 SMTPPort=20025
 
-IMAPHost=172.26.202.87
+IMAPHost=10.49.58.118
 IMAPPort=20143
 
 #count=26

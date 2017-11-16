@@ -1,7 +1,6 @@
 spawn ssh root@10.49.58.118
-Password: 
-Last login: Sun Nov 12 20:45:27 2017 from bigchina
+Last login: Wed Nov 15 21:41:01 2017 from bigchina
 ]0;root@mx-10-49-58-118:~[?1034h[root@mx-10-49-58-118 ~]# date +%s
-1510537790
+1510800231
 ]0;root@mx-10-49-58-118:~[root@mx-10-49-58-118 ~]# 
 ]0;root@mx-10-49-58-118:~[root@mx-10-49-58-118 ~]# 

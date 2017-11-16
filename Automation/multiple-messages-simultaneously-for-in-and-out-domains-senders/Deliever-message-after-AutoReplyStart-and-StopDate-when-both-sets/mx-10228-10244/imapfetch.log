@@ -1,8 +1,8 @@
-imapmail: host[10.49.58.118] port[20143] user[ar30412] pass[p] folder[inbox] message[2]
+imapmail: host[10.49.58.118] port[20143] user[ar11772] pass[p] folder[inbox] message[2]
 xx OK LOGIN completed
 * 1 EXISTS
 * OK [UNSEEN 1] First unseen message
-* OK [UIDVALIDITY 1510493004] UIDs valid
+* OK [UIDVALIDITY 1510814628] UIDs valid
 * OK [UIDNEXT 1001] Predicted next UID
 * FLAGS (\Answered \Flagged \Deleted \Draft \Seen)
 * OK [PERMANENTFLAGS (\* \Answered \Flagged \Deleted \Draft \Seen)] Permanent flags
@@ -11,11 +11,11 @@ xx OK [READ-WRITE] SELECT completed
 xx NO FETCH failed
 Didn't get OK for FETCH
 Not Connected...
-imapmail: host[10.49.58.118] port[20143] user[ar19078] pass[p] folder[inbox] message[2]
+imapmail: host[10.49.58.118] port[20143] user[ar227] pass[p] folder[inbox] message[2]
 xx OK LOGIN completed
 * 1 EXISTS
 * OK [UNSEEN 1] First unseen message
-* OK [UIDVALIDITY 1510492863] UIDs valid
+* OK [UIDVALIDITY 1510814629] UIDs valid
 * OK [UIDNEXT 1001] Predicted next UID
 * FLAGS (\Answered \Flagged \Deleted \Draft \Seen)
 * OK [PERMANENTFLAGS (\* \Answered \Flagged \Deleted \Draft \Seen)] Permanent flags
@@ -24,11 +24,11 @@ xx OK [READ-WRITE] SELECT completed
 xx NO FETCH failed
 Didn't get OK for FETCH
 Not Connected...
-imapmail: host[10.49.58.118] port[20143] user[ar28536] pass[p] folder[inbox] message[2]
+imapmail: host[10.49.58.118] port[20143] user[ar21356] pass[p] folder[inbox] message[2]
 xx OK LOGIN completed
 * 1 EXISTS
 * OK [UNSEEN 1] First unseen message
-* OK [UIDVALIDITY 1510492863] UIDs valid
+* OK [UIDVALIDITY 1510814630] UIDs valid
 * OK [UIDNEXT 1001] Predicted next UID
 * FLAGS (\Answered \Flagged \Deleted \Draft \Seen)
 * OK [PERMANENTFLAGS (\* \Answered \Flagged \Deleted \Draft \Seen)] Permanent flags
@@ -37,11 +37,11 @@ xx OK [READ-WRITE] SELECT completed
 xx NO FETCH failed
 Didn't get OK for FETCH
 Not Connected...
-imapmail: host[10.49.58.118] port[20143] user[ar26502] pass[p] folder[inbox] message[2]
+imapmail: host[10.49.58.118] port[20143] user[ar20093] pass[p] folder[inbox] message[2]
 xx OK LOGIN completed
 * 1 EXISTS
 * OK [UNSEEN 1] First unseen message
-* OK [UIDVALIDITY 1510493007] UIDs valid
+* OK [UIDVALIDITY 1510814482] UIDs valid
 * OK [UIDNEXT 1001] Predicted next UID
 * FLAGS (\Answered \Flagged \Deleted \Draft \Seen)
 * OK [PERMANENTFLAGS (\* \Answered \Flagged \Deleted \Draft \Seen)] Permanent flags

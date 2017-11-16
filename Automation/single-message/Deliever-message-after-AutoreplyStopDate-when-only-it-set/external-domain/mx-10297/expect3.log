@@ -1,0 +1,10 @@
+spawn ssh imail2@10.49.58.118
+Password: 
+Last login: Thu Nov 16 01:01:57 2017 from bigchina
+[?1034hmx-10-49-58-118:imail2:Mx9.5:~$ cat log/mta.log
+20171116 010211806-0500 mx-10-49-58-118 mta 24081 24761 139749893830400 Note;SmtpConnectionReceived(70/1) [10.37.2.214]:fromhost=10.37.2.214:fromport=33096:localAddr=10.49.58.118:sid=330428D6-F595412A-0000000A.0
+20171116 010213556-0500 mx-10-49-58-118 mta 24081 24764 139749876995840 Note;MsgTrace(65/26) docid will be used for message-id:user=ar28025@openwave.com:from=<ar18076@whsasf.com>:msgid=<20171116060212.AAE24081.mx-10-49-58-118.openwave.com@whsasf.com>:size=547:fromhost=10.37.2.214:fromport=33096:localAddr=[10.49.58.118]:sid=330428D6-F595412A-0000000A.1
+20171116 010213556-0500 mx-10-49-58-118 mta 24081 24761 139749893830400 Note;MsgTrace(65/26) received from internet:from=<ar18076@whsasf.com>:msgid=<20171116060212.AAE24081.mx-10-49-58-118.openwave.com@whsasf.com>:fromhost=[10.37.2.214]:fromport=33096:localAddr=10.49.58.118:sid=330428D6-F595412A-0000000A.1:msgsize=440:time=1:sender=<ar18076@whsasf.com>:rcpts=<ar28025@openwave.com>:protocol=ESMTP:encoding=plaintext:auth=
+20171116 010213613-0500 mx-10-49-58-118 mta 24081 24767 139749876463360 Note;MsgTrace(65/26) delivered:user=ar28025@openwave.com:mbox=5474705364022288299:mss=mx-10-49-58-118:from=<ar18076@whsasf.com>:msgid=<20171116060212.AAE24081.mx-10-49-58-118.openwave.com@whsasf.com>:size=547:port=55014:fromhost=10.37.2.214:fromport=33096:localAddr=[10.49.58.118]:sid=330428D6-F595412A-0000000A.1:docid=b0ef29f8-ca93-11e7-977b-df4cb1f36500:node=mx-10-49-58-118:nodePort=55014
+20171116 010213834-0500 mx-10-49-58-118 mta 24081 24761 139749893830400 Note;SmtpConnectionClosed(70/2) [10.37.2.214]:2:1:195:fromhost=[10.37.2.214]:fromport=33096:localAddr=10.49.58.118:sid=330428D6-F595412A-0000000A.1
+mx-10-49-58-118:imail2:Mx9.5:~$ 
