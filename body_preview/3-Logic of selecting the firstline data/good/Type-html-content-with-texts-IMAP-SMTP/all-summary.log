@@ -122,3 +122,20 @@
 < * 1 FETCH (FIRSTLINE ("، ويمكن تح Nobody! いくつにな 我们是中国人， <html> <head> <"))
 ---
 > * 1 FETCH (FIRSTLINE ("، ويمكن تح Nobody! いくつにな 我们是中国人， <html> <he"))
+1c1
+< ، ويمكن تح Nobody! いくつにな 我们是中国人， <html> <head> <"))
+---
+> * 1 FETCH (FIRSTLINE ("، ويمكن تح Nobody! いくつにな 我们是中国人， <html> <head> <"))
+1,2c1
+< ، ويمكن تح Nobody! いくつにな 我们是中国人， <html> <head> <"))
+< ، ويمكن تح Nobody! いくつにな 我们是中国人， <html> <head> <"))
+---
+> * 1 FETCH (FIRSTLINE ("، ويمكن تح Nobody! いくつにな 我们是中国人， <html> <head> <"))
+1c1
+< ، ويمكن تح Nobody! いくつにな 我们是中国人， <html> <head> <"))
+---
+> * 1 FETCH (FIRSTLINE ("، ويمكن تح Nobody! いくつにな 我们是中国人， <html> <head> <"))
+1c1
+< ، ويمكن تح Nobody! いくつにな 我们是中国人， <html> <head> <"))
+---
+> * 1 FETCH (FIRSTLINE ("، ويمكن تح Nobody! いくつにな 我们是中国人， <html> <head> <"))

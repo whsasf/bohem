@@ -1,21 +1,21 @@
 
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!fetching first line data!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-* OK IMAP4 server (InterMail vM.9.05.00.00 201-2473-137-116) ready Sun, 11 Jun 2017 20:38:23 -0700 (PDT)
+* OK IMAP4 server (InterMail vM.9.05.01.00 201-2473-137-123) ready Thu, 16 Nov 2017 09:06:53 -0500 (EST)
 a OK LOGIN completed
 * 1 EXISTS
 * OK [UNSEEN 1] First unseen message
-* OK [UIDVALIDITY 1497231880] UIDs valid
-* OK [UIDNEXT 3041] Predicted next UID
+* OK [UIDVALIDITY 1510832640] UIDs valid
+* OK [UIDNEXT 1150] Predicted next UID
 * FLAGS (\Answered \Flagged \Deleted \Draft \Seen)
 * OK [PERMANENTFLAGS (\* \Answered \Flagged \Deleted \Draft \Seen)] Permanent flags
 * 1 RECENT
 a OK [READ-WRITE] SELECT completed
-* 1 FETCH (RFC822 {20835}
+* 1 FETCH (RFC822 {20832}
 Return-Path: <xx2@openwave.com>
-Received: from [10.37.2.214] by mx-172-26-202-87.openwave.com
-          (InterMail vM.9.05.00.00 201-2473-137-116) with SMTP
-          id <20170612033822.BPN32283.mx-172-26-202-87.openwave.com@[10.37.2.214]>
-          for <xx1@openwave.com>; Sun, 11 Jun 2017 20:38:22 -0700
+Received: from [10.6.104.77] by mx-10-49-58-118.openwave.com
+          (InterMail vM.9.05.01.00 201-2473-137-123) with SMTP
+          id <20171116140652.ACA8020.mx-10-49-58-118.openwave.com@[10.6.104.77]>
+          for <xx1@openwave.com>; Thu, 16 Nov 2017 09:06:52 -0500
 Received: from [10.13.8.221] by mx-172-26-202-87.openwave.com
           (InterMail vM.9.05.00.00 201-2473-137-108) with ESMTP
           id <20170218014916.BFZ23163.mx-172-26-202-87.openwave.com@[10.13.8.221]>
@@ -381,9 +381,11 @@ href="https://jira.synchronoss.net:8443/jira/secure/attachment/539351/PAB-9.2.11
 --------------9304DDB4312BD28C9FEC675A--
  FLAGS (\Recent \Seen))
 a OK FETCH completed
-* 1 FETCH (FIRSTLINE ("*Release Name* 	*PAB 9.2.113***Patch*** * *Release Date* 	02/10/2017 *Sign Off T"))
+* 1 FETCH (FIRSTLINE ("{80}
+*Release Name* 	*PAB 9.2.113***Patch*** * *Release Date* 	02/10/2017 *Sign Off T"))
 a OK FETCH completed
-* 1 FETCH (FIRSTLINE ("*Release Name* 	*PAB 9.2.113***Patch*** * *Release Date* 	02/10/2017 *Sign Off T") UID 3040)
+* 1 FETCH (FIRSTLINE ("{80}
+*Release Name* 	*PAB 9.2.113***Patch*** * *Release Date* 	02/10/2017 *Sign Off T") UID 1149)
 a OK UID FETCH completed
 * BYE IMAP4 server terminating connection
 a OK LOGOUT completed

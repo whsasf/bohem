@@ -78,3 +78,26 @@
 ====running logic-messagesend-SMTP-base64 ========
 ====running logic-messagesend-SMTP-quoted-printable ========
 ================Type-pure-hyperlink-IMAP-and-SMTP Test finished===============
+1c1
+< 我们都是中国人 <https://www.baidu.com> "))
+---
+> * 1 FETCH (FIRSTLINE ("我们都是中国人 <https://www.baidu.com> "))
+1c1
+< 我们都是中国人 <https://www.baidu.com>"))
+---
+> * 1 FETCH (FIRSTLINE ("我们都是中国人 <https://www.baidu.com>"))
+1c1
+< 我们都是中国人 <https://www.baidu.com>"))
+---
+> * 1 FETCH (FIRSTLINE ("我们都是中国人 <https://www.baidu.com>"))
+1c1
+< 我们都是中国人 <https://www.baidu.com> "))
+---
+> * 1 FETCH (FIRSTLINE ("我们都是中国人 <https://www.baidu.com>"))
+1d0
+< 我们都是中国人 <https://www.baidu.com> "))
+1,2d0
+< 我们都是中国人 <https://www.baidu.com> "))
+< 我们都是中国人 <https://www.baidu.com> "))
+1d0
+< 我们都是中国人 <https://www.baidu.com> "))

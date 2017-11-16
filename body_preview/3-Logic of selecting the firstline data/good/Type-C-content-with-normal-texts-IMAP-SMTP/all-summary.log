@@ -130,3 +130,19 @@
 < * 1 FETCH (FIRSTLINE ("، ويمكن تح Nobody! いくつにな 我们是中国人， #include <stdio"))
 ---
 > * 1 FETCH (FIRSTLINE ("، ويمكن تح Nobody! いくつにな 我们是中国人， #include "))
+1c1
+< ، ويمكن تح Nobody! いくつにな 我们是中国人， #include <stdio"))
+---
+> * 1 FETCH (FIRSTLINE ("، ويمكن تح Nobody! いくつにな 我们是中国人， #include <stdio"))
+1c1
+< ، ويمكن تح Nobody! いくつにな 我们是中国人， #include <stdio"))
+---
+> * 1 FETCH (FIRSTLINE ("، ويمكن تح Nobody! いくつにな 我们是中国人， #include <stdio"))
+1c1
+< ، ويمكن تح Nobody! いくつにな 我们是中国人， #include <stdio"))
+---
+> * 1 FETCH (FIRSTLINE ("، ويمكن تح Nobody! いくつにな 我们是中国人， #include <stdio"))
+1c1
+< ، ويمكن تح Nobody! いくつにな 我们是中国人， #include <stdio"))
+---
+> * 1 FETCH (FIRSTLINE ("، ويمكن تح Nobody! いくつにな 我们是中国人， #include <stdio"))

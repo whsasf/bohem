@@ -74,3 +74,15 @@
 ====running logic-messagesend-SMTP-base64 ========
 ====running logic-messagesend-SMTP-quoted-printable ========
 ================type-symbols-UTF8-IMAP-and-SMTP Test finished===============
+1c1
+< ¢¤€©®µ¶¼¾¦¨¡×¿÷»º±²²¥§ª¬¸ 中国人 "))
+---
+> * 1 FETCH (FIRSTLINE ("¢¤€©®µ¶¼¾¦¨¡×¿÷»º±²²¥§ª¬¸ 中国人 "))
+1c1
+< ¢¤€©®µ¶¼¾¦¨¡×¿÷»º±²²¥§ª¬¸ 中国人"))
+---
+> * 1 FETCH (FIRSTLINE ("¢¤€©®µ¶¼¾¦¨¡×¿÷»º±²²¥§ª¬¸ 中国人"))
+1c1
+< ¢¤€©®µ¶¼¾¦¨¡×¿÷»º±²²¥§ª¬¸ 中国人 "))
+---
+> * 1 FETCH (FIRSTLINE ("¢¤€©®µ¶¼¾¦¨¡×¿÷»º±²²¥§ª¬¸ 中国人 "))

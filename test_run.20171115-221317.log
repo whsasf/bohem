@@ -1,0 +1,30 @@
+	**********  Starting /home/whsasf/workspace/bohem/  **********
+Test started: Wed Nov 15 22:13:17 CST 2017
+imapmail: host[10.49.58.118] port[20143] user[xx1] pass[p] folder[inbox] message[2]
+xx OK LOGIN completed
+* 25 EXISTS
+* OK [UNSEEN 0] First unseen message
+* OK [UIDVALIDITY 1510754226] UIDs valid
+* OK [UIDNEXT 1129] Predicted next UID
+* FLAGS (\Answered \Flagged \Deleted \Draft \Seen)
+* OK [PERMANENTFLAGS (\* \Answered \Flagged \Deleted \Draft \Seen)] Permanent flags
+* 0 RECENT
+xx OK [READ-WRITE] SELECT completed
+* 2 FETCH (BODY[] {301}
+from:xx2@openwave.com
+to:xx1@openwave.com
+subject:testemail-Chinese-UTF-8-CRLF-7bit
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: 7bit
+Message-ID: <657-2017-1115-090713-8402@mx-10-49-58-118.openwave.com>
+
+     怒发冲冠，凭阑处、潇潇雨歇。
+)
+xx OK FETCH completed
+* BYE IMAP4 server terminating connection
+xx OK LOGOUT completed
+TESTFAILED: /home/whsasf/workspace/bohem/: Test didn't report success or failure or skipped (2 sec.)
+FAILED: /home/whsasf/workspace/bohem/ [20171115-221317] (2 sec.)
+Test ended: Wed Nov 15 22:13:19 CST 2017
+

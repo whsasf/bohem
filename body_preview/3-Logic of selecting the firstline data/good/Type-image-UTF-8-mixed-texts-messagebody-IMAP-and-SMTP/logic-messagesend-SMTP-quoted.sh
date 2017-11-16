@@ -23,11 +23,11 @@ then
 	cat /dev/null >$sumfile
 fi
 
-SMTPHost=10.49.58.127
-SMTPPort=10025
+SMTPHost=10.49.58.118
+SMTPPort=20025
 
-IMAPHost=10.49.58.127
-IMAPPort=10143
+IMAPHost=10.49.58.118
+IMAPPort=20143
 
 #count=26
 mailfrom=xx2
@@ -94,7 +94,7 @@ rm -rf  imap-temp.log
 rm -rf  smtp-temp.log
 
 #get target content (firstline data) from output
-cat summary.log |grep -a  "FETCH (FIRSTLINE ("  |grep -av UID  >fetch-target.txt 
+cat summary.log |grep -a  "))"|grep -v "FLAGS"  |grep -av UID  >fetch-target.txt 
 unix2dos  fetch-target.txt  #LF to CRLF
 
 diff fetch-target.txt  fetch-template-quoted.txt >diff-temp.log
@@ -113,7 +113,7 @@ fi
 
 
 #get uid-fetch content fron outcome 
-cat summary.log |grep -a   "FETCH (FIRSTLINE ("  |grep -a UID  >uidfetch-target-temp.txt 
+cat summary.log |grep -a   ") UID"|grep -v "FLAGS"  |grep -a UID  >uidfetch-target-temp.txt 
 awk -F " UID" '{print $1}'  uidfetch-target-temp.txt >uidfetch-target.txt
 
 unix2dos  uidfetch-target.txt    #LF to CRLF

@@ -1,21 +1,21 @@
 
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!fetching first line data!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-* OK IMAP4 server (InterMail vM.9.05.00.00 201-2473-137-116) ready Sun, 11 Jun 2017 20:35:19 -0700 (PDT)
+* OK IMAP4 server (InterMail vM.9.05.01.00 201-2473-137-123) ready Thu, 16 Nov 2017 08:39:49 -0500 (EST)
 a OK LOGIN completed
 * 1 EXISTS
 * OK [UNSEEN 1] First unseen message
-* OK [UIDVALIDITY 1497231880] UIDs valid
-* OK [UIDNEXT 3025] Predicted next UID
+* OK [UIDVALIDITY 1510832640] UIDs valid
+* OK [UIDNEXT 1109] Predicted next UID
 * FLAGS (\Answered \Flagged \Deleted \Draft \Seen)
 * OK [PERMANENTFLAGS (\* \Answered \Flagged \Deleted \Draft \Seen)] Permanent flags
 * 1 RECENT
 a OK [READ-WRITE] SELECT completed
-* 1 FETCH (RFC822 {1184}
+* 1 FETCH (RFC822 {1183}
 Return-Path: <xx2@openwave.com>
-Received: from [10.37.2.214] by mx-172-26-202-87.openwave.com
-          (InterMail vM.9.05.00.00 201-2473-137-116) with SMTP
-          id <20170612033518.BPF32283.mx-172-26-202-87.openwave.com@[10.37.2.214]>
-          for <xx1@openwave.com>; Sun, 11 Jun 2017 20:35:18 -0700
+Received: from [10.6.104.101] by mx-10-49-58-118.openwave.com
+          (InterMail vM.9.05.01.00 201-2473-137-123) with SMTP
+          id <20171116133948.ABK8020.mx-10-49-58-118.openwave.com@[10.6.104.101]>
+          for <xx1@openwave.com>; Thu, 16 Nov 2017 08:39:48 -0500
 Received: from [10.13.8.221] by mx-172-26-202-87.openwave.com
           (InterMail vM.9.05.00.00 201-2473-137-108) with ESMTP
           id <20170219021305.BJD23163.mx-172-26-202-87.openwave.com@[10.13.8.221]>
@@ -42,9 +42,11 @@ printf ("Hello,world");
 }=
  FLAGS (\Recent \Seen))
 a OK FETCH completed
-* 1 FETCH (FIRSTLINE ("، ويمكن تح Nobody! いくつにな 我们是中国人， #include <stdio"))
+* 1 FETCH (FIRSTLINE ("{80}
+، ويمكن تح Nobody! いくつにな 我们是中国人， #include <stdio"))
 a OK FETCH completed
-* 1 FETCH (FIRSTLINE ("، ويمكن تح Nobody! いくつにな 我们是中国人， #include <stdio") UID 3024)
+* 1 FETCH (FIRSTLINE ("{80}
+، ويمكن تح Nobody! いくつにな 我们是中国人， #include <stdio") UID 1108)
 a OK UID FETCH completed
 * BYE IMAP4 server terminating connection
 a OK LOGOUT completed

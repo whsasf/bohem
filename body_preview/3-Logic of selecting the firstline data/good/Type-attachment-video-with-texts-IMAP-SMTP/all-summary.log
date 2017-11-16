@@ -124,3 +124,15 @@ Failed  testcases are:7
 ====running logic-messagesend-SMTP-base64 ========
 ====running logic-messagesend-SMTP-quoted-printable ========
 ================Type-attachment-video-with-texts-IMAP-SMTP Test finished===============
+1c1
+< ، ويمكن تح Nobody! いくつにな 我们是中国人， "))
+---
+> * 1 FETCH (FIRSTLINE ("، ويمكن تح Nobody! いくつにな 我们是中国人， "))
+1c1
+< ، ويمكن تح Nobody! いくつにな 我们是中国人，"))
+---
+> * 1 FETCH (FIRSTLINE ("، ويمكن تح Nobody! いくつにな 我们是中国人，"))
+1c1
+< ، ويمكن تح Nobody! いくつにな 我们是中国人，"))
+---
+> * 1 FETCH (FIRSTLINE ("، ويمكن تح Nobody! いくつにな 我们是中国人，"))

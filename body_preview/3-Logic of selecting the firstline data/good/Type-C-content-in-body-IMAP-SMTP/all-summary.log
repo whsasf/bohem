@@ -154,3 +154,15 @@
 ====running logic-messagesend-SMTP-base64 ========
 ====running logic-messagesend-SMTP-quoted-printable ========
 ================Type-C-content-in-body-IMAP-SMTP Test finished===============
+1c1
+< #include <stdio.h> main() { printf ("Hello,world"); } "))
+---
+> * 1 FETCH (FIRSTLINE ("#include <stdio.h> main() { printf (Hello,world); } "))
+1c1
+< #include <stdio.h> main() { printf ("Hello,world"); }"))
+---
+> * 1 FETCH (FIRSTLINE ("#include <stdio.h> main() { printf (Hello,world); }"))
+1c1
+< #include <stdio.h> main() { printf ("Hello,world"); }"))
+---
+> * 1 FETCH (FIRSTLINE ("#include <stdio.h> main() { printf (Hello,world); }"))

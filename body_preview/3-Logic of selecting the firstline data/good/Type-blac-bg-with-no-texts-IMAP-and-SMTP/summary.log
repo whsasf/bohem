@@ -1,21 +1,21 @@
 
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!fetching first line data!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-* OK IMAP4 server (InterMail vM.9.05.00.00 201-2473-137-116) ready Sun, 11 Jun 2017 20:21:07 -0700 (PDT)
+* OK IMAP4 server (InterMail vM.9.05.01.00 201-2473-137-123) ready Thu, 16 Nov 2017 07:56:58 -0500 (EST)
 a OK LOGIN completed
 * 1 EXISTS
 * OK [UNSEEN 1] First unseen message
-* OK [UIDVALIDITY 1497231880] UIDs valid
-* OK [UIDNEXT 2953] Predicted next UID
+* OK [UIDVALIDITY 1510832640] UIDs valid
+* OK [UIDNEXT 1045] Predicted next UID
 * FLAGS (\Answered \Flagged \Deleted \Draft \Seen)
 * OK [PERMANENTFLAGS (\* \Answered \Flagged \Deleted \Draft \Seen)] Permanent flags
 * 1 RECENT
 a OK [READ-WRITE] SELECT completed
-* 1 FETCH (RFC822 {1503}
+* 1 FETCH (RFC822 {1502}
 Return-Path: <xx2@openwave.com>
-Received: from [10.37.2.214] by mx-172-26-202-87.openwave.com
-          (InterMail vM.9.05.00.00 201-2473-137-116) with SMTP
-          id <20170612032106.BNV32283.mx-172-26-202-87.openwave.com@[10.37.2.214]>
-          for <xx1@openwave.com>; Sun, 11 Jun 2017 20:21:06 -0700
+Received: from [10.6.104.101] by mx-10-49-58-118.openwave.com
+          (InterMail vM.9.05.01.00 201-2473-137-123) with SMTP
+          id <20171116125658.AAP8020.mx-10-49-58-118.openwave.com@[10.6.104.101]>
+          for <xx1@openwave.com>; Thu, 16 Nov 2017 07:56:58 -0500
 Received: from [10.13.8.221] by mx-172-26-202-87.openwave.com
           (InterMail vM.9.05.00.00 201-2473-137-108) with ESMTP
           id <20170218100340.BGZ23163.mx-172-26-202-87.openwave.com@[10.13.8.221]>
@@ -54,7 +54,7 @@ Content-Transfer-Encoding: 7bit
 a OK FETCH completed
 * 1 FETCH (FIRSTLINE (""))
 a OK FETCH completed
-* 1 FETCH (FIRSTLINE ("") UID 2952)
+* 1 FETCH (FIRSTLINE ("") UID 1044)
 a OK UID FETCH completed
 * BYE IMAP4 server terminating connection
 a OK LOGOUT completed

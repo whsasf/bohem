@@ -78,3 +78,15 @@
 ====running logic-messagesend-SMTP-base64 ========
 ====running logic-messagesend-SMTP-quoted-printable ========
 ================Type-char-Emoji-IMAP-and-SMTP Test finished===============
+1c1
+< :-) :-( ;-) :-P :-[ :-\ =-O "))
+---
+> * 1 FETCH (FIRSTLINE (":-) :-( ;-) :-P :-[ :- =-O "))
+1c1
+< :-) :-( ;-) :-P :-[ :-\ =-O"))
+---
+> * 1 FETCH (FIRSTLINE (":-) :-( ;-) :-P :-[ :- =-O"))
+1c1
+< :-) :-( ;-) :-P :-[ :-\ =-O"))
+---
+> * 1 FETCH (FIRSTLINE (":-) :-( ;-) :-P :-[ :- =-O"))
