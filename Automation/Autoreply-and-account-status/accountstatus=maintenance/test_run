@@ -112,7 +112,7 @@ else
 	exit 2
 fi
 
-#set user2 in locked status
+#set user2 in maintance status
 expect <<-EOF 
 set timeout $expect_timeout	
 log_file expect11.log 
@@ -145,7 +145,7 @@ sendmail.pl  $MX1_HOST_IP1 $MX1_SMTP_PORT $user1 $user2  <send.data >send.log
 #	exit 3
 #fi
 
-#6 check mta.log, make sure  flag "AcctInactive" exist:
+#6 check mta.log, make sure  flag "AcctMaintenance" exist:
 echo "########## 6 Check mta.log using expect tool ..."
 expect <<-EOF 
 set timeout $expect_timeout	

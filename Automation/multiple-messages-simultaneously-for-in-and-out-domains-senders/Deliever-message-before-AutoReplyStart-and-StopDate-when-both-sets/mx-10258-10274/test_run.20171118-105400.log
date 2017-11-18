@@ -1,0 +1,118 @@
+	**********  Starting /home/whsasf/workspace/bohem/Automation/multiple-messages-simultaneously-for-in-and-out-domains-senders/Deliever-message-before-AutoReplyStart-and-StopDate-when-both-sets/mx-10258-10274  **********
+Test started: Sat Nov 18 10:54:00 CST 2017
+########## 1 Clear mta.log using expect tool ...
+spawn ssh imail2@10.49.58.118
+Password: 
+Last login: Fri Nov 17 21:51:15 2017 from 10.6.105.91
+[?1034hmx-10-49-58-118:imail2:Mx9.5:~$ > ~/log/mta.log
+mx-10-49-58-118:imail2:Mx9.5:~$ ########## 2 Accounts provision ...
+5767478758086144352
+6766949044387743385
+4847556340660093438
+7146879488722351513
+8158389460953449668
+[32m########## 2 Accont provision successfully, we can continue now[0m
+spawn ssh root@10.49.58.118
+Last login: Fri Nov 17 21:50:13 2017 from 10.6.105.91
+]0;root@mx-10-49-58-118:~[?1034h[root@mx-10-49-58-118 ~]# date +%s
+1510973557
+]0;root@mx-10-49-58-118:~[root@mx-10-49-58-118 ~]# 
+]0;root@mx-10-49-58-118:~[root@mx-10-49-58-118 ~]# ########## 4 Configure user2 to vacation autoreply mode using expect tool ...
+spawn ssh imail2@10.49.58.118
+Password: 
+Last login: Fri Nov 17 21:51:42 2017 from 10.6.105.91
+[?1034hmx-10-49-58-118:imail2:Mx9.5:~$ echo 'internal:' >data.txt
+mx-10-49-58-118:imail2:Mx9.5:~$ echo 'Echo,This is an autoreply message for internal senders!' >>data.txt
+mx-10-49-58-118:imail2:Mx9.5:~$ echo 'external:' >>data.txt
+mx-10-49-58-118:imail2:Mx9.5:~$ echo 'Echo,This is an external autoreply message for external senders!' >>data.txt
+mx-10-49-58-118:imail2:Mx9.5:~$ autoreplyctrl ar16625@openwave.com echo data.txt 1510973857 1510975357
+AutoReply data updated Successfully.
+mx-10-49-58-118:imail2:Mx9.5:~$ [32m##########4 Congifuration successfully[0m
+##########5 delieber 1 message from user1 to user2 ...
+########## 6 Check mta.log using expect tool ...
+spawn ssh imail2@10.49.58.118
+Password: 
+Last login: Fri Nov 17 21:53:03 2017 from 10.6.105.91
+[?1034hmx-10-49-58-118:imail2:Mx9.5:~$ cat log/mta.log
+20171117 215303497-0500 mx-10-49-58-118 mta 13952 14122 140242486273792 Note;MtaQueueDirRemoved(79/54) /opt/imail2/spool/deferred/MTA
+20171117 215307564-0500 mx-10-49-58-118 mta 13952 15508 140242486540032 Note;SmtpConnectionReceived(70/1) [10.6.105.91]:fromhost=10.6.105.91:fromport=57686:localAddr=10.49.58.118:sid=E7FD90B0-B405618E-00000072.0
+20171117 215307564-0500 mx-10-49-58-118 mta 13952 15507 140242484942592 Note;SmtpConnectionReceived(70/1) [10.6.105.91]:fromhost=10.6.105.91:fromport=57682:localAddr=10.49.58.118:sid=E7FD90B0-B405618E-00000074.0
+20171117 215307564-0500 mx-10-49-58-118 mta 13952 15509 140242484676352 Note;SmtpConnectionReceived(70/1) [10.6.105.91]:fromhost=10.6.105.91:fromport=57680:localAddr=10.49.58.118:sid=E7FD90B0-B405618E-00000076.0
+20171117 215307568-0500 mx-10-49-58-118 mta 13952 15506 140242501777152 Note;SmtpConnectionReceived(70/1) [10.6.105.91]:fromhost=10.6.105.91:fromport=57688:localAddr=10.49.58.118:sid=E7FD90B0-B405618E-00000078.0
+20171117 215309443-0500 mx-10-49-58-118 mta 13952 15509 140242484676352 Note;MsgTrace(65/26) received from internet:from=<ar20000@whsasf.com>:msgid=<20171118025308.AFD13952.mx-10-49-58-118.openwave.com@whsasf.com>:fromhost=[10.6.105.91]:fromport=57680:localAddr=10.49.58.118:sid=E7FD90B0-B405618E-00000076.1:msgsize=439:time=1:sender=<ar20000@whsasf.com>:rcpts=<ar16625@openwave.com>:protocol=ESMTP:encoding=plaintext:auth=
+20171117 215309443-0500 mx-10-49-58-118 mta 13952 15899 140242478819072 Note;MsgTrace(65/26) docid will be used for message-id:user=ar16625@openwave.com:from=<ar20000@whsasf.com>:msgid=<20171118025308.AFD13952.mx-10-49-58-118.openwave.com@whsasf.com>:size=546:fromhost=10.6.105.91:fromport=57680:localAddr=[10.49.58.118]:sid=E7FD90B0-B405618E-00000076.1
+20171117 215309443-0500 mx-10-49-58-118 mta 13952 15508 140242486540032 Note;MsgTrace(65/26) received from internet:from=<ar6464@whsasf.com>:msgid=<20171118025308.AFC13952.mx-10-49-58-118.openwave.com@whsasf.com>:fromhost=[10.6.105.91]:fromport=57686:localAddr=10.49.58.118:sid=E7FD90B0-B405618E-00000072.1:msgsize=439:time=1:sender=<ar6464@whsasf.com>:rcpts=<ar16625@openwave.com>:protocol=ESMTP:encoding=plaintext:auth=
+20171117 215309443-0500 mx-10-49-58-118 mta 13952 15893 140242480150272 Note;MsgTrace(65/26) docid will be used for message-id:user=ar16625@openwave.com:from=<ar6464@whsasf.com>:msgid=<20171118025308.AFC13952.mx-10-49-58-118.openwave.com@whsasf.com>:size=545:fromhost=10.6.105.91:fromport=57686:localAddr=[10.49.58.118]:sid=E7FD90B0-B405618E-00000072.1
+20171117 215309486-0500 mx-10-49-58-118 mta 13952 15895 140242479617792 Note;MsgTrace(65/26) docid will be used for message-id:user=ar16625@openwave.com:from=<ar23781@openwave.com>:msgid=<20171118025308.AFE13952.mx-10-49-58-118.openwave.com@openwave.com>:size=554:fromhost=10.6.105.91:fromport=57682:localAddr=[10.49.58.118]:sid=E7FD90B0-B405618E-00000074.1
+20171117 215309487-0500 mx-10-49-58-118 mta 13952 15507 140242484942592 Note;MsgTrace(65/26) received from internet:from=<ar23781@openwave.com>:msgid=<20171118025308.AFE13952.mx-10-49-58-118.openwave.com@openwave.com>:fromhost=[10.6.105.91]:fromport=57682:localAddr=10.49.58.118:sid=E7FD90B0-B405618E-00000074.1:msgsize=443:time=1:sender=<ar23781@openwave.com>:rcpts=<ar16625@openwave.com>:protocol=ESMTP:encoding=plaintext:auth=
+20171117 215309490-0500 mx-10-49-58-118 mta 13952 15894 140242479884032 Note;MsgTrace(65/26) docid will be used for message-id:user=ar16625@openwave.com:from=<ar20342@openwave.com>:msgid=<20171118025308.AFF13952.mx-10-49-58-118.openwave.com@openwave.com>:size=554:fromhost=10.6.105.91:fromport=57688:localAddr=[10.49.58.118]:sid=E7FD90B0-B405618E-00000078.1
+20171117 215309490-0500 mx-10-49-58-118 mta 13952 15506 140242501777152 Note;MsgTrace(65/26) received from internet:from=<ar20342@openwave.com>:msgid=<20171118025308.AFF13952.mx-10-49-58-118.openwave.com@openwave.com>:fromhost=[10.6.105.91]:fromport=57688:localAddr=10.49.58.118:sid=E7FD90B0-B405618E-00000078.1:msgsize=443:time=1:sender=<ar20342@openwave.com>:rcpts=<ar16625@openwave.com>:protocol=ESMTP:encoding=plaintext:auth=
+20171117 215309490-0500 mx-10-49-58-118 mta 13952 5522 140242477754112 Note;MsgTrace(65/26) delivered:user=ar16625@openwave.com:mbox=5767478758086144352:mss=mx-10-49-58-119:from=<ar20000@whsasf.com>:msgid=<20171118025308.AFD13952.mx-10-49-58-118.openwave.com@whsasf.com>:size=581:port=55014:fromhost=10.6.105.91:fromport=57680:localAddr=[10.49.58.118]:sid=E7FD90B0-B405618E-00000076.1:docid=9c246f3c-cc0b-11e7-93da-007adb6e11ba:node=mx-10-49-58-119:nodePort=55014
+20171117 215309510-0500 mx-10-49-58-118 mta 13952 16668 140242476689152 Note;MsgTrace(65/26) delivered:user=ar16625@openwave.com:mbox=5767478758086144352:mss=mx-10-49-58-119:from=<ar6464@whsasf.com>:msgid=<20171118025308.AFC13952.mx-10-49-58-118.openwave.com@whsasf.com>:size=579:port=55014:fromhost=10.6.105.91:fromport=57686:localAddr=[10.49.58.118]:sid=E7FD90B0-B405618E-00000072.1:docid=9c246eec-cc0b-11e7-8027-7ae6c220cba0:node=mx-10-49-58-119:nodePort=55014
+20171117 215309532-0500 mx-10-49-58-118 mta 13952 15519 140242483345152 Note;MsgTrace(65/26) delivered:user=ar16625@openwave.com:mbox=5767478758086144352:mss=mx-10-49-58-119:from=<ar23781@openwave.com>:msgid=<20171118025308.AFE13952.mx-10-49-58-118.openwave.com@openwave.com>:size=591:port=55014:fromhost=10.6.105.91:fromport=57682:localAddr=[10.49.58.118]:sid=E7FD90B0-B405618E-00000074.1:docid=9c2b0d1a-cc0b-11e7-bf5a-f417a7089e41:node=mx-10-49-58-119:nodePort=55014
+20171117 215309548-0500 mx-10-49-58-118 mta 13952 5521 140242478020352 Note;MsgTrace(65/26) delivered:user=ar16625@openwave.com:mbox=5767478758086144352:mss=mx-10-49-58-119:from=<ar20342@openwave.com>:msgid=<20171118025308.AFF13952.mx-10-49-58-118.openwave.com@openwave.com>:size=591:port=55014:fromhost=10.6.105.91:fromport=57688:localAddr=[10.49.58.118]:sid=E7FD90B0-B405618E-00000078.1:docid=9c2b928a-cc0b-11e7-a061-a15a8b6624a2:node=mx-10-49-58-119:nodePort=55014
+20171117 215309710-0500 mx-10-49-58-118 mta 13952 15509 140242484676352 Note;SmtpConnectionClosed(70/2) [10.6.105.91]:2:1:194:fromhost=[10.6.105.91]:fromport=57680:localAddr=10.49.58.118:sid=E7FD90B0-B405618E-00000076.1
+20171117 215309711-0500 mx-10-49-58-118 mta 13952 15508 140242486540032 Note;SmtpConnectionClosed(70/2) [10.6.105.91]:2:1:193:fromhost=[10.6.105.91]:fromport=57686:localAddr=10.49.58.118:sid=E7FD90B0-B405618E-00000072.1
+20171117 215309753-0500 mx-10-49-58-118 mta 13952 15507 140242484942592 Note;SmtpConnectionClosed(70/2) [10.6.105.91]:2:1:198:fromhost=[10.6.105.91]:fromport=57682:localAddr=10.49.58.118:sid=E7FD90B0-B405618E-00000074.1
+20171117 215309755-0500 mx-10-49-58-118 mta 13952 15506 140242501777152 Note;SmtpConnectionClosed(70/2) [10.6.105.91]:2:1:198:fromhost=[10.6.105.91]:fromport=57688:localAddr=10.49.58.118:sid=E7FD90B0-B405618E-00000078.1
+mx-10-49-58-118:imail2:Mx9.5:~$ [32m##########6 Autoreply messaeg undelievered successfully!![0m
+########## 7 check autoreplied message in inbox of user2,user3,user4,user5 ...
+imapmail: host[10.49.58.118] port[20143] user[ar23781] pass[p] folder[inbox] message[2]
+xx OK LOGIN completed
+* 1 EXISTS
+* OK [UNSEEN 1] First unseen message
+* OK [UIDVALIDITY 1510973353] UIDs valid
+* OK [UIDNEXT 1001] Predicted next UID
+* FLAGS (\Answered \Flagged \Deleted \Draft \Seen)
+* OK [PERMANENTFLAGS (\* \Answered \Flagged \Deleted \Draft \Seen)] Permanent flags
+* 0 RECENT
+xx OK [READ-WRITE] SELECT completed
+xx NO FETCH failed
+Didn't get OK for FETCH
+Not Connected...
+imapmail: host[10.49.58.118] port[20143] user[ar20342] pass[p] folder[inbox] message[2]
+xx OK LOGIN completed
+* 1 EXISTS
+* OK [UNSEEN 1] First unseen message
+* OK [UIDVALIDITY 1510973354] UIDs valid
+* OK [UIDNEXT 1001] Predicted next UID
+* FLAGS (\Answered \Flagged \Deleted \Draft \Seen)
+* OK [PERMANENTFLAGS (\* \Answered \Flagged \Deleted \Draft \Seen)] Permanent flags
+* 0 RECENT
+xx OK [READ-WRITE] SELECT completed
+xx NO FETCH failed
+Didn't get OK for FETCH
+Not Connected...
+imapmail: host[10.49.58.118] port[20143] user[ar6464] pass[p] folder[inbox] message[2]
+xx OK LOGIN completed
+* 1 EXISTS
+* OK [UNSEEN 1] First unseen message
+* OK [UIDVALIDITY 1510973354] UIDs valid
+* OK [UIDNEXT 1001] Predicted next UID
+* FLAGS (\Answered \Flagged \Deleted \Draft \Seen)
+* OK [PERMANENTFLAGS (\* \Answered \Flagged \Deleted \Draft \Seen)] Permanent flags
+* 0 RECENT
+xx OK [READ-WRITE] SELECT completed
+xx NO FETCH failed
+Didn't get OK for FETCH
+Not Connected...
+imapmail: host[10.49.58.118] port[20143] user[ar20000] pass[p] folder[inbox] message[2]
+xx OK LOGIN completed
+* 1 EXISTS
+* OK [UNSEEN 1] First unseen message
+* OK [UIDVALIDITY 1510973507] UIDs valid
+* OK [UIDNEXT 1001] Predicted next UID
+* FLAGS (\Answered \Flagged \Deleted \Draft \Seen)
+* OK [PERMANENTFLAGS (\* \Answered \Flagged \Deleted \Draft \Seen)] Permanent flags
+* 0 RECENT
+xx OK [READ-WRITE] SELECT completed
+xx NO FETCH failed
+Didn't get OK for FETCH
+Not Connected...
+[32m##########7 Check autoreplied messaege not exist  successfully!![0m
+TESTPASSED: /home/whsasf/workspace/bohem/Automation/multiple-messages-simultaneously-for-in-and-out-domains-senders/Deliever-message-before-AutoReplyStart-and-StopDate-when-both-sets/mx-10258-10274: AutoReply in echo mode with message undelievered before start/stop date for hybrid sender test success! (110 sec.)
+##########  doing some clear job ...
+[32m##########  Accont deleted successfully[0m
+PASSED: /home/whsasf/workspace/bohem/Automation/multiple-messages-simultaneously-for-in-and-out-domains-senders/Deliever-message-before-AutoReplyStart-and-StopDate-when-both-sets/mx-10258-10274 [20171118-105400] (119 sec.) 5
+Test ended: Sat Nov 18 10:55:59 CST 2017
+

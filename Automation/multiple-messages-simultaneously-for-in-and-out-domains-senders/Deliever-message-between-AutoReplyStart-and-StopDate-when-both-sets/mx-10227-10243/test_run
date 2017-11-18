@@ -166,7 +166,7 @@ sendmail.pl  $MX1_HOST_IP1 $MX1_SMTP_PORT $user4@whsasf.com $user1@openwave.com 
 sendmail.pl  $MX1_HOST_IP1 $MX1_SMTP_PORT $user5@whsasf.com $user1@openwave.com  <send.data >>send.log  
 
 ls -al  ~ >/dev/null
-
+sleep 5
 #6 check mta.log, make sure autoreply flag "autoreplied" exist:
 echo "########## 6 Check mta.log using expect tool ..."
 expect <<-EOF 

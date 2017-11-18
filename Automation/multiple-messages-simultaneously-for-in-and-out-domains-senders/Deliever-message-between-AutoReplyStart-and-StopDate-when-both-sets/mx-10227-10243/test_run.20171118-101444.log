@@ -1,0 +1,29 @@
+	**********  Starting /home/whsasf/workspace/bohem/Automation/multiple-messages-simultaneously-for-in-and-out-domains-senders/Deliever-message-between-AutoReplyStart-and-StopDate-when-both-sets/mx-10227-10243  **********
+Test started: Sat Nov 18 10:14:44 CST 2017
+########## 1 Clear mta.log using expect tool ...
+spawn ssh imail2@10.49.58.118
+Password: 
+Last login: Fri Nov 17 21:07:30 2017 from 10.6.105.125
+[?1034hmx-10-49-58-118:imail2:Mx9.5:~$ > ~/log/mta.log
+mx-10-49-58-118:imail2:Mx9.5:~$ ########## 2 Accounts provision ...
+5897149080980709216
+7264239093608343609
+7817438550444177728
+8339337091264524118
+5555470682021825019
+[32m########## 2 Accont provision successfully, we can continue now[0m
+spawn ssh root@10.49.58.118
+Last login: Fri Nov 17 21:04:59 2017 from 10.6.105.125
+]0;root@mx-10-49-58-118:~[?1034h[root@mx-10-49-58-118 ~]# date +%s
+1510971201
+]0;root@mx-10-49-58-118:~[root@mx-10-49-58-118 ~]# 
+]0;root@mx-10-49-58-118:~[root@mx-10-49-58-118 ~]# ########## 4 Configure user1 to vacation autoreply mode using expect tool ...
+spawn ssh imail2@10.49.58.118
+Password: 
+TESTFAILED: /home/whsasf/workspace/bohem/Automation/multiple-messages-simultaneously-for-in-and-out-domains-senders/Deliever-message-between-AutoReplyStart-and-StopDate-when-both-sets/mx-10227-10243: Test didn't report success or failure or skipped (180 sec.)
+FAILED: /home/whsasf/workspace/bohem/Automation/multiple-messages-simultaneously-for-in-and-out-domains-senders/Deliever-message-between-AutoReplyStart-and-StopDate-when-both-sets/mx-10227-10243 [20171118-101444] (180 sec.)
+Test ended: Sat Nov 18 10:17:44 CST 2017
+
+[31m##########4 Configuration failed,please check maunually!Exiting now ...[0m
+##########  doing some clear job ...
+[31m##########  Accont deleted failed,PLease check manually,Exiting now ...[0m

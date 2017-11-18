@@ -1,0 +1,64 @@
+	**********  Starting /home/whsasf/workspace/bohem/Automation/Autoreply-and-account-status/accountstatus=locked  **********
+Test started: Sat Nov 18 12:16:57 CST 2017
+########## 1 Clear mta.log using expect tool ...
+spawn ssh imail2@10.49.58.118
+Password: 
+Last login: Fri Nov 17 23:13:34 2017 from 10.6.105.91
+[?1034hmx-10-49-58-118:imail2:Mx9.5:~$ > ~/log/mta.log
+mx-10-49-58-118:imail2:Mx9.5:~$ ########## 2 Accounts provision ...
+4859587586821416620
+6703816831862193775
+[32m########## 2 Accont provision successfully, we can continue now[0m
+spawn ssh root@10.49.58.118
+Last login: Fri Nov 17 23:12:01 2017 from 10.6.105.91
+]0;root@mx-10-49-58-118:~[?1034h[root@mx-10-49-58-118 ~]# date +%s
+1510978549
+]0;root@mx-10-49-58-118:~[root@mx-10-49-58-118 ~]# 
+]0;root@mx-10-49-58-118:~[root@mx-10-49-58-118 ~]# ########## 4 Configure user2 to vacation autoreply mode using expect tool ...
+spawn ssh imail2@10.49.58.118
+Password: 
+Last login: Fri Nov 17 23:14:57 2017 from 10.6.105.91
+[?1034hmx-10-49-58-118:imail2:Mx9.5:~$ echo 'internal:' >data.txt
+mx-10-49-58-118:imail2:Mx9.5:~$ echo 'Reply,This is an autoreply message for internal senders!' >>data.txt
+mx-10-49-58-118:imail2:Mx9.5:~$ echo 'external:' >>data.txt
+mx-10-49-58-118:imail2:Mx9.5:~$ echo 'Reply,This is an external autoreply message for external senders!' >>data.txt
+mx-10-49-58-118:imail2:Mx9.5:~$ autoreplyctrl ar382@openwave.com reply data.txt 1510978554 1510980349
+AutoReply data updated Successfully.
+mx-10-49-58-118:imail2:Mx9.5:~$ [32m##########4 Congifuration successfully[0m
+spawn ssh imail2@10.49.58.118
+Password: 
+Last login: Fri Nov 17 23:16:24 2017 from 10.6.105.91
+[?1034hmx-10-49-58-118:imail2:Mx9.5:~$ imdbcontrol sas ar382 openwave.com L
+mx-10-49-58-118:imail2:Mx9.5:~$ imdbcontrol gaf ar382 openwave.com |grep Status
+                          [01;31m[KStatus[m[K:	L
+mx-10-49-58-118:imail2:Mx9.5:~$ ##########5 delieber 1 message from user1 to user2 ...
+########## 6 Check mta.log using expect tool ...
+spawn ssh imail2@10.49.58.118
+Password: 
+Last login: Fri Nov 17 23:16:58 2017 from 10.6.105.91
+[?1034hmx-10-49-58-118:imail2:Mx9.5:~$ cat log/mta.log
+20171117 231702467-0500 mx-10-49-58-118 mta 28284 29539 140306436949760 Note;SmtpConnectionReceived(70/1) [10.6.105.91]:fromhost=10.6.105.91:fromport=59172:localAddr=10.49.58.118:sid=EF5D77B7-75D8442B-00000034.0
+20171117 231703605-0500 mx-10-49-58-118 mta 28284 29539 140306436949760 Warn;AcctInactive(50/5) user=ar382@openwave.com:from=<ar27112>:fromhost=10.6.105.91:fromport=59172:localAddr=10.49.58.118:sid=EF5D77B7-75D8442B-00000034.1
+20171117 231704358-0500 mx-10-49-58-118 mta 28284 29539 140306436949760 Note;SmtpConnectionClosedAbnormally(70/76) [10.6.105.91]:2:0:54:from=<ar27112>:fromhost=10.6.105.91:fromport=59172:localAddr=10.49.58.118:sid=EF5D77B7-75D8442B-00000034.1
+mx-10-49-58-118:imail2:Mx9.5:~$ [32m##########6 Autoreply messaeg undelievered successfully!![0m
+########## 7 check autoreplied message in inbox of user1 ...
+imapmail: host[10.49.58.118] port[20143] user[ar27112] pass[p] folder[inbox] message[2]
+xx OK LOGIN completed
+* 1 EXISTS
+* OK [UNSEEN 1] First unseen message
+* OK [UIDVALIDITY 1510978346] UIDs valid
+* OK [UIDNEXT 1001] Predicted next UID
+* FLAGS (\Answered \Flagged \Deleted \Draft \Seen)
+* OK [PERMANENTFLAGS (\* \Answered \Flagged \Deleted \Draft \Seen)] Permanent flags
+* 0 RECENT
+xx OK [READ-WRITE] SELECT completed
+xx NO FETCH failed
+Didn't get OK for FETCH
+Not Connected...
+[32m##########7 Check autoreplied messaege successfully!![0m
+TESTPASSED: /home/whsasf/workspace/bohem/Automation/Autoreply-and-account-status/accountstatus=locked: AutoReply in reply mode with message undelievered between start/stop date for internal sender test success! (166 sec.)
+##########  doing some clear job ...
+[32m##########  Accont deleted successfully[0m
+PASSED: /home/whsasf/workspace/bohem/Automation/Autoreply-and-account-status/accountstatus=locked [20171118-121657] (169 sec.) 3
+Test ended: Sat Nov 18 12:19:46 CST 2017
+
