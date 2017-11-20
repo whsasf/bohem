@@ -1,0 +1,25 @@
+Received: 220 mx-10-49-58-118.openwave.com ESMTP server (InterMail vM.9.05.01.00 201-2473-137-123) ready Sun, 19 Nov 2017 20:27:31 -0500
+Sending command (to 10.49.58.118:20025): EHLO whsasf.com
+Received: 250-mx-10-49-58-118.openwave.com
+Received: 250-HELP
+Received: 250-VRFY
+Received: 250-XREMOTEQUEUE
+Received: 250-ETRN
+Received: 250-PIPELINING
+Received: 250-DSN
+Received: 250-8BITMIME
+Received: 250 SIZE 30996480
+Sending command (to 10.49.58.118:20025): MAIL FROM:<ar7957@whsasf.com>
+Received: 250 Sender <ar7957@whsasf.com> Ok
+Sending command (to 10.49.58.118:20025): RCPT TO:<ar31028@openwave.com>
+Received: 250 Recipient <ar31028@openwave.com> Ok
+Sending command (to 10.49.58.118:20025): DATA
+Received: 354 Ok Send data ending with <CRLF>.<CRLF>
+Sending data (to 10.49.58.118:20025): Subject: test message about autoreply feature
+Sending data (to 10.49.58.118:20025): To:ar31028@openwave.com
+Sending data (to 10.49.58.118:20025): 
+Sending data (to 10.49.58.118:20025): Vacation,This ia a wonderful world!!
+Sending command (to 10.49.58.118:20025): .
+Received: 250 Message received: 20171120012732.AAJ9699.mx-10-49-58-118.openwave.com@whsasf.com
+Sending command (to 10.49.58.118:20025): quit
+Received: 221 mx-10-49-58-118.openwave.com ESMTP server closing connection

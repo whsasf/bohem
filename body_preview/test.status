@@ -1,0 +1,62 @@
+testsuit name                                         testscripts number       test-results         testcase number
+
+IMAP-and-SMTP-Arabic-ISO-8859-6-CRLF/                  8                            passed           192
+IMAP-and-SMTP-Arabic-UTF8-CRLF/                        8                            passed           192
+IMAP-and-SMTP-ASCII-chars-CRLF/                        8                            passed           192
+IMAP-and-SMTP-Chinese-GB2312-CRLF/                     8                            passed           192  
+IMAP-and-SMTP-Chinese-UTF8-CRLF/                       8                            passed           192
+IMAP-and-SMTP-Japanese-EUC-JP-CRLF/                    8                            passed           192
+IMAP-and-SMTP-Japanese-Shift_JIS-CRLF/                 8                            passed           192
+IMAP-and-SMTP-Japanese-UTF8-CRLF/                      8                            passed           192
+IMAP-and-SMTP-Japanese-GB2312-CRLF/             
+IMAP-and-SMTP-mixed-UTF-8-language/                    8                            passed           8
+Type-attachment-audio-texts-IMAP-SMTP/                 8                            passed           8
+Type-attachment-images-with-texts-IMAP-SMTP/           8                            passed           8
+Type-attachment-pdf-texts-IMAP-and-SMTP/               8                            passed           8
+Type-attachment-pure-audio-IMAP-SMTP/                  8                            passed           8
+Type-attachment-pure-image-IMAP-SMTP/                  8                            passed           8
+Type-attachment-pure-pdf-IMAP-and-SMTP/                8                            passed           8
+Type-attachment-pure-python-IMAP-and-SMTP/             8                            passed           8
+Type-attachment-pure-tar-IMAP-and-SMTP/                8                            passed           8
+Type-attachment-pure-txt-IMAP-and-SMTP/                8                            passed           8
+Type-attachment-pure-video-IMAP-SMTP/                  8                            passed           8
+Type-attachment-pure-virus-IMAP-and-SMTP/              8                            passed           8
+Type-attachment-python-Texts-IMAP-and-SMTP/            8                            passed           8
+Type-attachment-tar-with-text-IMAP-and-SMTP/           8                            passed           8
+Type-attachment-txt-with-text-content-IMAP-and-SMTP/   8                            passed           8
+Type-attachment-video-with-texts-IMAP-SMTP/            8                            passed           8
+Type-attachment-virus-with-texts-IMAP-SMTP/            8                            passed           8
+
+Type-blac-bg-with-no-texts-IMAP-and-SMTP/              8                            passed           8
+Type-black-bg-with-huge-fonts-IMAP-andSMTP/            8                            passed           8
+Type-black-bg-with-mixed-style-texts-IMAP-and-SMTP/    8                            passed           8
+Type-black-bg-with-texts-IMAP-and-SMTP/                8                            passed           8
+Type-C-content-in-body-IMAP-SMTP/                      8                            passed           8
+Type-C-content-with-normal-texts-IMAP-SMTP/            8                            passed           8
+Type-char-Emoji-IMAP-and-SMTP/                         8                            passed           8
+Type-char-Emoji-UTF-8-text-IMAP-and-SMTP/              8                            passed           8
+Type-html-content-IMAP-SMTP/                           8                            passed           8
+Type-HTML-contents-IMAP-and-SMTP/                      8                            passed           8
+Type-HTML-contents-with-mixed-texts-IMAP-and-SMTP/     8                            passed           8
+Type-html-content-with-texts-IMAP-SMTP/                8                            passed           8
+Type-hyperlink-with-mixed-texts-IMAP-and-SMTP/         8                            passed           8
+
+Type-image-alternate-text-IMAP-and-SMTP/               8                            passed           8
+Type-image-Emoji-IMAP-and-SMTP/                        8                            passed           8
+Type-image-Emoji-UTF-8-text-IMAP-and-SMTP/             8                            passed           8
+Type-image-UTF-8-Arabic-messagebody-IMAP-and-SMTP/
+Type-image-UTF-8-Chinese-messagebody-IMAP-and-SMTP/
+Type-image-UTF-8-English-message-body-IMAP-and-SMTP/
+Type-image-UTF-8-Japanese-messagebody-IMAP-and-SMTP/
+Type-image-UTF-8-mixed-texts-messagebody-IMAP-and-SMTP/8                            passed           8
+
+Type-pure-hyperlink-IMAP-and-SMTP/                     8                            passed           8
+Type-pure-image-messagebody-IMAP-and-SMTP/             8                            passed           8
+type-symbols-UTF8-IMAP-and-SMTP/                       8                            passed           8
+Type-virus-code-IMAP-and-SMTP/                         8                            passed           8
+Type-virus-code-with-texts-IMAP-and-SMTP/              8                            passed           8
+
+X-Thread                                               3                            passed           3
+COndstore                                              4                            passed           4
+conversation_body_preview_from_UI                      1                                  
+coverage of firstline data                             2                            passed           2

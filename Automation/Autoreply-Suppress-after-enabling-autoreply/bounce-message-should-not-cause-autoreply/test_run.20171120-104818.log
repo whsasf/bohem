@@ -1,0 +1,143 @@
+	**********  Starting /home/ram/workspace/bohem/Automation/Autoreply-Suppress-after-enabling-autoreply/bounce-message-should-not-cause-autoreply  **********
+Test started: Mon Nov 20 10:48:18 CST 2017
+########## 1 Clear mta.log using expect tool ...
+spawn ssh imail2@10.49.58.118
+Password: 
+Last login: Sun Nov 19 21:45:41 2017 from 10.6.105.135
+[?1034hmx-10-49-58-118:imail2:Mx9.5:~$ > ~/log/mta.log
+mx-10-49-58-118:imail2:Mx9.5:~$ ########## 2 Accounts provision ...
+6000410700056954987
+6765715937437548606
+[32m########## 2 Accont provision successfully, we can continue now[0m
+spawn ssh root@10.49.58.118
+Last login: Sun Nov 19 21:44:14 2017 from 10.6.105.135
+]0;root@mx-10-49-58-118:~[?1034h[root@mx-10-49-58-118 ~]# date +%s
+1511146001
+]0;root@mx-10-49-58-118:~[root@mx-10-49-58-118 ~]# 
+]0;root@mx-10-49-58-118:~[root@mx-10-49-58-118 ~]# ########## 4 Configure user2 and user1 to vacation autoreply mode using expect tool ...
+spawn ssh imail2@10.49.58.118
+Password: 
+Last login: Sun Nov 19 21:45:49 2017 from 10.6.105.135
+[?1034hmx-10-49-58-118:imail2:Mx9.5:~$ echo 'internal:' >data.txt
+mx-10-49-58-118:imail2:Mx9.5:~$ echo 'Reply,This is an autoreply message for internal senders!' >>data.txt
+mx-10-49-58-118:imail2:Mx9.5:~$ echo 'external:' >>data.txt
+mx-10-49-58-118:imail2:Mx9.5:~$ echo 'Reply,This is an external autoreply message for external senders!' >>data.txt
+mx-10-49-58-118:imail2:Mx9.5:~$ autoreplyctrl ar14675@openwave.com reply data.txt 1511146006 1511147801
+AutoReply data updated Successfully.
+mx-10-49-58-118:imail2:Mx9.5:~$ autoreplyctrl ar5543@openwave.com reply data.txt 1511146006 1511147801
+AutoReply data updated Successfully.
+mx-10-49-58-118:imail2:Mx9.5:~$ [32m##########4 Congifuration successfully[0m
+##########5 delieber 1 message from user1 to user2 ...
+[32m########## 5 Message Deliver successfully, we can continue now[0m
+########## 6 Check mta.log using expect tool ...
+spawn ssh imail2@10.49.58.118
+Password: 
+TESTFAILED: /home/ram/workspace/bohem/Automation/Autoreply-Suppress-after-enabling-autoreply/bounce-message-should-not-cause-autoreply: Test didn't report success or failure or skipped (181 sec.)
+FAILED: /home/ram/workspace/bohem/Automation/Autoreply-Suppress-after-enabling-autoreply/bounce-message-should-not-cause-autoreply [20171120-104818] (181 sec.) 210
+Test ended: Mon Nov 20 10:51:18 CST 2017
+
+Last login: Sun Nov 19 21:46:55 2017 from 10.6.105.135
+[?1034hmx-10-49-58-118:imail2:Mx9.5:~$ [32m##########6 Autoreply messaeg undelievered successfully!![0m
+########## 7 check autoreplied message in inbox of user1 ...
+imapmail: host[10.49.58.118] port[20143] user[ar5543] pass[p] folder[inbox] message[2]
+xx OK LOGIN completed
+* 2 EXISTS
+* OK [UNSEEN 1] First unseen message
+* OK [UIDVALIDITY 1511145795] UIDs valid
+* OK [UIDNEXT 1002] Predicted next UID
+* FLAGS (\Answered \Flagged \Deleted \Draft \Seen)
+* OK [PERMANENTFLAGS (\* \Answered \Flagged \Deleted \Draft \Seen)] Permanent flags
+* 0 RECENT
+xx OK [READ-WRITE] SELECT completed
+* 2 FETCH (BODY[] {1144}
+Return-Path: <>
+From: admin
+Subject: ATTENTION: Bounced Message Notification, bytes in the message!!
+Date: Sun, 19 Nov 2017 21:45:35 -0500
+Message-ID: e26e7158-cd9c-11e7-a069-0f9731a428b7
+
+A message was sent to you that was returned to the sender(bounced)
+because it would have caused your mailbox quota to be exceeded.
+
+The following is the reason that the message was over quota:
+
+       Quota Type: bytes in the message
+  Quota Available: 100.0KB
+      Total Quota: 100.0KB
+
+The following is the information on the message that was bounced:
+
+      Sender: Mail Administrator <Postmaster@openwave.com>
+     Subject:  Mail System Error - Returned Mail with Subject: 
+        Size: 1130197
+  Message ID: 3eac0f66-cd9d-11e7-ba3b-733a20a79317
+        Date: Sun Nov 19 21:48:10 2017
+
+    Reply-To:  <Postmaster@openwave.com>
+
+The message was bounced from the following folder:
+
+    INBOX
+
+To fix this problem, delete some messages from your mailbox, and contact
+the sender to resend the message.
+
+If the size of the message is too big, contact the sender to reduce the
+size of the message and resend the message.
+ FLAGS (\Seen))
+xx OK FETCH completed
+* BYE IMAP4 server terminating connection
+xx OK LOGOUT completed
+imapmail: host[10.49.58.118] port[20143] user[ar14675] pass[p] folder[inbox] message[2]
+xx OK LOGIN completed
+* 2 EXISTS
+* OK [UNSEEN 1] First unseen message
+* OK [UIDVALIDITY 1511145796] UIDs valid
+* OK [UIDNEXT 1002] Predicted next UID
+* FLAGS (\Answered \Flagged \Deleted \Draft \Seen)
+* OK [PERMANENTFLAGS (\* \Answered \Flagged \Deleted \Draft \Seen)] Permanent flags
+* 0 RECENT
+xx OK [READ-WRITE] SELECT completed
+* 2 FETCH (BODY[] {1071}
+Return-Path: <>
+From: admin
+Subject: ATTENTION: Bounced Message Notification, bytes in the message!!
+Date: Sun, 19 Nov 2017 21:45:35 -0500
+Message-ID: e26159aa-cd9c-11e7-b640-5ea86f2f7b4d
+
+A message was sent to you that was returned to the sender(bounced)
+because it would have caused your mailbox quota to be exceeded.
+
+The following is the reason that the message was over quota:
+
+       Quota Type: bytes in the message
+  Quota Available: 100.0KB
+      Total Quota: 100.0KB
+
+The following is the information on the message that was bounced:
+
+      Sender: <ar5543@openwave.com>
+     Subject: [No Subject]
+        Size: 1128967
+  Message ID: 3e9d67ae-cd9d-11e7-9939-d1308234c5b1
+        Date: Sun Nov 19 21:48:10 2017
+
+    Reply-To: [No Reply-To]
+
+The message was bounced from the following folder:
+
+    INBOX
+
+To fix this problem, delete some messages from your mailbox, and contact
+the sender to resend the message.
+
+If the size of the message is too big, contact the sender to reduce the
+size of the message and resend the message.
+ FLAGS (\Seen))
+xx OK FETCH completed
+* BYE IMAP4 server terminating connection
+xx OK LOGOUT completed
+[32m##########7 Check autoreplied messaege successfully!![0m
+TESTPASSED: /home/ram/workspace/bohem/Automation/Autoreply-Suppress-after-enabling-autoreply/bounce-message-should-not-cause-autoreply: AutoReply in reply mode with message undelievered between start/stop date for internal sender test success! (212 sec.)
+##########  doing some clear job ...
+[32m##########  Accont deleted successfully[0m

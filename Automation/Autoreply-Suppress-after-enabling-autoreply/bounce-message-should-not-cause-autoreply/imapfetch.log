@@ -1,8 +1,8 @@
-imapmail: host[10.49.58.118] port[20143] user[ar9821] pass[p] folder[inbox] message[2]
+imapmail: host[10.49.58.118] port[20143] user[ar5543] pass[p] folder[inbox] message[2]
 xx OK LOGIN completed
 * 2 EXISTS
 * OK [UNSEEN 1] First unseen message
-* OK [UIDVALIDITY 1510800620] UIDs valid
+* OK [UIDVALIDITY 1511145795] UIDs valid
 * OK [UIDNEXT 1002] Predicted next UID
 * FLAGS (\Answered \Flagged \Deleted \Draft \Seen)
 * OK [PERMANENTFLAGS (\* \Answered \Flagged \Deleted \Draft \Seen)] Permanent flags
@@ -12,8 +12,8 @@ xx OK [READ-WRITE] SELECT completed
 Return-Path: <>
 From: admin
 Subject: ATTENTION: Bounced Message Notification, bytes in the message!!
-Date: Wed, 15 Nov 2017 21:51:44 -0500
-Message-ID: 14a5922c-ca79-11e7-a072-b1fc304ff312
+Date: Sun, 19 Nov 2017 21:45:35 -0500
+Message-ID: e26e7158-cd9c-11e7-a069-0f9731a428b7
 
 A message was sent to you that was returned to the sender(bounced)
 because it would have caused your mailbox quota to be exceeded.
@@ -28,9 +28,9 @@ The following is the information on the message that was bounced:
 
       Sender: Mail Administrator <Postmaster@openwave.com>
      Subject:  Mail System Error - Returned Mail with Subject: 
-        Size: 1130193
-  Message ID: 149dbdd6-ca79-11e7-a25b-f6381fee52a8
-        Date: Wed Nov 15 21:51:44 2017
+        Size: 1130197
+  Message ID: 3eac0f66-cd9d-11e7-ba3b-733a20a79317
+        Date: Sun Nov 19 21:48:10 2017
 
     Reply-To:  <Postmaster@openwave.com>
 
@@ -47,11 +47,11 @@ size of the message and resend the message.
 xx OK FETCH completed
 * BYE IMAP4 server terminating connection
 xx OK LOGOUT completed
-imapmail: host[10.49.58.118] port[20143] user[ar13211] pass[p] folder[inbox] message[2]
+imapmail: host[10.49.58.118] port[20143] user[ar14675] pass[p] folder[inbox] message[2]
 xx OK LOGIN completed
 * 2 EXISTS
 * OK [UNSEEN 1] First unseen message
-* OK [UIDVALIDITY 1510800620] UIDs valid
+* OK [UIDVALIDITY 1511145796] UIDs valid
 * OK [UIDNEXT 1002] Predicted next UID
 * FLAGS (\Answered \Flagged \Deleted \Draft \Seen)
 * OK [PERMANENTFLAGS (\* \Answered \Flagged \Deleted \Draft \Seen)] Permanent flags
@@ -61,8 +61,8 @@ xx OK [READ-WRITE] SELECT completed
 Return-Path: <>
 From: admin
 Subject: ATTENTION: Bounced Message Notification, bytes in the message!!
-Date: Wed, 15 Nov 2017 21:51:44 -0500
-Message-ID: 149a4106-ca79-11e7-add1-fa6fbe272db1
+Date: Sun, 19 Nov 2017 21:45:35 -0500
+Message-ID: e26159aa-cd9c-11e7-b640-5ea86f2f7b4d
 
 A message was sent to you that was returned to the sender(bounced)
 because it would have caused your mailbox quota to be exceeded.
@@ -75,11 +75,11 @@ The following is the reason that the message was over quota:
 
 The following is the information on the message that was bounced:
 
-      Sender: <ar9821@openwave.com>
+      Sender: <ar5543@openwave.com>
      Subject: [No Subject]
-        Size: 1128964
-  Message ID: 1493e248-ca79-11e7-b190-7ac78f9659f4
-        Date: Wed Nov 15 21:51:44 2017
+        Size: 1128967
+  Message ID: 3e9d67ae-cd9d-11e7-9939-d1308234c5b1
+        Date: Sun Nov 19 21:48:10 2017
 
     Reply-To: [No Reply-To]
 

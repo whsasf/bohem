@@ -1,0 +1,64 @@
+	**********  Starting /home/ram/workspace/bohem/Automation/Autoreply-and-account-status/accountstatus=deleted  **********
+Test started: Mon Nov 20 10:57:44 CST 2017
+########## 1 Clear mta.log using expect tool ...
+spawn ssh imail2@10.49.58.118
+Password: 
+Last login: Sun Nov 19 21:55:06 2017 from 10.6.105.135
+[?1034hmx-10-49-58-118:imail2:Mx9.5:~$ > ~/log/mta.log
+mx-10-49-58-118:imail2:Mx9.5:~$ ########## 2 Accounts provision ...
+8900626987677557409
+5028384753894571429
+[32m########## 2 Accont provision successfully, we can continue now[0m
+spawn ssh root@10.49.58.118
+Last login: Sun Nov 19 21:53:30 2017 from 10.6.105.135
+]0;root@mx-10-49-58-118:~[?1034h[root@mx-10-49-58-118 ~]# date +%s
+1511146568
+]0;root@mx-10-49-58-118:~[root@mx-10-49-58-118 ~]# 
+]0;root@mx-10-49-58-118:~[root@mx-10-49-58-118 ~]# ########## 4 Configure user2 to vacation autoreply mode using expect tool ...
+spawn ssh imail2@10.49.58.118
+Password: 
+Last login: Sun Nov 19 21:55:15 2017 from 10.6.105.135
+[?1034hmx-10-49-58-118:imail2:Mx9.5:~$ echo 'internal:' >data.txt
+mx-10-49-58-118:imail2:Mx9.5:~$ echo 'Reply,This is an autoreply message for internal senders!' >>data.txt
+mx-10-49-58-118:imail2:Mx9.5:~$ echo 'external:' >>data.txt
+mx-10-49-58-118:imail2:Mx9.5:~$ echo 'Reply,This is an external autoreply message for external senders!' >>data.txt
+mx-10-49-58-118:imail2:Mx9.5:~$ autoreplyctrl ar1876@openwave.com reply data.txt 1511146573 1511148368
+AutoReply data updated Successfully.
+mx-10-49-58-118:imail2:Mx9.5:~$ [32m##########4 Congifuration successfully[0m
+spawn ssh imail2@10.49.58.118
+Password: 
+Last login: Sun Nov 19 21:56:17 2017 from 10.6.105.135
+[?1034hmx-10-49-58-118:imail2:Mx9.5:~$ imdbcontrol sas ar1876 openwave.com D
+mx-10-49-58-118:imail2:Mx9.5:~$ imdbcontrol gaf ar1876 openwave.com |grep Status
+                          [01;31m[KStatus[m[K:	D
+mx-10-49-58-118:imail2:Mx9.5:~$ ##########5 delieber 1 message from user1 to user2 ...
+########## 6 Check mta.log using expect tool ...
+spawn ssh imail2@10.49.58.118
+Password: 
+Last login: Sun Nov 19 21:56:25 2017 from 10.6.105.135
+[?1034hmx-10-49-58-118:imail2:Mx9.5:~$ cat log/mta.log
+20171119 215629747-0500 mx-10-49-58-118 mta 23469 24055 140450945406720 Note;SmtpConnectionReceived(70/1) [10.6.105.135]:fromhost=10.6.105.135:fromport=51946:localAddr=10.49.58.118:sid=C329B23B-D93A3E98-00000040.0
+20171119 215630561-0500 mx-10-49-58-118 mta 23469 24055 140450945406720 Warn;AcctInactive(50/5) user=ar1876@openwave.com:from=<ar22174>:fromhost=10.6.105.135:fromport=51946:localAddr=10.49.58.118:sid=C329B23B-D93A3E98-00000040.1
+20171119 215631080-0500 mx-10-49-58-118 mta 23469 24055 140450945406720 Note;SmtpConnectionClosedAbnormally(70/76) [10.6.105.135]:2:0:55:from=<ar22174>:fromhost=10.6.105.135:fromport=51946:localAddr=10.49.58.118:sid=C329B23B-D93A3E98-00000040.1
+mx-10-49-58-118:imail2:Mx9.5:~$ [32m##########6 Autoreply messaeg undelievered successfully!![0m
+########## 7 check autoreplied message in inbox of user1 ...
+imapmail: host[10.49.58.118] port[20143] user[ar22174] pass[p] folder[inbox] message[2]
+xx OK LOGIN completed
+* 1 EXISTS
+* OK [UNSEEN 1] First unseen message
+* OK [UIDVALIDITY 1511146362] UIDs valid
+* OK [UIDNEXT 1001] Predicted next UID
+* FLAGS (\Answered \Flagged \Deleted \Draft \Seen)
+* OK [PERMANENTFLAGS (\* \Answered \Flagged \Deleted \Draft \Seen)] Permanent flags
+* 0 RECENT
+xx OK [READ-WRITE] SELECT completed
+xx NO FETCH failed
+Didn't get OK for FETCH
+Not Connected...
+[32m##########7 Check autoreplied messaege successfully!![0m
+TESTPASSED: /home/ram/workspace/bohem/Automation/Autoreply-and-account-status/accountstatus=deleted: AutoReply in reply mode with message undelievered between start/stop date for internal sender test success! (85 sec.)
+##########  doing some clear job ...
+[32m##########  Accont deleted successfully[0m
+PASSED: /home/ram/workspace/bohem/Automation/Autoreply-and-account-status/accountstatus=deleted [20171120-105744] (89 sec.) 223
+Test ended: Mon Nov 20 10:59:13 CST 2017
+

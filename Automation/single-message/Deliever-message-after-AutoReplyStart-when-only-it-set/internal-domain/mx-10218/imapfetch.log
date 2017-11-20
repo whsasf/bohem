@@ -1,0 +1,30 @@
+imapmail: host[10.49.58.118] port[20143] user[ar8254] pass[p] folder[inbox] message[2]
+xx OK LOGIN completed
+* 2 EXISTS
+* OK [UNSEEN 1] First unseen message
+* OK [UIDVALIDITY 1511140818] UIDs valid
+* OK [UIDNEXT 1002] Predicted next UID
+* FLAGS (\Answered \Flagged \Deleted \Draft \Seen)
+* OK [PERMANENTFLAGS (\* \Answered \Flagged \Deleted \Draft \Seen)] Permanent flags
+* 1 RECENT
+xx OK [READ-WRITE] SELECT completed
+* 2 FETCH (BODY[] {536}
+Return-Path: <>
+Subject: Re: test message about autoreply feature
+To: ar8254@openwave.com
+From: "Auto-reply from ar7008@openwave.com" <ar7008@openwave.com>
+In-Reply-To: <20171120012132.AAA9699.mx-10-49-58-118.openwave.com@ar8254>
+Precedence: bulk
+Date: Sun, 19 Nov 2017 20:21:33 -0500
+Message-ID: <20171120012133.AAB9699.mx-10-49-58-118.openwave.com@mx-10-49-58-118>
+MIME-Version: 1.0
+Content-Type: text/plain;
+		charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+
+Vacation,This is an autoreply message for internal senders!
+ FLAGS (\Recent \Seen))
+xx OK FETCH completed
+* BYE IMAP4 server terminating connection
+xx OK LOGOUT completed

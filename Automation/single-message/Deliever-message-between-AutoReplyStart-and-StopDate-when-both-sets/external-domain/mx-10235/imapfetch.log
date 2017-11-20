@@ -1,22 +1,22 @@
-imapmail: host[10.49.58.118] port[20143] user[ar28884] pass[p] folder[inbox] message[2]
+imapmail: host[10.49.58.118] port[20143] user[ar2094] pass[p] folder[inbox] message[2]
 xx OK LOGIN completed
 * 2 EXISTS
 * OK [UNSEEN 1] First unseen message
-* OK [UIDVALIDITY 1510808891] UIDs valid
+* OK [UIDVALIDITY 1511138049] UIDs valid
 * OK [UIDNEXT 1002] Predicted next UID
 * FLAGS (\Answered \Flagged \Deleted \Draft \Seen)
 * OK [PERMANENTFLAGS (\* \Answered \Flagged \Deleted \Draft \Seen)] Permanent flags
 * 1 RECENT
 xx OK [READ-WRITE] SELECT completed
-* 2 FETCH (BODY[] {548}
+* 2 FETCH (BODY[] {551}
 Return-Path: <>
 Subject: Re: test message about autoreply feature
-To: ar28884@whsasf.com
-From: "Auto-reply from ar247@openwave.com" <ar247@openwave.com>
-In-Reply-To: <20171116051151.AAX10719.mx-10-49-58-118.openwave.com@whsasf.com>
+To: ar2094@whsasf.com
+From: "Auto-reply from ar16595@openwave.com" <ar16595@openwave.com>
+In-Reply-To: <20171120003529.AAJ30988.mx-10-49-58-118.openwave.com@whsasf.com>
 Precedence: bulk
-Date: Thu, 16 Nov 2017 00:11:52 -0500
-Message-ID: <20171116051152.AAY10719.mx-10-49-58-118.openwave.com@mx-10-49-58-118>
+Date: Sun, 19 Nov 2017 19:35:30 -0500
+Message-ID: <20171120003530.AAK30988.mx-10-49-58-118.openwave.com@mx-10-49-58-118>
 MIME-Version: 1.0
 Content-Type: text/plain;
 		charset=UTF-8

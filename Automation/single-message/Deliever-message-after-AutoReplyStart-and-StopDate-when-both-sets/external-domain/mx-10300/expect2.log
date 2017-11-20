@@ -1,10 +1,10 @@
 spawn ssh imail2@10.49.58.118
 Password: 
-Last login: Thu Nov 16 00:33:56 2017 from bigchina
+Last login: Sun Nov 19 19:55:41 2017 from 10.6.105.135
 [?1034hmx-10-49-58-118:imail2:Mx9.5:~$ echo 'internal:' >data.txt
 mx-10-49-58-118:imail2:Mx9.5:~$ echo 'Reply,This is an autoreply message for internal senders!' >>data.txt
 mx-10-49-58-118:imail2:Mx9.5:~$ echo 'external:' >>data.txt
 mx-10-49-58-118:imail2:Mx9.5:~$ echo 'Reply,This is an external autoreply message for external senders!' >>data.txt
-mx-10-49-58-118:imail2:Mx9.5:~$ autoreplyctrl ar5246@openwave.com reply data.txt 1510810493 1510810498
+mx-10-49-58-118:imail2:Mx9.5:~$ autoreplyctrl ar31648@openwave.com reply data.txt 1511139399 1511139404
 AutoReply data updated Successfully.
 mx-10-49-58-118:imail2:Mx9.5:~$ 
