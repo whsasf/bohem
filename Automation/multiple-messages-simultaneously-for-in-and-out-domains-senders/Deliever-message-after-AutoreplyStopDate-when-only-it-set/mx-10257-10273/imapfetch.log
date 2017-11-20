@@ -1,8 +1,16 @@
+<<<<<<< HEAD
 imapmail: host[10.49.58.118] port[20143] user[ar26216] pass[p] folder[inbox] message[2]
 xx OK LOGIN completed
 * 1 EXISTS
 * OK [UNSEEN 1] First unseen message
 * OK [UIDVALIDITY 1511143736] UIDs valid
+=======
+imapmail: host[10.49.58.118] port[20143] user[ar4506] pass[p] folder[inbox] message[2]
+xx OK LOGIN completed
+* 1 EXISTS
+* OK [UNSEEN 1] First unseen message
+* OK [UIDVALIDITY 1510974660] UIDs valid
+>>>>>>> 4cd6d4568dd2058de905f55c2a9f454b8d84212b
 * OK [UIDNEXT 1001] Predicted next UID
 * FLAGS (\Answered \Flagged \Deleted \Draft \Seen)
 * OK [PERMANENTFLAGS (\* \Answered \Flagged \Deleted \Draft \Seen)] Permanent flags
@@ -11,11 +19,19 @@ xx OK [READ-WRITE] SELECT completed
 xx NO FETCH failed
 Didn't get OK for FETCH
 Not Connected...
+<<<<<<< HEAD
 imapmail: host[10.49.58.118] port[20143] user[ar1856] pass[p] folder[inbox] message[2]
 xx OK LOGIN completed
 * 1 EXISTS
 * OK [UNSEEN 1] First unseen message
 * OK [UIDVALIDITY 1511143736] UIDs valid
+=======
+imapmail: host[10.49.58.118] port[20143] user[ar24639] pass[p] folder[inbox] message[2]
+xx OK LOGIN completed
+* 1 EXISTS
+* OK [UNSEEN 1] First unseen message
+* OK [UIDVALIDITY 1510974812] UIDs valid
+>>>>>>> 4cd6d4568dd2058de905f55c2a9f454b8d84212b
 * OK [UIDNEXT 1001] Predicted next UID
 * FLAGS (\Answered \Flagged \Deleted \Draft \Seen)
 * OK [PERMANENTFLAGS (\* \Answered \Flagged \Deleted \Draft \Seen)] Permanent flags
@@ -24,11 +40,19 @@ xx OK [READ-WRITE] SELECT completed
 xx NO FETCH failed
 Didn't get OK for FETCH
 Not Connected...
+<<<<<<< HEAD
 imapmail: host[10.49.58.118] port[20143] user[ar2531] pass[p] folder[inbox] message[2]
 xx OK LOGIN completed
 * 1 EXISTS
 * OK [UNSEEN 1] First unseen message
 * OK [UIDVALIDITY 1511143738] UIDs valid
+=======
+imapmail: host[10.49.58.118] port[20143] user[ar20464] pass[p] folder[inbox] message[2]
+xx OK LOGIN completed
+* 1 EXISTS
+* OK [UNSEEN 1] First unseen message
+* OK [UIDVALIDITY 1510974813] UIDs valid
+>>>>>>> 4cd6d4568dd2058de905f55c2a9f454b8d84212b
 * OK [UIDNEXT 1001] Predicted next UID
 * FLAGS (\Answered \Flagged \Deleted \Draft \Seen)
 * OK [PERMANENTFLAGS (\* \Answered \Flagged \Deleted \Draft \Seen)] Permanent flags
@@ -37,11 +61,19 @@ xx OK [READ-WRITE] SELECT completed
 xx NO FETCH failed
 Didn't get OK for FETCH
 Not Connected...
+<<<<<<< HEAD
 imapmail: host[10.49.58.118] port[20143] user[ar28308] pass[p] folder[inbox] message[2]
 xx OK LOGIN completed
 * 1 EXISTS
 * OK [UNSEEN 1] First unseen message
 * OK [UIDVALIDITY 1511143738] UIDs valid
+=======
+imapmail: host[10.49.58.118] port[20143] user[ar1400] pass[p] folder[inbox] message[2]
+xx OK LOGIN completed
+* 1 EXISTS
+* OK [UNSEEN 1] First unseen message
+* OK [UIDVALIDITY 1510974814] UIDs valid
+>>>>>>> 4cd6d4568dd2058de905f55c2a9f454b8d84212b
 * OK [UIDNEXT 1001] Predicted next UID
 * FLAGS (\Answered \Flagged \Deleted \Draft \Seen)
 * OK [PERMANENTFLAGS (\* \Answered \Flagged \Deleted \Draft \Seen)] Permanent flags

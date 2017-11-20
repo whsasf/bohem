@@ -1,5 +1,6 @@
 spawn ssh imail2@10.49.58.118
 Password: 
+<<<<<<< HEAD
 Last login: Sun Nov 19 21:43:30 2017 from 10.6.105.135
 [?1034hmx-10-49-58-118:imail2:Mx9.5:~$ cat log/mta.log
 20171119 214334406-0500 mx-10-49-58-118 mta 23469 24057 140450945140480 Note;SmtpConnectionReceived(70/1) [10.6.105.135]:fromhost=10.6.105.135:fromport=51716:localAddr=10.49.58.118:sid=C329B23B-D93A3E98-00000034.0
@@ -10,4 +11,17 @@ Last login: Sun Nov 19 21:43:30 2017 from 10.6.105.135
 20171119 214334680-0500 mx-10-49-58-118 mta 23469 24073 140450942478080 Note;MsgTrace(65/26) docid will be used for message-id:user=ar9431@openwave.com:from=<owner-x@openwave.com>:msgid=<20171120024334.ABP23469.mx-10-49-58-118.openwave.com@[10.6.105.135]>:size=496:fromhost=10.6.105.135:fromport=51716:localAddr=[10.49.58.118]:sid=C329B23B-D93A3E98-00000034.1
 20171119 214334720-0500 mx-10-49-58-118 mta 23469 24900 140450940880640 Note;MsgTrace(65/26) delivered:user=ar9431@openwave.com:mbox=5737648134220388878:mss=mx-10-49-58-118:from=<owner-x@openwave.com>:msgid=<20171120024334.ABP23469.mx-10-49-58-118.openwave.com@[10.6.105.135]>:size=533:port=55014:fromhost=10.6.105.135:fromport=51716:localAddr=[10.49.58.118]:sid=C329B23B-D93A3E98-00000034.1:docid=9a6215f4-cd9c-11e7-b2b2-1638ce41a693:node=mx-10-49-58-118:nodePort=55014
 20171119 214334720-0500 mx-10-49-58-118 mta 23469 24900 140450940880640 Note;MtaAutoReplySuppressedSender(79/58) user=ar9431@openwave.com:mbox=5737648134220388878:mss=mx-10-49-58-118:from=<owner-x@openwave.com>:msgid=<20171120024334.ABP23469.mx-10-49-58-118.openwave.com@[10.6.105.135]>:size=496:port=55014:fromhost=10.6.105.135:fromport=51716:localAddr=[10.49.58.118]:sid=C329B23B-D93A3E98-00000034.1:node=mx-10-49-58-118:nodePort=55014
+=======
+Last login: Fri Nov 17 23:09:49 2017 from 10.6.105.91
+[?1034hmx-10-49-58-118:imail2:Mx9.5:~$ cat log/mta.log
+20171117 230940908-0500 mx-10-49-58-118 mta 28284 28370 140306436683520 Note;MtaQueueDirRemoved(79/54) /opt/imail2/spool/deferred/MTA
+20171117 230953925-0500 mx-10-49-58-118 mta 28284 29538 140306435352320 Note;SmtpConnectionReceived(70/1) [10.6.105.91]:fromhost=10.6.105.91:fromport=59100:localAddr=10.49.58.118:sid=EF5D77B7-75D8442B-0000002E.0
+20171117 230953925-0500 mx-10-49-58-118 mta 28284 29538 140306435352320 Warn;SmtpAddressFixed(70/13) [10.6.105.91]:mail from\3aowner-x:<owner-x>:fromhost=10.6.105.91:fromport=59100:localAddr=10.49.58.118:sid=EF5D77B7-75D8442B-0000002E.1
+20171117 230954182-0500 mx-10-49-58-118 mta 28284 29538 140306435352320 Warn;SmtpAddressFixed(70/13) [10.6.105.91]:rcpt to\3aar12298:<ar12298>:from=<owner-x>:fromhost=10.6.105.91:fromport=59100:localAddr=10.49.58.118:sid=EF5D77B7-75D8442B-0000002E.1
+20171117 230954198-0500 mx-10-49-58-118 mta 28284 29544 140306434819840 Note;MsgTrace(65/26) docid will be used for message-id:user=ar12298@openwave.com:from=<owner-x@openwave.com>:msgid=<20171118040954.ABI28284.mx-10-49-58-118.openwave.com@[10.6.105.91]>:size=495:fromhost=10.6.105.91:fromport=59100:localAddr=[10.49.58.118]:sid=EF5D77B7-75D8442B-0000002E.1
+20171117 230954199-0500 mx-10-49-58-118 mta 28284 29538 140306435352320 Note;MsgTrace(65/26) received from internet:from=<owner-x>:msgid=<20171118040954.ABI28284.mx-10-49-58-118.openwave.com@[10.6.105.91]>:fromhost=[10.6.105.91]:fromport=59100:localAddr=10.49.58.118:sid=EF5D77B7-75D8442B-0000002E.1:msgsize=383:time=1:sender=<owner-x>:rcpts=<ar12298@openwave.com>:protocol=SMTP:encoding=plaintext:auth=
+20171117 230954199-0500 mx-10-49-58-118 mta 28284 29538 140306435352320 Note;SmtpConnectionClosed(70/2) [10.6.105.91]:1:1:120:fromhost=[10.6.105.91]:fromport=59100:localAddr=10.49.58.118:sid=EF5D77B7-75D8442B-0000002E.1
+20171117 230954242-0500 mx-10-49-58-118 mta 28284 29550 140306433222400 Note;MsgTrace(65/26) delivered:user=ar12298@openwave.com:mbox=5890676165923781404:mss=mx-10-49-58-119:from=<owner-x@openwave.com>:msgid=<20171118040954.ABI28284.mx-10-49-58-118.openwave.com@[10.6.105.91]>:size=532:port=55014:fromhost=10.6.105.91:fromport=59100:localAddr=[10.49.58.118]:sid=EF5D77B7-75D8442B-0000002E.1:docid=54ca56dc-cc16-11e7-9694-92b3235b1f64:node=mx-10-49-58-119:nodePort=55014
+20171117 230954242-0500 mx-10-49-58-118 mta 28284 29550 140306433222400 Note;MtaAutoReplySuppressedSender(79/58) user=ar12298@openwave.com:mbox=5890676165923781404:mss=mx-10-49-58-119:from=<owner-x@openwave.com>:msgid=<20171118040954.ABI28284.mx-10-49-58-118.openwave.com@[10.6.105.91]>:size=495:port=55014:fromhost=10.6.105.91:fromport=59100:localAddr=[10.49.58.118]:sid=EF5D77B7-75D8442B-0000002E.1:node=mx-10-49-58-119:nodePort=55014
+>>>>>>> 4cd6d4568dd2058de905f55c2a9f454b8d84212b
 mx-10-49-58-118:imail2:Mx9.5:~$ 

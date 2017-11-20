@@ -1,7 +1,13 @@
 spawn ssh imail2@10.49.58.118
 Password: 
+<<<<<<< HEAD
 Last login: Sun Nov 19 21:56:17 2017 from 10.6.105.135
 [?1034hmx-10-49-58-118:imail2:Mx9.5:~$ imdbcontrol sas ar1876 openwave.com D
 mx-10-49-58-118:imail2:Mx9.5:~$ imdbcontrol gaf ar1876 openwave.com |grep Status
+=======
+Last login: Fri Nov 17 23:23:29 2017 from 10.6.105.91
+[?1034hmx-10-49-58-118:imail2:Mx9.5:~$ imdbcontrol sas ar31896 openwave.com D
+mx-10-49-58-118:imail2:Mx9.5:~$ imdbcontrol gaf ar31896 openwave.com |grep Status
+>>>>>>> 4cd6d4568dd2058de905f55c2a9f454b8d84212b
                           [01;31m[KStatus[m[K:	D
 mx-10-49-58-118:imail2:Mx9.5:~$ 

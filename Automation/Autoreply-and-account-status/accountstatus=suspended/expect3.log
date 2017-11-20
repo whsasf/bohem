@@ -1,8 +1,16 @@
 spawn ssh imail2@10.49.58.118
 Password: 
+<<<<<<< HEAD
 Last login: Sun Nov 19 21:54:57 2017 from 10.6.105.135
 [?1034hmx-10-49-58-118:imail2:Mx9.5:~$ cat log/mta.log
 20171119 215500894-0500 mx-10-49-58-118 mta 23469 24054 140450962241280 Note;SmtpConnectionReceived(70/1) [10.6.105.135]:fromhost=10.6.105.135:fromport=51910:localAddr=10.49.58.118:sid=C329B23B-D93A3E98-0000003E.0
 20171119 215501701-0500 mx-10-49-58-118 mta 23469 24054 140450962241280 Warn;AcctInactive(50/5) user=ar24702@openwave.com:from=<ar9920>:fromhost=10.6.105.135:fromport=51910:localAddr=10.49.58.118:sid=C329B23B-D93A3E98-0000003E.1
 20171119 215502217-0500 mx-10-49-58-118 mta 23469 24054 140450962241280 Note;SmtpConnectionClosedAbnormally(70/76) [10.6.105.135]:2:0:54:from=<ar9920>:fromhost=10.6.105.135:fromport=51910:localAddr=10.49.58.118:sid=C329B23B-D93A3E98-0000003E.1
+=======
+Last login: Fri Nov 17 23:21:28 2017 from 10.6.105.91
+[?1034hmx-10-49-58-118:imail2:Mx9.5:~$ cat log/mta.log
+20171117 232131747-0500 mx-10-49-58-118 mta 28284 29540 140306435086080 Note;SmtpConnectionReceived(70/1) [10.6.105.91]:fromhost=10.6.105.91:fromport=59236:localAddr=10.49.58.118:sid=EF5D77B7-75D8442B-00000038.0
+20171117 232132841-0500 mx-10-49-58-118 mta 28284 29540 140306435086080 Warn;AcctInactive(50/5) user=ar10630@openwave.com:from=<ar32364>:fromhost=10.6.105.91:fromport=59236:localAddr=10.49.58.118:sid=EF5D77B7-75D8442B-00000038.1
+20171117 232133516-0500 mx-10-49-58-118 mta 28284 29540 140306435086080 Note;SmtpConnectionClosedAbnormally(70/76) [10.6.105.91]:2:0:56:from=<ar32364>:fromhost=10.6.105.91:fromport=59236:localAddr=10.49.58.118:sid=EF5D77B7-75D8442B-00000038.1
+>>>>>>> 4cd6d4568dd2058de905f55c2a9f454b8d84212b
 mx-10-49-58-118:imail2:Mx9.5:~$ 

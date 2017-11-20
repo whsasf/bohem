@@ -1,8 +1,16 @@
+<<<<<<< HEAD
 imapmail: host[10.49.58.118] port[20143] user[ar5543] pass[p] folder[inbox] message[2]
 xx OK LOGIN completed
 * 2 EXISTS
 * OK [UNSEEN 1] First unseen message
 * OK [UIDVALIDITY 1511145795] UIDs valid
+=======
+imapmail: host[10.49.58.118] port[20143] user[ar24709] pass[p] folder[inbox] message[2]
+xx OK LOGIN completed
+* 2 EXISTS
+* OK [UNSEEN 1] First unseen message
+* OK [UIDVALIDITY 1510978314] UIDs valid
+>>>>>>> 4cd6d4568dd2058de905f55c2a9f454b8d84212b
 * OK [UIDNEXT 1002] Predicted next UID
 * FLAGS (\Answered \Flagged \Deleted \Draft \Seen)
 * OK [PERMANENTFLAGS (\* \Answered \Flagged \Deleted \Draft \Seen)] Permanent flags
@@ -12,8 +20,13 @@ xx OK [READ-WRITE] SELECT completed
 Return-Path: <>
 From: admin
 Subject: ATTENTION: Bounced Message Notification, bytes in the message!!
+<<<<<<< HEAD
 Date: Sun, 19 Nov 2017 21:45:35 -0500
 Message-ID: e26e7158-cd9c-11e7-a069-0f9731a428b7
+=======
+Date: Fri, 17 Nov 2017 23:13:23 -0500
+Message-ID: d14bfb0c-cc16-11e7-902d-15da393edb00
+>>>>>>> 4cd6d4568dd2058de905f55c2a9f454b8d84212b
 
 A message was sent to you that was returned to the sender(bounced)
 because it would have caused your mailbox quota to be exceeded.
@@ -28,9 +41,15 @@ The following is the information on the message that was bounced:
 
       Sender: Mail Administrator <Postmaster@openwave.com>
      Subject:  Mail System Error - Returned Mail with Subject: 
+<<<<<<< HEAD
         Size: 1130197
   Message ID: 3eac0f66-cd9d-11e7-ba3b-733a20a79317
         Date: Sun Nov 19 21:48:10 2017
+=======
+        Size: 1130195
+  Message ID: d145e79e-cc16-11e7-8316-7a48171b502d
+        Date: Fri Nov 17 23:13:23 2017
+>>>>>>> 4cd6d4568dd2058de905f55c2a9f454b8d84212b
 
     Reply-To:  <Postmaster@openwave.com>
 
@@ -47,22 +66,35 @@ size of the message and resend the message.
 xx OK FETCH completed
 * BYE IMAP4 server terminating connection
 xx OK LOGOUT completed
+<<<<<<< HEAD
 imapmail: host[10.49.58.118] port[20143] user[ar14675] pass[p] folder[inbox] message[2]
 xx OK LOGIN completed
 * 2 EXISTS
 * OK [UNSEEN 1] First unseen message
 * OK [UIDVALIDITY 1511145796] UIDs valid
+=======
+imapmail: host[10.49.58.118] port[20143] user[ar22244] pass[p] folder[inbox] message[2]
+xx OK LOGIN completed
+* 2 EXISTS
+* OK [UNSEEN 1] First unseen message
+* OK [UIDVALIDITY 1510978314] UIDs valid
+>>>>>>> 4cd6d4568dd2058de905f55c2a9f454b8d84212b
 * OK [UIDNEXT 1002] Predicted next UID
 * FLAGS (\Answered \Flagged \Deleted \Draft \Seen)
 * OK [PERMANENTFLAGS (\* \Answered \Flagged \Deleted \Draft \Seen)] Permanent flags
 * 0 RECENT
 xx OK [READ-WRITE] SELECT completed
-* 2 FETCH (BODY[] {1071}
+* 2 FETCH (BODY[] {1072}
 Return-Path: <>
 From: admin
 Subject: ATTENTION: Bounced Message Notification, bytes in the message!!
+<<<<<<< HEAD
 Date: Sun, 19 Nov 2017 21:45:35 -0500
 Message-ID: e26159aa-cd9c-11e7-b640-5ea86f2f7b4d
+=======
+Date: Fri, 17 Nov 2017 23:13:23 -0500
+Message-ID: d1414a9a-cc16-11e7-a297-28f634e7b3cd
+>>>>>>> 4cd6d4568dd2058de905f55c2a9f454b8d84212b
 
 A message was sent to you that was returned to the sender(bounced)
 because it would have caused your mailbox quota to be exceeded.
@@ -75,11 +107,19 @@ The following is the reason that the message was over quota:
 
 The following is the information on the message that was bounced:
 
+<<<<<<< HEAD
       Sender: <ar5543@openwave.com>
      Subject: [No Subject]
         Size: 1128967
   Message ID: 3e9d67ae-cd9d-11e7-9939-d1308234c5b1
         Date: Sun Nov 19 21:48:10 2017
+=======
+      Sender: <ar24709@openwave.com>
+     Subject: [No Subject]
+        Size: 1128966
+  Message ID: d13b6c74-cc16-11e7-9a7f-2270a753bed8
+        Date: Fri Nov 17 23:13:22 2017
+>>>>>>> 4cd6d4568dd2058de905f55c2a9f454b8d84212b
 
     Reply-To: [No Reply-To]
 

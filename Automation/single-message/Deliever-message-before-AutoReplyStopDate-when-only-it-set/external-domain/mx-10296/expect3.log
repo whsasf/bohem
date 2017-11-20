@@ -1,5 +1,6 @@
 spawn ssh imail2@10.49.58.118
 Password: 
+<<<<<<< HEAD
 Last login: Sun Nov 19 20:43:29 2017 from 10.6.105.135
 [?1034hmx-10-49-58-118:imail2:Mx9.5:~$ cat log/mta.log
 20171119 204149766-0500 mx-10-49-58-118 mta 14943 15025 139682724751104 Warn;MtaDomainTableLoadFailed(79/44)
@@ -13,4 +14,16 @@ Last login: Sun Nov 19 20:43:29 2017 from 10.6.105.135
 20171119 204334793-0500 mx-10-49-58-118 mta 14943 15462 139682707916544 Note;MsgTrace(65/26) docid will be used for message-id:user=ar4134@whsasf.com:from=<>:msgid=<20171120014334.AAB14943.mx-10-49-58-118.openwave.com@mx-10-49-58-118>:size=461:sid=0F5EE900-A7B6B682-00000002.1
 20171119 204334845-0500 mx-10-49-58-118 mta 14943 15468 139682706585344 Note;MsgTrace(65/26) delivered:user=ar4134@whsasf.com:mbox=8857077909340825042:mss=mx-10-49-58-118:from=<>:msgid=<20171120014334.AAB14943.mx-10-49-58-118.openwave.com@mx-10-49-58-118>:size=548:port=55014:sid=0F5EE900-A7B6B682-00000002.1:docid=38ab5116-cd94-11e7-87ac-7d0284387cbe:node=mx-10-49-58-118:nodePort=55014
 20171119 204334968-0500 mx-10-49-58-118 mta 14943 15454 139682724751104 Note;SmtpConnectionClosed(70/2) [10.6.105.135]:1:1:194:fromhost=[10.6.105.135]:fromport=46490:localAddr=10.49.58.118:sid=0F5EE900-A7B6B682-00000002.1
+=======
+Last login: Fri Nov 17 09:56:50 2017 from 10.6.104.124
+[?1034hmx-10-49-58-118:imail2:Mx9.5:~$ cat log/mta.log
+20171117 095655413-0500 mx-10-49-58-118 mta 28858 29905 140621407901440 Note;SmtpConnectionReceived(70/1) [10.6.104.124]:fromhost=10.6.104.124:fromport=42100:localAddr=10.49.58.118:sid=318A22DD-ED81B728-0000001A.0
+20171117 095657422-0500 mx-10-49-58-118 mta 28858 29905 140621407901440 Note;MsgTrace(65/26) received from internet:from=<ar13567@whsasf.com>:msgid=<20171117145656.ABA28858.mx-10-49-58-118.openwave.com@whsasf.com>:fromhost=[10.6.104.124]:fromport=42100:localAddr=10.49.58.118:sid=318A22DD-ED81B728-0000001A.1:msgsize=437:time=1:sender=<ar13567@whsasf.com>:rcpts=<ar477@openwave.com>:protocol=ESMTP:encoding=plaintext:auth=
+20171117 095657422-0500 mx-10-49-58-118 mta 28858 30857 140621406037760 Note;MsgTrace(65/26) docid will be used for message-id:user=ar477@openwave.com:from=<ar13567@whsasf.com>:msgid=<20171117145656.ABA28858.mx-10-49-58-118.openwave.com@whsasf.com>:size=544:fromhost=10.6.104.124:fromport=42100:localAddr=[10.49.58.118]:sid=318A22DD-ED81B728-0000001A.1
+20171117 095657472-0500 mx-10-49-58-118 mta 28858 30734 140621406304000 Note;MsgTrace(65/26) delivered:user=ar477@openwave.com:mbox=7853883150616169441:mss=mx-10-49-58-118:from=<ar13567@whsasf.com>:msgid=<20171117145656.ABA28858.mx-10-49-58-118.openwave.com@whsasf.com>:size=579:port=55014:fromhost=10.6.104.124:fromport=42100:localAddr=[10.49.58.118]:sid=318A22DD-ED81B728-0000001A.1:docid=8ed25e0c-cba7-11e7-9f8d-80eb726facf1:node=mx-10-49-58-118:nodePort=55014
+20171117 095657475-0500 mx-10-49-58-118 mta 28858 30734 140621406304000 Note;MsgTrace(65/26) autoreplied:user=ar477@openwave.com:mbox=7853883150616169441:mss=mx-10-49-58-118:from=<ar13567@whsasf.com>:msgid=<20171117145656.ABA28858.mx-10-49-58-118.openwave.com@whsasf.com>:size=544:port=55014:fromhost=10.6.104.124:fromport=42100:localAddr=[10.49.58.118]:sid=318A22DD-ED81B728-0000001A.1:node=mx-10-49-58-118:nodePort=55014
+20171117 095657489-0500 mx-10-49-58-118 mta 28858 30858 140621405771520 Note;MsgTrace(65/26) docid will be used for message-id:user=ar13567@whsasf.com:from=<>:msgid=<20171117145657.ABB28858.mx-10-49-58-118.openwave.com@mx-10-49-58-118>:size=458:sid=318A22DD-ED81B728-0000001A.1
+20171117 095657535-0500 mx-10-49-58-118 mta 28858 29916 140621407102720 Note;MsgTrace(65/26) delivered:user=ar13567@whsasf.com:mbox=5501965325879372568:mss=mx-10-49-58-118:from=<>:msgid=<20171117145657.ABB28858.mx-10-49-58-118.openwave.com@mx-10-49-58-118>:size=545:port=55014:sid=318A22DD-ED81B728-0000001A.1:docid=8eda7916-cba7-11e7-a937-d4e1f4e69d47:node=mx-10-49-58-118:nodePort=55014
+20171117 095657729-0500 mx-10-49-58-118 mta 28858 29905 140621407901440 Note;SmtpConnectionClosed(70/2) [10.6.104.124]:2:1:191:fromhost=[10.6.104.124]:fromport=42100:localAddr=10.49.58.118:sid=318A22DD-ED81B728-0000001A.1
+>>>>>>> 4cd6d4568dd2058de905f55c2a9f454b8d84212b
 mx-10-49-58-118:imail2:Mx9.5:~$ 

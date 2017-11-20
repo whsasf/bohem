@@ -1,6 +1,14 @@
+<<<<<<< HEAD
 220 mx-10-49-58-118.openwave.com ESMTP server (InterMail vM.9.05.01.00 201-2473-137-123) ready Sun, 19 Nov 2017 21:33:35 -0500
 250 Sender <ar20579> Ok
 250 Recipient <ar12180> Ok
 354 Ok Send data ending with <CRLF>.<CRLF>
 250 Message received: 20171120023335.ABL23469.mx-10-49-58-118.openwave.com@[10.6.105.135]
+=======
+220 mx-10-49-58-118.openwave.com ESMTP server (InterMail vM.9.05.01.00 201-2473-137-123) ready Fri, 17 Nov 2017 23:01:25 -0500
+250 Sender <ar30589> Ok
+250 Recipient <ar15648> Ok
+354 Ok Send data ending with <CRLF>.<CRLF>
+250 Message received: 20171118040125.ABD28284.mx-10-49-58-118.openwave.com@[10.6.105.91]
+>>>>>>> 4cd6d4568dd2058de905f55c2a9f454b8d84212b
 221 mx-10-49-58-118.openwave.com ESMTP server closing connection

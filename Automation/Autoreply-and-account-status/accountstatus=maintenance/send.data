@@ -1,4 +1,8 @@
 Subject: test message about autoreply feature
+<<<<<<< HEAD
 To:ar14529
+=======
+To:ar19871
+>>>>>>> 4cd6d4568dd2058de905f55c2a9f454b8d84212b
 
 Reply,This ia a wonderful world!!

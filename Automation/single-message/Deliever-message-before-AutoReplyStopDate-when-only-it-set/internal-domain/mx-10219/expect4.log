@@ -1,5 +1,6 @@
 spawn ssh imail2@10.49.58.118
 Password: 
+<<<<<<< HEAD
 Last login: Sun Nov 19 20:32:32 2017 from 10.6.105.135
 [?1034hmx-10-49-58-118:imail2:Mx9.5:~$ cat log/mta.log
 20171119 203233339-0500 mx-10-49-58-118 mta 9699 10666 140457048905472 Note;SmtpConnectionReceived(70/1) [10.6.105.135]:fromhost=10.6.105.135:fromport=46376:localAddr=10.49.58.118:sid=5EF25E3A-8F864086-00000014.0
@@ -8,4 +9,14 @@ Last login: Sun Nov 19 20:32:32 2017 from 10.6.105.135
 20171119 203235774-0500 mx-10-49-58-118 mta 9699 11216 140457030739712 Note;MsgTrace(65/26) delivered:user=ar29890@openwave.com:mbox=5070465771993008794:mss=mx-10-49-58-119:from=<ar2079@openwave.com>:msgid=<20171120013235.AAQ9699.mx-10-49-58-118.openwave.com@ar2079>:size=561:port=55014:fromhost=10.6.105.135:fromport=46376:localAddr=[10.49.58.118]:sid=5EF25E3A-8F864086-00000014.1:docid=afd8c18a-cd92-11e7-b091-38ecc18241b7:node=mx-10-49-58-119:nodePort=55014
 20171119 203235780-0500 mx-10-49-58-118 mta 9699 11216 140457030739712 Note;MtaAutoReplySuppressedAlreadySent(79/60) user=ar29890@openwave.com:mbox=5070465771993008794:mss=mx-10-49-58-119:from=<ar2079@openwave.com>:msgid=<20171120013235.AAQ9699.mx-10-49-58-118.openwave.com@ar2079>:size=525:port=55014:fromhost=10.6.105.135:fromport=46376:localAddr=[10.49.58.118]:sid=5EF25E3A-8F864086-00000014.1:node=mx-10-49-58-119:nodePort=55014
 20171119 203235979-0500 mx-10-49-58-118 mta 9699 10666 140457048905472 Note;SmtpConnectionClosed(70/2) [10.6.105.135]:2:1:156:fromhost=[10.6.105.135]:fromport=46376:localAddr=10.49.58.118:sid=5EF25E3A-8F864086-00000014.1
+=======
+Last login: Fri Nov 17 09:46:23 2017 from 10.6.104.124
+[?1034hmx-10-49-58-118:imail2:Mx9.5:~$ cat log/mta.log
+20171117 094625086-0500 mx-10-49-58-118 mta 28858 29905 140621407901440 Note;SmtpConnectionReceived(70/1) [10.6.104.124]:fromhost=10.6.104.124:fromport=41900:localAddr=10.49.58.118:sid=318A22DD-ED81B728-0000000E.0
+20171117 094627942-0500 mx-10-49-58-118 mta 28858 29905 140621407901440 Note;MsgTrace(65/26) received from internet:from=<ar27674>:msgid=<20171117144627.AAQ28858.mx-10-49-58-118.openwave.com@ar27674>:fromhost=[10.6.104.124]:fromport=41900:localAddr=10.49.58.118:sid=318A22DD-ED81B728-0000000E.1:msgsize=423:time=1:sender=<ar27674>:rcpts=<ar3192@openwave.com>:protocol=ESMTP:encoding=plaintext:auth=
+20171117 094627942-0500 mx-10-49-58-118 mta 28858 30860 140621405505280 Note;MsgTrace(65/26) docid will be used for message-id:user=ar3192@openwave.com:from=<ar27674@openwave.com>:msgid=<20171117144627.AAQ28858.mx-10-49-58-118.openwave.com@ar27674>:size=529:fromhost=10.6.104.124:fromport=41900:localAddr=[10.49.58.118]:sid=318A22DD-ED81B728-0000000E.1
+20171117 094627987-0500 mx-10-49-58-118 mta 28858 30734 140621406304000 Note;MsgTrace(65/26) delivered:user=ar3192@openwave.com:mbox=6489469235466121086:mss=mx-10-49-58-118:from=<ar27674@openwave.com>:msgid=<20171117144627.AAQ28858.mx-10-49-58-118.openwave.com@ar27674>:size=566:port=55014:fromhost=10.6.104.124:fromport=41900:localAddr=[10.49.58.118]:sid=318A22DD-ED81B728-0000000E.1:docid=179efcba-cba6-11e7-93e0-1cf279b31e85:node=mx-10-49-58-118:nodePort=55014
+20171117 094627992-0500 mx-10-49-58-118 mta 28858 30734 140621406304000 Note;MtaAutoReplySuppressedAlreadySent(79/60) user=ar3192@openwave.com:mbox=6489469235466121086:mss=mx-10-49-58-118:from=<ar27674@openwave.com>:msgid=<20171117144627.AAQ28858.mx-10-49-58-118.openwave.com@ar27674>:size=529:port=55014:fromhost=10.6.104.124:fromport=41900:localAddr=[10.49.58.118]:sid=318A22DD-ED81B728-0000000E.1:node=mx-10-49-58-118:nodePort=55014
+20171117 094628325-0500 mx-10-49-58-118 mta 28858 29905 140621407901440 Note;SmtpConnectionClosed(70/2) [10.6.104.124]:3:1:156:fromhost=[10.6.104.124]:fromport=41900:localAddr=10.49.58.118:sid=318A22DD-ED81B728-0000000E.1
+>>>>>>> 4cd6d4568dd2058de905f55c2a9f454b8d84212b
 mx-10-49-58-118:imail2:Mx9.5:~$ 

@@ -1,0 +1,36 @@
+	**********  Starting /home/whsasf/workspace/bohem/Automation/multiple-messages-simultaneously-for-in-and-out-domains-senders/Deliever-message-between-AutoReplyStart-and-StopDate-when-both-sets/mx-10227-10243  **********
+Test started: Sat Nov 18 09:34:16 CST 2017
+########## 1 Clear mta.log using expect tool ...
+spawn ssh imail2@10.49.58.118
+Password: 
+rm: cannot remove 'imapfetch*.log': No such file or directory
+########## 2 Accounts provision ...
+6433920831175710989
+7255420148916722520
+4837506593701981984
+8510111621430267412
+8451892839414579299
+[32m########## 2 Accont provision successfully, we can continue now[0m
+spawn ssh root@10.49.58.118
+Last login: Fri Nov 17 20:30:09 2017 from 10.6.105.10
+]0;root@mx-10-49-58-118:~[?1034h[root@mx-10-49-58-118 ~]# TESTFAILED: /home/whsasf/workspace/bohem/Automation/multiple-messages-simultaneously-for-in-and-out-domains-senders/Deliever-message-between-AutoReplyStart-and-StopDate-when-both-sets/mx-10227-10243: Test didn't report success or failure or skipped (180 sec.)
+FAILED: /home/whsasf/workspace/bohem/Automation/multiple-messages-simultaneously-for-in-and-out-domains-senders/Deliever-message-between-AutoReplyStart-and-StopDate-when-both-sets/mx-10227-10243 [20171118-093416] (180 sec.)
+Test ended: Sat Nov 18 09:37:16 CST 2017
+
+date +%s
+1510968930
+]0;root@mx-10-49-58-118:~[root@mx-10-49-58-118 ~]# 
+]0;root@mx-10-49-58-118:~[root@mx-10-49-58-118 ~]# ########## 4 Configure user1 to vacation autoreply mode using expect tool ...
+spawn ssh imail2@10.49.58.118
+Password: 
+Last login: Fri Nov 17 20:36:16 2017 from 10.6.105.10
+[?1034hmx-10-49-58-118:imail2:Mx9.5:~$ echo 'internal:' >data.txt
+mx-10-49-58-118:imail2:Mx9.5:~$ echo 'Vacation,This is an autoreply message for internal senders!' >>data.txt
+mx-10-49-58-118:imail2:Mx9.5:~$ echo 'external:' >>data.txt
+mx-10-49-58-118:imail2:Mx9.5:~$ echo 'Vacation,This is an external autoreply message for external senders!' >>data.txt
+mx-10-49-58-118:imail2:Mx9.5:~$ autoreplyctrl ar27966@openwave.com vacation data.txt 1510968935 1510970730
+AutoReply data updated Successfully.
+mx-10-49-58-118:imail2:Mx9.5:~$ grep: expect2.log: No such file or directory
+[31m##########4 Configuration failed,please check maunually!Exiting now ...[0m
+##########  doing some clear job ...
+[32m##########  Accont deleted successfully[0m
