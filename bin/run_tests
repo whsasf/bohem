@@ -19,6 +19,8 @@
 
 #source ../modules/log_result.mod
 
+
+
 function globalize
 {
 	# Function will attempt to print through stdout a global path of whatever is
@@ -60,7 +62,7 @@ if [ "${_bohem_dir}" = "${_bohem_self}" ]    # ./run_tests
 then
 	# user is executing this from within the bin directory,yes
 	cd ..
-	_bohem_dir=$PWD # example: /home/whsasf/workspace/bohem
+	_bohem_dir=$PWD # example: bohem
 	_bohem_self=${0##*/}  #run_tests
 elif [ "${_bohem_dir}" = "" ]     #./bin/run_tests
 then
@@ -70,6 +72,20 @@ fi
 cd "$_current_user_dir"
 eval `globalize _bohem_dir`  #change _bohem_dir after this function working with eval
 
+#stop all processes
+trap finish SIGHUP SIGINT SIGTERM
+
+function finish (){
+   
+  echo "kill bohem process ..."
+  for process in $(ps -ef|grep "${_bohem_dir}" |awk '{print $2}')
+  do
+   echo "kill -9 " $process
+   kill -9 $process
+   done
+}
+
+export -f finish
 
 # Check installation. This sanity test must be at this point, as this path is
 # where the next things are read from.
@@ -283,13 +299,14 @@ then
 	> "$ERRFILE"
 fi
 
-
+#finish
 ##############################
 #	RUN THE TESTS
 ##############################
 
 for _test_list in "$@"
 do
+  echo ==$_test_list
 	# Test for lazy people.
 	if [ -x "${_test_list}" -a ! -d "${_test_list}" ]
 	then
