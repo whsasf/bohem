@@ -1,0 +1,6 @@
+	**********  Starting /home/ram/workspace/bohem/Automation/Autoreply-Suppress-after-enabling-autoreply/From-address-is-in-the-autoReplySuppressList-configuration-key  **********
+Test started: Wed Nov 22 10:03:46 CST 2017
+########## 1 Clear mta.log using expect tool ...
+spawn ssh imail2@10.49.58.118
+spawn ssh imail2@10.49.58.118
+##########  doing some clear job ...

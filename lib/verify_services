@@ -31,7 +31,7 @@ _scan_xml="/tmp/${_bohem_self}.scan.$$.xml"
 _exit_stat=0
 
 IFS=';'	# separate the fields
-shopt -s nullglob	# empty variables get expanded to NULL
+shopt -s nullglob	# empty variables get expanded to NULL  #active nullglob option
 for servers in $*
 do
 	nmap -P0 -oX "$_scan_xml" -p ${servers##*:} ${servers%%:*} &> "$_scan_log"

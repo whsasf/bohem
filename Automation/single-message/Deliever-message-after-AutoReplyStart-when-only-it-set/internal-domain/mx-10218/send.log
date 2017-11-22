@@ -1,10 +1,5 @@
-<<<<<<< HEAD
-Received: 220 mx-10-49-58-118.openwave.com ESMTP server (InterMail vM.9.05.01.00 201-2473-137-123) ready Sun, 19 Nov 2017 20:21:31 -0500
-Sending command (to 10.49.58.118:20025): EHLO ar8254
-=======
-Received: 220 mx-10-49-58-118.openwave.com ESMTP server (InterMail vM.9.05.01.00 201-2473-137-123) ready Fri, 17 Nov 2017 09:40:12 -0500
-Sending command (to 10.49.58.118:20025): EHLO ar10840
->>>>>>> 4cd6d4568dd2058de905f55c2a9f454b8d84212b
+Received: 220 mx-10-49-58-118.openwave.com ESMTP server (InterMail vM.9.05.01.00 201-2473-137-123) ready Wed, 22 Nov 2017 00:08:24 -0500
+Sending command (to 10.49.58.118:20025): EHLO ar25107
 Received: 250-mx-10-49-58-118.openwave.com
 Received: 250-HELP
 Received: 250-VRFY
@@ -14,32 +9,17 @@ Received: 250-PIPELINING
 Received: 250-DSN
 Received: 250-8BITMIME
 Received: 250 SIZE 30996480
-<<<<<<< HEAD
-Sending command (to 10.49.58.118:20025): MAIL FROM:<ar8254>
-Received: 250 Sender <ar8254> Ok
-Sending command (to 10.49.58.118:20025): RCPT TO:<ar7008>
-Received: 250 Recipient <ar7008> Ok
+Sending command (to 10.49.58.118:20025): MAIL FROM:<ar25107>
+Received: 250 Sender <ar25107> Ok
+Sending command (to 10.49.58.118:20025): RCPT TO:<ar18685>
+Received: 250 Recipient <ar18685> Ok
 Sending command (to 10.49.58.118:20025): DATA
 Received: 354 Ok Send data ending with <CRLF>.<CRLF>
 Sending data (to 10.49.58.118:20025): Subject: test message about autoreply feature
-Sending data (to 10.49.58.118:20025): To:ar7008
+Sending data (to 10.49.58.118:20025): To:ar18685
 Sending data (to 10.49.58.118:20025): 
 Sending data (to 10.49.58.118:20025): Vacation,This ia a wonderful world!!
 Sending command (to 10.49.58.118:20025): .
-Received: 250 Message received: 20171120012132.AAA9699.mx-10-49-58-118.openwave.com@ar8254
-=======
-Sending command (to 10.49.58.118:20025): MAIL FROM:<ar10840>
-Received: 250 Sender <ar10840> Ok
-Sending command (to 10.49.58.118:20025): RCPT TO:<ar5883>
-Received: 250 Recipient <ar5883> Ok
-Sending command (to 10.49.58.118:20025): DATA
-Received: 354 Ok Send data ending with <CRLF>.<CRLF>
-Sending data (to 10.49.58.118:20025): Subject: test message about autoreply feature
-Sending data (to 10.49.58.118:20025): To:ar5883
-Sending data (to 10.49.58.118:20025): 
-Sending data (to 10.49.58.118:20025): Vacation,This ia a wonderful world!!
-Sending command (to 10.49.58.118:20025): .
-Received: 250 Message received: 20171117144013.AAC28858.mx-10-49-58-118.openwave.com@ar10840
->>>>>>> 4cd6d4568dd2058de905f55c2a9f454b8d84212b
+Received: 250 Message received: 20171122050825.AAJ28537.mx-10-49-58-118.openwave.com@ar25107
 Sending command (to 10.49.58.118:20025): quit
 Received: 221 mx-10-49-58-118.openwave.com ESMTP server closing connection

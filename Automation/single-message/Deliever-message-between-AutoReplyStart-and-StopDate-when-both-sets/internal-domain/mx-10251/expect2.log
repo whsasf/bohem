@@ -1,5 +1,10 @@
 spawn ssh imail2@10.49.58.118
-ssh: connect to host 10.49.58.118 port 22: No route to host
-expect: spawn id exp5 not open
-    while executing
-"expect  "*~"  { send "echo 'internal:' >data.txt\r" }"
+Password: 
+Last login: Wed Nov 22 03:42:10 2017 from 10.6.104.186
+[?1034hmx-10-49-58-118:imail2:Mx9.5:~$ echo 'internal:' >data.txt
+mx-10-49-58-118:imail2:Mx9.5:~$ echo 'Echo,This is an autoreply message for internal senders!' >>data.txt
+mx-10-49-58-118:imail2:Mx9.5:~$ echo 'external:' >>data.txt
+mx-10-49-58-118:imail2:Mx9.5:~$ echo 'Echo,This is an external autoreply message for external senders!' >>data.txt
+mx-10-49-58-118:imail2:Mx9.5:~$ autoreplyctrl ar20542@openwave.com echo data.txt 1511340188 1511341983
+AutoReply data updated Successfully.
+mx-10-49-58-118:imail2:Mx9.5:~$ 

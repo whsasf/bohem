@@ -1,0 +1,16 @@
+	**********  Starting /home/ram/workspace/bohem/Automation/multiple-messages-simultaneously-for-in-and-out-domains-senders/Deliever-message-after-AutoReplyStart-and-StopDate-when-both-sets/mx-10260-10276  **********
+Test started: Wed Nov 22 10:29:52 CST 2017
+########## 1 Clear mta.log using expect tool ...
+spawn ssh imail2@10.49.58.118
+Password: 
+Last login: Tue Nov 21 21:26:45 2017 from bigchina
+[?1034hmx-10-49-58-118:imail2:Mx9.5:~$ > ~/log/mta.log
+mx-10-49-58-118:imail2:Mx9.5:~$ ########## 2 Accounts provision ...
+
+
+
+
+
+[31m########## 2 Accont provision failed,PLease check manually,Exiting now ...[0m
+##########  doing some clear job ...
+[31m##########  Accont deleted failed,PLease check manually,Exiting now ...[0m

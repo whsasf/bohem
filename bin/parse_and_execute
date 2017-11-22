@@ -22,10 +22,10 @@
 #########1#########2#########3#########4#########5#########6#########7#########8
 
 #load modules
-source ../modules/log_result.mod
+#source ../modules/log_result.mod
 
 # VERIFY_SERVICES test.
-if [ ! -z ${VERIFY_SERVICES:-""} ]
+if [ ! -z ${VERIFY_SERVICES:-""} ] #if  VERIFY_SERVICES is not defined, make it empty
 then
 	verify_services ${VERIFY_SERVICES}
 	if [ $? -ne 0 ]
@@ -34,13 +34,14 @@ then
 	fi
 fi
 
+
 if [ -f $WORK_DIR/quit ]; then
 	echo "# Quit requested - skipping $1" >> $LOGFILE
 	exit 0
 fi
 
 test_number=""
-if [ -t 1 ]; then
+if [ -t 1 ]; then  #check if sandart output(screen) is exist .default file describe is 1 for stardard output
 	if [ $# -eq 2 ]; then
 		test_number=" $2"
 	fi
@@ -71,7 +72,7 @@ cd "$WORK_DIR"
 _tmp_cvslog=/tmp/${_bohem_self}.cvslog.$$
 > $_tmp_cvslog	# empty the log file
 case $TC_CVS_UPDATE in
-	none)
+	none)   #default is "none"
 		;;
 	checkout)
 		if [ "$ADJUST_DIR" != "." ]
@@ -102,10 +103,14 @@ esac
 # ADJUST_DIR is a feature documented in parse_test_list.
 cd "$ADJUST_DIR" >> "$LOGFILE" 2>&1
 
+#echo ${ADJUST_DIR}-----
 TC_NAME=${ADJUST_DIR}/${1}	# set the name of the test case
+#echo ${TC_NAME}-----
 TC_NAME=${TC_NAME##*${WORK_DIR}/}	# sanitize for standalone test cases
+#echo ${WORK_DIR}====
+#echo ${TC_NAME}-----
 TC_NAME=${TC_NAME#./}	# sanitize for test lists
-
+#echo ${TC_NAME}-----
 _exit_stat=0    # I need this to be able to flag nonesense passed in the test-list 
 
 
@@ -142,7 +147,6 @@ then
 	# must be done before the test is run just in case the test is executing
 	# assorted cd's.
 	eval `globalize TEST_LOG`
-
 # START OF TEST
 	_test_stat=0    # exit status of all "components"
  
@@ -175,6 +179,7 @@ then
 	# The file is only tested for exit status today, but the hope is that at some
 	# point in the future, there will be a call from here to a debugger, which
 	# will be able to test every single line of the script.
+  #${_bohem_log_prefix} defined in "log_result.mod"
 	grep -e "^${_bohem_log_prefix}BROKEN:" -e "^${_bohem_log_prefix}SKIPPED:" -e "^${_bohem_log_prefix}FAILED:" "$TEST_LOG" 2>&1
 	if [ $? -eq 0 ]; then
 		# The setup script has either failed, or wants to skip this test, so
@@ -195,7 +200,7 @@ then
 		# this will only rebuild them if they have been built previously, which
 		# is why I do it here rather than before all the tests. This way it is
 		# never done if no java tests are run.
-		find $_bohem_dir -name \*.java -exec $JAVA_HOME/bin/javac {} \; >> "$TEST_LOG" 2>&1
+		find $_bohem_dir -name \*.java -exec $JAVA_HOME/bin/javac {} \; >> "$TEST_LOG" 2>&1  #find bohem.java and run "javac bphem.java"
 		export CLASSPATH="$_bohem_dir/lib/java/:${CLASSPATH:-}"
 		printf "CLASSPATH=$CLASSPATH" >> "$TEST_LOG"
 		$JAVA_HOME/bin/javac test_run.java >> "$TEST_LOG" 2>&1
@@ -211,7 +216,7 @@ then
                 git config --global http.lowSpeedLimit 1000
                 git config --global http.lowSpeedTime 600
 		export PYTHONPATH="$PYTHONPATH:$_bohem_dir/lib/python/"
-		python $_bohem_dir/bin/python/test_timeout.py $TC_TIMEOUT python test_run.py >> $TEST_LOG 2>&1
+		python $_bohem_dir/bin/python/test_timeout.py $TC_TIMEOUT python test_run.py >> $TEST_LOG 2>&1 #default value of "TC_TIMEOUT" is 0
 		let _test_stat+=$?
 	else
 		log_fail "FAILED to locate test_run script in $1.\n" >> "$TEST_LOG"
@@ -234,6 +239,7 @@ then
 		# Bypass Gold file stuff - test has already reported a non-pass
 		test
 	else
+	######################begin from here
 		# Special-diff GOLD files.
 		shopt -s nullglob
 		for GOLD_FILES in *.GOLD

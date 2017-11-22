@@ -1,5 +1,0 @@
-spawn ssh imail2@10.49.58.118
-ssh_exchange_identification: read: Connection reset by peer
-expect: spawn id exp5 not open
-    while executing
-"expect  "*~" { send "cat log/mta.log\r" }"
