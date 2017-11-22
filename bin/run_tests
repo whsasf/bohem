@@ -337,8 +337,8 @@ function force_stop (){
   #for process in $(ps -ef|grep -E "run_tests|test_run|parse_and_execute|parse_test_list|tc_monitor|"|grep -iv "vi"|grep -iv "uex"|awk '{print $2}')
   for process in $(ps -ef|grep -E "test_run|${_bohem_dir}"|grep -E "run_tests|test_run|parse_and_execute|parse_test_list|tc_monitor|"|grep -iv "vi"|grep -iv "uex"|awk '{print $2}')
   do
-  	 echo "kill -9 " $process
-   	 kill -9 $process >/dev/null  2>&1 &  
+  	 echo "kill -2 " $process
+   	 kill -2 $process >/dev/null  2>&1 &  
    	 #kill -9 0
    	 #exit
   done

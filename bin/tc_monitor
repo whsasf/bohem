@@ -32,7 +32,7 @@ then
 fi
 
 
-_self=`basename $0`	# name of this executable
+_self=`basename $0`	# name of this executable   #tc_monitor
 # Figure out if tracing is on.
 if [ $(( $_trace_level & $_trace_tc_monitor )) -eq $_trace_tc_monitor ]
 then
@@ -40,7 +40,6 @@ then
 else
 	TRACE="OFF"
 fi
-
 
 if [ $TRACE = "ON" ]
 then
@@ -50,19 +49,19 @@ fi
 
 
 # If time to live is zero, then "become" the command and let it end naturally.
-if [ $2 -eq 0 ]
+if [ $2 -eq 0 ]  #of course not 0 ,usually
 then
 	eval exec "$1"
 fi
 
 
 # Run the command, remember to preserve its exit status ... if it gets that far.
-(eval "$1"; printf $? > /tmp/${_self}.$$) &
+(eval "$1"; printf $? > /tmp/${_self}.$$) &  #running background   
 while [ -d "/proc/$!"  -a  $SECONDS -lt $2 ]
 # The above says: while the background command lives (the -d thing) and (the -a)
 # time counter is less than time to live argument passed (the -lt thing) ...
 do
-	sleep ${3:-1} 
+	sleep ${3:-1} #sleep 1,check if procress finished every 1 second
 done
 
 if [ $TRACE = "ON" ]
@@ -90,7 +89,7 @@ then
 	# we need to know if this worked
 	if [ $? -eq 0 ]
 	then
-		exit $(kill -l TERM)
+		exit $(kill -l TERM)  #return 15
 	fi
 fi
 

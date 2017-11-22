@@ -1,0 +1,31 @@
+imapmail: host[10.49.58.118] port[20143] user[ar14999] pass[p] folder[inbox] message[2]
+xx OK LOGIN completed
+* 2 EXISTS
+* OK [UNSEEN 1] First unseen message
+* OK [UIDVALIDITY 1511357796] UIDs valid
+* OK [UIDNEXT 1001] Predicted next UID
+* FLAGS (\Answered \Flagged \Deleted \Draft \Seen)
+* OK [PERMANENTFLAGS (\* \Answered \Flagged \Deleted \Draft \Seen)] Permanent flags
+* 1 RECENT
+xx OK [READ-WRITE] SELECT completed
+* 3 FETCH (BODY[] {545}
+Return-Path: <>
+Subject: Re: test message about autoreply feature
+To: ar14999@whsasf.com
+From: "Auto-reply from ar443@openwave.com" <ar443@openwave.com>
+In-Reply-To: <20171122133753.AAQ29687.mx-10-49-58-118.openwave.com@whsasf.com>
+Precedence: bulk
+Date: Wed, 22 Nov 2017 08:37:54 -0500
+Message-ID: <20171122133754.AAR29687.mx-10-49-58-118.openwave.com@mx-10-49-58-118>
+MIME-Version: 1.0
+Content-Type: text/plain;
+		charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+
+Reply,This is an external autoreply message for external senders!
+ FLAGS (\Recent \Seen))
+* 3 EXISTS
+xx OK FETCH completed
+* BYE IMAP4 server terminating connection
+xx OK LOGOUT completed
