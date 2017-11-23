@@ -334,11 +334,13 @@ function force_stop (){
   echo -e "\n\033[32m<<<<<<<<<< Killing all backend bohem processes ...\033[0m\n"
   #rm -rf ${_current_user_dir}/.bohem_pid
   summary
+  #kill gawk first
+  ps -ef|grep "${_bohem_dir}"|grep  -i "gawk" |awk '{print $2}' |xargs kill -9 >/dev/null  2>&1 &
   #for process in $(ps -ef|grep -E "run_tests|test_run|parse_and_execute|parse_test_list|tc_monitor|"|grep -iv "vi"|grep -iv "uex"|awk '{print $2}')
   for process in $(ps -ef|grep -E "test_run|${_bohem_dir}"|grep -E "run_tests|test_run|parse_and_execute|parse_test_list|tc_monitor|"|grep -iv "vi"|grep -iv "uex"|awk '{print $2}')
   do
-  	 echo "kill -2 " $process
-   	 kill -2 $process >/dev/null  2>&1 &  
+  	 #echo "kill -2 " $process
+   	 kill -9 $process >/dev/null  2>&1 &  
    	 #kill -9 0
    	 #exit
   done

@@ -1,0 +1,128 @@
+	**********  Starting /home/ram/workspace/bohem/Automation/Autoreply-Suppress-after-enabling-autoreply/From-address-is-in-the-autoReplySuppressList-configuration-key  **********
+Test started: Thu Nov 23 14:19:19 CST 2017
+########## 1 Clear mta.log using expect tool ...
+spawn ssh imail2@10.49.58.118
+Password: 
+Last login: Thu Nov 23 01:13:22 2017 from bigchina
+[?1034hmx-10-49-58-118:imail2:Mx9.5:~$ > ~/log/mta.log
+mx-10-49-58-118:imail2:Mx9.5:~$ ########## 2 Accounts provision ...
+5442568416849600942
+9083631405925178229
+[32m########## 2 Accont provision successfully, we can continue now[0m
+spawn ssh imail2@10.49.58.118
+Password: 
+Last login: Thu Nov 23 01:16:59 2017 from bigchina
+[?1034hmx-10-49-58-118:imail2:Mx9.5:~$ imconfcontrol -install -key "/*/mta/autoReplySuppressList=autoanswer
+> echo
+> listserv
+> mailerdaemon
+> mailer-daemon
+> mirror
+> netserv
+> server
+> uucp
+> mailer
+> listproc
+> majordomo
+> list.manager
+> ar17811" 
+Reporting: appsuite on * server reported: 
+Reporting: imapserv:imconfserv:imdircacheserv:imdirserv:imextserv:immgrserv:imqueueserv:mss.1:mta:popserv on mx-10-49-58-118 server reported: 
+autoReplySuppressList: mta on mx-10-49-58-118 will be trivially accommodated: 
+Reporting: immgrserv:mss.1 on mx-10-49-58-119 server reported: 
+Reporting: immgrserv:mxos on mx-10-49-58-120 server reported: 
+mx-10-49-58-118:imail2:Mx9.5:~$ imconfget -fullpath /*/mta/autoReplySuppressList
+autoanswer
+echo
+listserv
+mailerdaemon
+mailer-daemon
+mirror
+netserv
+server
+uucp
+mailer
+listproc
+majordomo
+list.manager
+ar17811
+mx-10-49-58-118:imail2:Mx9.5:~$ key settings correctly, we can continue now
+spawn ssh root@10.49.58.118
+Last login: Thu Nov 23 01:13:30 2017 from bigchina
+]0;root@mx-10-49-58-118:~[?1034h[root@mx-10-49-58-118 ~]# date +%s
+1511417875
+]0;root@mx-10-49-58-118:~[root@mx-10-49-58-118 ~]# 
+]0;root@mx-10-49-58-118:~[root@mx-10-49-58-118 ~]# ########## 4 Configure user2 to vacation autoreply mode using expect tool ...
+spawn ssh imail2@10.49.58.118
+Password: 
+Last login: Thu Nov 23 01:17:04 2017 from bigchina
+[?1034hmx-10-49-58-118:imail2:Mx9.5:~$ echo 'internal:' >data.txt
+mx-10-49-58-118:imail2:Mx9.5:~$ echo 'Reply,This is an autoreply message for internal senders!' >>data.txt
+mx-10-49-58-118:imail2:Mx9.5:~$ echo 'external:' >>data.txt
+mx-10-49-58-118:imail2:Mx9.5:~$ echo 'Reply,This is an external autoreply message for external senders!' >>data.txt
+mx-10-49-58-118:imail2:Mx9.5:~$ autoreplyctrl ar16756@openwave.com reply data.txt 1511417880 1511419675
+AutoReply data updated Successfully.
+mx-10-49-58-118:imail2:Mx9.5:~$ [32m##########4 Congifuration successfully[0m
+##########5 delieber 1 message from user1 to user2 ...
+[32m########## 5 Message Deliver successfully, we can continue now[0m
+########## 6 Check mta.log using expect tool ...
+spawn ssh imail2@10.49.58.118
+Password: 
+Last login: Thu Nov 23 01:18:04 2017 from bigchina
+[?1034hmx-10-49-58-118:imail2:Mx9.5:~$ cat log/mta.log
+20171123 011705256-0500 mx-10-49-58-118 mta 705 761 140708082865920 Note;ConfStartUpdate(51/26) assessment:Thu Nov 23 01\3a12\3a05 EST 2017:Thu Nov 23 01\3a17\3a05 EST 2017
+20171123 011705270-0500 mx-10-49-58-118 mta 705 761 140708082865920 Note;ConfParmChanged(51/27) autoReplySuppressList:mx-10-49-58-118:mta:autoanswer\necho\nlistserv\nmailerdaemon\nmailer-daemon\nmirror\nnetserv\nserver\nuucp\nmailer\nlistproc\nmajordomo\nlist.manager:autoanswer\necho\nlistserv\nmailerdaemon\nmailer-daemon\nmirror\nnetserv\nserver\nuucp\nmailer\nlistproc\nmajordomo\nlist.manager\nar17811:will be trivially accommodated
+20171123 011705280-0500 mx-10-49-58-118 mta 705 761 140708082865920 Note;ConfEndUpdate(51/29) Thu Nov 23 01\3a12\3a05 EST 2017:Thu Nov 23 01\3a17\3a05 EST 2017:1
+20171123 011705297-0500 mx-10-49-58-118 mta 705 761 140708082865920 Note;ConfStartUpdate(51/26) installation:Thu Nov 23 01\3a12\3a05 EST 2017:Thu Nov 23 01\3a17\3a05 EST 2017
+20171123 011705297-0500 mx-10-49-58-118 mta 705 761 140708082865920 Note;ConfEndUpdate(51/29) Thu Nov 23 01\3a12\3a05 EST 2017:Thu Nov 23 01\3a17\3a05 EST 2017:1
+20171123 011807972-0500 mx-10-49-58-118 mta 705 2108 140708081534720 Note;SmtpConnectionReceived(70/1) [10.37.2.214]:fromhost=10.37.2.214:fromport=51446:localAddr=10.49.58.118:sid=CA9C6B9D-407289FA-0000000C.0
+20171123 011807973-0500 mx-10-49-58-118 mta 705 2108 140708081534720 Warn;SmtpAddressFixed(70/13) [10.37.2.214]:mail from\3aar17811:<ar17811>:fromhost=10.37.2.214:fromport=51446:localAddr=10.49.58.118:sid=CA9C6B9D-407289FA-0000000C.1
+20171123 011808268-0500 mx-10-49-58-118 mta 705 2108 140708081534720 Warn;SmtpAddressFixed(70/13) [10.37.2.214]:rcpt to\3aar16756:<ar16756>:from=<ar17811>:fromhost=10.37.2.214:fromport=51446:localAddr=10.49.58.118:sid=CA9C6B9D-407289FA-0000000C.1
+20171123 011808287-0500 mx-10-49-58-118 mta 705 2108 140708081534720 Note;MsgTrace(65/26) received from internet:from=<ar17811>:msgid=<20171123061808.AAK705.mx-10-49-58-118.openwave.com@[10.37.2.214]>:fromhost=[10.37.2.214]:fromport=51446:localAddr=10.49.58.118:sid=CA9C6B9D-407289FA-0000000C.1:msgsize=363:time=0:sender=<ar17811>:rcpts=<ar16756@openwave.com>:protocol=SMTP:encoding=plaintext:auth=
+20171123 011808287-0500 mx-10-49-58-118 mta 705 2108 140708081534720 Note;SmtpConnectionClosed(70/2) [10.37.2.214]:1:1:102:fromhost=[10.37.2.214]:fromport=51446:localAddr=10.49.58.118:sid=CA9C6B9D-407289FA-0000000C.1
+20171123 011808287-0500 mx-10-49-58-118 mta 705 2110 140708064700160 Note;MsgTrace(65/26) docid will be used for message-id:user=ar16756@openwave.com:from=<ar17811@openwave.com>:msgid=<20171123061808.AAK705.mx-10-49-58-118.openwave.com@[10.37.2.214]>:size=473:fromhost=10.37.2.214:fromport=51446:localAddr=[10.49.58.118]:sid=CA9C6B9D-407289FA-0000000C.1
+20171123 011808330-0500 mx-10-49-58-118 mta 705 2114 140708064167680 Note;MsgTrace(65/26) delivered:user=ar16756@openwave.com:mbox=9083631405925178229:mss=mx-10-49-58-119:from=<ar17811@openwave.com>:msgid=<20171123061808.AAK705.mx-10-49-58-118.openwave.com@[10.37.2.214]>:size=473:port=55014:fromhost=10.37.2.214:fromport=51446:localAddr=[10.49.58.118]:sid=CA9C6B9D-407289FA-0000000C.1:docid=12e3def6-d016-11e7-83f3-259338abe290:node=mx-10-49-58-119:nodePort=55014
+20171123 011808330-0500 mx-10-49-58-118 mta 705 2115 140708063901440 Note;MtaAutoReplySuppressedSender(79/58) user=ar16756@openwave.com:mbox=9083631405925178229:mss=mx-10-49-58-118:from=<ar17811@openwave.com>:msgid=<20171123061808.AAK705.mx-10-49-58-118.openwave.com@[10.37.2.214]>:size=473:port=55014:fromhost=10.37.2.214:fromport=51446:localAddr=[10.49.58.118]:sid=CA9C6B9D-407289FA-0000000C.1:node=mx-10-49-58-118:nodePort=55014
+mx-10-49-58-118:imail2:Mx9.5:~$ [32m##########6 Autoreply messaeg undelievered successfully!![0m
+########## 7 check autoreplied message in inbox of user1 ...
+imapmail: host[10.49.58.118] port[20143] user[ar17811] pass[p] folder[inbox] message[2]
+xx OK LOGIN completed
+* 1 EXISTS
+* OK [UNSEEN 1] First unseen message
+* OK [UIDVALIDITY 1511417820] UIDs valid
+* OK [UIDNEXT 1001] Predicted next UID
+* FLAGS (\Answered \Flagged \Deleted \Draft \Seen)
+* OK [PERMANENTFLAGS (\* \Answered \Flagged \Deleted \Draft \Seen)] Permanent flags
+* 0 RECENT
+xx OK [READ-WRITE] SELECT completed
+xx NO FETCH failed
+Didn't get OK for FETCH
+Not Connected...
+[32m##########7 Check autoreplied messaege successfully!![0m
+TESTPASSED: /home/ram/workspace/bohem/Automation/Autoreply-Suppress-after-enabling-autoreply/From-address-is-in-the-autoReplySuppressList-configuration-key: AutoReply in reply mode with message undelievered between start/stop date for internal sender test success! (95 sec.)
+spawn ssh imail2@10.49.58.118
+Password: 
+Last login: Thu Nov 23 01:18:13 2017 from bigchina
+[?1034hmx-10-49-58-118:imail2:Mx9.5:~$ imconfcontrol -install -key "/*/mta/autoReplySuppressList=autoanswer
+> echo
+> listserv
+> mailerdaemon
+> mailer-daemon
+> mirror
+> netserv
+> server
+> uucp
+> mailer
+> listproc
+> majordomo
+> list.manager"
+Reporting: appsuite on * server reported: 
+Reporting: imapserv:imconfserv:imdircacheserv:imdirserv:imextserv:immgrserv:imqueueserv:mss.1:mta:popserv on mx-10-49-58-118 server reported: 
+autoReplySuppressList: mta on mx-10-49-58-118 will be trivially accommodated: 
+Reporting: immgrserv:mss.1 on mx-10-49-58-119 server reported: 
+Reporting: immgrserv:mxos on mx-10-49-58-120 server reported: 
+mx-10-49-58-118:imail2:Mx9.5:~$ ##########  doing some clear job ...
+[32m##########  Accont deleted successfully[0m
+PASSED: /home/ram/workspace/bohem/Automation/Autoreply-Suppress-after-enabling-autoreply/From-address-is-in-the-autoReplySuppressList-configuration-key [20171123-141918] (103 sec.)
+Test ended: Thu Nov 23 14:21:01 CST 2017
+

@@ -11,6 +11,7 @@
 #########1#########2#########3#########4#########5#########6#########7#########8
 
 
+
 function tokenize( this_field,	i ) {
 	# Function is used to split appart a detected field into token (global
 	# variable), and then purged from the record.
@@ -20,7 +21,7 @@ function tokenize( this_field,	i ) {
 	while( $i !~ this_field )
 		i++
 	# Separate the field from the value; this creates the token global array.
-	split( $i, token, "=" )
+	split( $i, token, "=" ) #split the "$i" into an array "token" ,FS="="
 	$i=""	# get rid of the field
 	$0=$0	# rebuild the record as well as the NF
 }
@@ -37,6 +38,7 @@ BEGIN {
 	
 	# Figure out if tracing is on.
 	if ( and( ENVIRON["_trace_level"], ENVIRON["_trace_testlist"] ) == ENVIRON["_trace_testlist"] )
+	    # ENVIRON contains all the variables defined and exported tills now. "_trace_level" is defined in bohem.conf and sourecd
 		TRACE="ON"
 	else
 		TRACE="OFF"
@@ -46,7 +48,7 @@ BEGIN {
 
 
 NF == 0 {
-	# blank line -> ignore
+	# blank line -> ignore "NF=0" means nnothing in thsi line,so skip this line
 	next
 }
 
@@ -432,4 +434,3 @@ END {
 	close( source_file )
 	system( "rm " source_file )
 }
-
