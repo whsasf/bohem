@@ -1,0 +1,5 @@
+bohem 2.9.5 Fatal ERROR:
+	Could not find required gawk interpreter.
+
+bohem 2.9.5 ERROR:
+FAILED to parse /home/ram/workspace/bohem/autoreply.test.list.

@@ -1,8 +1,0 @@
-<html>
-<head>
-<title>THis is a test Html</title>
-<head>
-<body>
-  hahahahaha,we are good people!!
-</body>
-</html>

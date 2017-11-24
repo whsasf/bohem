@@ -1,9 +1,0 @@
-from:xx2@openwave.com
-to:xx1@openwave.com
-subject:testemail-Japanes-UTF-8-CRLF-base64
-MIME-Version: 1.0
-Content-Type: text/plain; charset=utf-8
-Content-Transfer-Encoding: base64
-
-5Lq644Gv5L2V44GL44GuDQoNCg0KDQrniqDnibLjgarjgZfjgasg5L2V44KC5b6X44KL44GT44Go
-44Gv44Gn44GN44Gq44GE

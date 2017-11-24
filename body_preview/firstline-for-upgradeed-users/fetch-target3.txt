@@ -1,2 +1,0 @@
-* 1 FETCH (FIRSTLINE ("، ويمكن تح Nobody! いくつにな 我们是中国人， "))
-* 2 FETCH (FIRSTLINE ("، ويمكن تح Nobody! いくつにな 我们是中国人， "))

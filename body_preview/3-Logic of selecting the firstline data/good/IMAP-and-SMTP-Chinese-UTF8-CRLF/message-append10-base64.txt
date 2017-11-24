@@ -1,9 +1,0 @@
-from:xx2@openwave.com
-to:xx1@openwave.com
-subject:testemail-Chinese-UTF-8-CRLF-base64
-MIME-Version: 1.0
-Content-Type: text/plain; charset=utf-8
-Content-Transfer-Encoding: base64
-
-ICAgICDmgJLlj5HlhrLlhqDvvIzlh63pmJHlpITjgIHmvYfmvYfpm6jmrYfjgILmiqzmnJvnnLzk
-u7DlpKnplb/llbjvvIzlo67mgIDmv4A=

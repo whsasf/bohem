@@ -1,9 +1,0 @@
-#!/bin/bash
-./logic-messagesend-IMAP-append-7bit.sh
-./logic-messagesend-IMAP-append-8bit.sh
-./logic-messagesend-IMAP-append-base64.sh
-./logic-messagesend-IMAP-append-quoted.sh
-./logic-messagesend-SMTP-7bit.sh
-./logic-messagesend-SMTP-8bit.sh
-./logic-messagesend-SMTP-base64.sh
-./logic-messagesend-SMTP-quoted.sh

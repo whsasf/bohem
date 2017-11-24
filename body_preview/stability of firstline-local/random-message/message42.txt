@@ -1,8 +1,0 @@
-from:xx2@openwave.com
-to:xx1@openwave.com
-subject:random message
-MIME-Version: 1.0
-Content-Type: text/plain; charset=utf-8; format=flowed
-Content-Transfer-Encoding: 8bit
-
-fondus huckleberry's strap's Firestone's Antoninus symptom debated reputable stressed vigilantism crowed calcifies Niger dieseling Darrow

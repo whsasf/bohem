@@ -1,8 +1,0 @@
-from:xx2@openwave.com
-to:xx1@openwave.com
-subject:random message
-MIME-Version: 1.0
-Content-Type: text/plain; charset=utf-8; format=flowed
-Content-Transfer-Encoding: 8bit
-
-ruffle's unkind merrymakers protests wallpapers faulted funiculars hotheads bolting healthful Co trouper's fevered gays headings

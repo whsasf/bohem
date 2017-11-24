@@ -1,8 +1,0 @@
-from:xx2@openwave.com
-to:xx1@openwave.com
-subject:testemail-Chinese-UTF-8-CRLF-8bit
-MIME-Version: 1.0
-Content-Type: text/plain; charset=utf-8
-Content-Transfer-Encoding: 8bit
-
-怒发冲冠，凭阑处、潇潇雨歇。抬望眼     仰天长啸，壮怀激

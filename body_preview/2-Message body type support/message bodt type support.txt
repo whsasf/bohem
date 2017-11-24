@@ -1,7 +1,0 @@
-1 empty message body   													passed
-2 text/plain    
-   (1)single char:ASCII   											passed
-   (2)Multiple Chars: Chinese ,Japanes,Arabic,  passed
-3 Emoji
-   (1)ASCII                                     passed 
-   (2)image                                     passed

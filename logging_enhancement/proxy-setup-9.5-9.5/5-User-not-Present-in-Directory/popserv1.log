@@ -1,2 +1,0 @@
-20171115 161336977+0000 mx-10-49-58-127 popserv 19551 20009 140708815079168 Note;UserDataException(504/1) MBX_NOT_FOUND:{password=[XXXXX], protocolType=[pop], userName=[procu1]}:AuthenticateAndGetMailboxService\3aPOST:The given Mailbox does not exist.::user=procu1:cmd=pass <pswd>:fromhost=10.37.2.214:fromport=43008
-20171115 161337074+0000 mx-10-49-58-127 popserv 19551 20009 140708815079168 Note;PopProxyConnMade(66/16) 10.49.58.118:20995:user=procu1:cmd=pass <pswd>:fromhost=10.37.2.214:fromport=43008

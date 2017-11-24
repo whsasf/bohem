@@ -1,8 +1,0 @@
-from:xx2@openwave.com
-to:xx1@openwave.com
-subject:random message
-MIME-Version: 1.0
-Content-Type: text/plain; charset=utf-8; format=flowed
-Content-Transfer-Encoding: 8bit
-
-merrymaker's summonsed angina's expose's posturing exactingly warranty satisfied Kathie's Capitols side's remorselessly surveyors monologues proportions

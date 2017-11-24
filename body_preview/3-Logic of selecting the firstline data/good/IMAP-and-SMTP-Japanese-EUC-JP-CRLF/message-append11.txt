@@ -1,8 +1,0 @@
-from:xx2@openwave.com
-to:xx1@openwave.com
-subject:testemail-Japanese-EUC-JP-8bit-CRLF
-MIME-Version: 1.0
-Content-Type: text/plain; charset=EUC-JP; format=flowed
-Content-Transfer-Encoding: 8bit
-
-剣を     握らなければ、おまえを守れない。剣を握ったままでは、おまえを抱 きしめら

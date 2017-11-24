@@ -1,8 +1,0 @@
-from:xx2@openwave.com
-to:xx1@openwave.com
-subject:random message
-MIME-Version: 1.0
-Content-Type: text/plain; charset=utf-8; format=flowed
-Content-Transfer-Encoding: 8bit
-
-jay's brows hurricanes scout tinkered telepathic womb sidesaddle's eighteenth's profanes muscatel's platens clanks dream scanner's

@@ -1,8 +1,0 @@
-from:xx2@openwave.com
-to:xx1@openwave.com
-subject:testemail-Arabic-UTF-8-CRLF-7bit
-MIME-Version: 1.0
-Content-Type: text/plain; charset=utf-8
-Content-Transfer-Encoding: 7bit
-
-ربما  الله يريدنا ان نلتقي بعض الناس السيؤون  قبل افضل  لكي عندما نقابل الحبيب اخيرا سنعرف كيف نكون      الممتنين

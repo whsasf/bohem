@@ -1,8 +1,0 @@
-from:xx2@openwave.com
-to:xx1@openwave.com
-subject:testemail-Chinese-gb2312-8bit-CRLF
-MIME-Version: 1.0
-Content-Type: text/plain; charset=gb2312; format=flowed
-Content-Transfer-Encoding: 8bit
-
-怒发冲冠，凭阑处、潇潇雨歇。抬望眼、仰天长啸，壮怀激烈。三十功名尘与土，八千里路云和月。莫等闲，白了少年头，空悲切。

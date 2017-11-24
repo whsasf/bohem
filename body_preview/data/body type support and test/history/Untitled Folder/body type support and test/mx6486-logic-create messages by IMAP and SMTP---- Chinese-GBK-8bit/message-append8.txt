@@ -1,9 +1,0 @@
-from:xx2@openwave.com
-to:xx6@openwave.com
-subject:testemail-Chinese-gbk
-MIME-Version: 1.0
-Content-Type: text/plain; charset=gbk; format=flowed
-Content-Transfer-Encoding: 8bit
-
-Å­·¢³å¹Ú£¬Æ¾À»´¦¡¢
-äìäìÓêĞª¡£Ì§ÍûÑÛ¡¢ÑöÌì³¤Ğ¥£¬×³»³¼¤ÁÒ¡£     

@@ -1,8 +1,0 @@
-from:xx2@openwave.com
-to:xx1@openwave.com
-subject:random message
-MIME-Version: 1.0
-Content-Type: text/plain; charset=utf-8; format=flowed
-Content-Transfer-Encoding: 8bit
-
-aeronautical Schedar's grunge bucking cygnet's congress freebee's avenger stilt's garland's carport's Onegin's retype secularization bricklaying's

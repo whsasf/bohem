@@ -1,7 +1,0 @@
-from:xx2@openwave.com
-to:xx1@openwave.com
-subject:testemail-Japanese
-
-外から见たら
-不幸でも中は幸せだということもある。
-幸せの形はひとつじゃない     

@@ -1,8 +1,0 @@
-from:xx2@openwave.com
-to:xx1@openwave.com
-subject:testemail-Arabic-ISO-8859-6-CRLF-base64
-MIME-Version: 1.0
-Content-Type: text/plain; charset=ISO-8859-6
-Content-Transfer-Encoding: base64
-
-ICAgICDk6tMg5Mfm4w0K5eYgx+bKICDo5OPmIOTH5iDZ5s/lxyAgx+Po5g==

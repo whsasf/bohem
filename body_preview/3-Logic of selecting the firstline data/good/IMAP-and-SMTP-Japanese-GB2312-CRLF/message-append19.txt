@@ -1,8 +1,0 @@
-from:xx2@openwave.com
-to:xx1@openwave.com
-subject:testemail-Japanese-GBK-8bit-CRLF
-MIME-Version: 1.0
-Content-Type: text/plain; charset=gbk; format=flowed
-Content-Transfer-Encoding: 8bit
-
-オレはいつかこの一味     にも負けない仲間を集めて、世界一の財宝を見つけて、绝対なってやる！海賊王に！

@@ -1,3 +1,0 @@
-	**********  Starting /home/ram/workspace/bohem/Automation/multiple-messages-simultaneously-for-in-and-out-domains-senders/Deliever-message-before-AutoReplyStart-when-only-it-set/mx-10286-10302  **********
-Test started: Thu Nov 23 10:46:29 CST 2017
-./test_run: line 11: echo: write error: Broken pipe

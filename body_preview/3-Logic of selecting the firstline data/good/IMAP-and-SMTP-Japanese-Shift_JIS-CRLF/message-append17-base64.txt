@@ -1,9 +1,0 @@
-from:xx2@openwave.com
-to:xx1@openwave.com
-subject:testemail-Japanes-Shift_JIS-CRLF-base64
-MIME-Version: 1.0
-Content-Type: text/plain; charset=Shift_JIS
-Content-Transfer-Encoding: base64
-
-g0mDjILNgqKCwoKpgrGCzIjqlqGCyYLglYmCr4LIgqKSh4rUgvCPV4LfgsSBQZCiikWI6oLMjeCV
-84LwjKmCwoKvgsSBQZHOgsiCwYLEguKC6YFJikORr4mkgsmBSQ==
