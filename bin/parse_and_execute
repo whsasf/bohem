@@ -461,8 +461,8 @@ then
 	# any of the four items described in this script, including another test-list.
 	# Please notice, that as far as bohem is concerned, the only difference
 	# between case 2 and 3, is that 2 (which is checked for first) is executable.
-	parse_test_list.sh "$1" 2> /dev/null
-	#awk -f parse_test_list "$1" 2> /dev/null
+	#parse_test_list.sh "$1" 2> /dev/null
+	parse_test_list "$1" 2> /dev/null
 	exit_test_list=$?
 	if [ $exit_test_list -eq 4 ]
 	then
@@ -483,7 +483,8 @@ then
 	# share/*.test.list. The supplied keyword will get expanded to
 	# ${_bohem_dir}/share/$1.test.list and, if it exists, will get sliced same
 	# as case 3 above.
-	parse_test_list.sh "${_bohem_dir}/share/$1.test.list" 2> /dev/null
+	#parse_test_list.sh "${_bohem_dir}/share/$1.test.list" 2> /dev/null
+	parse_test_list "${_bohem_dir}/share/$1.test.list" 2> /dev/null
 	exit_test_list=$?
 	if [ $exit_test_list -eq 4 ]
 	then
