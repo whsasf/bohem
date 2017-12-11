@@ -1,0 +1,7 @@
+subject:testemail-Ascii-CRLF-7bit
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: base64
+
+2Iwg2YjZitmF2YPZhiDYqtitCk5vICBib2R5IQrjgYTjgY/jgaTjgavjgaogICAgCuaIkeS7rOaY
+r+S4reWbveS6uu+8jAo=

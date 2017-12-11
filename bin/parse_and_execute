@@ -22,7 +22,7 @@
 #########1#########2#########3#########4#########5#########6#########7#########8
 
 #load modules
-#source ../modules/log_result.mod
+source ../modules/log_result.mod
 
 # VERIFY_SERVICES test.
 if [ ! -z ${VERIFY_SERVICES:-""} ] #if  VERIFY_SERVICES is not defined, make it empty
