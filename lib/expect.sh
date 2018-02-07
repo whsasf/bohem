@@ -1,7 +1,6 @@
 #!/bin/bash
 
 # this tool makes ssh automatically via expect tool. so expect must be installed on the hosts requests from .
-
 expect <<-EOF
 log_file expect.log  
 set timeout $expect_timeout
@@ -11,10 +10,12 @@ expect {
  "*Password:" {send "$expect_pass\r"}
 }
 expect "~*#" {send "su - $1\r"}
-expect "~" {send "$2\r"}
-expect "~" {send "date -s\r"}
-expect "~" {send "ifconfig\r"}
+
+for {set i 2} {$i<=$total} {incr i} {
+ puts "$i"
+ puts "total=$#"
+ expect "~" {send "ls -al\r"}
+}
+
 expect "~" {send "exit\r"}
 EOF
-
-cal

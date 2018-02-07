@@ -1,3 +1,5 @@
+	**********  Starting /home/whsasf/workspace/bohem/bin/..  **********
+Test started: Wed Feb  7 23:42:43 CST 2018
 spawn ssh root@10.49.58.239
 Password: 
 Last login: Wed Feb  7 10:37:19 2018 from 10.6.104.124
@@ -26,3 +28,7 @@ in expression "_@_<="
  puts "total=2"
  expect "~" {send "ls -al\r"}
 }"
+TESTFAILED: ..: Test didn't report success or failure or skipped (7 sec.)
+FAILED: .. [20180207-234243] (7 sec.)
+Test ended: Wed Feb  7 23:42:50 CST 2018
+
