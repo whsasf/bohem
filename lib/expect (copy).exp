@@ -1,0 +1,46 @@
+#!/bin/expect -f
+
+#name: expect.exp
+# this tool makes ssh automatically via expect tool. so expect must be installed on the hosts requests from .
+# this tool allow you send many commands to host in a automatically way, and get response into a file for future use. you just need to use this 
+# scripts like below example: "\" just for beauty purpose
+##########################################################
+# #!/bin/bash
+#expect.exp 50 "10.49.58.239" root letmein imail \
+#"ls -al"                                        \
+#cal                                             \
+#date                                            \
+#"df -h"                                         \
+#ps
+##########################################################
+
+#50
+set expect_timeout  [lindex $argv 0]
+#10.49.58.239
+set HOST [lindex $argv 1]
+#root
+set expect_user [lindex $argv 2]
+#letmein
+set expect_pass [lindex $argv 3]
+#imail
+set subuser [lindex $argv 4]
+
+#set log files
+log_file expect.log
+
+#set timeout time
+set timeout $expect_timeout
+
+spawn ssh $expect_user@${HOST}
+expect {
+	"*yes/no"   {send "yes\r"; exp_continue}
+	"*Password:" {send "$expect_pass\r"}
+}
+expect "~*#" {send "su - $subuser\r"}
+
+#all the commands in a loop
+for {set i 5} {$i <$argc} {incr i} {
+	expect "~" {send "[lindex $argv $i]\r"}
+}
+
+expect "~" {send "exit\r"}

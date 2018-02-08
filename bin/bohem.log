@@ -1,44 +1,10 @@
-	**********  Starting /home/whsasf/workspace/bohem/bin/..  **********
-Test started: Wed Feb  7 23:42:43 CST 2018
-spawn ssh root@10.49.58.239
-Password: 
-Last login: Wed Feb  7 10:37:19 2018 from 10.6.104.124
-#########################################################################################################################################################
-#                                                  Synchronoss Technologies - Confidential                                                              #
-#                                                                                                                                                       #
-# Welcome to Openstack Deployment.                                                                                                                      #
-#                                                                                                                                                       #
-# Openstack Instance has to be registered with spacewalk to get the repos.                                                                              #
-#                                                                                                                                                       #
-# Run the following command to register the instance with Spacewalk:                                                                                    #
-#                                                                                                                                                       #
-#   rhnreg_ks --serverUrl=https://spacewalk.sncrcorp.net/XMLRPC --sslCACert=/usr/share/rhn/RHN-ORG-TRUSTED-SSL-CERT --activationkey=<activation-keys>   #
-#                                                                                                                                                       #
-#   Dev activation-key for CentOS7: 1-612b859ba0b2af4e6db2cdccc3373c70	                                                                                #
-#                                                                                                                                                       #
-#   Please contact servicedesk at:<servicedesk@Synchronoss.com> for additional key requirements.                                                        #
-#                                                             © Synchronoss 2017                                                                        #
-#########################################################################################################################################################
-]0;root@mx1:~[?1034h[root@mx1 ~]# missing operand at _@_
-in expression "_@_<="
-    (parsing expression "<=")
-    invoked from within
-"for {set i 2} {<=} {incr i} {
- puts ""
- puts "total=2"
- expect "~" {send "ls -al\r"}
-}"
-TESTFAILED: ..: Test didn't report success or failure or skipped (7 sec.)
-FAILED: .. [20180207-234243] (7 sec.)
-Test ended: Wed Feb  7 23:42:50 CST 2018
 
-
-Test-suite ended: Wed Feb  7 23:42:50 CST 2018
+Test-suite ended: Thu Feb  8 11:26:46 CST 2018
 
 bohem 2.9.5 Info:
 	Entire test-suite took 0 minutes.
 	Total number of tests passed:	0
-	Total number of tests failed:	1
-	Total number of tests ran:	1
+	Total number of tests failed:	0
+	Total number of tests ran:	0
 	Total number of tests broken:	0
 
