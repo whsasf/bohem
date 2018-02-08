@@ -1,0 +1,15 @@
+#!/usr/bin/env expect
+
+set cer "/home/ram/Documents/synchronoss.cer"
+set vpn_host "access.synchronoss.com"
+set pass1 "1qaz2wsX$"
+set pass2 "9ol.8ik<^%$#"
+log_file expect.log
+
+spawn sudo openconnect -c $cer $vpn_host
+expect "password*" {send "$pass1\r" }
+expect "anything else to view:" {send "yes\r"}
+expect "anything else to view:" {send "yes\r"}
+expect "Username" {send "hwan0001\r"}
+expect "Password" {send "$pass2\r"}
+interact
