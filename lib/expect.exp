@@ -1,4 +1,4 @@
-#!/usr/bin/env expect -f
+#!/bin/env expect -f
 
 #name: expect.exp
 # this tool makes ssh automatically via expect tool. so expect must be installed on the hosts requests from .
