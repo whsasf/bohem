@@ -1,3 +1,8 @@
 #!/bin/bash
 
-expect.sh imail "ls -al"
+expect.exp 50 "10.49.58.239" root letmein imail \
+"ls -al"                                        \
+cal                                             \
+date                                            \
+"df -h"                                         \
+ps
