@@ -32,14 +32,9 @@ trap clean_accounts SIGHUP SIGINT SIGTERM
 
 #1 clear mta.log and other tmp files
 echo "########## 1 Clear mta.log using expect tool ..."
-expect <<-EOF 
-set timeout $expect_timeout	
-spawn ssh imail2@${MX1_HOST_IP1}
-expect  "*Password" { send "imail\r" }
-expect  "*~" { send "> ~/log/mta.log\r" }
-expect  "*~"
-exit
-EOF
+
+expect.exp 50 "10.49.58.239" root letmein imail \
+"> ~/log/mta.log"
 
 #clear other tmp log files
 rm expect*.log 
@@ -67,18 +62,12 @@ else
 fi
 
 #3 get currect epoch date ,and calaute the autoreplystartdate
-expect <<-EOF 
-set timeout $expect_timeout	
-log_file expect1.log 
-spawn ssh root@${MX1_HOST_IP1}
-expect  "*Password" { send "letmein\r" }
-expect  "*~"  { send "date +%s\r\n" }
-expect "*~"
-exit
-EOF
+
+expect.exp 50 "10.49.58.239" root letmein imail \
+"date +%s"
 
 #cet:curent epoc time
-cet=$(grep -A  1 date expect1.log |grep -v "date")
+cet=$(grep -A  1 date expect.log |grep -v "date")
 cet=$(echo ${cet:0:10})
 #set autoreplystartdate 5s later, and autoreplystopdate 30 minutes later.
 let autoreplystartdate=cet+5
@@ -89,21 +78,15 @@ sleep 5
  
 #4 configure user2 to proper autoreply mode
 echo "########## 4 Configure user2 to vacation autoreply mode using expect tool ..."
-expect <<-EOF 
-set timeout $expect_timeout	
-log_file expect2.log 
-spawn ssh imail2@${MX1_HOST_IP1}
-expect  "*Password" { send "imail\r" }
-expect  "*~"  { send "echo 'internal:' >data.txt\r" }
-expect  "*~"  { send "echo 'Reply,This is an autoreply message for internal senders!' >>data.txt\r" }
-expect  "*~"  { send "echo 'external:' >>data.txt\r" }
-expect  "*~"  { send "echo 'Reply,This is an external autoreply message for external senders!' >>data.txt\r" }
-expect  "*~"  { send "autoreplyctrl ${user2}@openwave.com $autoreplymode data.txt $autoreplystartdate $autoreplystopdate\r" }
-expect "*~"
-exit
-EOF
 
-count=$(grep  -i "AutoReply data updated Successfully"  expect2.log|wc -l)
+expect.exp 50 "10.49.58.239" root letmein imail \
+"echo 'internal:' >data.txt" \
+"echo 'Reply,This is an autoreply message for internal senders!' >>data.txt" \
+"echo 'external:' >>data.txt" \
+"echo 'Reply,This is an external autoreply message for external senders!' >>data.txt" \
+"autoreplyctrl ${user2}@openwave.com $autoreplymode data.txt $autoreplystartdate $autoreplystopdate"
+
+count=$(grep  -i "AutoReply data updated Successfully"  expect.log|wc -l)
 if [[ "$count" -eq "1" ]];then
 	echo -e "\033[32m##########4 Congifuration successfully\033[0m"
 else
@@ -113,16 +96,10 @@ else
 fi
 
 #set user2 in locked status
-expect <<-EOF 
-set timeout $expect_timeout	
-log_file expect11.log 
-spawn ssh imail2@${MX1_HOST_IP1}
-expect  "*Password" { send "imail\r" }
-expect  "*~"  { send "imdbcontrol sas $user2 openwave.com S\r" }
-expect  "*~"  { send "imdbcontrol gaf $user2 openwave.com |grep Status\r" }
-expect  "*~"
-exit
-EOF
+
+expect.exp 50 "10.49.58.239" root letmein imail \
+"imdbcontrol sas $user2 openwave.com S" \
+"imdbcontrol gaf $user2 openwave.com |grep Status\r"
 
 
 # 5 deliever 1 message from user1 to user2, we expect that will have a autoreplied message in inbox of user1
@@ -147,18 +124,12 @@ sendmail.pl  $MX1_HOST_IP1 $MX1_SMTP_PORT $user1 $user2  <send.data >send.log
 
 #6 check mta.log, make sure  flag "AcctInactive" exist:
 echo "########## 6 Check mta.log using expect tool ..."
-expect <<-EOF 
-set timeout $expect_timeout	
-log_file expect3.log 
-spawn ssh imail2@${MX1_HOST_IP1}
-expect  "*Password" { send "imail\r" }
-expect  "*~" { send "cat log/mta.log\r" }
-expect  "*~"
-exit
-EOF
 
-count=$(grep  -i "AcctInactive"  expect3.log|wc -l)
-count1=$(grep -i "delivered" expect3.log |wc -l)
+expect.exp 50 "10.49.58.239" root letmein imail \
+"cat log/mta.log"
+
+count=$(grep  -i "AcctInactive"  expect.log|wc -l)
+count1=$(grep -i "delivered" expect.log |wc -l)
 if [[ "$count" -eq "1" && "$count1" -eq "0" ]];then
 	echo -e "\033[32m##########6 Autoreply messaeg undelievered successfully!!\033[0m"
 else
