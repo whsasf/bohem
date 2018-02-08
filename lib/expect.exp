@@ -33,7 +33,7 @@ set timeout $expect_timeout
 
 spawn ssh $expect_user@${HOST}
 expect {
-# "*#"          {send "ssh-keygen -R ${HOST}\r"; exp_continue} # this option has to be done manually now!!!!
+# "*#"          {send "ssh-keygen -R ${HOST}\r"; exp_continue} # this option doesn't work now,you can help check why.
 	"*yes/no"     {send "yes\r"; exp_continue}
 	"*Password:"  {send "$expect_pass\r"}
 }
