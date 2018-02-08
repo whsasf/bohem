@@ -33,9 +33,9 @@ set timeout $expect_timeout
 
 spawn ssh $expect_user@${HOST}
 expect {
-  "*Host key verification failed" {send "ssh-keygen -R ${HOST}\r"; exp_continue}
-	"*yes/no"                       {send "yes\r"; exp_continue}
-	"*Password:"                    {send "$expect_pass\r"}
+  "*#"          {send "ssh-keygen -R ${HOST}\r"; exp_continue}
+	"*yes/no"     {send "yes\r"; exp_continue}
+	"*Password:"  {send "$expect_pass\r"}
 }
 expect "~*#" {send "su - $subuser\r"}
 
