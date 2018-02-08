@@ -81,9 +81,9 @@ echo "########## 4 Configure user2 to vacation autoreply mode using expect tool 
 
 expect.exp 50 "10.49.58.239" root letmein imail \
 "echo 'internal:' >data.txt" \
-"echo 'Reply,This is an autoreply message for internal senders!' >>data.txt"\
-"echo 'external:' >>data.txt"\
-"echo 'Reply,This is an external autoreply message for external senders!' >>data.txt"\
+"echo 'Reply,This is an autoreply message for internal senders!' >>data.txt" \
+"echo 'external:' >>data.txt" \
+"echo 'Reply,This is an external autoreply message for external senders!' >>data.txt" \
 "autoreplyctrl ${user2}@openwave.com $autoreplymode data.txt $autoreplystartdate $autoreplystopdate"
 
 
@@ -100,7 +100,7 @@ fi
 #set user2 in locked status
 
 expect.exp 50 "10.49.58.239" root letmein imail \
-"imdbcontrol sas $user2 openwave.com D"\
+"imdbcontrol sas $user2 openwave.com D" \
 "imdbcontrol gaf $user2 openwave.com |grep Status"
 
 
