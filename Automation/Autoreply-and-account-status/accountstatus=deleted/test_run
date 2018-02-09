@@ -31,8 +31,8 @@ rm send*.log
 	
 #2 create accounts user1@openwave.com and user2@openwave.com
 echo "########## 2 Accounts provision ..."
-mos_create_user.sh  ${MXOS1_HOST_IP}  $MXOS1__PORT $user1@openwave.com $user1 $passwd
-mos_create_user.sh  ${MXOS1_HOST_IP}  $MXOS1__PORT $user2@openwave.com $user2 $passwd
+mos_create_user.sh  ${MXOS1_HOST_IP}  $MXOS1__PORT $user1@openwave.com $passwd
+mos_create_user.sh  ${MXOS1_HOST_IP}  $MXOS1__PORT $user2@openwave.com $passwd
 
 #3 get currect epoch date ,and calaute the autoreplystartdate
 
