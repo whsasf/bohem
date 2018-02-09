@@ -26,7 +26,7 @@ set expect_pass [lindex $argv 3]
 set expect_subuser [lindex $argv 4]
 
 #set log files
-log_file expect.log
+#log_file expect.log
 
 #set timeout time
 set timeout $expect_timeout
@@ -37,6 +37,9 @@ expect {
 	"*yes/no"     {send "yes\r"; exp_continue}
 	"*Password:"  {send "$expect_pass\r"}
 }
+
+log_file expect.log
+
 expect "~*#" {send "su - $expect_subuser\r"}
 
 #all the commands in a loop
