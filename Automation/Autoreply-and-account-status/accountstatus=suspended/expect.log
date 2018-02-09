@@ -1,0 +1,67 @@
+spawn ssh root@10.49.58.239
+Last login: Thu Feb  8 21:14:30 2018 from mx1-adm
+#########################################################################################################################################################
+#                                                  Synchronoss Technologies - Confidential                                                              #
+#                                                                                                                                                       #
+# Welcome to Openstack Deployment.                                                                                                                      #
+#                                                                                                                                                       #
+# Openstack Instance has to be registered with spacewalk to get the repos.                                                                              #
+#                                                                                                                                                       #
+# Run the following command to register the instance with Spacewalk:                                                                                    #
+#                                                                                                                                                       #
+#   rhnreg_ks --serverUrl=https://spacewalk.sncrcorp.net/XMLRPC --sslCACert=/usr/share/rhn/RHN-ORG-TRUSTED-SSL-CERT --activationkey=<activation-keys>   #
+#                                                                                                                                                       #
+#   Dev activation-key for CentOS7: 1-612b859ba0b2af4e6db2cdccc3373c70	                                                                                #
+#                                                                                                                                                       #
+#   Please contact servicedesk at:<servicedesk@Synchronoss.com> for additional key requirements.                                                        #
+#                                                             © Synchronoss 2017                                                                        #
+#########################################################################################################################################################
+]0;root@mx1:~[?1034h[root@mx1 ~]# su - imail
+Last login: Thu Feb  8 21:14:44 EST 2018 on pts/0
+[?1034hmx1:imail:Mx9.5:~$ date +%s
+1518142536
+mx1:imail:Mx9.5:~$ spawn ssh root@10.49.58.239
+Last login: Thu Feb  8 21:14:49 2018 from 10.37.2.214
+#########################################################################################################################################################
+#                                                  Synchronoss Technologies - Confidential                                                              #
+#                                                                                                                                                       #
+# Welcome to Openstack Deployment.                                                                                                                      #
+#                                                                                                                                                       #
+# Openstack Instance has to be registered with spacewalk to get the repos.                                                                              #
+#                                                                                                                                                       #
+# Run the following command to register the instance with Spacewalk:                                                                                    #
+#                                                                                                                                                       #
+#   rhnreg_ks --serverUrl=https://spacewalk.sncrcorp.net/XMLRPC --sslCACert=/usr/share/rhn/RHN-ORG-TRUSTED-SSL-CERT --activationkey=<activation-keys>   #
+#                                                                                                                                                       #
+#   Dev activation-key for CentOS7: 1-612b859ba0b2af4e6db2cdccc3373c70	                                                                                #
+#                                                                                                                                                       #
+#   Please contact servicedesk at:<servicedesk@Synchronoss.com> for additional key requirements.                                                        #
+#                                                             © Synchronoss 2017                                                                        #
+#########################################################################################################################################################
+]0;root@mx1:~[?1034h[root@mx1 ~]# su - imail
+Last login: Thu Feb  8 21:16:30 EST 2018 on pts/1
+[?1034hmx1:imail:Mx9.5:~$ echo 'internal:' >data.txt
+mx1:imail:Mx9.5:~$ echo 'Reply,This is an autoreply message for internal senders!' >>data.txt
+mx1:imail:Mx9.5:~$ echo 'external:' >>data.txt
+mx1:imail:Mx9.5:~$ echo 'Reply,This is an external autoreply message for external senders!' >>data.txt
+mx1:imail:Mx9.5:~$ autoreplyctrl ar25923@openwave.com reply data.txt 1518142541 1518144336
+AutoReply data updated Successfully.
+mx1:imail:Mx9.5:~$ spawn ssh root@10.49.58.239
+Last login: Thu Feb  8 21:16:36 2018 from mx1-adm
+#########################################################################################################################################################
+#                                                  Synchronoss Technologies - Confidential                                                              #
+#                                                                                                                                                       #
+# Welcome to Openstack Deployment.                                                                                                                      #
+#                                                                                                                                                       #
+# Openstack Instance has to be registered with spacewalk to get the repos.                                                                              #
+#                                                                                                                                                       #
+# Run the following command to register the instance with Spacewalk:                                                                                    #
+#                                                                                                                                                       #
+#   rhnreg_ks --serverUrl=https://spacewalk.sncrcorp.net/XMLRPC --sslCACert=/usr/share/rhn/RHN-ORG-TRUSTED-SSL-CERT --activationkey=<activation-keys>   #
+#                                                                                                                                                       #
+#   Dev activation-key for CentOS7: 1-612b859ba0b2af4e6db2cdccc3373c70	                                                                                #
+#                                                                                                                                                       #
+#   Please contact servicedesk at:<servicedesk@Synchronoss.com> for additional key requirements.                                                        #
+#                                                             © Synchronoss 2017                                                                        #
+#########################################################################################################################################################
+]0;root@mx1:~[?1034h[root@mx1 ~]# 
