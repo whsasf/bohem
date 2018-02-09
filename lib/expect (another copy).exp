@@ -41,20 +41,20 @@ set f 0
 while {$f != 1} {
 spawn ssh $expect_user@${HOST}
 expect {
-	 "yes/no"     {send "yes\r"; exp_continue}
-	 "Password:"  {send "$expect_pass\r";set f 1}
-   -re "#|$ "   {send [exec ssh-keygen -R ${HOST}]}   
-   "# "         {send "\r";set f 1}
+	 "*yes/no"     {send "yes\r"; exp_continue}
+	 "*Password:"  {send "$expect_pass\r";set f 1}
+   "Host key verification failed" {exec ssh-keygen -R ${HOST}}   
+   "$"         {send "\r";set f 1}
 }
 }
 
 log_file expect.log
 
-expect  "# " {send "su - $expect_subuser\r"}
+expect  "~*#" {send "su - $expect_subuser\r"}
 
 #all the commands in a loop
 for {set i 5} {$i <$argc} {incr i} {
-	expect   "$ " {send "[lindex $argv $i]\r"}
+	expect   "~$" {send "[lindex $argv $i]\r"}
 }
 
-expect  "$ " {send "exit\r"}
+expect  "*~" {send "exit\r"}

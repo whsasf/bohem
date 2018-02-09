@@ -1,0 +1,291 @@
+	**********  Starting /home/ram/workspace/bohem/bin/..  **********
+Test started: Fri Feb  9 19:10:21 CST 2018
+spawn ssh root@10.49.58.121
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@    WARNING: REMOTE HOST IDENTIFICATION HAS CHANGED!     @
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+IT IS POSSIBLE THAT SOMEONE IS DOING SOMETHING NASTY!
+Someone could be eavesdropping on you right now (man-in-the-middle attack)!
+It is also possible that a host key has just been changed.
+The fingerprint for the ECDSA key sent by the remote host is
+SHA256:HtxS/1K957jTc0+dWXN9nmiKvxhAe2MMe1g15nCAC/U.
+Please contact your system administrator.
+Add correct host key in /home/ram/.ssh/known_hosts to get rid of this message.
+Offending ECDSA key in /home/ram/.ssh/known_hosts:4
+  remove with:
+  ssh-keygen -f "/home/ram/.ssh/known_hosts" -R 10.49.58.121
+ECDSA host key for 10.49.58.121 has changed and you have requested strict checking.
+Host key verification failed.
+spawn ssh root@10.49.58.121
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@    WARNING: REMOTE HOST IDENTIFICATION HAS CHANGED!     @
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+IT IS POSSIBLE THAT SOMEONE IS DOING SOMETHING NASTY!
+Someone could be eavesdropping on you right now (man-in-the-middle attack)!
+It is also possible that a host key has just been changed.
+The fingerprint for the ECDSA key sent by the remote host is
+SHA256:HtxS/1K957jTc0+dWXN9nmiKvxhAe2MMe1g15nCAC/U.
+Please contact your system administrator.
+Add correct host key in /home/ram/.ssh/known_hosts to get rid of this message.
+Offending ECDSA key in /home/ram/.ssh/known_hosts:4
+  remove with:
+  ssh-keygen -f "/home/ram/.ssh/known_hosts" -R 10.49.58.121
+ECDSA host key for 10.49.58.121 has changed and you have requested strict checking.
+Host key verification failed.
+spawn ssh root@10.49.58.121
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@    WARNING: REMOTE HOST IDENTIFICATION HAS CHANGED!     @
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+IT IS POSSIBLE THAT SOMEONE IS DOING SOMETHING NASTY!
+Someone could be eavesdropping on you right now (man-in-the-middle attack)!
+It is also possible that a host key has just been changed.
+The fingerprint for the ECDSA key sent by the remote host is
+SHA256:HtxS/1K957jTc0+dWXN9nmiKvxhAe2MMe1g15nCAC/U.
+Please contact your system administrator.
+Add correct host key in /home/ram/.ssh/known_hosts to get rid of this message.
+Offending ECDSA key in /home/ram/.ssh/known_hosts:4
+  remove with:
+  ssh-keygen -f "/home/ram/.ssh/known_hosts" -R 10.49.58.121
+ECDSA host key for 10.49.58.121 has changed and you have requested strict checking.
+Host key verification failed.
+spawn ssh root@10.49.58.121
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@    WARNING: REMOTE HOST IDENTIFICATION HAS CHANGED!     @
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+IT IS POSSIBLE THAT SOMEONE IS DOING SOMETHING NASTY!
+Someone could be eavesdropping on you right now (man-in-the-middle attack)!
+It is also possible that a host key has just been changed.
+The fingerprint for the ECDSA key sent by the remote host is
+SHA256:HtxS/1K957jTc0+dWXN9nmiKvxhAe2MMe1g15nCAC/U.
+Please contact your system administrator.
+Add correct host key in /home/ram/.ssh/known_hosts to get rid of this message.
+Offending ECDSA key in /home/ram/.ssh/known_hosts:4
+  remove with:
+  ssh-keygen -f "/home/ram/.ssh/known_hosts" -R 10.49.58.121
+ECDSA host key for 10.49.58.121 has changed and you have requested strict checking.
+Host key verification failed.
+spawn ssh root@10.49.58.121
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@    WARNING: REMOTE HOST IDENTIFICATION HAS CHANGED!     @
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+IT IS POSSIBLE THAT SOMEONE IS DOING SOMETHING NASTY!
+Someone could be eavesdropping on you right now (man-in-the-middle attack)!
+It is also possible that a host key has just been changed.
+The fingerprint for the ECDSA key sent by the remote host is
+SHA256:HtxS/1K957jTc0+dWXN9nmiKvxhAe2MMe1g15nCAC/U.
+Please contact your system administrator.
+Add correct host key in /home/ram/.ssh/known_hosts to get rid of this message.
+Offending ECDSA key in /home/ram/.ssh/known_hosts:4
+  remove with:
+  ssh-keygen -f "/home/ram/.ssh/known_hosts" -R 10.49.58.121
+ECDSA host key for 10.49.58.121 has changed and you have requested strict checking.
+Host key verification failed.
+spawn ssh root@10.49.58.121
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@    WARNING: REMOTE HOST IDENTIFICATION HAS CHANGED!     @
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+IT IS POSSIBLE THAT SOMEONE IS DOING SOMETHING NASTY!
+Someone could be eavesdropping on you right now (man-in-the-middle attack)!
+It is also possible that a host key has just been changed.
+The fingerprint for the ECDSA key sent by the remote host is
+SHA256:HtxS/1K957jTc0+dWXN9nmiKvxhAe2MMe1g15nCAC/U.
+Please contact your system administrator.
+Add correct host key in /home/ram/.ssh/known_hosts to get rid of this message.
+Offending ECDSA key in /home/ram/.ssh/known_hosts:4
+  remove with:
+  ssh-keygen -f "/home/ram/.ssh/known_hosts" -R 10.49.58.121
+ECDSA host key for 10.49.58.121 has changed and you have requested strict checking.
+Host key verification failed.
+spawn ssh root@10.49.58.121
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@    WARNING: REMOTE HOST IDENTIFICATION HAS CHANGED!     @
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+IT IS POSSIBLE THAT SOMEONE IS DOING SOMETHING NASTY!
+Someone could be eavesdropping on you right now (man-in-the-middle attack)!
+It is also possible that a host key has just been changed.
+The fingerprint for the ECDSA key sent by the remote host is
+SHA256:HtxS/1K957jTc0+dWXN9nmiKvxhAe2MMe1g15nCAC/U.
+Please contact your system administrator.
+Add correct host key in /home/ram/.ssh/known_hosts to get rid of this message.
+Offending ECDSA key in /home/ram/.ssh/known_hosts:4
+  remove with:
+  ssh-keygen -f "/home/ram/.ssh/known_hosts" -R 10.49.58.121
+ECDSA host key for 10.49.58.121 has changed and you have requested strict checking.
+Host key verification failed.
+spawn ssh root@10.49.58.121
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@    WARNING: REMOTE HOST IDENTIFICATION HAS CHANGED!     @
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+IT IS POSSIBLE THAT SOMEONE IS DOING SOMETHING NASTY!
+Someone could be eavesdropping on you right now (man-in-the-middle attack)!
+It is also possible that a host key has just been changed.
+The fingerprint for the ECDSA key sent by the remote host is
+SHA256:HtxS/1K957jTc0+dWXN9nmiKvxhAe2MMe1g15nCAC/U.
+Please contact your system administrator.
+Add correct host key in /home/ram/.ssh/known_hosts to get rid of this message.
+Offending ECDSA key in /home/ram/.ssh/known_hosts:4
+  remove with:
+  ssh-keygen -f "/home/ram/.ssh/known_hosts" -R 10.49.58.121
+ECDSA host key for 10.49.58.121 has changed and you have requested strict checking.
+Host key verification failed.
+spawn ssh root@10.49.58.121
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@    WARNING: REMOTE HOST IDENTIFICATION HAS CHANGED!     @
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+IT IS POSSIBLE THAT SOMEONE IS DOING SOMETHING NASTY!
+Someone could be eavesdropping on you right now (man-in-the-middle attack)!
+It is also possible that a host key has just been changed.
+The fingerprint for the ECDSA key sent by the remote host is
+SHA256:HtxS/1K957jTc0+dWXN9nmiKvxhAe2MMe1g15nCAC/U.
+Please contact your system administrator.
+Add correct host key in /home/ram/.ssh/known_hosts to get rid of this message.
+Offending ECDSA key in /home/ram/.ssh/known_hosts:4
+  remove with:
+  ssh-keygen -f "/home/ram/.ssh/known_hosts" -R 10.49.58.121
+ECDSA host key for 10.49.58.121 has changed and you have requested strict checking.
+Host key verification failed.
+spawn ssh root@10.49.58.121
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@    WARNING: REMOTE HOST IDENTIFICATION HAS CHANGED!     @
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+IT IS POSSIBLE THAT SOMEONE IS DOING SOMETHING NASTY!
+Someone could be eavesdropping on you right now (man-in-the-middle attack)!
+It is also possible that a host key has just been changed.
+The fingerprint for the ECDSA key sent by the remote host is
+SHA256:HtxS/1K957jTc0+dWXN9nmiKvxhAe2MMe1g15nCAC/U.
+Please contact your system administrator.
+Add correct host key in /home/ram/.ssh/known_hosts to get rid of this message.
+Offending ECDSA key in /home/ram/.ssh/known_hosts:4
+  remove with:
+  ssh-keygen -f "/home/ram/.ssh/known_hosts" -R 10.49.58.121
+ECDSA host key for 10.49.58.121 has changed and you have requested strict checking.
+Host key verification failed.
+spawn ssh root@10.49.58.121
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@    WARNING: REMOTE HOST IDENTIFICATION HAS CHANGED!     @
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+IT IS POSSIBLE THAT SOMEONE IS DOING SOMETHING NASTY!
+Someone could be eavesdropping on you right now (man-in-the-middle attack)!
+It is also possible that a host key has just been changed.
+The fingerprint for the ECDSA key sent by the remote host is
+SHA256:HtxS/1K957jTc0+dWXN9nmiKvxhAe2MMe1g15nCAC/U.
+Please contact your system administrator.
+Add correct host key in /home/ram/.ssh/known_hosts to get rid of this message.
+Offending ECDSA key in /home/ram/.ssh/known_hosts:4
+  remove with:
+  ssh-keygen -f "/home/ram/.ssh/known_hosts" -R 10.49.58.121
+ECDSA host key for 10.49.58.121 has changed and you have requested strict checking.
+Host key verification failed.
+spawn ssh root@10.49.58.121
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@    WARNING: REMOTE HOST IDENTIFICATION HAS CHANGED!     @
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+IT IS POSSIBLE THAT SOMEONE IS DOING SOMETHING NASTY!
+Someone could be eavesdropping on you right now (man-in-the-middle attack)!
+It is also possible that a host key has just been changed.
+The fingerprint for the ECDSA key sent by the remote host is
+SHA256:HtxS/1K957jTc0+dWXN9nmiKvxhAe2MMe1g15nCAC/U.
+Please contact your system administrator.
+Add correct host key in /home/ram/.ssh/known_hosts to get rid of this message.
+Offending ECDSA key in /home/ram/.ssh/known_hosts:4
+  remove with:
+  ssh-keygen -f "/home/ram/.ssh/known_hosts" -R 10.49.58.121
+ECDSA host key for 10.49.58.121 has changed and you have requested strict checking.
+Host key verification failed.
+spawn ssh root@10.49.58.121
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@    WARNING: REMOTE HOST IDENTIFICATION HAS CHANGED!     @
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+IT IS POSSIBLE THAT SOMEONE IS DOING SOMETHING NASTY!
+Someone could be eavesdropping on you right now (man-in-the-middle attack)!
+It is also possible that a host key has just been changed.
+The fingerprint for the ECDSA key sent by the remote host is
+SHA256:HtxS/1K957jTc0+dWXN9nmiKvxhAe2MMe1g15nCAC/U.
+Please contact your system administrator.
+Add correct host key in /home/ram/.ssh/known_hosts to get rid of this message.
+Offending ECDSA key in /home/ram/.ssh/known_hosts:4
+  remove with:
+  ssh-keygen -f "/home/ram/.ssh/known_hosts" -R 10.49.58.121
+ECDSA host key for 10.49.58.121 has changed and you have requested strict checking.
+Host key verification failed.
+spawn ssh root@10.49.58.121
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@    WARNING: REMOTE HOST IDENTIFICATION HAS CHANGED!     @
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+IT IS POSSIBLE THAT SOMEONE IS DOING SOMETHING NASTY!
+Someone could be eavesdropping on you right now (man-in-the-middle attack)!
+It is also possible that a host key has just been changed.
+The fingerprint for the ECDSA key sent by the remote host is
+SHA256:HtxS/1K957jTc0+dWXN9nmiKvxhAe2MMe1g15nCAC/U.
+Please contact your system administrator.
+Add correct host key in /home/ram/.ssh/known_hosts to get rid of this message.
+Offending ECDSA key in /home/ram/.ssh/known_hosts:4
+  remove with:
+  ssh-keygen -f "/home/ram/.ssh/known_hosts" -R 10.49.58.121
+ECDSA host key for 10.49.58.121 has changed and you have requested strict checking.
+Host key verification failed.
+spawn ssh root@10.49.58.121
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@    WARNING: REMOTE HOST IDENTIFICATION HAS CHANGED!     @
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+IT IS POSSIBLE THAT SOMEONE IS DOING SOMETHING NASTY!
+Someone could be eavesdropping on you right now (man-in-the-middle attack)!
+It is also possible that a host key has just been changed.
+The fingerprint for the ECDSA key sent by the remote host is
+SHA256:HtxS/1K957jTc0+dWXN9nmiKvxhAe2MMe1g15nCAC/U.
+Please contact your system administrator.
+Add correct host key in /home/ram/.ssh/known_hosts to get rid of this message.
+Offending ECDSA key in /home/ram/.ssh/known_hosts:4
+  remove with:
+  ssh-keygen -f "/home/ram/.ssh/known_hosts" -R 10.49.58.121
+ECDSA host key for 10.49.58.121 has changed and you have requested strict checking.
+Host key verification failed.
+spawn ssh root@10.49.58.121
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@    WARNING: REMOTE HOST IDENTIFICATION HAS CHANGED!     @
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+IT IS POSSIBLE THAT SOMEONE IS DOING SOMETHING NASTY!
+Someone could be eavesdropping on you right now (man-in-the-middle attack)!
+It is also possible that a host key has just been changed.
+The fingerprint for the ECDSA key sent by the remote host is
+SHA256:HtxS/1K957jTc0+dWXN9nmiKvxhAe2MMe1g15nCAC/U.
+Please contact your system administrator.
+Add correct host key in /home/ram/.ssh/known_hosts to get rid of this message.
+Offending ECDSA key in /home/ram/.ssh/known_hosts:4
+  remove with:
+  ssh-keygen -f "/home/ram/.ssh/known_hosts" -R 10.49.58.121
+ECDSA host key for 10.49.58.121 has changed and you have requested strict checking.
+Host key verification failed.
+spawn ssh root@10.49.58.121
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@    WARNING: REMOTE HOST IDENTIFICATION HAS CHANGED!     @
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+IT IS POSSIBLE THAT SOMEONE IS DOING SOMETHING NASTY!
+Someone could be eavesdropping on you right now (man-in-the-middle attack)!
+It is also possible that a host key has just been changed.
+The fingerprint for the ECDSA key sent by the remote host is
+SHA256:HtxS/1K957jTc0+dWXN9nmiKvxhAe2MMe1g15nCAC/U.
+Please contact your system administrator.
+Add correct host key in /home/ram/.ssh/known_hosts to get rid of this message.
+Offending ECDSA key in /home/ram/.ssh/known_hosts:4
+  remove with:
+  ssh-keygen -f "/home/ram/.ssh/known_hosts" -R 10.49.58.121
+ECDSA host key for 10.49.58.121 has changed and you have requested strict checking.
+Host key verification failed.
+spawn ssh root@10.49.58.121
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@    WARNING: REMOTE HOST IDENTIFICATION HAS CHANGED!     @
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+IT IS POSSIBLE THAT SOMEONE IS DOING SOMETHING NASTY!
+Someone could be eavesdropping on you right now (man-in-the-middle attack)!
+It is also possible that a host key has just been changed.
+The fingerprint for the ECDSA key sent by the remote host is
+SHA256:HtxS/1K957jTc0+dWXN9nmiKvxhAe2MMe1g15nCAC/U.
+Please contact your system administrator.
+Add correct host key in /home/ram/.ssh/known_hosts to get rid of this message.
+Offending ECDSA key in /home/ram/.ssh/known_hosts:4
+  remove with:
+  ssh-keygen -f "/home/ram/.ssh/known_hosts" -R 10.49.58.121
+ECDSA host key for 10.49.58.121 has changed and you have requested strict checking.
+Host key verification failed.
+spawn ssh root@10.49.58.121
