@@ -6,11 +6,11 @@
 # scripts like below example: "\" just for beauty purpose
 ##########################################################
 # #!/bin/bash
-#expect.exp 50 "10.49.58.239" op-user  imail \
-#"ls -al"                                    \
-#cal                                         \
-#date                                        \
-#"df -h"                                     \
+#expect.exp 50 "10.49.58.239" root letmein  imail \
+#"ls -al"                                         \
+#cal                                              \
+#date                                             \
+#"df -h"                                          \
 #ps
 ##########################################################
 
@@ -21,9 +21,9 @@ set HOST [lindex $argv 1]
 #root
 set expect_user [lindex $argv 2]
 #letmein
-#set expect_pass [lindex $argv 3]
+set expect_pass [lindex $argv 3]
 #imail
-set subuser [lindex $argv 3]
+set subuser [lindex $argv 4]
 
 #set log files
 log_file expect.log
@@ -37,10 +37,10 @@ expect {
 	"*yes/no"     {send "yes\r"; exp_continue}
 	"*Password:"  {send "$expect_pass\r"}
 }
-expect "~*#" {send "sudo su - $subuser\r"}
+expect "~*#" {send "su - $subuser\r"}
 
 #all the commands in a loop
-for {set i 4} {$i <$argc} {incr i} {
+for {set i 5} {$i <$argc} {incr i} {
 	expect "~" {send "[lindex $argv $i]\r"}
 }
 

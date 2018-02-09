@@ -1,6 +1,6 @@
 #!/bin/bash
 
-expect.exp 50 "10.49.58.239" root letmein imail \
+expect.exp 50 "10.49.58.239" op-user imail \
 "ls -al"                                        \
 cal                                             \
 date                                            \

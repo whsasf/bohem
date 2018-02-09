@@ -40,13 +40,3 @@ Su Mo Tu We Th Fr Sa
 FAILED: .. [20180209-095225] (101 sec.)
 Test ended: Fri Feb  9 09:54:06 CST 2018
 
-
-Test-suite ended: Fri Feb  9 09:54:06 CST 2018
-
-bohem 2.9.5 Info:
-	Entire test-suite took 1 minutes.
-	Total number of tests passed:	0
-	Total number of tests failed:	1
-	Total number of tests ran:	1
-	Total number of tests broken:	0
-
