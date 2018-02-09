@@ -78,10 +78,10 @@ if [ "$useralias" != "" ]; then
         aliases=${aliases%?} #Cut away last &
 fi
 
-curl -X PUT -v -d email=$email -d password=$password -d cosId=$class $args http://$mos_host:$mos_port/mxos/mailbox/v2/$email
+curl -s -X PUT -v -d email=$email -d password=$password -d cosId=$class $args http://$mos_host:$mos_port/mxos/mailbox/v2/$email
 
 if [ "$useralias" != "" ]; then
-        curl -X PUT -v -d email=$email -d password=$password -d cosId=$class -d $aliases http://$mos_host:$mos_port/mxos/mailbox/v2/$email/base/emailAliases
+        curl -s -X PUT -v -d email=$email -d password=$password -d cosId=$class -d $aliases http://$mos_host:$mos_port/mxos/mailbox/v2/$email/base/emailAliases
 fi
 
 echo "TIME User create: $SECONDS"

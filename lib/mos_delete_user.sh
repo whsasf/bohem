@@ -10,7 +10,7 @@ email=$3
 
 shift 3
 
-curl -X DELETE http://$mos_host:$mos_port/mxos/mailbox/v2/$email
+curl -s -X DELETE http://$mos_host:$mos_port/mxos/mailbox/v2/$email
 
 echo "TIME User delete: $SECONDS"
 exit 0
