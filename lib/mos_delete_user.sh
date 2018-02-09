@@ -2,7 +2,7 @@
 
 ### NOTE: This script DOES use MOS.
 ##
-set -x
+#set -x
 
 mos_host=$1
 mos_port=$2

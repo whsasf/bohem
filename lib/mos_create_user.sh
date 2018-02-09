@@ -20,7 +20,7 @@
 ###
 ###
 
-set -x
+#set -x
 
 mos_host=$1
 mos_port=$2
