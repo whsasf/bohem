@@ -1,14 +1,15 @@
 	**********  Starting /home/ram/workspace/bohem/bin/bohem.log  **********
-Test-suite started: Fri Feb  9 10:14:24 CST 2018
+Test-suite started: Fri Feb  9 14:14:27 CST 2018
 
 	********** START of ENVironment dump **********
-Command line: ./run_tests /home/ram/workspace/bohem/Automation/Autoreply-and-account-status/accountstatus=suspended
+Command line: ./run_tests ../test_run
 HOST_UGLY_IP=
 SYNC2_READ_PASSWORD=password
 SYNC_VERSION=0.0.0.0
 TC_CVS_TAGS=
 LC_PAPER=zh_CN.UTF-8
 XDG_VTNR=7
+expect_pass=letmein
 MX2_HOST1=mx-10-49-58-127
 IFS_VERSION=0.0.0.0
 AGP1_INSTALL=/opt/criticalpath/agropop
@@ -89,7 +90,7 @@ CPMS_VERSION=0.0.0.0
 HOST_JAPAN_IP=
 CAL2_SMTP_USER=cal.user@nohost.invalid
 GOLD_DIFF_OPTS=-b
-_trace_log=/tmp/run_tests.trace.8493
+_trace_log=/tmp/run_tests.trace.16708
 QT_LINUX_ACCESSIBILITY_ALWAYS_ON=1
 PERL5LIB=/home/ram/perl5/lib/perl5
 NSUI_VERSION=0.0.0.0
@@ -144,6 +145,7 @@ RG_WEBUI2_PORT=80
 CAL1_NOTIF_PORT=8888
 CPMS3_IMAP_PORT=143
 CPMS1_MBMON_MGMT_PORT=4203
+expect_subuser=imail
 MXOS1_HOST_IP=10.49.58.241
 MSE3_READ_PASSWORD=password
 CPMS5_HTTP_PORT=80
@@ -312,6 +314,7 @@ HOST_GOOD_IP=
 RG_as_PREMIUM=enable_commtouch
 RG_CONSOLE1_PORT=7210
 LC_MEASUREMENT=zh_CN.UTF-8
+expect_user=root
 HOST_GOOD_HOST=nohost.invalid
 HOST_ITALY_IP1=
 MSUI_VERSION=0.0.0.0
@@ -379,6 +382,7 @@ _single_result_per_script=1
 XDG_SEAT=seat0
 HOME=/home/ram
 SHLVL=2
+passwd=p
 MXOS2_HOST=mx-10-49-58-129
 RUNNING_WITH_VALGRIND=Yes
 HOST_BLACK_IP=
@@ -445,6 +449,7 @@ NS2_REG_DIR=/etc/cpath
 NS1_INSTALL=/opt/criticalpath/ns
 CPMS3_IMS_MGMT_PORT=4201
 CPMS3_MGMT_PORT=4215
+expect_timeout=50
 HOST_BAD_IP1=
 SEARCHUI_VERSION=0.0.0.0
 CPMS6_LISTEXPANDER_MGMT_PORT=4218
@@ -519,13 +524,31 @@ LC_NAME=zh_CN.UTF-8
 _=/usr/bin/env
 	********** END of ENVironment dump **********
 
+bohem 2.9.5 ERROR:
+TESTFAILED: expect.exp: FAILED to parse command "expect.exp" in test-list /home/ram/workspace/bohem/bin/../test_run. (0 sec.)
+FAILED: expect.exp [20180209-141427] (0 sec.)
+bohem 2.9.5 ERROR:
+TESTFAILED: ls -al: FAILED to parse command "ls -al" in test-list /home/ram/workspace/bohem/bin/../test_run. (0 sec.)
+FAILED: ls -al [20180209-141427] (0 sec.)
+bohem 2.9.5 ERROR:
+TESTFAILED: cal: FAILED to parse command "cal" in test-list /home/ram/workspace/bohem/bin/../test_run. (0 sec.)
+FAILED: cal [20180209-141427] (0 sec.)
+bohem 2.9.5 ERROR:
+TESTFAILED: date: FAILED to parse command "date" in test-list /home/ram/workspace/bohem/bin/../test_run. (0 sec.)
+FAILED: date [20180209-141427] (0 sec.)
+bohem 2.9.5 ERROR:
+TESTFAILED: df -h: FAILED to parse command "df -h" in test-list /home/ram/workspace/bohem/bin/../test_run. (0 sec.)
+FAILED: df -h [20180209-141427] (0 sec.)
+bohem 2.9.5 ERROR:
+TESTFAILED: ps: FAILED to parse command "ps" in test-list /home/ram/workspace/bohem/bin/../test_run. (0 sec.)
+FAILED: ps [20180209-141427] (0 sec.)
 
-Test-suite ended: Fri Feb  9 10:17:11 CST 2018
+Test-suite ended: Fri Feb  9 14:14:27 CST 2018
 
 bohem 2.9.5 Info:
-	Entire test-suite took 2 minutes.
+	Entire test-suite took 0 minutes.
 	Total number of tests passed:	0
-	Total number of tests failed:	0
-	Total number of tests ran:	0
+	Total number of tests failed:	6
+	Total number of tests ran:	6
 	Total number of tests broken:	0
 
