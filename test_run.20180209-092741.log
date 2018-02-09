@@ -12,13 +12,3 @@ TESTFAILED: ..: Test didn't report success or failure or skipped (15 sec.)
 FAILED: .. [20180209-092741] (15 sec.)
 Test ended: Fri Feb  9 09:27:56 CST 2018
 
-
-Test-suite ended: Fri Feb  9 09:27:56 CST 2018
-
-bohem 2.9.5 Info:
-	Entire test-suite took 0 minutes.
-	Total number of tests passed:	0
-	Total number of tests failed:	1
-	Total number of tests ran:	1
-	Total number of tests broken:	0
-
