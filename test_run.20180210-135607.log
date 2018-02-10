@@ -77,13 +77,3 @@ tmpfs           783M     0  783M   0% /run/user/0
 FAILED: .. [20180210-135607] (8 sec.)
 Test ended: Sat Feb 10 13:56:15 CST 2018
 
-
-Test-suite ended: Sat Feb 10 13:56:15 CST 2018
-
-bohem 2.9.5 Info:
-	Entire test-suite took 0 minutes.
-	Total number of tests passed:	0
-	Total number of tests failed:	1
-	Total number of tests ran:	1
-	Total number of tests broken:	0
-

@@ -41,10 +41,10 @@ set f 0
 while {$f != 1} {
 spawn ssh $expect_user@${HOST}
 expect {
-	 "yes/no"     {send "yes\r"; exp_continue}
-	 "Password:"  {send "$expect_pass\r";set f 1}
-   -re "#|$ "   {send [exec ssh-keygen -R ${HOST}]}   
-   "# "         {send "\r";set f 1}
+	 "yes/no"     {send "yes\r"; exp_continue;puts $f}
+	 "Password:"  {send "$expect_pass\r";set f 1;puts $f}
+   "Host key verification failed*"   {send "\r";exec ssh-keygen -R ${HOST};puts $f}
+   "# "         {send "\r";set f 1;puts $f}
 }
 }
 
