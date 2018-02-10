@@ -5,7 +5,6 @@
 #define accounts variables
 user1=ar$(echo $RANDOM)
 user2=ar$(echo $RANDOM)
-
 autoreplymode=reply
 
 #define clean_account function
@@ -13,8 +12,8 @@ function clean_accounts ()
 {
 		echo "##########  doing some clear job ..."
 		#delete accounts
-		mos_delete_user.sh ${MXOS1_HOST_IP}  $MXOS1__PORT $user1@openwave.com
-		mos_delete_user.sh ${MXOS1_HOST_IP}  $MXOS1__PORT $user2@openwave.com
+		mos_delete_user.sh ${MXOS1_HOST_IP}  $MXOS1__PORT $user1@$defaultdomain
+		mos_delete_user.sh ${MXOS1_HOST_IP}  $MXOS1__PORT $user2@$defaultdomain
 }
 
 trap clean_accounts SIGHUP SIGINT SIGTERM
@@ -29,10 +28,10 @@ rm expect*.log
 rm imapfetch*.log
 rm send*.log
 	
-#2 create accounts user1@openwave.com and user2@openwave.com
+#2 create accounts user1@$defaultdomain and user2@$defaultdomain
 echo "########## 2 Accounts provision ..."
-mos_create_user.sh  ${MXOS1_HOST_IP}  $MXOS1__PORT $user1@openwave.com $passwd
-mos_create_user.sh  ${MXOS1_HOST_IP}  $MXOS1__PORT $user2@openwave.com $passwd
+mos_create_user.sh  ${MXOS1_HOST_IP}  $MXOS1__PORT $user1@$defaultdomain $passwd
+mos_create_user.sh  ${MXOS1_HOST_IP}  $MXOS1__PORT $user2@$defaultdomain $passwd
 
 #3 get currect epoch date ,and calaute the autoreplystartdate
 
@@ -40,7 +39,7 @@ expect.exp $expect_timeout $MX1_HOST_IP1 $expect_user $expect_pass $expect_subus
 "date +%s"
 
 #cet:curent epoc time
-cet=$(grep -A  1 date expect.log |grep -v "date")
+cet=$(grep -A  1 "date +%s" expect.log |grep -v "date")
 cet=$(echo ${cet:0:10})
 #set autoreplystartdate 5s later, and autoreplystopdate 30 minutes later.
 let autoreplystartdate=cet+5
@@ -55,7 +54,7 @@ expect.exp $expect_timeout $MX1_HOST_IP1 $expect_user $expect_pass $expect_subus
 "echo 'Reply,This is an autoreply message for internal senders!' >>data.txt" \
 "echo 'external:' >>data.txt" \
 "echo 'Reply,This is an external autoreply message for external senders!' >>data.txt" \
-"autoreplyctrl ${user2}@openwave.com $autoreplymode data.txt $autoreplystartdate $autoreplystopdate"
+"autoreplyctrl ${user2}@$defaultdomain $autoreplymode data.txt $autoreplystartdate $autoreplystopdate"
 
 count=$(grep  -i "AutoReply data updated Successfully"  expect.log|wc -l)
 if [[ "$count" -eq "1" ]];then

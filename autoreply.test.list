@@ -3,118 +3,118 @@
 
 #=====     1 Deliever message when autoReplyStartDate and autoReplyStopDate unset
   #internal sender mx-10015 -vacation
-~/workspace/bohem/Automation/single-message/Deliever-message-when-autoReplyStartDate-and-autoReplyStopDate-unset/internal-domain/mx-10015/
+../Automation/single-message/Deliever-message-when-autoReplyStartDate-and-autoReplyStopDate-unset/internal-domain/mx-10015/
   #internal sender mx-10245 -echo
-~/workspace/bohem/Automation/single-message/Deliever-message-when-autoReplyStartDate-and-autoReplyStopDate-unset/internal-domain/mx-10245/
+../Automation/single-message/Deliever-message-when-autoReplyStartDate-and-autoReplyStopDate-unset/internal-domain/mx-10245/
   #internal sender mx-10277 -reply
-~/workspace/bohem/Automation/single-message/Deliever-message-when-autoReplyStartDate-and-autoReplyStopDate-unset/internal-domain/mx-10277/
+../Automation/single-message/Deliever-message-when-autoReplyStartDate-and-autoReplyStopDate-unset/internal-domain/mx-10277/
   #external sender mx-10261 -echo
-~/workspace/bohem/Automation/single-message/Deliever-message-when-autoReplyStartDate-and-autoReplyStopDate-unset/external-domain/mx-10261/
+../Automation/single-message/Deliever-message-when-autoReplyStartDate-and-autoReplyStopDate-unset/external-domain/mx-10261/
   #external sender mx-10229 -vacation
-~/workspace/bohem/Automation/single-message/Deliever-message-when-autoReplyStartDate-and-autoReplyStopDate-unset/external-domain/mx-10229/
+../Automation/single-message/Deliever-message-when-autoReplyStartDate-and-autoReplyStopDate-unset/external-domain/mx-10229/
   #external sender mx-10293 -reply
-~/workspace/bohem/Automation/single-message/Deliever-message-when-autoReplyStartDate-and-autoReplyStopDate-unset/external-domain/mx-10293/
+../Automation/single-message/Deliever-message-when-autoReplyStartDate-and-autoReplyStopDate-unset/external-domain/mx-10293/
 
     
 #=====     2 Deliever message between AutoReplyStart and StopDate when both sets
   #internal sender mx-10019 -vacation
-~/workspace/bohem/Automation/single-message/Deliever-message-between-AutoReplyStart-and-StopDate-when-both-sets/internal-domain/mx-10019/
+../Automation/single-message/Deliever-message-between-AutoReplyStart-and-StopDate-when-both-sets/internal-domain/mx-10019/
   #internal sender mx-10251 -echo
-~/workspace/bohem/Automation/single-message/Deliever-message-between-AutoReplyStart-and-StopDate-when-both-sets/internal-domain/mx-10251/
+../Automation/single-message/Deliever-message-between-AutoReplyStart-and-StopDate-when-both-sets/internal-domain/mx-10251/
   #internal sender mx-10283 -reply
-~/workspace/bohem/Automation/single-message/Deliever-message-between-AutoReplyStart-and-StopDate-when-both-sets/internal-domain/mx-10283/
+../Automation/single-message/Deliever-message-between-AutoReplyStart-and-StopDate-when-both-sets/internal-domain/mx-10283/
   #external sender mx-10299 -reply  
-~/workspace/bohem/Automation/single-message/Deliever-message-between-AutoReplyStart-and-StopDate-when-both-sets/external-domain/mx-10299/
+../Automation/single-message/Deliever-message-between-AutoReplyStart-and-StopDate-when-both-sets/external-domain/mx-10299/
   #external sender mx-10235 -vacation
-~/workspace/bohem/Automation/single-message/Deliever-message-between-AutoReplyStart-and-StopDate-when-both-sets/external-domain/mx-10235/
+../Automation/single-message/Deliever-message-between-AutoReplyStart-and-StopDate-when-both-sets/external-domain/mx-10235/
   #external sender mx-10267 -echo
-~/workspace/bohem/Automation/single-message/Deliever-message-between-AutoReplyStart-and-StopDate-when-both-sets/external-domain/mx-10267/
+../Automation/single-message/Deliever-message-between-AutoReplyStart-and-StopDate-when-both-sets/external-domain/mx-10267/
 
 #=====     3 Deliever message before AutoReplyStart and StopDate when both sets
   #internal sender mx-10018 -vacation
-~/workspace/bohem/Automation/single-message/Deliever-message-before-AutoReplyStart-and-StopDate-when-both-sets/internal-domain/mx-10018/
+../Automation/single-message/Deliever-message-before-AutoReplyStart-and-StopDate-when-both-sets/internal-domain/mx-10018/
   #internal sender mx-10250 -echo
-~/workspace/bohem/Automation/single-message/Deliever-message-before-AutoReplyStart-and-StopDate-when-both-sets/internal-domain/mx-10250/  
+../Automation/single-message/Deliever-message-before-AutoReplyStart-and-StopDate-when-both-sets/internal-domain/mx-10250/  
   #internal sender mx-10282 -reply
-~/workspace/bohem/Automation/single-message/Deliever-message-before-AutoReplyStart-and-StopDate-when-both-sets/internal-domain/mx-10282/ 
+../Automation/single-message/Deliever-message-before-AutoReplyStart-and-StopDate-when-both-sets/internal-domain/mx-10282/ 
   #external sender mx-10234 -vacation
-~/workspace/bohem/Automation/single-message/Deliever-message-before-AutoReplyStart-and-StopDate-when-both-sets/external-domain/mx-10234/
+../Automation/single-message/Deliever-message-before-AutoReplyStart-and-StopDate-when-both-sets/external-domain/mx-10234/
   #external sender mx-10266 -echo
-~/workspace/bohem/Automation/single-message/Deliever-message-before-AutoReplyStart-and-StopDate-when-both-sets/external-domain/mx-10266/
+../Automation/single-message/Deliever-message-before-AutoReplyStart-and-StopDate-when-both-sets/external-domain/mx-10266/
   #external sender mx-10298 -reply
-~/workspace/bohem/Automation/single-message/Deliever-message-before-AutoReplyStart-and-StopDate-when-both-sets/external-domain/mx-10298/
+../Automation/single-message/Deliever-message-before-AutoReplyStart-and-StopDate-when-both-sets/external-domain/mx-10298/
 
 
 #======    4 Deliever message after AutoReplyStart and StopDate when both sets
  #internal sender mx-10020 -vacation
-~/workspace/bohem/Automation/single-message/Deliever-message-after-AutoReplyStart-and-StopDate-when-both-sets/internal-domain/mx-10020/
+../Automation/single-message/Deliever-message-after-AutoReplyStart-and-StopDate-when-both-sets/internal-domain/mx-10020/
  #internal sender mx-10252 -echo
-~/workspace/bohem/Automation/single-message/Deliever-message-after-AutoReplyStart-and-StopDate-when-both-sets/internal-domain/mx-10252/
+../Automation/single-message/Deliever-message-after-AutoReplyStart-and-StopDate-when-both-sets/internal-domain/mx-10252/
  #internal sender mx-10284 -reply
-~/workspace/bohem/Automation/single-message/Deliever-message-after-AutoReplyStart-and-StopDate-when-both-sets/internal-domain/mx-10284/
+../Automation/single-message/Deliever-message-after-AutoReplyStart-and-StopDate-when-both-sets/internal-domain/mx-10284/
  #external sender mx-10236 -vacation
-~/workspace/bohem/Automation/single-message/Deliever-message-after-AutoReplyStart-and-StopDate-when-both-sets/external-domain/mx-10236/
+../Automation/single-message/Deliever-message-after-AutoReplyStart-and-StopDate-when-both-sets/external-domain/mx-10236/
  #external sender mx-10268 -echo
-~/workspace/bohem/Automation/single-message/Deliever-message-after-AutoReplyStart-and-StopDate-when-both-sets/external-domain/mx-10268/
+../Automation/single-message/Deliever-message-after-AutoReplyStart-and-StopDate-when-both-sets/external-domain/mx-10268/
  #external sender mx-10300 -reply
-~/workspace/bohem/Automation/single-message/Deliever-message-after-AutoReplyStart-and-StopDate-when-both-sets/external-domain/mx-10300/
+../Automation/single-message/Deliever-message-after-AutoReplyStart-and-StopDate-when-both-sets/external-domain/mx-10300/
   
 #======    5 Deliever message before AutoReplyStartDate when only autoreplystardate set
  #internal sender mx-10016 -vacation
-~/workspace/bohem/Automation/single-message/Deliever-message-before-AutoReplyStart-when-only-it-set/internal-domain/mx-10016/
+../Automation/single-message/Deliever-message-before-AutoReplyStart-when-only-it-set/internal-domain/mx-10016/
  #internal sender mx-10246 -echo
-~/workspace/bohem/Automation/single-message/Deliever-message-before-AutoReplyStart-when-only-it-set/internal-domain/mx-10246/
+../Automation/single-message/Deliever-message-before-AutoReplyStart-when-only-it-set/internal-domain/mx-10246/
  #internal sender mx-10278 -reply
-~/workspace/bohem/Automation/single-message/Deliever-message-before-AutoReplyStart-when-only-it-set/internal-domain/mx-10278/
+../Automation/single-message/Deliever-message-before-AutoReplyStart-when-only-it-set/internal-domain/mx-10278/
  #external sender mx-10230 -vacation
-~/workspace/bohem/Automation/single-message/Deliever-message-before-AutoReplyStart-when-only-it-set/external-domain/mx-10230/
+../Automation/single-message/Deliever-message-before-AutoReplyStart-when-only-it-set/external-domain/mx-10230/
  #external sender mx-10262 -echo
-~/workspace/bohem/Automation/single-message/Deliever-message-before-AutoReplyStart-when-only-it-set/external-domain/mx-10262/
+../Automation/single-message/Deliever-message-before-AutoReplyStart-when-only-it-set/external-domain/mx-10262/
  #external sender mx-10294 -reply
-~/workspace/bohem/Automation/single-message/Deliever-message-before-AutoReplyStart-when-only-it-set/external-domain/mx-10294/
+../Automation/single-message/Deliever-message-before-AutoReplyStart-when-only-it-set/external-domain/mx-10294/
 
 #======    6 Deliever message after AutoReplyStopDate when only autoreplystopdate set
  #internal sender mx-10220 -vacation
-~/workspace/bohem/Automation/single-message/Deliever-message-after-AutoreplyStopDate-when-only-it-set/internal-domain/mx-10220/
+../Automation/single-message/Deliever-message-after-AutoreplyStopDate-when-only-it-set/internal-domain/mx-10220/
  #internal sender mx-10249 -echo
-~/workspace/bohem/Automation/single-message/Deliever-message-after-AutoreplyStopDate-when-only-it-set/internal-domain/mx-10249/
+../Automation/single-message/Deliever-message-after-AutoreplyStopDate-when-only-it-set/internal-domain/mx-10249/
  #internal sender mx-10281 -reply
-~/workspace/bohem/Automation/single-message/Deliever-message-after-AutoreplyStopDate-when-only-it-set/internal-domain/mx-10281/
+../Automation/single-message/Deliever-message-after-AutoreplyStopDate-when-only-it-set/internal-domain/mx-10281/
  #external sender mx-10233 -vacation
-~/workspace/bohem/Automation/single-message/Deliever-message-after-AutoreplyStopDate-when-only-it-set/external-domain/mx-10233/
+../Automation/single-message/Deliever-message-after-AutoreplyStopDate-when-only-it-set/external-domain/mx-10233/
  #external sender mx-10265 -echo
-~/workspace/bohem/Automation/single-message/Deliever-message-after-AutoreplyStopDate-when-only-it-set/external-domain/mx-10265/
+../Automation/single-message/Deliever-message-after-AutoreplyStopDate-when-only-it-set/external-domain/mx-10265/
  #external sender mx-10297 -reply
-~/workspace/bohem/Automation/single-message/Deliever-message-after-AutoreplyStopDate-when-only-it-set/external-domain/mx-10297/
+../Automation/single-message/Deliever-message-after-AutoreplyStopDate-when-only-it-set/external-domain/mx-10297/
 
 
 #======    7 Deliever message after AutoReplyStartDate when only autoreplystardate set
  #internal sender mx-10218 -vacation
-~/workspace/bohem/Automation/single-message/Deliever-message-after-AutoReplyStart-when-only-it-set/internal-domain/mx-10218/
+../Automation/single-message/Deliever-message-after-AutoReplyStart-when-only-it-set/internal-domain/mx-10218/
  #internal sender mx-10247 -echo
-~/workspace/bohem/Automation/single-message/Deliever-message-after-AutoReplyStart-when-only-it-set/internal-domain/mx-10247/
+../Automation/single-message/Deliever-message-after-AutoReplyStart-when-only-it-set/internal-domain/mx-10247/
  #internal sender mx-10279 -reply
-~/workspace/bohem/Automation/single-message/Deliever-message-after-AutoReplyStart-when-only-it-set/internal-domain/mx-10279/
+../Automation/single-message/Deliever-message-after-AutoReplyStart-when-only-it-set/internal-domain/mx-10279/
  #external sender mx-10231 -vacation
-~/workspace/bohem/Automation/single-message/Deliever-message-after-AutoReplyStart-when-only-it-set/external-domain/mx-10231/
+../Automation/single-message/Deliever-message-after-AutoReplyStart-when-only-it-set/external-domain/mx-10231/
  #external sender mx-10263 -echo
-~/workspace/bohem/Automation/single-message/Deliever-message-after-AutoReplyStart-when-only-it-set/external-domain/mx-10263/
+../Automation/single-message/Deliever-message-after-AutoReplyStart-when-only-it-set/external-domain/mx-10263/
  #external sender mx-10295 -reply
-~/workspace/bohem/Automation/single-message/Deliever-message-after-AutoReplyStart-when-only-it-set/external-domain/mx-10295/
+../Automation/single-message/Deliever-message-after-AutoReplyStart-when-only-it-set/external-domain/mx-10295/
 
 #======    8 :Deliever message before AutoReplyStopDate when only autoreplystopdate set
  #internal sender mx-10219 -vacation
-~/workspace/bohem/Automation/single-message/Deliever-message-before-AutoReplyStopDate-when-only-it-set/internal-domain/mx-10219/
+../Automation/single-message/Deliever-message-before-AutoReplyStopDate-when-only-it-set/internal-domain/mx-10219/
  #internal sender mx-10248 -echo
-~/workspace/bohem/Automation/single-message/Deliever-message-before-AutoReplyStopDate-when-only-it-set/internal-domain/mx-10248/
+../Automation/single-message/Deliever-message-before-AutoReplyStopDate-when-only-it-set/internal-domain/mx-10248/
  #internal sender mx-10280 -reply
-~/workspace/bohem/Automation/single-message/Deliever-message-before-AutoReplyStopDate-when-only-it-set/internal-domain/mx-10280/
+../Automation/single-message/Deliever-message-before-AutoReplyStopDate-when-only-it-set/internal-domain/mx-10280/
  #external sender mx-10232 -vacation
-~/workspace/bohem/Automation/single-message/Deliever-message-before-AutoReplyStopDate-when-only-it-set/external-domain/mx-10232/
+../Automation/single-message/Deliever-message-before-AutoReplyStopDate-when-only-it-set/external-domain/mx-10232/
  #external sender mx-10264 -echo
-~/workspace/bohem/Automation/single-message/Deliever-message-before-AutoReplyStopDate-when-only-it-set/external-domain/mx-10264/
+../Automation/single-message/Deliever-message-before-AutoReplyStopDate-when-only-it-set/external-domain/mx-10264/
  #external sender mx-10296 -reply
-~/workspace/bohem/Automation/single-message/Deliever-message-before-AutoReplyStopDate-when-only-it-set/external-domain/mx-10296/
+../Automation/single-message/Deliever-message-before-AutoReplyStopDate-when-only-it-set/external-domain/mx-10296/
 
 
 
@@ -123,101 +123,101 @@
 
 #=====     1 Deliever message when autoReplyStartDate and autoReplyStopDate unset
  # mx-10221-10237 -vacation
-~/workspace/bohem/Automation/multiple-messages-simultaneously-for-in-and-out-domains-senders/Deliever-message-when-autoReplyStartDate-and-autoReplyStopDate-unset/mx-10221-10237
+../Automation/multiple-messages-simultaneously-for-in-and-out-domains-senders/Deliever-message-when-autoReplyStartDate-and-autoReplyStopDate-unset/mx-10221-10237
  # mx-10235-10269 -echo
-~/workspace/bohem/Automation/multiple-messages-simultaneously-for-in-and-out-domains-senders/Deliever-message-when-autoReplyStartDate-and-autoReplyStopDate-unset/mx-10235-10269
+../Automation/multiple-messages-simultaneously-for-in-and-out-domains-senders/Deliever-message-when-autoReplyStartDate-and-autoReplyStopDate-unset/mx-10235-10269
  # mx-10285-10301 -reply
-~/workspace/bohem/Automation/multiple-messages-simultaneously-for-in-and-out-domains-senders/Deliever-message-when-autoReplyStartDate-and-autoReplyStopDate-unset/mx-10285-10301
+../Automation/multiple-messages-simultaneously-for-in-and-out-domains-senders/Deliever-message-when-autoReplyStartDate-and-autoReplyStopDate-unset/mx-10285-10301
     
 #=====     2 Deliever message between AutoReplyStart and StopDate when both sets  
  # mx-10227-10243 -vacation
-~/workspace/bohem/Automation/multiple-messages-simultaneously-for-in-and-out-domains-senders/Deliever-message-between-AutoReplyStart-and-StopDate-when-both-sets/mx-10227-10243
+../Automation/multiple-messages-simultaneously-for-in-and-out-domains-senders/Deliever-message-between-AutoReplyStart-and-StopDate-when-both-sets/mx-10227-10243
  # mx-10259-10275 -echo
-~/workspace/bohem/Automation/multiple-messages-simultaneously-for-in-and-out-domains-senders/Deliever-message-between-AutoReplyStart-and-StopDate-when-both-sets/mx-10259-10275
+../Automation/multiple-messages-simultaneously-for-in-and-out-domains-senders/Deliever-message-between-AutoReplyStart-and-StopDate-when-both-sets/mx-10259-10275
  # mx-10291-10307 -reply
-~/workspace/bohem/Automation/multiple-messages-simultaneously-for-in-and-out-domains-senders/Deliever-message-between-AutoReplyStart-and-StopDate-when-both-sets/mx-10291-10307
+../Automation/multiple-messages-simultaneously-for-in-and-out-domains-senders/Deliever-message-between-AutoReplyStart-and-StopDate-when-both-sets/mx-10291-10307
  
 #=====     3 Deliever message before AutoReplyStart and StopDate when both sets
  # mx-10226-10242 -vacation
-~/workspace/bohem/Automation/multiple-messages-simultaneously-for-in-and-out-domains-senders/Deliever-message-before-AutoReplyStart-and-StopDate-when-both-sets/mx-10226-10242
+../Automation/multiple-messages-simultaneously-for-in-and-out-domains-senders/Deliever-message-before-AutoReplyStart-and-StopDate-when-both-sets/mx-10226-10242
  # mx-10258-10274 -echo
-~/workspace/bohem/Automation/multiple-messages-simultaneously-for-in-and-out-domains-senders/Deliever-message-before-AutoReplyStart-and-StopDate-when-both-sets/mx-10258-10274
+../Automation/multiple-messages-simultaneously-for-in-and-out-domains-senders/Deliever-message-before-AutoReplyStart-and-StopDate-when-both-sets/mx-10258-10274
  # mx-10290-10306 -reply
-~/workspace/bohem/Automation/multiple-messages-simultaneously-for-in-and-out-domains-senders/Deliever-message-before-AutoReplyStart-and-StopDate-when-both-sets/mx-10290-10306
+../Automation/multiple-messages-simultaneously-for-in-and-out-domains-senders/Deliever-message-before-AutoReplyStart-and-StopDate-when-both-sets/mx-10290-10306
 
 #=====     4 Deliever message after AutoReplyStart and StopDate when both sets
  # mx-10228-10244 -vacation
-~/workspace/bohem/Automation/multiple-messages-simultaneously-for-in-and-out-domains-senders/Deliever-message-after-AutoReplyStart-and-StopDate-when-both-sets/mx-10228-10244
+../Automation/multiple-messages-simultaneously-for-in-and-out-domains-senders/Deliever-message-after-AutoReplyStart-and-StopDate-when-both-sets/mx-10228-10244
  # mx-10260-10276 -echo
-~/workspace/bohem/Automation/multiple-messages-simultaneously-for-in-and-out-domains-senders/Deliever-message-after-AutoReplyStart-and-StopDate-when-both-sets/mx-10260-10276
+../Automation/multiple-messages-simultaneously-for-in-and-out-domains-senders/Deliever-message-after-AutoReplyStart-and-StopDate-when-both-sets/mx-10260-10276
  # mx-10292-10308 -reply
-~/workspace/bohem/Automation/multiple-messages-simultaneously-for-in-and-out-domains-senders/Deliever-message-after-AutoReplyStart-and-StopDate-when-both-sets/mx-10292-10308
+../Automation/multiple-messages-simultaneously-for-in-and-out-domains-senders/Deliever-message-after-AutoReplyStart-and-StopDate-when-both-sets/mx-10292-10308
  
 #=====     5 Deliever message before AutoReplyStartDate when only autoreplystardate set
  # mx-10222-10238 -vacation
-~/workspace/bohem/Automation/multiple-messages-simultaneously-for-in-and-out-domains-senders/Deliever-message-before-AutoReplyStart-when-only-it-set/mx-10222-10238 
+../Automation/multiple-messages-simultaneously-for-in-and-out-domains-senders/Deliever-message-before-AutoReplyStart-when-only-it-set/mx-10222-10238 
  # mx-10254-10270 -echo
-~/workspace/bohem/Automation/multiple-messages-simultaneously-for-in-and-out-domains-senders/Deliever-message-before-AutoReplyStart-when-only-it-set/mx-10254-10270
+../Automation/multiple-messages-simultaneously-for-in-and-out-domains-senders/Deliever-message-before-AutoReplyStart-when-only-it-set/mx-10254-10270
  # mx-10286-10302 -reply
-~/workspace/bohem/Automation/multiple-messages-simultaneously-for-in-and-out-domains-senders/Deliever-message-before-AutoReplyStart-when-only-it-set/mx-10286-10302
+../Automation/multiple-messages-simultaneously-for-in-and-out-domains-senders/Deliever-message-before-AutoReplyStart-when-only-it-set/mx-10286-10302
 
 #=====     6 Deliever message after AutoReplyStopDate when only autoreplystopdate set
  # mx-10225-10241 -vacation
-~/workspace/bohem/Automation/multiple-messages-simultaneously-for-in-and-out-domains-senders/Deliever-message-after-AutoreplyStopDate-when-only-it-set/mx-10225-10241 
+../Automation/multiple-messages-simultaneously-for-in-and-out-domains-senders/Deliever-message-after-AutoreplyStopDate-when-only-it-set/mx-10225-10241 
  # mx-10257-10273 -echo
-~/workspace/bohem/Automation/multiple-messages-simultaneously-for-in-and-out-domains-senders/Deliever-message-after-AutoreplyStopDate-when-only-it-set/mx-10257-10273
+../Automation/multiple-messages-simultaneously-for-in-and-out-domains-senders/Deliever-message-after-AutoreplyStopDate-when-only-it-set/mx-10257-10273
  # mx-10289-10305 -reply
-~/workspace/bohem/Automation/multiple-messages-simultaneously-for-in-and-out-domains-senders/Deliever-message-after-AutoreplyStopDate-when-only-it-set/mx-10289-10305
+../Automation/multiple-messages-simultaneously-for-in-and-out-domains-senders/Deliever-message-after-AutoreplyStopDate-when-only-it-set/mx-10289-10305
 
 
 #=====     7 Deliever message after AutoReplyStartDate when only autoreplystardate set
  # mx-10223-10239 -vacation
-~/workspace/bohem/Automation/multiple-messages-simultaneously-for-in-and-out-domains-senders/Deliever-message-after-AutoReplyStart-when-only-it-set/mx-10223-10239
+../Automation/multiple-messages-simultaneously-for-in-and-out-domains-senders/Deliever-message-after-AutoReplyStart-when-only-it-set/mx-10223-10239
  # mx-10255-10271 -echo
-~/workspace/bohem/Automation/multiple-messages-simultaneously-for-in-and-out-domains-senders/Deliever-message-after-AutoReplyStart-when-only-it-set/mx-10255-10271
+../Automation/multiple-messages-simultaneously-for-in-and-out-domains-senders/Deliever-message-after-AutoReplyStart-when-only-it-set/mx-10255-10271
  # mx-10287-10303 -reply
-~/workspace/bohem/Automation/multiple-messages-simultaneously-for-in-and-out-domains-senders/Deliever-message-after-AutoReplyStart-when-only-it-set/mx-10287-10303
+../Automation/multiple-messages-simultaneously-for-in-and-out-domains-senders/Deliever-message-after-AutoReplyStart-when-only-it-set/mx-10287-10303
 
 
 #=====     8 :Deliever message before AutoReplyStopDate when only autoreplystopdate set
  # mx-10224-10240 -vacation
-~/workspace/bohem/Automation/multiple-messages-simultaneously-for-in-and-out-domains-senders/Deliever-message-before-AutoReplyStopDate-when-only-it-set/mx-10224-10240
+../Automation/multiple-messages-simultaneously-for-in-and-out-domains-senders/Deliever-message-before-AutoReplyStopDate-when-only-it-set/mx-10224-10240
  # mx-10256-10272 -echo
-~/workspace/bohem/Automation/multiple-messages-simultaneously-for-in-and-out-domains-senders/Deliever-message-before-AutoReplyStopDate-when-only-it-set/mx-10256-10272
+../Automation/multiple-messages-simultaneously-for-in-and-out-domains-senders/Deliever-message-before-AutoReplyStopDate-when-only-it-set/mx-10256-10272
  # mx-10288-10304 -reply
-~/workspace/bohem/Automation/multiple-messages-simultaneously-for-in-and-out-domains-senders/Deliever-message-before-AutoReplyStopDate-when-only-it-set/mx-10288-10304
+../Automation/multiple-messages-simultaneously-for-in-and-out-domains-senders/Deliever-message-before-AutoReplyStopDate-when-only-it-set/mx-10288-10304
 
 
 #=======   Autoreply Suppress after enabling autoreply
 
 #=====     1 Target account is not in the To header::Expect no autoreply
-~/workspace/bohem/Automation/Autoreply-Suppress-after-enabling-autoreply/Target-account-is-not-in-the-To-header
+../Automation/Autoreply-Suppress-after-enabling-autoreply/Target-account-is-not-in-the-To-header
 #=====     2 From address is in the autoReplySuppressList configuration key::Expect no autoreply
-~/workspace/bohem/Automation/Autoreply-Suppress-after-enabling-autoreply/From-address-is-in-the-autoReplySuppressList-configuration-key
+../Automation/Autoreply-Suppress-after-enabling-autoreply/From-address-is-in-the-autoReplySuppressList-configuration-key
 #=====     3 From matches the regular expression "-request$"::Expect no autoreply
-~/workspace/bohem/Automation/Autoreply-Suppress-after-enabling-autoreply/From-matches-the-regular-expression-request
+../Automation/Autoreply-Suppress-after-enabling-autoreply/From-matches-the-regular-expression-request
 #=====     4 From matches the regular expression "^owner-"::Expect no autoreply
-~/workspace/bohem/Automation/Autoreply-Suppress-after-enabling-autoreply/From-matches-the-regular-expression-owner
+../Automation/Autoreply-Suppress-after-enabling-autoreply/From-matches-the-regular-expression-owner
 #=====     5 Message contains "Auto-Forwarded" header::Expect no autoreply
-~/workspace/bohem/Automation/Autoreply-Suppress-after-enabling-autoreply/Message-contains-Auto-Forwarded-header
+../Automation/Autoreply-Suppress-after-enabling-autoreply/Message-contains-Auto-Forwarded-header
 #=====     6 Reply-To address is in the autoReplySuppressList configuration key::Expect no autoreply
-~/workspace/bohem/Automation/Autoreply-Suppress-after-enabling-autoreply/Reply-To-address-is-in-the-autoReplySuppressList-configuration-key
+../Automation/Autoreply-Suppress-after-enabling-autoreply/Reply-To-address-is-in-the-autoReplySuppressList-configuration-key
 #=====     7 Precedence header contains the regular expression "/bulk/i"::Expect no autoreply
-~/workspace/bohem/Automation/Autoreply-Suppress-after-enabling-autoreply/Precedence-header-contains-the-regular-expression-bulk
+../Automation/Autoreply-Suppress-after-enabling-autoreply/Precedence-header-contains-the-regular-expression-bulk
 #=====     8 Precedence header contains the regular expression "/junk/i"::Expect no autoreply
-~/workspace/bohem/Automation/Autoreply-Suppress-after-enabling-autoreply/Precedence-header-contains-the-regular-expression-junk
+../Automation/Autoreply-Suppress-after-enabling-autoreply/Precedence-header-contains-the-regular-expression-junk
 #=====     9 bounce message should not cause autoreply::Expect no autoreply
-~/workspace/bohem/Automation/Autoreply-Suppress-after-enabling-autoreply/bounce-message-should-not-cause-autoreply
+../Automation/Autoreply-Suppress-after-enabling-autoreply/bounce-message-should-not-cause-autoreply
 #=====     10 Deferred message should not cause autoreply::Expect no autoreply
 #
 
 
 #=======   Autoreply and account status
 #=====     1 accountstatus=locked
-~/workspace/bohem/Automation/Autoreply-and-account-status/accountstatus=locked
+../Automation/Autoreply-and-account-status/accountstatus=locked
 #=====     2 accountstatus=maintenance
-~/workspace/bohem/Automation/Autoreply-and-account-status/accountstatus=maintenance
+../Automation/Autoreply-and-account-status/accountstatus=maintenance
 #=====     3 accountstatus=suspended
-~/workspace/bohem/Automation/Autoreply-and-account-status/accountstatus=suspended
+../Automation/Autoreply-and-account-status/accountstatus=suspended
 #=====     4 accountstatus=deleted
-~/workspace/bohem/Automation/Autoreply-and-account-status/accountstatus=deleted
+../Automation/Autoreply-and-account-status/accountstatus=deleted

@@ -14,12 +14,12 @@ function clean_accounts ()
 {
 		echo "##########  doing some clear job ..."
 		#delete accounts
-		curl -s -X DELETE http://${MXOS1_HOST_IP}:$MXOS1__PORT/mxos/mailbox/v2/$user1@whsasf.com  >/dev/null
-		tmp1=$(curl -s -X GET http://${MXOS1_HOST_IP}:$MXOS1__PORT/mxos/mailbox/v2/$user1@whsasf.com |grep "Mailbox does not exist"|wc -l)
-		curl -s -X DELETE http://${MXOS1_HOST_IP}:$MXOS1__PORT/mxos/mailbox/v2/$user2@openwave.com  >/dev/null
-		tmp2=$(curl -s -X GET http://${MXOS1_HOST_IP}:$MXOS1__PORT/mxos/mailbox/v2/$user2@openwave.com |grep "Mailbox does not exist"|wc -l)
+		curl -s -X DELETE http://${MXOS1_HOST_IP}:$MXOS1__PORT/mxos/mailbox/v2/$user1@$newdomain  >/dev/null
+		tmp1=$(curl -s -X GET http://${MXOS1_HOST_IP}:$MXOS1__PORT/mxos/mailbox/v2/$user1@$newdomain |grep "Mailbox does not exist"|wc -l)
+		curl -s -X DELETE http://${MXOS1_HOST_IP}:$MXOS1__PORT/mxos/mailbox/v2/$user2@$defaultdomain  >/dev/null
+		tmp2=$(curl -s -X GET http://${MXOS1_HOST_IP}:$MXOS1__PORT/mxos/mailbox/v2/$user2@$defaultdomain |grep "Mailbox does not exist"|wc -l)
 		#delete domain
-		curl -s -X DELETE http://${MXOS1_HOST_IP}:$MXOS1__PORT/mxos/domain/v2/whsasf.com >/dev/null
+		curl -s -X DELETE http://${MXOS1_HOST_IP}:$MXOS1__PORT/mxos/domain/v2/$newdomain >/dev/null
 		
 		if [[ "$tmp1" -eq "1"  && "$tmp2" -eq "1" ]]
 		then
@@ -49,16 +49,16 @@ rm expect*.log
 rm imapfetch*.log
 rm send*.log
 	
-#2 create accounts user1@openwave.com and user2@openwave.com
+#2 create accounts user1@$defaultdomain and user2@$defaultdomain
 echo "########## 2 Accounts provision ..."
 #create domain
-curl -s -X PUT -d "type=local" http://${MXOS1_HOST_IP}:$MXOS1__PORT/mxos/domain/v2/whsasf.com >/dev/null
+curl -s -X PUT -d "type=local" http://${MXOS1_HOST_IP}:$MXOS1__PORT/mxos/domain/v2/$newdomain >/dev/null
 
-tmp1=$(curl -s -X PUT -d "cosId=default&password=p" http://${MXOS1_HOST_IP}:$MXOS1__PORT/mxos/mailbox/v2/$user1@whsasf.com)
+tmp1=$(curl -s -X PUT -d "cosId=default&password=p" http://${MXOS1_HOST_IP}:$MXOS1__PORT/mxos/mailbox/v2/$user1@$newdomain)
 echo $tmp1
 expr $tmp1 + 0 &>/dev/null
 tmp11=$(echo $?)
-tmp2=$(curl -s -X PUT -d "cosId=default&password=p" http://${MXOS1_HOST_IP}:$MXOS1__PORT/mxos/mailbox/v2/$user2@openwave.com)
+tmp2=$(curl -s -X PUT -d "cosId=default&password=p" http://${MXOS1_HOST_IP}:$MXOS1__PORT/mxos/mailbox/v2/$user2@$defaultdomain)
 echo $tmp2
 expr $tmp2 + 0 &>/dev/null
 tmp22=$(echo $?)
@@ -75,7 +75,7 @@ fi
 #3 get currect epoch date ,and calaute the autoreplystartdate
 expect <<-EOF 
 set timeout $expect_timeout	
-log_file expect1.log 
+log_file expect.log 
 spawn ssh root@${MX1_HOST_IP1}
 expect  "*Password" { send "letmein\r" }
 expect  "*~"  { send "date +%s\r\n" }
@@ -84,7 +84,7 @@ exit
 EOF
 
 #cet:curent epoc time
-cet=$(grep -A  1 date expect1.log |grep -v "date")
+cet=$(grep -A  1 "date +%s" expect.log |grep -v "date")
 cet=$(echo ${cet:0:10})
 #set autoreplystartdate 5s later, and autoreplystopdate 30 minutes later.
 let autoreplystartdate=cet+300
@@ -94,19 +94,19 @@ let autoreplystopdate=cet+1800
 echo "########## 4 Configure user2 to vacation autoreply mode using expect tool ..."
 expect <<-EOF 
 set timeout $expect_timeout	
-log_file expect2.log 
+log_file expect.log 
 spawn ssh imail2@${MX1_HOST_IP1}
 expect  "*Password" { send "imail\r" }
 expect  "*~"  { send "echo 'internal:' >data.txt\r" }
 expect  "*~"  { send "echo 'Reply,This is an autoreply message for internal senders!' >>data.txt\r" }
 expect  "*~"  { send "echo 'external:' >>data.txt\r" }
 expect  "*~"  { send "echo 'Reply,This is an external autoreply message for external senders!' >>data.txt\r" }
-expect  "*~"  { send "autoreplyctrl ${user2}@openwave.com $autoreplymode data.txt $autoreplystartdate $autoreplystopdate\r" }
+expect  "*~"  { send "autoreplyctrl ${user2}@$defaultdomain $autoreplymode data.txt $autoreplystartdate $autoreplystopdate\r" }
 expect "*~"
 exit
 EOF
 
-count=$(grep  -i "AutoReply data updated Successfully"  expect2.log|wc -l)
+count=$(grep  -i "AutoReply data updated Successfully"  expect.log|wc -l)
 if [[ "$count" -eq "1" ]];then
 	echo -e "\033[32m##########4 Congifuration successfully\033[0m"
 else
@@ -119,11 +119,11 @@ fi
 echo "##########5 delieber 1 message from user1 to user2 ..."
 #create message body
 echo "Subject: test message about autoreply feature" >send.data
-echo "To:$user2@openwave.com" >>send.data
+echo "To:$user2@$defaultdomain" >>send.data
 echo >>send.data
 echo "Reply,This ia a wonderful world!!" >>send.data
 
-sendmail.pl  $MX1_HOST_IP1 $MX1_SMTP_PORT $user1@whsasf.com $user2@openwave.com  <send.data >send.log 
+sendmail.pl  $MX1_HOST_IP1 $MX1_SMTP_PORT $user1@$newdomain $user2@$defaultdomain  <send.data >send.log 
 count=$(grep "250 Message received" send.log|wc -l)
 if [[ "$count" -eq "1" ]]
 then
@@ -139,7 +139,7 @@ fi
 echo "########## 6 Check mta.log using expect tool ..."
 expect <<-EOF 
 set timeout $expect_timeout	
-log_file expect3.log 
+log_file expect.log 
 spawn ssh imail2@${MX1_HOST_IP1}
 expect  "*Password" { send "imail\r" }
 expect  "*~" { send "cat log/mta.log\r" }
@@ -147,8 +147,8 @@ expect  "*~"
 exit
 EOF
 
-count=$(grep  -i "autoreplied"  expect3.log|wc -l)
-count1=$(grep -i "delivered" expect3.log |wc -l)
+count=$(grep  -i "autoreplied"  expect.log|wc -l)
+count1=$(grep -i "delivered" expect.log |wc -l)
 if [[ "$count" -eq "0" && "$count1" -eq "1" ]];then
 	echo -e "\033[32m##########6 Autoreply messaeg undelievered successfully!!\033[0m"
 else
