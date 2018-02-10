@@ -11,7 +11,7 @@
 #cal                                                                                \
 #date                                                                               \
 #"df -h"                                                                            \
-#ps
+#"ps -ef"
 #####################################################################################
 
 #50
@@ -31,20 +31,16 @@ set expect_subuser [lindex $argv 4]
 #set timeout time
 set timeout $expect_timeout
 
-#spawn ssh $expect_user@${HOST}
-#expect {
-#"*Host key verification failed" exec ssh-keygen -R ${HOST}
-#eof  {send_user "eof"}
-#}
-
+# f is the flag to determine if we need to run ssh again especially for case 3
+# "Host key verification failed"
 set f 0
 while {$f != 1} {
 spawn ssh $expect_user@${HOST}
 expect {
-	 "yes/no"     {send "yes\r"; exp_continue;puts $f}
-	 "Password:"  {send "$expect_pass\r";set f 1;puts $f}
-   "Host key verification failed*"   {send "\r";exec ssh-keygen -R ${HOST};puts $f}
-   "# "         {send "\r";set f 1;puts $f}
+	 "yes/no"     {send "yes\r"; exp_continue}
+	 "Password:"  {send "$expect_pass\r";set f 1}
+   "Host key verification failed*"   {send "\r";exec ssh-keygen -R ${HOST}}
+   "# "         {send "\r";set f 1}
 }
 }
 

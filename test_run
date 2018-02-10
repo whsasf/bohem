@@ -5,4 +5,4 @@ expect.exp $expect_timeout 10.49.58.121 $expect_user $expect_pass $expect_subuse
 cal     \
 date    \
 "df -h" \
-ps
+"ps -ef"

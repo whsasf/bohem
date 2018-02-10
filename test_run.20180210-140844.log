@@ -160,13 +160,3 @@ imail     9779  9756  0 01:08 pts/1    00:00:00 ps -ef
 FAILED: .. [20180210-140844] (6 sec.)
 Test ended: Sat Feb 10 14:08:50 CST 2018
 
-
-Test-suite ended: Sat Feb 10 14:08:50 CST 2018
-
-bohem 2.9.5 Info:
-	Entire test-suite took 0 minutes.
-	Total number of tests passed:	0
-	Total number of tests failed:	1
-	Total number of tests ran:	1
-	Total number of tests broken:	0
-
