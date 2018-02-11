@@ -3,46 +3,28 @@
 # MX-10295:Deliever message after AutoReplyStartDate when only autoreplystardate set::Expect autoreply success
 
 #define accounts variables
-id1=`echo $RANDOM`
-user1=ar$id1
-id2=`echo $RANDOM`
-user2=ar$id2
+user1=ar$(echo $RANDOM)
+user2=ar$(echo $RANDOM)
+
 autoreplymode=reply
 
 #define clean_account function
 function clean_accounts ()
 {
 		echo "##########  doing some clear job ..."
-		#delete accounts
-		curl -s -X DELETE http://${MXOS1_HOST_IP}:$MXOS1__PORT/mxos/mailbox/v2/$user1@$newdomain  >/dev/null
-		tmp1=$(curl -s -X GET http://${MXOS1_HOST_IP}:$MXOS1__PORT/mxos/mailbox/v2/$user1@$newdomain |grep "Mailbox does not exist"|wc -l)
-		curl -s -X DELETE http://${MXOS1_HOST_IP}:$MXOS1__PORT/mxos/mailbox/v2/$user2@$defaultdomain  >/dev/null
-		tmp2=$(curl -s -X GET http://${MXOS1_HOST_IP}:$MXOS1__PORT/mxos/mailbox/v2/$user2@$defaultdomain |grep "Mailbox does not exist"|wc -l)
+  	#delete accounts
+		mos_delete_user.sh ${MXOS1_HOST_IP}  $MXOS1__PORT $user1@$newdomain
+		mos_delete_user.sh ${MXOS1_HOST_IP}  $MXOS1__PORT $user2@$defaultdomain
 		#delete domain
-		curl -s -X DELETE http://${MXOS1_HOST_IP}:$MXOS1__PORT/mxos/domain/v2/$newdomain >/dev/null
-		
-		if [[ "$tmp1" -eq "1"  && "$tmp2" -eq "1" ]]
-		then
-		  echo -e "\033[32m##########  Accont deleted successfully\033[0m"
-		  exit 100
-		else
-			echo -e "\033[31m##########  Accont deleted failed,PLease check manually,Exiting now ...\033[0m"
-			exit 100
-		fi
+		mos_delete_domain.sh ${MXOS1_HOST_IP}  $MXOS1__PORT $newdomain
 }
 
 trap clean_accounts SIGHUP SIGINT SIGTERM
 
 #1 clear mta.log and other tmp files
 echo "########## 1 Clear mta.log using expect tool ..."
-expect <<-EOF 
-set timeout $expect_timeout	
-spawn ssh imail2@${MX1_HOST_IP1}
-expect  "*Password" { send "imail\r" }
-expect  "*~" { send "> ~/log/mta.log\r" }
-expect  "*~"
-exit
-EOF
+expect.exp $expect_timeout $MX1_HOST_IP1 $expect_user $expect_pass $expect_subuser \
+"> ~/log/mta.log"
 
 #clear other tmp log files
 rm expect*.log 
@@ -52,36 +34,14 @@ rm send*.log
 #2 create accounts user1@$defaultdomain and user2@$defaultdomain
 echo "########## 2 Accounts provision ..."
 #create domain
-curl -s -X PUT -d "type=local" http://${MXOS1_HOST_IP}:$MXOS1__PORT/mxos/domain/v2/$newdomain >/dev/null
-
-tmp1=$(curl -s -X PUT -d "cosId=default&password=p" http://${MXOS1_HOST_IP}:$MXOS1__PORT/mxos/mailbox/v2/$user1@$newdomain)
-echo $tmp1
-expr $tmp1 + 0 &>/dev/null
-tmp11=$(echo $?)
-tmp2=$(curl -s -X PUT -d "cosId=default&password=p" http://${MXOS1_HOST_IP}:$MXOS1__PORT/mxos/mailbox/v2/$user2@$defaultdomain)
-echo $tmp2
-expr $tmp2 + 0 &>/dev/null
-tmp22=$(echo $?)
-let tmpv=tmp11+tmp22
-if [[ "$tmpv" -eq "0" ]]
-then
-  echo -e "\033[32m########## 2 Accont provision successfully, we can continue now\033[0m"
-else
-	echo -e "\033[31m########## 2 Accont provision failed,PLease check manually,Exiting now ...\033[0m"
-	clean_accounts
-	exit 1
-fi
+mos_create_domain.sh ${MXOS1_HOST_IP}  $MXOS1__PORT $newdomain
+#create accounts
+mos_create_user.sh  ${MXOS1_HOST_IP}  $MXOS1__PORT $user1@$newdomain $passwd
+mos_create_user.sh  ${MXOS1_HOST_IP}  $MXOS1__PORT $user2@$defaultdomain $passwd
 
 #3 get currect epoch date ,and calaute the autoreplystartdate
-expect <<-EOF 
-set timeout $expect_timeout	
-log_file expect.log 
-spawn ssh root@${MX1_HOST_IP1}
-expect  "*Password" { send "letmein\r" }
-expect  "*~"  { send "date +%s\r\n" }
-expect "*~"
-exit
-EOF
+expect.exp $expect_timeout $MX1_HOST_IP1 $expect_user $expect_pass $expect_subuser \
+"date +%s"
 
 #cet:curent epoc time
 cet=$(grep -A  1 "date +%s" expect.log |grep -v "date")
@@ -91,19 +51,13 @@ let autoreplystartdate=cet+5
 
 #4 configure user2 to proper autoreply mode
 echo "########## 4 Configure user2 to vacation autoreply mode using expect tool ..."
-expect <<-EOF 
-set timeout $expect_timeout	
-log_file expect.log 
-spawn ssh imail2@${MX1_HOST_IP1}
-expect  "*Password" { send "imail\r" }
-expect  "*~"  { send "echo 'internal:' >data.txt\r" }
-expect  "*~"  { send "echo 'Reply,This is an autoreply message for internal senders!' >>data.txt\r" }
-expect  "*~"  { send "echo 'external:' >>data.txt\r" }
-expect  "*~"  { send "echo 'Reply,This is an external autoreply message for external senders!' >>data.txt\r" }
-expect  "*~"  { send "autoreplyctrl ${user2}@$defaultdomain $autoreplymode data.txt $autoreplystartdate none\r" }
-expect "*~"
-exit
-EOF
+
+expect.exp $expect_timeout $MX1_HOST_IP1 $expect_user $expect_pass $expect_subuser \
+"echo 'internal:' >data.txt" \
+"echo 'Reply,This is an autoreply message for internal senders!' >>data.txt" \
+"echo 'external:' >>data.txt" \
+"echo 'Reply,This is an external autoreply message for external senders!' >>data.txt" \
+"autoreplyctrl ${user2}@$defaultdomain $autoreplymode data.txt $autoreplystartdate none"
 
 count=$(grep  -i "AutoReply data updated Successfully"  expect.log|wc -l)
 if [[ "$count" -eq "1" ]];then
@@ -136,15 +90,8 @@ fi
 
 #6 check mta.log, make sure autoreply flag "autoreplied" exist:
 echo "########## 6 Check mta.log using expect tool ..."
-expect <<-EOF 
-set timeout $expect_timeout	
-log_file expect.log 
-spawn ssh imail2@${MX1_HOST_IP1}
-expect  "*Password" { send "imail\r" }
-expect  "*~" { send "cat log/mta.log\r" }
-expect  "*~"
-exit
-EOF
+expect.exp $expect_timeout $MX1_HOST_IP1 $expect_user $expect_pass $expect_subuser \
+"cat log/mta.log"
 
 count=$(grep  -i "autoreplied"  expect.log|wc -l)
 count1=$(grep -i "delivered" expect.log |wc -l)
