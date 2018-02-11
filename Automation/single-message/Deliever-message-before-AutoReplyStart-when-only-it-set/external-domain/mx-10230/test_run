@@ -57,7 +57,7 @@ expect.exp $expect_timeout $MX1_HOST_IP1 $expect_user $expect_pass $expect_subus
 "echo 'Vacation,This is an autoreply message for internal senders!' >>data.txt" \
 "echo 'external:' >>data.txt" \
 "echo 'Vacation,This is an external autoreply message for external senders!' >>data.txt" \
-"autoreplyctrl ${user2}@$defaultdomain $autoreplymode data.txt $autoreplystartdate $autoreplystopdate"
+"autoreplyctrl ${user2}@$defaultdomain $autoreplymode data.txt $autoreplystartdate none"
 
 count=$(grep  -i "AutoReply data updated Successfully"  expect.log|wc -l)
 if [[ "$count" -eq "1" ]];then
