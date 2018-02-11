@@ -1,0 +1,19 @@
+user1=ar$(echo $RANDOM)
+user2=ar$(echo $RANDOM)
+
+defaultdomain=openwave.com
+newdomain=whsasf.com
+
+		mos_delete_user.sh ${MXOS1_HOST_IP}  $MXOS1__PORT $user1@$defaultdomain
+		mos_delete_user.sh ${MXOS1_HOST_IP}  $MXOS1__PORT $user2@$defaultdomain
+    
+    mos_delete_user.sh ${MXOS1_HOST_IP}  $MXOS1__PORT $user4@$newdomain
+    
+    mos_delete_domain.sh ${MXOS1_HOST_IP}  $MXOS1__PORT $newdomain
+
+mos_create_domain.sh ${MXOS1_HOST_IP}  $MXOS1__PORT $newdomain
+    
+mos_create_user.sh  ${MXOS1_HOST_IP}  $MXOS1__PORT $user1@$defaultdomain $passwd
+mos_create_user.sh  ${MXOS1_HOST_IP}  $MXOS1__PORT $user2@$defaultdomain $passwd
+
+expect.exp $expect_timeout $MX1_HOST_IP1 $expect_user $expect_pass $expect_subuser \
