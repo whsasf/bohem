@@ -61,8 +61,10 @@ fi
 expect.exp $expect_timeout $MX1_HOST_IP1 $expect_user $expect_pass $expect_subuser \
 "date +%s"
 
+cp  expect.log xx2.log
+
 #cet:curent epoc time
-cet=$(grep -A  1 "date +%s" expect.log |grep -v "date"|grep "+%s")
+cet=$(grep -A  1 "date +%s" expect.log |grep -v "date")
 cet=$(echo ${cet:0:10})
 echo cet=$cet
 #set autoreplystartdate 5s later, and autoreplystopdate 30 minutes later.
