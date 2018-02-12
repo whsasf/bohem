@@ -28,7 +28,7 @@ trap clean_accounts SIGHUP SIGINT SIGTERM
 echo "########## 1 Clear mta.log using expect tool ..."
 
 expect.exp $expect_timeout $MX1_HOST_IP1 $expect_user $expect_pass $expect_subuser \
-"> ~/log/mta.log\r"
+"> ~/log/mta.log"
 
 #clear other tmp log files
 rm expect*.log 
@@ -60,8 +60,6 @@ fi
 
 expect.exp $expect_timeout $MX1_HOST_IP1 $expect_user $expect_pass $expect_subuser \
 "date +%s"
-
-cp  expect.log xx2.log
 
 #cet:curent epoc time
 cet=$(grep -A  1 "date +%s" expect.log |grep -v "date")
@@ -126,6 +124,8 @@ fi
 echo "########## 6 Check mta.log using expect tool ..."
 expect.exp $expect_timeout $MX1_HOST_IP1 $expect_user $expect_pass $expect_subuser \
 "cat log/mta.log"
+
+cp  expect.log xx2.log
 
 count=$(grep  -i "MtaAutoReplySuppressedSender"  expect.log|wc -l)
 count1=$(grep -i "delivered" expect.log |wc -l)
