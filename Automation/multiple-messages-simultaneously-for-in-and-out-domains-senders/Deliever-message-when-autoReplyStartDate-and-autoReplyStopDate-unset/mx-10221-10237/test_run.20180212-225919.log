@@ -1,0 +1,268 @@
+	**********  Starting ../Automation/multiple-messages-simultaneously-for-in-and-out-domains-senders/Deliever-message-when-autoReplyStartDate-and-autoReplyStopDate-unset/mx-10221-10237  **********
+Test started: Mon Feb 12 22:59:19 CST 2018
+########## 1 Clear mta.log using expect tool ...
+spawn ssh root@10.49.58.239
+Password: 
+Last login: Mon Feb 12 09:51:27 2018 from 10.6.105.103
+#########################################################################################################################################################
+#                                                  Synchronoss Technologies - Confidential                                                              #
+#                                                                                                                                                       #
+# Welcome to Openstack Deployment.                                                                                                                      #
+#                                                                                                                                                       #
+# Openstack Instance has to be registered with spacewalk to get the repos.                                                                              #
+#                                                                                                                                                       #
+# Run the following command to register the instance with Spacewalk:                                                                                    #
+#                                                                                                                                                       #
+#   rhnreg_ks --serverUrl=https://spacewalk.sncrcorp.net/XMLRPC --sslCACert=/usr/share/rhn/RHN-ORG-TRUSTED-SSL-CERT --activationkey=<activation-keys>   #
+#                                                                                                                                                       #
+#   Dev activation-key for CentOS7: 1-612b859ba0b2af4e6db2cdccc3373c70	                                                                                #
+#                                                                                                                                                       #
+#   Please contact servicedesk at:<servicedesk@Synchronoss.com> for additional key requirements.                                                        #
+#                                                             © Synchronoss 2017                                                                        #
+#########################################################################################################################################################
+]0;root@mx1:~[?1034h[root@mx1 ~]# su - imail
+Last login: Mon Feb 12 09:51:28 EST 2018 on pts/5
+[?1034hmx1:imail:Mx9.5:~$ > ~/log/mta.log
+mx1:imail:Mx9.5:~$ rm: cannot remove 'imapfetch*.log': No such file or directory
+rm: cannot remove 'send*.log': No such file or directory
+########## 2 Accounts provision ...
++ mos_host=10.49.58.241
++ mos_port=8081
++ domain=whsasf.com
++ args=
++ shift 3
++ '[' 0 -gt 0 ']'
++ curl -X PUT -v -d mailRazorgateRelayHost= -d type=local http://10.49.58.241:8081/mxos/domain/v2/whsasf.com
+*   Trying 10.49.58.241...
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0* Connected to 10.49.58.241 (10.49.58.241) port 8081 (#0)
+> PUT /mxos/domain/v2/whsasf.com HTTP/1.1
+> Host: 10.49.58.241:8081
+> User-Agent: curl/7.47.0
+> Accept: */*
+> Content-Length: 34
+> Content-Type: application/x-www-form-urlencoded
+> 
+} [34 bytes data]
+* upload completely sent off: 34 out of 34 bytes
+< HTTP/1.1 400 Bad Request
+< Server: Apache-Coyote/1.1
+< Content-Type: application/json
+< Transfer-Encoding: chunked
+< Date: Mon, 12 Feb 2018 14:59:18 GMT
+< Connection: close
+< 
+{ [308 bytes data]
+100   330    0   296  100    34    442     50 --:--:-- --:--:-- --:--:--   442
+* Closing connection 0
+{"code":"DMN_INVALID_MAILRAZORGATERELAYHOST","requestParams":"{mailRazorgateRelayHost=[], domain=[whsasf.com], type=[local]}","operationType":"DomainService:PUT","shortMessage":"Invalid mailRazorgateRelayHost, please refer attribute razorgateRelayHost.","longMessage":"[$Attribute is not valid]"}+ echo 'TIME Domain create: 0'
+TIME Domain create: 0
++ exit 0
+Shifted 7 - 
+*   Trying 10.49.58.241...
+* Connected to 10.49.58.241 (10.49.58.241) port 8081 (#0)
+> PUT /mxos/mailbox/v2/ar24989@openwave.com HTTP/1.1
+> Host: 10.49.58.241:8081
+> User-Agent: curl/7.47.0
+> Accept: */*
+> Content-Length: 51
+> Content-Type: application/x-www-form-urlencoded
+> 
+} [51 bytes data]
+* upload completely sent off: 51 out of 51 bytes
+< HTTP/1.1 200 OK
+< Server: Apache-Coyote/1.1
+< Content-Type: application/json
+< Transfer-Encoding: chunked
+< Date: Mon, 12 Feb 2018 14:59:18 GMT
+< 
+{ [30 bytes data]
+* Connection #0 to host 10.49.58.241 left intact
+8688039629406415139TIME User create: 1
+Shifted 7 - 
+*   Trying 10.49.58.241...
+* Connected to 10.49.58.241 (10.49.58.241) port 8081 (#0)
+> PUT /mxos/mailbox/v2/ar9294@openwave.com HTTP/1.1
+> Host: 10.49.58.241:8081
+> User-Agent: curl/7.47.0
+> Accept: */*
+> Content-Length: 50
+> Content-Type: application/x-www-form-urlencoded
+> 
+} [50 bytes data]
+* upload completely sent off: 50 out of 50 bytes
+< HTTP/1.1 200 OK
+< Server: Apache-Coyote/1.1
+< Content-Type: application/json
+< Transfer-Encoding: chunked
+< Date: Mon, 12 Feb 2018 14:59:20 GMT
+< 
+{ [30 bytes data]
+* Connection #0 to host 10.49.58.241 left intact
+5930463113558260913TIME User create: 1
+Shifted 7 - 
+*   Trying 10.49.58.241...
+* Connected to 10.49.58.241 (10.49.58.241) port 8081 (#0)
+> PUT /mxos/mailbox/v2/ar31739@openwave.com HTTP/1.1
+> Host: 10.49.58.241:8081
+> User-Agent: curl/7.47.0
+> Accept: */*
+> Content-Length: 51
+> Content-Type: application/x-www-form-urlencoded
+> 
+} [51 bytes data]
+* upload completely sent off: 51 out of 51 bytes
+< HTTP/1.1 200 OK
+< Server: Apache-Coyote/1.1
+< Content-Type: application/json
+< Transfer-Encoding: chunked
+< Date: Mon, 12 Feb 2018 14:59:20 GMT
+< 
+{ [30 bytes data]
+* Connection #0 to host 10.49.58.241 left intact
+4637458838766514828TIME User create: 1
+Shifted 7 - 
+*   Trying 10.49.58.241...
+* Connected to 10.49.58.241 (10.49.58.241) port 8081 (#0)
+> PUT /mxos/mailbox/v2/ar27402@whsasf.com HTTP/1.1
+> Host: 10.49.58.241:8081
+> User-Agent: curl/7.47.0
+> Accept: */*
+> Content-Length: 49
+> Content-Type: application/x-www-form-urlencoded
+> 
+} [49 bytes data]
+* upload completely sent off: 49 out of 49 bytes
+< HTTP/1.1 400 Bad Request
+< Server: Apache-Coyote/1.1
+< Content-Type: application/json
+< Transfer-Encoding: chunked
+< Date: Mon, 12 Feb 2018 14:59:22 GMT
+< Connection: close
+< 
+{ [359 bytes data]
+* Closing connection 0
+{"code":"MBX_UNABLE_TO_CREATE","requestParams":"{password=[XXXXX], cosId=[default], email=[ar27402@whsasf.com, ar27402@whsasf.com]}","operationType":"MailboxService:PUT","shortMessage":"Unable to perform Mailbox Create operation.","longMessage":"[LDAP: error code 19 - Domain name 'whsasf.com' not found or does not contain domainType attribute]"}TIME User create: 1
+Shifted 7 - 
+*   Trying 10.49.58.241...
+* Connected to 10.49.58.241 (10.49.58.241) port 8081 (#0)
+> PUT /mxos/mailbox/v2/ar5464@whsasf.com HTTP/1.1
+> Host: 10.49.58.241:8081
+> User-Agent: curl/7.47.0
+> Accept: */*
+> Content-Length: 48
+> Content-Type: application/x-www-form-urlencoded
+> 
+} [48 bytes data]
+* upload completely sent off: 48 out of 48 bytes
+< HTTP/1.1 400 Bad Request
+< Server: Apache-Coyote/1.1
+< Content-Type: application/json
+< Transfer-Encoding: chunked
+< Date: Mon, 12 Feb 2018 14:59:22 GMT
+< Connection: close
+< 
+{ [357 bytes data]
+* Closing connection 0
+{"code":"MBX_UNABLE_TO_CREATE","requestParams":"{password=[XXXXX], cosId=[default], email=[ar5464@whsasf.com, ar5464@whsasf.com]}","operationType":"MailboxService:PUT","shortMessage":"Unable to perform Mailbox Create operation.","longMessage":"[LDAP: error code 19 - Domain name 'whsasf.com' not found or does not contain domainType attribute]"}TIME User create: 1
+########## 3 Configure user1 to vacation autoreply mode using expect tool ...
+spawn ssh root@10.49.58.239
+Password: 
+Last login: Mon Feb 12 09:58:43 2018 from 10.6.105.103
+#########################################################################################################################################################
+#                                                  Synchronoss Technologies - Confidential                                                              #
+#                                                                                                                                                       #
+# Welcome to Openstack Deployment.                                                                                                                      #
+#                                                                                                                                                       #
+# Openstack Instance has to be registered with spacewalk to get the repos.                                                                              #
+#                                                                                                                                                       #
+# Run the following command to register the instance with Spacewalk:                                                                                    #
+#                                                                                                                                                       #
+#   rhnreg_ks --serverUrl=https://spacewalk.sncrcorp.net/XMLRPC --sslCACert=/usr/share/rhn/RHN-ORG-TRUSTED-SSL-CERT --activationkey=<activation-keys>   #
+#                                                                                                                                                       #
+#   Dev activation-key for CentOS7: 1-612b859ba0b2af4e6db2cdccc3373c70	                                                                                #
+#                                                                                                                                                       #
+#   Please contact servicedesk at:<servicedesk@Synchronoss.com> for additional key requirements.                                                        #
+#                                                             © Synchronoss 2017                                                                        #
+#########################################################################################################################################################
+]0;root@mx1:~[?1034h[root@mx1 ~]# su - imail
+Last login: Mon Feb 12 09:58:44 EST 2018 on pts/5
+[?1034hmx1:imail:Mx9.5:~$ echo 'internal:' >data.txt
+mx1:imail:Mx9.5:~$ echo 'Vacation,This is an autoreply message for internal senders!' >>data.txt
+mx1:imail:Mx9.5:~$ echo 'external:' >>data.txt
+mx1:imail:Mx9.5:~$ echo 'Vacation,This is an external autoreply message for external senders!' >>data.txt
+mx1:imail:Mx9.5:~$ autoreplyctrl ar24989@openwave.com vacation data.txt none none
+AutoReply data updated Successfully.
+mx1:imail:Mx9.5:~$ [32m##########3 Congifuration successfully[0m
+##########4 delieber 1 message from user2,3,4,5 to usr1 ...
+########## 5 Check mta.log using expect tool ...
+spawn ssh root@10.49.58.239
+Password: 
+Last login: Mon Feb 12 09:58:56 2018 from 10.6.105.103
+#########################################################################################################################################################
+#                                                  Synchronoss Technologies - Confidential                                                              #
+#                                                                                                                                                       #
+# Welcome to Openstack Deployment.                                                                                                                      #
+#                                                                                                                                                       #
+# Openstack Instance has to be registered with spacewalk to get the repos.                                                                              #
+#                                                                                                                                                       #
+# Run the following command to register the instance with Spacewalk:                                                                                    #
+#                                                                                                                                                       #
+#   rhnreg_ks --serverUrl=https://spacewalk.sncrcorp.net/XMLRPC --sslCACert=/usr/share/rhn/RHN-ORG-TRUSTED-SSL-CERT --activationkey=<activation-keys>   #
+#                                                                                                                                                       #
+#   Dev activation-key for CentOS7: 1-612b859ba0b2af4e6db2cdccc3373c70	                                                                                #
+#                                                                                                                                                       #
+#   Please contact servicedesk at:<servicedesk@Synchronoss.com> for additional key requirements.                                                        #
+#                                                             © Synchronoss 2017                                                                        #
+#########################################################################################################################################################
+]0;root@mx1:~[?1034h[root@mx1 ~]# su - imail
+Last login: Mon Feb 12 09:58:57 EST 2018 on pts/5
+[?1034hmx1:imail:Mx9.5:~$ cat log/mta.log
+20180212 095901341-0500 mx1 mta 13089 15531 139931853567744 Note;SmtpConnectionReceived(70/1) [10.6.105.103]:fromhost=10.6.105.103:fromport=34740:localAddr=10.49.58.239:sid=BA84F9B3-09DD86B7-00000036.0
+20180212 095901341-0500 mx1 mta 13089 6433 139931834873600 Note;SmtpConnectionReceived(70/1) [10.6.105.103]:fromhost=10.6.105.103:fromport=34742:localAddr=10.49.58.239:sid=BA84F9B3-09DD86B7-00000038.0
+20180212 095901343-0500 mx1 mta 13089 6434 139931834607360 Note;SmtpConnectionReceived(70/1) [10.6.105.103]:fromhost=10.6.105.103:fromport=34744:localAddr=10.49.58.239:sid=BA84F9B3-09DD86B7-0000003A.0
+20180212 095901346-0500 mx1 mta 13089 6435 139931834341120 Note;SmtpConnectionReceived(70/1) [10.6.105.103]:fromhost=10.6.105.103:fromport=34746:localAddr=10.49.58.239:sid=BA84F9B3-09DD86B7-0000003C.0
+20180212 095903309-0500 mx1 mta 13089 15531 139931853567744 Note;MsgTrace(65/26) received from internet:from=<ar27402@whsasf.com>:msgid=<20180212145902.ABD13089.mx1.openwave.com@whsasf.com>:fromhost=[10.6.105.103]:fromport=34740:localAddr=10.49.58.239:sid=BA84F9B3-09DD86B7-00000036.1:msgsize=418:time=2:sender=<ar27402@whsasf.com>:rcpts=<ar24989@openwave.com>:protocol=ESMTP:encoding=plaintext:auth=
+20180212 095903309-0500 mx1 mta 13089 6434 139931834607360 Note;MsgTrace(65/26) received from internet:from=<ar5464@whsasf.com>:msgid=<20180212145902.ABC13089.mx1.openwave.com@whsasf.com>:fromhost=[10.6.105.103]:fromport=34744:localAddr=10.49.58.239:sid=BA84F9B3-09DD86B7-0000003A.1:msgsize=418:time=2:sender=<ar5464@whsasf.com>:rcpts=<ar24989@openwave.com>:protocol=ESMTP:encoding=plaintext:auth=
+20180212 095903318-0500 mx1 mta 13089 6435 139931834341120 Note;MsgTrace(65/26) received from internet:from=<ar9294@openwave.com>:msgid=<20180212145902.ABE13089.mx1.openwave.com@openwave.com>:fromhost=[10.6.105.103]:fromport=34746:localAddr=10.49.58.239:sid=BA84F9B3-09DD86B7-0000003C.1:msgsize=422:time=1:sender=<ar9294@openwave.com>:rcpts=<ar24989@openwave.com>:protocol=ESMTP:encoding=plaintext:auth=
+20180212 095903318-0500 mx1 mta 13089 6433 139931834873600 Note;MsgTrace(65/26) received from internet:from=<ar31739@openwave.com>:msgid=<20180212145902.ABF13089.mx1.openwave.com@openwave.com>:fromhost=[10.6.105.103]:fromport=34742:localAddr=10.49.58.239:sid=BA84F9B3-09DD86B7-00000038.1:msgsize=422:time=1:sender=<ar31739@openwave.com>:rcpts=<ar24989@openwave.com>:protocol=ESMTP:encoding=plaintext:auth=
+20180212 095903318-0500 mx1 mta 13089 6444 139931833808640 Note;MsgTrace(65/26) docid will be used for message-id:user=ar24989@openwave.com:from=<ar9294@openwave.com>:msgid=<20180212145902.ABE13089.mx1.openwave.com@openwave.com>:size=520:fromhost=10.6.105.103:fromport=34746:localAddr=[10.49.58.239]:sid=BA84F9B3-09DD86B7-0000003C.1
+20180212 095903318-0500 mx1 mta 13089 6443 139931834074880 Note;MsgTrace(65/26) docid will be used for message-id:user=ar24989@openwave.com:from=<ar31739@openwave.com>:msgid=<20180212145902.ABF13089.mx1.openwave.com@openwave.com>:size=521:fromhost=10.6.105.103:fromport=34742:localAddr=[10.49.58.239]:sid=BA84F9B3-09DD86B7-00000038.1
+20180212 095903325-0500 mx1 mta 13089 28787 139931835139840 Note;MsgTrace(65/26) docid will be used for message-id:user=ar24989@openwave.com:from=<ar5464@whsasf.com>:msgid=<20180212145902.ABC13089.mx1.openwave.com@whsasf.com>:size=485:fromhost=10.6.105.103:fromport=34744:localAddr=[10.49.58.239]:sid=BA84F9B3-09DD86B7-0000003A.1
+20180212 095903329-0500 mx1 mta 13089 15532 139931835938560 Note;MsgTrace(65/26) docid will be used for message-id:user=ar24989@openwave.com:from=<ar27402@whsasf.com>:msgid=<20180212145902.ABD13089.mx1.openwave.com@whsasf.com>:size=485:fromhost=10.6.105.103:fromport=34740:localAddr=[10.49.58.239]:sid=BA84F9B3-09DD86B7-00000036.1
+20180212 095903362-0500 mx1 mta 13089 15541 139931835672320 Note;MsgTrace(65/26) delivered:user=ar24989@openwave.com:mbox=8688039629406415139:mss=mx2:from=<ar9294@openwave.com>:msgid=<20180212145902.ABE13089.mx1.openwave.com@openwave.com>:size=520:port=55014:fromhost=10.6.105.103:fromport=34746:localAddr=[10.49.58.239]:sid=BA84F9B3-09DD86B7-0000003C.1:docid=43ccea06-1005-11e8-a5f4-dbcf4f32214b:node=mx2:nodePort=55014
+20180212 095903369-0500 mx1 mta 13089 15537 139931836471040 Note;MsLoadedByOtherMSS(74/10) 0:mx2:user=ar24989@openwave.com:mbox=8688039629406415139:mss=mx1:from=<ar9294@openwave.com>:msgid=<20180212145902.ABE13089.mx1.openwave.com@openwave.com>:size=520:rme=MSSC_SL_STOREAUTOREPLYREPLY:port=55014:fromhost=10.6.105.103:fromport=34746:localAddr=[10.49.58.239]:sid=BA84F9B3-09DD86B7-0000003C.1:node=mx1:nodePort=55014
+20180212 095903369-0500 mx1 mta 13089 15537 139931836471040 Erro;MTAAutoReplyLookupFailed(55/16) <20180212145902.ABE13089.mx1.openwave.com@openwave.com>:user=ar24989@openwave.com:mbox=8688039629406415139:mss=mx1:from=<ar9294@openwave.com>:msgid=<20180212145902.ABE13089.mx1.openwave.com@openwave.com>:size=520:port=55014:fromhost=10.6.105.103:fromport=34746:localAddr=[10.49.58.239]:sid=BA84F9B3-09DD86B7-0000003C.1:node=mx1:nodePort=55014
+20180212 095903394-0500 mx1 mta 13089 6450 139931832743680 Note;MsgTrace(65/26) delivered:user=ar24989@openwave.com:mbox=8688039629406415139:mss=mx2:from=<ar27402@whsasf.com>:msgid=<20180212145902.ABD13089.mx1.openwave.com@whsasf.com>:size=485:port=55014:fromhost=10.6.105.103:fromport=34740:localAddr=[10.49.58.239]:sid=BA84F9B3-09DD86B7-00000036.1:docid=43cb577c-1005-11e8-9650-cb93f9b1438f:node=mx2:nodePort=55014
+20180212 095903403-0500 mx1 mta 13089 6448 139931833009920 Note;MsLoadedByOtherMSS(74/10) 0:mx2:user=ar24989@openwave.com:mbox=8688039629406415139:mss=mx1:from=<ar27402@whsasf.com>:msgid=<20180212145902.ABD13089.mx1.openwave.com@whsasf.com>:size=485:rme=MSSC_SL_STOREAUTOREPLYREPLY:port=55014:fromhost=10.6.105.103:fromport=34740:localAddr=[10.49.58.239]:sid=BA84F9B3-09DD86B7-00000036.1:node=mx1:nodePort=55014
+20180212 095903403-0500 mx1 mta 13089 6448 139931833009920 Erro;MTAAutoReplyLookupFailed(55/16) <20180212145902.ABD13089.mx1.openwave.com@whsasf.com>:user=ar24989@openwave.com:mbox=8688039629406415139:mss=mx1:from=<ar27402@whsasf.com>:msgid=<20180212145902.ABD13089.mx1.openwave.com@whsasf.com>:size=485:port=55014:fromhost=10.6.105.103:fromport=34740:localAddr=[10.49.58.239]:sid=BA84F9B3-09DD86B7-00000036.1:node=mx1:nodePort=55014
+20180212 095903420-0500 mx1 mta 13089 6451 139931832477440 Note;MsgTrace(65/26) delivered:user=ar24989@openwave.com:mbox=8688039629406415139:mss=mx2:from=<ar5464@whsasf.com>:msgid=<20180212145902.ABC13089.mx1.openwave.com@whsasf.com>:size=485:port=55014:fromhost=10.6.105.103:fromport=34744:localAddr=[10.49.58.239]:sid=BA84F9B3-09DD86B7-0000003A.1:docid=43cb78f6-1005-11e8-8ffe-333758fd1d76:node=mx2:nodePort=55014
+20180212 095903426-0500 mx1 mta 13089 6447 139931833276160 Note;MsLoadedByOtherMSS(74/10) 0:mx2:user=ar24989@openwave.com:mbox=8688039629406415139:mss=mx1:from=<ar5464@whsasf.com>:msgid=<20180212145902.ABC13089.mx1.openwave.com@whsasf.com>:size=485:rme=MSSC_SL_STOREAUTOREPLYREPLY:port=55014:fromhost=10.6.105.103:fromport=34744:localAddr=[10.49.58.239]:sid=BA84F9B3-09DD86B7-0000003A.1:node=mx1:nodePort=55014
+20180212 095903426-0500 mx1 mta 13089 6447 139931833276160 Erro;MTAAutoReplyLookupFailed(55/16) <20180212145902.ABC13089.mx1.openwave.com@whsasf.com>:user=ar24989@openwave.com:mbox=8688039629406415139:mss=mx1:from=<ar5464@whsasf.com>:msgid=<20180212145902.ABC13089.mx1.openwave.com@whsasf.com>:size=485:port=55014:fromhost=10.6.105.103:fromport=34744:localAddr=[10.49.58.239]:sid=BA84F9B3-09DD86B7-0000003A.1:node=mx1:nodePort=55014
+20180212 095903437-0500 mx1 mta 13089 6452 139931832211200 Note;MsgTrace(65/26) delivered:user=ar24989@openwave.com:mbox=8688039629406415139:mss=mx2:from=<ar31739@openwave.com>:msgid=<20180212145902.ABF13089.mx1.openwave.com@openwave.com>:size=521:port=55014:fromhost=10.6.105.103:fromport=34742:localAddr=[10.49.58.239]:sid=BA84F9B3-09DD86B7-00000038.1:docid=43cce812-1005-11e8-91e4-9ade7281c70f:node=mx2:nodePort=55014
+20180212 095903441-0500 mx1 mta 13089 6445 139931833542400 Note;MsLoadedByOtherMSS(74/10) 0:mx2:user=ar24989@openwave.com:mbox=8688039629406415139:mss=mx1:from=<ar31739@openwave.com>:msgid=<20180212145902.ABF13089.mx1.openwave.com@openwave.com>:size=521:rme=MSSC_SL_STOREAUTOREPLYREPLY:port=55014:fromhost=10.6.105.103:fromport=34742:localAddr=[10.49.58.239]:sid=BA84F9B3-09DD86B7-00000038.1:node=mx1:nodePort=55014
+20180212 095903441-0500 mx1 mta 13089 6445 139931833542400 Erro;MTAAutoReplyLookupFailed(55/16) <20180212145902.ABF13089.mx1.openwave.com@openwave.com>:user=ar24989@openwave.com:mbox=8688039629406415139:mss=mx1:from=<ar31739@openwave.com>:msgid=<20180212145902.ABF13089.mx1.openwave.com@openwave.com>:size=521:port=55014:fromhost=10.6.105.103:fromport=34742:localAddr=[10.49.58.239]:sid=BA84F9B3-09DD86B7-00000038.1:node=mx1:nodePort=55014
+20180212 095903461-0500 mx1 mta 13089 15537 139931836471040 Note;MsgTrace(65/26) deferred:user=ar24989@openwave.com:mbox=8688039629406415139:mss=mx1:from=<ar9294@openwave.com>:msgid=<20180212145902.ABE13089.mx1.openwave.com@openwave.com>:size=520:port=55014:fromhost=10.6.105.103:fromport=34746:localAddr=[10.49.58.239]:sid=BA84F9B3-09DD86B7-0000003C.1:docid=43ccea06-1005-11e8-a5f4-dbcf4f32214b:node=mx1:nodePort=55014:qservicemsgid=<922ede09-b8bf-3d9e-935c-127b84600e28>:Reason=MTAAutoReplyLookupFailed(55/16) <20180212145902.ABE13089.mx1.openwave.com@openwave.com>\3auser=ar24989@openwave.com\3ambox=8688039629406415139\3amss=mx1\3afrom=<ar9294@openwave.com>\3amsgid=<20180212145902.ABE13089.mx1.openwave.com@openwave.com>\3asize=520\3aport=55014\3afromhost=10.6.105.103\3afromport=34746\3alocalAddr=[10.49.58.239]\3asid=BA84F9B3-09DD86B7-0000003C.1\3anode=mx1\3anodePort=55014:qservicemsgid=<922ede09-b8bf-3d9e-935c-127b84600e28>
+20180212 095903532-0500 mx1 mta 13089 6448 139931833009920 Note;MsgTrace(65/26) deferred:user=ar24989@openwave.com:mbox=8688039629406415139:mss=mx1:from=<ar27402@whsasf.com>:msgid=<20180212145902.ABD13089.mx1.openwave.com@whsasf.com>:size=485:port=55014:fromhost=10.6.105.103:fromport=34740:localAddr=[10.49.58.239]:sid=BA84F9B3-09DD86B7-00000036.1:docid=43cb577c-1005-11e8-9650-cb93f9b1438f:node=mx1:nodePort=55014:qservicemsgid=<9eb3e772-5312-370d-ad00-00e63fb268fc>:Reason=MTAAutoReplyLookupFailed(55/16) <20180212145902.ABD13089.mx1.openwave.com@whsasf.com>\3auser=ar24989@openwave.com\3ambox=8688039629406415139\3amss=mx1\3afrom=<ar27402@whsasf.com>\3amsgid=<20180212145902.ABD13089.mx1.openwave.com@whsasf.com>\3asize=485\3aport=55014\3afromhost=10.6.105.103\3afromport=34740\3alocalAddr=[10.49.58.239]\3asid=BA84F9B3-09DD86B7-00000036.1\3anode=mx1\3anodePort=55014:qservicemsgid=<9eb3e772-5312-370d-ad00-00e63fb268fc>
+20180212 095903536-0500 mx1 mta 13089 6447 139931833276160 Note;MsgTrace(65/26) deferred:user=ar24989@openwave.com:mbox=8688039629406415139:mss=mx1:from=<ar5464@whsasf.com>:msgid=<20180212145902.ABC13089.mx1.openwave.com@whsasf.com>:size=485:port=55014:fromhost=10.6.105.103:fromport=34744:localAddr=[10.49.58.239]:sid=BA84F9B3-09DD86B7-0000003A.1:docid=43cb78f6-1005-11e8-8ffe-333758fd1d76:node=mx1:nodePort=55014:qservicemsgid=<6c099db5-81fe-30fa-aa7d-cf02bb1ea4bc>:Reason=MTAAutoReplyLookupFailed(55/16) <20180212145902.ABC13089.mx1.openwave.com@whsasf.com>\3auser=ar24989@openwave.com\3ambox=8688039629406415139\3amss=mx1\3afrom=<ar5464@whsasf.com>\3amsgid=<20180212145902.ABC13089.mx1.openwave.com@whsasf.com>\3asize=485\3aport=55014\3afromhost=10.6.105.103\3afromport=34744\3alocalAddr=[10.49.58.239]\3asid=BA84F9B3-09DD86B7-0000003A.1\3anode=mx1\3anodePort=55014:qservicemsgid=<6c099db5-81fe-30fa-aa7d-cf02bb1ea4bc>
+20180212 095903547-0500 mx1 mta 13089 6445 139931833542400 Note;MsgTrace(65/26) deferred:user=ar24989@openwave.com:mbox=8688039629406415139:mss=mx1:from=<ar31739@openwave.com>:msgid=<20180212145902.ABF13089.mx1.openwave.com@openwave.com>:size=521:port=55014:fromhost=10.6.105.103:fromport=34742:localAddr=[10.49.58.239]:sid=BA84F9B3-09DD86B7-00000038.1:docid=43cce812-1005-11e8-91e4-9ade7281c70f:node=mx1:nodePort=55014:qservicemsgid=<86bc1d00-3e0f-3e2e-93c6-fb553dd9db7a>:Reason=MTAAutoReplyLookupFailed(55/16) <20180212145902.ABF13089.mx1.openwave.com@openwave.com>\3auser=ar24989@openwave.com\3ambox=8688039629406415139\3amss=mx1\3afrom=<ar31739@openwave.com>\3amsgid=<20180212145902.ABF13089.mx1.openwave.com@openwave.com>\3asize=521\3aport=55014\3afromhost=10.6.105.103\3afromport=34742\3alocalAddr=[10.49.58.239]\3asid=BA84F9B3-09DD86B7-00000038.1\3anode=mx1\3anodePort=55014:qservicemsgid=<86bc1d00-3e0f-3e2e-93c6-fb553dd9db7a>
+20180212 095903639-0500 mx1 mta 13089 6434 139931834607360 Note;SmtpConnectionClosed(70/2) [10.6.105.103]:2:1:197:fromhost=[10.6.105.103]:fromport=34744:localAddr=10.49.58.239:sid=BA84F9B3-09DD86B7-0000003A.1
+20180212 095903639-0500 mx1 mta 13089 15531 139931853567744 Note;SmtpConnectionClosed(70/2) [10.6.105.103]:2:1:198:fromhost=[10.6.105.103]:fromport=34740:localAddr=10.49.58.239:sid=BA84F9B3-09DD86B7-00000036.1
+20180212 095903646-0500 mx1 mta 13089 6433 139931834873600 Note;SmtpConnectionClosed(70/2) [10.6.105.103]:2:1:202:fromhost=[10.6.105.103]:fromport=34742:localAddr=10.49.58.239:sid=BA84F9B3-09DD86B7-00000038.1
+20180212 095903646-0500 mx1 mta 13089 6435 139931834341120 Note;SmtpConnectionClosed(70/2) [10.6.105.103]:2:1:201:fromhost=[10.6.105.103]:fromport=34746:localAddr=10.49.58.239:sid=BA84F9B3-09DD86B7-0000003C.1
+mx1:imail:Mx9.5:~$ [31m##########5 Autoreply messaegs delievered failed!Please check manually,Exiting now ...[0m
+##########  doing some clear job ...
+TIME User delete: 1
+TIME User delete: 1
+TIME User delete: 0
+{"code":"MBX_NOT_FOUND","requestParams":"{adminControl=[true], email=[ar27402@whsasf.com]}","operationType":"MailboxService:DELETE","shortMessage":"The given Mailbox does not exist."}TIME User delete: 1
+{"code":"MBX_NOT_FOUND","requestParams":"{adminControl=[true], email=[ar5464@whsasf.com]}","operationType":"MailboxService:DELETE","shortMessage":"The given Mailbox does not exist."}TIME User delete: 1
+1
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0
+TESTFAILED: ../Automation/multiple-messages-simultaneously-for-in-and-out-domains-senders/Deliever-message-when-autoReplyStartDate-and-autoReplyStopDate-unset/mx-10221-10237: Test didn't report success or failure or skipped (40 sec.)
+FAILED: ../Automation/multiple-messages-simultaneously-for-in-and-out-domains-senders/Deliever-message-when-autoReplyStartDate-and-autoReplyStopDate-unset/mx-10221-10237 [20180212-225919] (40 sec.) 1
+Test ended: Mon Feb 12 22:59:59 CST 2018
+
