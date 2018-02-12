@@ -5,7 +5,7 @@
 ## Create a domain
 ##
 #mx_create_domain.sh <mxhost> <domain>
-set -x
+#set -x
 
 mos_host=$1
 mos_port=$2
@@ -31,7 +31,8 @@ while [ $# -gt 0 ]; do
 	shift
 done
 
-curl -X PUT -v -d mailRazorgateRelayHost=$relayhost -d type=local $args http://$mos_host:$mos_port/mxos/domain/v2/$domain
+#curl -X PUT -v -d mailRazorgateRelayHost=$relayhost -d type=local $args http://$mos_host:$mos_port/mxos/domain/v2/$domain
+curl -s -X PUT -v  -d type=local $args http://$mos_host:$mos_port/mxos/domain/v2/$domain
 
 echo "TIME Domain create: $SECONDS"
 exit 0

@@ -20,5 +20,5 @@ echo $number
 for n in `seq 1 $number`
 do
     s=$(echo $domain | cut -f $n- -d .)
-    curl -X DELETE http://$mos_host:$mos_port/mxos/domain/v2/$s   
+    curl -s -X DELETE http://$mos_host:$mos_port/mxos/domain/v2/$s   
 done
