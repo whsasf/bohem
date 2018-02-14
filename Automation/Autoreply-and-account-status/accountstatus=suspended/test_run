@@ -114,7 +114,7 @@ fi
 
 #7 check autoreplied message in inbox of user1
 echo "########## 7 check autoreplied message in inbox of user1 ..."
-imapmail.pl   $MX1_HOST_IP1 $MX1_IMAP_PORT $user1 p inbox 2 >imapfetch.log
+imapmail.pl   $MX1_HOST_IP1 $MX1_IMAP_PORT $user1 $passwd inbox 2 >imapfetch.log
 cat imapfetch.log
 count=$(grep "NO FETCH failed" imapfetch.log|wc -l)
 if [[ "$count" -eq	 "1" ]];then

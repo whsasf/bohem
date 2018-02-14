@@ -111,10 +111,10 @@ fi
 
 #7 check autoreplied message in inbox of user2,user3,user4,user5
 echo "########## 7 check autoreplied message in inbox of user2,user3,user4,user5 ..."
-imapmail.pl   $MX1_HOST_IP1 $MX1_IMAP_PORT $user2 p inbox 2 >imapfetch.log
-imapmail.pl   $MX1_HOST_IP1 $MX1_IMAP_PORT $user3 p inbox 2 >>imapfetch.log
-imapmail.pl   $MX1_HOST_IP1 $MX1_IMAP_PORT $user4 p inbox 2 >>imapfetch.log
-imapmail.pl   $MX1_HOST_IP1 $MX1_IMAP_PORT $user5 p inbox 2 >>imapfetch.log
+imapmail.pl   $MX1_HOST_IP1 $MX1_IMAP_PORT $user2 $passwd inbox 2 >imapfetch.log
+imapmail.pl   $MX1_HOST_IP1 $MX1_IMAP_PORT $user3 $passwd inbox 2 >>imapfetch.log
+imapmail.pl   $MX1_HOST_IP1 $MX1_IMAP_PORT $user4 $passwd inbox 2 >>imapfetch.log
+imapmail.pl   $MX1_HOST_IP1 $MX1_IMAP_PORT $user5 $passwd inbox 2 >>imapfetch.log
 
 cat imapfetch.log
 
