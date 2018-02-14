@@ -1,8 +1,0 @@
-subject:Body_preview_symbols_equals_80-qt
-MIME-Version: 1.0
-Content-Type: text/plain; charset=utf-8
-Content-Transfer-Encoding: quoted-printable
-
-""!@#$%^&*()_+-=3D[]{};',./:"?><=E3=80=8A=E3=80=8B=E3=80=8E=E3=80=8F=E3=80=
-=90=E3=80=91=EF=BC=9B=E3=80=82=E2=80=9C=E2=80=9D=EF=BC=9A=EF=BC=9A~=EF=BD=
-=9E@#=EF=BF=A5&*"""
