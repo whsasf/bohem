@@ -39,6 +39,7 @@ spawn ssh $expect_user@${HOST}
 expect {
 	 "yes/no"     {send "yes\r"; exp_continue}
 	 "Password:"  {send "$expect_pass\r";set f 1}
+	 "password:"  {send "$expect_pass\r";set f 1}
    "Host key verification failed*"   {send "\r";exec ssh-keygen -R ${HOST}}
    "# "         {send "\r";set f 1}
 }
