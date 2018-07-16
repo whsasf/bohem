@@ -1,10 +1,70 @@
-
+	**********  Starting /home/ram/workspace/bohem/Automation/Autoreply-and-account-status/accountstatus=deleted  **********
+Test started: Mon Jul 16 17:31:34 CST 2018
+########## 1 Clear mta.log using expect tool ...
+spawn ssh root@10.49.58.147
+root@10.49.58.147's password: 
+Last login: Mon Jul 16 02:28:17 2018 from 10.37.2.214
+]0;root@95site1host01:~[?1034h[root@95site1host01 ~]# su - imail
+Last login: Mon Jul 16 02:28:18 PDT 2018 on pts/2
+[?1034h95site1host01:imail:Mx9.5:~$ > ~/log/mta.log
+95site1host01:imail:Mx9.5:~$ rm: cannot remove 'imapfetch*.log': No such file or directory
+rm: cannot remove 'send*.log': No such file or directory
+########## 2 Accounts provision ...
+Shifted 7 - 
+*   Trying 10.49.58.147...
+* Connected to 10.49.58.147 (10.49.58.147) port 8081 (#0)
+> PUT /mxos/mailbox/v2/ar5435@qacopernicus.synchronoss.net HTTP/1.1
+> Host: 10.49.58.147:8081
+> User-Agent: curl/7.47.0
+> Accept: */*
+> Content-Length: 66
+> Content-Type: application/x-www-form-urlencoded
+> 
+} [66 bytes data]
+* upload completely sent off: 66 out of 66 bytes
+< HTTP/1.1 200 OK
+< Server: Apache-Coyote/1.1
+< Content-Type: application/json
+< Transfer-Encoding: chunked
+< Date: Mon, 16 Jul 2018 09:31:40 GMT
+< 
+{ [30 bytes data]
+* Connection #0 to host 10.49.58.147 left intact
+7739311039581408617TIME User create: 1
+Shifted 7 - 
+*   Trying 10.49.58.147...
+* Connected to 10.49.58.147 (10.49.58.147) port 8081 (#0)
+> PUT /mxos/mailbox/v2/ar1764@qacopernicus.synchronoss.net HTTP/1.1
+> Host: 10.49.58.147:8081
+> User-Agent: curl/7.47.0
+> Accept: */*
+> Content-Length: 66
+> Content-Type: application/x-www-form-urlencoded
+> 
+} [66 bytes data]
+* upload completely sent off: 66 out of 66 bytes
+< HTTP/1.1 200 OK
+< Server: Apache-Coyote/1.1
+< Content-Type: application/json
+< Transfer-Encoding: chunked
+< Date: Mon, 16 Jul 2018 09:31:40 GMT
+< 
+{ [30 bytes data]
+* Connection #0 to host 10.49.58.147 left intact
+5341604077595191699TIME User create: 1
+spawn ssh root@10.49.58.147
+root@10.49.58.147's password: 
 Last login: Mon Jul 16 02:31:38 2018 from 10.37.2.214
 ]0;root@95site1host01:~[?1034h[root@95site1host01 ~]# su - imail
 Last login: Mon Jul 16 02:31:39 PDT 2018 on pts/2
 [?1034h95site1host01:imail:Mx9.5:~$ date +%s
 1531733505
-95site1host01:imail:Mx9.5:~$ 
+95site1host01:imail:Mx9.5:~$ cet=1531733505
+autoreplystartdate=1531733510
+autoreplystopdate=1531735305
+########## 4 Configure user2 to vacation autoreply mode using expect tool ...
+spawn ssh root@10.49.58.147
+root@10.49.58.147's password: 
 Last login: Mon Jul 16 02:31:44 2018 from 10.37.2.214
 ]0;root@95site1host01:~[?1034h[root@95site1host01 ~]# su - imail
 Last login: Mon Jul 16 02:31:45 PDT 2018 on pts/2
@@ -14,14 +74,19 @@ Last login: Mon Jul 16 02:31:45 PDT 2018 on pts/2
 95site1host01:imail:Mx9.5:~$ echo 'Reply,This is an external autoreply message for external senders!' >>data.txt
 95site1host01:imail:Mx9.5:~$ autoreplyctrl ar1764@qacopernicus.synchronoss.net reply data.txt 1531733510 1531735305
 AutoReply data updated Successfully.
-95site1host01:imail:Mx9.5:~$ 
+95site1host01:imail:Mx9.5:~$ [32m##########4 Congifuration successfully[0m
+spawn ssh root@10.49.58.147
+root@10.49.58.147's password: 
 Last login: Mon Jul 16 02:31:59 2018 from 10.37.2.214
 ]0;root@95site1host01:~[?1034h[root@95site1host01 ~]# su - imail
 Last login: Mon Jul 16 02:31:59 PDT 2018 on pts/2
 [?1034h95site1host01:imail:Mx9.5:~$ imdbcontrol sas ar1764 qacopernicus.synchronoss.net D
 95site1host01:imail:Mx9.5:~$ imdbcontrol gaf ar1764 qacopernicus.synchronoss.net |grep Status
                           [01;31m[KStatus[m[K:	D
-95site1host01:imail:Mx9.5:~$ 
+95site1host01:imail:Mx9.5:~$ ##########5 delieber 1 message from user1 to user2 ...
+########## 6 Check mta.log using expect tool ...
+spawn ssh root@10.49.58.147
+root@10.49.58.147's password: 
 Last login: Mon Jul 16 02:32:11 2018 from 10.37.2.214
 ]0;root@95site1host01:~[?1034h[root@95site1host01 ~]# su - imail
 Last login: Mon Jul 16 02:32:11 PDT 2018 on pts/2
@@ -270,4 +335,26 @@ Last login: Mon Jul 16 02:32:11 PDT 2018 on pts/2
 20180716 023215268-0700 95site1host01 mta 26978 22600 139858693580544 Note;SmtpConnectionReceived(70/1) [10.37.2.214]:fromhost=10.37.2.214:fromport=57246:localAddr=10.49.58.147:sid=47AC58DF-C77040BB-00083932.0
 20180716 023216050-0700 95site1host01 mta 26978 22600 139858693580544 Warn;AcctInactive(50/5) user=ar1764@qacopernicus.synchronoss.net:from=<ar5435>:fromhost=10.37.2.214:fromport=57246:localAddr=10.49.58.147:sid=47AC58DF-C77040BB-00083932.1:cosId=default
 20180716 023216554-0700 95site1host01 mta 26978 22600 139858693580544 Note;SmtpConnectionClosedAbnormally(70/76) [10.37.2.214]:1:0:53:from=<ar5435>:fromhost=10.37.2.214:fromport=57246:localAddr=10.49.58.147:sid=47AC58DF-C77040BB-00083932.1:cosId=default
-95site1host01:imail:Mx9.5:~$ 
+95site1host01:imail:Mx9.5:~$ [32m##########6 Autoreply messaeg undelievered successfully!![0m
+########## 7 check autoreplied message in inbox of user1 ...
+imapmail: host[10.49.58.147] port[143] user[ar5435] pass[p] folder[inbox] message[2]
+xx OK LOGIN completed
+* 1 EXISTS
+* OK [UNSEEN 1] First unseen message
+* OK [UIDVALIDITY 1531733500] UIDs valid
+* OK [UIDNEXT 1001] Predicted next UID
+* FLAGS (\Answered \Flagged \Deleted \Draft \Seen)
+* OK [PERMANENTFLAGS (\* \Answered \Flagged \Deleted \Draft \Seen)] Permanent flags
+* 0 RECENT
+xx OK [READ-WRITE] SELECT completed
+xx NO FETCH failed
+Didn't get OK for FETCH
+Not Connected...
+[32m##########7 Check autoreplied messaege successfully!![0m
+TESTPASSED: /home/ram/workspace/bohem/Automation/Autoreply-and-account-status/accountstatus=deleted: AutoReply in reply mode with message undelievered between start/stop date for internal sender test success! (50 sec.)
+##########  doing some clear job ...
+TIME User delete: 1
+TIME User delete: 0
+PASSED: /home/ram/workspace/bohem/Automation/Autoreply-and-account-status/accountstatus=deleted [20180716-173134] (52 sec.)
+Test ended: Mon Jul 16 17:32:26 CST 2018
+

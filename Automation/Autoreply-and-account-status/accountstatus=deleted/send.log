@@ -1,5 +1,5 @@
 Received: 220 **************************************************************************************************************************************
-Sending command (to 10.49.58.147:25): EHLO ar30899
+Sending command (to 10.49.58.147:25): EHLO ar5435
 Received: 250-95site1host01.qacopernicus.synchronoss.net
 Received: 250-XXXA
 Received: 250-VRFY
@@ -9,10 +9,10 @@ Received: 250-PIPELINING
 Received: 250-DSN
 Received: 250-8BITMIME
 Received: 250 SIZE 30996480
-Sending command (to 10.49.58.147:25): MAIL FROM:<ar30899>
-Received: 250 Sender <ar30899> Ok
-Sending command (to 10.49.58.147:25): RCPT TO:<ar25704>
-Received: 550 Invalid recipient: <ar25704>
+Sending command (to 10.49.58.147:25): MAIL FROM:<ar5435>
+Received: 250 Sender <ar5435> Ok
+Sending command (to 10.49.58.147:25): RCPT TO:<ar1764>
+Received: 550 Invalid recipient: <ar1764>
 Got an ERROR response
 Sending command (to 10.49.58.147:25): DATA
 Received: 503 No recipients specified
