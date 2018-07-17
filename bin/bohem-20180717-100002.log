@@ -1,0 +1,912 @@
+	**********  Starting /home/ram/workspace/bohem/bin/bohem.log  **********
+Test-suite started: Tue Jul 17 10:00:02 CST 2018
+
+	********** START of ENVironment dump **********
+Command line: ./run_tests ../Automation/single-message/Deliever-message-after-AutoReplyStart-and-StopDate-when-both-sets/external-domain/mx-10300/
+HOST_UGLY_IP=
+SYNC2_READ_PASSWORD=password
+SYNC_VERSION=0.0.0.0
+TC_CVS_TAGS=
+LC_PAPER=zh_CN.UTF-8
+XDG_VTNR=7
+expect_pass=letmein
+MX2_HOST1=mx1
+IFS_VERSION=0.0.0.0
+AGP1_INSTALL=/opt/criticalpath/agropop
+RSAGENT1_INSTALL=/opt/criticalpath/rsagent
+CPMS4_LISTEXPANDER_MGMT_PORT=4218
+CPMS4_LDAPCONN_MGMT_PORT=4215
+CPMS3_RMAP_MGMT_PORT=4298
+CPMS3_SMTP_MGMT_PORT=4200
+MXOS2_HOST_IP=10.49.58.241
+HOST_UGLY_HOST1=nohost.invalid
+DMUI_VERSION=0.0.0.0
+RG_SOPHOSASD_MGMT_PORT=4237
+CAL1_REG_DIR=/etc/cpath
+CPMS5_LDAPCONN_MGMT_PORT=4215
+CPMS2_POP3_PORT=110
+_trace_run_tests=2
+XDG_SESSION_ID=c3
+LC_ADDRESS=zh_CN.UTF-8
+SSH_AGENT_PID=3085
+MXOS1_HOST=95site1host01
+HOST_BAD_HOST=nohost.invalid
+RG_ct_as_bulk_verdict_header=X-CTCH-Spam: Bulk
+RG_as_COMMTOUCH_SOPHOS=enable_commtouch_sophos
+RG3_CM_PORT=7210
+IFS1_ADMIN_PASSWORD=admin
+FS1_READ_PASSWORD=password
+PAB1_READ_PASSWORD=password
+CPMS2_LISTEXPANDER_MGMT_PORT=4218
+RMAP2_READ_PASSWORD=password
+CPMS1_RMAP_MGMT_PORT=4298
+CPMS1_READ_PASSWORD=password
+DSA1_PASSWORD=password
+CPDS1_INSTALL=/opt/criticalpath/cpds
+CLUTTER_IM_MODULE=xim
+LC_MONETARY=zh_CN.UTF-8
+XDG_GREETER_DATA_DIR=/var/lib/lightdm-data/ram
+SYNC1_MGMT_PORT=4221
+QT_STYLE_OVERRIDE=gtk
+HOST_JAPAN_HOST1=nohost.invalid
+TLS_PASSWORD=password
+RG_ARCHIVING_LOGS_MOUNT_LOCATION=mstore.es.cpth.ie:/volumes/vol0/public/rg_archiving_mount_location/logs
+RG_SOFTWARE3_SMTP_PORT=25
+CPMS4_LOGINPROXY_MGMT_PORT=4207
+CPMS2_INSTALL=/opt/criticalpath/global
+CPMS1_SMTP_PORT=25
+RMAP1_INSTALL=/opt/criticalpath/rmapd
+RG_ARCHIVING_CORES_MOUNT_LOCATION=mstore.es.cpth.ie:/volumes/vol0/public/rg_archiving_mount_location/cores
+FS1_WRITE_PASSWORD=password
+PAB1_WRITE_PASSWORD=password
+CPMS7_MBMON_MGMT_PORT=4203
+CPMS6_RMAP_MGMT_PORT=4298
+CPMS2_MAILBOX_PATH=/opt/criticalpath/global/mboxes
+CPMS2_HTTP_PORT=80
+RMAP2_WRITE_PASSWORD=password
+CPMS1_WRITE_PASSWORD=password
+DSA1_SHADOW_PORT=1702
+SHELL=/bin/bash
+VTE_VERSION=4205
+TERM=xterm-256color
+IFSUI_VERSION=0.0.0.0
+PAB2_WRITE_PASSWORD=password
+RSAGENT3_INSTALL=/opt/criticalpath/rsagent
+CAL1_MGMT_PORT=5230
+CPMS4_IMAP_PORT=143
+CPMS2_WRITE_PASSWORD=password
+RMAP1_WRITE_PASSWORD=password
+HOST_BAD_HOST1=nohost.invalid
+SYNC1_HTTP_SSL_PORT=4443
+FS_VERSION=0.0.0.0
+PAB2_READ_PASSWORD=password
+PAB_VERSION=0.0.0.0
+CPMS4_SMTP_PORT=25
+CPMS4_SMTP_MGMT_PORT=4200
+CPMS3_INSTALL=/opt/criticalpath/global
+CPMS2_READ_PASSWORD=password
+RMAP1_READ_PASSWORD=password
+CPMS_VERSION=0.0.0.0
+HOST_JAPAN_IP=
+CAL2_SMTP_USER=cal.user@nohost.invalid
+GOLD_DIFF_OPTS=-b
+_trace_log=/tmp/run_tests.trace.9940
+QT_LINUX_ACCESSIBILITY_ALWAYS_ON=1
+PERL5LIB=/home/ram/perl5/lib/perl5
+NSUI_VERSION=0.0.0.0
+CPMS6_HTTP_PORT=80
+LOCAL_HOST=nohost.invalid
+GJS_DEBUG_OUTPUT=stderr
+RG_ct_as_nonspam_verdict_header=X-CTCH-Spam: NonSpam
+CPMS6_LOGINPROXY_MGMT_PORT=4207
+CPMS1_SMTP_MGMT_PORT=4200
+ERRFILE=bohem.err
+LC_NUMERIC=zh_CN.UTF-8
+WINDOWID=121634822
+MX2_HOST_IP=10.49.58.239
+RG_x_header=X-RazorGate-Spam:
+IFS1_PREFIX=files
+FS1_MGMT_PORT=6212
+PAB1_MGMT_PORT=4211
+CPMS4_HTTP_PORT=80
+CPMS3_LOGINPROXY_MGMT_PORT=4207
+CPMS1_MGMT_PORT=4215
+CPDS1_HOST=nohost.invalid
+OLDPWD=/home/ram/workspace/bohem
+RG_COUNTERS3_HTTP_PORT=4239
+RG_SOFTWARE1_HOST=nohost.invalid
+PAB3_HOST=nohost.invalid
+CPMS7_RMAP_MGMT_PORT=4298
+CPMS3_HOST=nohost.invalid
+CPMS2_LOGINPROXY_IMAP_PORT=1143
+_trace_testlist=4
+GJS_DEBUG_TOPICS=JS ERROR;JS LOG
+PERL_MB_OPT=--install_base "/home/ram/perl5"
+MX1_POP_PORT=110
+COUCHBASE1_PASSWORD=password
+RG2_SMTP_PORT=25
+RG_SMTP1_HOST=nohost.invalid
+SYNC3_MGMT_PORT=4221
+GTK_MODULES=gail:atk-bridge
+MX1_HOST_IP=10.49.58.147
+policy_test_end_sleep=30
+RG_SOFTWARE1_SMTP_PORT=25
+MSE2_WRITE_PASSWORD=password
+AGP1_MGMT_PORT=4219
+NS1_HOST=nohost.invalid
+CPMS3_SMTP_PORT=25
+CPMS2_LOGINPROXY_MGMT_PORT=4207
+CPDS1_USER=dsamgr
+DNS_SERVER_PASSWORD=password
+MX2_SMTP_PORT=20025
+MX2_HOST=mx1
+policy_test_end_sleep_short=15
+RG_WEBUI2_PORT=80
+CAL1_NOTIF_PORT=8888
+CPMS3_IMAP_PORT=143
+CPMS1_MBMON_MGMT_PORT=4203
+expect_subuser=imail
+MXOS1_HOST_IP=10.49.58.147
+MSE3_READ_PASSWORD=password
+CPMS5_HTTP_PORT=80
+CPMS3_LOGINPROXY_POP3_PORT=1110
+CPMS1_POP3_PORT=110
+CPDS1_ICON_PORT=1500
+JRE_HOME=/usr/lib/jvm/jdk1.8.0_152/jre
+USER=ram
+HOST_ITALY_IP=
+RG_SMTP1_HTTP_PORT=5080
+CAL3_NOTIF_PORT=8888
+CAL2_PASSWORD=password
+CPMS6_SMTP_PORT=25
+CPMS5_LISTEXPANDER_MGMT_PORT=4218
+QT_ACCESSIBILITY=1
+LC_TELEPHONE=zh_CN.UTF-8
+LS_COLORS=rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.Z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.jpg=01;35:*.jpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:
+MX2_POP_PORT=20110
+HOST_ITALY_HOST=nohost.invalid
+RG_CONSOLE3_HOST=nohost.invalid
+RG_SMTP1_IMAP4_PORT=143
+NS2_MGMT_PORT=4210
+CAL2_HOST=nohost.invalid
+CPMS2_MBMON_MGMT_PORT=4203
+MX1_IMAP_PORT=143
+HOST_GOOD_HOST1=nohost.invalid
+RG_VADEASD_MGMT_PORT=4241
+RG_SOFTWARE2_SMTP_PORT=25
+PAB3_WRITE_PASSWORD=password
+CPMS7_LDAPCONN_MGMT_PORT=4215
+CPMS3_WRITE_PASSWORD=password
+XDG_SESSION_PATH=/org/freedesktop/DisplayManager/Session0
+MX2_HOST_IP1=10.49.58.239
+AC_VERSION=0.0.0.0
+NS3_HOST=nohost.invalid
+CPMS1_PBSMTP_MGMT_PORT=4223
+CPMS1_REG_DIR=/etc/cpath
+_trace_tc_monitor=8
+XDG_SEAT_PATH=/org/freedesktop/DisplayManager/Seat0
+newdomain=whsasf.com
+RG_ip_rep_x_header=X-RazorGate-Reputation-Check:
+NS1_PASSWORD=password
+CPMS5_IMAP_PORT=143
+CPMS1_LDAPCONN_MGMT_PORT=4215
+SSH_AUTH_SOCK=/run/user/1000/keyring/ssh
+RG_APPLIANCE1_HOST=nohost.invalid
+RG1_HOST=nohost.invalid
+IFS1_ID=IFS1
+SYNC2_HTTP_SSL_PORT=4443
+MAA1_SMTP_PORT=25
+NS3_REG_DIR=/etc/cpath
+CPMS4_LOGINPROXY_IMAP_PORT=1143
+CPMS2_LDAPCONN_MGMT_PORT=4215
+HOST_ITALY_HOST1=nohost.invalid
+CAL2_MGMT_PORT=5230
+CPMS4_RMAP_MGMT_PORT=4298
+CPMS4_POP3_PORT=110
+DEFAULTS_PATH=/usr/share/gconf/cinnamon.default.path
+SESSION_MANAGER=local/bigchina:@/tmp/.ICE-unix/2947,unix/bigchina:/tmp/.ICE-unix/2947
+MX1_HOST=95site1host01
+policy_load_sleep=60
+CAL1_INSTALL=/opt/criticalpath/cal
+_trace_level=0
+MX1_USER=imail
+HOST_JAPAN_IP1=
+NS2_HOST=nohost.invalid
+CPMS3_LOGINPROXY_IMAP_PORT=1143
+CPMS1_IMAP_PORT=143
+HOST_BLACK_IP1=
+RG_CONSOLE2_PORT=7210
+PAB2_MGMT_PORT=4211
+CAL1_PASSWORD=password
+CPMS6_IMS_MGMT_PORT=4201
+RMAP3_INSTALL=/opt/criticalpath/rmapd
+CPMS2_MGMT_PORT=4215
+XDG_CONFIG_DIRS=/etc/xdg/xdg-cinnamon:/etc/xdg
+RG_ct_av_unknown_verdict_header=X-CTCH-VOD: Unknown
+RG_av_QUARANTINE=quarantine
+RG_SMTP2_SSLPORT=465
+CAL3_SMTP_USER=cal.user@nohost.invalid
+CPMS7_IMAP_PORT=143
+CPMS5_LOGINPROXY_IMAP_PORT=1143
+TC_CVS_UPDATE=none
+HOST_BETTER_HOST1=nohost.invalid
+RG_SMTP1_TLS_PASSWORD=p
+CAL3_MGMT_PORT=5230
+CPMS6_IMAP_PORT=143
+DNS_SERVER_PORT=4321
+PATH=/home/ram/workspace/bohem/bin:/home/ram/workspace/bohem/lib:.:/home/ram/perl5/bin:/home/ram/bin:/home/ram/.local/bin:/usr/lib/jvm/jdk1.8.0_152/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/home/ram/workspace/bohem:/home/ram/workspace/bohem/bin
+DESKTOP_SESSION=cinnamon
+RG_SMTPD_MGMT_PORT=4200
+IFS1_HOST=nohost.invalid
+SYNC1_WRITE_PASSWORD=password
+PAB1_INSTALL=/opt/criticalpath/pab
+CAL2_NOTIF_HOST=nohost.invalid
+CAL2_SMTP_HOST=nohost.invalid
+CPMS2_LOGINPROXY_POP3_PORT=1110
+CPMS2_SMTP_PORT=25
+RMAP2_INSTALL=/opt/criticalpath/rmapd
+CPMS1_LOGINPROXY_MGMT_PORT=4207
+CPMS1_INSTALL=/opt/criticalpath/global
+HOST_BLACK_HOST=nohost.invalid
+RG_LOGINPROXY_MGMT_PORT=4207
+MSE1_HOST=nohost.invalid
+NS2_PASSWORD=password
+CPMS7_HTTP_PORT=80
+CPMS6_MGMT_PORT=4215
+CPMS3_REG_DIR=/etc/cpath
+CPMS1_LOGINPROXY_POP3_PORT=1110
+CPMS1_MAILBOX_PATH=/opt/criticalpath/global/mboxes
+DSA1_ADMINISTRATOR=cn=manager
+WORK_DIR=/home/ram/workspace/bohem/bin
+QT_QPA_PLATFORMTHEME=qgnomeplatform
+QT_IM_MODULE=fcitx
+RG_SMTP3_POP3_PORT=110
+RG_CONSOLE2_HOST=nohost.invalid
+NS3_INSTALL=/opt/criticalpath/ns
+NS_VERSION=0.0.0.0
+CAL3_HOST=nohost.invalid
+_current_user_dir=/home/ram/workspace/bohem/bin
+LC_IDENTIFICATION=zh_CN.UTF-8
+HOST_UGLY_HOST=nohost.invalid
+RG_SMTP3_IMAP4_PORT=143
+RG_SMTP3_SSLPORT=465
+IFS1_PORT=89
+SYNC3_READ_PASSWORD=password
+MAA1_READ_PASSWORD=password
+CAL2_NOTIF_PORT=8888
+CAL_VERSION=0.0.0.0
+CPMS6_LOGINPROXY_IMAP_PORT=1143
+CPMS3_MAILBOX_PATH=/opt/criticalpath/global/mboxes
+DSA1_NAME=cn=loc1
+TC_CVS_CLEANUP=none
+PWD=/home/ram/workspace/bohem/bin
+XDG_SESSION_TYPE=x11
+MXOS2__PORT=8081
+HOST_BAD_IP=
+PABUI_VERSION=0.0.0.0
+RG_APPLIANCE2_HOST=nohost.invalid
+RG_SMTP2_IMAP4_PORT=143
+RG2_HOST=nohost.invalid
+CAL2_INSTALL=/opt/criticalpath/cal
+JAVA_HOME=/usr/local/jdk1.5.0_10
+XMODIFIERS=@im=fcitx
+MX2_USER=imail
+HOST_GOOD_IP1=
+RG_SMTP2_HOST=nohost.invalid
+RG_SMTP1_SSLPORT=465
+MSE2_MGMT_PORT=4230
+AGP1_PASSWORD=password
+CPMS7_POP3_PORT=110
+CPMS5_LOGINPROXY_POP3_PORT=1110
+HOST_BETTER_HOST=nohost.invalid
+RG_ct_as_confirmed_spam_verdict_header=X-CTCH-Spam: Confirmed
+NS1_MGMT_PORT=4210
+CPMS3_LISTEXPANDER_MGMT_PORT=4218
+LANG=en_US.UTF-8
+REMOTE_ROOT_DIR=/home/ram/workspace/bohem_testcases/
+RG_SMTP2_POP3_PORT=110
+MSE3_HOST=nohost.invalid
+CAL3_NOTIF_HOST=nohost.invalid
+CPMS7_LOGINPROXY_POP3_PORT=1110
+_bohem_version=2.9.5
+MANDATORY_PATH=/usr/share/gconf/cinnamon.mandatory.path
+GDM_LANG=en_US
+HOST_GOOD_IP=
+RG_as_PREMIUM=enable_commtouch
+RG_CONSOLE1_PORT=7210
+LC_MEASUREMENT=zh_CN.UTF-8
+expect_user=root
+HOST_GOOD_HOST=nohost.invalid
+HOST_ITALY_IP1=
+MSUI_VERSION=0.0.0.0
+CALUI_VERSION=0.0.0.0
+RG_ct_av_non_virus_verdict_header=X-CTCH-VOD: NonVirus
+RG_SOFTWARE3_HOST=nohost.invalid
+IFS1_MGMT_PORT=4621
+FS1_HOST=nohost.invalid
+PAB1_HOST=nohost.invalid
+CPMS3_POP3_PORT=110
+CPMS2_IMS_MGMT_PORT=4201
+CPMS1_HOST=nohost.invalid
+CURRENT_DIR=/home/ram/workspace/bohem/bin
+_trace_filter=16
+RG_av_DISABLE=disable
+RG_COUNTERS2_HTTP_PORT=4239
+NS3_PASSWORD=password
+CPMS7_LISTEXPANDER_MGMT_PORT=4218
+CPMS7_LOGINPROXY_MGMT_PORT=4207
+CPMS4_LOGINPROXY_POP3_PORT=1110
+MXOS1__PORT=8081
+RG_CONSOLE1_HOST=nohost.invalid
+RG1_CM_PORT=7210
+PAB3_READ_PASSWORD=password
+MAA1_SMTP_MGMT_PORT=14200
+AGP_VERSION=0.0.0.0
+CAL3_PASSWORD=password
+CAL2_REG_DIR=/etc/cpath
+CPMS5_SMTP_PORT=25
+CPMS3_READ_PASSWORD=password
+MX1_HOST1=95site1host01
+SYNCUI_VERSION=0.0.0.0
+PS_VERSION=0.0.0.0
+RG_sophos_as_nonspam_verdict_header=X-Junkmail-Premium-Raw
+MSE2_HOST=nohost.invalid
+AGP1_REG_DIR=/etc/cpath
+RSAGENT2_INSTALL=/opt/criticalpath/rsagent
+CPMS7_IMS_MGMT_PORT=4201
+CPMS7_MGMT_PORT=4215
+CPMS5_LOGINPROXY_MGMT_PORT=4207
+CPMS2_RMAP_MGMT_PORT=4298
+CPMS2_SMTP_MGMT_PORT=4200
+DNS_SERVER_HOST=polaris.rwc
+GDMSESSION=cinnamon
+RG_sophos_as_confirmed_spam_verdict_header=X-Junkmail-Premium-Raw
+RG_CB_DC_BUCKET_QUOTA=300
+IFS1_WRITE_PASSWORD=admin
+MSE1_READ_PASSWORD=password
+CAL3_SMTP_HOST=nohost.invalid
+CPMS3_HTTP_PORT=80
+MX1_HOST_IP1=10.49.58.147
+HOST_WHITE_IP=
+CONSOLEUI_VERSION=0.0.0.0
+IFS1_READ_PASSWORD=admin
+SYNC3_WRITE_PASSWORD=password
+MAA1_WRITE_PASSWORD=password
+CPMS5_MBMON_MGMT_PORT=4203
+LOGFILE=bohem.log
+CINNAMON_VERSION=3.6.7
+reconfig_timer_value=5
+NS1_REG_DIR=/etc/cpath
+CAL1_SMTP_HOST=nohost.invalid
+_trace_services=32
+_single_result_per_script=1
+XDG_SEAT=seat0
+HOME=/home/ram
+SHLVL=2
+passwd=p
+MXOS2_HOST=mx3
+RUNNING_WITH_VALGRIND=Yes
+HOST_BLACK_IP=
+MSE1_WRITE_PASSWORD=password
+NS3_MGMT_PORT=4210
+CPMS7_LOGINPROXY_IMAP_PORT=1143
+CPMS6_POP3_PORT=110
+LANGUAGE=en_US
+SYNC1_HOST=nohost.invalid
+CPMS5_SMTP_MGMT_PORT=4200
+DSA1_MGMT_PORT=1701
+TEST_LOG=empty_log
+RG_SMTP3_SMTP_PORT=25
+RG_SMTP3_HOST=nohost.invalid
+MSE2_READ_PASSWORD=password
+MSE_VERSION=0.0.0.0
+CAL3_REG_DIR=/etc/cpath
+CAL1_SMTP_PASSWORD=usrpass
+CPMS5_IMS_MGMT_PORT=4201
+CPMS5_MGMT_PORT=4215
+GNOME_DESKTOP_SESSION_ID=this-is-deprecated
+HOST_UGLY_IP1=
+RG_SMTP2_SMTP_PORT=25
+CPMS2_IMAP_PORT=143
+_env_dump=1
+GTK_OVERLAY_SCROLLING=1
+RG2_CM_PORT=7210
+PAB2_HOST=nohost.invalid
+CPMS6_LOGINPROXY_POP3_PORT=1110
+RMAP3_READ_PASSWORD=password
+CPMS2_HOST=nohost.invalid
+PERL_LOCAL_LIB_ROOT=/home/ram/perl5
+defaultdomain=qacopernicus.synchronoss.net
+PYTHONPATH=/home/ram/workspace/bohem/lib/python:
+RG_WEBUI3_PORT=80
+SYNC2_MGMT_PORT=4221
+CPMS7_SMTP_PORT=25
+CPMS6_LDAPCONN_MGMT_PORT=4215
+CPDS1_USER_HOME=/opt/criticalpath/dsamgr
+LOGNAME=ram
+XDG_SESSION_DESKTOP=cinnamon
+RG_SOFTWARE2_HOST=nohost.invalid
+MSE1_MGMT_PORT=4230
+CPDS1_ICON_CONFIG_PATH=/opt/criticalpath/dsamgr/iCon
+_bohem_dir=/home/ram/workspace/bohem
+HOST_WHITE_IP1=
+RG_ip_rep_x_header_2=X-RazorGate-Reputation-Check: 2
+RG_as_DISABLE=disable
+RG1_SMTP_PORT=25
+SYNC3_HOST=nohost.invalid
+MAA1_HOST=nohost.invalid
+CPMS7_SMTP_MGMT_PORT=4200
+CPMS4_MGMT_PORT=4215
+_bohem_self=run_tests
+QT4_IM_MODULE=fcitx
+CLASSPATH=.:/usr/lib/jvm/jdk1.8.0_152/lib:/usr/lib/jvm/jdk1.8.0_152/jre/lib
+XDG_DATA_DIRS=/usr/share/cinnamon:/usr/share/gnome:/home/ram/.local/share/flatpak/exports/share:/var/lib/flatpak/exports/share:/usr/local/share:/usr/share:/var/lib/snapd/desktop
+DBUS_SESSION_BUS_ADDRESS=unix:abstract=/tmp/dbus-tHLJFrertn,guid=1667cafbff8dae7113d3c4a05b4d401a
+HOST_WHITE_HOST1=nohost.invalid
+RG_ip_rep_x_header_1=X-RazorGate-Reputation-Check: 1
+RG_SMTP1_POP3_PORT=110
+PAB3_MGMT_PORT=4211
+AGP1_HOST=nohost.invalid
+NS2_REG_DIR=/etc/cpath
+NS1_INSTALL=/opt/criticalpath/ns
+CPMS3_IMS_MGMT_PORT=4201
+CPMS3_MGMT_PORT=4215
+expect_timeout=10
+HOST_BAD_IP1=
+SEARCHUI_VERSION=0.0.0.0
+CPMS6_LISTEXPANDER_MGMT_PORT=4218
+TC_NAME=unknown TC name
+LESSOPEN=| /usr/bin/lesspipe %s
+COUCHBASE1_USER=admin
+RG_CONSOLE3_PORT=7210
+CPMS3_LDAPCONN_MGMT_PORT=4215
+CPMS1_LOGINPROXY_IMAP_PORT=1143
+RG_SMTP2_HTTP_PORT=5080
+RG_WEBUI1_PORT=80
+CPMS4_IMS_MGMT_PORT=4201
+RMAP3_WRITE_PASSWORD=password
+TEST_USER=nobody
+RG_av_DISCARD=discard
+RG_SMTP1_SMTP_PORT=25
+SYNC3_HTTP_SSL_PORT=4443
+SYNC2_HOST=nohost.invalid
+CAL3_SMTP_PASSWORD=usrpass
+CPMS3_MBMON_MGMT_PORT=4203
+DISPLAY=:0
+XDG_RUNTIME_DIR=/run/user/1000
+MX1_SMTP_PORT=25
+RG_cm_analysis_header=X-CNFS-ANALYSIS: v=1
+RG_SMTP3_TLS_PASSWORD=p
+RG_COUNTERS1_HTTP_PORT=4239
+SYNC1_READ_PASSWORD=password
+CAL2_SMTP_PASSWORD=usrpass
+CAL1_NOTIF_HOST=nohost.invalid
+TC_TIMEOUT=180
+HOST_JAPAN_HOST=nohost.invalid
+HOST_BLACK_HOST1=nohost.invalid
+COUCHBASE1_PORT=8091
+RG_SMTP2_TLS_PASSWORD=p
+MSE3_WRITE_PASSWORD=password
+CPMS1_IMS_MGMT_PORT=4201
+GTK_IM_MODULE=fcitx
+XDG_CURRENT_DESKTOP=X-Cinnamon
+HOST_WHITE_HOST=nohost.invalid
+RG_APPLIANCE3_HOST=nohost.invalid
+RG3_HOST=nohost.invalid
+NS2_INSTALL=/opt/criticalpath/ns
+CPMS5_POP3_PORT=110
+CPMS4_MBMON_MGMT_PORT=4203
+CPMS1_HTTP_PORT=80
+ADJUST_DIR=.
+LESSCLOSE=/usr/bin/lesspipe %s %s
+RG_CB_MEMORY_QUOTA=900
+RG_CB_CM_BUCKET_QUOTA=300
+MSE3_MGMT_PORT=4230
+CAL1_SMTP_USER=cal.user@nohost.invalid
+CAL1_HOST=nohost.invalid
+CPMS6_SMTP_MGMT_PORT=4200
+CPMS2_REG_DIR=/etc/cpath
+CPMS1_LISTEXPANDER_MGMT_PORT=4218
+HISTTIMEFORMAT=%F %T 
+PERL_MM_OPT=INSTALL_BASE=/home/ram/perl5
+MX2_IMAP_PORT=20143
+RG_ct_as_unknown_verdict_header=X-CTCH-Spam: Unknown
+RG_as_SOPHOS=enable_sophos
+RG_COUNTERSD_MGMT_PORT=4235
+RG3_SMTP_PORT=25
+SYNC2_WRITE_PASSWORD=password
+CAL3_INSTALL=/opt/criticalpath/cal
+CPMS6_MBMON_MGMT_PORT=4203
+CPMS5_RMAP_MGMT_PORT=4298
+DSA1_LDAP_PORT=389
+DSA1_FIRST_ENTRY=dc=exocosm,dc=net
+CPDS1_GROUP=cpds
+XAUTHORITY=/home/ram/.Xauthority
+LC_NAME=zh_CN.UTF-8
+_=/usr/bin/env
+	********** END of ENVironment dump **********
+
+	**********  Starting /home/ram/workspace/bohem/bin/../Automation/single-message/Deliever-message-after-AutoReplyStart-and-StopDate-when-both-sets/external-domain/mx-10300  **********
+Test started: Tue Jul 17 10:00:02 CST 2018
+########## 1 Clear mta.log using expect tool ...
+spawn ssh root@10.49.58.147
+root@10.49.58.147's password: 
+Last login: Mon Jul 16 18:59:21 2018 from 10.37.2.214
+]0;root@95site1host01:~[?1034h[root@95site1host01 ~]# su - imail
+Last login: Mon Jul 16 18:59:21 PDT 2018 on pts/1
+[?1034h95site1host01:imail:Mx9.5:~$ > ~/log/mta.log
+95site1host01:imail:Mx9.5:~$ rm: cannot remove 'imapfetch*.log': No such file or directory
+rm: cannot remove 'send*.log': No such file or directory
+########## 2 Accounts provision ...
+*   Trying 10.49.58.147...
+* Connected to 10.49.58.147 (10.49.58.147) port 8081 (#0)
+> PUT /mxos/domain/v2/whsasf.com HTTP/1.1
+> Host: 10.49.58.147:8081
+> User-Agent: curl/7.47.0
+> Accept: */*
+> Content-Length: 10
+> Content-Type: application/x-www-form-urlencoded
+> 
+} [10 bytes data]
+* upload completely sent off: 10 out of 10 bytes
+< HTTP/1.1 400 Bad Request
+< Server: Apache-Coyote/1.1
+< Content-Type: application/json
+< Transfer-Encoding: chunked
+< Date: Tue, 17 Jul 2018 02:00:06 GMT
+< Connection: close
+< 
+{ [183 bytes data]
+* Closing connection 0
+{"code":"DMN_ALREADY_EXISTS","requestParams":"{domain=[whsasf.com], type=[local]}","operationType":"DomainService:PUT","shortMessage":"The given domain is already exists."}TIME Domain create: 1
+Shifted 7 - 
+*   Trying 10.49.58.147...
+* Connected to 10.49.58.147 (10.49.58.147) port 8081 (#0)
+> PUT /mxos/mailbox/v2/ar8851@whsasf.com HTTP/1.1
+> Host: 10.49.58.147:8081
+> User-Agent: curl/7.47.0
+> Accept: */*
+> Content-Length: 48
+> Content-Type: application/x-www-form-urlencoded
+> 
+} [48 bytes data]
+* upload completely sent off: 48 out of 48 bytes
+< HTTP/1.1 200 OK
+< Server: Apache-Coyote/1.1
+< Content-Type: application/json
+< Transfer-Encoding: chunked
+< Date: Tue, 17 Jul 2018 02:00:06 GMT
+< 
+{ [30 bytes data]
+* Connection #0 to host 10.49.58.147 left intact
+8696565198999117621TIME User create: 0
+Shifted 7 - 
+*   Trying 10.49.58.147...
+* Connected to 10.49.58.147 (10.49.58.147) port 8081 (#0)
+> PUT /mxos/mailbox/v2/ar28590@qacopernicus.synchronoss.net HTTP/1.1
+> Host: 10.49.58.147:8081
+> User-Agent: curl/7.47.0
+> Accept: */*
+> Content-Length: 67
+> Content-Type: application/x-www-form-urlencoded
+> 
+} [67 bytes data]
+* upload completely sent off: 67 out of 67 bytes
+< HTTP/1.1 200 OK
+< Server: Apache-Coyote/1.1
+< Content-Type: application/json
+< Transfer-Encoding: chunked
+< Date: Tue, 17 Jul 2018 02:00:08 GMT
+< 
+{ [30 bytes data]
+* Connection #0 to host 10.49.58.147 left intact
+7258445813232120039TIME User create: 1
+spawn ssh root@10.49.58.147
+root@10.49.58.147's password: 
+Last login: Mon Jul 16 19:00:05 2018 from 10.37.2.214
+]0;root@95site1host01:~[?1034h[root@95site1host01 ~]# su - imail
+Last login: Mon Jul 16 19:00:06 PDT 2018 on pts/1
+[?1034h95site1host01:imail:Mx9.5:~$ date +%s
+1531792813
+95site1host01:imail:Mx9.5:~$ ########## 4 Configure user2 to vacation autoreply mode using expect tool ...
+spawn ssh root@10.49.58.147
+root@10.49.58.147's password: 
+Last login: Mon Jul 16 19:00:12 2018 from 10.37.2.214
+]0;root@95site1host01:~[?1034h[root@95site1host01 ~]# su - imail
+Last login: Mon Jul 16 19:00:12 PDT 2018 on pts/1
+[?1034h95site1host01:imail:Mx9.5:~$ echo 'internal:' >data.txt
+95site1host01:imail:Mx9.5:~$ echo 'Reply,This is an autoreply message for internal senders!' >>data.txt
+95site1host01:imail:Mx9.5:~$ echo 'external:' >>data.txt
+95site1host01:imail:Mx9.5:~$ echo 'Reply,This is an external autoreply message for external senders!' >>data.txt
+95site1host01:imail:Mx9.5:~$ autoreplyctrl ar28590@qacopernicus.synchronoss.net reply data.txt 1531792818 1531792823
+AutoReply data updated Successfully.
+95site1host01:imail:Mx9.5:~$ [32m##########4 Congifuration successfully[0m
+##########5 delieber 1 message from user1 to user2 ...
+[32m########## 5 Message Deliver successfully, we can continue now[0m
+########## 6 Check mta.log using expect tool ...
+spawn ssh root@10.49.58.147
+root@10.49.58.147's password: 
+Last login: Mon Jul 16 19:00:22 2018 from 10.37.2.214
+]0;root@95site1host01:~[?1034h[root@95site1host01 ~]# su - imail
+Last login: Mon Jul 16 19:00:22 PDT 2018 on pts/1
+[?1034h95site1host01:imail:Mx9.5:~$ cat log/mta.log
+20180716 190009200-0700 95site1host01 mta 26978 15819 139858685859584 Note;SmtpConnectionReceived(70/1) [10.49.58.147]:fromhost=10.49.58.147:fromport=40426:localAddr=10.49.58.147:sid=47AC58DF-C77040BB-000A0A56.0
+20180716 190009211-0700 95site1host01 mta 26978 15819 139858685859584 Warn;SmtpServerNoRelay(70/48) [10.49.58.147]:<>:<joe.blah@test.dom>:from=<>:fromhost=10.49.58.147:fromport=40426:localAddr=10.49.58.147:sid=47AC58DF-C77040BB-000A0A56.1
+20180716 190009212-0700 95site1host01 mta 26978 15819 139858685859584 Note;SmtpRelayPrevented(70/49) [10.49.58.147]:<>:1:from=<>:fromhost=10.49.58.147:fromport=40426:localAddr=10.49.58.147:sid=47AC58DF-C77040BB-000A0A56.1
+20180716 190009212-0700 95site1host01 mta 26978 15819 139858685859584 Note;SmtpConnectionClosedAbnormally(70/76) [10.49.58.147]:0:0:75:from=<>:fromhost=10.49.58.147:fromport=40426:localAddr=10.49.58.147:sid=47AC58DF-C77040BB-000A0A56.1
+20180716 190009212-0700 95site1host01 mta 26978 22600 139858693580544 Note;SmtpConnectionReceived(70/1) [10.49.58.147]:fromhost=10.49.58.147:fromport=40428:localAddr=10.49.58.147:sid=47AC58DF-C77040BB-000A0A58.0
+20180716 190009214-0700 95site1host01 mta 26978 22600 139858693580544 Warn;SmtpServerNoRelay(70/48) [10.49.58.147]:<>:<joe.blah@test.dom>:from=<>:fromhost=10.49.58.147:fromport=40428:localAddr=10.49.58.147:sid=47AC58DF-C77040BB-000A0A58.1
+20180716 190009214-0700 95site1host01 mta 26978 22600 139858693580544 Note;SmtpRelayPrevented(70/49) [10.49.58.147]:<>:1:from=<>:fromhost=10.49.58.147:fromport=40428:localAddr=10.49.58.147:sid=47AC58DF-C77040BB-000A0A58.1
+20180716 190009214-0700 95site1host01 mta 26978 22600 139858693580544 Note;SmtpConnectionClosedAbnormally(70/76) [10.49.58.147]:0:0:75:from=<>:fromhost=10.49.58.147:fromport=40428:localAddr=10.49.58.147:sid=47AC58DF-C77040BB-000A0A58.1
+20180716 190009214-0700 95site1host01 mta 26978 11435 139858687723264 Note;SmtpConnectionReceived(70/1) [10.49.58.147]:fromhost=10.49.58.147:fromport=40430:localAddr=10.49.58.147:sid=47AC58DF-C77040BB-000A0A5A.0
+20180716 190009215-0700 95site1host01 mta 26978 11435 139858687723264 Warn;SmtpServerNoRelay(70/48) [10.49.58.147]:<>:<joe.blah@test.dom>:from=<>:fromhost=10.49.58.147:fromport=40430:localAddr=10.49.58.147:sid=47AC58DF-C77040BB-000A0A5A.1
+20180716 190009215-0700 95site1host01 mta 26978 11435 139858687723264 Note;SmtpRelayPrevented(70/49) [10.49.58.147]:<>:1:from=<>:fromhost=10.49.58.147:fromport=40430:localAddr=10.49.58.147:sid=47AC58DF-C77040BB-000A0A5A.1
+20180716 190009216-0700 95site1host01 mta 26978 11435 139858687723264 Note;SmtpConnectionClosedAbnormally(70/76) [10.49.58.147]:0:0:75:from=<>:fromhost=10.49.58.147:fromport=40430:localAddr=10.49.58.147:sid=47AC58DF-C77040BB-000A0A5A.1
+20180716 190009216-0700 95site1host01 mta 26978 2830 139858689320704 Note;SmtpConnectionReceived(70/1) [10.49.58.147]:fromhost=10.49.58.147:fromport=40432:localAddr=10.49.58.147:sid=47AC58DF-C77040BB-000A0A5C.0
+20180716 190009217-0700 95site1host01 mta 26978 2830 139858689320704 Warn;SmtpServerNoRelay(70/48) [10.49.58.147]:<>:<joe.blah@test.dom>:from=<>:fromhost=10.49.58.147:fromport=40432:localAddr=10.49.58.147:sid=47AC58DF-C77040BB-000A0A5C.1
+20180716 190009217-0700 95site1host01 mta 26978 2830 139858689320704 Note;SmtpRelayPrevented(70/49) [10.49.58.147]:<>:1:from=<>:fromhost=10.49.58.147:fromport=40432:localAddr=10.49.58.147:sid=47AC58DF-C77040BB-000A0A5C.1
+20180716 190009217-0700 95site1host01 mta 26978 2830 139858689320704 Note;SmtpConnectionClosedAbnormally(70/76) [10.49.58.147]:0:0:75:from=<>:fromhost=10.49.58.147:fromport=40432:localAddr=10.49.58.147:sid=47AC58DF-C77040BB-000A0A5C.1
+20180716 190009217-0700 95site1host01 mta 26978 22601 139858689054464 Note;SmtpConnectionReceived(70/1) [10.49.58.147]:fromhost=10.49.58.147:fromport=40434:localAddr=10.49.58.147:sid=47AC58DF-C77040BB-000A0A5E.0
+20180716 190009218-0700 95site1host01 mta 26978 22601 139858689054464 Warn;SmtpServerNoRelay(70/48) [10.49.58.147]:<>:<joe.blah@test.dom>:from=<>:fromhost=10.49.58.147:fromport=40434:localAddr=10.49.58.147:sid=47AC58DF-C77040BB-000A0A5E.1
+20180716 190009218-0700 95site1host01 mta 26978 22601 139858689054464 Note;SmtpRelayPrevented(70/49) [10.49.58.147]:<>:1:from=<>:fromhost=10.49.58.147:fromport=40434:localAddr=10.49.58.147:sid=47AC58DF-C77040BB-000A0A5E.1
+20180716 190009218-0700 95site1host01 mta 26978 22601 139858689054464 Note;SmtpConnectionClosedAbnormally(70/76) [10.49.58.147]:0:0:75:from=<>:fromhost=10.49.58.147:fromport=40434:localAddr=10.49.58.147:sid=47AC58DF-C77040BB-000A0A5E.1
+20180716 190009218-0700 95site1host01 mta 26978 16108 139858685327104 Note;SmtpConnectionReceived(70/1) [10.49.58.147]:fromhost=10.49.58.147:fromport=40436:localAddr=10.49.58.147:sid=47AC58DF-C77040BB-000A0A60.0
+20180716 190009219-0700 95site1host01 mta 26978 16108 139858685327104 Warn;SmtpServerNoRelay(70/48) [10.49.58.147]:<>:<joe.blah@test.dom>:from=<>:fromhost=10.49.58.147:fromport=40436:localAddr=10.49.58.147:sid=47AC58DF-C77040BB-000A0A60.1
+20180716 190009219-0700 95site1host01 mta 26978 16108 139858685327104 Note;SmtpRelayPrevented(70/49) [10.49.58.147]:<>:1:from=<>:fromhost=10.49.58.147:fromport=40436:localAddr=10.49.58.147:sid=47AC58DF-C77040BB-000A0A60.1
+20180716 190009219-0700 95site1host01 mta 26978 16108 139858685327104 Note;SmtpConnectionClosedAbnormally(70/76) [10.49.58.147]:0:0:75:from=<>:fromhost=10.49.58.147:fromport=40436:localAddr=10.49.58.147:sid=47AC58DF-C77040BB-000A0A60.1
+20180716 190009220-0700 95site1host01 mta 26978 15819 139858685859584 Note;SmtpConnectionReceived(70/1) [10.49.58.147]:fromhost=10.49.58.147:fromport=40438:localAddr=10.49.58.147:sid=47AC58DF-C77040BB-000A0A62.0
+20180716 190009220-0700 95site1host01 mta 26978 15819 139858685859584 Warn;SmtpServerNoRelay(70/48) [10.49.58.147]:<>:<joe.blah@test.dom>:from=<>:fromhost=10.49.58.147:fromport=40438:localAddr=10.49.58.147:sid=47AC58DF-C77040BB-000A0A62.1
+20180716 190009221-0700 95site1host01 mta 26978 15819 139858685859584 Note;SmtpRelayPrevented(70/49) [10.49.58.147]:<>:1:from=<>:fromhost=10.49.58.147:fromport=40438:localAddr=10.49.58.147:sid=47AC58DF-C77040BB-000A0A62.1
+20180716 190009221-0700 95site1host01 mta 26978 15819 139858685859584 Note;SmtpConnectionClosedAbnormally(70/76) [10.49.58.147]:0:0:75:from=<>:fromhost=10.49.58.147:fromport=40438:localAddr=10.49.58.147:sid=47AC58DF-C77040BB-000A0A62.1
+20180716 190009221-0700 95site1host01 mta 26978 15819 139858685859584 Note;SmtpConnectionReceived(70/1) [10.49.58.147]:fromhost=10.49.58.147:fromport=40440:localAddr=10.49.58.147:sid=47AC58DF-C77040BB-000A0A64.0
+20180716 190009222-0700 95site1host01 mta 26978 15819 139858685859584 Warn;SmtpServerNoRelay(70/48) [10.49.58.147]:<>:<joe.blah@test.dom>:from=<>:fromhost=10.49.58.147:fromport=40440:localAddr=10.49.58.147:sid=47AC58DF-C77040BB-000A0A64.1
+20180716 190009222-0700 95site1host01 mta 26978 15819 139858685859584 Note;SmtpRelayPrevented(70/49) [10.49.58.147]:<>:1:from=<>:fromhost=10.49.58.147:fromport=40440:localAddr=10.49.58.147:sid=47AC58DF-C77040BB-000A0A64.1
+20180716 190009222-0700 95site1host01 mta 26978 15819 139858685859584 Note;SmtpConnectionClosedAbnormally(70/76) [10.49.58.147]:0:0:75:from=<>:fromhost=10.49.58.147:fromport=40440:localAddr=10.49.58.147:sid=47AC58DF-C77040BB-000A0A64.1
+20180716 190009222-0700 95site1host01 mta 26978 11435 139858687723264 Note;SmtpConnectionReceived(70/1) [10.49.58.147]:fromhost=10.49.58.147:fromport=40442:localAddr=10.49.58.147:sid=47AC58DF-C77040BB-000A0A66.0
+20180716 190009222-0700 95site1host01 mta 26978 11435 139858687723264 Warn;SmtpServerNoRelay(70/48) [10.49.58.147]:<>:<joe.blah@test.dom>:from=<>:fromhost=10.49.58.147:fromport=40442:localAddr=10.49.58.147:sid=47AC58DF-C77040BB-000A0A66.1
+20180716 190009222-0700 95site1host01 mta 26978 11435 139858687723264 Note;SmtpRelayPrevented(70/49) [10.49.58.147]:<>:1:from=<>:fromhost=10.49.58.147:fromport=40442:localAddr=10.49.58.147:sid=47AC58DF-C77040BB-000A0A66.1
+20180716 190009222-0700 95site1host01 mta 26978 11435 139858687723264 Note;SmtpConnectionClosedAbnormally(70/76) [10.49.58.147]:0:0:75:from=<>:fromhost=10.49.58.147:fromport=40442:localAddr=10.49.58.147:sid=47AC58DF-C77040BB-000A0A66.1
+20180716 190009223-0700 95site1host01 mta 26978 2830 139858689320704 Note;SmtpConnectionReceived(70/1) [10.49.58.147]:fromhost=10.49.58.147:fromport=40444:localAddr=10.49.58.147:sid=47AC58DF-C77040BB-000A0A68.0
+20180716 190009223-0700 95site1host01 mta 26978 2830 139858689320704 Warn;SmtpServerNoRelay(70/48) [10.49.58.147]:<>:<joe.blah@test.dom>:from=<>:fromhost=10.49.58.147:fromport=40444:localAddr=10.49.58.147:sid=47AC58DF-C77040BB-000A0A68.1
+20180716 190009224-0700 95site1host01 mta 26978 2830 139858689320704 Note;SmtpRelayPrevented(70/49) [10.49.58.147]:<>:1:from=<>:fromhost=10.49.58.147:fromport=40444:localAddr=10.49.58.147:sid=47AC58DF-C77040BB-000A0A68.1
+20180716 190009224-0700 95site1host01 mta 26978 2830 139858689320704 Note;SmtpConnectionClosedAbnormally(70/76) [10.49.58.147]:0:0:75:from=<>:fromhost=10.49.58.147:fromport=40444:localAddr=10.49.58.147:sid=47AC58DF-C77040BB-000A0A68.1
+20180716 190009224-0700 95site1host01 mta 26978 22601 139858689054464 Note;SmtpConnectionReceived(70/1) [10.49.58.147]:fromhost=10.49.58.147:fromport=40446:localAddr=10.49.58.147:sid=47AC58DF-C77040BB-000A0A6A.0
+20180716 190009224-0700 95site1host01 mta 26978 22601 139858689054464 Warn;SmtpServerNoRelay(70/48) [10.49.58.147]:<>:<joe.blah@test.dom>:from=<>:fromhost=10.49.58.147:fromport=40446:localAddr=10.49.58.147:sid=47AC58DF-C77040BB-000A0A6A.1
+20180716 190009224-0700 95site1host01 mta 26978 22601 139858689054464 Note;SmtpRelayPrevented(70/49) [10.49.58.147]:<>:1:from=<>:fromhost=10.49.58.147:fromport=40446:localAddr=10.49.58.147:sid=47AC58DF-C77040BB-000A0A6A.1
+20180716 190009224-0700 95site1host01 mta 26978 22601 139858689054464 Note;SmtpConnectionClosedAbnormally(70/76) [10.49.58.147]:0:0:75:from=<>:fromhost=10.49.58.147:fromport=40446:localAddr=10.49.58.147:sid=47AC58DF-C77040BB-000A0A6A.1
+20180716 190009225-0700 95site1host01 mta 26978 22601 139858689054464 Note;SmtpConnectionReceived(70/1) [10.49.58.147]:fromhost=10.49.58.147:fromport=40448:localAddr=10.49.58.147:sid=47AC58DF-C77040BB-000A0A6C.0
+20180716 190009226-0700 95site1host01 mta 26978 22601 139858689054464 Warn;SmtpServerNoRelay(70/48) [10.49.58.147]:<>:<joe.blah@test.dom>:from=<>:fromhost=10.49.58.147:fromport=40448:localAddr=10.49.58.147:sid=47AC58DF-C77040BB-000A0A6C.1
+20180716 190009226-0700 95site1host01 mta 26978 22601 139858689054464 Note;SmtpRelayPrevented(70/49) [10.49.58.147]:<>:1:from=<>:fromhost=10.49.58.147:fromport=40448:localAddr=10.49.58.147:sid=47AC58DF-C77040BB-000A0A6C.1
+20180716 190009226-0700 95site1host01 mta 26978 22601 139858689054464 Note;SmtpConnectionClosedAbnormally(70/76) [10.49.58.147]:0:0:75:from=<>:fromhost=10.49.58.147:fromport=40448:localAddr=10.49.58.147:sid=47AC58DF-C77040BB-000A0A6C.1
+20180716 190009226-0700 95site1host01 mta 26978 22601 139858689054464 Note;SmtpConnectionReceived(70/1) [10.49.58.147]:fromhost=10.49.58.147:fromport=40450:localAddr=10.49.58.147:sid=47AC58DF-C77040BB-000A0A6E.0
+20180716 190009227-0700 95site1host01 mta 26978 22601 139858689054464 Warn;SmtpServerNoRelay(70/48) [10.49.58.147]:<>:<joe.blah@test.dom>:from=<>:fromhost=10.49.58.147:fromport=40450:localAddr=10.49.58.147:sid=47AC58DF-C77040BB-000A0A6E.1
+20180716 190009227-0700 95site1host01 mta 26978 22601 139858689054464 Note;SmtpRelayPrevented(70/49) [10.49.58.147]:<>:1:from=<>:fromhost=10.49.58.147:fromport=40450:localAddr=10.49.58.147:sid=47AC58DF-C77040BB-000A0A6E.1
+20180716 190009227-0700 95site1host01 mta 26978 22601 139858689054464 Note;SmtpConnectionClosedAbnormally(70/76) [10.49.58.147]:0:0:75:from=<>:fromhost=10.49.58.147:fromport=40450:localAddr=10.49.58.147:sid=47AC58DF-C77040BB-000A0A6E.1
+20180716 190009227-0700 95site1host01 mta 26978 22601 139858689054464 Note;SmtpConnectionReceived(70/1) [10.49.58.147]:fromhost=10.49.58.147:fromport=40452:localAddr=10.49.58.147:sid=47AC58DF-C77040BB-000A0A70.0
+20180716 190009227-0700 95site1host01 mta 26978 22601 139858689054464 Warn;SmtpServerNoRelay(70/48) [10.49.58.147]:<>:<joe.blah@test.dom>:from=<>:fromhost=10.49.58.147:fromport=40452:localAddr=10.49.58.147:sid=47AC58DF-C77040BB-000A0A70.1
+20180716 190009228-0700 95site1host01 mta 26978 22601 139858689054464 Note;SmtpRelayPrevented(70/49) [10.49.58.147]:<>:1:from=<>:fromhost=10.49.58.147:fromport=40452:localAddr=10.49.58.147:sid=47AC58DF-C77040BB-000A0A70.1
+20180716 190009228-0700 95site1host01 mta 26978 22601 139858689054464 Note;SmtpConnectionClosedAbnormally(70/76) [10.49.58.147]:0:0:75:from=<>:fromhost=10.49.58.147:fromport=40452:localAddr=10.49.58.147:sid=47AC58DF-C77040BB-000A0A70.1
+20180716 190009228-0700 95site1host01 mta 26978 11435 139858687723264 Note;SmtpConnectionReceived(70/1) [10.49.58.147]:fromhost=10.49.58.147:fromport=40454:localAddr=10.49.58.147:sid=47AC58DF-C77040BB-000A0A72.0
+20180716 190009228-0700 95site1host01 mta 26978 11435 139858687723264 Warn;SmtpServerNoRelay(70/48) [10.49.58.147]:<>:<joe.blah@test.dom>:from=<>:fromhost=10.49.58.147:fromport=40454:localAddr=10.49.58.147:sid=47AC58DF-C77040BB-000A0A72.1
+20180716 190009228-0700 95site1host01 mta 26978 11435 139858687723264 Note;SmtpRelayPrevented(70/49) [10.49.58.147]:<>:1:from=<>:fromhost=10.49.58.147:fromport=40454:localAddr=10.49.58.147:sid=47AC58DF-C77040BB-000A0A72.1
+20180716 190009228-0700 95site1host01 mta 26978 11435 139858687723264 Note;SmtpConnectionClosedAbnormally(70/76) [10.49.58.147]:0:0:75:from=<>:fromhost=10.49.58.147:fromport=40454:localAddr=10.49.58.147:sid=47AC58DF-C77040BB-000A0A72.1
+20180716 190009230-0700 95site1host01 mta 26978 2830 139858689320704 Note;SmtpConnectionReceived(70/1) [10.49.58.147]:fromhost=10.49.58.147:fromport=40456:localAddr=10.49.58.147:sid=47AC58DF-C77040BB-000A0A74.0
+20180716 190009231-0700 95site1host01 mta 26978 2830 139858689320704 Warn;SmtpServerNoRelay(70/48) [10.49.58.147]:<>:<joe.blah@test.dom>:from=<>:fromhost=10.49.58.147:fromport=40456:localAddr=10.49.58.147:sid=47AC58DF-C77040BB-000A0A74.1
+20180716 190009231-0700 95site1host01 mta 26978 2830 139858689320704 Note;SmtpRelayPrevented(70/49) [10.49.58.147]:<>:1:from=<>:fromhost=10.49.58.147:fromport=40456:localAddr=10.49.58.147:sid=47AC58DF-C77040BB-000A0A74.1
+20180716 190009231-0700 95site1host01 mta 26978 2830 139858689320704 Note;SmtpConnectionClosedAbnormally(70/76) [10.49.58.147]:0:0:75:from=<>:fromhost=10.49.58.147:fromport=40456:localAddr=10.49.58.147:sid=47AC58DF-C77040BB-000A0A74.1
+20180716 190009232-0700 95site1host01 mta 26978 16108 139858685327104 Note;SmtpConnectionReceived(70/1) [10.49.58.147]:fromhost=10.49.58.147:fromport=40458:localAddr=10.49.58.147:sid=47AC58DF-C77040BB-000A0A76.0
+20180716 190009232-0700 95site1host01 mta 26978 16108 139858685327104 Warn;SmtpServerNoRelay(70/48) [10.49.58.147]:<>:<joe.blah@test.dom>:from=<>:fromhost=10.49.58.147:fromport=40458:localAddr=10.49.58.147:sid=47AC58DF-C77040BB-000A0A76.1
+20180716 190009234-0700 95site1host01 mta 26978 16108 139858685327104 Note;SmtpRelayPrevented(70/49) [10.49.58.147]:<>:1:from=<>:fromhost=10.49.58.147:fromport=40458:localAddr=10.49.58.147:sid=47AC58DF-C77040BB-000A0A76.1
+20180716 190009234-0700 95site1host01 mta 26978 16108 139858685327104 Note;SmtpConnectionClosedAbnormally(70/76) [10.49.58.147]:0:0:75:from=<>:fromhost=10.49.58.147:fromport=40458:localAddr=10.49.58.147:sid=47AC58DF-C77040BB-000A0A76.1
+20180716 190009234-0700 95site1host01 mta 26978 16108 139858685327104 Note;SmtpConnectionReceived(70/1) [10.49.58.147]:fromhost=10.49.58.147:fromport=40460:localAddr=10.49.58.147:sid=47AC58DF-C77040BB-000A0A78.0
+20180716 190009234-0700 95site1host01 mta 26978 16108 139858685327104 Warn;SmtpServerNoRelay(70/48) [10.49.58.147]:<>:<joe.blah@test.dom>:from=<>:fromhost=10.49.58.147:fromport=40460:localAddr=10.49.58.147:sid=47AC58DF-C77040BB-000A0A78.1
+20180716 190009234-0700 95site1host01 mta 26978 16108 139858685327104 Note;SmtpRelayPrevented(70/49) [10.49.58.147]:<>:1:from=<>:fromhost=10.49.58.147:fromport=40460:localAddr=10.49.58.147:sid=47AC58DF-C77040BB-000A0A78.1
+20180716 190009235-0700 95site1host01 mta 26978 16108 139858685327104 Note;SmtpConnectionClosedAbnormally(70/76) [10.49.58.147]:0:0:75:from=<>:fromhost=10.49.58.147:fromport=40460:localAddr=10.49.58.147:sid=47AC58DF-C77040BB-000A0A78.1
+20180716 190009235-0700 95site1host01 mta 26978 15819 139858685859584 Note;SmtpConnectionReceived(70/1) [10.49.58.147]:fromhost=10.49.58.147:fromport=40462:localAddr=10.49.58.147:sid=47AC58DF-C77040BB-000A0A7A.0
+20180716 190009235-0700 95site1host01 mta 26978 15819 139858685859584 Warn;SmtpServerNoRelay(70/48) [10.49.58.147]:<>:<joe.blah@test.dom>:from=<>:fromhost=10.49.58.147:fromport=40462:localAddr=10.49.58.147:sid=47AC58DF-C77040BB-000A0A7A.1
+20180716 190009235-0700 95site1host01 mta 26978 15819 139858685859584 Note;SmtpRelayPrevented(70/49) [10.49.58.147]:<>:1:from=<>:fromhost=10.49.58.147:fromport=40462:localAddr=10.49.58.147:sid=47AC58DF-C77040BB-000A0A7A.1
+20180716 190009235-0700 95site1host01 mta 26978 15819 139858685859584 Note;SmtpConnectionClosedAbnormally(70/76) [10.49.58.147]:0:0:75:from=<>:fromhost=10.49.58.147:fromport=40462:localAddr=10.49.58.147:sid=47AC58DF-C77040BB-000A0A7A.1
+20180716 190009236-0700 95site1host01 mta 26978 22601 139858689054464 Note;SmtpConnectionReceived(70/1) [10.49.58.147]:fromhost=10.49.58.147:fromport=40464:localAddr=10.49.58.147:sid=47AC58DF-C77040BB-000A0A7C.0
+20180716 190009236-0700 95site1host01 mta 26978 22601 139858689054464 Warn;SmtpServerNoRelay(70/48) [10.49.58.147]:<>:<joe.blah@test.dom>:from=<>:fromhost=10.49.58.147:fromport=40464:localAddr=10.49.58.147:sid=47AC58DF-C77040BB-000A0A7C.1
+20180716 190009238-0700 95site1host01 mta 26978 22601 139858689054464 Note;SmtpRelayPrevented(70/49) [10.49.58.147]:<>:1:from=<>:fromhost=10.49.58.147:fromport=40464:localAddr=10.49.58.147:sid=47AC58DF-C77040BB-000A0A7C.1
+20180716 190009238-0700 95site1host01 mta 26978 22601 139858689054464 Note;SmtpConnectionClosedAbnormally(70/76) [10.49.58.147]:0:0:75:from=<>:fromhost=10.49.58.147:fromport=40464:localAddr=10.49.58.147:sid=47AC58DF-C77040BB-000A0A7C.1
+20180716 190009238-0700 95site1host01 mta 26978 22601 139858689054464 Note;SmtpConnectionReceived(70/1) [10.49.58.147]:fromhost=10.49.58.147:fromport=40466:localAddr=10.49.58.147:sid=47AC58DF-C77040BB-000A0A7E.0
+20180716 190009239-0700 95site1host01 mta 26978 22601 139858689054464 Warn;SmtpServerNoRelay(70/48) [10.49.58.147]:<>:<joe.blah@test.dom>:from=<>:fromhost=10.49.58.147:fromport=40466:localAddr=10.49.58.147:sid=47AC58DF-C77040BB-000A0A7E.1
+20180716 190009239-0700 95site1host01 mta 26978 22601 139858689054464 Note;SmtpRelayPrevented(70/49) [10.49.58.147]:<>:1:from=<>:fromhost=10.49.58.147:fromport=40466:localAddr=10.49.58.147:sid=47AC58DF-C77040BB-000A0A7E.1
+20180716 190009239-0700 95site1host01 mta 26978 22601 139858689054464 Note;SmtpConnectionClosedAbnormally(70/76) [10.49.58.147]:0:0:75:from=<>:fromhost=10.49.58.147:fromport=40466:localAddr=10.49.58.147:sid=47AC58DF-C77040BB-000A0A7E.1
+20180716 190009239-0700 95site1host01 mta 26978 22601 139858689054464 Note;SmtpConnectionReceived(70/1) [10.49.58.147]:fromhost=10.49.58.147:fromport=40468:localAddr=10.49.58.147:sid=47AC58DF-C77040BB-000A0A80.0
+20180716 190009239-0700 95site1host01 mta 26978 22601 139858689054464 Warn;SmtpServerNoRelay(70/48) [10.49.58.147]:<>:<joe.blah@test.dom>:from=<>:fromhost=10.49.58.147:fromport=40468:localAddr=10.49.58.147:sid=47AC58DF-C77040BB-000A0A80.1
+20180716 190009240-0700 95site1host01 mta 26978 22601 139858689054464 Note;SmtpRelayPrevented(70/49) [10.49.58.147]:<>:1:from=<>:fromhost=10.49.58.147:fromport=40468:localAddr=10.49.58.147:sid=47AC58DF-C77040BB-000A0A80.1
+20180716 190009240-0700 95site1host01 mta 26978 22601 139858689054464 Note;SmtpConnectionClosedAbnormally(70/76) [10.49.58.147]:0:0:75:from=<>:fromhost=10.49.58.147:fromport=40468:localAddr=10.49.58.147:sid=47AC58DF-C77040BB-000A0A80.1
+20180716 190009240-0700 95site1host01 mta 26978 22601 139858689054464 Note;SmtpConnectionReceived(70/1) [10.49.58.147]:fromhost=10.49.58.147:fromport=40470:localAddr=10.49.58.147:sid=47AC58DF-C77040BB-000A0A82.0
+20180716 190009240-0700 95site1host01 mta 26978 22601 139858689054464 Warn;SmtpServerNoRelay(70/48) [10.49.58.147]:<>:<joe.blah@test.dom>:from=<>:fromhost=10.49.58.147:fromport=40470:localAddr=10.49.58.147:sid=47AC58DF-C77040BB-000A0A82.1
+20180716 190009240-0700 95site1host01 mta 26978 22601 139858689054464 Note;SmtpRelayPrevented(70/49) [10.49.58.147]:<>:1:from=<>:fromhost=10.49.58.147:fromport=40470:localAddr=10.49.58.147:sid=47AC58DF-C77040BB-000A0A82.1
+20180716 190009240-0700 95site1host01 mta 26978 22601 139858689054464 Note;SmtpConnectionClosedAbnormally(70/76) [10.49.58.147]:0:0:75:from=<>:fromhost=10.49.58.147:fromport=40470:localAddr=10.49.58.147:sid=47AC58DF-C77040BB-000A0A82.1
+20180716 190009240-0700 95site1host01 mta 26978 22601 139858689054464 Note;SmtpConnectionReceived(70/1) [10.49.58.147]:fromhost=10.49.58.147:fromport=40472:localAddr=10.49.58.147:sid=47AC58DF-C77040BB-000A0A84.0
+20180716 190009240-0700 95site1host01 mta 26978 22601 139858689054464 Warn;SmtpServerNoRelay(70/48) [10.49.58.147]:<>:<joe.blah@test.dom>:from=<>:fromhost=10.49.58.147:fromport=40472:localAddr=10.49.58.147:sid=47AC58DF-C77040BB-000A0A84.1
+20180716 190009241-0700 95site1host01 mta 26978 22601 139858689054464 Note;SmtpRelayPrevented(70/49) [10.49.58.147]:<>:1:from=<>:fromhost=10.49.58.147:fromport=40472:localAddr=10.49.58.147:sid=47AC58DF-C77040BB-000A0A84.1
+20180716 190009241-0700 95site1host01 mta 26978 22601 139858689054464 Note;SmtpConnectionClosedAbnormally(70/76) [10.49.58.147]:0:0:75:from=<>:fromhost=10.49.58.147:fromport=40472:localAddr=10.49.58.147:sid=47AC58DF-C77040BB-000A0A84.1
+20180716 190009241-0700 95site1host01 mta 26978 15819 139858685859584 Note;SmtpConnectionReceived(70/1) [10.49.58.147]:fromhost=10.49.58.147:fromport=40474:localAddr=10.49.58.147:sid=47AC58DF-C77040BB-000A0A86.0
+20180716 190009242-0700 95site1host01 mta 26978 15819 139858685859584 Warn;SmtpServerNoRelay(70/48) [10.49.58.147]:<>:<joe.blah@test.dom>:from=<>:fromhost=10.49.58.147:fromport=40474:localAddr=10.49.58.147:sid=47AC58DF-C77040BB-000A0A86.1
+20180716 190009242-0700 95site1host01 mta 26978 15819 139858685859584 Note;SmtpRelayPrevented(70/49) [10.49.58.147]:<>:1:from=<>:fromhost=10.49.58.147:fromport=40474:localAddr=10.49.58.147:sid=47AC58DF-C77040BB-000A0A86.1
+20180716 190009242-0700 95site1host01 mta 26978 15819 139858685859584 Note;SmtpConnectionClosedAbnormally(70/76) [10.49.58.147]:0:0:75:from=<>:fromhost=10.49.58.147:fromport=40474:localAddr=10.49.58.147:sid=47AC58DF-C77040BB-000A0A86.1
+20180716 190009242-0700 95site1host01 mta 26978 11435 139858687723264 Note;SmtpConnectionReceived(70/1) [10.49.58.147]:fromhost=10.49.58.147:fromport=40476:localAddr=10.49.58.147:sid=47AC58DF-C77040BB-000A0A88.0
+20180716 190009243-0700 95site1host01 mta 26978 11435 139858687723264 Warn;SmtpServerNoRelay(70/48) [10.49.58.147]:<>:<joe.blah@test.dom>:from=<>:fromhost=10.49.58.147:fromport=40476:localAddr=10.49.58.147:sid=47AC58DF-C77040BB-000A0A88.1
+20180716 190009243-0700 95site1host01 mta 26978 11435 139858687723264 Note;SmtpRelayPrevented(70/49) [10.49.58.147]:<>:1:from=<>:fromhost=10.49.58.147:fromport=40476:localAddr=10.49.58.147:sid=47AC58DF-C77040BB-000A0A88.1
+20180716 190009243-0700 95site1host01 mta 26978 11435 139858687723264 Note;SmtpConnectionClosedAbnormally(70/76) [10.49.58.147]:0:0:75:from=<>:fromhost=10.49.58.147:fromport=40476:localAddr=10.49.58.147:sid=47AC58DF-C77040BB-000A0A88.1
+20180716 190009243-0700 95site1host01 mta 26978 2830 139858689320704 Note;SmtpConnectionReceived(70/1) [10.49.58.147]:fromhost=10.49.58.147:fromport=40478:localAddr=10.49.58.147:sid=47AC58DF-C77040BB-000A0A8A.0
+20180716 190009244-0700 95site1host01 mta 26978 2830 139858689320704 Warn;SmtpServerNoRelay(70/48) [10.49.58.147]:<>:<joe.blah@test.dom>:from=<>:fromhost=10.49.58.147:fromport=40478:localAddr=10.49.58.147:sid=47AC58DF-C77040BB-000A0A8A.1
+20180716 190009244-0700 95site1host01 mta 26978 2830 139858689320704 Note;SmtpRelayPrevented(70/49) [10.49.58.147]:<>:1:from=<>:fromhost=10.49.58.147:fromport=40478:localAddr=10.49.58.147:sid=47AC58DF-C77040BB-000A0A8A.1
+20180716 190009244-0700 95site1host01 mta 26978 2830 139858689320704 Note;SmtpConnectionClosedAbnormally(70/76) [10.49.58.147]:0:0:75:from=<>:fromhost=10.49.58.147:fromport=40478:localAddr=10.49.58.147:sid=47AC58DF-C77040BB-000A0A8A.1
+20180716 190009244-0700 95site1host01 mta 26978 22600 139858693580544 Note;SmtpConnectionReceived(70/1) [10.49.58.147]:fromhost=10.49.58.147:fromport=40480:localAddr=10.49.58.147:sid=47AC58DF-C77040BB-000A0A8C.0
+20180716 190009245-0700 95site1host01 mta 26978 22600 139858693580544 Warn;SmtpServerNoRelay(70/48) [10.49.58.147]:<>:<joe.blah@test.dom>:from=<>:fromhost=10.49.58.147:fromport=40480:localAddr=10.49.58.147:sid=47AC58DF-C77040BB-000A0A8C.1
+20180716 190009246-0700 95site1host01 mta 26978 22600 139858693580544 Note;SmtpRelayPrevented(70/49) [10.49.58.147]:<>:1:from=<>:fromhost=10.49.58.147:fromport=40480:localAddr=10.49.58.147:sid=47AC58DF-C77040BB-000A0A8C.1
+20180716 190009246-0700 95site1host01 mta 26978 22600 139858693580544 Note;SmtpConnectionClosedAbnormally(70/76) [10.49.58.147]:0:0:75:from=<>:fromhost=10.49.58.147:fromport=40480:localAddr=10.49.58.147:sid=47AC58DF-C77040BB-000A0A8C.1
+20180716 190009246-0700 95site1host01 mta 26978 22600 139858693580544 Note;SmtpConnectionReceived(70/1) [10.49.58.147]:fromhost=10.49.58.147:fromport=40482:localAddr=10.49.58.147:sid=47AC58DF-C77040BB-000A0A8E.0
+20180716 190009246-0700 95site1host01 mta 26978 22600 139858693580544 Warn;SmtpServerNoRelay(70/48) [10.49.58.147]:<>:<joe.blah@test.dom>:from=<>:fromhost=10.49.58.147:fromport=40482:localAddr=10.49.58.147:sid=47AC58DF-C77040BB-000A0A8E.1
+20180716 190009247-0700 95site1host01 mta 26978 22600 139858693580544 Note;SmtpRelayPrevented(70/49) [10.49.58.147]:<>:1:from=<>:fromhost=10.49.58.147:fromport=40482:localAddr=10.49.58.147:sid=47AC58DF-C77040BB-000A0A8E.1
+20180716 190009247-0700 95site1host01 mta 26978 22600 139858693580544 Note;SmtpConnectionClosedAbnormally(70/76) [10.49.58.147]:0:0:75:from=<>:fromhost=10.49.58.147:fromport=40482:localAddr=10.49.58.147:sid=47AC58DF-C77040BB-000A0A8E.1
+20180716 190009247-0700 95site1host01 mta 26978 22600 139858693580544 Note;SmtpConnectionReceived(70/1) [10.49.58.147]:fromhost=10.49.58.147:fromport=40484:localAddr=10.49.58.147:sid=47AC58DF-C77040BB-000A0A90.0
+20180716 190009247-0700 95site1host01 mta 26978 22600 139858693580544 Warn;SmtpServerNoRelay(70/48) [10.49.58.147]:<>:<joe.blah@test.dom>:from=<>:fromhost=10.49.58.147:fromport=40484:localAddr=10.49.58.147:sid=47AC58DF-C77040BB-000A0A90.1
+20180716 190009248-0700 95site1host01 mta 26978 22600 139858693580544 Note;SmtpRelayPrevented(70/49) [10.49.58.147]:<>:1:from=<>:fromhost=10.49.58.147:fromport=40484:localAddr=10.49.58.147:sid=47AC58DF-C77040BB-000A0A90.1
+20180716 190009248-0700 95site1host01 mta 26978 22600 139858693580544 Note;SmtpConnectionClosedAbnormally(70/76) [10.49.58.147]:0:0:75:from=<>:fromhost=10.49.58.147:fromport=40484:localAddr=10.49.58.147:sid=47AC58DF-C77040BB-000A0A90.1
+20180716 190031315-0700 95site1host01 mta 26978 15819 139858685859584 Note;SmtpConnectionReceived(70/1) [10.49.58.147]:fromhost=10.49.58.147:fromport=40588:localAddr=10.49.58.147:sid=47AC58DF-C77040BB-000A0A92.0
+20180716 190031315-0700 95site1host01 mta 26978 15819 139858685859584 Warn;SmtpServerNoRelay(70/48) [10.49.58.147]:<>:<joe.blah@test.dom>:from=<>:fromhost=10.49.58.147:fromport=40588:localAddr=10.49.58.147:sid=47AC58DF-C77040BB-000A0A92.1
+20180716 190031316-0700 95site1host01 mta 26978 15819 139858685859584 Note;SmtpRelayPrevented(70/49) [10.49.58.147]:<>:1:from=<>:fromhost=10.49.58.147:fromport=40588:localAddr=10.49.58.147:sid=47AC58DF-C77040BB-000A0A92.1
+20180716 190031316-0700 95site1host01 mta 26978 15819 139858685859584 Note;SmtpConnectionClosedAbnormally(70/76) [10.49.58.147]:0:0:75:from=<>:fromhost=10.49.58.147:fromport=40588:localAddr=10.49.58.147:sid=47AC58DF-C77040BB-000A0A92.1
+20180716 190031316-0700 95site1host01 mta 26978 15819 139858685859584 Note;SmtpConnectionReceived(70/1) [10.49.58.147]:fromhost=10.49.58.147:fromport=40590:localAddr=10.49.58.147:sid=47AC58DF-C77040BB-000A0A94.0
+20180716 190031318-0700 95site1host01 mta 26978 15819 139858685859584 Warn;SmtpServerNoRelay(70/48) [10.49.58.147]:<>:<joe.blah@test.dom>:from=<>:fromhost=10.49.58.147:fromport=40590:localAddr=10.49.58.147:sid=47AC58DF-C77040BB-000A0A94.1
+20180716 190031318-0700 95site1host01 mta 26978 15819 139858685859584 Note;SmtpRelayPrevented(70/49) [10.49.58.147]:<>:1:from=<>:fromhost=10.49.58.147:fromport=40590:localAddr=10.49.58.147:sid=47AC58DF-C77040BB-000A0A94.1
+20180716 190031318-0700 95site1host01 mta 26978 15819 139858685859584 Note;SmtpConnectionClosedAbnormally(70/76) [10.49.58.147]:0:0:75:from=<>:fromhost=10.49.58.147:fromport=40590:localAddr=10.49.58.147:sid=47AC58DF-C77040BB-000A0A94.1
+20180716 190031318-0700 95site1host01 mta 26978 2830 139858689320704 Note;SmtpConnectionReceived(70/1) [10.49.58.147]:fromhost=10.49.58.147:fromport=40592:localAddr=10.49.58.147:sid=47AC58DF-C77040BB-000A0A96.0
+20180716 190031319-0700 95site1host01 mta 26978 2830 139858689320704 Warn;SmtpServerNoRelay(70/48) [10.49.58.147]:<>:<joe.blah@test.dom>:from=<>:fromhost=10.49.58.147:fromport=40592:localAddr=10.49.58.147:sid=47AC58DF-C77040BB-000A0A96.1
+20180716 190031319-0700 95site1host01 mta 26978 2830 139858689320704 Note;SmtpRelayPrevented(70/49) [10.49.58.147]:<>:1:from=<>:fromhost=10.49.58.147:fromport=40592:localAddr=10.49.58.147:sid=47AC58DF-C77040BB-000A0A96.1
+20180716 190031319-0700 95site1host01 mta 26978 2830 139858689320704 Note;SmtpConnectionClosedAbnormally(70/76) [10.49.58.147]:0:0:75:from=<>:fromhost=10.49.58.147:fromport=40592:localAddr=10.49.58.147:sid=47AC58DF-C77040BB-000A0A96.1
+20180716 190031319-0700 95site1host01 mta 26978 2830 139858689320704 Note;SmtpConnectionReceived(70/1) [10.49.58.147]:fromhost=10.49.58.147:fromport=40594:localAddr=10.49.58.147:sid=47AC58DF-C77040BB-000A0A98.0
+20180716 190031320-0700 95site1host01 mta 26978 2830 139858689320704 Warn;SmtpServerNoRelay(70/48) [10.49.58.147]:<>:<joe.blah@test.dom>:from=<>:fromhost=10.49.58.147:fromport=40594:localAddr=10.49.58.147:sid=47AC58DF-C77040BB-000A0A98.1
+20180716 190031320-0700 95site1host01 mta 26978 2830 139858689320704 Note;SmtpRelayPrevented(70/49) [10.49.58.147]:<>:1:from=<>:fromhost=10.49.58.147:fromport=40594:localAddr=10.49.58.147:sid=47AC58DF-C77040BB-000A0A98.1
+20180716 190031320-0700 95site1host01 mta 26978 2830 139858689320704 Note;SmtpConnectionClosedAbnormally(70/76) [10.49.58.147]:0:0:75:from=<>:fromhost=10.49.58.147:fromport=40594:localAddr=10.49.58.147:sid=47AC58DF-C77040BB-000A0A98.1
+20180716 190031321-0700 95site1host01 mta 26978 22601 139858689054464 Note;SmtpConnectionReceived(70/1) [10.49.58.147]:fromhost=10.49.58.147:fromport=40596:localAddr=10.49.58.147:sid=47AC58DF-C77040BB-000A0A9A.0
+20180716 190031322-0700 95site1host01 mta 26978 22601 139858689054464 Warn;SmtpServerNoRelay(70/48) [10.49.58.147]:<>:<joe.blah@test.dom>:from=<>:fromhost=10.49.58.147:fromport=40596:localAddr=10.49.58.147:sid=47AC58DF-C77040BB-000A0A9A.1
+20180716 190031322-0700 95site1host01 mta 26978 22601 139858689054464 Note;SmtpRelayPrevented(70/49) [10.49.58.147]:<>:1:from=<>:fromhost=10.49.58.147:fromport=40596:localAddr=10.49.58.147:sid=47AC58DF-C77040BB-000A0A9A.1
+20180716 190031322-0700 95site1host01 mta 26978 22601 139858689054464 Note;SmtpConnectionClosedAbnormally(70/76) [10.49.58.147]:0:0:75:from=<>:fromhost=10.49.58.147:fromport=40596:localAddr=10.49.58.147:sid=47AC58DF-C77040BB-000A0A9A.1
+20180716 190031323-0700 95site1host01 mta 26978 22600 139858693580544 Note;SmtpConnectionReceived(70/1) [10.49.58.147]:fromhost=10.49.58.147:fromport=40598:localAddr=10.49.58.147:sid=47AC58DF-C77040BB-000A0A9C.0
+20180716 190031324-0700 95site1host01 mta 26978 22600 139858693580544 Warn;SmtpServerNoRelay(70/48) [10.49.58.147]:<>:<joe.blah@test.dom>:from=<>:fromhost=10.49.58.147:fromport=40598:localAddr=10.49.58.147:sid=47AC58DF-C77040BB-000A0A9C.1
+20180716 190031324-0700 95site1host01 mta 26978 22600 139858693580544 Note;SmtpRelayPrevented(70/49) [10.49.58.147]:<>:1:from=<>:fromhost=10.49.58.147:fromport=40598:localAddr=10.49.58.147:sid=47AC58DF-C77040BB-000A0A9C.1
+20180716 190031324-0700 95site1host01 mta 26978 22600 139858693580544 Note;SmtpConnectionClosedAbnormally(70/76) [10.49.58.147]:0:0:75:from=<>:fromhost=10.49.58.147:fromport=40598:localAddr=10.49.58.147:sid=47AC58DF-C77040BB-000A0A9C.1
+20180716 190031324-0700 95site1host01 mta 26978 11435 139858687723264 Note;SmtpConnectionReceived(70/1) [10.49.58.147]:fromhost=10.49.58.147:fromport=40600:localAddr=10.49.58.147:sid=47AC58DF-C77040BB-000A0A9E.0
+20180716 190031325-0700 95site1host01 mta 26978 11435 139858687723264 Warn;SmtpServerNoRelay(70/48) [10.49.58.147]:<>:<joe.blah@test.dom>:from=<>:fromhost=10.49.58.147:fromport=40600:localAddr=10.49.58.147:sid=47AC58DF-C77040BB-000A0A9E.1
+20180716 190031326-0700 95site1host01 mta 26978 11435 139858687723264 Note;SmtpRelayPrevented(70/49) [10.49.58.147]:<>:1:from=<>:fromhost=10.49.58.147:fromport=40600:localAddr=10.49.58.147:sid=47AC58DF-C77040BB-000A0A9E.1
+20180716 190031326-0700 95site1host01 mta 26978 11435 139858687723264 Note;SmtpConnectionClosedAbnormally(70/76) [10.49.58.147]:0:0:75:from=<>:fromhost=10.49.58.147:fromport=40600:localAddr=10.49.58.147:sid=47AC58DF-C77040BB-000A0A9E.1
+20180716 190031326-0700 95site1host01 mta 26978 11435 139858687723264 Note;SmtpConnectionReceived(70/1) [10.49.58.147]:fromhost=10.49.58.147:fromport=40602:localAddr=10.49.58.147:sid=47AC58DF-C77040BB-000A0AA0.0
+20180716 190031327-0700 95site1host01 mta 26978 11435 139858687723264 Warn;SmtpServerNoRelay(70/48) [10.49.58.147]:<>:<joe.blah@test.dom>:from=<>:fromhost=10.49.58.147:fromport=40602:localAddr=10.49.58.147:sid=47AC58DF-C77040BB-000A0AA0.1
+20180716 190031327-0700 95site1host01 mta 26978 11435 139858687723264 Note;SmtpRelayPrevented(70/49) [10.49.58.147]:<>:1:from=<>:fromhost=10.49.58.147:fromport=40602:localAddr=10.49.58.147:sid=47AC58DF-C77040BB-000A0AA0.1
+20180716 190031327-0700 95site1host01 mta 26978 11435 139858687723264 Note;SmtpConnectionClosedAbnormally(70/76) [10.49.58.147]:0:0:75:from=<>:fromhost=10.49.58.147:fromport=40602:localAddr=10.49.58.147:sid=47AC58DF-C77040BB-000A0AA0.1
+20180716 190031327-0700 95site1host01 mta 26978 11435 139858687723264 Note;SmtpConnectionReceived(70/1) [10.49.58.147]:fromhost=10.49.58.147:fromport=40604:localAddr=10.49.58.147:sid=47AC58DF-C77040BB-000A0AA2.0
+20180716 190031328-0700 95site1host01 mta 26978 11435 139858687723264 Warn;SmtpServerNoRelay(70/48) [10.49.58.147]:<>:<joe.blah@test.dom>:from=<>:fromhost=10.49.58.147:fromport=40604:localAddr=10.49.58.147:sid=47AC58DF-C77040BB-000A0AA2.1
+20180716 190031328-0700 95site1host01 mta 26978 11435 139858687723264 Note;SmtpRelayPrevented(70/49) [10.49.58.147]:<>:1:from=<>:fromhost=10.49.58.147:fromport=40604:localAddr=10.49.58.147:sid=47AC58DF-C77040BB-000A0AA2.1
+20180716 190031328-0700 95site1host01 mta 26978 11435 139858687723264 Note;SmtpConnectionClosedAbnormally(70/76) [10.49.58.147]:0:0:75:from=<>:fromhost=10.49.58.147:fromport=40604:localAddr=10.49.58.147:sid=47AC58DF-C77040BB-000A0AA2.1
+20180716 190031328-0700 95site1host01 mta 26978 11435 139858687723264 Note;SmtpConnectionReceived(70/1) [10.49.58.147]:fromhost=10.49.58.147:fromport=40606:localAddr=10.49.58.147:sid=47AC58DF-C77040BB-000A0AA4.0
+20180716 190031330-0700 95site1host01 mta 26978 11435 139858687723264 Warn;SmtpServerNoRelay(70/48) [10.49.58.147]:<>:<joe.blah@test.dom>:from=<>:fromhost=10.49.58.147:fromport=40606:localAddr=10.49.58.147:sid=47AC58DF-C77040BB-000A0AA4.1
+20180716 190031330-0700 95site1host01 mta 26978 11435 139858687723264 Note;SmtpRelayPrevented(70/49) [10.49.58.147]:<>:1:from=<>:fromhost=10.49.58.147:fromport=40606:localAddr=10.49.58.147:sid=47AC58DF-C77040BB-000A0AA4.1
+20180716 190031330-0700 95site1host01 mta 26978 11435 139858687723264 Note;SmtpConnectionClosedAbnormally(70/76) [10.49.58.147]:0:0:75:from=<>:fromhost=10.49.58.147:fromport=40606:localAddr=10.49.58.147:sid=47AC58DF-C77040BB-000A0AA4.1
+20180716 190031330-0700 95site1host01 mta 26978 11435 139858687723264 Note;SmtpConnectionReceived(70/1) [10.49.58.147]:fromhost=10.49.58.147:fromport=40608:localAddr=10.49.58.147:sid=47AC58DF-C77040BB-000A0AA6.0
+20180716 190031331-0700 95site1host01 mta 26978 11435 139858687723264 Warn;SmtpServerNoRelay(70/48) [10.49.58.147]:<>:<joe.blah@test.dom>:from=<>:fromhost=10.49.58.147:fromport=40608:localAddr=10.49.58.147:sid=47AC58DF-C77040BB-000A0AA6.1
+20180716 190031331-0700 95site1host01 mta 26978 11435 139858687723264 Note;SmtpRelayPrevented(70/49) [10.49.58.147]:<>:1:from=<>:fromhost=10.49.58.147:fromport=40608:localAddr=10.49.58.147:sid=47AC58DF-C77040BB-000A0AA6.1
+20180716 190031331-0700 95site1host01 mta 26978 11435 139858687723264 Note;SmtpConnectionClosedAbnormally(70/76) [10.49.58.147]:0:0:75:from=<>:fromhost=10.49.58.147:fromport=40608:localAddr=10.49.58.147:sid=47AC58DF-C77040BB-000A0AA6.1
+20180716 190031331-0700 95site1host01 mta 26978 11435 139858687723264 Note;SmtpConnectionReceived(70/1) [10.49.58.147]:fromhost=10.49.58.147:fromport=40610:localAddr=10.49.58.147:sid=47AC58DF-C77040BB-000A0AA8.0
+20180716 190031331-0700 95site1host01 mta 26978 11435 139858687723264 Warn;SmtpServerNoRelay(70/48) [10.49.58.147]:<>:<joe.blah@test.dom>:from=<>:fromhost=10.49.58.147:fromport=40610:localAddr=10.49.58.147:sid=47AC58DF-C77040BB-000A0AA8.1
+20180716 190031332-0700 95site1host01 mta 26978 11435 139858687723264 Note;SmtpRelayPrevented(70/49) [10.49.58.147]:<>:1:from=<>:fromhost=10.49.58.147:fromport=40610:localAddr=10.49.58.147:sid=47AC58DF-C77040BB-000A0AA8.1
+20180716 190031332-0700 95site1host01 mta 26978 11435 139858687723264 Note;SmtpConnectionClosedAbnormally(70/76) [10.49.58.147]:0:0:75:from=<>:fromhost=10.49.58.147:fromport=40610:localAddr=10.49.58.147:sid=47AC58DF-C77040BB-000A0AA8.1
+20180716 190031332-0700 95site1host01 mta 26978 15819 139858685859584 Note;SmtpConnectionReceived(70/1) [10.49.58.147]:fromhost=10.49.58.147:fromport=40612:localAddr=10.49.58.147:sid=47AC58DF-C77040BB-000A0AAA.0
+20180716 190031333-0700 95site1host01 mta 26978 15819 139858685859584 Warn;SmtpServerNoRelay(70/48) [10.49.58.147]:<>:<joe.blah@test.dom>:from=<>:fromhost=10.49.58.147:fromport=40612:localAddr=10.49.58.147:sid=47AC58DF-C77040BB-000A0AAA.1
+20180716 190031334-0700 95site1host01 mta 26978 15819 139858685859584 Note;SmtpRelayPrevented(70/49) [10.49.58.147]:<>:1:from=<>:fromhost=10.49.58.147:fromport=40612:localAddr=10.49.58.147:sid=47AC58DF-C77040BB-000A0AAA.1
+20180716 190031334-0700 95site1host01 mta 26978 15819 139858685859584 Note;SmtpConnectionClosedAbnormally(70/76) [10.49.58.147]:0:0:75:from=<>:fromhost=10.49.58.147:fromport=40612:localAddr=10.49.58.147:sid=47AC58DF-C77040BB-000A0AAA.1
+20180716 190031334-0700 95site1host01 mta 26978 16108 139858685327104 Note;SmtpConnectionReceived(70/1) [10.49.58.147]:fromhost=10.49.58.147:fromport=40614:localAddr=10.49.58.147:sid=47AC58DF-C77040BB-000A0AAC.0
+20180716 190031334-0700 95site1host01 mta 26978 16108 139858685327104 Warn;SmtpServerNoRelay(70/48) [10.49.58.147]:<>:<joe.blah@test.dom>:from=<>:fromhost=10.49.58.147:fromport=40614:localAddr=10.49.58.147:sid=47AC58DF-C77040BB-000A0AAC.1
+20180716 190031335-0700 95site1host01 mta 26978 16108 139858685327104 Note;SmtpRelayPrevented(70/49) [10.49.58.147]:<>:1:from=<>:fromhost=10.49.58.147:fromport=40614:localAddr=10.49.58.147:sid=47AC58DF-C77040BB-000A0AAC.1
+20180716 190031335-0700 95site1host01 mta 26978 16108 139858685327104 Note;SmtpConnectionClosedAbnormally(70/76) [10.49.58.147]:0:0:75:from=<>:fromhost=10.49.58.147:fromport=40614:localAddr=10.49.58.147:sid=47AC58DF-C77040BB-000A0AAC.1
+20180716 190031335-0700 95site1host01 mta 26978 2830 139858689320704 Note;SmtpConnectionReceived(70/1) [10.49.58.147]:fromhost=10.49.58.147:fromport=40616:localAddr=10.49.58.147:sid=47AC58DF-C77040BB-000A0AAE.0
+20180716 190031335-0700 95site1host01 mta 26978 2830 139858689320704 Warn;SmtpServerNoRelay(70/48) [10.49.58.147]:<>:<joe.blah@test.dom>:from=<>:fromhost=10.49.58.147:fromport=40616:localAddr=10.49.58.147:sid=47AC58DF-C77040BB-000A0AAE.1
+20180716 190031336-0700 95site1host01 mta 26978 2830 139858689320704 Note;SmtpRelayPrevented(70/49) [10.49.58.147]:<>:1:from=<>:fromhost=10.49.58.147:fromport=40616:localAddr=10.49.58.147:sid=47AC58DF-C77040BB-000A0AAE.1
+20180716 190031336-0700 95site1host01 mta 26978 2830 139858689320704 Note;SmtpConnectionClosedAbnormally(70/76) [10.49.58.147]:0:0:75:from=<>:fromhost=10.49.58.147:fromport=40616:localAddr=10.49.58.147:sid=47AC58DF-C77040BB-000A0AAE.1
+20180716 190031336-0700 95site1host01 mta 26978 22601 139858689054464 Note;SmtpConnectionReceived(70/1) [10.49.58.147]:fromhost=10.49.58.147:fromport=40618:localAddr=10.49.58.147:sid=47AC58DF-C77040BB-000A0AB0.0
+20180716 190031336-0700 95site1host01 mta 26978 22601 139858689054464 Warn;SmtpServerNoRelay(70/48) [10.49.58.147]:<>:<joe.blah@test.dom>:from=<>:fromhost=10.49.58.147:fromport=40618:localAddr=10.49.58.147:sid=47AC58DF-C77040BB-000A0AB0.1
+20180716 190031337-0700 95site1host01 mta 26978 22601 139858689054464 Note;SmtpRelayPrevented(70/49) [10.49.58.147]:<>:1:from=<>:fromhost=10.49.58.147:fromport=40618:localAddr=10.49.58.147:sid=47AC58DF-C77040BB-000A0AB0.1
+20180716 190031337-0700 95site1host01 mta 26978 22601 139858689054464 Note;SmtpConnectionClosedAbnormally(70/76) [10.49.58.147]:0:0:75:from=<>:fromhost=10.49.58.147:fromport=40618:localAddr=10.49.58.147:sid=47AC58DF-C77040BB-000A0AB0.1
+20180716 190031337-0700 95site1host01 mta 26978 22600 139858693580544 Note;SmtpConnectionReceived(70/1) [10.49.58.147]:fromhost=10.49.58.147:fromport=40620:localAddr=10.49.58.147:sid=47AC58DF-C77040BB-000A0AB2.0
+20180716 190031338-0700 95site1host01 mta 26978 22600 139858693580544 Warn;SmtpServerNoRelay(70/48) [10.49.58.147]:<>:<joe.blah@test.dom>:from=<>:fromhost=10.49.58.147:fromport=40620:localAddr=10.49.58.147:sid=47AC58DF-C77040BB-000A0AB2.1
+20180716 190031338-0700 95site1host01 mta 26978 22600 139858693580544 Note;SmtpRelayPrevented(70/49) [10.49.58.147]:<>:1:from=<>:fromhost=10.49.58.147:fromport=40620:localAddr=10.49.58.147:sid=47AC58DF-C77040BB-000A0AB2.1
+20180716 190031338-0700 95site1host01 mta 26978 22600 139858693580544 Note;SmtpConnectionClosedAbnormally(70/76) [10.49.58.147]:0:0:75:from=<>:fromhost=10.49.58.147:fromport=40620:localAddr=10.49.58.147:sid=47AC58DF-C77040BB-000A0AB2.1
+20180716 190031338-0700 95site1host01 mta 26978 22600 139858693580544 Note;SmtpConnectionReceived(70/1) [10.49.58.147]:fromhost=10.49.58.147:fromport=40622:localAddr=10.49.58.147:sid=47AC58DF-C77040BB-000A0AB4.0
+20180716 190031339-0700 95site1host01 mta 26978 22600 139858693580544 Warn;SmtpServerNoRelay(70/48) [10.49.58.147]:<>:<joe.blah@test.dom>:from=<>:fromhost=10.49.58.147:fromport=40622:localAddr=10.49.58.147:sid=47AC58DF-C77040BB-000A0AB4.1
+20180716 190031339-0700 95site1host01 mta 26978 22600 139858693580544 Note;SmtpRelayPrevented(70/49) [10.49.58.147]:<>:1:from=<>:fromhost=10.49.58.147:fromport=40622:localAddr=10.49.58.147:sid=47AC58DF-C77040BB-000A0AB4.1
+20180716 190031339-0700 95site1host01 mta 26978 22600 139858693580544 Note;SmtpConnectionClosedAbnormally(70/76) [10.49.58.147]:0:0:75:from=<>:fromhost=10.49.58.147:fromport=40622:localAddr=10.49.58.147:sid=47AC58DF-C77040BB-000A0AB4.1
+20180716 190031339-0700 95site1host01 mta 26978 15819 139858685859584 Note;SmtpConnectionReceived(70/1) [10.49.58.147]:fromhost=10.49.58.147:fromport=40624:localAddr=10.49.58.147:sid=47AC58DF-C77040BB-000A0AB6.0
+20180716 190031340-0700 95site1host01 mta 26978 15819 139858685859584 Warn;SmtpServerNoRelay(70/48) [10.49.58.147]:<>:<joe.blah@test.dom>:from=<>:fromhost=10.49.58.147:fromport=40624:localAddr=10.49.58.147:sid=47AC58DF-C77040BB-000A0AB6.1
+20180716 190031340-0700 95site1host01 mta 26978 15819 139858685859584 Note;SmtpRelayPrevented(70/49) [10.49.58.147]:<>:1:from=<>:fromhost=10.49.58.147:fromport=40624:localAddr=10.49.58.147:sid=47AC58DF-C77040BB-000A0AB6.1
+20180716 190031340-0700 95site1host01 mta 26978 15819 139858685859584 Note;SmtpConnectionClosedAbnormally(70/76) [10.49.58.147]:0:0:75:from=<>:fromhost=10.49.58.147:fromport=40624:localAddr=10.49.58.147:sid=47AC58DF-C77040BB-000A0AB6.1
+20180716 190031340-0700 95site1host01 mta 26978 16108 139858685327104 Note;SmtpConnectionReceived(70/1) [10.49.58.147]:fromhost=10.49.58.147:fromport=40626:localAddr=10.49.58.147:sid=47AC58DF-C77040BB-000A0AB8.0
+20180716 190031343-0700 95site1host01 mta 26978 16108 139858685327104 Warn;SmtpServerNoRelay(70/48) [10.49.58.147]:<>:<joe.blah@test.dom>:from=<>:fromhost=10.49.58.147:fromport=40626:localAddr=10.49.58.147:sid=47AC58DF-C77040BB-000A0AB8.1
+20180716 190031343-0700 95site1host01 mta 26978 16108 139858685327104 Note;SmtpRelayPrevented(70/49) [10.49.58.147]:<>:1:from=<>:fromhost=10.49.58.147:fromport=40626:localAddr=10.49.58.147:sid=47AC58DF-C77040BB-000A0AB8.1
+20180716 190031343-0700 95site1host01 mta 26978 16108 139858685327104 Note;SmtpConnectionClosedAbnormally(70/76) [10.49.58.147]:0:0:75:from=<>:fromhost=10.49.58.147:fromport=40626:localAddr=10.49.58.147:sid=47AC58DF-C77040BB-000A0AB8.1
+20180716 190031343-0700 95site1host01 mta 26978 2830 139858689320704 Note;SmtpConnectionReceived(70/1) [10.49.58.147]:fromhost=10.49.58.147:fromport=40628:localAddr=10.49.58.147:sid=47AC58DF-C77040BB-000A0ABA.0
+20180716 190031344-0700 95site1host01 mta 26978 2830 139858689320704 Warn;SmtpServerNoRelay(70/48) [10.49.58.147]:<>:<joe.blah@test.dom>:from=<>:fromhost=10.49.58.147:fromport=40628:localAddr=10.49.58.147:sid=47AC58DF-C77040BB-000A0ABA.1
+20180716 190031344-0700 95site1host01 mta 26978 2830 139858689320704 Note;SmtpRelayPrevented(70/49) [10.49.58.147]:<>:1:from=<>:fromhost=10.49.58.147:fromport=40628:localAddr=10.49.58.147:sid=47AC58DF-C77040BB-000A0ABA.1
+20180716 190031344-0700 95site1host01 mta 26978 2830 139858689320704 Note;SmtpConnectionClosedAbnormally(70/76) [10.49.58.147]:0:0:75:from=<>:fromhost=10.49.58.147:fromport=40628:localAddr=10.49.58.147:sid=47AC58DF-C77040BB-000A0ABA.1
+20180716 190031344-0700 95site1host01 mta 26978 2830 139858689320704 Note;SmtpConnectionReceived(70/1) [10.49.58.147]:fromhost=10.49.58.147:fromport=40630:localAddr=10.49.58.147:sid=47AC58DF-C77040BB-000A0ABC.0
+20180716 190031345-0700 95site1host01 mta 26978 2830 139858689320704 Warn;SmtpServerNoRelay(70/48) [10.49.58.147]:<>:<joe.blah@test.dom>:from=<>:fromhost=10.49.58.147:fromport=40630:localAddr=10.49.58.147:sid=47AC58DF-C77040BB-000A0ABC.1
+20180716 190031346-0700 95site1host01 mta 26978 2830 139858689320704 Note;SmtpRelayPrevented(70/49) [10.49.58.147]:<>:1:from=<>:fromhost=10.49.58.147:fromport=40630:localAddr=10.49.58.147:sid=47AC58DF-C77040BB-000A0ABC.1
+20180716 190031346-0700 95site1host01 mta 26978 2830 139858689320704 Note;SmtpConnectionClosedAbnormally(70/76) [10.49.58.147]:0:0:75:from=<>:fromhost=10.49.58.147:fromport=40630:localAddr=10.49.58.147:sid=47AC58DF-C77040BB-000A0ABC.1
+20180716 190031346-0700 95site1host01 mta 26978 11435 139858687723264 Note;SmtpConnectionReceived(70/1) [10.49.58.147]:fromhost=10.49.58.147:fromport=40632:localAddr=10.49.58.147:sid=47AC58DF-C77040BB-000A0ABE.0
+20180716 190031346-0700 95site1host01 mta 26978 11435 139858687723264 Warn;SmtpServerNoRelay(70/48) [10.49.58.147]:<>:<joe.blah@test.dom>:from=<>:fromhost=10.49.58.147:fromport=40632:localAddr=10.49.58.147:sid=47AC58DF-C77040BB-000A0ABE.1
+20180716 190031346-0700 95site1host01 mta 26978 11435 139858687723264 Note;SmtpRelayPrevented(70/49) [10.49.58.147]:<>:1:from=<>:fromhost=10.49.58.147:fromport=40632:localAddr=10.49.58.147:sid=47AC58DF-C77040BB-000A0ABE.1
+20180716 190031347-0700 95site1host01 mta 26978 11435 139858687723264 Note;SmtpConnectionClosedAbnormally(70/76) [10.49.58.147]:0:0:75:from=<>:fromhost=10.49.58.147:fromport=40632:localAddr=10.49.58.147:sid=47AC58DF-C77040BB-000A0ABE.1
+20180716 190031347-0700 95site1host01 mta 26978 11435 139858687723264 Note;SmtpConnectionReceived(70/1) [10.49.58.147]:fromhost=10.49.58.147:fromport=40634:localAddr=10.49.58.147:sid=47AC58DF-C77040BB-000A0AC0.0
+20180716 190031347-0700 95site1host01 mta 26978 11435 139858687723264 Warn;SmtpServerNoRelay(70/48) [10.49.58.147]:<>:<joe.blah@test.dom>:from=<>:fromhost=10.49.58.147:fromport=40634:localAddr=10.49.58.147:sid=47AC58DF-C77040BB-000A0AC0.1
+20180716 190031347-0700 95site1host01 mta 26978 11435 139858687723264 Note;SmtpRelayPrevented(70/49) [10.49.58.147]:<>:1:from=<>:fromhost=10.49.58.147:fromport=40634:localAddr=10.49.58.147:sid=47AC58DF-C77040BB-000A0AC0.1
+20180716 190031347-0700 95site1host01 mta 26978 11435 139858687723264 Note;SmtpConnectionClosedAbnormally(70/76) [10.49.58.147]:0:0:75:from=<>:fromhost=10.49.58.147:fromport=40634:localAddr=10.49.58.147:sid=47AC58DF-C77040BB-000A0AC0.1
+20180716 190031348-0700 95site1host01 mta 26978 15819 139858685859584 Note;SmtpConnectionReceived(70/1) [10.49.58.147]:fromhost=10.49.58.147:fromport=40636:localAddr=10.49.58.147:sid=47AC58DF-C77040BB-000A0AC2.0
+20180716 190031348-0700 95site1host01 mta 26978 15819 139858685859584 Warn;SmtpServerNoRelay(70/48) [10.49.58.147]:<>:<joe.blah@test.dom>:from=<>:fromhost=10.49.58.147:fromport=40636:localAddr=10.49.58.147:sid=47AC58DF-C77040BB-000A0AC2.1
+20180716 190031349-0700 95site1host01 mta 26978 15819 139858685859584 Note;SmtpRelayPrevented(70/49) [10.49.58.147]:<>:1:from=<>:fromhost=10.49.58.147:fromport=40636:localAddr=10.49.58.147:sid=47AC58DF-C77040BB-000A0AC2.1
+20180716 190031349-0700 95site1host01 mta 26978 15819 139858685859584 Note;SmtpConnectionClosedAbnormally(70/76) [10.49.58.147]:0:0:75:from=<>:fromhost=10.49.58.147:fromport=40636:localAddr=10.49.58.147:sid=47AC58DF-C77040BB-000A0AC2.1
+20180716 190031349-0700 95site1host01 mta 26978 16108 139858685327104 Note;SmtpConnectionReceived(70/1) [10.49.58.147]:fromhost=10.49.58.147:fromport=40638:localAddr=10.49.58.147:sid=47AC58DF-C77040BB-000A0AC4.0
+20180716 190031350-0700 95site1host01 mta 26978 16108 139858685327104 Warn;SmtpServerNoRelay(70/48) [10.49.58.147]:<>:<joe.blah@test.dom>:from=<>:fromhost=10.49.58.147:fromport=40638:localAddr=10.49.58.147:sid=47AC58DF-C77040BB-000A0AC4.1
+20180716 190031350-0700 95site1host01 mta 26978 16108 139858685327104 Note;SmtpRelayPrevented(70/49) [10.49.58.147]:<>:1:from=<>:fromhost=10.49.58.147:fromport=40638:localAddr=10.49.58.147:sid=47AC58DF-C77040BB-000A0AC4.1
+20180716 190031350-0700 95site1host01 mta 26978 16108 139858685327104 Note;SmtpConnectionClosedAbnormally(70/76) [10.49.58.147]:0:0:75:from=<>:fromhost=10.49.58.147:fromport=40638:localAddr=10.49.58.147:sid=47AC58DF-C77040BB-000A0AC4.1
+20180716 190031350-0700 95site1host01 mta 26978 22601 139858689054464 Note;SmtpConnectionReceived(70/1) [10.49.58.147]:fromhost=10.49.58.147:fromport=40640:localAddr=10.49.58.147:sid=47AC58DF-C77040BB-000A0AC6.0
+20180716 190031351-0700 95site1host01 mta 26978 22601 139858689054464 Warn;SmtpServerNoRelay(70/48) [10.49.58.147]:<>:<joe.blah@test.dom>:from=<>:fromhost=10.49.58.147:fromport=40640:localAddr=10.49.58.147:sid=47AC58DF-C77040BB-000A0AC6.1
+20180716 190031351-0700 95site1host01 mta 26978 22601 139858689054464 Note;SmtpRelayPrevented(70/49) [10.49.58.147]:<>:1:from=<>:fromhost=10.49.58.147:fromport=40640:localAddr=10.49.58.147:sid=47AC58DF-C77040BB-000A0AC6.1
+20180716 190031351-0700 95site1host01 mta 26978 22601 139858689054464 Note;SmtpConnectionClosedAbnormally(70/76) [10.49.58.147]:0:0:75:from=<>:fromhost=10.49.58.147:fromport=40640:localAddr=10.49.58.147:sid=47AC58DF-C77040BB-000A0AC6.1
+20180716 190031352-0700 95site1host01 mta 26978 2830 139858689320704 Note;SmtpConnectionReceived(70/1) [10.49.58.147]:fromhost=10.49.58.147:fromport=40642:localAddr=10.49.58.147:sid=47AC58DF-C77040BB-000A0AC8.0
+20180716 190031352-0700 95site1host01 mta 26978 2830 139858689320704 Warn;SmtpServerNoRelay(70/48) [10.49.58.147]:<>:<joe.blah@test.dom>:from=<>:fromhost=10.49.58.147:fromport=40642:localAddr=10.49.58.147:sid=47AC58DF-C77040BB-000A0AC8.1
+20180716 190031352-0700 95site1host01 mta 26978 2830 139858689320704 Note;SmtpRelayPrevented(70/49) [10.49.58.147]:<>:1:from=<>:fromhost=10.49.58.147:fromport=40642:localAddr=10.49.58.147:sid=47AC58DF-C77040BB-000A0AC8.1
+20180716 190031352-0700 95site1host01 mta 26978 2830 139858689320704 Note;SmtpConnectionClosedAbnormally(70/76) [10.49.58.147]:0:0:75:from=<>:fromhost=10.49.58.147:fromport=40642:localAddr=10.49.58.147:sid=47AC58DF-C77040BB-000A0AC8.1
+20180716 190031354-0700 95site1host01 mta 26978 2830 139858689320704 Note;SmtpConnectionReceived(70/1) [10.49.58.147]:fromhost=10.49.58.147:fromport=40644:localAddr=10.49.58.147:sid=47AC58DF-C77040BB-000A0ACA.0
+20180716 190031355-0700 95site1host01 mta 26978 2830 139858689320704 Warn;SmtpServerNoRelay(70/48) [10.49.58.147]:<>:<joe.blah@test.dom>:from=<>:fromhost=10.49.58.147:fromport=40644:localAddr=10.49.58.147:sid=47AC58DF-C77040BB-000A0ACA.1
+20180716 190031355-0700 95site1host01 mta 26978 2830 139858689320704 Note;SmtpRelayPrevented(70/49) [10.49.58.147]:<>:1:from=<>:fromhost=10.49.58.147:fromport=40644:localAddr=10.49.58.147:sid=47AC58DF-C77040BB-000A0ACA.1
+20180716 190031355-0700 95site1host01 mta 26978 2830 139858689320704 Note;SmtpConnectionClosedAbnormally(70/76) [10.49.58.147]:0:0:75:from=<>:fromhost=10.49.58.147:fromport=40644:localAddr=10.49.58.147:sid=47AC58DF-C77040BB-000A0ACA.1
+20180716 190031355-0700 95site1host01 mta 26978 11435 139858687723264 Note;SmtpConnectionReceived(70/1) [10.49.58.147]:fromhost=10.49.58.147:fromport=40646:localAddr=10.49.58.147:sid=47AC58DF-C77040BB-000A0ACC.0
+20180716 190031355-0700 95site1host01 mta 26978 11435 139858687723264 Warn;SmtpServerNoRelay(70/48) [10.49.58.147]:<>:<joe.blah@test.dom>:from=<>:fromhost=10.49.58.147:fromport=40646:localAddr=10.49.58.147:sid=47AC58DF-C77040BB-000A0ACC.1
+20180716 190031356-0700 95site1host01 mta 26978 11435 139858687723264 Note;SmtpRelayPrevented(70/49) [10.49.58.147]:<>:1:from=<>:fromhost=10.49.58.147:fromport=40646:localAddr=10.49.58.147:sid=47AC58DF-C77040BB-000A0ACC.1
+20180716 190031356-0700 95site1host01 mta 26978 11435 139858687723264 Note;SmtpConnectionClosedAbnormally(70/76) [10.49.58.147]:0:0:75:from=<>:fromhost=10.49.58.147:fromport=40646:localAddr=10.49.58.147:sid=47AC58DF-C77040BB-000A0ACC.1
+20180716 190036952-0700 95site1host01 mta 26978 15819 139858685859584 Note;SmtpConnectionReceived(70/1) [10.37.2.214]:fromhost=10.37.2.214:fromport=49138:localAddr=10.49.58.147:sid=47AC58DF-C77040BB-000A0ACE.0
+20180716 190039138-0700 95site1host01 mta 26978 15819 139858685859584 Note;MsgTrace(65/26) received from internet:from=<ar8851@whsasf.com>:msgid=<20180717020038.APH26978.95site1host01.qacopernicus.synchronoss.net@freaker.dom>:fromhost=[10.37.2.214]:fromport=49138:localAddr=10.49.58.147:sid=47AC58DF-C77040BB-000A0ACE.1:cosId=default:rcptCosId=default:msgsize=522:time=1:sender=<ar8851@whsasf.com>:rcpts=<ar28590@qacopernicus.synchronoss.net>:protocol=ESMTP:encoding=plaintext
+20180716 190039138-0700 95site1host01 mta 26978 11461 139858686392064 Note;MsgTrace(65/26) docid will be used for message-id:user=ar28590@qacopernicus.synchronoss.net:from=<ar8851@whsasf.com>:msgid=<20180717020038.APH26978.95site1host01.qacopernicus.synchronoss.net@freaker.dom>:size=643:fromhost=10.37.2.214:fromport=49138:localAddr=[10.49.58.147]:sid=47AC58DF-C77040BB-000A0ACE.1:cosId=default:rcptCosId=default
+20180716 190039138-0700 95site1host01 mta 26978 11461 139858686392064 Erro;ConfNotAConfiguredHost(51/62) :user=ar28590@qacopernicus.synchronoss.net:from=<ar8851@whsasf.com>:msgid=<20180717020038.APH26978.95site1host01.qacopernicus.synchronoss.net@freaker.dom>:size=643:fromhost=10.37.2.214:fromport=49138:localAddr=[10.49.58.147]:sid=47AC58DF-C77040BB-000A0ACE.1:cosId=default:rcptCosId=default
+20180716 190039174-0700 95site1host01 mta 26978 2510 139858688788224 Note;MsgTrace(65/26) delivered:user=ar28590@qacopernicus.synchronoss.net:mbox=7258445813232120039:mss=95site1host01:from=<ar8851@whsasf.com>:msgid=<20180717020038.APH26978.95site1host01.qacopernicus.synchronoss.net@freaker.dom>:size=677:port=55014:fromhost=10.37.2.214:fromport=49138:localAddr=[10.49.58.147]:sid=47AC58DF-C77040BB-000A0ACE.1:docid=33f7cde2-8965-11e8-9f8a-91481e04889a:node=95site1host01:nodePort=55014:cosId=default:rcptCosId=default
+20180716 190039395-0700 95site1host01 mta 26978 15819 139858685859584 Note;SmtpConnectionClosed(70/2) [10.37.2.214]:3:1:227:fromhost=[10.37.2.214]:fromport=49138:localAddr=10.49.58.147:sid=47AC58DF-C77040BB-000A0ACE.1
+95site1host01:imail:Mx9.5:~$ [32m##########6 Autoreply messaeg undelievered successfully!![0m
+########## 7 check autoreplied message in inbox of user1 ...
+imapmail: host[10.49.58.147] port[143] user[ar8851] pass[p] folder[inbox] message[2]
+xx OK LOGIN completed
+* 1 EXISTS
+* OK [UNSEEN 1] First unseen message
+* OK [UIDVALIDITY 1531792807] UIDs valid
+* OK [UIDNEXT 1001] Predicted next UID
+* FLAGS (\Answered \Flagged \Deleted \Draft \Seen)
+* OK [PERMANENTFLAGS (\* \Answered \Flagged \Deleted \Draft \Seen)] Permanent flags
+* 0 RECENT
+xx OK [READ-WRITE] SELECT completed
+xx NO FETCH failed
+Didn't get OK for FETCH
+Not Connected...
+[32m##########7 Check autoreplied messaege not exist successfully!![0m
+TESTPASSED: ../Automation/single-message/Deliever-message-after-AutoReplyStart-and-StopDate-when-both-sets/external-domain/mx-10300: AutoReply in reply mode with message undelievered after start/stop date for external sender test success! (44 sec.)
+##########  doing some clear job ...
+TIME User delete: 1
+TIME User delete: 1
+1
+{"code":"LDP_CONNECTION_ERROR","requestParams":"{domain=[whsasf.com]}","operationType":"DomainService:DELETE","shortMessage":"Database error - Communication error.","longMessage":"[LDAP: error code 66 - Not Allowed On Non-leaf]"}PASSED: ../Automation/single-message/Deliever-message-after-AutoReplyStart-and-StopDate-when-both-sets/external-domain/mx-10300 [20180717-100002] (47 sec.)
+Test ended: Tue Jul 17 10:00:49 CST 2018
+
+
+Test-suite ended: Tue Jul 17 10:00:49 CST 2018
+
+bohem 2.9.5 Info:
+	Entire test-suite took 0 minutes.
+	Total number of tests passed:	0
+	Total number of tests failed:	0
+	Total number of tests ran:	0
+	Total number of tests broken:	0
+

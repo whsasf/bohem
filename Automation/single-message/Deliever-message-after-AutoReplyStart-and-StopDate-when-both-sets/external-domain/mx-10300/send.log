@@ -1,0 +1,25 @@
+Received: 220 95site1host01.qacopernicus.synchronoss.net ESMTP server (InterMail vM.9.05.03.00 201-2473-138-1) ready Mon, 16 Jul 2018 19:00:36 -0700
+Sending command (to 10.49.58.147:25): EHLO freaker.dom
+Received: 250-95site1host01.qacopernicus.synchronoss.net
+Received: 250-XXXA
+Received: 250-VRFY
+Received: 250-XXXXXXXXXXXB
+Received: 250-ETRN
+Received: 250-PIPELINING
+Received: 250-DSN
+Received: 250-8BITMIME
+Received: 250 SIZE 30996480
+Sending command (to 10.49.58.147:25): MAIL FROM:<ar8851@whsasf.com>
+Received: 250 Sender <ar8851@whsasf.com> Ok
+Sending command (to 10.49.58.147:25): RCPT TO:<ar28590@qacopernicus.synchronoss.net>
+Received: 250 Recipient <ar28590@qacopernicus.synchronoss.net> Ok
+Sending command (to 10.49.58.147:25): DATA
+Received: 354 Ok Send data ending with <CRLF>.<CRLF>
+Sending data (to 10.49.58.147:25): Subject: test message about autoreply feature
+Sending data (to 10.49.58.147:25): To:ar28590@qacopernicus.synchronoss.net
+Sending data (to 10.49.58.147:25): 
+Sending data (to 10.49.58.147:25): Reply,This ia a wonderful world!!
+Sending command (to 10.49.58.147:25): .
+Received: 250 Message received: 20180717020038.APH26978.95site1host01.qacopernicus.synchronoss.net@freaker.dom
+Sending command (to 10.49.58.147:25): quit
+Received: 221 95site1host01.qacopernicus.synchronoss.net ESMTP server closing connection

@@ -151,7 +151,7 @@ ls -al  ~ >/dev/null
 echo "########## 10 Check mta.log using expect tool ..."
 echo "########## 6 Check mta.log using expect tool ..."
 expect.exp $expect_timeout $MX1_HOST_IP1 $expect_user $expect_pass $expect_subuser \
-"cat log/mta.log
+"cat log/mta.log"
 
 count=$(grep  -i "MtaAutoReplySuppressedAlreadySent"  expect.log|wc -l)
 if [[ "$count" -eq "4" ]];then

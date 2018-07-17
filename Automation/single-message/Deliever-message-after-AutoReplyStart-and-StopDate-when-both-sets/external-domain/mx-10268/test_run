@@ -36,7 +36,7 @@ echo "########## 2 Accounts provision ..."
 #create domain
 mos_create_domain.sh ${MXOS1_HOST_IP}  $MXOS1__PORT $newdomain
 #create accounts
-mos_create_user.sh  ${MXOS1_HOST_IP}  $MXOS1__PORT $user2@$newdomain $passwd
+mos_create_user.sh  ${MXOS1_HOST_IP}  $MXOS1__PORT $user1@$newdomain $passwd
 mos_create_user.sh  ${MXOS1_HOST_IP}  $MXOS1__PORT $user2@$defaultdomain $passwd
 
 #3 get currect epoch date ,and calaute the autoreplystartdate
